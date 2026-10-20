@@ -131,9 +131,6 @@ repository, so update both together.
   application (with its price), and FAQ. Posts have `BlogPosting` and
   breadcrumb data.
 - `sitemap-index.xml`, `robots.txt`, and `rss.xml` are generated on build.
-- The Terms and Privacy pages are placeholders, so they're marked `noindex` and
-  left out of the sitemap. When their real text is ready, remove `noindex` in
-  `src/layouts/LegalLayout.astro` and `NOINDEX_PATHS` in `astro.config.mjs`.
 
 ## Deploying
 

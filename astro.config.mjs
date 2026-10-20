@@ -4,9 +4,6 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
-// Pages that shouldn't be indexed yet: the legal pages are placeholders.
-const NOINDEX_PATHS = ["/terms/", "/privacy/"];
-
 export default defineConfig({
   site: "https://emploist.com",
   // Pages build to folders (blog/index.html), which every static host serves
@@ -21,12 +18,7 @@ export default defineConfig({
       theme: "github-light",
     },
   },
-  integrations: [
-    mdx(),
-    sitemap({
-      filter: (page) => !NOINDEX_PATHS.some((path) => page.endsWith(path)),
-    }),
-  ],
+  integrations: [mdx(), sitemap()],
   fonts: [
     {
       provider: fontProviders.local(),
