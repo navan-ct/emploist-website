@@ -1,0 +1,30 @@
+---
+// Terms and Privacy. They're placeholders until the real text is ready, so
+// they're kept out of search engines and the sitemap (astro.config.mjs).
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  updated: string;
+}
+
+const { title, description, updated } = Astro.props;
+---
+
+<BaseLayout title={`${title} | Emploist`} description={description} noindex>
+  <article class="container-page pt-16 pb-20 sm:pt-24 sm:pb-28">
+    <div class="mx-auto max-w-[44rem]">
+      <header>
+        <h1 class="text-heading">{title}</h1>
+        <p class="mt-4 text-sm text-faint">Last updated {updated}</p>
+      </header>
+      <p class="mt-10 rounded-xl bg-amber-50 px-5 py-4 text-sm leading-relaxed text-amber-900 ring-1 ring-amber-200">
+        This page is a placeholder. Replace it with your final {title.toLowerCase()} before launch.
+      </p>
+      <div class="prose-post prose prose-zinc mt-10">
+        <slot />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

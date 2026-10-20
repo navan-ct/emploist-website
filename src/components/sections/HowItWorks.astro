@@ -1,0 +1,42 @@
+---
+const steps = [
+  {
+    title: "Post a job",
+    text: "Write the description, choose the questions you want answered, and publish it to your careers page.",
+  },
+  {
+    title: "Candidates apply",
+    text: "People find the job on your careers page and apply in a couple of minutes. No account needed.",
+  },
+  {
+    title: "AI ranks every application",
+    text: "Each application gets a match score against the job, with a breakdown your team can read.",
+  },
+  {
+    title: "Move people forward",
+    text: "Review, comment, and move applicants through your stages. Emails go out at each step.",
+  },
+];
+---
+
+<section id="how-it-works" aria-labelledby="how-title" class="border-b border-line py-20 sm:py-28">
+  <div class="container-page">
+    <div class="max-w-2xl">
+      <p class="text-eyebrow">How it works</p>
+      <h2 id="how-title" class="text-heading mt-4">From job post to hire, in one place.</h2>
+    </div>
+    <ol class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      {
+        steps.map((step, index) => (
+          <li class="flex flex-col bg-page p-6 sm:p-7">
+            <span class="font-mono text-sm text-faint tabular-nums" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <h3 class="mt-10 text-lg font-semibold tracking-[-0.012em]">{step.title}</h3>
+            <p class="mt-2 text-[0.9375rem] leading-relaxed">{step.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

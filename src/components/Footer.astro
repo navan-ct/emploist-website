@@ -1,0 +1,79 @@
+---
+import { APP, SITE } from "../lib/site";
+import Wordmark from "./Wordmark.astro";
+
+const year = new Date().getFullYear();
+
+const columns = [
+  {
+    title: "Product",
+    links: [
+      { label: "Features", href: "/#features" },
+      { label: "Careers page", href: "/#careers-page" },
+      { label: "Pricing", href: "/#pricing" },
+      { label: "FAQ", href: "/#faq" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Blog", href: "/blog/" },
+      { label: "RSS feed", href: "/rss.xml" },
+      { label: "Support", href: `mailto:${SITE.supportEmail}` },
+    ],
+  },
+  {
+    title: "Account",
+    links: [
+      { label: "Sign in", href: APP.signInUrl },
+      { label: "Start free trial", href: APP.signUpUrl },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Terms of Service", href: "/terms/" },
+      { label: "Privacy Policy", href: "/privacy/" },
+    ],
+  },
+];
+---
+
+<footer class="border-t border-line">
+  <div class="container-page grid gap-12 py-16 md:grid-cols-[1.4fr_repeat(4,1fr)] md:gap-8">
+    <div class="flex flex-col items-start gap-4">
+      <a href="/" class="-m-1 rounded-md p-1" aria-label="Emploist home"><Wordmark /></a>
+      <p class="max-w-xs text-[0.9375rem] leading-relaxed">
+        Applicant tracking with a careers page and AI ranking, for teams that want to hire well without the busywork.
+      </p>
+    </div>
+    {
+      columns.map((column) => (
+        <nav aria-label={column.title}>
+          <h2 class="text-sm font-semibold">{column.title}</h2>
+          <ul class="mt-4 flex flex-col gap-3 text-[0.9375rem]">
+            {column.links.map((link) => (
+              <li>
+                <a href={link.href} class="transition-colors hover:text-ink">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ))
+    }
+  </div>
+  <div class="container-page">
+    <div class="flex flex-col gap-2 border-t border-line py-6 text-sm text-faint sm:flex-row sm:justify-between">
+      <p>© {year} Emploist. All rights reserved.</p>
+      <p>
+        Questions?{" "}
+        <a
+          href={`mailto:${SITE.supportEmail}`}
+          class="text-body underline-offset-4 hover:text-ink hover:underline">{SITE.supportEmail}</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>

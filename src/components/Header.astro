@@ -1,0 +1,96 @@
+---
+import { APP, NAV } from "../lib/site";
+import Button from "./Button.astro";
+import Wordmark from "./Wordmark.astro";
+---
+
+<header class="sticky top-0 z-40 border-b border-line/70 bg-page/85 backdrop-blur-md backdrop-saturate-150">
+  <div class="container-page flex h-16 items-center gap-8">
+    <a href="/" class="-m-1 rounded-md p-1" aria-label="Emploist home">
+      <Wordmark />
+    </a>
+
+    <nav aria-label="Main" class="hidden md:block">
+      <ul class="flex items-center gap-1">
+        {
+          NAV.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="rounded-full px-3 py-1.5 text-[0.9375rem] text-body transition-colors hover:text-ink"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-2">
+      <Button href={APP.signInUrl} variant="ghost" class="max-sm:hidden">Sign in</Button>
+      <Button href={APP.signUpUrl}>Start free trial</Button>
+      <button
+        type="button"
+        popovertarget="mobile-nav"
+        class="-mr-2 inline-flex size-10 items-center justify-center rounded-full text-ink hover:bg-subtle md:hidden"
+        aria-label="Menu"
+      >
+        <svg viewBox="0 0 20 20" class="size-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M3.5 7h13M3.5 13h13"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="mobile-nav"
+    popover
+    class="mobile-nav inset-x-0 top-16 m-0 w-full max-w-none border-b border-line bg-page p-0 shadow-lg md:hidden"
+  >
+    <nav aria-label="Main" class="container-page py-4">
+      <ul class="flex flex-col">
+        {
+          NAV.map((item) => (
+            <li>
+              <a href={item.href} class="block border-b border-line py-3.5 text-lg font-medium text-ink">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a href={APP.signInUrl} class="block py-3.5 text-lg font-medium text-ink">Sign in</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  // Jumping to a section from the menu also closes it. Closing moves focus
+  // back to the menu button, which would undo the jump, so jump afterwards.
+  const nav = document.getElementById("mobile-nav");
+  nav?.addEventListener("click", (event) => {
+    const link = event.target instanceof Element ? event.target.closest("a") : null;
+    if (!link) return;
+    nav.hidePopover();
+    const url = new URL(link.href);
+    const target = url.hash && url.pathname === location.pathname ? document.querySelector(url.hash) : null;
+    if (target) {
+      event.preventDefault();
+      history.pushState(null, "", url.hash);
+      target.scrollIntoView();
+    }
+  });
+</script>
+
+<style>
+  .mobile-nav:popover-open {
+    position: fixed;
+  }
+
+  .mobile-nav::backdrop {
+    background: oklch(0% 0 0 / 0.2);
+  }
+</style>

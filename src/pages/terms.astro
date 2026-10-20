@@ -1,0 +1,21 @@
+---
+import LegalLayout from "../layouts/LegalLayout.astro";
+import { SITE } from "../lib/site";
+---
+
+<LegalLayout title="Terms of Service" description="The terms for using Emploist." updated="October 20, 2026">
+  <h2>1. Using Emploist</h2>
+  <p>Placeholder text. Describe who can use Emploist and what an account covers.</p>
+  <h2>2. Your account and company</h2>
+  <p>Placeholder text. Describe account responsibilities, admins, and members.</p>
+  <h2>3. Plans, trials, and payments</h2>
+  <p>Placeholder text. Describe the plan, the free trial, AI credits, renewals, and cancellation.</p>
+  <h2>4. Your content and candidates' data</h2>
+  <p>Placeholder text. Describe who owns job posts, applications, and resumes.</p>
+  <h2>5. Acceptable use</h2>
+  <p>Placeholder text. Describe what isn't allowed.</p>
+  <h2>6. Changes to these terms</h2>
+  <p>Placeholder text. Describe how changes are announced.</p>
+  <h2>7. Contact</h2>
+  <p>Questions about these terms? Email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.</p>
+</LegalLayout>

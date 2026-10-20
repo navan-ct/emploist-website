@@ -1,0 +1,16 @@
+---
+import Button from "../components/Button.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Page not found | Emploist" description="This page doesn't exist." noindex>
+  <section class="container-page flex flex-col items-start py-28 sm:py-40">
+    <p class="font-mono text-sm text-faint">404</p>
+    <h1 class="text-heading mt-4">This page doesn't exist.</h1>
+    <p class="text-lead mt-5 max-w-xl">It may have moved, or the link might have a typo. Let's get you back on track.</p>
+    <div class="mt-9 flex flex-wrap gap-3">
+      <Button href="/" size="lg">Go to the home page</Button>
+      <Button href="/blog/" size="lg" variant="secondary">Read the blog</Button>
+    </div>
+  </section>
+</BaseLayout>

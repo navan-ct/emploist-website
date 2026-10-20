@@ -1,0 +1,53 @@
+---
+import Screenshot from "../Screenshot.astro";
+---
+
+<section aria-label="Application forms and teamwork" class="py-20 sm:py-28">
+  <div class="container-page grid gap-6 lg:grid-cols-12">
+    <article
+      aria-labelledby="forms-title"
+      class="flex flex-col overflow-hidden rounded-3xl border border-line bg-subtle lg:col-span-7"
+    >
+      <div class="p-8 sm:p-10">
+        <p class="text-eyebrow">Application forms</p>
+        <h2 id="forms-title" class="text-subheading mt-3">Ask what matters for each role.</h2>
+        <p class="mt-3 max-w-lg leading-relaxed">
+          Build a form for every job with short and long answers, yes-or-no questions, choices, dropdowns, scales, and
+          checkboxes, then drag them into the order you want.
+        </p>
+      </div>
+      <div class="mt-auto pl-8 sm:pl-10">
+        <div class="shot max-h-[23rem] rounded-r-none rounded-b-none border-r-0 border-b-0">
+          <Screenshot
+            name="form"
+            alt="An application form in Emploist: full name, email, and resume, then a phone number, a portfolio link, a single-choice question about years of experience, and a multiple-choice question about tools."
+            sizes="(min-width: 76rem) 40rem, (min-width: 64rem) 52vw, calc(100vw - 4.5rem)"
+          />
+        </div>
+      </div>
+    </article>
+
+    <article
+      aria-labelledby="team-title"
+      class="flex flex-col overflow-hidden rounded-3xl border border-line bg-subtle lg:col-span-5"
+    >
+      <div class="p-8 sm:p-10">
+        <p class="text-eyebrow">Teamwork</p>
+        <h2 id="team-title" class="text-subheading mt-3">Decide together.</h2>
+        <p class="mt-3 max-w-md leading-relaxed">
+          Comment on any application and @mention a teammate to get their take. Invite your whole team at no extra cost.
+        </p>
+      </div>
+      <div class="mt-auto pl-8 sm:pl-10">
+        <!-- Anchored to the bottom, where the new comment and its mention are. -->
+        <div class="shot flex h-[23rem] flex-col justify-end rounded-r-none rounded-b-none border-r-0 border-b-0">
+          <Screenshot
+            name="comments"
+            alt="Comments on an application from three teammates, and a new comment mentioning Priya Shah, picked from a list of teammates."
+            sizes="(min-width: 76rem) 26rem, (min-width: 64rem) 36vw, calc(100vw - 4.5rem)"
+          />
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+---
+import { APP, CREDIT_PACKS, PLAN, formatNumber } from "../../lib/site";
+import Button from "../Button.astro";
+
+const included = [
+  `${formatNumber(PLAN.credits)} AI credits every month`,
+  "Unlimited jobs",
+  "Your whole team, no per-seat fees",
+  "A careers page on your own domain",
+  "Full control of your careers page code",
+  "Application forms and hiring stages",
+  "Automatic emails to candidates, in your own template",
+  "Comments, mentions, and notifications",
+  "Export your applications anytime",
+];
+---
+
+<section id="pricing" aria-labelledby="pricing-title" class="border-t border-line py-20 sm:py-28">
+  <div class="container-page grid gap-14 lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <p class="text-eyebrow">Pricing</p>
+      <h2 id="pricing-title" class="text-heading mt-4">One plan with everything in it.</h2>
+      <p class="text-lead mt-6">
+        No feature tiers and no per-seat fees. One monthly price covers your whole company, however many people you
+        invite.
+      </p>
+      <div class="mt-10 border-t border-line pt-6">
+        <h3 class="font-semibold">What's an AI credit?</h3>
+        <p class="mt-2 text-[0.9375rem] leading-relaxed">
+          Ranking one application uses one credit. Your plan includes {formatNumber(PLAN.credits)} every month, and you
+          can top up anytime.
+        </p>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="overflow-hidden rounded-3xl border border-line bg-raised shadow-[var(--shot-shadow)]">
+        <div class="p-8 sm:p-10">
+          <div class="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <h3 class="text-sm font-semibold text-brand-ink">Emploist</h3>
+              <p class="mt-3 flex items-baseline gap-1.5 text-ink">
+                <span class="text-6xl font-semibold tracking-[-0.045em]">${PLAN.priceUsd}</span>
+                <span class="text-body">a month</span>
+              </p>
+              <p class="mt-1 text-sm text-faint">Plus tax where it applies.</p>
+            </div>
+            <Button href={APP.signUpUrl} size="lg" class="w-full sm:w-auto">
+              Start your {PLAN.trialDays}-day free trial
+            </Button>
+          </div>
+
+          <ul class="check-list mt-10 grid gap-x-8 gap-y-3.5 text-[0.9375rem] text-ink sm:grid-cols-2">
+            {included.map((item) => <li>{item}</li>)}
+          </ul>
+
+          <p class="mt-10 rounded-xl bg-subtle px-5 py-4 text-sm leading-relaxed ring-1 ring-line">
+            <strong class="font-semibold text-ink">The free trial</strong> gives you {PLAN.trialDays} days and {PLAN.trialCredits} AI
+            credits to try everything. You won't be charged until it ends, and you can cancel anytime.
+          </p>
+        </div>
+
+        <div class="border-t border-line bg-subtle p-8 sm:px-10">
+          <h3 class="font-semibold">Need more credits?</h3>
+          <p class="mt-1 text-sm">Buy a pack whenever you like. Packs never expire.</p>
+          <table class="mt-5 w-full text-[0.9375rem]">
+            <caption class="sr-only">Credit packs and their prices</caption>
+            <thead class="sr-only">
+              <tr><th scope="col">Credits</th><th scope="col">Price</th></tr>
+            </thead>
+            <tbody class="divide-y divide-line">
+              {
+                CREDIT_PACKS.map((pack) => (
+                  <tr>
+                    <th scope="row" class="py-3 text-left font-normal text-ink">
+                      {formatNumber(pack.credits)} credits
+                    </th>
+                    <td class="py-3 text-right font-medium text-ink tabular-nums">${pack.priceUsd}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

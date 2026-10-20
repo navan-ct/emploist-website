@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "website",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 4321
+    },
+    {
+      "name": "emploist-app",
+      "runtimeExecutable": "env",
+      "runtimeArgs": ["RATE_LIMIT_MAX=5000", "npm", "--prefix", "../emploist", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}

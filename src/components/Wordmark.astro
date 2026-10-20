@@ -1,0 +1,21 @@
+---
+// The mark (a ranked list of bars on an indigo tile) and the name. Same
+// shapes as the app's `components/wordmark.tsx` and public/favicon.svg.
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span class:list={["inline-flex items-center gap-2 text-[1.1875rem] font-semibold tracking-[-0.02em] text-ink", className]}>
+  <svg viewBox="0 0 64 64" aria-hidden="true" class="size-7 shrink-0">
+    <rect width="64" height="64" rx="14" fill="#4f39f6"></rect>
+    <g fill="#fff">
+      <rect x="16" y="18" width="32" height="7" rx="3.5"></rect>
+      <rect x="16" y="28.5" width="24" height="7" rx="3.5" opacity="0.72"></rect>
+      <rect x="16" y="39" width="16" height="7" rx="3.5" opacity="0.45"></rect>
+    </g>
+  </svg>
+  <span>Emploist</span>
+</span>

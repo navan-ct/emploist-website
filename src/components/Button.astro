@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {
+  href: string;
+  variant?: "primary" | "secondary" | "ghost";
+  size?: "md" | "lg";
+}
+
+const { href, variant = "primary", size = "md", class: className, ...rest } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    "inline-flex shrink-0 items-center justify-center gap-2 rounded-full font-medium whitespace-nowrap transition-colors duration-150",
+    size === "md" ? "h-9 px-4 text-[0.9375rem]" : "h-12 px-6 text-base",
+    variant === "primary" && "bg-brand text-on-brand shadow-[inset_0_1px_0_oklch(100%_0_0/0.18),0_1px_2px_oklch(30%_0.15_277/0.3)] hover:bg-brand-hover",
+    variant === "secondary" && "border border-line-strong bg-raised text-ink hover:border-faint/60 hover:bg-subtle",
+    variant === "ghost" && "text-ink hover:bg-subtle",
+    className,
+  ]}
+  {...rest}
+>
+  <slot />
+</a>

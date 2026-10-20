@@ -1,0 +1,31 @@
+---
+// A plain window around a screenshot: three dots and, optionally, an address.
+interface Props {
+  url?: string;
+  class?: string;
+}
+
+const { url, class: className } = Astro.props;
+---
+
+<div class:list={["shot", className]}>
+  <div class="relative flex h-9 items-center border-b border-line bg-subtle px-3.5">
+    <div class="flex gap-1.5" aria-hidden="true">
+      <span class="size-2.5 rounded-full bg-line-strong"></span>
+      <span class="size-2.5 rounded-full bg-line-strong"></span>
+      <span class="size-2.5 rounded-full bg-line-strong"></span>
+    </div>
+    {
+      url && (
+        <div class="absolute inset-x-0 mx-auto flex h-6 w-fit max-w-[60%] items-center gap-1.5 rounded-md bg-page px-3 text-xs text-faint ring-1 ring-line">
+          <svg viewBox="0 0 16 16" class="size-3 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="3.5" y="7" width="9" height="6.5" rx="1.5" />
+            <path d="M5.5 7V5.25a2.5 2.5 0 0 1 5 0V7" />
+          </svg>
+          <span class="truncate">{url}</span>
+        </div>
+      )
+    }
+  </div>
+  <slot />
+</div>
