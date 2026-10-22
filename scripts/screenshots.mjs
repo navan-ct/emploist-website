@@ -14,11 +14,17 @@
 //                                     (default http://northwind.localhost:3000)
 //   SIGN_IN_EMAIL  who to sign in as  (default alex@example.com)
 //   JOB_TITLE      the job to show    (default Senior Product Designer)
-//   ONLY           names of shots to take, comma-separated (default all)
+//   ONLY           names of shots to take, comma-separated (default all);
+//                  "post" takes the blog post's shots (see postShots)
 
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { execFile } from "node:child_process";
+import { mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
 import { stdin, stdout } from "node:process";
 import { createInterface } from "node:readline/promises";
+import { fileURLToPath } from "node:url";
+import { promisify } from "node:util";
 import { chromium } from "playwright-core";
 
 const APP_URL = process.env.APP_URL ?? "http://localhost:3000";
@@ -231,6 +237,260 @@ const shots = (jobId) => [
   },
 ];
 
+// The blog post "How to customize your careers page with code or AI"
+// (src/content/blog/customize-careers-page.mdx), taken with `ONLY=post`. These
+// shots follow the post's steps in one page, so they change the sample
+// company's careers page code as they go: first the editor's example edits,
+// then the redesign Claude made on claude.ai (kept in
+// scripts/fixtures/careers-page-redesign/). The code is put back afterwards.
+// The post's two claude.ai shots were taken by hand.
+
+const POST_DIR = new URL("../src/content/blog/images/customize-careers-page/", import.meta.url);
+const REDESIGN_DIR = new URL("./fixtures/careers-page-redesign/", import.meta.url);
+/** The ZIP's name in the toast after uploading it, as Claude named it. */
+const REDESIGN_ZIP = "careers-page.zip";
+const CAREERS_FILES = ["layout.liquid", "jobs.liquid", "job.liquid", "apply.liquid", "applied.liquid", "styles.css"];
+const EDITOR = { width: 1400, height: 860 };
+const FONT_LINK =
+  '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&display=swap">';
+
+/** Calls the app's API from a page on it, with the page's session. */
+function api(page, method, path, body) {
+  return page.evaluate(
+    async ([method, path, body]) => {
+      const response = await fetch(path, {
+        method,
+        headers: body ? { "content-type": "application/json" } : {},
+        body: body ? JSON.stringify(body) : undefined,
+      });
+      if (!response.ok) throw new Error(`${method} ${path}: ${response.status} ${await response.text()}`);
+      return response.json();
+    },
+    [method, path, body],
+  );
+}
+
+async function press(page, key, times = 1) {
+  for (let i = 0; i < times; i++) await page.keyboard.press(key);
+}
+
+/** Puts the cursor in the open file's first line that contains `text`. */
+async function clickLine(page, text) {
+  await page.locator(".cm-line", { hasText: text }).first().click();
+}
+
+/** Waits for the editor's preview to catch up with the code. */
+async function waitForPreview(page) {
+  // The preview waits for typing to pause before it updates.
+  await page.waitForTimeout(800);
+  await page.getByText("Updating…").waitFor({ state: "hidden" });
+  await page.frameLocator("iframe[title='Preview of your careers page']").locator("body").waitFor();
+  await settle(page);
+}
+
+/** Scrolls the code back to the left, which the cursor may have moved. */
+async function scrollCodeLeft(page) {
+  await page.locator(".cm-scroller").evaluate((scroller) => {
+    scroller.scrollLeft = 0;
+  });
+}
+
+/** The redesign's files as a ZIP, like the one Claude sent back. */
+async function redesignZip() {
+  const dir = await mkdtemp(path.join(tmpdir(), "emploist-"));
+  const zip = path.join(dir, REDESIGN_ZIP);
+  const files = CAREERS_FILES.map((name) => fileURLToPath(new URL(name, REDESIGN_DIR)));
+  await promisify(execFile)("zip", ["-j", "-q", zip, ...files]);
+  return zip;
+}
+
+/**
+ * The post's cover and link preview, 1200 × 630: the editor with the new
+ * font, and the redesigned page on a phone.
+ */
+async function drawCover() {
+  const asDataUrl = async (name) =>
+    `data:image/png;base64,${(await readFile(new URL(`${name}.png`, POST_DIR))).toString("base64")}`;
+  const [editor, phone] = await Promise.all([asDataUrl("editor-font"), asDataUrl("careers-after-mobile")]);
+  const html = `<!doctype html>
+<html>
+<head>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden; position: relative;
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 55%, #ede9fe 100%);
+  }
+  .window {
+    position: absolute; left: 64px; top: 72px; width: 820px;
+    border-radius: 14px; overflow: hidden; border: 1px solid #e4e4e7; background: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.04), 0 30px 60px -16px rgb(40 30 120 / 0.28);
+  }
+  .bar { display: flex; gap: 6px; align-items: center; height: 30px; padding: 0 12px; background: #fafafa; border-bottom: 1px solid #e4e4e7; }
+  .bar span { width: 9px; height: 9px; border-radius: 50%; background: #d4d4d8; }
+  .window img { display: block; width: 100%; }
+  .phone {
+    position: absolute; right: 72px; top: 44px; width: 270px; height: 560px;
+    border: 8px solid #18181b; border-radius: 40px; background: #18181b; overflow: hidden;
+    box-shadow: 0 30px 60px -12px rgb(24 24 27 / 0.45);
+  }
+  .phone img { display: block; width: 100%; border-radius: 32px; }
+</style>
+</head>
+<body>
+  <div class="window"><div class="bar"><span></span><span></span><span></span></div><img src="${editor}"></div>
+  <div class="phone"><img src="${phone}"></div>
+</body>
+</html>`;
+  // At 2x, since the post shows its cover up to 64rem wide.
+  const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: SCALE });
+  await page.setContent(html);
+  await page.screenshot({ path: new URL("cover.png", POST_DIR).pathname });
+  await page.close();
+  console.log("Saved cover.png");
+}
+
+async function postShots(storageState) {
+  await mkdir(POST_DIR, { recursive: true });
+  const context = await browser.newContext({
+    storageState,
+    colorScheme: "light",
+    viewport: DESKTOP,
+    deviceScaleFactor: SCALE,
+    reducedMotion: "reduce",
+  });
+  const page = await context.newPage();
+  const shot = async (name, clip, fullPage = false) => {
+    await page.screenshot({ path: new URL(`${name}.png`, POST_DIR).pathname, clip, fullPage, animations: "disabled" });
+    console.log(`Saved ${name}.png`);
+  };
+
+  await page.goto(`${APP_URL}/careers-page/design`);
+  const { files: original } = await api(page, "GET", "/api/careers-page");
+  const { files: defaults } = await api(page, "GET", "/api/careers-page/default-code");
+  try {
+    await api(page, "PUT", "/api/careers-page/code", { files: defaults });
+
+    await page.goto(CAREERS_URL);
+    await settle(page);
+    await shot("careers-before");
+
+    await page.setViewportSize({ width: 1280, height: 880 });
+    await page.goto(`${APP_URL}/careers-page/design`);
+    await settle(page);
+    await shot("design-tab");
+    // Wide enough for every file's tab to fit above the code.
+    await page.setViewportSize(EDITOR);
+
+    await page.goto(`${APP_URL}/careers-page/code`);
+    await waitForPreview(page);
+    await shot("editor");
+
+    // The headline: "Join Northwind Labs" → "Build what's next at Northwind Labs".
+    await page.getByRole("tab", { name: "jobs.liquid" }).click();
+    await clickLine(page, "hero-title");
+    await press(page, "End");
+    await press(page, "ArrowLeft", "{{ company.name }}</h1>".length + 1);
+    await press(page, "Shift+ArrowLeft", "Join".length);
+    await page.keyboard.insertText("Build what's next at");
+    await scrollCodeLeft(page);
+    await waitForPreview(page);
+    await shot("editor-headline");
+
+    // The font: load Fraunces from Google Fonts, then put it first in --font.
+    await page.getByRole("tab", { name: "layout.liquid" }).click();
+    await clickLine(page, "stylesheet_url");
+    await press(page, "Home");
+    await page.keyboard.insertText(FONT_LINK);
+    await press(page, "Enter");
+    await page.getByRole("tab", { name: "styles.css" }).click();
+    await clickLine(page, "--font:");
+    await press(page, "Home");
+    await press(page, "ArrowRight", "--font: ".length);
+    await page.keyboard.insertText('"Fraunces", ');
+    await scrollCodeLeft(page);
+    await waitForPreview(page);
+    await shot("editor-font");
+
+    await page.getByRole("button", { name: "Mobile" }).click();
+    await settle(page);
+    await shot("editor-mobile");
+    await page.getByRole("button", { name: "Desktop" }).click();
+
+    // A mistake: delete the {% endif %} that closes the description's {% if %}.
+    await page.getByRole("tab", { name: "jobs.liquid" }).click();
+    await clickLine(page, "endif");
+    await press(page, "End");
+    await press(page, "Shift+Home");
+    await press(page, "Backspace");
+    await waitForPreview(page);
+    await page.getByRole("region", { name: "Problems" }).waitFor();
+    await scrollCodeLeft(page);
+    await shot("editor-problem");
+    await press(page, "ControlOrMeta+z");
+    await waitForPreview(page);
+    await page.getByRole("region", { name: "Problems" }).waitFor({ state: "hidden" });
+
+    await page.getByRole("button", { name: "Reference" }).click();
+    await page.getByRole("dialog").waitFor();
+    await settle(page);
+    await shot("editor-reference");
+    await press(page, "Escape");
+    await page.getByRole("dialog").waitFor({ state: "hidden" });
+
+    await page.getByRole("button", { name: "More actions" }).click();
+    const menu = page.getByRole("menu");
+    await menu.waitFor();
+    await settle(page);
+    const box = await menu.boundingBox();
+    await shot("editor-menu", {
+      x: EDITOR.width - 640,
+      y: 0,
+      width: 640,
+      height: box.y + box.height + 24,
+    });
+    await press(page, "Escape");
+
+    await page.getByRole("button", { name: "Save", exact: true }).click();
+    await page.getByText("Code saved").waitFor();
+
+    // Upload the redesign on the Design tab, which opens it in the editor.
+    await page.goto(`${APP_URL}/careers-page/design`);
+    await settle(page);
+    await page.locator("input[type=file]").setInputFiles(await redesignZip());
+    const toasts = page.getByRole("dialog").filter({ hasText: `from ${REDESIGN_ZIP}` });
+    await toasts.first().waitFor();
+    // Hovering the toast keeps it open while the preview loads. In development
+    // the app shows it twice (React's Strict Mode), so close the other one.
+    await toasts.first().hover();
+    await page.waitForTimeout(500);
+    if ((await toasts.count()) > 1) await toasts.last().getByRole("button", { name: "Dismiss" }).click();
+    await toasts.first().hover();
+    await waitForPreview(page);
+    await shot("editor-upload");
+    await page.getByRole("button", { name: "Save", exact: true }).click();
+    await page.getByText("Code saved").waitFor();
+
+    // The page down to the end of the redesign's "Why join us" section.
+    await page.setViewportSize(DESKTOP);
+    await page.goto(CAREERS_URL);
+    await settle(page);
+    const why = await page.locator("#why-join").boundingBox();
+    await shot("careers-after", { x: 0, y: 0, width: DESKTOP.width, height: why.y + why.height + 64 }, true);
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(CAREERS_URL);
+    await settle(page);
+    await shot("careers-after-mobile");
+
+    await drawCover();
+  } finally {
+    await page.goto(`${APP_URL}/careers-page/design`);
+    await api(page, "PUT", "/api/careers-page/code", { files: original });
+    await context.close();
+  }
+}
+
 const storageState = await signIn();
 const jobId = await findJobId(storageState);
 await mkdir(OUT_DIR, { recursive: true });
@@ -258,5 +518,7 @@ for (const shot of shots(jobId)) {
     await context.close();
   }
 }
+
+if (!ONLY || ONLY.includes("post")) await postShots(storageState);
 
 await browser.close();

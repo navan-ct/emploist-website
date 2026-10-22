@@ -84,6 +84,9 @@ Your post, in Markdown.
   160, since search engines cut longer ones off.
 - Put images next to the post (for example in `src/content/blog/images/`) and
   link them with relative paths. Astro optimizes them when it builds.
+- For screenshots taken at 2x, write the post in MDX and use
+  `src/components/blog/Figure.astro`: it frames the shot like the landing
+  page's, adds a caption, and shows it wider than the text on large screens.
 - Posts appear on `/blog/`, in `/rss.xml`, and in the sitemap, newest first.
   Each post gets article metadata and structured data for search engines.
 
@@ -116,6 +119,12 @@ itself is light only.
 
 After changing the match screenshot or the headline, redraw the link preview
 image with `node scripts/og-image.mjs`.
+
+The same script takes the screenshots in the "How to customize your careers
+page with code or AI" post (`ONLY=post`), and draws its cover. It edits the
+sample company's careers page code as it goes, using the redesign in
+`scripts/fixtures/careers-page-redesign/` (made by Claude on claude.ai), then
+puts the code back. The post's two claude.ai screenshots were taken by hand.
 
 ## Keeping facts in sync
 

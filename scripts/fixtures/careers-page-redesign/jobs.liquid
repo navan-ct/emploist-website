@@ -1,0 +1,137 @@
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">Careers at {{ company.name }}</p>
+    <h1 class="hero-title">Come build what's next with us</h1>
+    {% if company.description != blank %}
+      <p class="hero-text">{{ company.description }}</p>
+    {% endif %}
+    <p class="hero-note">We're glad you're here. Have a look around, and if a role feels like a fit, we'd love to hear from you.</p>
+    <div class="hero-actions">
+      <a class="button button-large" href="#roles">
+        See open roles
+        {% if open_jobs_count > 0 %}<span class="button-count">{{ open_jobs_count }}</span>{% endif %}
+      </a>
+      <a class="text-link" href="#why-join">Why join us</a>
+    </div>
+  </div>
+</section>
+
+<section class="container why" id="why-join" aria-labelledby="why-join-title">
+  <div class="why-header">
+    <p class="eyebrow">Life at {{ company.name }}</p>
+    <h2 class="section-title" id="why-join-title">Why join us</h2>
+    <p class="why-text">Good work needs good conditions. Here's some of what you can count on as part of the team.</p>
+  </div>
+  <ul class="benefits">
+    <li class="benefit">
+      <span class="benefit-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-6h4v6"/></svg>
+      </span>
+      <h3 class="benefit-title">Remote-friendly</h3>
+      <p class="benefit-text">Work from home, from one of our offices, or a mix of both. We hire across locations and plan our days so that nobody is left out of the loop.</p>
+    </li>
+    <li class="benefit">
+      <span class="benefit-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7c-2-1.8-4.8-2.4-8-2v13.5c3.2-.4 6 .2 8 2 2-1.8 4.8-2.4 8-2V5c-3.2-.4-6 .2-8 2z"/><path d="M12 7v13.5"/></svg>
+      </span>
+      <h3 class="benefit-title">Learning budget</h3>
+      <p class="benefit-text">A yearly budget for books, courses, and conferences, plus the time to actually use it. Whatever helps you grow, we'll back it.</p>
+    </li>
+    <li class="benefit">
+      <span class="benefit-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2.5 12H5M19 12h2.5M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      </span>
+      <h3 class="benefit-title">30 days off</h3>
+      <p class="benefit-text">Thirty days of paid time off every year, and we mean it. Rest is part of doing good work, so switch off and come back refreshed.</p>
+    </li>
+    <li class="benefit">
+      <span class="benefit-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      </span>
+      <h3 class="benefit-title">Team offsites</h3>
+      <p class="benefit-text">Regular offsites bring the whole team together in person to plan, celebrate, and get to know each other properly.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="container jobs" id="roles" aria-labelledby="open-roles">
+  <div class="jobs-header">
+    <h2 class="section-title" id="open-roles">Open roles</h2>
+    {% if open_jobs_count > 0 %}
+      <span class="count">{{ open_jobs_count }}</span>
+    {% endif %}
+  </div>
+  {% if open_jobs_count > 0 %}
+    <p class="jobs-intro">Everything we're hiring for right now. Open a role to read more and apply.</p>
+  {% endif %}
+
+  {% if filters.departments.size > 1 or filters.locations.size > 1 %}
+    <form class="filters" method="get" action="{{ jobs_url }}">
+      {% if filters.departments.size > 1 %}
+        <label class="filter">
+          <span class="visually-hidden">Department</span>
+          <select class="select" name="department">
+            <option value="">All departments</option>
+            {% for name in filters.departments %}
+              <option value="{{ name }}"{% if name == filters.department %} selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      {% endif %}
+      {% if filters.locations.size > 1 %}
+        <label class="filter">
+          <span class="visually-hidden">Location</span>
+          <select class="select" name="location">
+            <option value="">All locations</option>
+            {% for name in filters.locations %}
+              <option value="{{ name }}"{% if name == filters.location %} selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      {% endif %}
+      <button class="button" type="submit">Filter</button>
+      {% if filters.active %}
+        <a class="text-link" href="{{ jobs_url }}">Clear filters</a>
+      {% endif %}
+    </form>
+  {% endif %}
+
+  {% if jobs.size > 0 %}
+    {% for group in job_groups %}
+      <section class="job-group">
+        {% if job_groups.size > 1 or group.name != blank %}
+          <h3 class="job-group-title">
+            {% if group.name != blank %}{{ group.name }}{% else %}Other roles{% endif %}
+          </h3>
+        {% endif %}
+        <ul class="job-list">
+          {% for job in group.jobs %}
+            <li>
+              <a class="job-card" href="{{ job.url }}">
+                <span class="job-card-body">
+                  <span class="job-card-title">{{ job.title }}</span>
+                  <span class="meta">
+                    {% if job.location != blank %}<span>{{ job.location }}</span>{% endif %}
+                    {% if job.work_mode != blank %}<span>{{ job.work_mode }}</span>{% endif %}
+                    {% if job.employment_type != blank %}<span>{{ job.employment_type }}</span>{% endif %}
+                  </span>
+                </span>
+                <span class="job-card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+  {% elsif filters.active %}
+    <div class="empty">
+      <p class="empty-title">No roles match these filters</p>
+      <p>Try another department or location, or <a class="text-link" href="{{ jobs_url }}">see all open roles</a>.</p>
+    </div>
+  {% else %}
+    <div class="empty">
+      <p class="empty-title">No open roles right now</p>
+      <p>We're not hiring at the moment, but new roles come up regularly. Please check back soon.</p>
+    </div>
+  {% endif %}
+</section>

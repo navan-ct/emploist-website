@@ -1,0 +1,20 @@
+<div class="container apply">
+  <a class="back-link" href="{{ job.url }}">&larr; Back to the job</a>
+
+  <header class="apply-header">
+    <h1 class="page-title">Apply for {{ job.title }}</h1>
+    <p class="meta">
+      {% if job.department != blank %}<span>{{ job.department }}</span>{% endif %}
+      {% if job.location != blank %}<span>{{ job.location }}</span>{% endif %}
+      {% if job.work_mode != blank %}<span>{{ job.work_mode }}</span>{% endif %}
+      {% if job.employment_type != blank %}<span>{{ job.employment_type }}</span>{% endif %}
+    </p>
+  </header>
+
+  <div class="card">
+    {{ form }}
+  </div>
+  {% if company.ai_enabled %}
+    <p class="ai-notice">We use AI to help review applications against this job's requirements.</p>
+  {% endif %}
+</div>

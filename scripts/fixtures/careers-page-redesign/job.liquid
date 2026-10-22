@@ -1,0 +1,35 @@
+<article class="container job">
+  <a class="back-link" href="{{ jobs_url }}">&larr; All open roles</a>
+
+  <header class="job-header">
+    {% if job.department != blank %}
+      <p class="eyebrow">{{ job.department }}</p>
+    {% endif %}
+    <h1 class="page-title">{{ job.title }}</h1>
+    <p class="meta">
+      {% if job.location != blank %}<span>{{ job.location }}</span>{% endif %}
+      {% if job.work_mode != blank %}<span>{{ job.work_mode }}</span>{% endif %}
+      {% if job.employment_type != blank %}<span>{{ job.employment_type }}</span>{% endif %}
+    </p>
+    {% if job.open %}
+      <a class="button button-large" href="{{ job.apply_url }}">Apply for this job</a>
+    {% endif %}
+  </header>
+
+  {% if job.open %}
+    <div class="prose">
+      {{ job.description }}
+    </div>
+    <div class="job-footer">
+      <a class="button button-large" href="{{ job.apply_url }}">Apply for this job</a>
+      {% if company.ai_enabled %}
+        <p class="ai-notice">We use AI to help review applications against this job's requirements.</p>
+      {% endif %}
+    </div>
+  {% else %}
+    <div class="notice">
+      <p class="notice-title">This job isn't accepting applications anymore</p>
+      <p>Take a look at our <a class="text-link" href="{{ jobs_url }}">open roles</a> instead.</p>
+    </div>
+  {% endif %}
+</article>

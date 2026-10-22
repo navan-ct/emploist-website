@@ -12,9 +12,13 @@ export function postUrl(post: Post): string {
   return `/blog/${post.id}/`;
 }
 
-/** Minutes to read, at about 225 words a minute. */
+/**
+ * Minutes to read, at about 225 words a minute. MDX imports and components,
+ * like a screenshot's alt text, aren't counted.
+ */
 export function readingMinutes(post: Post): number {
-  const words = (post.body ?? "").trim().split(/\s+/).filter(Boolean).length;
+  const text = (post.body ?? "").replace(/^import\s.*$/gm, "").replace(/<[A-Z][\s\S]*?\/>/g, "");
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 225));
 }
 

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    {{ page.seo_tags }}
+    {% if company.logo_url != blank %}
+      <link rel="icon" href="{{ company.logo_url }}">
+    {% endif %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&display=swap">
+    <link rel="stylesheet" href="{{ stylesheet_url }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a class="brand" href="{{ jobs_url }}">
+          {% if company.logo_url != blank %}
+            <img class="brand-logo" src="{{ company.logo_url }}" alt="">
+          {% endif %}
+          <span class="brand-name">{{ company.name }}</span>
+          <span class="brand-tag">Careers</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="site-main">
+      {{ content_for_layout }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        &copy; {{ "now" | date: "%Y" }} {{ company.name }}
+      </div>
+    </footer>
+  </body>
+</html>

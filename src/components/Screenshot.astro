@@ -1,12 +1,14 @@
 ---
 // A screenshot from src/assets/screenshots (made by scripts/screenshots.mjs),
-// as AVIF and WebP at several widths.
+// or one a blog post imports, as AVIF and WebP at several widths.
 import type { ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
 
 interface Props {
   /** The file name without `-light.png` or `-dark.png`. */
-  name: string;
+  name?: string;
+  /** Or the image itself, e.g. a blog post's screenshot. Taken at 2x too. */
+  src?: ImageMetadata;
   alt: string;
   /** The image's displayed width, for the browser to pick a file. */
   sizes: string;
@@ -17,13 +19,13 @@ interface Props {
   class?: string;
 }
 
-const { name, alt, sizes, priority = false, scheme = "light", class: className } = Astro.props;
+const { name, src: image, alt, sizes, priority = false, scheme = "light", class: className } = Astro.props;
 
 const files = import.meta.glob<{ default: ImageMetadata }>("/src/assets/screenshots/*.png", {
   eager: true,
 });
 const path = `/src/assets/screenshots/${name}-${scheme}.png`;
-const src = files[path]?.default;
+const src = image ?? files[path]?.default;
 if (!src) throw new Error(`Missing screenshot: ${path.slice(1)}`);
 
 const WIDTHS = [320, 480, 720, 960, 1280, 1600, 2000, 2560];

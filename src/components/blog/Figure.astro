@@ -1,0 +1,39 @@
+---
+// A screenshot in a blog post, wider than the text on large screens, with an
+// optional caption. Shots of a whole page get a window frame; crops of part
+// of a page get a plain frame.
+import type { ImageMetadata } from "astro";
+import Screenshot from "../Screenshot.astro";
+import Window from "../Window.astro";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption?: string;
+  /** "window" for a whole page, with the address if `url` is set. */
+  frame?: "window" | "plain";
+  url?: string;
+  /** For narrow crops: keep them at their natural width instead of filling the column. */
+  narrow?: boolean;
+}
+
+const { src, alt, caption, frame = "window", url, narrow = false } = Astro.props;
+const sizes = narrow
+  ? `${Math.round(src.width / 2)}px`
+  : "(min-width: 80rem) 58rem, (min-width: 64rem) 52rem, calc(100vw - 2.5rem)";
+---
+
+<figure class:list={["not-prose my-10 sm:my-12", narrow ? "mx-auto w-fit max-w-full" : "lg:-mx-16 xl:-mx-28"]}>
+  {
+    frame === "window" ? (
+      <Window url={url}>
+        <Screenshot src={src} alt={alt} sizes={sizes} />
+      </Window>
+    ) : (
+      <div class="shot">
+        <Screenshot src={src} alt={alt} sizes={sizes} />
+      </div>
+    )
+  }
+  {caption && <figcaption class="mt-4 text-center text-sm leading-relaxed text-faint">{caption}</figcaption>}
+</figure>
