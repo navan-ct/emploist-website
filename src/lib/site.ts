@@ -4,7 +4,7 @@
 
 export const SITE = {
   name: "Emploist",
-  url: "https://emploist.com",
+  url: "https://www.emploist.com",
   title: "Emploist: Applicant tracking with AI ranking and a careers page",
   description:
     "Post jobs on your own careers page, collect applications, and see every applicant ranked by AI against your job description. $29 a month for your whole team, with a 14-day free trial.",

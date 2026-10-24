@@ -1,6 +1,6 @@
 # Emploist website
 
-The marketing site for [Emploist](https://emploist.com): a single landing page
+The marketing site for [Emploist](https://www.emploist.com): a single landing page
 with a blog. It's built with [Astro](https://astro.build) as static HTML and
 CSS, with no client-side framework, so pages load fast and are easy for search
 engines to read.
@@ -152,5 +152,5 @@ serve (Cloudflare Pages, Netlify, Vercel, S3 with CloudFront, and so on).
 - Files in `dist/_astro/` have a hash in their name, so cache them for a year
   (`Cache-Control: public, max-age=31536000, immutable`). Cache HTML for a short
   time, or not at all, so updates show up right away.
-- The site is at `https://emploist.com` (`site` in `astro.config.mjs`). If that
+- The site is at `https://www.emploist.com` (`site` in `astro.config.mjs`). If that
   changes, update it there and in `src/lib/site.ts`.

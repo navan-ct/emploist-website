@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
 export default defineConfig({
-  site: "https://emploist.com",
+  site: "https://www.emploist.com",
   // Pages build to folders (blog/index.html), which every static host serves
   // at /blog/, so links and canonical URLs end with a slash.
   trailingSlash: "always",
