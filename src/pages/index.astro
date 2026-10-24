@@ -44,13 +44,22 @@ const jsonLd = [
         operatingSystem: "Web",
         description: SITE.description,
         publisher: { "@id": organizationId },
-        offers: {
-          "@type": "Offer",
-          price: String(PLAN.priceUsd),
-          priceCurrency: "USD",
-          url: APP.signUpUrl,
-          description: `${PLAN.trialDays}-day free trial, then $${PLAN.priceUsd} a month for the whole team.`,
-        },
+        offers: [
+          {
+            "@type": "Offer",
+            price: String(PLAN.priceUsd),
+            priceCurrency: "USD",
+            url: APP.signUpUrl,
+            description: `${PLAN.trialDays}-day free trial, then $${PLAN.priceUsd} a month for the whole team.`,
+          },
+          {
+            "@type": "Offer",
+            price: String(PLAN.yearlyPriceUsd),
+            priceCurrency: "USD",
+            url: APP.signUpUrl,
+            description: `${PLAN.trialDays}-day free trial, then $${PLAN.yearlyPriceUsd} a year for the whole team.`,
+          },
+        ],
       },
       {
         "@type": "FAQPage",

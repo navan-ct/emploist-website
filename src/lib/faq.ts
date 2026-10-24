@@ -1,4 +1,4 @@
-import { CREDIT_PACKS, PLAN, formatNumber } from "./site";
+import { CREDIT_PACKS, PLAN, YEARLY_SAVINGS, formatNumber } from "./site";
 
 /** The landing page's questions, also sent to search engines as FAQPage data. */
 export const FAQ: readonly { question: string; answer: string }[] = [
@@ -8,7 +8,11 @@ export const FAQ: readonly { question: string; answer: string }[] = [
   },
   {
     question: "What is an AI credit?",
-    answer: `Ranking one application uses one credit. Your plan includes ${formatNumber(PLAN.credits)} credits every month. If you need more, packs start at ${formatNumber(CREDIT_PACKS[0].credits)} credits for $${CREDIT_PACKS[0].priceUsd}, and they never expire.`,
+    answer: `Ranking one application uses one credit. Your plan includes ${formatNumber(PLAN.credits)} credits every month, or ${formatNumber(PLAN.yearlyCredits)} up front when you pay yearly. If you need more, packs start at ${formatNumber(CREDIT_PACKS[0].credits)} credits for $${CREDIT_PACKS[0].priceUsd}, and they never expire.`,
+  },
+  {
+    question: "Can we pay yearly?",
+    answer: `Yes. Yearly is $${PLAN.yearlyPriceUsd} a year, ${YEARLY_SAVINGS}% less than paying monthly, with ${formatNumber(PLAN.yearlyCredits)} AI credits up front. It starts with the same ${PLAN.trialDays}-day free trial. If you're on monthly, you can switch to yearly anytime in Billing, and you pay for the year less the unused days of your current month.`,
   },
   {
     question: "What happens if we run out of credits?",

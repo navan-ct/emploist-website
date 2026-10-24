@@ -20,9 +20,15 @@ export const APP = {
 export const PLAN = {
   priceUsd: 29,
   credits: 1000,
+  /** Yearly's credits come all at once. */
+  yearlyPriceUsd: 299,
+  yearlyCredits: 12000,
   trialDays: 14,
   trialCredits: 100,
 } as const;
+
+/** How much cheaper yearly is than 12 months, as a whole percentage. */
+export const YEARLY_SAVINGS = Math.round((1 - PLAN.yearlyPriceUsd / (PLAN.priceUsd * 12)) * 100);
 
 export const CREDIT_PACKS = [
   { credits: 1000, priceUsd: 9 },

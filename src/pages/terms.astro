@@ -30,7 +30,7 @@ const sections = [
 <LegalLayout
   title="Terms of Service"
   description="The terms for using Emploist: who can use it, the plan and free trial, refunds and cancellation, AI ranking, acceptable use, and how we process applicant data."
-  updated="October 20, 2026"
+  updated="October 24, 2026"
   sections={sections}
 >
   <Fragment slot="summary">
@@ -41,9 +41,10 @@ const sections = [
         accept these terms for it.
       </li>
       <li>
-        There's one Plan: US${PLAN.priceUsd} a month plus tax, billed monthly in advance by Dodo Payments, our merchant
-        of record. It includes {formatNumber(PLAN.credits)} AI credits a month, and the free trial gives you {PLAN.trialDays} days
-        and {PLAN.trialCredits} credits.
+        There's one Plan, billed in advance by Dodo Payments, our merchant of record: US${PLAN.priceUsd} a month with {
+          formatNumber(PLAN.credits)
+        } AI credits a month, or US${PLAN.yearlyPriceUsd} a year with {formatNumber(PLAN.yearlyCredits)}
+        AI credits up front, plus tax. The free trial gives you {PLAN.trialDays} days and {PLAN.trialCredits} credits.
       </li>
       <li>
         An admin can cancel anytime from the Billing page. Cancel before your free trial or billing period ends, and you
@@ -171,7 +172,7 @@ const sections = [
   <p>Your company has two roles:</p>
   <ul>
     <li>
-      <strong>Admins</strong> manage billing (starting the Plan, buying credit packs, managing payment details and invoices,
+      <strong>Admins</strong> manage billing (starting and changing the Plan, buying credit packs, managing payment details and invoices,
       and canceling), company settings, the careers page and its address and code, the company-wide switches for AI
       ranking and for emails to applicants, the reply-to address and email layout, invitations, roles, and removing
       people. Only admins can delete the company.
@@ -362,10 +363,30 @@ const sections = [
 
   <h3>The Plan</h3>
   <p>
-    Emploist has one Plan. It costs US${PLAN.priceUsd} a month, plus applicable taxes, billed monthly in advance. It
-    includes everything Emploist offers and {formatNumber(PLAN.credits)} Credits each billing period. Your Plan renews automatically
-    every month until it's canceled.
+    Emploist has one Plan, which you can pay for monthly or yearly, in advance, plus applicable taxes. Monthly billing
+    costs US${PLAN.priceUsd} a month, and yearly billing costs US${PLAN.yearlyPriceUsd} a year. Either way, the Plan includes
+    everything Emploist offers, and Credits each billing period (see below). Your Plan renews automatically at the end of
+    each billing period, for another period of the same length, until it's canceled.
   </p>
+
+  <h3>Switching to yearly billing</h3>
+  <ul>
+    <li>
+      An admin can switch a monthly Plan to yearly billing from the Billing page, as long as the Plan is set to renew and
+      its payments are up to date.
+    </li>
+    <li>
+      If you switch during the free trial, nothing is charged then. The trial goes on, and when it ends, Dodo charges the
+      first yearly payment.
+    </li>
+    <li>
+      If you switch after the trial, your yearly billing period starts that day. Dodo charges the yearly price, less a
+      credit for the unused part of your current month, and the year's Credits replace any Plan Credits left from the
+      month.
+    </li>
+    <li>If the payment for the switch fails, your Plan stays as it was.</li>
+    <li>A yearly Plan can't be switched to monthly billing.</li>
+  </ul>
 
   <h3>Dodo Payments, our merchant of record</h3>
   <p>
@@ -387,8 +408,14 @@ const sections = [
   <ul>
     <li>Your first Plan can start with a free trial of {PLAN.trialDays} days, which includes {PLAN.trialCredits} Credits.</li>
     <li>
-      You add a payment card at checkout, and you aren't charged during the trial. When the trial ends, Dodo charges the
-      first monthly payment, unless you've canceled before then (see <a href="#refunds-and-cancellation">section 6</a>).
+      You choose monthly or yearly billing and add a payment card at checkout, and you aren't charged during the trial.
+      When the trial ends, Dodo charges the first monthly or yearly payment, unless you've canceled before then (see <a
+        href="#refunds-and-cancellation">section 6</a
+      >).
+    </li>
+    <li>
+      If the trial's Credits run out before it ends, an admin can end the trial early from Emploist. Dodo then charges
+      the first payment straight away, your first billing period starts that day, and its Credits replace the trial's.
     </li>
     <li>If you cancel during the trial, Emploist keeps working until the trial ends, and then your Plan ends.</li>
     <li>
@@ -400,7 +427,9 @@ const sections = [
   <h3>AI credits</h3>
   <ul>
     <li>
-      Your Plan includes {formatNumber(PLAN.credits)} Credits each billing period. They're added when the payment for that
+      Your Plan includes Credits each billing period: {formatNumber(PLAN.credits)} a month with monthly billing, or {
+        formatNumber(PLAN.yearlyCredits)
+      } a year with yearly billing. They're added all at once, when the payment for that
       period succeeds.
     </li>
     <li>
@@ -494,7 +523,8 @@ const sections = [
       Payments are non-refundable, except where the law requires a refund, or if we stop offering Emploist (see <a
         href="#suspension-and-termination">section 14</a
       >). Otherwise, there are no refunds or credits for partial billing periods, unused time, unused Credits, or credit
-      packs.
+      packs. The only exception is the credit for the unused part of your month when you switch to yearly billing (see
+      <a href="#plans-and-payments">section 5</a>).
     </li>
     <li>
       If you believe the law entitles you to a refund, email us at <a href={`mailto:${SITE.supportEmail}`}
