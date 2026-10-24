@@ -21,7 +21,7 @@ export const PLAN = {
   priceUsd: 29,
   credits: 1000,
   /** Yearly's credits come all at once. */
-  yearlyPriceUsd: 299,
+  yearlyPriceUsd: 290,
   yearlyCredits: 12000,
   trialDays: 14,
   trialCredits: 100,
