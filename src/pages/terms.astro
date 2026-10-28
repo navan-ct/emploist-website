@@ -7,6 +7,7 @@ const sections = [
   { id: "accounts", title: "Accounts, companies, and roles" },
   { id: "service", title: "The service" },
   { id: "ai-ranking", title: "AI ranking" },
+  { id: "ai-assistants", title: "AI assistants (MCP)" },
   { id: "plans-and-payments", title: "Plan, free trial, and payments" },
   { id: "refunds-and-cancellation", title: "Refunds and cancellation" },
   { id: "your-content", title: "Your content and applicants' data" },
@@ -29,8 +30,8 @@ const sections = [
 
 <LegalLayout
   title="Terms of Service"
-  description="The terms for using Emploist: who can use it, the plan and free trial, refunds and cancellation, AI ranking, acceptable use, and how we process applicant data."
-  updated="October 25, 2026"
+  description="The terms for using Emploist: who can use it, the plan and free trial, refunds and cancellation, AI ranking, AI assistants, acceptable use, and how we process applicant data."
+  updated="October 28, 2026"
   sections={sections}
 >
   <Fragment slot="summary">
@@ -62,8 +63,13 @@ const sections = [
         for a decision.
       </li>
       <li>
+        AI assistants are on by default: anyone on your team can connect one, such as Claude or ChatGPT, that works in
+        Emploist as them, with their role, and an admin can turn this off. Assistants are third-party services you choose,
+        not our subprocessors. You're responsible for what they do in Emploist and for the data they receive.
+      </li>
+      <li>
         We process applicants' data on your behalf under the <a href="#data-processing">data processing terms</a> in
-        section 13. We don't sell it or use it to train AI models.
+        section 14. We don't sell it or use it to train AI models.
       </li>
       <li>These terms are governed by Indian law, and disputes go to the courts at Kozhikode, Kerala.</li>
     </ul>
@@ -108,7 +114,7 @@ const sections = [
   <h3>What our agreement includes</h3>
   <ul>
     <li>
-      these Terms, including the data processing terms in <a href="#data-processing">section 13</a>
+      these Terms, including the data processing terms in <a href="#data-processing">section 14</a>
     </li>
     <li>
       our <a href="/privacy/#subprocessors">list of subprocessors</a>, which is part of the data processing terms and is
@@ -121,15 +127,19 @@ const sections = [
   </p>
   <p>
     If anything conflicts, the data processing terms win over the rest of these Terms and over the Privacy Policy for
-    anything about personal data in Customer Data. Where the Standard Contractual Clauses apply (see section 13), they
-    win over both. Your purchase from Dodo Payments is also covered by Dodo's own Buyer Terms (see section 5).
+    anything about personal data in Customer Data. Where the Standard Contractual Clauses apply (see section 14), they
+    win over both. Your purchase from Dodo Payments is also covered by Dodo's own Buyer Terms (see section 6).
   </p>
 
   <h3>Words we use</h3>
   <ul>
     <li>
       <strong>"Emploist"</strong> or <strong>"the service"</strong> means the Emploist web app, the careers pages and emails
-      it provides, and our related support.
+      it provides, its MCP server for AI assistants, and our related support.
+    </li>
+    <li>
+      <strong>"AI assistant"</strong> means an AI app or agent, such as Claude, ChatGPT, or Cursor, that a team member
+      connects to Emploist through our MCP server (see <a href="#ai-assistants">section 5</a>).
     </li>
     <li>
       <strong>"Your company"</strong> means the company you set up in Emploist. It holds your jobs, careers page, team,
@@ -158,8 +168,9 @@ const sections = [
   <h3>Signing in</h3>
   <p>
     You sign in with a Google or Microsoft account, or with a one-time code we email to you. Emploist doesn't use
-    passwords, so anyone who controls your email or your Google or Microsoft account can sign in as you. Keep them
-    secure, don't share sign-in codes or invitation links, and don't let anyone else use your account.
+    passwords, so anyone who controls your email or your Google or Microsoft account can sign in as you, and connect an
+    AI assistant that works as you. Keep them secure, don't share sign-in codes or invitation links, and don't let anyone
+    else use your account or your AI assistants' access to it.
   </p>
 
   <h3>Your company</h3>
@@ -174,8 +185,8 @@ const sections = [
     <li>
       <strong>Admins</strong> manage billing (starting and changing the Plan, buying credit packs, managing payment details and invoices,
       and canceling), company settings, the careers page and its address and code, the company-wide switches for AI
-      ranking and for emails to applicants, the reply-to address and email layout, invitations, roles, and removing
-      people. Only admins can delete the company.
+      ranking, AI assistants, and emails to applicants, the reply-to address and email layout, invitations, roles, and
+      removing people. Only admins can delete the company.
     </li>
     <li>
       <strong>Members</strong> work with jobs and applications. They can create, edit, publish, and delete jobs, set up a
@@ -185,7 +196,9 @@ const sections = [
   </ul>
   <p>
     Admins can change anyone's role and remove anyone, including other admins. Every company must always have at least
-    one admin.
+    one admin. Admins and members can both connect AI assistants, which work with their own role (see <a
+      href="#ai-assistants">section 5</a
+    >).
   </p>
 
   <h3>Your responsibility for your team</h3>
@@ -216,6 +229,7 @@ const sections = [
     <li>move applicants through hiring stages and email them along the way</li>
     <li>comment on applications and mention your teammates</li>
     <li>export applications</li>
+    <li>work in Emploist from an AI assistant you connect (see <a href="#ai-assistants">section 5</a>)</li>
   </ul>
   <p>
     Emploist is a software tool. We aren't an employment agency or a recruiter, and we don't make hiring decisions for
@@ -242,7 +256,7 @@ const sections = [
   <h3>Support and availability</h3>
   <p>
     We provide support by email at <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Dodo Payments
-    handles questions about payments, invoices, and refunds (see sections 5 and 6). We aim to reply quickly, but we don't
+    handles questions about payments, invoices, and refunds (see sections 6 and 7). We aim to reply quickly, but we don't
     promise response times. We work to keep Emploist available and reliable, but we don't offer a service level
     agreement or guarantee uptime. Emploist may sometimes be unavailable, for example during maintenance or because of
     problems with our providers or the internet.
@@ -262,16 +276,17 @@ const sections = [
   <h3>What it doesn't do</h3>
   <p>
     AI ranking never rejects, advances, moves, or emails anyone by itself. Only your team members move applications
-    between stages. Emails to applicants go out only when an application arrives or when someone on your team moves an
-    application, and only if you've turned on the email for that stage.
+    between stages, directly or through AI assistants they connect (see <a href="#ai-assistants">section 5</a>).
+    Emails to applicants go out only when an application arrives or when someone on your team, or their AI assistant,
+    moves an application, and only if you've turned on the email for that stage.
   </p>
 
   <h3>Turning it on and off</h3>
   <p>
     AI ranking is on by default when a company is created. While your Plan is active, admins can turn it off, or back
-    on, for the whole company in Settings. While it's off, applications aren't sent to our AI provider, match scores are
-    hidden, and new applications aren't ranked. When an admin turns it back on, Emploist asks whether to rank the
-    applications that arrived while it was off, which sends them to our AI provider and uses Credits, or to leave them
+    on, for the whole company in Settings, or through an AI assistant. While it's off, applications aren't sent to our
+    AI provider, match scores are hidden, and new applications aren't ranked. When an admin turns it back on, Emploist
+    asks whether to rank the applications that arrived while it was off, which sends them to our AI provider and uses Credits, or to leave them
     unranked. If you don't want AI to help review applications, turn it off before you start taking them.
   </p>
 
@@ -336,7 +351,10 @@ const sections = [
       reviewing applications for the job they were submitted to. Reviewing an application that an employee submits for a
       job is fine.
     </li>
-    <li>to make decisions automatically, or in any process that acts on scores without a person's review</li>
+    <li>
+      to make decisions automatically, or in any process that acts on scores without a person's review, including
+      through an AI assistant
+    </li>
     <li>in a way that misleads anyone about the role of AI, for example by presenting a score as a person's judgment</li>
     <li>in a way that breaks the law or violates applicants' privacy or other rights</li>
   </ul>
@@ -348,9 +366,9 @@ const sections = [
     in our <a href="/privacy/#subprocessors">list of subprocessors</a>. We don't use Customer Data to train AI models.
     Our AI provider's terms say it won't use the data we send to train its AI models without our consent, and we don't
     give that consent. Its terms also let it keep and use that data in other ways, as described in <a
-      href="#data-processing">section 13</a
+      href="#data-processing">section 14</a
     >. We may change our AI provider or the model we use. A new AI provider is a new subprocessor, so we'll give notice
-    of it as described in section 13. Scores already given don't change unless you rank the applications again.
+    of it as described in section 14. Scores already given don't change unless you rank the applications again.
   </p>
 
   <h3>Where AI ranking is available</h3>
@@ -359,7 +377,112 @@ const sections = [
     or where a law would require steps we can't reasonably take. We'll tell affected admins in advance where we can.
   </p>
 
-  <h2 id="plans-and-payments">5. Plan, free trial, and payments</h2>
+  <h2 id="ai-assistants">5. AI assistants (MCP)</h2>
+
+  <h3>What it does</h3>
+  <p>
+    Emploist has an MCP server, which lets AI assistants, such as Claude or ChatGPT, use Emploist for you. Once you
+    connect one, you can ask it to work with your company's jobs and applications. For example, it can read
+    applications, including the text of resumes, comment on them, move them between stages, rank them, and create,
+    edit, publish, close, or delete jobs. An admin's assistant can also turn AI ranking or stage emails on or off and
+    change the reply-to address. Some things can only be done in the Emploist app, such as billing, members and
+    invitations, careers page code, email layouts, the text of stage emails, domains, and deleting your company or an
+    account.
+  </p>
+
+  <h3>Connecting and disconnecting</h3>
+  <ul>
+    <li>
+      AI assistants are on by default for every company. Any team member, admin or member, can connect one for
+      themselves: they sign in to Emploist from the assistant and allow it on a consent page.
+    </li>
+    <li>
+      A connected assistant works as the person who connected it, with their role. Through our MCP server, it can do
+      anything that person's role allows, and what it does is recorded as done by that person, for example as the author
+      of a comment or the person who moved an application.
+    </li>
+    <li>
+      Each person can see and disconnect their own assistants on the MCP page in Emploist. Disconnecting stops the
+      assistant at once, but signing out of Emploist doesn't. Deleting your account disconnects all your assistants,
+      and removing someone from your company stops their assistants from using it.
+    </li>
+    <li>
+      A connection belongs to the person who made it, not to a company. If someone joins your company with an assistant
+      they connected before, for example while in another company, that assistant can work with your company's data as
+      soon as they join.
+    </li>
+    <li>
+      Admins can't see or disconnect other people's assistants in Emploist. An admin can turn AI assistants off for the
+      whole company in Settings at any time, including while your company is read-only, and turn them back on later.
+      While
+      they're off, connected assistants can't use your company's data. Their connections are kept, so they work again
+      when AI assistants are turned back on.
+    </li>
+    <li>
+      While your company is read-only (see <a href="#refunds-and-cancellation">section 7</a>), connected assistants can
+      still read your company's data, but can't change it.
+    </li>
+  </ul>
+
+  <h3>Assistants are third-party services you choose</h3>
+  <p>
+    AI assistants are made and run by other companies, such as Anthropic or OpenAI, or run on your own computers, and you
+    and your team members choose which ones to connect. They aren't part of Emploist, and their providers aren't our
+    subprocessors. When an assistant uses Emploist, we send it the data it asks for: Customer Data, such as applicants'
+    names, contact details, answers, match scores, resume text, and your team's comments, and your team members' names,
+    email addresses, and roles. Once data reaches an assistant, its provider handles it under the terms you or your team
+    member agreed with that provider, and it may be processed in other countries. We don't control that data, can't
+    delete it, and, except as data protection laws or the SCCs (see section 14) require, aren't responsible for it.
+  </p>
+
+  <h3>Your responsibilities</h3>
+  <p>
+    Whether your team uses AI assistants is your decision. You're responsible for:
+  </p>
+  <ul>
+    <li>
+      choosing assistants and providers you trust with Customer Data, including applicants' data, and making sure that
+      sending it to them is lawful. For example, you may need a data processing agreement or a transfer mechanism with
+      the provider, and your privacy notice to applicants may need to cover it (see <a href="#your-content">section 8</a
+      >).
+    </li>
+    <li>
+      everything your team members' assistants do in Emploist, as if your team members did it themselves. Assistants can
+      make mistakes, misunderstand requests, or act on the wrong job or applicant, and some of what they do can't be
+      undone. For example, an assistant can delete jobs, applications, and comments, move applications in a way that
+      emails applicants, publish or close jobs on your careers page, and rank applications, which uses Credits and sends
+      them to our AI provider. An admin's assistant can also turn AI ranking or stage emails on or off, and change where
+      applicants' replies go.
+    </li>
+    <li>
+      checking what an assistant is about to do before you let it, especially changes that delete data or that
+      applicants or the public will see. Emploist tells assistants which of its tools only read, which change or delete
+      data, and which reach applicants, so that they can ask you first. But whether an assistant asks depends on the
+      assistant and how you've set it up.
+    </li>
+    <li>
+      following <a href="#ai-ranking">section 4</a> when an assistant works with match scores. Don't let an assistant
+      reject, advance, or email applicants on its own, or make any other decision about them without a person's review.
+    </li>
+  </ul>
+
+  <h3>What applicants write</h3>
+  <p>
+    Applicants write their names, answers, and resumes, and some may try to give instructions to AI assistants, for
+    example to rank them first. When an assistant reads what an applicant wrote, Emploist labels it as written by the
+    applicant, tells the assistant not to follow instructions in it, and adds a warning when it looks like instructions
+    to an AI. These safeguards can't catch everything, and assistants may not follow them.
+  </p>
+
+  <h3>Availability</h3>
+  <p>
+    The technical limits in <a href="#service">section 3</a> apply to AI assistants too, including how many requests
+    each person's assistants can make. We may change what assistants can do through our MCP server, or how they connect,
+    as section 3 describes. We may block an assistant from connecting, or disconnect it, if we reasonably believe it's
+    insecure, harmful, or used against these Terms.
+  </p>
+
+  <h2 id="plans-and-payments">6. Plan, free trial, and payments</h2>
 
   <h3>The Plan</h3>
   <p>
@@ -410,7 +533,7 @@ const sections = [
     <li>
       You choose monthly or yearly billing and add a payment card at checkout, and you aren't charged during the trial.
       When the trial ends, Dodo charges the first monthly or yearly payment, unless you've canceled before then (see <a
-        href="#refunds-and-cancellation">section 6</a
+        href="#refunds-and-cancellation">section 7</a
       >).
     </li>
     <li>
@@ -472,7 +595,7 @@ const sections = [
     <li>Your Plan's Credits are used before your pack Credits.</li>
     <li>
       Unused pack Credits are lost if your company is deleted, including if we delete it after 12 months without an
-      active Plan (see section 14).
+      active Plan (see section 15).
     </li>
     <li>
       If a pack is refunded, in full or in part, its remaining Credits are removed. Credits already used aren't affected.
@@ -484,7 +607,7 @@ const sections = [
   <p>
     If a payment fails, Emploist keeps working for a short grace period, and the Billing page shows when it ends. If the
     payment still hasn't gone through by then, your company becomes read-only (see <a href="#refunds-and-cancellation"
-      >section 6</a
+      >section 7</a
     >) until an admin updates the payment method in Dodo's customer portal. Dodo may also cancel your Plan if it can't
     collect payment.
   </p>
@@ -503,7 +626,7 @@ const sections = [
     consent.
   </p>
 
-  <h2 id="refunds-and-cancellation">6. Refunds and cancellation</h2>
+  <h2 id="refunds-and-cancellation">7. Refunds and cancellation</h2>
 
   <h3>Canceling your Plan</h3>
   <ul>
@@ -521,10 +644,10 @@ const sections = [
   <ul>
     <li>
       Payments are non-refundable, except where the law requires a refund, or if we stop offering Emploist (see <a
-        href="#suspension-and-termination">section 14</a
+        href="#suspension-and-termination">section 15</a
       >). Otherwise, there are no refunds or credits for partial billing periods, unused time, unused Credits, or credit
       packs. The only exception is the credit for the unused part of your month when you switch to yearly billing (see
-      <a href="#plans-and-payments">section 5</a>).
+      <a href="#plans-and-payments">section 6</a>).
     </li>
     <li>
       If you believe the law entitles you to a refund, email us at <a href={`mailto:${SITE.supportEmail}`}
@@ -547,7 +670,7 @@ const sections = [
     <li>cancels your Plan immediately, with no refund for the rest of the billing period or the trial</li>
     <li>
       permanently deletes your company's data, including its jobs, applications, resumes, and unused pack Credits, as
-      described in section 13
+      described in section 14
     </li>
     <li>can't be undone, so export anything you need first</li>
   </ul>
@@ -559,10 +682,13 @@ const sections = [
   </p>
   <ul>
     <li>your team can still sign in, see everything, and export applications</li>
-    <li>team members can still leave the company or delete their own account</li>
+    <li>connected AI assistants can still read your company's data, but can't change it</li>
+    <li>
+      team members can still leave the company, disconnect their AI assistants, or delete their own account
+    </li>
     <li>
       admins can start or restart the Plan (or, if a payment failed, update the payment method), remove team members,
-      cancel invitations, and delete the company
+      cancel invitations, turn AI assistants off, and delete the company
     </li>
     <li>
       you can't make other changes, such as deleting individual applications or jobs, closing jobs, turning AI ranking on
@@ -574,11 +700,11 @@ const sections = [
   </ul>
   <p>
     We keep your company's data until you delete it, except as described in <a href="#suspension-and-termination"
-      >section 14</a
+      >section 15</a
     >.
   </p>
 
-  <h2 id="your-content">7. Your content and applicants' data</h2>
+  <h2 id="your-content">8. Your content and applicants' data</h2>
 
   <h3>Customer Data is yours</h3>
   <p>
@@ -591,8 +717,9 @@ const sections = [
     You give us a worldwide, non-exclusive, royalty-free license to host, store, copy, process, transmit, display, and
     publish Customer Data, only as needed to provide, secure, and support Emploist as described in these Terms, including
     finding and fixing problems, and including through our subprocessors. This lets us, for example,
-    publish your jobs on your careers page, send your emails to applicants, and rank applications while AI ranking is on.
-    The license ends when the Customer Data is deleted.
+    publish your jobs on your careers page, send your emails to applicants, rank applications while AI ranking is on, and
+    send Customer Data to the AI assistants your team members connect. The license ends when the Customer Data is
+    deleted.
   </p>
 
   <h3>What we don't do</h3>
@@ -606,13 +733,14 @@ const sections = [
   <ul>
     <li>
       have a lawful basis, and any consents the law requires (such as a parent's consent for applicants under 18, where
-      needed), for collecting and using applicants' data in Emploist, including for AI ranking and for our processing
-      described in section 13
+      needed), for collecting and using applicants' data in Emploist, including for AI ranking, for sending it to the AI
+      assistants your team connects, and for our processing described in section 14
     </li>
     <li>
-      give applicants your own privacy notice that covers your use of Emploist, including AI ranking while it's on, at or
-      before the time they apply. The default careers page doesn't include one, so add it yourself, for example in your job
-      descriptions, as text or a checkbox on your application form, or in your careers page code.
+      give applicants your own privacy notice that covers your use of Emploist, including AI ranking while it's on and any
+      AI assistants your team uses with their data, at or before the time they apply. The default careers page doesn't
+      include one, so add it yourself, for example in your job descriptions, as text or a checkbox on your application
+      form, or in your careers page code.
     </li>
     <li>
       keep the AI notice described in <a href="#ai-ranking">section 4</a> whenever AI ranking is on, including if you use
@@ -624,7 +752,7 @@ const sections = [
     </li>
     <li>
       respond to applicants who ask to see, correct, or delete their data, or who use their other rights. We'll help as
-      described in section 13.
+      described in section 14.
     </li>
     <li>
       decide how long to keep applicants' data, and delete it when you no longer need it. Emploist doesn't delete
@@ -657,10 +785,10 @@ const sections = [
     page code. We'll tell you when we do, unless the law doesn't allow it or there's an urgent risk.
   </p>
 
-  <h2 id="acceptable-use">8. Acceptable use</h2>
+  <h2 id="acceptable-use">9. Acceptable use</h2>
   <p>
     These rules apply to you and everyone on your team. If they're broken, we may remove content, suspend your company,
-    or end these Terms, as described in sections 7 and 14.
+    or end these Terms, as described in sections 8 and 15.
   </p>
 
   <h3>Hiring</h3>
@@ -717,7 +845,7 @@ const sections = [
     </li>
     <li>
       overload or disrupt Emploist, or access it with bots, scrapers, or other automated tools, except through the
-      features we provide
+      features we provide, such as AI assistants connected through our MCP server, and within our technical limits
     </li>
     <li>copy, decompile, or reverse engineer Emploist, except where the law allows it despite this rule</li>
     <li>
@@ -726,7 +854,7 @@ const sections = [
     </li>
     <li>
       use Emploist, or non-public information about it, to build or help build a competing product, or copy Emploist's
-      software or design, except as section 9 allows
+      software or design, except as section 10 allows
     </li>
     <li>
       use Emploist in breach of sanctions or export control laws, including from a country or region under comprehensive
@@ -741,7 +869,7 @@ const sections = [
     <li>help or encourage anyone else to do any of these things</li>
   </ul>
 
-  <h2 id="careers-pages">9. Careers pages, domains, and code</h2>
+  <h2 id="careers-pages">10. Careers pages, domains, and code</h2>
 
   <h3>Careers page addresses</h3>
   <ul>
@@ -797,24 +925,25 @@ const sections = [
     those components. You own the changes you make, and we keep our rights in the code you started from.
   </p>
 
-  <h2 id="third-party-services">10. Third-party services</h2>
+  <h2 id="third-party-services">11. Third-party services</h2>
   <p>Emploist relies on services run by other companies, including:</p>
   <ul>
     <li>Google and Microsoft, if you sign in with them</li>
-    <li>Dodo Payments, which sells our Plan and credit packs (section 5)</li>
-    <li>our subprocessors, which help us run Emploist (section 13)</li>
+    <li>Dodo Payments, which sells our Plan and credit packs (section 6)</li>
+    <li>our subprocessors, which help us run Emploist (section 14)</li>
+    <li>AI assistants and their providers, if your team connects them (section 5)</li>
   </ul>
   <p>
-    Their own terms and privacy policies may apply when you use them, for example when you sign in with Google or pay
-    through Dodo. We aren't responsible for third-party services you choose to use with Emploist, such as your domain
-    provider, your email inbox, or websites your code loads resources from.
+    Their own terms and privacy policies may apply when you use them, for example when you sign in with Google, pay
+    through Dodo, or use an AI assistant. We aren't responsible for third-party services you choose to use with
+    Emploist, such as AI assistants, your domain provider, your email inbox, or websites your code loads resources from.
   </p>
   <p>
     Microsoft and Google aren't parties to these Terms. To the extent permitted by law, all warranties and all liability
     on their behalf are disclaimed, both for Emploist and for signing in to it with their accounts.
   </p>
 
-  <h2 id="our-property">11. Our intellectual property</h2>
+  <h2 id="our-property">12. Our intellectual property</h2>
   <p>
     We own Emploist, including its software, design, default careers page code, documentation, and the Emploist name and
     logo. These Terms give you the right to use Emploist as they describe, and no other rights. We keep all rights we
@@ -825,7 +954,7 @@ const sections = [
   <h3>Publicity</h3>
   <p>We won't use your name, logo, or trademarks to promote Emploist without your permission.</p>
 
-  <h2 id="confidentiality">12. Confidentiality</h2>
+  <h2 id="confidentiality">13. Confidentiality</h2>
   <p>
     "Confidential Information" means non-public information that one of us shares with the other in connection with
     Emploist, and that is marked as confidential or should reasonably be understood to be confidential. Customer Data is
@@ -837,7 +966,7 @@ const sections = [
     <li>protect it with at least reasonable care</li>
     <li>
       share it only with people and service providers who need it for that purpose and are bound by confidentiality
-      duties
+      duties, or as the other directs, for example with the AI assistants your team members connect
     </li>
   </ul>
   <p>
@@ -845,10 +974,10 @@ const sections = [
     knew or developed independently, or that the recipient received lawfully from someone else without a duty of
     confidentiality. Either of us may disclose Confidential Information when the law or a court requires it, after
     telling the other where the law allows. These duties last for as long as the information stays confidential. Section
-    13 also applies to personal data in Customer Data, including how our subprocessors may use it.
+    14 also applies to personal data in Customer Data, including how our subprocessors may use it.
   </p>
 
-  <h2 id="data-processing">13. Privacy and data processing</h2>
+  <h2 id="data-processing">14. Privacy and data processing</h2>
   <p>
     This section is our data processing agreement. It applies whenever we process personal data in Customer Data on your
     behalf. It's designed to meet the requirements for contracts with processors under the EU and UK General Data
@@ -873,8 +1002,8 @@ const sections = [
     </li>
     <li>
       We're a controller for the personal data we collect to run our business, such as your team members' sign-in and
-      account details, the invitations we send, billing contacts, support emails, security logs, and visits to our
-      website. Our <a href="/privacy/">Privacy Policy</a> covers that data.
+      account details, the invitations we send, AI assistants' connections and sign-in tokens, billing contacts, support
+      emails, security logs, and visits to our website. Our <a href="/privacy/">Privacy Policy</a> covers that data.
     </li>
   </ul>
 
@@ -903,7 +1032,8 @@ const sections = [
         <td>
           Hosting, storing, organizing, displaying, and transmitting Customer Data: publishing your careers pages,
           collecting applications, ranking them with AI while AI ranking is on, sending your emails to applicants,
-          exporting and deleting data when you ask, and supporting and securing Emploist. We process Customer Data only to
+          sending data to the AI assistants your team members connect, when they ask for it, exporting and deleting
+          data when you ask, and supporting and securing Emploist. We process Customer Data only to
           provide Emploist to you.
         </td>
       </tr>
@@ -930,8 +1060,8 @@ const sections = [
         <td>
           We don't ask for it, and you're responsible for not requesting it unlawfully. Resumes and answers may still
           contain it, such as information about health, religion, or ethnic origin, or a photo. It's protected by the
-          security measures below, and access is limited to your team, and to us and our subprocessors as needed to
-          provide Emploist.
+          security measures below, and access is limited to your team and the AI assistants they connect, and to us and
+          our subprocessors as needed to provide Emploist.
         </td>
       </tr>
       <tr>
@@ -945,6 +1075,7 @@ const sections = [
           in the Asia-Pacific region. Accessed by us from India. Our AI provider processes and stores the data it receives
           in the United States, our email sending provider sends email from Japan and stores email data in the United
           States, and our email inbox provider may be outside the European Union, as shown in our list of subprocessors.
+          AI assistants your team members connect receive data wherever their providers process it.
         </td>
       </tr>
       <tr>
@@ -962,7 +1093,10 @@ const sections = [
     We process Customer Data only on your documented instructions, including about transferring it to other countries.
     Your instructions are these Terms, your use of Emploist, and the settings you and your team choose, such as turning
     AI ranking or stage emails on or off. They include transferring Customer Data to the places and subprocessors
-    described in this section. You may give us further instructions in writing. If one would need work outside the
+    described in this section. When a team member connects an AI assistant, they instruct us to send it the Customer
+    Data it asks for. You authorize your team members to give this instruction, and an admin can withdraw it for
+    everyone by turning AI assistants off. The assistant's provider receives that data as a recipient you chose, and not
+    as our subprocessor. You may give us further instructions in writing. If one would need work outside the
     normal service, we'll agree with you how to handle it.
   </p>
   <p>
@@ -990,12 +1124,19 @@ const sections = [
   <ul>
     <li>
       <strong>Access control.</strong> Every request for a company's data in the app is checked against the signed-in
-      person's company, and admin-only actions are checked separately. Resumes are kept in private storage and are only
-      served to team members of the company that received them.
+      person's company, and admin-only actions are checked separately. AI assistants are checked in the same way, as the
+      person who connected them, with that person's role. Resumes are kept in private storage and are only served to
+      team members of the company that received them, and as text to the AI assistants they connect.
     </li>
     <li>
       <strong>Sign-in.</strong> There are no passwords to steal. One-time sign-in codes are stored hashed, expire after a few
       minutes, and allow only a few attempts. Invitation links are random and stored only as a hash.
+    </li>
+    <li>
+      <strong>AI assistants.</strong> Assistants sign in with OAuth, using PKCE. Their access tokens are signed and expire
+      after an hour. Their authorization codes are stored only as a hash, and their refresh tokens as a hash, with an
+      encrypted copy of the newest tokens so that retries work. Every request from an assistant checks its token and
+      that it's still connected, so disconnecting an assistant stops it at once. Applicants' text is labeled as written by the applicant when an assistant reads it.
     </li>
     <li><strong>Encryption.</strong> The app and careers pages are served over HTTPS, and stored data is encrypted at rest.</li>
     <li><strong>Backups.</strong> We back up Customer Data regularly, and we can restore it from those backups.</li>
@@ -1009,10 +1150,13 @@ const sections = [
       time and memory limits. Rich text, email layouts, and SVG logos are sanitized.
     </li>
     <li>
-      <strong>Abuse prevention.</strong> Rate limits apply to the app, careers pages, and applications, and application forms
-      have a spam trap.
+      <strong>Abuse prevention.</strong> Rate limits apply to the app, AI assistants, careers pages, and applications, and
+      application forms have a spam trap.
     </li>
-    <li><strong>Logging.</strong> Sign-in credentials, cookies, and secret links are kept out of our logs.</li>
+    <li>
+      <strong>Logging.</strong> Sign-in credentials, including AI assistants' authorization codes and tokens, cookies, and
+      secret links are kept out of our logs.
+    </li>
     <li><strong>Payments.</strong> Card details are handled by Dodo, and we never receive them.</li>
     <li>
       <strong>Incident response.</strong> We have a process for investigating and containing security incidents, and for
@@ -1038,6 +1182,12 @@ const sections = [
     <li>
       We put written data protection terms in place with each subprocessor, as data protection laws require. We remain
       responsible to you for our subprocessors' processing of Customer Data.
+    </li>
+    <li>
+      AI assistants that your team members connect, and their providers, aren't our subprocessors. Except as data
+      protection laws or the SCCs require, we aren't responsible for how they process Customer Data (see <a
+        href="#ai-assistants">section 5</a
+      >).
     </li>
     <li>
       Our AI provider's published terms say it won't use the data we send to train its AI models without our consent, and
@@ -1096,6 +1246,12 @@ const sections = [
     <li>
       <strong>Our subprocessors.</strong> When a subprocessor in a country without an adequacy decision processes Customer
       Data, we use the SCCs or another transfer mechanism that data protection laws recognize.
+    </li>
+    <li>
+      <strong>AI assistants.</strong> Sending Customer Data to an AI assistant that a team member connects is a disclosure
+      on your documented instructions. Where it's an onward transfer under Clause 8.7 (Module 2) or Clause 8.8 (Module 3)
+      of the SCCs, you confirm that each assistant's provider meets one of the conditions in that clause, for example by
+      being certified under the EU-US Data Privacy Framework or by having signed the SCCs with you.
     </li>
     <li>
       <strong>Other laws.</strong> If another data protection law requires a transfer mechanism, we'll work with you in good
@@ -1175,7 +1331,7 @@ const sections = [
     </li>
     <li>
       When your Plan ends, Customer Data stays available, read-only, so you can view and export it, until you delete your
-      company or we delete it as described in <a href="#suspension-and-termination">section 14</a>.
+      company or we delete it as described in <a href="#suspension-and-termination">section 15</a>.
     </li>
     <li>
       The export doesn't include match scores or comments. If you need them, email us before you delete your company and
@@ -1197,6 +1353,7 @@ const sections = [
       when you ask.
     </li>
     <li>data already sent to our subprocessors is kept and deleted under their terms, as described in this section</li>
+    <li>data already sent to AI assistants is kept and deleted under their providers' terms, which we don't control</li>
   </ul>
   <p>If you ask, we'll confirm in writing what we've deleted, and which of these exceptions still apply.</p>
 
@@ -1224,6 +1381,7 @@ const sections = [
     <li>publishing your careers pages and collecting applications</li>
     <li>ranking applications with AI while AI ranking is on</li>
     <li>sending your emails to applicants</li>
+    <li>sending it to the AI assistants your team members connect, when they ask for it</li>
     <li>exporting and deleting it when you ask</li>
     <li>keeping Emploist secure, finding and fixing problems, and providing support</li>
   </ul>
@@ -1254,12 +1412,12 @@ const sections = [
     the data is about, and erase it as described above.
   </p>
 
-  <h2 id="suspension-and-termination">14. Suspension and termination</h2>
+  <h2 id="suspension-and-termination">15. Suspension and termination</h2>
 
   <h3>If you want to stop</h3>
   <p>
     You can stop using Emploist at any time. Cancel your Plan to stop future charges (see <a
-      href="#refunds-and-cancellation">section 6</a
+      href="#refunds-and-cancellation">section 7</a
     >), and delete your company if you want its data deleted. These Terms end when your company is deleted. Team members
     can delete their own account in Settings. If you aren't in any company, email us and we'll delete your account.
   </p>
@@ -1267,7 +1425,7 @@ const sections = [
   <h3>Suspension</h3>
   <p>We may suspend your company's access to Emploist, or to part of it, if:</p>
   <ul>
-    <li>a payment fails and isn't fixed, in which case your company becomes read-only as described in section 6</li>
+    <li>a payment fails and isn't fixed, in which case your company becomes read-only as described in section 7</li>
     <li>a charge is disputed with your bank or card issuer</li>
     <li>you or your team members seriously or repeatedly break these Terms</li>
     <li>your use creates a security risk, or could harm Emploist, other customers, applicants, or anyone else</li>
@@ -1309,10 +1467,10 @@ const sections = [
     general terms.
   </p>
 
-  <h2 id="disclaimers">15. Disclaimers</h2>
+  <h2 id="disclaimers">16. Disclaimers</h2>
   <p>
     <strong
-      >Except as these Terms expressly say, including in section 13, and to the extent permitted by law, Emploist is
+      >Except as these Terms expressly say, including in section 14, and to the extent permitted by law, Emploist is
       provided "as is" and "as available", without warranties of any kind, whether express, implied, or statutory.</strong
     > This includes any warranties of merchantability, fitness for a particular purpose, title, non-infringement, and accuracy,
     and any warranty that Emploist will be uninterrupted, secure, or free of errors.
@@ -1320,6 +1478,10 @@ const sections = [
   <p>In particular, we don't promise:</p>
   <ul>
     <li>that match scores or any other AI output will be accurate, complete, or free of bias</li>
+    <li>
+      that AI assistants will work with Emploist, do what you ask, or respect our safeguards, such as the labels on what
+      applicants write
+    </li>
     <li>any hiring result, such as a number of applications or finding the right person</li>
     <li>
       that your use of Emploist will meet the legal requirements that apply to you, including employment,
@@ -1328,7 +1490,7 @@ const sections = [
   </ul>
   <p>Our guides and the text in the app aren't legal advice.</p>
 
-  <h2 id="liability">16. Limitation of liability</h2>
+  <h2 id="liability">17. Limitation of liability</h2>
   <p>To the extent permitted by law:</p>
   <ul>
     <li>
@@ -1346,13 +1508,13 @@ const sections = [
   </ul>
   <p>
     These limits don't apply to liability that the law doesn't allow to be limited or excluded, such as liability for
-    fraud. The first point doesn't limit what you owe for your Plan and credit packs, your obligations under section 17,
-    or your liability for breaking section 8 or infringing our intellectual property. Nothing in these Terms limits data
+    fraud. The first point doesn't limit what you owe for your Plan and credit packs, your obligations under section 18,
+    or your liability for breaking section 9 or infringing our intellectual property. Nothing in these Terms limits data
     subjects' rights under data protection laws or the SCCs, or any liability under the SCCs that the SCCs don't allow to
     be limited.
   </p>
 
-  <h2 id="indemnity">17. Indemnity</h2>
+  <h2 id="indemnity">18. Indemnity</h2>
   <p>
     To the extent permitted by law, you'll defend us against any claim, demand, or proceeding brought by a third party,
     such as an applicant, a team member, or an authority, and pay any resulting damages, fines, penalties, settlements,
@@ -1369,6 +1531,10 @@ const sections = [
       protection, and AI laws
     </li>
     <li>code you or your team members add to Emploist</li>
+    <li>
+      what AI assistants your team members connect do in Emploist, and how they and their providers handle the Customer
+      Data they receive
+    </li>
   </ul>
   <p>
     This doesn't apply to the extent the claim is caused by our breach of these Terms or the law, by our negligence, or by
@@ -1383,7 +1549,7 @@ const sections = [
     obligations on us without our written consent.
   </p>
 
-  <h2 id="changes">18. Changes to these terms</h2>
+  <h2 id="changes">19. Changes to these terms</h2>
   <ul>
     <li>We may update these Terms. When we do, we'll post the new version here and update the date at the top.</li>
     <li>
@@ -1393,12 +1559,12 @@ const sections = [
     </li>
     <li>Other changes, such as clarifications or terms for new features, take effect when we post them.</li>
     <li>
-      Changes won't reduce the overall protection that the data processing terms in section 13 give Customer Data, unless
+      Changes won't reduce the overall protection that the data processing terms in section 14 give Customer Data, unless
       the law requires the change. We can't change the SCCs or the UK Addendum ourselves.
     </li>
   </ul>
 
-  <h2 id="disputes">19. Governing law and disputes</h2>
+  <h2 id="disputes">20. Governing law and disputes</h2>
   <ul>
     <li>
       These Terms, and any dispute arising out of or relating to them or Emploist, are governed by the laws of India,
@@ -1422,7 +1588,7 @@ const sections = [
     </li>
   </ul>
 
-  <h2 id="general">20. General</h2>
+  <h2 id="general">21. General</h2>
   <ul>
     <li>
       <strong>Entire agreement.</strong> These Terms, including the data processing terms and our list of subprocessors, are
@@ -1440,7 +1606,7 @@ const sections = [
       <strong>Events beyond our control.</strong> Neither of us is responsible for delays or failures caused by events
       beyond reasonable control, such as natural disasters, war, civil unrest, government action, epidemics, power or
       internet failures, or failures of our providers. This doesn't excuse paying for your Plan and credit packs, or our
-      responsibility for our subprocessors under section 13.
+      responsibility for our subprocessors under section 14.
     </li>
     <li>
       <strong>Notices.</strong> We send notices to your admins' email addresses, and may also show them in Emploist, so keep
@@ -1478,7 +1644,7 @@ const sections = [
     </li>
   </ul>
 
-  <h2 id="contact">21. Contact</h2>
+  <h2 id="contact">22. Contact</h2>
   <p>
     Questions about these Terms, notices, or complaints? Email us at <a href={`mailto:${SITE.supportEmail}`}
       >{SITE.supportEmail}</a

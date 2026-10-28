@@ -22,8 +22,8 @@ const sections = [
 
 <LegalLayout
   title="Privacy Policy"
-  description="How Emploist handles personal data: what we collect, how AI ranking uses job applications, who we share data with, where it's stored, and your rights."
-  updated="October 25, 2026"
+  description="How Emploist handles personal data: what we collect, how AI ranking and AI assistants use job applications, who we share data with, where it's stored, and your rights."
+  updated="October 28, 2026"
   sections={sections}
 >
   <Fragment slot="summary">
@@ -48,13 +48,17 @@ const sections = [
         matches the job. The match score never rejects, moves, or emails anyone by itself.
       </li>
       <li>
+        People on a team can connect an AI assistant, such as Claude or ChatGPT, to Emploist. We then send the assistant
+        the data it asks for, which can include applications and resume text. The assistant is run by a company the team
+        chose, such as Anthropic or OpenAI, which handles that data under its own terms.
+      </li>
+      <li>
         We don't sell personal data or use it for advertising. We use no analytics and no tracking cookies.
       </li>
       <li>
         Our server and database are in Singapore, and our file storage is in the Asia-Pacific region. We access data from
-        India, and some providers process it in the US and Japan. <a href="#international-transfers"
-          >International transfers</a
-        > explains how we protect it.
+        India, and some providers process it in the US and Japan. AI assistants that teams connect may process it
+        elsewhere. <a href="#international-transfers">International transfers</a> explains how we protect it.
       </li>
       <li>
         You can ask to access, correct, or delete your personal data, or object to how we use it, among other rights.
@@ -70,8 +74,9 @@ const sections = [
     applications. Emploist is operated by Navaneeth CT, an individual based in India ("Emploist", "we", "us").
   </p>
   <p>
-    This policy explains how we handle personal data when you use the Emploist app at app.emploist.com, visit
-    emploist.com, apply for a job on a careers page that runs on Emploist, or contact us.
+    This policy explains how we handle personal data when you use the Emploist app at app.emploist.com, including
+    through an AI assistant you connect to it, visit emploist.com, apply for a job on a careers page that runs on
+    Emploist, or contact us.
   </p>
   <p>
     We take questions and requests by email only, at <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
@@ -164,7 +169,8 @@ const sections = [
   <h3>The employer is in charge of your application</h3>
   <p>
     The employer whose careers page you applied on decides what the form asks, how your application is used, who on
-    their team has access to Emploist, whether AI ranking is used, and how long your application is kept. That makes the
+    their team has access to Emploist, whether AI ranking is used, whether their team uses AI assistants with it, and
+    how long your application is kept. That makes the
     employer the controller of your application. Emploist provides the software and handles your application on the
     employer's behalf. In this section, "employer" means the organization whose careers page you applied on. If that's a
     recruiter hiring for a client, the client may also be responsible for your application.
@@ -186,7 +192,9 @@ const sections = [
   <p>
     Emploist also keeps the date you applied, the hiring stage your application is in, and its history. Everyone on the
     employer's team in Emploist can see your application. They can comment on it, move it between stages, export it,
-    and delete it.
+    and delete it. Except for exporting, they can also do this through <a href="#applicants-ai-assistants"
+      >AI assistants</a
+    > they connect.
   </p>
 
   <h3>Your IP address and browser details</h3>
@@ -236,8 +244,8 @@ const sections = [
     The match score is meant to help the employer decide whose applications to review first. The employer's team sees it
     with your application, and their list of applications is sorted by match score unless they choose another order. The
     match score never rejects you, moves your application to another stage, or sends you an email by itself. Only people
-    on the employer's team move applications. Like any AI, it can be wrong, so our Terms require employers not to rely on
-    the score alone.
+    on the employer's team move applications, directly or through AI assistants they connect. Like any AI, it can be
+    wrong, so our Terms require employers not to rely on the score alone.
   </p>
   <p>
     While AI ranking is off, new applications aren't sent to TypeSafe. If the employer turns it back on, its admins can
@@ -245,9 +253,28 @@ const sections = [
   </p>
   <p>
     Emploist keeps the match score and its breakdown with your application. We don't keep the text taken from your
-    resume. It's read from your file each time the application is ranked, and discarded afterwards. How TypeSafe handles
+    resume. It's read from your file each time the application is ranked or an AI assistant asks for it, and discarded
+    afterwards. How TypeSafe handles
     the data we send is described in <a href="#subprocessors">Sharing and subprocessors</a>, and how it's protected
     in <a href="#international-transfers">International transfers</a>.
+  </p>
+
+  <h3 id="applicants-ai-assistants">AI assistants used by the employer's team</h3>
+  <p>
+    People on the employer's team can connect AI assistants, such as Claude or ChatGPT, to Emploist, and use them to read
+    and manage applications. When they do, we send the assistant what it asks for, which can include your name, email
+    address, phone number, answers, match score, the text of your resume (the same text described above for AI
+    ranking) and its file name, the date you applied, the stage your application is in, its history, and the team's
+    comments. When the team member asks, the assistant can also comment on your application, move it to another stage,
+    which can send you an email, have it ranked with AI, or delete it.
+  </p>
+  <p>
+    These assistants are run by companies the employer's team chooses, such as Anthropic or OpenAI, or on the team's own
+    computers. They aren't part of Emploist, and they aren't our subprocessors. They handle what they receive under the
+    terms the employer's team agreed with them, which can involve other countries, and we can't control or delete it.
+    The employer is responsible for this, so ask the employer if you want to know which assistants it uses. When an
+    assistant reads what you wrote, Emploist labels it as written by you and tells the assistant not to follow
+    instructions in it.
   </p>
 
   <h3>Your choices and rights</h3>
@@ -255,12 +282,14 @@ const sections = [
   <ul>
     <li>object to AI ranking of your application, or ask for it to be reviewed by a person without AI</li>
     <li>ask how your application was assessed</li>
+    <li>ask which AI assistants the employer's team uses with your application</li>
     <li>access, correct, or delete your data, or use any other right you have</li>
   </ul>
   <p>
     The employer makes these decisions. In Emploist, the employer's team can export a job's applications and delete
     applications or whole jobs, and its admins can delete the company. Admins can turn AI ranking off for the whole
-    company, but Emploist can't turn it off for a single application. Some requests need our help, which we give when
+    company, but Emploist can't turn it off for a single application. Admins can also turn AI assistants off for the
+    whole company. Some requests need our help, which we give when
     the employer asks by email: correcting the details in an application, which Emploist can't edit, providing match
     scores, their breakdown, and comments, which aren't in the export, and deleting applications or jobs while the
     employer's company is read-only.
@@ -280,7 +309,8 @@ const sections = [
   <p>
     A few things can outlast your application, such as a notification about it that someone on the employer's team has
     already read, which keeps your name and the job title, copies in our backups and logs, and data already sent to
-    TypeSafe or Resend. <a href="#retention">How long we keep information</a> explains these exceptions.
+    TypeSafe, Resend, or AI assistants the employer's team uses. <a href="#retention">How long we keep information</a>
+    explains these exceptions.
   </p>
 
   <h3>Careers pages and other websites</h3>
@@ -322,8 +352,9 @@ const sections = [
     </li>
     <li>
       <strong>How we use it.</strong> Only to sign you in, recognize you, and show your name and email address in
-      Emploist, for example to your teammates and to people you invite. We don't use the tokens to access your Google
-      or Microsoft account or any data in it, and we don't show your profile picture.
+      Emploist, for example to your teammates and to people you invite, and to send them to the AI assistants you or
+      your teammates connect (see <a href="#ai-assistant-providers">AI assistants you connect</a>). We don't use the
+      tokens to access your Google or Microsoft account or any data in it, and we don't show your profile picture.
     </li>
     <li>
       <strong>How we store it.</strong> With your Emploist account, in Singapore, protected
@@ -349,7 +380,8 @@ const sections = [
   </p>
   <p>
     The work you do in Emploist for your company, such as the jobs you create, the comments you write and the people you
-    mention, and the applications you move, is stored with your name. Your teammates can see your name, your email
+    mention, and the applications you move, is stored with your name. This includes what AI assistants you connect do
+    for you. Your teammates can see your name, your email
     address, and this activity. All of this is part of your company's Customer Data. Your company controls it, and we
     handle it on your company's behalf, so it stays with your company if you leave or delete your account.
   </p>
@@ -360,6 +392,40 @@ const sections = [
     invitation's status. We email them a link that expires after 7 days, and we store only a scrambled (hashed) version
     of the link's secret part. The email and the page it opens show the name of the person who sent the invitation, or
     their email address if they haven't set a name.
+  </p>
+
+  <h3 id="ai-assistants">AI assistants (MCP)</h3>
+  <p>
+    You can connect an AI assistant, such as Claude or ChatGPT, to Emploist. You sign in to Emploist from the assistant,
+    and allow it on a consent page. If you do, we keep:
+  </p>
+  <ul>
+    <li>
+      <strong>The assistant's details</strong>, as the assistant gives them to us, such as its name, ID, website, logo
+      link, and the addresses we send you back to after you allow it. For some assistants, such as Claude and ChatGPT,
+      our server reads these details from the assistant's website, without sending it any personal data. We keep them
+      with no set time limit, even after everyone has disconnected the assistant.
+    </li>
+    <li><strong>Your connection</strong>: which assistant you allowed, what it can access, and when you allowed it.</li>
+    <li>
+      <strong>Sign-in tokens.</strong> After you allow an assistant, it gets an authorization code that's valid for 10
+      minutes and is stored only as a hash. It swaps the code for an access token, which lasts an hour, and usually a
+      refresh token, which lets it keep working without you signing in again. Refresh tokens are stored as a hash and
+      expire 30 days after the assistant last used one. Each time an assistant uses a refresh token, it gets new
+      tokens, and we keep an encrypted copy of them with the old refresh token, so that if the assistant has to retry,
+      it gets the same answer. These copies are deleted when the assistant is disconnected.
+    </li>
+    <li>
+      <strong>What it does.</strong> What your assistant does in Emploist is recorded as done by you, like your own work
+      (see above). Our request logs also record each request it makes, including the tool it used, the assistant's ID,
+      and the IP address and software details of wherever the assistant runs, such as its provider's servers or your
+      computer.
+    </li>
+  </ul>
+  <p>
+    When the consent page or the MCP page in Emploist shows an assistant's logo, your browser loads it from the address
+    the assistant gave us, usually its own website, which receives your IP address and browser details.
+    What we send the assistant is described in <a href="#ai-assistant-providers">AI assistants you connect</a>.
   </p>
 
   <h3>Billing information</h3>
@@ -395,18 +461,19 @@ const sections = [
       browser and device. For IPv6 addresses, we store only the network part, not the full address.
     </li>
     <li>
-      <strong>Request logs.</strong> Our servers log each request to the app and to careers pages. A log entry includes
+      <strong>Request logs.</strong> Our servers log each request to the app, including its MCP server for AI
+      assistants, and to careers pages. A log entry includes
       the IP address, browser details, the page the request came from (if the browser sends it), the address of the page
       or data requested, and the response's status and headers. Some of these can include applicants' details. A search for an applicant's
-      name in the app puts it in the logged address. When someone on a team opens a resume, its file name, which often
-      includes the applicant's name, is logged with the response. And the log entry for each application received links
-      the applicant's IP address and browser details to the application's ID. We don't log the contents of
+      name in the app, or by an AI assistant, puts it in the logged address. When someone on a team opens a resume, or
+      their AI assistant reads it, its file name, which often includes the applicant's name, is logged with the
+      response. And the log entry for each application received links the applicant's IP address and browser details to the application's ID. We don't log the contents of
       applications, comments, or uploaded files, and we remove cookies, sign-in secrets, and invitation links from our
       logs.
     </li>
     <li>
       <strong>Rate limits.</strong> We use IP addresses briefly, in memory, to limit how many requests come from one
-      address. These counts aren't saved.
+      address. We count AI assistants' requests per person in the same way. These counts aren't saved.
     </li>
   </ul>
 
@@ -432,10 +499,14 @@ const sections = [
     <li>session tokens, which keep you signed in</li>
     <li>Google or Microsoft sign-in tokens, stored with your account</li>
     <li>the secret part of invitation links, stored only in hashed form</li>
+    <li>
+      AI assistants' authorization codes and refresh tokens, stored in hashed form, and the encrypted copies of their
+      newest tokens
+    </li>
   </ul>
   <p>
-    We use them only to sign people in. Applicants sometimes include sensitive details in their resumes. The employer is
-    responsible for that data.
+    We use them only to sign people in, and to let people's AI assistants act for them. Applicants sometimes include
+    sensitive details in their resumes. The employer is responsible for that data.
   </p>
 
   <h2 id="how-we-use-information">5. How we use information</h2>
@@ -454,21 +525,21 @@ const sections = [
     <tbody>
       <tr>
         <td>
-          Providing Emploist: running your account and company, showing your team's work, running careers pages, and
-          sending the emails your company sets up
+          Providing Emploist: running your account and company, showing your team's work, running careers pages,
+          sending the emails your company sets up, and letting the AI assistants you connect work for you
         </td>
         <td>
-          Account information. We also process your company's Customer Data, including your work for it, as
-          our <a href="/terms/#data-processing">data processing terms</a> describe.
+          Account information, and your AI assistants' details and connections. We also process your company's Customer
+          Data, including your work for it, as our <a href="/terms/#data-processing">data processing terms</a> describe.
         </td>
         <td>Legitimate interests: providing the service your company signed up for</td>
       </tr>
       <tr>
         <td>
-          Signing you in and keeping Emploist secure: checking sign-ins, keeping sessions, limiting request rates, and
-          preventing and investigating spam and abuse
+          Signing you in and keeping Emploist secure: checking sign-ins, including AI assistants' tokens, keeping
+          sessions, limiting request rates, and preventing and investigating spam and abuse
         </td>
-        <td>Account, session, and log information, including IP addresses</td>
+        <td>Account, session, AI assistant, and log information, including IP addresses</td>
         <td>Legitimate interests: keeping Emploist, our users, and applicants safe</td>
       </tr>
       <tr>
@@ -684,11 +755,22 @@ const sections = [
     </tbody>
   </table>
 
+  <h3 id="ai-assistant-providers">AI assistants you connect</h3>
+  <p>
+    When you connect an AI assistant, we send it the data it asks for, as you direct. That can include your name, email
+    address, and role, your teammates' names, email addresses, and roles, and your company's Customer Data, such as
+    jobs, applicants' details and answers, resume text, match scores, and comments. The assistant is run by a company
+    that you or your company choose, such as Anthropic or OpenAI, or runs on your own computer. Its provider handles this
+    data under its own terms and privacy policy. It isn't our subprocessor, and we can't control or delete what it
+    receives.
+  </p>
+
   <h3>Others</h3>
   <ul>
     <li>
-      <strong>Your company.</strong> Your teammates can see your name, email address, and activity in Emploist. People
-      you invite see your name, or your email address if you haven't set a name.
+      <strong>Your company.</strong> Your teammates can see your name, email address, and activity in Emploist. If a
+      teammate connects an AI assistant, it can receive your name, email address, and role, and your activity, such as
+      your comments. People you invite see your name, or your email address if you haven't set a name.
     </li>
     <li><strong>Professional advisers</strong>, such as lawyers and accountants, who must keep it confidential.</li>
     <li>
@@ -711,6 +793,7 @@ const sections = [
     <li>TypeSafe (AI ranking) and Resend (email) process data in the United States, and Resend sends email from Japan.</li>
     <li>Our email inbox provider may process data outside the European Union.</li>
     <li>Dodo Payments, Google, and Microsoft process data under their own policies, which can involve other countries.</li>
+    <li>AI assistants you connect receive data wherever their providers process it.</li>
   </ul>
   <p>
     India and Singapore don't have an adequacy decision from the European Commission or the UK. The US has one only for
@@ -741,6 +824,12 @@ const sections = [
       includes the Standard Contractual Clauses, with the module for transfers between independent controllers, and the
       UK Addendum.
     </li>
+    <li>
+      <strong>AI assistants.</strong> We send data to an assistant only when someone connects it and it asks for the data.
+      For Customer Data, our <a href="/terms/#data-processing">data processing terms</a> explain how this is covered.
+      Otherwise, the assistant's provider protects the data under the terms that the person who connected it, or their
+      company, agreed with it.
+    </li>
   </ul>
   <p>
     You can ask for a copy of these safeguards by emailing <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
@@ -765,8 +854,9 @@ const sections = [
         <td>
           Until you delete your account. If you're not in any company, for example because you left it or it was deleted,
           you can't delete your account in the app, so email us and we'll delete it. When your account is deleted, we
-          delete your profile picture link, sessions, sign-in methods (including Google or Microsoft tokens), company
-          membership, and notifications, and remove your email address from your account. We keep your name, so your
+          delete your profile picture link, sessions, sign-in methods (including Google or Microsoft tokens), AI
+          assistant connections and their tokens, company membership, and notifications, and remove your email address
+          from your account. We keep your name, so your
           teammates can still see who wrote your comments and moved applications. Your comments show it with a "Deleted
           account" label, and it stays in teammates' notifications about your comments until their accounts or the
           company are deleted. Invitations sent to your email address stay in the inviting company's records until that
@@ -784,6 +874,17 @@ const sections = [
       <tr>
         <td>Sign-in codes</td>
         <td>Valid for 5 minutes. Deleted once used, and expired codes are cleared out automatically.</td>
+      </tr>
+      <tr>
+        <td>AI assistant connections</td>
+        <td>
+          Until you disconnect the assistant or delete your account, either of which deletes the connection and its
+          tokens. Turning AI assistants off for your company, leaving your company, or your company being deleted
+          doesn't remove them, but the assistant can't use that company's data afterwards. If you then join or create
+          another company, the assistant can work with that company's data. Records of expired tokens are kept until
+          the connection is deleted. Signing out of Emploist doesn't disconnect your assistants. The assistant's own
+          details are kept with no set time limit.
+        </td>
       </tr>
       <tr>
         <td>Company information and Customer Data</td>
@@ -858,6 +959,7 @@ const sections = [
       Data already sent to our subprocessors is kept under their terms. For TypeSafe,
       see <a href="#about-typesafe">About TypeSafe</a>. Dodo keeps its own records under its privacy policy.
     </li>
+    <li>Data already sent to an AI assistant is kept under its provider's terms, which we don't control.</li>
   </ul>
 
   <h2 id="security">9. Security</h2>
@@ -865,7 +967,8 @@ const sections = [
   <ul>
     <li>Encrypted connections (HTTPS) to the app, careers pages, and our website, and encryption of stored data at rest.</li>
     <li>
-      In the app, only team members of a company can access its data, and admin-only actions are checked on our servers.
+      In the app, only team members of a company, and the AI assistants they connect, can access its data, and
+      admin-only actions are checked on our servers.
       Resumes are kept in private storage, and every request to open one is checked to make sure it comes from a
       signed-in team member of the right company.
     </li>
@@ -873,14 +976,24 @@ const sections = [
       You don't create a password for Emploist. Sign-in codes and invitation links are stored only in hashed form, and
       sign-in codes expire after 5 minutes and allow 3 tries.
     </li>
+    <li>
+      AI assistants sign in with OAuth, using PKCE, and work only with the role of the person who allowed them. Every
+      request from an assistant checks its token and that it's still connected, so disconnecting it stops it at once.
+    </li>
     <li>Strict security headers and content security policies. Careers pages run in a sandbox that blocks scripts.</li>
     <li>
       Checks on untrusted content. Customers' careers page code runs in worker threads with time and memory limits.
       Uploaded files are checked by their contents and size, and resumes are read in worker threads with limits. Rich
       text, email designs, and SVG logos are cleaned of unsafe code.
     </li>
-    <li>Rate limits on sign-in, the app, careers pages, and applications, and a spam trap on application forms.</li>
-    <li>Cookies, sign-in secrets, and invitation links are removed from our request logs.</li>
+    <li>
+      Rate limits on sign-in, the app, AI assistants, careers pages, and applications, and a spam trap on application
+      forms.
+    </li>
+    <li>
+      Cookies, sign-in secrets, including AI assistants' authorization codes and tokens, and invitation links are
+      removed from our request logs.
+    </li>
     <li>Card details are handled by Dodo.</li>
     <li>Regular backups, with the ability to restore them, and an incident response process.</li>
   </ul>
@@ -928,6 +1041,10 @@ const sections = [
       If you're in a company, delete your account in Settings, under Danger zone. If you're the only admin, make someone
       else an admin first. If you're the only team member, your company is deleted too. If you're not in a company, for
       example because you left it or it was deleted, email us and we'll delete your account.
+    </li>
+    <li>
+      Disconnect your AI assistants on the MCP page. Admins can turn AI assistants off for the whole company in
+      Settings.
     </li>
     <li>
       Your team can export a job's applications and delete applications and jobs. Admins can delete the whole company.
@@ -986,8 +1103,11 @@ const sections = [
       </tr>
       <tr>
         <td>Internet or other network activity</td>
-        <td>Sessions and request logs, including the pages and data you request in the app</td>
-        <td>Your browser and device, and your use of Emploist</td>
+        <td>
+          Sessions and request logs, including the pages and data you request in the app and the requests your AI
+          assistants make
+        </td>
+        <td>Your browser and device, your AI assistants, and your use of Emploist</td>
       </tr>
       <tr>
         <td>Professional information</td>
@@ -997,10 +1117,13 @@ const sections = [
       <tr>
         <td>Sensitive personal information</td>
         <td>
-          Account sign-in credentials: sign-in codes and invitation link secrets (both stored hashed), session tokens, and
-          Google or Microsoft sign-in tokens
+          Account sign-in credentials: sign-in codes and invitation link secrets (both stored hashed), session tokens,
+          Google or Microsoft sign-in tokens, and AI assistants' authorization codes and tokens (stored hashed or
+          encrypted)
         </td>
-        <td>Created when you sign in or are invited, or given to us by Google or Microsoft</td>
+        <td>
+          Created when you sign in, connect an AI assistant, or are invited, or given to us by Google or Microsoft
+        </td>
       </tr>
     </tbody>
   </table>
@@ -1016,8 +1139,8 @@ const sections = [
       selling or sharing personal information of anyone under 16.
     </li>
     <li>
-      We collect sensitive personal information only as part of signing you in, and we never use it to infer
-      characteristics about you.
+      We collect sensitive personal information only as part of signing you in and letting your AI assistants act for
+      you, and we never use it to infer characteristics about you.
     </li>
     <li>
       You can ask to know what personal information we've collected about you and how we use and disclose it, to get a
@@ -1048,8 +1171,11 @@ const sections = [
   <p>
     These rules treat passwords as sensitive personal data, and define a password broadly, as a secret code or key used
     to gain access. So the sign-in secrets listed in <a href="#sensitive-information">Sensitive information</a> may count
-    as sensitive personal data. We collect them only to sign people in, keep sign-in codes and invitation link secrets
-    only in hashed form, and share them only as <a href="#subprocessors">Sharing and subprocessors</a> describes.
+    as sensitive personal data. We collect them only to sign people in, and to let people's AI assistants act for them.
+    We keep sign-in codes, invitation link secrets, and AI assistants' authorization codes only in hashed form, and AI
+    assistants' tokens hashed or encrypted, and share them only as <a href="#subprocessors"
+      >Sharing and subprocessors</a
+    > describes.
   </p>
   <p>
     You can raise any grievance with our Grievance Officer, Navaneeth CT,
@@ -1104,8 +1230,9 @@ const sections = [
   <p>
     Emploist sets no cookies on careers pages, and scripts don't run on them. If an employer's own careers page design
     loads content from other websites, those websites may set their own cookies,
-    as <a href="#applicants">For job applicants</a> explains. emploist.com sets no cookies, uses no local storage, and runs
-    no analytics.
+    as <a href="#applicants">For job applicants</a> explains. In the same way, when the app shows an AI assistant's logo,
+    the website it comes from may set its own cookies. emploist.com sets no cookies, uses no local storage, and runs no
+    analytics.
   </p>
   <p>
     Because these cookies and storage are needed for the app to work, or only remember choices you make, they don't need
