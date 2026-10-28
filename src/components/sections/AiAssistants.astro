@@ -1,0 +1,154 @@
+---
+// Connecting AI assistants through the app's MCP server. The chat is drawn in
+// HTML, with the same applicants and matches as the hero's screenshot.
+const assistants = ["Claude", "ChatGPT", "Claude Code", "Cursor", "VS Code"];
+
+const matches = [
+  { name: "Diego Varga", initials: "DV", match: 91 },
+  { name: "Kofi Clarke", initials: "KC", match: 88 },
+  { name: "Fatima Lindqvist", initials: "FL", match: 86 },
+];
+
+// Line icons on a 20 × 20 grid, like the "And more" section's.
+const plugIcon = "M7.25 2.75v3.5M12.75 2.75v3.5M5.25 6.25h9.5v2.25a4.75 4.75 0 0 1-9.5 0V6.25ZM10 13.25v4";
+const checkIcon = "m5.5 10.25 3 3 6-6.5";
+---
+
+<section id="ai-assistants" aria-labelledby="assistants-title" class="border-b border-line py-20 sm:py-28">
+  <div class="container-page grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-5 lg:col-start-8 lg:row-start-1">
+      <p class="text-eyebrow">AI assistants</p>
+      <h2 id="assistants-title" class="text-heading mt-4">Manage hiring from your AI assistant.</h2>
+      <p class="text-lead mt-6">
+        Connect Claude, ChatGPT, or another assistant that supports MCP, and work with your jobs and applicants just by
+        asking.
+      </p>
+      <ul class="check-list mt-8 flex flex-col gap-4 text-[0.9375rem] leading-relaxed">
+        <li>
+          <strong class="font-semibold text-ink">Ask about your applicants.</strong> Find the best matches for a job, catch
+          up on new applications, or get a quick summary of someone's answers.
+        </li>
+        <li>
+          <strong class="font-semibold text-ink">Get things done.</strong> Create and publish jobs, move applicants between
+          stages, and leave comments, right from the chat.
+        </li>
+        <li>
+          <strong class="font-semibold text-ink">Stay in control.</strong> Connect your assistant with the same access you
+          have, and nothing more. Disconnect it anytime, and it stops right away.
+        </li>
+      </ul>
+      <div class="mt-10 border-t border-line pt-6">
+        <p class="text-sm font-medium text-ink">Works with</p>
+        <ul class="mt-3 flex flex-wrap items-center gap-2 text-sm">
+          {assistants.map((name) => <li class="rounded-full border border-line bg-raised px-3 py-1 text-ink">{name}</li>)}
+          <li class="px-1 text-faint">and other MCP clients</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="assistants-stage rounded-3xl bg-subtle p-4 ring-1 ring-line sm:p-8 lg:col-span-7 lg:col-start-1 lg:row-start-1">
+      <div class="shot" role="group" aria-label="An example chat with an AI assistant connected to Emploist">
+        <div class="flex h-12 items-center justify-between gap-3 border-b border-line px-4">
+          <div class="flex items-center gap-2.5 text-sm font-medium whitespace-nowrap text-ink">
+            <span class="flex size-7 items-center justify-center rounded-full bg-brand-soft text-brand-ink" aria-hidden="true">
+              <svg viewBox="0 0 20 20" class="size-4" fill="currentColor">
+                <path d="M10 2.5c.45 3.6 1.9 5.05 5.5 5.5-3.6.45-5.05 1.9-5.5 5.5-.45-3.6-1.9-5.05-5.5-5.5 3.6-.45 5.05-1.9 5.5-5.5Z"></path>
+                <path d="M15.25 12.5c.2 1.55.7 2.05 2.25 2.25-1.55.2-2.05.7-2.25 2.25-.2-1.55-.7-2.05-2.25-2.25 1.55-.2 2.05-.7 2.25-2.25Z" opacity="0.6"></path>
+              </svg>
+            </span>
+            Your AI assistant
+          </div>
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-subtle px-2.5 py-1 text-xs font-medium whitespace-nowrap text-ink ring-1 ring-line">
+            <span class="size-1.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
+            Emploist<span class="max-sm:sr-only"> connected</span>
+          </span>
+        </div>
+
+        <div class="flex flex-col gap-5 p-4 text-[0.9375rem] leading-relaxed sm:p-6">
+          <p class="max-w-[85%] self-end rounded-2xl rounded-br-md bg-brand px-4 py-2.5 text-on-brand">
+            Which applicants for the Senior Product Designer job are the best match?
+          </p>
+
+          <div class="flex flex-col gap-3">
+            <p class="flex w-fit items-center gap-2 rounded-lg border border-line bg-subtle px-2.5 py-1.5 text-xs">
+              <svg viewBox="0 0 20 20" class="size-3.5 text-brand-ink" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d={plugIcon}></path>
+              </svg>
+              <span class="sr-only">Used</span>
+              <span class="font-medium text-ink">Emploist</span>
+              <span class="font-mono text-faint">list_applications</span>
+              <svg viewBox="0 0 20 20" class="size-3.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d={checkIcon}></path>
+              </svg>
+            </p>
+            <p class="text-ink">Here are the three best matches in the inbox:</p>
+            <ol class="divide-y divide-line overflow-hidden rounded-xl border border-line">
+              {
+                matches.map((applicant) => (
+                  <li class="flex items-center gap-3 px-3.5 py-2.5">
+                    <span
+                      class="flex size-8 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-xs font-semibold text-emerald-700"
+                      aria-hidden="true"
+                    >
+                      {applicant.initials}
+                    </span>
+                    <span class="truncate text-sm font-medium text-ink">{applicant.name}</span>
+                    <span class="ml-auto shrink-0 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 tabular-nums">
+                      {applicant.match}%<span class="max-sm:sr-only"> match</span>
+                    </span>
+                  </li>
+                ))
+              }
+            </ol>
+            <p>Diego leads on seniority fit and skills. Want me to move anyone forward?</p>
+          </div>
+
+          <p class="max-w-[85%] self-end rounded-2xl rounded-br-md bg-brand px-4 py-2.5 text-on-brand">
+            Move Diego to Phone screen.
+          </p>
+
+          <div class="flex flex-col gap-3">
+            <p class="flex w-fit items-center gap-2 rounded-lg border border-line bg-subtle px-2.5 py-1.5 text-xs">
+              <svg viewBox="0 0 20 20" class="size-3.5 text-brand-ink" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d={plugIcon}></path>
+              </svg>
+              <span class="sr-only">Used</span>
+              <span class="font-medium text-ink">Emploist</span>
+              <span class="font-mono text-faint">move_application</span>
+              <svg viewBox="0 0 20 20" class="size-3.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d={checkIcon}></path>
+              </svg>
+            </p>
+            <p>
+              Done. Diego is in Phone screen now, and that stage's email goes out in 2 minutes. I can undo it before then if
+              you change your mind.
+            </p>
+          </div>
+        </div>
+
+        <div class="border-t border-line p-3 sm:p-4" aria-hidden="true">
+          <div class="flex h-11 items-center justify-between gap-3 rounded-full bg-subtle pr-1.5 pl-4 text-sm text-faint ring-1 ring-line">
+            <span class="truncate">Ask about your jobs and applicants</span>
+            <span class="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-on-brand">
+              <svg viewBox="0 0 20 20" class="size-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 15.5v-11m0 0L5.5 9M10 4.5 14.5 9"></path>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <figcaption class="mt-4 px-1 text-sm text-faint sm:mt-6 sm:px-0">
+        Each person connects their own assistant in a few steps.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+  /* A soft brand glow behind the chat, from the top corner. */
+  .assistants-stage {
+    background-image:
+      radial-gradient(70% 55% at 0% 0%, oklch(58.5% 0.233 277 / 0.09), transparent),
+      radial-gradient(60% 50% at 100% 100%, oklch(58.5% 0.233 277 / 0.06), transparent);
+  }
+</style>

@@ -50,6 +50,16 @@ export const FAQ: readonly { question: string; answer: string }[] = [
       "Yes. Export any job's applications as a spreadsheet of every application and answer, along with each resume.",
   },
   {
+    question: "Can we use Emploist from Claude or ChatGPT?",
+    answer:
+      "Yes. Anyone on your team can connect Claude, ChatGPT, Claude Code, Cursor, VS Code, or another assistant that supports MCP, and manage jobs and applications by chatting. It's included in your plan. Ranking an application from an assistant uses one AI credit, just like in Emploist.",
+  },
+  {
+    question: "What can an AI assistant do in Emploist?",
+    answer:
+      "It can view and change jobs, stages, and application forms, read applications and resumes, move applicants between stages, and comment. It works as the person who connected it, with their role. Billing, team members, and deleting your company or account aren't included. You can disconnect your assistant anytime, and an admin can turn assistants off for the whole company in Settings.",
+  },
+  {
     question: "Can we cancel anytime?",
     answer:
       "Yes. Cancel whenever you like, and your plan keeps working until the end of the period you've paid for. You can still see and export everything afterwards.",
