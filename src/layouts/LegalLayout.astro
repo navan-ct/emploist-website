@@ -1,5 +1,5 @@
 ---
-// Terms and Privacy: a summary, a table of contents, then the full text.
+// Terms and Privacy: a table of contents, then the full text.
 // Each page passes its sections (in order) and gives every <h2> the same id.
 import BaseLayout from "./BaseLayout.astro";
 
@@ -20,13 +20,6 @@ const { title, description, updated, sections } = Astro.props;
         <h1 class="text-heading">{title}</h1>
         <p class="mt-4 text-sm text-faint">Last updated {updated}</p>
       </header>
-
-      <section aria-labelledby="summary" class="mt-10 rounded-xl bg-subtle px-5 py-5 ring-1 ring-line sm:px-6">
-        <h2 id="summary" class="text-[0.9375rem] font-semibold">The short version</h2>
-        <div class="prose-post prose prose-zinc mt-3 max-w-none text-[0.9375rem] prose-li:my-1">
-          <slot name="summary" />
-        </div>
-      </section>
 
       <nav aria-labelledby="contents" class="mt-10">
         <h2 id="contents" class="text-[0.9375rem] font-semibold">Contents</h2>

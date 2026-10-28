@@ -4,7 +4,7 @@ import { SITE } from "../lib/site";
 
 const sections = [
   { id: "who-we-are", title: "Who we are" },
-  { id: "scope", title: "What this policy covers" },
+  { id: "scope", title: "Our role" },
   { id: "applicants", title: "For job applicants" },
   { id: "information-we-collect", title: "Information we collect" },
   { id: "how-we-use-information", title: "How we use information" },
@@ -13,7 +13,7 @@ const sections = [
   { id: "retention", title: "How long we keep information" },
   { id: "security", title: "Security" },
   { id: "your-rights", title: "Your rights" },
-  { id: "cookies", title: "Cookies and similar technologies" },
+  { id: "cookies", title: "Cookies" },
   { id: "children", title: "Children" },
   { id: "changes", title: "Changes to this policy" },
   { id: "contact", title: "Contact" },
@@ -22,825 +22,297 @@ const sections = [
 
 <LegalLayout
   title="Privacy Policy"
-  description="How Emploist handles personal data: what we collect, how AI ranking and AI assistants use job applications, who we share data with, where it's stored, and your rights."
+  description="How Emploist handles personal data: what we collect, how AI ranking and AI assistants use job applications, who we share data with, and your rights."
   updated="October 28, 2026"
   sections={sections}
 >
-  <Fragment slot="summary">
-    <ul>
-      <li>
-        Emploist is operated by Navaneeth CT, an individual based in India. We're responsible for your Emploist account
-        data, such as your name, email address, and sign-in records.
-      </li>
-      <li>
-        If you applied for a job on a careers page, the employer is in charge of your application, and we handle it for
-        them. Read the employer's privacy notice, and contact them first with questions or
-        requests. <a href="#applicants">More for job applicants</a>.
-      </li>
-      <li>
-        We collect what we need to run Emploist: account and company details, sign-in and security records such as IP
-        addresses, and limited billing details. Dodo Payments, which sells our plan, handles payment details. We never
-        receive your full card number.
-      </li>
-      <li>
-        When an employer has AI ranking on, the text of each resume and the answers to the employer's questions
-        (except phone numbers) are sent to our AI provider, TypeSafe, in the US, to score how well the application
-        matches the job. The match score never rejects, moves, or emails anyone by itself.
-      </li>
-      <li>
-        People on a team can connect an AI assistant, such as Claude or ChatGPT, to Emploist. We then send the assistant
-        the data it asks for, which can include applications and resume text. The assistant is run by a company the team
-        chose, such as Anthropic or OpenAI, which handles that data under its own terms.
-      </li>
-      <li>
-        We don't sell personal data or use it for advertising. We use no analytics and no tracking cookies.
-      </li>
-      <li>
-        Our server and database are in Singapore, and our file storage is in the Asia-Pacific region. We access data from
-        India, and some providers process it in the US and Japan. AI assistants that teams connect may process it
-        elsewhere. <a href="#international-transfers">International transfers</a> explains how we protect it.
-      </li>
-      <li>
-        You can ask to access, correct, or delete your personal data, or object to how we use it, among other rights.
-        Email us at <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
-      </li>
-    </ul>
-    <p>This is only a summary. The full policy below is what applies.</p>
-  </Fragment>
-
   <h2 id="who-we-are">1. Who we are</h2>
   <p>
     Emploist is an applicant tracking system for businesses, with hosted careers pages and optional AI ranking of
-    applications. Emploist is operated by Navaneeth CT, an individual based in India ("Emploist", "we", "us").
+    applications. It's operated by Navaneeth CT, an individual based in India ("Emploist", "we", "us").
   </p>
   <p>
-    This policy explains how we handle personal data when you use the Emploist app at app.emploist.com, including
-    through an AI assistant you connect to it, visit emploist.com, apply for a job on a careers page that runs on
-    Emploist, or contact us.
-  </p>
-  <p>
-    We take questions and requests by email only, at <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
-    Our privacy contact is Navaneeth CT, at the same address.
+    This policy explains how we handle personal data when you use the Emploist app, including through an AI assistant
+    you connect to it, apply for a job on a careers page that runs on Emploist, visit emploist.com, or contact us. You
+    can reach us at <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
   </p>
 
-  <h3>Grievance Officer (India)</h3>
+  <h2 id="scope">2. Our role</h2>
   <p>
-    Under India's Information Technology Act and its rules, our Grievance Officer is Navaneeth CT, reachable
-    at <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. We'll acknowledge a grievance within 24 hours and
-    resolve it within 15 days of receiving it.
-  </p>
-
-  <h2 id="scope">2. What this policy covers</h2>
-  <p>Data protection laws give different responsibilities to different organizations:</p>
-  <ul>
-    <li>A <strong>controller</strong> decides why and how personal data is used, and is responsible for it.</li>
-    <li>A <strong>processor</strong> handles personal data on a controller's behalf and follows its instructions.</li>
-  </ul>
-  <p>
-    Some laws use other words for the same idea. For example, California law says "business" and "service provider",
-    and India's law says "data fiduciary" and "data processor".
+    Companies that use Emploist ("customers" or "employers") put their own content into it, such as jobs and comments,
+    and receive applications through it. Together with the match scores and other records Emploist creates from them,
+    this is "Customer Data", as our <a href="/terms/">Terms</a> define it. Each customer controls its Customer Data, and
+    we process it on the customer's behalf under our <a href="/terms/#data-processing">data processing terms</a>.
   </p>
   <p>
-    Companies that use Emploist ("customers", called "employers" in the section for job applicants) put their own
-    content into it, such as jobs, careers page content and code, application forms, emails, and comments. Applicants
-    send them applications through it, with resumes and answers. Together with the match scores and other records
-    Emploist creates from them, we call this "Customer Data", as our <a href="/terms/">Terms</a> define it. Each customer
-    is responsible for its Customer Data, usually as its controller (a recruiter may act for a client instead), and we
-    process it on the customer's behalf.
-  </p>
-  <table>
-    <thead>
-      <tr>
-        <th>If you are</th>
-        <th>Our role</th>
-        <th>What applies</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>A team member using the Emploist app for your company, as an admin or a member</td>
-        <td>
-          Controller of your account data, such as your name, email address, sign-in records, and billing contact
-          details. Processor for the work you do for your company, such as your comments, which is part of its Customer
-          Data.
-        </td>
-        <td>
-          This policy. For your company's Customer Data, also our <a href="/terms/#data-processing">data processing
-          terms</a> with your company.
-        </td>
-      </tr>
-      <tr>
-        <td>A visitor to emploist.com</td>
-        <td>Controller</td>
-        <td>This policy</td>
-      </tr>
-      <tr>
-        <td>A job applicant who applied through a careers page that runs on Emploist</td>
-        <td>Processor. The employer is the controller of your application.</td>
-        <td>
-          The employer's privacy notice. Our <a href="/terms/#data-processing">data processing terms</a> govern how we
-          handle your application for the employer. <a href="#applicants">For job applicants</a> explains how Emploist
-          works.
-        </td>
-      </tr>
-      <tr>
-        <td>Someone named in a customer's content, such as a contact in a job description</td>
-        <td>Processor for the customer</td>
-        <td>The customer's privacy notice and our <a href="/terms/#data-processing">data processing terms</a></td>
-      </tr>
-      <tr>
-        <td>Someone invited to join a company's team on Emploist</td>
-        <td>Controller of the invitation we send and our record of it. The company decides whom to invite.</td>
-        <td>This policy</td>
-      </tr>
-    </tbody>
-  </table>
-  <p>
-    Whatever your role, we're the controller of the technical data our servers record to keep Emploist working and
-    secure, such as IP addresses in request logs. This policy covers that data too.
+    We're the controller of the personal data we use to run Emploist ourselves: team members' account details, the
+    invitations we send, AI assistant connections, billing records, support emails, security logs, and data about
+    visitors to our website. This policy mainly covers that data.
   </p>
 
   <h2 id="applicants">3. For job applicants</h2>
   <p>
-    This section is for you if you applied for a job through a careers page that runs on Emploist. These pages are at
-    addresses like company.emploist.com, or on the employer's own domain.
+    If you applied for a job through a careers page that runs on Emploist, the employer whose page it is controls your
+    application. It decides what the form asks, who sees your application, whether AI is used, and how long your
+    application is kept. Please read the employer's privacy notice, and contact the employer with questions or requests
+    about your application. If you contact us instead, we'll refer you to the employer or pass your request on to it. Your email is
+    stored in our support inbox, which Google hosts.
   </p>
-
-  <h3>The employer is in charge of your application</h3>
-  <p>
-    The employer whose careers page you applied on decides what the form asks, how your application is used, who on
-    their team has access to Emploist, whether AI ranking is used, whether their team uses AI assistants with it, and
-    how long your application is kept. That makes the
-    employer the controller of your application. Emploist provides the software and handles your application on the
-    employer's behalf. In this section, "employer" means the organization whose careers page you applied on. If that's a
-    recruiter hiring for a client, the client may also be responsible for your application.
-  </p>
-  <p>
-    So the employer's privacy notice is the one that applies to your application. Please read it, and contact the
-    employer first with any questions or requests about your data. The rest of this section explains how Emploist
-    itself handles your application.
-  </p>
-
-  <h3>What a careers page collects</h3>
+  <p>For the employer, Emploist:</p>
   <ul>
-    <li>Your full name and email address.</li>
-    <li>Your resume or CV, as a PDF or Word (DOCX) file.</li>
     <li>
-      Your answers to the employer's questions. The employer chooses the questions, which can include your phone number.
+      stores your name, email address, resume, answers to the employer's questions, and your application's stage and
+      history, and makes them available to the employer's team
+    </li>
+    <li>
+      sends the emails the employer sets up, for example when you apply or your application moves to a new stage, through
+      our email provider
+    </li>
+    <li>
+      if the employer has AI ranking on, sends the text of your resume, your answers (except phone numbers), and the job's
+      details to our AI provider, TypeSafe AI, Inc., in the United States, to score how well your application matches
+      the job. The score helps the employer decide which applications to review first. It doesn't reject, advance, or
+      email you by itself. People on the employer's team make the decisions.
+    </li>
+    <li>
+      sends your application to AI assistants, such as Claude or ChatGPT, that people on the employer's team connect to
+      Emploist, when they ask for it. These assistants are run by companies the employer's team chooses, under terms the
+      employer or its team members agreed with them.
     </li>
   </ul>
   <p>
-    Emploist also keeps the date you applied, the hiring stage your application is in, and its history. Everyone on the
-    employer's team in Emploist can see your application. They can comment on it, move it between stages, export it,
-    and delete it. Except for exporting, they can also do this through <a href="#applicants-ai-assistants"
-      >AI assistants</a
-    > they connect.
-  </p>
-
-  <h3>Your IP address and browser details</h3>
-  <p>
-    Your application's record doesn't include your IP address, browser details, or any cookie or device information.
-    We use your IP address briefly, without saving it, to limit how many applications come from one address, which
-    helps keep out spam. But like any website, our servers keep request logs. They record your IP address and browser
-    details when you visit a careers page or apply, and the log entry for your application includes its ID, so the two
-    can be linked. We're the controller of these logs.
-  </p>
-
-  <h3>Emails about your application</h3>
-  <p>
-    The employer can set up emails that go out when you apply or when your application moves to a new stage, such as an
-    interview invitation or a rejection. The employer chooses which of these emails to send and can change what they
-    say. We send them through our email provider,
-    Resend, from Emploist's sending address, in the employer's name. If the employer has set a reply-to address, your
-    replies go to the employer. If the employer hasn't set a reply-to address, replies can't be delivered, and we don't
-    receive them, so contact the employer directly.
-  </p>
-
-  <h3>AI ranking</h3>
-  <p>
-    Employers can have Emploist rank applications with AI. It's on by default for new companies, and while the company's Plan is
-    active, the employer's admins can turn it off or on for the whole company. Our Terms require employers that use it to tell you
-    about it. While it's on, Emploist's default careers page shows a notice that AI helps review applications.
-  </p>
-  <p>When AI ranking is on, we send our AI provider, TypeSafe AI, Inc., in the United States:</p>
-  <ul>
-    <li>
-      the text of your resume (for a very long resume, the first 40,000 characters, and for a PDF, the first 20 pages)
-    </li>
-    <li>your answers to the employer's questions, except phone numbers</li>
-    <li>the job's title, department, employment type, and description</li>
-  </ul>
-  <p>
-    We don't send your name and email fields, or the job's location, as separate items. But your resume's text is sent
-    as it is, so whatever it contains, such as your name, contact details, and work history, is sent too.
-  </p>
-  <p>
-    TypeSafe's AI scores how well your application matches the job on four things: skills, experience, seniority fit,
-    and qualifications. Emploist combines these into a match score, shown as a percentage. Skills and experience count
-    most, then seniority fit, then qualifications. If the job doesn't ask for any qualifications, that part is left out.
-    Your answers can adjust the scores slightly.
-  </p>
-  <p>
-    The match score is meant to help the employer decide whose applications to review first. The employer's team sees it
-    with your application, and their list of applications is sorted by match score unless they choose another order. The
-    match score never rejects you, moves your application to another stage, or sends you an email by itself. Only people
-    on the employer's team move applications, directly or through AI assistants they connect. Like any AI, it can be
-    wrong, so our Terms require employers not to rely on the score alone.
-  </p>
-  <p>
-    While AI ranking is off, new applications aren't sent to TypeSafe. If the employer turns it back on, its admins can
-    choose to rank the applications that arrived in the meantime.
-  </p>
-  <p>
-    Emploist keeps the match score and its breakdown with your application. We don't keep the text taken from your
-    resume. It's read from your file each time the application is ranked or an AI assistant asks for it, and discarded
-    afterwards. How TypeSafe handles
-    the data we send is described in <a href="#subprocessors">Sharing and subprocessors</a>, and how it's protected
-    in <a href="#international-transfers">International transfers</a>.
-  </p>
-
-  <h3 id="applicants-ai-assistants">AI assistants used by the employer's team</h3>
-  <p>
-    People on the employer's team can connect AI assistants, such as Claude or ChatGPT, to Emploist, and use them to read
-    and manage applications. When they do, we send the assistant what it asks for, which can include your name, email
-    address, phone number, answers, match score, the text of your resume (the same text described above for AI
-    ranking) and its file name, the date you applied, the stage your application is in, its history, and the team's
-    comments. When the team member asks, the assistant can also comment on your application, move it to another stage,
-    which can send you an email, have it ranked with AI, or delete it.
-  </p>
-  <p>
-    These assistants are run by companies the employer's team chooses, such as Anthropic or OpenAI, or on the team's own
-    computers. They aren't part of Emploist, and they aren't our subprocessors. They handle what they receive under the
-    terms the employer's team agreed with them, which can involve other countries, and we can't control or delete it.
-    The employer is responsible for this, so ask the employer if you want to know which assistants it uses. When an
-    assistant reads what you wrote, Emploist labels it as written by you and tells the assistant not to follow
-    instructions in it.
-  </p>
-
-  <h3>Your choices and rights</h3>
-  <p>Contact the employer if you want to:</p>
-  <ul>
-    <li>object to AI ranking of your application, or ask for it to be reviewed by a person without AI</li>
-    <li>ask how your application was assessed</li>
-    <li>ask which AI assistants the employer's team uses with your application</li>
-    <li>access, correct, or delete your data, or use any other right you have</li>
-  </ul>
-  <p>
-    The employer makes these decisions. In Emploist, the employer's team can export a job's applications and delete
-    applications or whole jobs, and its admins can delete the company. Admins can turn AI ranking off for the whole
-    company, but Emploist can't turn it off for a single application. Admins can also turn AI assistants off for the
-    whole company. Some requests need our help, which we give when
-    the employer asks by email: correcting the details in an application, which Emploist can't edit, providing match
-    scores, their breakdown, and comments, which aren't in the export, and deleting applications or jobs while the
-    employer's company is read-only.
-  </p>
-  <p>
-    If you contact us about your application instead, we'll forward your request to the employer and let you know we've
-    done so. We can't decide on the employer's behalf. For the request logs and other data we control ourselves, you can
-    contact us directly. See <a href="#your-rights">Your rights</a>.
-  </p>
-
-  <h3>How long your application is kept</h3>
-  <p>
-    The employer decides. Your application stays in Emploist until the employer deletes it, deletes the job, or deletes
-    its company. Under our <a href="/terms/#suspension-and-termination">Terms</a>, if a company has had no active Plan
-    for 12 months in a row, we may delete it and all its data. We'll email its admins at least 30 days before we do.
-  </p>
-  <p>
-    A few things can outlast your application, such as a notification about it that someone on the employer's team has
-    already read, which keeps your name and the job title, copies in our backups and logs, and data already sent to
-    TypeSafe, Resend, or AI assistants the employer's team uses. <a href="#retention">How long we keep information</a>
-    explains these exceptions.
-  </p>
-
-  <h3>Careers pages and other websites</h3>
-  <p>
-    Emploist sets no cookies on careers pages, and scripts don't run on them. But an employer can design its own careers
-    page and email design, and these can load images, fonts, or styles from other websites. When your browser or email
-    app loads them, those websites may receive your IP address and browser details, and may set their own cookies. They
-    handle this data under their own policies.
+    When you visit a careers page or apply, our servers also record technical data, such as your IP address and browser
+    details, in request logs. We control these logs and use them to keep Emploist working and secure.
   </p>
 
   <h2 id="information-we-collect">4. Information we collect</h2>
-  <p>
-    This section covers the personal data we handle as controller, and what's part of your company's Customer Data. For
-    applicants' data, see <a href="#applicants">For job applicants</a>.
-  </p>
-
-  <h3>Account information</h3>
   <ul>
     <li>
-      <strong>Name and email address.</strong> If you sign in with Google or Microsoft, we get them from your Google or
-      Microsoft account. If you sign in with a code sent to your email, you type them in.
+      <strong>Account information.</strong> Your name and email address, which you give us or which we get from Google
+      or Microsoft if you sign in with them. You need to give us these to use Emploist.
     </li>
     <li>
-      <strong>Sign-in codes.</strong> When you sign in with an emailed code, we store a scrambled (hashed) copy of the
-      code with your email address. Codes expire after 5 minutes.
+      <strong>Your work in Emploist.</strong> What you do for your company, such as the jobs you create, your comments,
+      and the applications you move, including through AI assistants you connect, is stored with your name and is
+      visible to your teammates. It's part of your company's Customer Data.
+    </li>
+    <li>
+      <strong>Invitations.</strong> When an admin invites someone, we store the invited person's email address, their
+      role, and who invited them, and email them an invitation.
+    </li>
+    <li>
+      <strong>AI assistant connections.</strong> If you connect an AI assistant, we store which assistant you allowed,
+      its details, and the tokens that let it work for you.
+    </li>
+    <li>
+      <strong>Billing.</strong> Dodo Payments sells our plan and handles payment details, and we never see your full
+      card number. We send Dodo the email address of the admin who first checks out and the company's name, and we get
+      the plan's status and payment records from Dodo. We also keep a record of who has used a free trial.
+    </li>
+    <li>
+      <strong>Technical information.</strong> When you sign in, we keep a session record with your IP address and
+      browser details. Our servers keep request logs with IP addresses, browser details, and the addresses of the pages
+      and data requested, which can include details from Customer Data, such as a search term. We use Customer Data in
+      our logs only to provide, secure, and support Emploist, as our data processing terms describe.
+    </li>
+    <li>
+      <strong>Support.</strong> If you email us, we receive your email address, your message, and anything you include.
+      Cloudflare forwards these emails to our support inbox, which Google hosts (Gmail).
+    </li>
+    <li>
+      <strong>Website visitors.</strong> emploist.com has no analytics, forms, or third-party scripts. Its host receives
+      standard request data, such as your IP address and browser details.
     </li>
   </ul>
-  <p>You need to give us your name and email address to use Emploist. Without them, we can't create your account.</p>
 
   <h3 id="google-microsoft">Google and Microsoft sign-in</h3>
-  <p>If you sign in with Google or Microsoft, this is how we handle the data they give us:</p>
-  <ul>
-    <li>
-      <strong>What we get.</strong> Your name, email address, whether your email address is verified, account ID, a
-      link to your profile picture if they send one, and sign-in tokens. Microsoft sign-in also asks for permission to
-      read your basic profile and to keep that access over time, so Microsoft also gives us a long-lived token (a
-      "refresh token"). We don't ask for access to your email, files, calendar, contacts, or anything else in your
-      account.
-    </li>
-    <li>
-      <strong>How we use it.</strong> Only to sign you in, recognize you, and show your name and email address in
-      Emploist, for example to your teammates and to people you invite, and to send them to the AI assistants you or
-      your teammates connect (see <a href="#ai-assistant-providers">AI assistants you connect</a>). We don't use the
-      tokens to access your Google or Microsoft account or any data in it, and we don't show your profile picture.
-    </li>
-    <li>
-      <strong>How we store it.</strong> With your Emploist account, in Singapore, protected
-      as <a href="#security">Security</a> describes, until you delete your account.
-    </li>
-    <li>
-      <strong>Who we share it with.</strong> Only as <a href="#subprocessors">Sharing and subprocessors</a> describes.
-      We don't share the tokens, sell this data, or use it for advertising.
-    </li>
-    <li>
-      <strong>Your controls.</strong> You can remove Emploist's access in your Google Account or Microsoft account
-      settings. For a work or school Microsoft account, your organization's administrator may manage this. Removing
-      access doesn't delete your Emploist account or the tokens we've stored. Deleting your Emploist account does. You
-      can also ask us for a copy of this data, as <a href="#your-rights">Your rights</a> explains.
-    </li>
-  </ul>
-
-  <h3>What you create for your company</h3>
   <p>
-    When you set up a company, you add its name and careers page address and, if you like, a logo, a description, and a
-    brand color. Admins can also add a reply-to address for emails to applicants and connect a custom domain. Your logo
-    is public, on your careers page and in emails to applicants.
-  </p>
-  <p>
-    The work you do in Emploist for your company, such as the jobs you create, the comments you write and the people you
-    mention, and the applications you move, is stored with your name. This includes what AI assistants you connect do
-    for you. Your teammates can see your name, your email
-    address, and this activity. All of this is part of your company's Customer Data. Your company controls it, and we
-    handle it on your company's behalf, so it stays with your company if you leave or delete your account.
-  </p>
-
-  <h3>Invitations</h3>
-  <p>
-    When an admin invites someone, we store the invited person's email address, their role, who invited them, and the
-    invitation's status. We email them a link that expires after 7 days, and we store only a scrambled (hashed) version
-    of the link's secret part. The email and the page it opens show the name of the person who sent the invitation, or
-    their email address if they haven't set a name.
-  </p>
-
-  <h3 id="ai-assistants">AI assistants (MCP)</h3>
-  <p>
-    You can connect an AI assistant, such as Claude or ChatGPT, to Emploist. You sign in to Emploist from the assistant,
-    and allow it on a consent page. If you do, we keep:
-  </p>
-  <ul>
-    <li>
-      <strong>The assistant's details</strong>, as the assistant gives them to us, such as its name, ID, website, logo
-      link, and the addresses we send you back to after you allow it. For some assistants, such as Claude and ChatGPT,
-      our server reads these details from the assistant's website, without sending it any personal data. We keep them
-      with no set time limit, even after everyone has disconnected the assistant.
-    </li>
-    <li><strong>Your connection</strong>: which assistant you allowed, what it can access, and when you allowed it.</li>
-    <li>
-      <strong>Sign-in tokens.</strong> After you allow an assistant, it gets an authorization code that's valid for 10
-      minutes and is stored only as a hash. It swaps the code for an access token, which lasts an hour, and usually a
-      refresh token, which lets it keep working without you signing in again. Refresh tokens are stored as a hash and
-      expire 30 days after the assistant last used one. Each time an assistant uses a refresh token, it gets new
-      tokens, and we keep an encrypted copy of them with the old refresh token, so that if the assistant has to retry,
-      it gets the same answer. These copies are deleted when the assistant is disconnected.
-    </li>
-    <li>
-      <strong>What it does.</strong> What your assistant does in Emploist is recorded as done by you, like your own work
-      (see above). Our request logs also record each request it makes, including the tool it used, the assistant's ID,
-      and the IP address and software details of wherever the assistant runs, such as its provider's servers or your
-      computer.
-    </li>
-  </ul>
-  <p>
-    When the consent page or the MCP page in Emploist shows an assistant's logo, your browser loads it from the address
-    the assistant gave us, usually its own website, which receives your IP address and browser details.
-    What we send the assistant is described in <a href="#ai-assistant-providers">AI assistants you connect</a>.
-  </p>
-
-  <h3>Billing information</h3>
-  <p>
-    Dodo Payments is the reseller and merchant of record for our plan and credit packs. Dodo sells them to customers,
-    takes payment, handles sales tax, and issues invoices.
-  </p>
-  <ul>
-    <li>
-      When an admin first checks out, we send Dodo that admin's email address and the company's name. We don't update
-      that email later, for example if that admin leaves the company.
-    </li>
-    <li>
-      You enter payment details on Dodo's own pages, and we never receive your full card number. Dodo's messages to us
-      about payments can include billing details, such as the billing address and the last four digits of the card, but
-      we don't store them.
-    </li>
-    <li>
-      From Dodo, we receive and store your company's Dodo customer ID, your plan's status and dates, and payment IDs that
-      we use to add AI credits. We also keep records of your AI credits and how they're used.
-    </li>
-    <li>
-      To keep free trials to one per company and per person, we keep a record of the admins of a deleted company that
-      used its free trial.
-    </li>
-  </ul>
-
-  <h3>Security and technical information</h3>
-  <ul>
-    <li>
-      <strong>Sessions.</strong> When you sign in, we create a session with a secret session token, which your browser
-      keeps in a cookie. We record the session with your IP address and your browser's user agent, which describes your
-      browser and device. For IPv6 addresses, we store only the network part, not the full address.
-    </li>
-    <li>
-      <strong>Request logs.</strong> Our servers log each request to the app, including its MCP server for AI
-      assistants, and to careers pages. A log entry includes
-      the IP address, browser details, the page the request came from (if the browser sends it), the address of the page
-      or data requested, and the response's status and headers. Some of these can include applicants' details. A search for an applicant's
-      name in the app, or by an AI assistant, puts it in the logged address. When someone on a team opens a resume, or
-      their AI assistant reads it, its file name, which often includes the applicant's name, is logged with the
-      response. And the log entry for each application received links the applicant's IP address and browser details to the application's ID. We don't log the contents of
-      applications, comments, or uploaded files, and we remove cookies, sign-in secrets, and invitation links from our
-      logs.
-    </li>
-    <li>
-      <strong>Rate limits.</strong> We use IP addresses briefly, in memory, to limit how many requests come from one
-      address. We count AI assistants' requests per person in the same way. These counts aren't saved.
-    </li>
-  </ul>
-
-  <h3>Support</h3>
-  <p>
-    If you email us, we receive your email address, your message, and anything you include with it. Our email inbox
-    provider stores these emails for us.
-  </p>
-
-  <h3>Visitors to emploist.com</h3>
-  <p>
-    Our website has no analytics, cookies, forms, or third-party scripts. The provider that hosts it receives standard
-    request data, such as your IP address, your browser details, and the page you asked for, in its server logs.
-  </p>
-
-  <h3 id="sensitive-information">Sensitive information</h3>
-  <p>
-    We don't ask for health, biometric, bank account, or payment card information, and Emploist doesn't ask you to
-    create a password. We do keep some secrets that sign people in, which some laws treat as passwords:
-  </p>
-  <ul>
-    <li>sign-in codes, stored only in hashed form</li>
-    <li>session tokens, which keep you signed in</li>
-    <li>Google or Microsoft sign-in tokens, stored with your account</li>
-    <li>the secret part of invitation links, stored only in hashed form</li>
-    <li>
-      AI assistants' authorization codes and refresh tokens, stored in hashed form, and the encrypted copies of their
-      newest tokens
-    </li>
-  </ul>
-  <p>
-    We use them only to sign people in, and to let people's AI assistants act for them. Applicants sometimes include
-    sensitive details in their resumes. The employer is responsible for that data.
+    If you sign in with Google or Microsoft, we receive your name, email address, account ID, and sign-in tokens, and
+    from Google, a link to your profile picture. We only ask for basic profile access, not access to your email, files,
+    or anything else in your account. Microsoft sign-in also asks to keep that basic access over time, so Microsoft
+    gives us a long-lived token. We use this data only to sign you in and to show your name and email address in
+    Emploist, including to your teammates and the AI assistants they connect. We keep it with your account until you
+    delete your account, and we don't sell it, use it for advertising, or share it except as this policy describes. You
+    can remove Emploist's access in your Google or Microsoft account settings.
   </p>
 
   <h2 id="how-we-use-information">5. How we use information</h2>
   <p>
-    We use personal data only for the purposes below. If you're in the European Economic Area (EEA) or the UK, the table
-    also shows the legal basis we rely on.
+    We use personal data only for these purposes. If you're in the European Economic Area (EEA) or the UK, the table also
+    shows the legal basis we rely on.
   </p>
   <table>
     <thead>
       <tr>
         <th>Purpose</th>
-        <th>Information used</th>
         <th>Legal basis</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>
-          Providing Emploist: running your account and company, showing your team's work, running careers pages,
-          sending the emails your company sets up, and letting the AI assistants you connect work for you
+          Providing Emploist: running accounts and companies, careers pages, the emails customers set up, and the AI
+          assistants people connect
         </td>
         <td>
-          Account information, and your AI assistants' details and connections. We also process your company's Customer
-          Data, including your work for it, as our <a href="/terms/#data-processing">data processing terms</a> describe.
-        </td>
-        <td>Legitimate interests: providing the service your company signed up for</td>
-      </tr>
-      <tr>
-        <td>
-          Signing you in and keeping Emploist secure: checking sign-ins, including AI assistants' tokens, keeping
-          sessions, limiting request rates, and preventing and investigating spam and abuse
-        </td>
-        <td>Account, session, AI assistant, and log information, including IP addresses</td>
-        <td>Legitimate interests: keeping Emploist, our users, and applicants safe</td>
-      </tr>
-      <tr>
-        <td>Billing: running free trials and the plan with Dodo, tracking AI credits, and preventing repeat trials</td>
-        <td>Billing information and your email address</td>
-        <td>
-          Legitimate interests: running your company's plan with Dodo, preventing trial abuse, and keeping the tax and
-          accounting records required by the laws that apply to us
+          Legitimate interests in providing the service your company signed up for, or our contract with you if you're
+          personally a party to it
         </td>
       </tr>
       <tr>
-        <td>Support: answering your questions and requests</td>
-        <td>Your emails and any account information we need to help</td>
-        <td>Legitimate interests: helping the people who use Emploist</td>
+        <td>Signing you in and keeping Emploist secure, including preventing spam and abuse</td>
+        <td>Legitimate interests in keeping Emploist and the people who use it safe</td>
       </tr>
       <tr>
+        <td>Billing with Dodo, tracking AI credits, and preventing repeat free trials</td>
         <td>
-          Service emails: sign-in codes, invitations, and important notices, such as changes to our prices, Terms,
-          subprocessors, or this policy, security incidents, and planned deletion of an inactive company
-        </td>
-        <td>Name and email address</td>
-        <td>
-          Legitimate interests: signing you in, letting companies invite their team, and keeping customers informed
+          Legitimate interests in running the plan and keeping the tax and accounting records the law requires
         </td>
       </tr>
       <tr>
-        <td>Finding and fixing problems and keeping Emploist working, using our logs and support conversations</td>
-        <td>
-          Log and support information. When these include Customer Data, such as an applicant's name in a search, we use
-          it only to fix problems for the customer.
-        </td>
-        <td>Legitimate interests: keeping Emploist working well</td>
+        <td>Answering your questions and requests</td>
+        <td>Legitimate interests in helping the people who use Emploist</td>
       </tr>
       <tr>
-        <td>Running emploist.com</td>
-        <td>Standard request data, such as IP addresses</td>
-        <td>Legitimate interests: running and securing our website</td>
+        <td>Service emails, such as sign-in codes, invitations, and important notices about Emploist</td>
+        <td>Legitimate interests in signing people in and keeping customers informed</td>
+      </tr>
+      <tr>
+        <td>
+          Finding and fixing problems, keeping Emploist and our website working, and improving Emploist using aggregated
+          or de-identified usage information
+        </td>
+        <td>Legitimate interests in running Emploist well</td>
       </tr>
       <tr>
         <td>Complying with the law, enforcing our Terms, and handling legal claims</td>
-        <td>Any relevant information</td>
         <td>
-          Legitimate interests: complying with the laws that apply to us, such as Indian law, and protecting our rights.
-          Legal obligation, where EU or UK law requires the processing.
+          Legal obligations under EU or UK law, where they apply, and otherwise legitimate interests in complying with the
+          law and protecting our rights
         </td>
       </tr>
     </tbody>
   </table>
   <p>
-    If you're personally a party to our contract, we also rely on that contract for providing Emploist, billing,
-    support, and service emails.
+    We don't sell personal data, use it for advertising, or send marketing emails. We don't use Customer Data to train
+    AI models. We don't make decisions about you based solely on automated processing that have legal or similarly
+    significant effects on you.
   </p>
 
   <h3 id="right-to-object">Your right to object</h3>
   <p>
     <strong
-      >If you're in the EEA or the UK, you can object at any time, for reasons related to your situation, to our use of
+      >If you're in the EEA or the UK, you can object at any time, on grounds relating to your situation, to our use of
       your personal data based on legitimate interests.</strong
-    > Most of what this section describes relies on legitimate interests. To object,
-    email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. We'll then stop, unless we have compelling
-    legitimate grounds that override your interests, rights, and freedoms, or we need the data for legal claims. If we
-    ever send you marketing emails, you can object to them at any time, and we'll stop.
+    > To object, email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. We'll then stop, unless we have
+    compelling legitimate grounds that override your interests, rights, and freedoms, or we need the data for legal claims.
   </p>
 
-  <h3>What we don't do</h3>
-  <ul>
-    <li>
-      We don't sell personal data, and we don't "share" it for cross-context behavioral advertising, as California law
-      defines those terms.
-    </li>
-    <li>We don't use personal data for advertising, and we don't use analytics or tracking tools.</li>
-    <li>
-      We don't use Customer Data, including applications and resumes, to train AI models. TypeSafe's published terms say
-      it won't use the data we send to train its AI models without our consent, and we don't give that consent.
-    </li>
-    <li>
-      We use Customer Data only to provide, secure, and support Emploist for the customer, including finding and fixing
-      problems, as our <a href="/terms/#data-processing">data processing terms</a> describe. That includes Customer Data
-      that appears in our logs or in emails to our support address.
-    </li>
-    <li>
-      We don't make decisions about our users based solely on automated processing that have legal or similarly
-      significant effects on them. For how AI ranking works for applicants,
-      see <a href="#applicants">For job applicants</a>.
-    </li>
-    <li>
-      We don't send marketing emails. Emploist sends sign-in codes, invitations, and the emails customers send to
-      applicants. We also email customers' admins about important matters, such as changes to our prices, Terms, or
-      subprocessors, security incidents, and planned deletion of an inactive company, and we email everyone with an
-      account about material changes to this policy. If we ever send marketing emails, we'll do so only as the law
-      allows, with an unsubscribe link in each one.
-    </li>
-  </ul>
-
   <h2 id="subprocessors">6. Sharing and subprocessors</h2>
-  <p>We share personal data only as described in this section.</p>
 
   <h3>Subprocessors</h3>
   <p>
-    These providers process personal data on our behalf to run Emploist. For Customer Data, they're our subprocessors.
-    This is the subprocessor list that our <a href="/terms/#data-processing">data processing terms</a> refer to.
+    These providers process personal data for us to run Emploist. For Customer Data, they're our subprocessors, and this
+    is the list that our <a href="/terms/#data-processing">data processing terms</a> refer to.
   </p>
   <table>
     <thead>
       <tr>
         <th>Provider</th>
         <th>What it does</th>
-        <th>Personal data</th>
         <th>Location</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Our cloud hosting providers</td>
-        <td>Servers, database, and file storage for the app and careers pages</td>
-        <td>All data in Emploist, including Customer Data and account information</td>
-        <td>Singapore (server and database) and the Asia-Pacific region (file storage)</td>
+        <td>OVHcloud</td>
+        <td>Hosting the app's servers and database</td>
+        <td>Singapore</td>
       </tr>
       <tr>
-        <td>
-          TypeSafe AI, Inc. (<a href="https://typesafe.ai/legal/privacy-policy">privacy policy</a>)
-        </td>
-        <td>AI ranking of applications, only for companies that have it on</td>
-        <td>
-          Resume text, answers to the employer's questions (except phone numbers), and the job's title, department,
-          employment type, and description
-        </td>
+        <td>Cloudflare, Inc.</td>
+        <td>Storing files and database backups, DNS, delivering logos, and forwarding email sent to our support address</td>
+        <td>Asia-Pacific (file storage) and worldwide</td>
+      </tr>
+      <tr>
+        <td>TypeSafe AI, Inc.</td>
+        <td>AI ranking of applications, for companies that have it on</td>
         <td>United States</td>
       </tr>
       <tr>
-        <td>
-          Resend, operated by Plus Five Five, Inc. (<a href="https://resend.com/legal/privacy-policy">privacy policy</a>)
-        </td>
+        <td>Resend (Plus Five Five, Inc.)</td>
         <td>Sending emails</td>
-        <td>
-          Recipients' email addresses, names, and the contents of sign-in codes, invitations, and emails to applicants
-        </td>
-        <td>Japan (email is sent from there) and the United States (email data is stored in the US)</td>
-      </tr>
-      <tr>
-        <td>Our email inbox provider</td>
-        <td>Receiving and storing emails sent to our support address</td>
-        <td>
-          Whatever people send us, which can include Customer Data that customers or applicants send, for example in a
-          request to correct an application
-        </td>
-        <td>May be outside the European Union</td>
+        <td>Japan and the United States</td>
       </tr>
     </tbody>
   </table>
   <p id="about-typesafe">
-    <strong>About TypeSafe.</strong> TypeSafe's published terms say it won't use the data we send to train its AI models
-    (that is, to change the models' weights) without our consent, and we don't give that consent. The terms also let
-    TypeSafe keep and use that data to monitor for fraud and abuse, to comply with the law, and to derive service
-    telemetry, such as technical logs, statistics, classifications, and learnings about how its service is used.
-    TypeSafe may use telemetry without restriction, including to improve its services. The terms don't set a fixed
-    period for how long TypeSafe keeps the data. You can read more in
+    TypeSafe's terms say it won't use the data we send to train its AI models. They let it keep and use that data for
+    its own purposes, such as preventing fraud and abuse, complying with the law, and service telemetry. See
     TypeSafe's <a href="https://typesafe.ai/legal/privacy-policy">privacy policy</a> and <a
       href="https://typesafe.ai/legal/data-processing">data processing addendum</a
     >.
   </p>
   <p>
-    We also use providers for our own operations, such as the host of emploist.com, which receives standard request data
-    from website visitors. As our website host, it doesn't receive the data in the Emploist app.
+    We'll update this list before we add or replace a subprocessor, and tell customers as our data processing terms
+    describe. Our website, emploist.com, is hosted by Vercel, which receives website visitors' request data, but not data
+    in the Emploist app.
   </p>
 
-  <h3>Changes to our subprocessors</h3>
-  <p>
-    We keep this list up to date. Before we add or replace a subprocessor on this list, we'll update the list and email
-    each customer's admins at least 30 days in advance. Customers can object, as
-    our <a href="/terms/#data-processing">data processing terms</a> explain. For our subprocessors' own providers, we rely on
-    the notice they give us. Customers can also ask us for more details about our subprocessors.
-  </p>
-
-  <h3>Independent third parties</h3>
-  <p>
-    These companies receive personal data and decide how to use it under their own privacy policies. They aren't our
-    subprocessors.
-  </p>
-  <table>
-    <thead>
-      <tr>
-        <th>Company</th>
-        <th>Why</th>
-        <th>Personal data</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Dodo Payments (<a href="https://dodopayments.com/legal/privacy-policy">privacy policy</a>)</td>
-        <td>Reseller and merchant of record for our plan and credit packs</td>
-        <td>
-          From us, the email address of the admin who first checks out, and the company's name. We don't update that
-          email later. Dodo also collects payment and billing details from you directly.
-        </td>
-      </tr>
-      <tr>
-        <td>Google (<a href="https://policies.google.com/privacy">privacy policy</a>)</td>
-        <td>Sign-in, if you choose to sign in with Google</td>
-        <td>
-          Google gives us the details in <a href="#google-microsoft">Google and Microsoft sign-in</a>, and knows you
-          signed in to Emploist.
-        </td>
-      </tr>
-      <tr>
-        <td>Microsoft (<a href="https://privacy.microsoft.com/privacystatement">privacy statement</a>)</td>
-        <td>Sign-in, if you choose to sign in with Microsoft</td>
-        <td>
-          Microsoft gives us the details in <a href="#google-microsoft">Google and Microsoft sign-in</a>, and knows you
-          signed in to Emploist.
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3 id="ai-assistant-providers">AI assistants you connect</h3>
-  <p>
-    When you connect an AI assistant, we send it the data it asks for, as you direct. That can include your name, email
-    address, and role, your teammates' names, email addresses, and roles, and your company's Customer Data, such as
-    jobs, applicants' details and answers, resume text, match scores, and comments. The assistant is run by a company
-    that you or your company choose, such as Anthropic or OpenAI, or runs on your own computer. Its provider handles this
-    data under its own terms and privacy policy. It isn't our subprocessor, and we can't control or delete what it
-    receives.
-  </p>
-
-  <h3>Others</h3>
+  <h3>Other recipients</h3>
   <ul>
     <li>
-      <strong>Your company.</strong> Your teammates can see your name, email address, and activity in Emploist. If a
-      teammate connects an AI assistant, it can receive your name, email address, and role, and your activity, such as
-      your comments. People you invite see your name, or your email address if you haven't set a name.
+      <strong>Dodo Payments</strong> (<a href="https://dodopayments.com/legal/privacy-policy">privacy policy</a>), the
+      merchant of record for our plan, which uses the billing details described above under its own privacy policy.
+    </li>
+    <li>
+      <strong>Google</strong> (<a href="https://policies.google.com/privacy">privacy policy</a>) and <strong>Microsoft</strong
+      > (<a href="https://privacy.microsoft.com/privacystatement">privacy statement</a>), if you sign in with them.
+    </li>
+    <li>
+      <strong>Google</strong>, which hosts our support inbox (Gmail) under its own terms and <a
+        href="https://policies.google.com/privacy">privacy policy</a
+      >, not a data processing agreement. It stores the emails people send us, and our replies come from a Gmail
+      address. If you're a customer, don't include applicants' details in emails to us. Refer to jobs and applications
+      by their addresses in Emploist instead, without search terms in them, such as an applicant's name.
+    </li>
+    <li>
+      <strong>AI assistants</strong> that you or your teammates connect. We send an assistant the data it asks for, which
+      can include your name, email address, and role, and your company's Customer Data. Each assistant is run by a
+      company that you or your company choose, such as Anthropic or OpenAI, under its own terms. It isn't our
+      subprocessor, and we don't control what it receives.
+    </li>
+    <li>
+      <strong>Your company.</strong> Your teammates can see your name, email address, and activity in Emploist.
     </li>
     <li><strong>Professional advisers</strong>, such as lawyers and accountants, who must keep it confidential.</li>
     <li>
       <strong>Authorities and others</strong>, when the law requires it, or when it's needed to protect the rights,
-      safety, or security of our users, applicants, the public, or Emploist.
+      safety, or security of the people who use Emploist, the public, or Emploist.
     </li>
     <li>
-      <strong>A successor.</strong> If Emploist's business is transferred, for example to a company set up to run it or
-      to a buyer, personal data may be transferred with it. We'll tell customers if that happens.
+      <strong>A successor</strong>, if Emploist's business is transferred, for example to a company set up to run it or
+      to a buyer.
     </li>
   </ul>
 
   <h2 id="international-transfers">7. International transfers</h2>
   <p>
-    Our server and database are in Singapore, and our file storage is in the Asia-Pacific region. Personal data still
-    goes to other countries:
+    Our servers are in Singapore, and our file storage is in the Asia-Pacific region. We access data from India, and some
+    providers process it in other countries, including the United States and Japan, as the list above shows. Google may
+    store our support inbox in its data centers worldwide.
   </p>
-  <ul>
-    <li>We're based in India, and we access data from there to run, support, and secure Emploist.</li>
-    <li>TypeSafe (AI ranking) and Resend (email) process data in the United States, and Resend sends email from Japan.</li>
-    <li>Our email inbox provider may process data outside the European Union.</li>
-    <li>Dodo Payments, Google, and Microsoft process data under their own policies, which can involve other countries.</li>
-    <li>AI assistants you connect receive data wherever their providers process it.</li>
-  </ul>
   <p>
-    India and Singapore don't have an adequacy decision from the European Commission or the UK. The US has one only for
-    companies certified under the EU-US Data Privacy Framework and its UK Extension. This is how we protect personal
-    data from the EEA and the UK that goes outside them:
-  </p>
-  <ul>
-    <li>
-      <strong>Customer Data.</strong> Our <a href="/terms/#data-processing">data processing terms</a> include the
-      European Commission's Standard Contractual Clauses, with the UK Addendum for UK data. They cover our access from
-      India.
-    </li>
-    <li>
-      <strong>Your account data and other data we control.</strong> We're based in India, so when you use Emploist or
-      email us, you give this data to us directly. It's stored in Singapore, and we protect it as this policy
-      describes wherever we access it.
-    </li>
-    <li>
-      <strong>TypeSafe and Resend.</strong> Their data processing terms include the Standard Contractual Clauses and the
-      UK Addendum. Resend also states that it's certified under the EU-US Data Privacy Framework and its UK Extension.
-    </li>
-    <li>
-      <strong>Our email inbox provider.</strong> Where it processes data outside the European Union, we use the
-      safeguards that data protection laws require.
-    </li>
-    <li>
-      <strong>Dodo Payments.</strong> For the details we send Dodo at checkout, Dodo's data processing agreement with us
-      includes the Standard Contractual Clauses, with the module for transfers between independent controllers, and the
-      UK Addendum.
-    </li>
-    <li>
-      <strong>AI assistants.</strong> We send data to an assistant only when someone connects it and it asks for the data.
-      For Customer Data, our <a href="/terms/#data-processing">data processing terms</a> explain how this is covered.
-      Otherwise, the assistant's provider protects the data under the terms that the person who connected it, or their
-      company, agreed with it.
-    </li>
-  </ul>
-  <p>
-    You can ask for a copy of these safeguards by emailing <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
-    We may leave out commercial details that aren't relevant.
+    When you use Emploist or email us, you give your personal data to us directly, and we protect it as this policy
+    describes. For Customer Data from the EEA, the UK, or Switzerland, our data processing terms include the European
+    Commission's Standard Contractual Clauses. Where our providers' processing needs a transfer mechanism, we rely on the
+    Standard Contractual Clauses, an adequacy decision such as the EU-US Data Privacy Framework, or another mechanism
+    that data protection laws recognize. For our support inbox, we have no Standard Contractual Clauses with Google, and
+    rely on Google LLC's certification under the EU-US Data Privacy Framework, its UK Extension, and the Swiss-US Data
+    Privacy Framework. You can ask us for a copy of these safeguards.
   </p>
 
   <h2 id="retention">8. How long we keep information</h2>
-  <p>
-    Apart from sign-in codes, logs, and backups, we don't delete data automatically on a fixed schedule. Most data stays
-    until you or your company deletes it, as the table shows.
-  </p>
   <table>
     <thead>
       <tr>
@@ -852,352 +324,90 @@ const sections = [
       <tr>
         <td>Account information</td>
         <td>
-          Until you delete your account. If you're not in any company, for example because you left it or it was deleted,
-          you can't delete your account in the app, so email us and we'll delete it. When your account is deleted, we
-          delete your profile picture link, sessions, sign-in methods (including Google or Microsoft tokens), AI
-          assistant connections and their tokens, company membership, and notifications, and remove your email address
-          from your account. We keep your name, so your
-          teammates can still see who wrote your comments and moved applications. Your comments show it with a "Deleted
-          account" label, and it stays in teammates' notifications about your comments until their accounts or the
-          company are deleted. Invitations sent to your email address stay in the inviting company's records until that
-          company is deleted. If you leave a company or are removed from it, your comments and activity stay with that
-          company's data.
+          Until you delete your account, except your name, which we keep so that your comments and activity still show
+          who did them.
         </td>
       </tr>
       <tr>
-        <td>Sessions</td>
+        <td>Company information, invitations, and Customer Data</td>
         <td>
-          A session expires after 7 days, extended while you use the app. Its record, with your IP address and user agent, may be kept until you delete
-          your account.
-        </td>
-      </tr>
-      <tr>
-        <td>Sign-in codes</td>
-        <td>Valid for 5 minutes. Deleted once used, and expired codes are cleared out automatically.</td>
-      </tr>
-      <tr>
-        <td>AI assistant connections</td>
-        <td>
-          Until you disconnect the assistant or delete your account, either of which deletes the connection and its
-          tokens. Turning AI assistants off for your company, leaving your company, or your company being deleted
-          doesn't remove them, but the assistant can't use that company's data afterwards. If you then join or create
-          another company, the assistant can work with that company's data. Records of expired tokens are kept until
-          the connection is deleted. Signing out of Emploist doesn't disconnect your assistants. The assistant's own
-          details are kept with no set time limit.
-        </td>
-      </tr>
-      <tr>
-        <td>Company information and Customer Data</td>
-        <td>
-          Until an admin deletes the company. If a company has had no active Plan (a free trial, a paid Plan, or a Plan in
-          the grace period after a failed payment) for 12 months in a row, we may delete it and all its data. We'll email
-          its admins at least 30 days before we do. See our <a href="/terms/#suspension-and-termination">Terms</a>.
-        </td>
-      </tr>
-      <tr>
-        <td>Invitations</td>
-        <td>
-          Kept with the company's records until the company is deleted, including after they're accepted, canceled, or
-          expired.
-        </td>
-      </tr>
-      <tr>
-        <td>Notifications</td>
-        <td>
-          Until the person's account or the company is deleted. Read notifications keep the applicant's name and the job
-          title, even after the application is deleted.
+          Until an admin deletes the company, or we delete it under our <a href="/terms/#suspension-and-termination"
+            >Terms</a
+          >, for example after it has had no active Plan, as our Terms define it, for 12 months in a row.
         </td>
       </tr>
       <tr>
         <td>Applicants' data</td>
         <td>
-          The employer decides. It's deleted when the employer deletes the application, the job, or the company, with the
-          exceptions below.
+          The employer decides. When the employer deletes an application, job, or company, we delete it from our active
+          systems. Copies in backups and logs are removed over time, and some details may remain in the employer's
+          other records, such as notifications, until those are deleted.
         </td>
+      </tr>
+      <tr>
+        <td>AI assistant connections</td>
+        <td>Until you disconnect the assistant or delete your account.</td>
       </tr>
       <tr>
         <td>Billing records</td>
         <td>
-          Plan and credit records stay until the company is deleted. Records of who used a free trial are kept after
-          that, even if the person deletes their account, to prevent repeat trials. Records we need for tax and
-          accounting are kept as long as the law requires. Dodo keeps its own records, including the email address of the
-          admin who first checked out, under its privacy policy.
+          Until the company is deleted, except records of who has used a free trial, which we keep to prevent repeat
+          trials, and records the law requires us to keep.
         </td>
       </tr>
       <tr>
         <td>Support emails</td>
-        <td>
-          Until your question or request is resolved, and then only as long as we might need the record, for example for a
-          follow-up, a complaint, or a legal claim.
-        </td>
+        <td>As long as we need them to handle your request and any follow-up.</td>
       </tr>
       <tr>
-        <td>Request logs</td>
-        <td>Only as long as we need them to find and fix problems and to investigate abuse, then deleted.</td>
-      </tr>
-      <tr>
-        <td>Backups</td>
-        <td>
-          Only as long as we need them to restore Emploist after a problem. Older backups are deleted or overwritten as
-          newer ones replace them.
-        </td>
+        <td>Logs and backups</td>
+        <td>For a limited period, for security, troubleshooting, and recovery, then deleted or overwritten.</td>
       </tr>
     </tbody>
   </table>
-  <p>When an application, job, or company is deleted, we delete it from our active systems, except:</p>
-  <ul>
-    <li>
-      Notifications that a team member has already read keep the applicant's name and the job title until that team
-      member's account or the company is deleted.
-    </li>
-    <li>Copies in backups and logs are removed over time, as they're deleted or overwritten.</li>
-    <li>
-      Rarely, if deleting a stored file, such as a resume, fails, the file can remain until we remove it. We'll remove
-      it when we find it, or when asked.
-    </li>
-    <li>
-      Data already sent to our subprocessors is kept under their terms. For TypeSafe,
-      see <a href="#about-typesafe">About TypeSafe</a>. Dodo keeps its own records under its privacy policy.
-    </li>
-    <li>Data already sent to an AI assistant is kept under its provider's terms, which we don't control.</li>
-  </ul>
+  <p>Data already sent to our providers or to AI assistants is kept under their own terms.</p>
 
   <h2 id="security">9. Security</h2>
-  <p>We protect personal data with measures such as these:</p>
-  <ul>
-    <li>Encrypted connections (HTTPS) to the app, careers pages, and our website, and encryption of stored data at rest.</li>
-    <li>
-      In the app, only team members of a company, and the AI assistants they connect, can access its data, and
-      admin-only actions are checked on our servers.
-      Resumes are kept in private storage, and every request to open one is checked to make sure it comes from a
-      signed-in team member of the right company.
-    </li>
-    <li>
-      You don't create a password for Emploist. Sign-in codes and invitation links are stored only in hashed form, and
-      sign-in codes expire after 5 minutes and allow 3 tries.
-    </li>
-    <li>
-      AI assistants sign in with OAuth, using PKCE, and work only with the role of the person who allowed them. Every
-      request from an assistant checks its token and that it's still connected, so disconnecting it stops it at once.
-    </li>
-    <li>Strict security headers and content security policies. Careers pages run in a sandbox that blocks scripts.</li>
-    <li>
-      Checks on untrusted content. Customers' careers page code runs in worker threads with time and memory limits.
-      Uploaded files are checked by their contents and size, and resumes are read in worker threads with limits. Rich
-      text, email designs, and SVG logos are cleaned of unsafe code.
-    </li>
-    <li>
-      Rate limits on sign-in, the app, AI assistants, careers pages, and applications, and a spam trap on application
-      forms.
-    </li>
-    <li>
-      Cookies, sign-in secrets, including AI assistants' authorization codes and tokens, and invitation links are
-      removed from our request logs.
-    </li>
-    <li>Card details are handled by Dodo.</li>
-    <li>Regular backups, with the ability to restore them, and an incident response process.</li>
-  </ul>
   <p>
-    No system is perfectly secure, and we can't guarantee that personal data will never be accessed without permission.
-    If a breach affects your personal data, we'll notify you and the relevant authorities as the law requires. For
-    Customer Data, we'll notify affected customers without undue delay, and within 72 hours of becoming aware of the
-    breach, as our <a href="/terms/#data-processing">data processing terms</a> describe.
+    We protect personal data with reasonable measures, including encrypted connections (HTTPS), access
+    controls so that, in the app, only a company's team and the AI assistants they connect can see its data, private
+    storage for resumes,
+    sign-in without passwords, and regular database backups. No system is perfectly secure. If a breach affects personal
+    data we control, we'll notify you and the authorities as the law requires. If it affects Customer Data, we'll notify
+    the customer, as our data processing terms describe.
   </p>
 
   <h2 id="your-rights">10. Your rights</h2>
-  <p>Depending on where you live, you may have the right to:</p>
-  <ul>
-    <li><strong>Access</strong> your personal data and get a copy of it</li>
-    <li><strong>Correct</strong> data that's inaccurate or incomplete</li>
-    <li><strong>Delete</strong> your data</li>
-    <li><strong>Restrict</strong> how we use it</li>
-    <li>
-      <strong>Take it with you</strong> (portability): receive it in a machine-readable format, or have it sent to
-      another provider
-    </li>
-    <li>
-      <strong>Object</strong> to how we use it, including when we rely on legitimate interests.
-      See <a href="#right-to-object">Your right to object</a>.
-    </li>
-    <li><strong>Withdraw consent</strong> where we rely on it, without affecting what we did before</li>
-    <li><strong>Complain</strong> to a data protection authority</li>
-  </ul>
   <p>
-    These rights have limits. For example, we may need to keep some data to meet legal obligations. If we can't fully
-    meet a request, we'll explain why.
+    Depending on where you live, you may have the right to access, correct, or delete your personal data, to get a copy
+    of it in a portable format, to restrict or object to how we use it, to withdraw consent where we rely on it, and to
+    complain to a data protection authority.
   </p>
-
-  <h3>How to make a request</h3>
   <p>
-    Email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>, ideally from the email address on your
-    Emploist account. We may need to confirm your identity before we act. We'll respond within the time the law sets,
-    which is generally one month. We won't charge you, unless the law allows a fee, for example for requests that are
-    clearly unfounded or excessive.
-  </p>
-
-  <h3>What you can do in the app</h3>
-  <ul>
-    <li>
-      If you're in a company, delete your account in Settings, under Danger zone. If you're the only admin, make someone
-      else an admin first. If you're the only team member, your company is deleted too. If you're not in a company, for
-      example because you left it or it was deleted, email us and we'll delete your account.
-    </li>
-    <li>
-      Disconnect your AI assistants on the MCP page. Admins can turn AI assistants off for the whole company in
-      Settings.
-    </li>
-    <li>
-      Your team can export a job's applications and delete applications and jobs. Admins can delete the whole company.
-      Deleting applications and jobs needs an active Plan. Exporting and deleting the company or your account don't.
-    </li>
-    <li>
-      Some things need our help. Email us, and we'll delete individual applications or jobs while your company is
-      read-only, correct an applicant's details, which the app can't edit, provide match scores, their breakdown, and
-      comments, which aren't in the export, or change your name or email address, which you can't change in the app yet.
-    </li>
-  </ul>
-
-  <h3>Job applicants</h3>
-  <p>
-    If you applied for a job, contact the employer first about your application. For the request logs and other data we
-    control ourselves, you can contact us directly. See <a href="#applicants">For job applicants</a>.
+    To make a request, email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>, ideally from the email
+    address on your account. We may need to confirm your identity, and we'll respond within the time the law requires.
+    You can also delete your account in Settings or, if you're no longer in a company, by emailing us. If you applied
+    for a job, contact the employer about your application (see <a href="#applicants">For job applicants</a>).
   </p>
 
   <h3>EEA and UK</h3>
   <p>
-    The legal bases we rely on are in <a href="#how-we-use-information">How we use information</a>. You can object at
-    any time to our use of your data based on legitimate interests,
-    as <a href="#right-to-object">Your right to object</a> explains. You can also complain to the data protection authority
-    where you live or work, or where you think an infringement happened. In the UK, that's the Information
-    Commissioner's Office (ICO).
-  </p>
-  <p>
-    We'd appreciate the chance to help first. You can complain to us by email
-    at <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. We'll acknowledge your complaint within 30 days,
-    look into it, keep you updated, and tell you the outcome without undue delay.
-  </p>
-
-  <h3>United States, including California</h3>
-  <p>
-    We collect these categories of personal information, as described
-    in <a href="#information-we-collect">Information we collect</a>:
-  </p>
-  <table>
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Examples</th>
-        <th>Sources</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Identifiers</td>
-        <td>Name, email address, IP address, and account IDs</td>
-        <td>You, Google or Microsoft, an admin who invites you, and your device</td>
-      </tr>
-      <tr>
-        <td>Commercial information</td>
-        <td>Plan status, and AI credit purchases and use</td>
-        <td>You and Dodo Payments</td>
-      </tr>
-      <tr>
-        <td>Internet or other network activity</td>
-        <td>
-          Sessions and request logs, including the pages and data you request in the app and the requests your AI
-          assistants make
-        </td>
-        <td>Your browser and device, your AI assistants, and your use of Emploist</td>
-      </tr>
-      <tr>
-        <td>Professional information</td>
-        <td>The company you belong to and your role in it</td>
-        <td>You and your company's admins</td>
-      </tr>
-      <tr>
-        <td>Sensitive personal information</td>
-        <td>
-          Account sign-in credentials: sign-in codes and invitation link secrets (both stored hashed), session tokens,
-          Google or Microsoft sign-in tokens, and AI assistants' authorization codes and tokens (stored hashed or
-          encrypted)
-        </td>
-        <td>
-          Created when you sign in, connect an AI assistant, or are invited, or given to us by Google or Microsoft
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <p>
-    We use this information for the purposes in <a href="#how-we-use-information">How we use information</a>, disclose
-    it for those business purposes to the recipients in <a href="#subprocessors">Sharing and subprocessors</a>, and keep
-    it as described in <a href="#retention">How long we keep information</a>. For applicants' data, we're a service
-    provider to the employer.
-  </p>
-  <ul>
-    <li>
-      We don't sell or share personal information, and haven't in the last 12 months. We have no actual knowledge of
-      selling or sharing personal information of anyone under 16.
-    </li>
-    <li>
-      We collect sensitive personal information only as part of signing you in and letting your AI assistants act for
-      you, and we never use it to infer characteristics about you.
-    </li>
-    <li>
-      You can ask to know what personal information we've collected about you and how we use and disclose it, to get a
-      copy, and to have it deleted or corrected.
-    </li>
-    <li>
-      You can use an authorized agent. We may ask the agent for proof that you authorized them, and ask you to confirm
-      your identity directly with us.
-    </li>
-    <li>We won't discriminate against you for using your rights.</li>
-    <li>
-      We honor Global Privacy Control signals as a request to opt out of selling and sharing. Since we don't sell or share
-      personal information, there's nothing more we need to do when we receive one.
-    </li>
-  </ul>
-  <p>
-    If you live in another US state with a privacy law, you can make the same requests. If we decline your request, you
-    can appeal by replying to our decision, and we'll respond as the law requires.
+    You can complain to the data protection authority where you live or work, or where you think an infringement
+    happened. In the UK, that's the Information Commissioner's Office. You can also complain to us by email, and we'll
+    acknowledge your complaint within 30 days.
   </p>
 
   <h3>India</h3>
   <p>
-    Under India's Information Technology Act and its rules on sensitive personal data, you can review the information
-    you've given us and ask us to correct or update it. You can also choose not to give us information, or withdraw
-    consent you've given, by emailing us. If you do, we may not be able to provide Emploist to you. These rights cover
-    the information we collect from you as controller. For an application you sent to an employer, contact the employer.
-  </p>
-  <p>
-    These rules treat passwords as sensitive personal data, and define a password broadly, as a secret code or key used
-    to gain access. So the sign-in secrets listed in <a href="#sensitive-information">Sensitive information</a> may count
-    as sensitive personal data. We collect them only to sign people in, and to let people's AI assistants act for them.
-    We keep sign-in codes, invitation link secrets, and AI assistants' authorization codes only in hashed form, and AI
-    assistants' tokens hashed or encrypted, and share them only as <a href="#subprocessors"
-      >Sharing and subprocessors</a
-    > describes.
-  </p>
-  <p>
-    You can raise any grievance with our Grievance Officer, Navaneeth CT,
-    at <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. We'll acknowledge it within 24 hours and resolve it
-    within 15 days of receiving it.
-  </p>
-  <p>
-    If you're in India, then as India's Digital Personal Data Protection Act, 2023 comes into force, you'll also have
-    the rights it gives, such as to get a summary of your personal data and how we use it, to have it corrected or
-    erased, to have your grievances addressed, to nominate someone to act for you, and, after first raising a grievance
-    with us, to complain to the Data Protection Board of India.
+    You can review and correct the information you've given us, or withdraw consent you've given, by emailing us. If you
+    withdraw consent or don't give us information we need, we may not be able to provide Emploist to you. You can raise
+    any grievance with our Grievance Officer, Navaneeth CT, at <a href={`mailto:${SITE.supportEmail}`}
+      >{SITE.supportEmail}</a
+    >. As India's Digital Personal Data Protection Act, 2023 comes into force, you'll also have the rights it gives.
   </p>
 
-  <h3>Other countries</h3>
-  <p>
-    If you live elsewhere, for example in Canada, Australia, or Brazil, your local law may give you similar rights. Email
-    us, and we'll respond as your law requires. Navaneeth CT is responsible for privacy at Emploist. You can also
-    complain to your local data protection authority.
-  </p>
-
-  <h2 id="cookies">11. Cookies and similar technologies</h2>
-  <p>The Emploist app uses only strictly necessary cookies:</p>
+  <h2 id="cookies">11. Cookies</h2>
+  <p>The Emploist app uses only these cookies, which are needed to sign you in:</p>
   <table>
     <thead>
       <tr>
@@ -1208,66 +418,41 @@ const sections = [
     </thead>
     <tbody>
       <tr>
-        <td><code>emploist.session_token</code></td>
+        <td><code>__Secure-emploist.session_token</code></td>
         <td>Keeps you signed in</td>
         <td>7 days, renewed while you use the app</td>
       </tr>
       <tr>
-        <td><code>emploist.state</code></td>
+        <td><code>__Secure-emploist.state</code></td>
         <td>Protects your sign-in with Google or Microsoft</td>
-        <td>5 minutes, and removed once you're signed in</td>
+        <td>5 minutes</td>
       </tr>
     </tbody>
   </table>
   <p>
-    On app.emploist.com, which uses HTTPS, both names start with <code>__Secure-</code>. Both cookies are HttpOnly, so
-    scripts on the page can't read them, and they're sent only to the app, not to careers pages.
-  </p>
-  <p>
-    The app also uses your browser's local storage to remember your theme (<code>emploist-theme</code>) and whether the
-    sidebar is collapsed (<code>emploist-sidebar-collapsed</code>). These stay in your browser and aren't sent to us.
-  </p>
-  <p>
-    Emploist sets no cookies on careers pages, and scripts don't run on them. If an employer's own careers page design
-    loads content from other websites, those websites may set their own cookies,
-    as <a href="#applicants">For job applicants</a> explains. In the same way, when the app shows an AI assistant's logo,
-    the website it comes from may set its own cookies. emploist.com sets no cookies, uses no local storage, and runs no
-    analytics.
-  </p>
-  <p>
-    Because these cookies and storage are needed for the app to work, or only remember choices you make, they don't need
-    your consent, and we don't show a cookie banner. If you block cookies, you won't be able to sign in.
+    The app also uses your browser's local storage to remember your theme and whether the sidebar is collapsed. Emploist
+    sets no cookies on careers pages or our website, and we don't use analytics, advertising, or tracking cookies. If an
+    employer's careers page design loads content from other websites, those websites may receive your IP address and set
+    their own cookies.
   </p>
 
   <h2 id="children">12. Children</h2>
   <p>
-    Emploist is for businesses. You must be 18 or older to use the app. We don't knowingly collect personal data from
-    children as a controller. If you believe a child has given us personal data, email us and we'll delete it.
-  </p>
-  <p>
-    Employers decide who can apply for their jobs. If an employer accepts applications from people under 18, the
-    employer is responsible for meeting the law's requirements, such as getting a parent's consent where needed.
+    Emploist is for businesses, and you must be 18 or older to use the app. We don't knowingly collect personal data
+    from children as a controller. If you believe we have, email us and we'll delete it. Employers decide who can apply
+    for their jobs, and are responsible for any consent the law requires for applicants under 18.
   </p>
 
   <h2 id="changes">13. Changes to this policy</h2>
   <p>
-    We may update this policy when Emploist or the law changes, and we'll change the "Last updated" date at the top of
-    this page. If a change is material, we'll email everyone with an Emploist account at least 30 days before it takes
-    effect. If the law requires a change sooner, we'll give as much notice as we can.
+    We may update this policy, and we'll change the date at the top when we do. We'll email people with an Emploist
+    account about material changes before they take effect.
   </p>
 
   <h2 id="contact">14. Contact</h2>
   <p>
-    For privacy questions and requests, or to reach our Grievance Officer,
-    email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. We handle these by email only.
-  </p>
-  <ul>
-    <li><strong>Operator:</strong> Navaneeth CT, an individual based in India, trading as Emploist</li>
-    <li><strong>Privacy contact and Grievance Officer:</strong> Navaneeth CT</li>
-    <li><strong>Email:</strong> <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></li>
-  </ul>
-  <p>
-    If you applied for a job, please contact the employer first about your application.
-    See <a href="#applicants">For job applicants</a>.
+    For privacy questions or requests, or to reach our Grievance Officer, Navaneeth CT, email <a
+      href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+    >. Emploist is operated by Navaneeth CT, an individual based in India, trading as Emploist.
   </p>
 </LegalLayout>
