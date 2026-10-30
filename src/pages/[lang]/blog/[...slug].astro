@@ -1,0 +1,20 @@
+---
+// Translated posts, from src/content/blog/<language>/.
+import BlogPostPage from "../../../components/pages/BlogPostPage.astro";
+import { getPosts, getTranslations } from "../../../lib/blog";
+
+export async function getStaticPaths() {
+  const posts = new Map((await getPosts()).map((post) => [post.id, post]));
+  const translations = await getTranslations();
+  return [...translations].flatMap(([lang, bySlug]) =>
+    [...bySlug].map(([slug, translation]) => ({
+      params: { lang, slug },
+      props: { post: posts.get(slug)!, translation },
+    })),
+  );
+}
+
+const { post, translation } = Astro.props;
+---
+
+<BlogPostPage post={post} translation={translation} />

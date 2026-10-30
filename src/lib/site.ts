@@ -2,12 +2,10 @@
 // match `packages/shared/src/billing.ts` in the app's repository; update both
 // together.
 
+/** The site's title and description, in each language, are in src/i18n/messages. */
 export const SITE = {
   name: "Emploist",
   url: "https://www.emploist.com",
-  title: "Emploist: Applicant tracking with AI ranking and a careers page",
-  description:
-    "Post jobs on your own careers page, collect applications, and see every applicant ranked by AI against your job description. $29 a month for your whole team, with a 14-day free trial.",
   supportEmail: "support@emploist.com",
 } as const;
 
@@ -36,15 +34,11 @@ export const CREDIT_PACKS = [
   { credits: 10000, priceUsd: 69 },
 ] as const;
 
-/** The landing page's sections, in the header and footer. */
+/** The landing page's sections, in the header, with their words in src/i18n/messages. */
 export const NAV = [
-  { label: "Features", href: "/#features" },
-  { label: "Careers page", href: "/#careers-page" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Blog", href: "/blog/" },
+  { key: "features", href: "/#features" },
+  { key: "careersPage", href: "/#careers-page" },
+  { key: "pricing", href: "/#pricing" },
+  { key: "faq", href: "/#faq" },
+  { key: "blog", href: "/blog/" },
 ] as const;
-
-export function formatNumber(value: number): string {
-  return value.toLocaleString("en-US");
-}

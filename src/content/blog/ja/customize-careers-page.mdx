@@ -1,0 +1,272 @@
+---
+title: "採用ページをコードやAIでカスタマイズする方法"
+description: "採用ページを自社サイトと同じデザインに。Emploistでライブプレビューを見ながらコードを編集する方法と、ClaudeなどのAIアシスタントに任せる方法を紹介します。"
+pubDate: 2026-10-22
+author: "Navaneeth CT"
+image: ../images/customize-careers-page/cover.png
+imageAlt: "リデザインした採用ページと、Emploistのコードエディター。"
+tags: ["採用ページ", "ガイド"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import careersBefore from "../images/customize-careers-page/careers-before.png";
+import careersAfter from "../images/customize-careers-page/careers-after.png";
+import careersAfterMobile from "../images/customize-careers-page/careers-after-mobile.png";
+import claudePrompt from "../images/customize-careers-page/claude-prompt.png";
+import claudeReply from "../images/customize-careers-page/claude-reply.png";
+import designTab from "../images/customize-careers-page/design-tab.png";
+import editor from "../images/customize-careers-page/editor.png";
+import editorFont from "../images/customize-careers-page/editor-font.png";
+import editorHeadline from "../images/customize-careers-page/editor-headline.png";
+import editorMenu from "../images/customize-careers-page/editor-menu.png";
+import editorMobile from "../images/customize-careers-page/editor-mobile.png";
+import editorProblem from "../images/customize-careers-page/editor-problem.png";
+import editorReference from "../images/customize-careers-page/editor-reference.png";
+import editorUpload from "../images/customize-careers-page/editor-upload.png";
+
+採用ページは、求職者が会社の素顔に初めて触れる場所であることが少なくありません。フォントやカラー、文章のトーンが自社サイトとそろっていれば、採用ツールの1ページではなく、ブランドの一部として受け取ってもらえます。
+
+Emploistでは、どの会社にもロゴとカラーを反映した[初日から使える採用ページ](/ja/#careers-page)が用意されています。それ以上にこだわりたい場合は、コードを編集して見た目を自由に変えられます。難しそうに聞こえるかもしれませんが、開発者である必要はありません。このガイドでは、2つの方法を紹介します。
+
+1. [**Emploistでコードを編集する。**](#方法1emploistでコードを編集する)新しい見出しやフォントなど、小さな変更に向いています。入力するそばから、変更がライブプレビューに反映されます。
+2. [**AIアシスタントに任せる。**](#方法2aiアシスタントに変更を任せる)新しいセクションの追加など、大きな変更に向いています。コードをダウンロードし、やりたいことを普段の言葉で伝えて、アシスタントから返ってきたものをアップロードします。
+
+ここでは、サンプルの会社であるNorthwind Labsを例に、両方の方法を紹介します。始める前の採用ページはこちらです。
+
+<Figure
+  src={careersBefore}
+  url="northwind.emploist.com"
+  alt="デフォルトのデザインのNorthwind Labsの採用ページ。ロゴ入りのヘッダー、大きな「Join Northwind Labs」の見出しと短い会社紹介、部署と勤務地のフィルターが付いた募集中の求人一覧。"
+  caption="Emploistのデフォルトのデザインを使った、Northwind Labsの採用ページ。"
+/>
+
+## 変更できること
+
+採用ページは6つのファイルでできています。どれも、開いて編集できる小さなテキストファイルです。
+
+| ファイル | 役割 |
+| --- | --- |
+| `layout.liquid` | すべてのページを囲む枠組み。ヘッダー、フッター、フォントなど、すべてのページで読み込むもの |
+| `jobs.liquid` | 紹介文と募集中の求人一覧を表示するメインページ |
+| `job.liquid` | 個々の求人のページ |
+| `apply.liquid` | 応募フォーム |
+| `applied.liquid` | 応募後に求職者に表示されるお礼のページ |
+| `styles.css` | カラー、フォント、サイズ、余白など、すべての見た目 |
+
+ファイルには、3つのシンプルな言語が使われています。**HTML**は、見出しやボタンなど、ページに何を載せるかを記述します。**CSS**は、それがどう見えるかを指定します。**Liquid**は`{{ company.name }}`のようなプレースホルダーを加えます。求職者がページを開くと、Emploistがこれを会社名や求人などの情報に置き換えます。
+
+いろいろ試しても、採用ページが壊れることはありません。
+
+- **保存**をクリックするまで、求職者に見える内容は何も変わりません。
+- Emploistは保存前にコードをチェックし、問題があれば何を直せばよいかを教えてくれます。
+- いつでもデフォルトのデザインに戻せます。
+
+始めるには、管理者としてログインし、サイドバーの**採用ページ**を開きます。**デザイン**タブには、ページのカラーとコードがあります。ブランドカラーを設定するだけでよければ、**メインカラー**で色を選べば完了です。コードは必要ありません。
+
+<Figure
+  src={designTab}
+  alt="Emploistの採用ページ設定の「Design」タブ。「Primary color」の選択欄と、「Edit code」「Download ZIP」「Upload ZIP」ボタンのある「Code」セクション。"
+  caption="採用ページ → デザイン。このガイドで使う機能は、すべて「コード」セクションにあります。"
+/>
+
+## 方法1：Emploistでコードを編集する
+
+### エディターを開く
+
+**コードを編集**をクリックします。左側にはページのコードがあり、ファイルごとのタブと、そのファイルの役割を説明する短いメモが表示されます。右側には、サンプルの求人が入った採用ページのライブプレビューが表示されます。
+
+<Figure
+  src={editor}
+  alt="Emploistのコードエディター。左側にファイルのタブとlayout.liquidのコード、右側に採用ページのライブプレビュー。"
+  caption="コードエディター。右側のプレビューは入力に合わせて更新されます。"
+/>
+
+プレビューの上にある**ページへ移動**で、求職者が目にするすべてのページを切り替えられます。求人一覧、個々の求人、応募フォーム、お礼のページ、募集終了の求人、そして「ページが見つかりません」のページです。ファイルのタブをクリックしても、そのファイルが担当するページが表示されます。
+
+### 見出しを変更する
+
+`jobs.liquid`タブをクリックします。3行目に、ページ上部の大きな見出しがあります。
+
+```liquid
+<h1 class="hero-title">Join {{ company.name }}</h1>
+```
+
+「Join」という単語を「Build what's next at」に変更します。`{{ company.name }}`はそのままにしておきましょう。ここにはEmploistが会社名を入れます。入力を止めて少しすると、プレビューに新しい見出しが表示されます。
+
+<Figure
+  src={editorHeadline}
+  alt="エディターでjobs.liquidファイルの見出しを「Build what's next at {{ company.name }}」に変更し、プレビューに「Build what's next at Northwind Labs」と表示されている様子。"
+  caption="タグの間のテキストを編集すると、プレビューもそれに合わせて変わります。"
+/>
+
+### 独自のフォントを使う
+
+フォントの変更は、2か所を少し編集するだけです。ここでは、[Google Fonts](https://fonts.google.com)の無料フォントであるFrauncesを使います。
+
+1. **フォントを読み込む**。Google Fontsでフォントを開き、**Get font**、**Get embed code**の順にクリックして、`fonts.googleapis.com/css2`を含む`<link>`の行をコピーします。`layout.liquid`で、`stylesheet_url`を含む行のすぐ上に新しい行を作り、そこに貼り付けます。
+
+   ```html
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&display=swap">
+   ```
+
+2. **フォントを使う**。`styles.css`で、上のほうにある`--font:`で始まる行を探し、リストの先頭にフォント名を引用符で囲んで入れ、後ろにカンマを付けます。
+
+   ```css
+   --font: "Fraunces", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+   ```
+
+   リストにあるほかのフォントは、ブラウザーが追加したフォントを読み込めなかったときの予備です。
+
+<Figure
+  src={editorFont}
+  alt="エディターでstyles.cssファイルの--fontの行にFrauncesを追加し、プレビューにFrauncesフォントの採用ページが表示されている様子。"
+  caption="ページ全体でFrauncesが使われるようになりました。"
+/>
+
+### スマートフォンで確認する
+
+多くの求職者は、スマートフォンで採用ページを開きます。プレビューの上にあるスマートフォンのアイコンをクリックすると、スマートフォンのサイズでページを確認できます。
+
+<Figure
+  src={editorMobile}
+  alt="スマートフォンのサイズに切り替えたエディターのプレビュー。新しい見出しとフォントの採用ページが、幅の狭い1列で表示されている。"
+  caption="スマートフォンのアイコンで、プレビューをスマートフォンのサイズで表示できます。"
+/>
+
+### 公開前にミスを直す
+
+変更によって何かが壊れると、Emploistがすぐに知らせてくれます。ファイルのタブに赤い印が付き、プレビューにはページの代わりに何が問題なのかが表示され、コードの下のリストには問題の内容と行番号が表示されます。問題をクリックすると、その箇所に移動します。ほとんどの問題はタイプミスか閉じタグの書き忘れなので、直前の変更を元に戻せば（Macでは<kbd>Cmd</kbd>+<kbd>Z</kbd>、Windowsでは<kbd>Ctrl</kbd>+<kbd>Z</kbd>）たいてい解決します。
+
+<Figure
+  src={editorProblem}
+  alt="問題があるエディター。jobs.liquidのタブに赤い印が付き、4行目に下線が引かれ、プレビューにはページを表示できなかったことが示されている。コードの下のリストには、保存前に修正が必要な問題が1件あること（jobs.liquid、4行目、タグが閉じられていない）が表示されている。"
+  caption="{% endif %}を誤って削除すると、対応する{% if %}が閉じられないままになります。Emploistは、その行を正確に示してくれます。"
+/>
+
+問題が残っている間は保存できないため、壊れたページが求職者に表示されることはありません。
+
+### 使えるものを調べる
+
+エディターの上部にある**リファレンス**をクリックすると、求人の勤務地や会社の説明など、使用できるすべてのプレースホルダーを、それぞれが表示する内容の説明とともに確認できます。
+
+<Figure
+  src={editorReference}
+  alt="エディターの上に開いた「Reference」パネル。company.nameやcompany.descriptionなどのプレースホルダーと、それぞれが表示する内容が一覧になっている。"
+  caption="リファレンスには、テンプレートで表示できるものがすべて載っています。"
+/>
+
+### 変更を保存する
+
+プレビューの仕上がりに満足したら、**保存**をクリックします。求職者が見る採用ページは、すぐに更新されます。
+
+最初からやり直したいときは、**その他の操作**メニュー（**破棄**の横にある3つの点）から**デフォルトのコードに戻す**を選ぶと、Emploistのデフォルトのデザインに戻せます。ほかの変更と同じく、保存するまで採用ページには何も反映されません。
+
+<Figure
+  src={editorMenu}
+  frame="plain"
+  narrow
+  alt="エディターの「More actions」メニュー。「Download ZIP」「Upload ZIP」「Reset to default code」が表示されている。"
+  caption="その他の操作：コードをZIPでダウンロード・アップロードしたり、最初からやり直したりできます。"
+/>
+
+## 方法2：AIアシスタントに変更を任せる
+
+新しいセクションの追加やレイアウトの変更など、大きな変更の場合は、やりたいことを説明してAIアシスタントにコードを書いてもらうほうが簡単なことがよくあります。ここでは[Claude](https://claude.ai)を使いますが、ファイルを読み込んで送り返せるアシスタントなら、ほぼ同じ手順で使えます。
+
+### コードをダウンロードする
+
+**デザイン**タブで**ZIPをダウンロード**をクリックします。`careers-page.zip`というファイルがダウンロードされ、次のものが含まれています。
+
+- **6つのファイル**。保存済みの変更もすべて反映されています。
+- **ガイド（`README.md`）**。採用ページのルールと、使用できるすべてのプレースホルダーを説明しています。これがあるおかげで、AIアシスタントは最初から正しいコードを書きやすくなります。
+- **プレビューキット**（`preview.mjs`と`company.json`）。パソコンでページをプレビューするためのものです。使うかどうかは任意で、[最後に](#パソコンでプレビューする任意)説明します。
+
+解凍する必要はありません。ClaudeはZIPのまま読み込めます。
+
+### 変更を依頼する
+
+[claude.ai](https://claude.ai)を開いて新しいチャットを開始し、「**+**」ボタンで`careers-page.zip`を添付します。次に、デザイナーに頼むときのように、やりたいことを普段の言葉で説明します。今回は、次のように依頼しました。
+
+> Emploistで使っている採用ページのコードです。求人一覧ページを、もっと温かみがあって親しみやすい雰囲気にしてください。募集中の求人へのボタンが付いた大きな紹介エリアと、いくつかの福利厚生（リモートワーク可、学習予算、30日の休暇、チームオフサイト）を紹介する「Why join us」セクションを加えてください。README.mdに従って、アップロードできるZIPで返してください。
+
+<Figure
+  src={claudePrompt}
+  frame="plain"
+  narrow
+  alt="claude.aiの新しいチャット。careers-page.zipが添付され、大きな紹介エリアと「Why join us」セクションのある、より温かみのある求人一覧ページを依頼している。"
+  caption="ZIPを添付して、やりたいことを説明します。"
+/>
+
+`README.md`に従うことと、ZIPで返すことを頼んでおくと、何度もやり取りする手間が省けます。
+
+### 更新されたコードを受け取る
+
+Claudeは約4分で作業を終えました。ガイドとコードを読んで変更を加え、そのあと自分で作業内容を確認しました。プレビューキットでデスクトップとスマートフォンのサイズのページをプレビューし、Emploistが保存前に行うのと同じチェックも実行しています。そのうえで、新しい`careers-page.zip`を、変更内容の要約とともに返してくれました。
+
+- **大きく温かみのある紹介エリア**。新しい見出しと歓迎のひとこと、そして下の求人一覧へジャンプする**See open roles**（募集中の求人を見る）ボタンが加わりました。
+- **「Why join us」（私たちと働く理由）セクション**。リモートワーク可、学習予算、30日の休暇、チームオフサイトの4枚のカードが並びます。
+- **募集中の求人へのちょっとした工夫**。たとえば、一覧の上に短い紹介文が入りました。
+
+<Figure
+  src={claudeReply}
+  frame="plain"
+  narrow
+  alt="claude.aiでのClaudeの返信。careers-page.zipのアップロード準備ができたこと、jobs.liquidとstyles.cssの変更点の一覧、新しい見出しは固定のテキストであるという注意書き、そして「Download」ボタン付きのZIP。"
+  caption="Claudeは変更内容を説明し、ダウンロード用のZIPを返してくれます。"
+/>
+
+アップロードする前に、要約に目を通しておきましょう。今回Claudeは、私たちが変更した見出しを独自の見出し「Come build what's next with us」に置き換えたことと、それを変えるにはどの行を編集すればよいかを伝えてくれました。また、学習予算の金額のような詳細を勝手に作らず、福利厚生を一般的な表現にとどめてくれたので、自社の情報を書き足せます。
+
+結果がいまひとつなら、「ボタンを緑色にしてください」「健康保険に関する福利厚生を追加してください」「紹介文を短くしてください」のように会話を続けましょう。満足のいく結果になったら、更新したZIPを送ってもらいましょう。
+
+### Emploistにアップロードする
+
+**デザイン**タブに戻り、**ZIPをアップロード**をクリックして、Claudeから受け取ったZIPを選びます。Emploistは新しいコードを読み込んだ状態でエディターを開きますが、まだ保存はされていません。そのため、求職者に見える内容が変わる前に確認できます。
+
+<Figure
+  src={editorUpload}
+  alt="ZIPをアップロードした直後のエディター。ステータスに「Unsaved changes」と表示され、careers-page.zipからファイルを読み込んだことと、プレビューを確認してから保存するよう伝えるメッセージがある。プレビューには「See open roles」ボタンのある、リデザインされた紹介エリアが表示されている。"
+  caption="アップロードしたコードがエディターで開き、確認できる状態になります。"
+/>
+
+**ページへ移動**とスマートフォンのアイコンを使って、すべてのページを確認しましょう。気になる点があれば、エディターで直すか、もう一度Claudeに依頼します。すべて問題がなければ、**保存**をクリックします。
+
+## 完成した採用ページ
+
+両方の変更を加えたNorthwind Labsの採用ページがこちらです。エディターで設定したFrauncesフォントと、Claudeによるリデザインが反映されています。このガイドの冒頭にあるデフォルトのデザインと比べてみてください。
+
+<Figure
+  src={careersAfter}
+  url="northwind.emploist.com"
+  alt="Frauncesフォントでリデザインされた、Northwind Labsの採用ページ。「Careers at Northwind Labs」のラベル、「Come build what's next with us」という見出し、会社の説明、歓迎のひとこと、募集中の求人数が入った「See open roles」ボタン、そして「Remote-friendly」「Learning budget」「30 days off」「Team offsites」の4枚のカードが並ぶ「Why join us」セクション。"
+  caption="完成した採用ページ。募集中の求人は、この下に続きます。"
+/>
+
+スマートフォンでは、次のように表示されます。
+
+<Figure
+  src={careersAfterMobile}
+  frame="plain"
+  narrow
+  alt="スマートフォンで表示した、リデザイン後の採用ページ。見出し、会社の説明、画面幅いっぱいの「See open roles」ボタンがあり、その下から「Why join us」セクションが始まる。"
+  caption="スマートフォンで表示した同じページ。"
+/>
+
+## パソコンでプレビューする（任意）
+
+アップロードする前にパソコンで変更を試したい場合は、ZIPに含まれるプレビューキットを使うと、Emploistのプレビューと同じように、サンプルの求人で採用ページを表示できます。[Node.js](https://nodejs.org) 22以降が必要です。
+
+1. `careers-page.zip`を解凍します。
+2. 解凍したフォルダーでターミナルを開き、`node preview.mjs`を実行します。
+3. ブラウザーで`http://localhost:4321`を開きます。変更するたびに再読み込みしてください。
+
+Emploistが保存前に行うのと同じ方法でコードの問題をチェックするには、`node preview.mjs check`を実行します。Claude Codeのように、パソコン上のファイルを扱えるAIアシスタントを使っている場合は、これらのコマンドの実行を任せることもできます。
+
+## 知っておきたいこと
+
+- **コードを編集できるのは管理者のみです**。ほかのチームメンバーは「デザイン」タブを見ることはできますが、変更はできません。
+- **採用ページではJavaScriptは実行されません**。これにより、ページと求職者の安全が守られます。このガイドの内容は、すべてJavaScriptなしで動作します。
+- **画像、フォント、スタイルシートは、ほかのWebサイトから読み込めます**。ただし、アドレスが`https://`で始まっている必要があります。Google Fontsも、このしくみで動作しています。
+- **応募フォームは常に動作します**。デザインをどのように変えても、応募は各求人のインボックスに届き続けます。
+
+自社の採用ページを見てみたい方は、[無料トライアルを開始](https://app.emploist.com/sign-in)してください。会社を設定した瞬間に、採用ページが用意されます。あとは、自社らしく仕上げましょう。

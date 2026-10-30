@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(fr|de|es|it|ja|ko|pl|tr|id)/.*", "status": 404, "dest": "/$1/404/index.html" },
+    { "src": "/.*", "status": 404, "dest": "/404.html" }
+  ]
+}

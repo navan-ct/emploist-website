@@ -1,35 +1,29 @@
 ---
-import { APP, CREDIT_PACKS, PLAN, YEARLY_SAVINGS, formatNumber } from "../../lib/site";
+import { getLocale, getMessages, PLAN_FACTS } from "../../i18n";
+import { formatUsd } from "../../i18n/format";
+import { APP, CREDIT_PACKS, PLAN, YEARLY_SAVINGS } from "../../lib/site";
 import Button from "../Button.astro";
 
-const included = [
-  "Unlimited jobs",
-  "Your whole team, no per-seat fees",
-  "A careers page on your own domain",
-  "Full control of your careers page code",
-  "Application forms and hiring stages",
-  "Automatic emails to candidates, in your own template",
-  "Comments, mentions, and notifications",
-  "Export your applications anytime",
-];
+const locale = getLocale(Astro);
+const t = getMessages(locale).pricing;
 
 // The toggle is two radio buttons; the card shows the checked one's price
 // and credits with CSS (`:has`), so it works without a script.
 const intervals = [
   {
     id: "billing-monthly",
-    label: "Monthly",
-    priceUsd: PLAN.priceUsd,
-    per: "a month",
-    credits: `${formatNumber(PLAN.credits)} AI credits every month`,
+    label: t.monthly,
+    price: formatUsd(PLAN.priceUsd, locale),
+    per: t.perMonth,
+    credits: t.monthlyCredits(PLAN.credits),
   },
   {
     id: "billing-yearly",
-    label: "Yearly",
-    note: `Save ${YEARLY_SAVINGS}%`,
-    priceUsd: PLAN.yearlyPriceUsd,
-    per: "a year",
-    credits: `${formatNumber(PLAN.yearlyCredits)} AI credits up front`,
+    label: t.yearly,
+    note: t.save(YEARLY_SAVINGS),
+    price: formatUsd(PLAN.yearlyPriceUsd, locale),
+    per: t.perYear,
+    credits: t.yearlyCredits(PLAN.yearlyCredits),
   },
 ];
 ---
@@ -37,19 +31,12 @@ const intervals = [
 <section id="pricing" aria-labelledby="pricing-title" class="border-t border-line py-20 sm:py-28">
   <div class="container-page grid gap-14 lg:grid-cols-12 lg:gap-16">
     <div class="lg:col-span-5">
-      <p class="text-eyebrow">Pricing</p>
-      <h2 id="pricing-title" class="text-heading mt-4">One plan with everything in it.</h2>
-      <p class="text-lead mt-6">
-        No feature tiers and no per-seat fees. One price, paid monthly or yearly, covers your whole company, however many
-        people you invite.
-      </p>
+      <p class="text-eyebrow">{t.eyebrow}</p>
+      <h2 id="pricing-title" class="text-heading mt-4">{t.title}</h2>
+      <p class="text-lead mt-6">{t.lead}</p>
       <div class="mt-10 border-t border-line pt-6">
-        <h3 class="font-semibold">What's an AI credit?</h3>
-        <p class="mt-2 text-[0.9375rem] leading-relaxed">
-          Ranking one application uses one credit. Your plan includes {formatNumber(PLAN.credits)} every month, or {
-            formatNumber(PLAN.yearlyCredits)
-          } up front when you pay yearly, and you can top up anytime.
-        </p>
+        <h3 class="font-semibold">{t.creditTitle}</h3>
+        <p class="mt-2 text-[0.9375rem] leading-relaxed">{t.creditText(PLAN_FACTS)}</p>
       </div>
     </div>
 
@@ -59,15 +46,15 @@ const intervals = [
           <div class="flex flex-wrap items-center justify-between gap-4">
             <h3 class="text-sm font-semibold text-brand-ink">Emploist</h3>
             <fieldset class="w-full sm:w-auto">
-              <legend class="sr-only">Billing</legend>
+              <legend class="sr-only">{t.billing}</legend>
               <div class="flex rounded-full bg-subtle p-1 ring-1 ring-line">
                 {
                   intervals.map((interval, index) => (
-                    <label class="flex h-9 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-4 text-sm font-medium whitespace-nowrap text-body transition-colors duration-150 hover:text-ink has-checked:bg-raised has-checked:text-ink has-checked:shadow-[0_1px_2px_oklch(0%_0_0/0.08),0_0_0_1px_var(--line)] has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-indigo-500">
+                    <label class="flex h-9 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-2 text-sm font-medium whitespace-nowrap sm:px-4 text-body transition-colors duration-150 hover:text-ink has-checked:bg-raised has-checked:text-ink has-checked:shadow-[0_1px_2px_oklch(0%_0_0/0.08),0_0_0_1px_var(--line)] has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-indigo-500">
                       <input type="radio" name="billing" id={interval.id} checked={index === 0} class="sr-only" />
                       {interval.label}
                       {interval.note && (
-                        <span class="rounded-full bg-brand-soft px-2 py-0.5 text-xs font-semibold text-brand-ink">
+                        <span class="rounded-full bg-brand-soft px-1.5 py-0.5 sm:px-2 text-xs font-semibold text-brand-ink">
                           {interval.note}
                         </span>
                       )}
@@ -84,20 +71,20 @@ const intervals = [
                 intervals.map((interval, index) => (
                   <p
                     class:list={[
-                      "col-start-1 row-start-1 flex items-baseline gap-1.5 text-ink",
+                      "col-start-1 row-start-1 flex flex-wrap items-baseline gap-x-1.5 text-ink",
                       index === 0
                         ? "group-has-[#billing-yearly:checked]/plan:invisible"
                         : "invisible group-has-[#billing-yearly:checked]/plan:visible",
                     ]}
                   >
-                    <span class="text-6xl font-semibold tracking-[-0.045em]">${interval.priceUsd}</span>
+                    <span class="text-6xl font-semibold tracking-[-0.045em]">{interval.price}</span>
                     <span class="text-body">{interval.per}</span>
                   </p>
                 ))
               }
             </div>
-            <Button href={APP.signUpUrl} size="lg" class="w-full sm:w-auto">
-              Start your {PLAN.trialDays}-day free trial
+            <Button href={APP.signUpUrl} size="lg" class="w-full max-sm:h-auto max-sm:min-h-12 max-sm:py-3 max-sm:text-center max-sm:leading-snug max-sm:whitespace-normal sm:w-auto">
+              {t.startTrial(PLAN.trialDays)}
             </Button>
           </div>
 
@@ -115,31 +102,31 @@ const intervals = [
                 </li>
               ))
             }
-            {included.map((item) => <li>{item}</li>)}
+            {t.included.map((item) => <li>{item}</li>)}
           </ul>
 
-          <p class="mt-10 rounded-xl bg-subtle px-5 py-4 text-sm leading-relaxed ring-1 ring-line">
-            <strong class="font-semibold text-ink">The free trial</strong> gives you {PLAN.trialDays} days and {PLAN.trialCredits} AI
-            credits to try everything. You won't be charged until it ends, and you can cancel anytime.
-          </p>
+          <p
+            class="mt-10 rounded-xl bg-subtle px-5 py-4 text-sm leading-relaxed ring-1 ring-line [&_strong]:font-semibold [&_strong]:text-ink"
+            set:html={t.trial(PLAN_FACTS)}
+          />
         </div>
 
         <div class="border-t border-line bg-subtle p-8 sm:px-10">
-          <h3 class="font-semibold">Need more credits?</h3>
-          <p class="mt-1 text-sm">Buy a pack whenever you like. Packs never expire.</p>
+          <h3 class="font-semibold">{t.moreCredits}</h3>
+          <p class="mt-1 text-sm">{t.packsNote}</p>
           <table class="mt-5 w-full text-[0.9375rem]">
-            <caption class="sr-only">Credit packs and their prices</caption>
+            <caption class="sr-only">{t.packsCaption}</caption>
             <thead class="sr-only">
-              <tr><th scope="col">Credits</th><th scope="col">Price</th></tr>
+              <tr><th scope="col">{t.creditsColumn}</th><th scope="col">{t.priceColumn}</th></tr>
             </thead>
             <tbody class="divide-y divide-line">
               {
                 CREDIT_PACKS.map((pack) => (
                   <tr>
                     <th scope="row" class="py-3 text-left font-normal text-ink">
-                      {formatNumber(pack.credits)} credits
+                      {t.packCredits(pack.credits)}
                     </th>
-                    <td class="py-3 text-right font-medium text-ink tabular-nums">${pack.priceUsd}</td>
+                    <td class="py-3 text-right font-medium text-ink tabular-nums">{formatUsd(pack.priceUsd, locale)}</td>
                   </tr>
                 ))
               }

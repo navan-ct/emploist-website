@@ -1,0 +1,877 @@
+---
+import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SITE } from "../../lib/site";
+
+const sections = [
+  { id: "about", title: "Über diese Nutzungsbedingungen" },
+  { id: "accounts", title: "Ihr Konto und Ihr Team" },
+  { id: "service", title: "Der Dienst" },
+  { id: "ai-ranking", title: "KI-Bewertung" },
+  { id: "ai-assistants", title: "KI-Assistenten" },
+  { id: "plans-and-payments", title: "Tarife, Zahlungen und Kündigung" },
+  { id: "your-content", title: "Kundendaten" },
+  { id: "acceptable-use", title: "Zulässige Nutzung" },
+  { id: "careers-pages", title: "Karriereseiten, Domains und Code" },
+  { id: "third-party-services", title: "Dienste Dritter" },
+  { id: "our-property", title: "Geistiges Eigentum" },
+  { id: "confidentiality", title: "Vertraulichkeit" },
+  { id: "data-processing", title: "Auftragsverarbeitung" },
+  { id: "suspension-and-termination", title: "Sperrung und Beendigung" },
+  { id: "disclaimers", title: "Gewährleistungsausschlüsse" },
+  { id: "liability", title: "Haftungsbeschränkung" },
+  { id: "indemnity", title: "Freistellung" },
+  { id: "changes", title: "Änderungen dieser Nutzungsbedingungen" },
+  { id: "disputes", title: "Anwendbares Recht und Streitigkeiten" },
+  { id: "general", title: "Allgemeines" },
+  { id: "contact", title: "Kontakt" },
+] as const;
+---
+
+<LegalLayout
+  document="terms"
+  title="Nutzungsbedingungen"
+  description="Nutzungsbedingungen für Emploist: Tarife und Zahlungen, KI-Bewertung, KI-Assistenten, zulässige Nutzung und wie wir Daten von Bewerbenden für Sie verarbeiten."
+  translatedFrom="2026-10-28"
+  sections={sections}
+>
+  <h2 id="about">1. Über diese Nutzungsbedingungen</h2>
+  <p>
+    Diese Nutzungsbedingungen („Terms of Service“ bzw. „Terms“) sind eine Vereinbarung zwischen Ihnen und Navaneeth CT,
+    einer in Indien ansässigen natürlichen Person, die unter der Geschäftsbezeichnung Emploist tätig ist („wir“, „uns“
+    oder „unser“). „Sie“ und „Kunde“ („Customer“) bezeichnen das Unternehmen oder die sonstige Organisation, die
+    Emploist nutzt.
+  </p>
+  <ul>
+    <li>
+      Emploist ist für Organisationen bestimmt, die Personal einstellen. Es ist nicht für persönliche, familiäre oder
+      häusliche Zwecke bestimmt.
+    </li>
+    <li>
+      Sie akzeptieren diese Nutzungsbedingungen, wenn Sie sich bei Emploist anmelden, ein Unternehmen einrichten, einen
+      Tarif starten oder Emploist anderweitig nutzen. Wenn Sie nicht einverstanden sind, nutzen Sie Emploist nicht.
+    </li>
+    <li>
+      Die Person, die diese Nutzungsbedingungen für Ihre Organisation akzeptiert, bestätigt, dass sie mindestens 18 Jahre
+      alt und befugt ist, die Organisation rechtlich zu binden. Alle Personen in Ihrem Team, die Emploist nutzen, müssen
+      mindestens 18 Jahre alt sein.
+    </li>
+    <li>
+      Personen, die sich über eine Karriereseite auf Stellen bewerben, sind nicht an diese Nutzungsbedingungen gebunden.
+      Unsere Datenschutzerklärung erläutert, <a href="/de/privacy/#applicants">wie mit ihren Daten umgegangen wird</a>.
+    </li>
+  </ul>
+  <p>
+    Die Bestimmungen zur Auftragsverarbeitung in <a href="#data-processing">Abschnitt 13</a> und unsere <a
+      href="/de/privacy/#subprocessors">Liste der Unterauftragsverarbeiter</a
+    > sind Bestandteil dieser Nutzungsbedingungen. Unsere <a href="/de/privacy/">Datenschutzerklärung</a> erläutert, wie
+    wir als Verantwortlicher mit personenbezogenen Daten umgehen. Abgesehen von der Liste der Unterauftragsverarbeiter ist
+    sie nicht Bestandteil dieser Nutzungsbedingungen.
+  </p>
+
+  <h3>Verwendete Begriffe</h3>
+  <ul>
+    <li>
+      <strong>„Emploist“</strong> bezeichnet die Emploist-Web-App, die von ihr bereitgestellten Karriereseiten und
+      E-Mails, ihren MCP-Server für KI-Assistenten sowie unseren zugehörigen Support.
+    </li>
+    <li>
+      <strong>„Ihr Unternehmen“</strong> („Your company“) bezeichnet den Arbeitsbereich Ihrer Organisation in Emploist,
+      der die Stellen, die Karriereseite, das Team, die Einstellungen und die Bewerbungen Ihrer Organisation enthält.
+    </li>
+    <li>
+      <strong>„Teammitglieder“</strong> („Team members“) sind die Personen in Ihrem Unternehmen in Emploist, als Admins
+      oder Mitglieder.
+    </li>
+    <li><strong>„Bewerbende“</strong> („Applicants“) sind Personen, die sich über Emploist auf Ihre Stellen bewerben.</li>
+    <li>
+      <strong>„Kundendaten“</strong> („Customer Data“) sind die Inhalte, die Sie und Ihre Teammitglieder in Emploist
+      einbringen, die Informationen, die Bewerbende darüber übermitteln, sowie die Match-Scores und sonstigen Datensätze,
+      die Emploist daraus erstellt.
+    </li>
+    <li>
+      <strong>„Tarif“</strong> („Plan“) bezeichnet das Emploist-Abonnement Ihres Unternehmens, einschließlich seines
+      kostenlosen Testzeitraums. Ihr Tarif ist <strong>„aktiv“</strong> („active“), solange er sich im kostenlosen
+      Testzeitraum befindet, bezahlt ist oder sich nach einer fehlgeschlagenen Zahlung in der Kulanzfrist befindet.
+    </li>
+    <li><strong>„Credits“</strong> sind die KI-Credits, die zur Bewertung von Bewerbungen verwendet werden.</li>
+  </ul>
+
+  <h2 id="accounts">2. Ihr Konto und Ihr Team</h2>
+  <ul>
+    <li>Machen Sie zutreffende Angaben über sich und Ihr Unternehmen, und halten Sie diese auf dem neuesten Stand.</li>
+    <li>
+      Halten Sie Ihre Anmeldemethoden sicher, etwa Ihr E-Mail-Konto und Ihr Google- oder Microsoft-Konto. Wer sie
+      kontrolliert, kann sich als Sie anmelden. Geben Sie Anmeldecodes oder Einladungslinks nicht weiter.
+    </li>
+    <li>
+      Admins verwalten die Abrechnung, die Einstellungen und das Team Ihres Unternehmens. Sie sind verantwortlich für die
+      Auswahl Ihrer Admins, für alles, was Ihre Teammitglieder in Emploist tun, und dafür, dass sie diese
+      Nutzungsbedingungen einhalten.
+    </li>
+    <li>
+      Entfernen Sie Personen aus Ihrem Unternehmen, wenn sie keinen Zugriff mehr benötigen. Wenn Sie vermuten, dass jemand
+      ohne Erlaubnis auf Ihr Unternehmen zugegriffen hat, teilen Sie uns dies umgehend unter <a
+        href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+      > mit.
+    </li>
+  </ul>
+
+  <h2 id="service">3. Der Dienst</h2>
+  <p>
+    Emploist ist ein Softwaretool für das Recruiting. Wir sind weder eine Arbeitsvermittlung noch ein Personalvermittler,
+    und wir treffen keine Einstellungsentscheidungen für Sie.
+  </p>
+  <ul>
+    <li>
+      <strong>Änderungen.</strong> Wir dürfen Funktionen ändern, hinzufügen oder entfernen. Wenn eine Änderung den Umfang
+      Ihres Tarifs wesentlich verringert, informieren wir Ihre Admins im Voraus, soweit uns dies vernünftigerweise möglich
+      ist.
+    </li>
+    <li>
+      <strong>Begrenzungen.</strong> Emploist hat angemessene technische Begrenzungen, etwa bei Dateigrößen und bei der
+      Häufigkeit von Anfragen, und wir dürfen diese ändern. Wenn Ihre Nutzung weit über die normale Nutzung hinausgeht oder
+      Emploist gefährdet, dürfen wir sie einschränken.
+    </li>
+    <li>
+      <strong>Support und Verfügbarkeit.</strong> Wir leisten Support per E-Mail unter <a
+        href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+      >. Wir bieten keine Service-Level-Vereinbarung an, und Emploist kann gelegentlich nicht verfügbar sein, zum Beispiel
+      während Wartungsarbeiten.
+    </li>
+    <li>
+      <strong>Kostenlose Testzeiträume und Beta-Funktionen.</strong> Kostenlose Testzeiträume sowie Funktionen, die wir
+      als Beta oder Vorschau kennzeichnen, werden so bereitgestellt, wie sie sind. Diese können sich jederzeit ändern oder
+      enden.
+    </li>
+  </ul>
+
+  <h2 id="ai-ranking">4. KI-Bewertung</h2>
+  <p>
+    Wenn die KI-Bewertung aktiviert ist, verwendet Emploist ein KI-Modell, um jede Bewerbung anhand ihrer Stelle zu
+    bewerten, auf Grundlage des Lebenslaufs, der Antworten der bewerbenden Person und der Details der Stelle. Die
+    KI-Bewertung ist standardmäßig aktiviert, und solange Ihr Tarif aktiv ist, kann ein Admin sie in den Einstellungen
+    deaktivieren. Von sich aus lehnt die KI-Bewertung niemanden ab, verschiebt niemanden in eine weitere Phase und sendet
+    niemandem E-Mails.
+  </p>
+  <p>
+    Match-Scores können falsch, unvollständig oder verzerrt sein. Die Scores sind eine Orientierungshilfe dafür, welche
+    Bewerbungen zuerst gesichtet werden sollten, keine Feststellung darüber, ob jemand qualifiziert ist. Sie entscheiden,
+    ob und wie Sie die KI-Bewertung nutzen, und Sie sind für jede Einstellungsentscheidung verantwortlich, die Sie
+    treffen. Wenn Sie die KI-Bewertung nutzen, müssen Sie:
+  </p>
+  <ul>
+    <li>
+      Bewerbungen von Menschen sichten lassen und eine Entscheidung über eine bewerbende Person niemals allein auf einen
+      Match-Score stützen oder eine Bewerbung übergehen, weil ihr Score niedrig ist oder fehlt
+    </li>
+    <li>
+      Bewerbende darüber informieren, dass KI bei der Sichtung von Bewerbungen hilft, und alle sonstigen Hinweise geben und
+      alle sonstigen Anforderungen erfüllen, die das Gesetz Ihnen für den Einsatz von KI im Recruiting auferlegt. Solange
+      die KI-Bewertung aktiviert ist, zeigt die Standard-Karriereseite einen solchen Hinweis an. Wenn Sie eigenen Code für
+      Ihre Karriereseite verwenden, fügen Sie selbst einen solchen Hinweis hinzu.
+    </li>
+    <li>
+      die KI-Bewertung nicht nutzen, um Bewerbende anhand geschützter Merkmale wie rassischer Herkunft, Religion, Kaste,
+      Geschlecht, Alter oder Behinderung oder anhand von Merkmalen, die stellvertretend für diese stehen, zu filtern
+    </li>
+    <li>
+      die KI-Bewertung für keine anderen Zwecke nutzen als die Sichtung von Bewerbungen für die Stelle, für die sie
+      eingereicht wurden, also zum Beispiel nicht zur Beurteilung oder Überwachung von Beschäftigten
+    </li>
+    <li>
+      die KI-Bewertung nicht, auch nicht über einen KI-Assistenten, nutzen, um ohne Prüfung durch einen Menschen
+      Entscheidungen über Bewerbende zu treffen
+    </li>
+  </ul>
+  <p>
+    Um Bewerbungen zu bewerten, senden wir sie an unseren KI-Anbieter, der in unserer <a
+      href="/de/privacy/#subprocessors">Liste der Unterauftragsverarbeiter</a
+    > genannt ist. Wir dürfen unseren KI-Anbieter oder unser KI-Modell wechseln. Wir dürfen die KI-Bewertung in einigen
+    Regionen oder für einige Unternehmen einschränken oder deaktivieren, soweit das Gesetz dies verlangt.
+  </p>
+
+  <h2 id="ai-assistants">5. KI-Assistenten</h2>
+  <p>
+    Teammitglieder können KI-Assistenten wie Claude oder ChatGPT über unseren MCP-Server mit Emploist verbinden. Ein
+    verbundener Assistent handelt als die Person, die ihn verbunden hat, mit deren Rolle, und kann vieles von dem tun, was
+    diese Person in Emploist tun kann, etwa Bewerbungen lesen und verschieben sowie Stellen bearbeiten. KI-Assistenten
+    sind standardmäßig aktiviert, und ein Admin kann sie für Ihr Unternehmen in den Einstellungen deaktivieren.
+  </p>
+  <p>
+    KI-Assistenten sind Dienste Dritter, die Sie und Ihre Teammitglieder auswählen. Diese sind nicht Teil von Emploist,
+    und ihre Anbieter sind nicht unsere Unterauftragsverarbeiter. Kundendaten, die ein Assistent erhält, werden nach den
+    Bedingungen zwischen seinem Anbieter und Ihnen oder Ihrem Teammitglied behandelt, und wir haben keine Kontrolle
+    darüber. Sie sind verantwortlich für:
+  </p>
+  <ul>
+    <li>
+      die Entscheidung, welche Assistenten Ihr Team nutzen darf, und die Sicherstellung, dass das Senden von Kundendaten
+      an diese rechtmäßig ist
+    </li>
+    <li>alles, was die Assistenten Ihrer Teammitglieder in Emploist tun, so als hätten Ihre Teammitglieder es selbst getan</li>
+    <li>
+      die Einhaltung von <a href="#ai-ranking">Abschnitt 4</a>, wenn ein Assistent mit Bewerbungen und Match-Scores
+      arbeitet
+    </li>
+  </ul>
+  <p>
+    Wir dürfen einen Assistenten blockieren oder trennen, von dem wir begründet annehmen, dass er unsicher oder schädlich
+    ist oder entgegen diesen Nutzungsbedingungen verwendet wird.
+  </p>
+
+  <h2 id="plans-and-payments">6. Tarife, Zahlungen und Kündigung</h2>
+
+  <h3>Dodo Payments</h3>
+  <p>
+    Unser Bestellprozess wird von unserem Online-Wiederverkäufer Dodo Payments („Dodo“) durchgeführt. Dodo ist der
+    Verkäufer (Merchant of Record) für alle unsere Bestellungen. Dodo ist zuständig für den Bezahlvorgang, Zahlungen,
+    Rechnungen, Verkaufs- und Umsatzsteuern sowie Zahlungsfragen und Erstattungen. Für Ihre Käufe gelten außerdem die <a
+      href="https://dodopayments.com/legal/buyer-terms">Buyer Terms</a
+    > von Dodo.
+  </p>
+
+  <h3>Tarif und Abrechnung</h3>
+  <ul>
+    <li>
+      Der Tarif wird monatlich oder jährlich im Voraus zu dem beim Bezahlvorgang angezeigten Preis zuzüglich anfallender
+      Steuern abgerechnet. Er verlängert sich automatisch um einen weiteren Zeitraum gleicher Länge, bis er gekündigt wird.
+    </li>
+    <li>
+      Wir dürfen unsere Preise ändern. Wir informieren Ihre Admins mindestens 30 Tage, bevor eine Preiserhöhung für Ihren
+      Tarif gilt, per E-Mail, und Sie können vorher kündigen.
+    </li>
+    <li>
+      Wenn eine Zahlung fehlschlägt, funktioniert Emploist während einer kurzen Kulanzfrist weiter. Ist die Zahlung bis
+      dahin immer noch nicht erfolgt, wird Ihr Unternehmen schreibgeschützt, bis die Zahlung erfolgt ist.
+    </li>
+  </ul>
+
+  <h3>Kostenloser Testzeitraum</h3>
+  <p>
+    Der erste Tarif Ihres Unternehmens kann mit einem kostenlosen Testzeitraum beginnen. Sie hinterlegen beim
+    Bezahlvorgang eine Zahlungsmethode, und Dodo berechnet den ersten Abrechnungszeitraum, wenn der Testzeitraum endet, es
+    sei denn, ein Admin kündigt vorher. Jedes Unternehmen und jede Person darf nur einen kostenlosen Testzeitraum nutzen.
+  </p>
+
+  <h3>KI-Credits</h3>
+  <ul>
+    <li>Die Bewertung einer Bewerbung verbraucht einen Credit, und eine erneute Bewertung verbraucht einen weiteren.</li>
+    <li>
+      Ihr Tarif enthält für jeden Abrechnungszeitraum Credits in der Anzahl, die zu Beginn dieses Zeitraums auf unserer <a
+        href="/de/#pricing">Preisseite</a
+      > angegeben ist. Diese Credits werden nicht in den nächsten Zeitraum übertragen.
+    </li>
+    <li>
+      Admins können zusätzliche Credits in Paketen kaufen. Credits aus Paketen verfallen nicht, gehen aber verloren, wenn
+      Ihr Unternehmen gelöscht wird.
+    </li>
+    <li>
+      Credits können nur gekauft und verwendet werden, solange Ihr Tarif aktiv ist. Credits haben keinen Geldwert, sind
+      nicht übertragbar und werden nicht erstattet, außer soweit das Gesetz dies verlangt. Wird ein Credit-Paket
+      erstattet, werden seine nicht verbrauchten Credits entfernt.
+    </li>
+  </ul>
+
+  <h3>Kündigung und Erstattungen</h3>
+  <ul>
+    <li>
+      Ein Admin kann jederzeit über die Seite „Abrechnung“ kündigen. Ihr Tarif bleibt bis zum Ende des laufenden
+      Testzeitraums bzw. Abrechnungszeitraums aktiv, und Ihnen wird nichts mehr berechnet.
+    </li>
+    <li>
+      Zahlungen sind nicht erstattungsfähig. Für angebrochene Abrechnungszeiträume oder nicht verbrauchte Credits gibt es
+      keine Erstattungen oder Gutschriften, außer wenn das Gesetz eine solche vorschreibt, bei etwaigen beim Bezahlvorgang
+      angezeigten anteiligen Gutschriften, wenn Sie auf jährliche Abrechnung umstellen, oder wenn wir das Angebot von
+      Emploist einstellen (<a href="#suspension-and-termination">Abschnitt 14</a>). Erstattungen werden von Dodo gezahlt.
+    </li>
+    <li>
+      Durch das Löschen Ihres Unternehmens wird Ihr Tarif sofort und ohne Erstattung gekündigt, und die Daten des
+      Unternehmens werden endgültig gelöscht.
+    </li>
+  </ul>
+
+  <h3>Wenn Ihr Tarif nicht aktiv ist</h3>
+  <p>
+    Nach dem Ende Ihres Tarifs und bevor Ihr Unternehmen einen Tarif startet, ist Ihr Unternehmen schreibgeschützt. Ihr
+    Team kann sich weiterhin anmelden, die Daten des Unternehmens ansehen und Bewerbungen exportieren, aber die meisten
+    Änderungen nicht vornehmen, Bewerbungen werden nicht bewertet, und Ihre Karriereseite nimmt keine Bewerbungen mehr an.
+  </p>
+
+  <h2 id="your-content">7. Kundendaten</h2>
+  <ul>
+    <li><strong>Die Daten gehören Ihnen.</strong> Sie behalten alle Ihre Rechte an den Kundendaten.</li>
+    <li>
+      <strong>Unsere Lizenz.</strong> Sie gestatten uns, Kundendaten weltweit zu hosten, zu speichern, zu kopieren, zu
+      verarbeiten, zu übertragen, anzuzeigen und zu veröffentlichen, jedoch nur, soweit dies erforderlich ist, um Emploist
+      gemäß diesen Nutzungsbedingungen bereitzustellen, zu sichern und Support dafür zu leisten, auch durch unsere
+      Unterauftragsverarbeiter. Zum Beispiel veröffentlichen wir Ihre Stellen auf Ihrer Karriereseite, senden Ihre E-Mails
+      an Bewerbende und senden Kundendaten an die von Ihren Teammitgliedern verbundenen KI-Assistenten.
+    </li>
+    <li>
+      <strong>Was wir nicht tun.</strong> Wir verkaufen Kundendaten nicht und verwenden sie weder für Werbung noch zum
+      Training von KI-Modellen.
+    </li>
+    <li>
+      <strong>Nutzungsdaten.</strong> Wir dürfen Informationen über die Nutzung und Leistung von Emploist verwenden, um
+      Emploist zu betreiben und zu verbessern. Alles, was wir über die Bereitstellung von Emploist für Sie hinaus verwenden
+      oder weitergeben, ist aggregiert oder de-identifiziert, sodass es weder Sie noch Ihre Teammitglieder noch Bewerbende
+      identifiziert, und wir werden nicht versuchen, es zu re-identifizieren.
+    </li>
+    <li>
+      <strong>Ihre Kopien.</strong> Ihr Team kann die Bewerbungen einer Stelle exportieren. Sie sind dafür verantwortlich,
+      eigene Kopien aller Kundendaten aufzubewahren, die Sie benötigen.
+    </li>
+    <li>
+      <strong>Inhalte, die wir entfernen dürfen.</strong> Wir überwachen Kundendaten nicht. Wir dürfen Inhalte entfernen
+      oder deaktivieren, von denen wir begründet annehmen, dass sie gegen diese Nutzungsbedingungen oder das Gesetz
+      verstoßen, oder wenn ein Gericht oder eine Behörde dies verlangt.
+    </li>
+  </ul>
+
+  <h3>Ihre Verantwortung für die Daten von Bewerbenden</h3>
+  <p>Sie entscheiden, was Sie von Bewerbenden erheben und wie Sie es verwenden. Sie müssen:</p>
+  <ul>
+    <li>
+      für die Erhebung und Verwendung der Daten von Bewerbenden in Emploist eine Rechtsgrundlage und alle gesetzlich
+      erforderlichen Einwilligungen haben, auch für die KI-Bewertung, für die KI-Assistenten, die Ihr Team nutzt,
+      und für unsere Verarbeitung nach <a href="#data-processing">Abschnitt 13</a>
+    </li>
+    <li>
+      Bewerbenden spätestens zum Zeitpunkt ihrer Bewerbung Ihre eigenen Datenschutzhinweise bereitstellen, die Ihre
+      Nutzung von Emploist abdecken. Die Standard-Karriereseite enthält keine solchen Hinweise.
+    </li>
+    <li>
+      nur Fragen stellen, die Sie nach dem Gesetz stellen dürfen, und nicht nach sensiblen Informationen fragen, etwa zu
+      Gesundheit, Religion oder Vorstrafen, es sei denn, das Gesetz erlaubt es
+    </li>
+    <li>
+      Anfragen von Bewerbenden zu ihren Daten beantworten und ihre Daten löschen, wenn Sie sie nicht mehr benötigen.
+      Emploist löscht Bewerbungen nicht automatisch.
+    </li>
+    <li>
+      sicherstellen, dass das, was Sie veröffentlichen und versenden, etwa Stellen, Karriereseiten und E-Mails an
+      Bewerbende, zutreffend und rechtmäßig ist. E-Mails an Bewerbende dürfen sich nur auf deren Bewerbungen beziehen.
+      Antworten gehen an die Antwortadresse, die ein Admin festlegt, verwenden Sie daher eine Adresse, die Sie
+      kontrollieren.
+    </li>
+  </ul>
+
+  <h2 id="acceptable-use">8. Zulässige Nutzung</h2>
+  <p>Sie und Ihr Team dürfen Emploist nicht nutzen, um:</p>
+  <ul>
+    <li>
+      gefälschte, irreführende oder betrügerische Stellen zu veröffentlichen, von Bewerbenden irgendeine Gebühr zu
+      verlangen oder personenbezogene Daten zu erheben, zu deren Erhebung Sie nicht berechtigt sind
+    </li>
+    <li>Stellenanzeigen, Kriterien oder Fragen zu veröffentlichen, die rechtswidrig diskriminieren</li>
+    <li>
+      sich als eine andere Person auszugeben oder andere darüber in die Irre zu führen, wer Sie sind, auch durch
+      Ihren Unternehmensnamen, die Adresse Ihrer Karriereseite, den Absendernamen Ihrer E-Mails oder Ihre Antwortadresse
+    </li>
+    <li>Spam, Werbe-E-Mails oder sonstige rechtswidrige E-Mails zu versenden</li>
+    <li>zusätzliche Konten oder Unternehmen anzulegen, um einen weiteren kostenlosen Testzeitraum zu erhalten</li>
+  </ul>
+  <p>Bringen Sie nichts in Emploist ein, das:</p>
+  <ul>
+    <li>
+      jemand anderem gehört und zu dessen Nutzung Sie nicht berechtigt sind oder das Patente, Marken, Urheberrechte oder
+      sonstige Schutzrechte verletzt
+    </li>
+    <li>
+      obszön, pornografisch oder pädophil ist, Kindern schadet oder in die Privatsphäre anderer eingreift, einschließlich
+      der körperlichen Privatsphäre
+    </li>
+    <li>
+      verleumderisch oder belästigend ist (auch aufgrund des Geschlechts), in rassischer oder ethnischer Hinsicht
+      anstößig ist oder Feindschaft zwischen Gruppen aufgrund von Religion oder Kaste fördert
+    </li>
+    <li>mit Geldwäsche oder Glücksspiel in Zusammenhang steht oder dazu ermutigt</li>
+    <li>
+      jemanden über die Herkunft einer Nachricht in die Irre führt, wissentlich falsche oder irreführende Informationen
+      verbreitet oder sich als eine andere Person ausgibt
+    </li>
+    <li>
+      die Einheit, Integrität, Verteidigung, Sicherheit oder Souveränität Indiens, die freundschaftlichen Beziehungen
+      Indiens zu anderen Staaten oder die öffentliche Ordnung gefährdet, zu einer Straftat anstiftet, die Ermittlung einer
+      Straftat verhindert oder eine andere Nation beleidigt
+    </li>
+    <li>Viren oder sonstigen schädlichen Code enthält</li>
+    <li>gegen ein Gesetz verstößt</li>
+  </ul>
+  <p>Außerdem dürfen Sie nicht:</p>
+  <ul>
+    <li>
+      auf Daten anderer Unternehmen zugreifen, unsere Sicherheit ausforschen oder testen oder unsere Sicherheitsmaßnahmen
+      oder Begrenzungen umgehen
+    </li>
+    <li>
+      Emploist überlasten oder stören oder mit Bots, Scrapern oder anderen automatisierten Tools darauf zugreifen, außer
+      über von uns bereitgestellte Funktionen wie unseren MCP-Server
+    </li>
+    <li>Emploist kopieren, dekompilieren oder einem Reverse Engineering unterziehen, außer soweit das Gesetz dies erlaubt</li>
+    <li>
+      Emploist weiterverkaufen oder unterlizenzieren oder es anderen als Dienst anbieten. Recruiting für Ihre eigenen
+      Kunden ist erlaubt.
+    </li>
+    <li>Emploist nutzen, um ein Konkurrenzprodukt zu entwickeln</li>
+    <li>Emploist unter Verstoß gegen Sanktions- oder Exportkontrollgesetze nutzen</li>
+    <li>
+      Emploist auf eine Weise nutzen, die gegen die <a href="https://typesafe.ai/legal/acceptable-use-policy"
+        >Richtlinie zur zulässigen Nutzung</a
+      > unseres KI-Anbieters verstößt
+    </li>
+  </ul>
+  <p>
+    Werden diese Regeln verletzt, dürfen wir Inhalte entfernen, Ihr Unternehmen sperren oder diese Nutzungsbedingungen
+    beenden (siehe <a href="#suspension-and-termination">Abschnitt 14</a>).
+  </p>
+
+  <h2 id="careers-pages">9. Karriereseiten, Domains und Code</h2>
+  <ul>
+    <li>
+      Ihre Karriereseite befindet sich unter einer von Ihnen gewählten Subdomain von emploist.com oder unter einer Domain,
+      die Sie verbinden. Wir dürfen eine Subdomain ablehnen oder zurücknehmen, die irreführend ist, Rechte anderer verletzt
+      oder eine fremde Identität vortäuscht.
+    </li>
+    <li>
+      Wenn Sie Ihre eigene Domain verbinden, bestätigen Sie, dass Sie diese kontrollieren, und Sie gestatten uns,
+      TLS-Zertifikate dafür zu beziehen. Sie sind für ihre DNS-Einträge verantwortlich.
+    </li>
+    <li>
+      Sie sind verantwortlich für jeglichen Code der Karriereseite und alle E-Mail-Layouts, die Ihre Admins schreiben,
+      einschließlich all dessen, was sie von anderen Websites laden, und der Hinweise, die sie anzeigen müssen. Wir dürfen Code
+      deaktivieren, von dem wir begründet annehmen, dass er schädlich oder unsicher ist oder gegen diese
+      Nutzungsbedingungen verstößt.
+    </li>
+    <li>
+      Der Standardcode der Karriereseite und das herunterladbare Vorschau-Kit gehören uns. Solange diese
+      Nutzungsbedingungen in Kraft sind, dürfen Sie diese nur nutzen, kopieren und ändern, um die Karriereseite Ihres
+      Unternehmens auf Emploist zu erstellen. Darin enthaltene Open-Source-Komponenten behalten ihre eigenen Lizenzen.
+    </li>
+  </ul>
+
+  <h2 id="third-party-services">10. Dienste Dritter</h2>
+  <p>
+    Emploist arbeitet mit Diensten zusammen, die von anderen betrieben werden, etwa Google und Microsoft für die Anmeldung, Dodo
+    für Zahlungen und den KI-Assistenten, die Ihr Team verbindet. Wenn Sie diese nutzen, gelten deren eigene Bedingungen,
+    und wir sind für sie nicht verantwortlich. Microsoft und Google sind nicht Parteien dieser Nutzungsbedingungen. Soweit
+    gesetzlich zulässig, sind alle Gewährleistungen und jegliche Haftung in ihrem Namen ausgeschlossen.
+  </p>
+
+  <h2 id="our-property">11. Geistiges Eigentum</h2>
+  <p>
+    Emploist gehört uns, einschließlich der Software, des Designs, der Dokumentation sowie des Namens und Logos von
+    Emploist. Diese Nutzungsbedingungen geben Ihnen das Recht, Emploist wie darin beschrieben zu nutzen, und keine
+    weiteren Rechte. Wenn Sie uns Feedback senden, dürfen wir es frei und ohne jegliche Verpflichtung Ihnen gegenüber
+    verwenden. Wir dürfen Ihre Organisation als Emploist-Kunden nennen, auch mit ihrem Namen und Logo. Wenn Sie
+    uns bitten, dies zu unterlassen, werden wir es unterlassen.
+  </p>
+
+  <h2 id="confidentiality">12. Vertraulichkeit</h2>
+  <p>
+    „Vertrauliche Informationen“ („Confidential Information“) sind nicht öffentliche Informationen, die eine Partei der
+    anderen im Zusammenhang mit Emploist mitteilt und die als vertraulich gekennzeichnet sind oder bei vernünftiger
+    Betrachtung als vertraulich zu verstehen sind. Kundendaten sind Ihre Vertraulichen Informationen. Wer Vertrauliche
+    Informationen erhält, wird sie nur für die Zwecke dieser Nutzungsbedingungen verwenden, sie mit angemessener Sorgfalt
+    schützen und sie nur an Personen und Dienstleister weitergeben, die sie für diese Zwecke benötigen und zur
+    Vertraulichkeit verpflichtet sind, oder wie von der anderen Partei angewiesen. Dies gilt nicht für Informationen, die
+    ohne Verschulden der empfangenden Partei öffentlich sind oder werden, die die empfangende Partei bereits besaß oder
+    unabhängig entwickelt hat oder die sie rechtmäßig von einem Dritten erhalten hat. Jede Partei darf Vertrauliche
+    Informationen offenlegen, wenn das Gesetz dies verlangt.
+  </p>
+
+  <h2 id="data-processing">13. Auftragsverarbeitung</h2>
+  <p>
+    Dieser Abschnitt ist unser Auftragsverarbeitungsvertrag. Er gilt, wenn wir in Kundendaten enthaltene
+    personenbezogene Daten in Ihrem Auftrag verarbeiten. „Datenschutzgesetze“ („Data protection laws“) sind die Gesetze
+    zum Datenschutz und zum Schutz der Privatsphäre, die für Kundendaten gelten. Begriffe wie „Verantwortlicher“
+    („controller“), „Auftragsverarbeiter“ („processor“), „personenbezogene Daten“ („personal data“) und „Verletzung des
+    Schutzes personenbezogener Daten“ („personal data breach“) haben die Bedeutung, die ihnen in der
+    Datenschutz-Grundverordnung (DSGVO) der EU bzw. des Vereinigten Königreichs zukommt, oder die Bedeutung der
+    nächstliegenden Entsprechungen in anderen Datenschutzgesetzen.
+  </p>
+
+  <h3>Rollen</h3>
+  <p>
+    Sie sind der Verantwortliche für die in Kundendaten enthaltenen personenbezogenen Daten, und wir sind Ihr
+    Auftragsverarbeiter. Wenn Sie selbst Auftragsverarbeiter sind, zum Beispiel ein Personalvermittler, der für einen
+    Kunden Stellen besetzt, sind wir Ihr Unterauftragsverarbeiter, und Sie bestätigen, dass Ihr Verantwortlicher unsere
+    Verarbeitung genehmigt hat. Für die personenbezogenen Daten, die wir zum Betrieb unseres Geschäfts verwenden, etwa die
+    Kontodaten Ihrer Teammitglieder, sind wir Verantwortlicher, wie in unserer <a href="/de/privacy/"
+      >Datenschutzerklärung</a
+    > beschrieben.
+  </p>
+
+  <h3>Einzelheiten der Verarbeitung</h3>
+  <table>
+    <tbody>
+      <tr>
+        <th scope="row">Gegenstand und Dauer</th>
+        <td>
+          Die Bereitstellung von Emploist für Sie, solange Sie Emploist nutzen und bis die Kundendaten gelöscht sind.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Art und Zweck</th>
+        <td>
+          Hosting, Speicherung, Anzeige und Übertragung von Kundendaten, fortlaufend, zur Bereitstellung von Emploist:
+          Veröffentlichung von Karriereseiten, Entgegennahme von Bewerbungen, deren Bewertung mit KI, solange die
+          KI-Bewertung aktiviert ist, Versand von E-Mails an Bewerbende, Senden von Daten an die von Ihren
+          Teammitgliedern verbundenen KI-Assistenten, Support und Sicherung von Emploist sowie Erstellung aggregierter oder
+          de-identifizierter Informationen zum Betrieb und zur Verbesserung von Emploist (siehe Abschnitt 7).
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Betroffene Personen</th>
+        <td>
+          Bewerbende, Ihre Teammitglieder und die Personen, die Sie einladen, sowie andere in Kundendaten genannte
+          Personen, etwa Referenzpersonen in einem Lebenslauf.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Personenbezogene Daten</th>
+        <td>
+          Namen und E-Mail-Adressen von Bewerbenden, ihre Telefonnummern, wenn Sie danach fragen, ihre Lebensläufe und
+          alles darin Enthaltene, Antworten auf Ihre Fragen, Match-Scores, Recruiting-Phasen, an sie gesendete E-Mails und
+          die Kommentare Ihres Teams über sie. Namen und E-Mail-Adressen von Teammitgliedern und eingeladenen Personen,
+          wie sie in Kundendaten vorkommen. Sonstige personenbezogene Daten in Ihren Inhalten.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Sensible Daten</th>
+        <td>
+          Emploist fragt nicht danach, aber Lebensläufe und Antworten können sie enthalten. Diese Daten sind durch die
+          unten beschriebenen Sicherheitsmaßnahmen geschützt, und der Zugriff darauf ist auf Ihr Team und die von ihm
+          verbundenen KI-Assistenten sowie, soweit dies zur Bereitstellung von Emploist erforderlich ist, auf uns und
+          unsere Unterauftragsverarbeiter beschränkt.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Standorte und Unterauftragsverarbeiter</th>
+        <td>
+          Wie in unserer <a href="/de/privacy/#subprocessors">Liste der Unterauftragsverarbeiter</a> angegeben. Wir greifen
+          von Indien aus auf Kundendaten zu.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Unsere Verpflichtungen</h3>
+  <ul>
+    <li>
+      <strong>Weisungen.</strong> Wir verarbeiten Kundendaten nur auf Ihre dokumentierten Weisungen, auch in Bezug auf
+      Übermittlungen in andere Länder, es sei denn, das Gesetz verlangt etwas anderes. In diesem Fall teilen wir Ihnen dies
+      vorher mit, es sei denn, das Gesetz verbietet dies. Ihre Weisungen sind diese Nutzungsbedingungen sowie die Art und
+      Weise, wie Sie und Ihr Team Emploist nutzen und einrichten. Wenn ein Teammitglied einen KI-Assistenten verbindet,
+      weist es uns an, dem Assistenten die Kundendaten zu senden, die dieser anfordert, und Sie ermächtigen das
+      Teammitglied dazu. Wir informieren Sie unverzüglich, wenn wir der Auffassung sind, dass eine Weisung gegen
+      Datenschutzgesetze verstößt, und wir sind nicht verpflichtet, sie zu befolgen.
+    </li>
+    <li>
+      <strong>Vertraulichkeit.</strong> Alle Personen, die wir zur Verarbeitung von Kundendaten befugen, unterliegen
+      einer Pflicht zur Vertraulichkeit.
+    </li>
+    <li>
+      <strong>Sicherheit.</strong> Wir treffen geeignete technische und organisatorische Maßnahmen zum Schutz von
+      Kundendaten, darunter verschlüsselte Verbindungen (HTTPS), Zugriffskontrollen, durch die in der App nur die
+      Teammitglieder eines Unternehmens und die von ihnen verbundenen KI-Assistenten dessen Daten sehen können, jeweils
+      entsprechend ihren Rollen, privater Speicher für Lebensläufe, Anmeldung ohne Passwörter, isolierte Worker mit Zeit-
+      und Speicherlimits für Code von Karriereseiten und für das Auslesen von Lebensläufen, Prüfungen hochgeladener
+      Dateien, Begrenzungen der Anfragerate, regelmäßige Datenbank-Backups und Zugriff auf Produktivsysteme nur für die
+      Personen, die ihn benötigen. Wir dürfen diese Maßnahmen ändern, solange wir den Schutz von Kundendaten insgesamt
+      nicht verringern.
+    </li>
+    <li>
+      <strong>Unterauftragsverarbeiter.</strong> Sie erteilen uns eine allgemeine Genehmigung für den Einsatz von
+      Unterauftragsverarbeitern. Unsere aktuellen Unterauftragsverarbeiter sind in unserer Liste aufgeführt. Wir haben mit
+      jedem von ihnen schriftliche Datenschutzbedingungen vereinbart und bleiben Ihnen gegenüber für sie verantwortlich.
+      Wir informieren Ihre Admins mindestens 30 Tage, bevor wir einen Unterauftragsverarbeiter hinzufügen oder ersetzen,
+      per E-Mail. Sie können aus angemessenen datenschutzrechtlichen Gründen Einspruch erheben, indem Sie uns vor der
+      Änderung eine E-Mail senden. Wenn wir Ihr Anliegen nicht ausräumen können, besteht Ihre Abhilfe darin, Ihren Tarif zu
+      kündigen oder Ihr Unternehmen zu löschen, bevor die Änderung wirksam wird.
+    </li>
+    <li>
+      <strong>Support-Postfach.</strong> Wir verwenden unser Support-Postfach nicht zur Verarbeitung von Kundendaten.
+      Google hostet es gemäß seinen Standardbedingungen für Gmail, nehmen Sie daher keine Angaben zu Bewerbenden in
+      E-Mails an uns auf. Verweisen Sie stattdessen über ihre Adressen in Emploist auf Stellen und Bewerbungen, ohne darin
+      enthaltene Suchbegriffe wie den Namen einer bewerbenden Person.
+    </li>
+    <li>
+      <strong>Unterstützung.</strong> Unter Berücksichtigung der Art der Verarbeitung unterstützen wir Sie in
+      angemessenem Umfang bei Anfragen betroffener Personen, Datenschutz-Folgenabschätzungen und Konsultationen mit
+      Behörden. Die meisten Anfragen können in Emploist durch Ansehen, Exportieren oder Löschen von Daten bearbeitet
+      werden. Wenn sich eine betroffene Person wegen Kundendaten an uns wendet, verweisen wir sie an Sie oder leiten die
+      Anfrage an Sie weiter.
+    </li>
+    <li>
+      <strong>Verletzungen.</strong> Wir benachrichtigen Ihre Admins unverzüglich, nachdem uns eine Verletzung des Schutzes
+      personenbezogener Daten bekannt geworden ist, die Kundendaten betrifft, mit den uns vorliegenden Informationen, und
+      ergreifen angemessene Maßnahmen, um sie einzudämmen. Die Benachrichtigung stellt kein Schuldeingeständnis dar.
+    </li>
+    <li>
+      <strong>Löschung.</strong> Solange Ihr Tarif aktiv ist, kann Ihr Team Bewerbungen und Stellen in Emploist löschen.
+      Ein Admin kann jederzeit Ihr gesamtes Unternehmen löschen. Wenn andere Kundendaten gelöscht werden sollen, senden Sie
+      uns eine E-Mail und bezeichnen Sie die Daten über ihre Adresse in Emploist oder über ihren Speicherort, ohne Angaben
+      zu Bewerbenden aufzunehmen. Wenn Sie die Nutzung von Emploist beenden, wählen Sie zwischen Rückgabe und Löschung,
+      indem Sie Bewerbungen exportieren und Ihr Unternehmen löschen. Wenn Kundendaten gelöscht werden, löschen wir sie aus
+      unseren aktiven Systemen. Kopien in unseren Backups und Logs werden entfernt, wenn diese im Laufe der Zeit ersetzt
+      werden, und einige Details können in anderen Datensätzen Ihres Unternehmens, etwa Benachrichtigungen, verbleiben,
+      bis diese gelöscht werden.
+    </li>
+    <li>
+      <strong>Überprüfungen.</strong> Wir stellen die Informationen zur Verfügung, die vernünftigerweise erforderlich sind,
+      um nachzuweisen, dass wir diesen Abschnitt einhalten. Soweit Datenschutzgesetze oder die Standardvertragsklauseln
+      mehr verlangen, dürfen Sie oder ein von Ihnen beauftragter unabhängiger Prüfer unsere Einhaltung einmal pro Jahr mit
+      angemessener Vorankündigung, auf Ihre Kosten und unter einer Pflicht zur Vertraulichkeit überprüfen.
+    </li>
+  </ul>
+
+  <h3>Internationale Datenübermittlungen</h3>
+  <p>
+    Kundendaten werden an den in unserer Liste der Unterauftragsverarbeiter angegebenen Standorten verarbeitet, und wir
+    greifen von Indien aus darauf zu.
+  </p>
+  <ul>
+    <li>
+      <strong>EU.</strong> Soweit die EU-DSGVO für eine Übermittlung von Kundendaten von Ihnen an uns gilt, werden die von
+      der Europäischen Kommission mit dem <a
+        href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32021D0914">Durchführungsbeschluss (EU) 2021/914</a
+      > genehmigten Standardvertragsklauseln (die „Standardvertragsklauseln“ [„SCCs“]) in diese Nutzungsbedingungen
+      einbezogen. Modul 2 gilt, wenn Sie Verantwortlicher sind, und Modul 3, wenn Sie Auftragsverarbeiter sind. Sie sind
+      der Datenexporteur, und wir sind der Datenimporteur. Klausel 7 findet Anwendung. Für Klausel 9 Buchstabe a gilt
+      Option 2 mit der oben genannten Vorankündigungsfrist. Die Option in Klausel 11 Buchstabe a findet keine Anwendung.
+      Die zuständige Aufsichtsbehörde wird gemäß Klausel 13 Buchstabe a bestimmt. Gemäß Klausel 17 und Klausel 18
+      Buchstabe b unterliegen die Standardvertragsklauseln dem Recht Irlands, und für Streitigkeiten sind die Gerichte
+      Irlands zuständig. Anhang I wird anhand der obigen Einzelheiten der Verarbeitung, des Abschnitts 21 und Ihrer Kontodaten
+      ausgefüllt. Anhang II besteht aus den oben genannten Sicherheitsmaßnahmen, und Anhang III ist unsere Liste der
+      Unterauftragsverarbeiter. Das Akzeptieren dieser Nutzungsbedingungen gilt als Unterzeichnung der
+      Standardvertragsklauseln und ihrer Anhänge an dem Tag, an dem Sie die Nutzungsbedingungen akzeptieren.
+    </li>
+    <li>
+      <strong>Vereinigtes Königreich.</strong> Soweit die UK-DSGVO gilt, gelten die Standardvertragsklauseln in der durch
+      das International Data Transfer Addendum des britischen Information Commissioner, Version B1.0, geänderten Fassung,
+      wobei die Tabellen des Addendums anhand dieses Abschnitts und des Abschnitts 21 ausgefüllt werden. Keine Partei darf das
+      Addendum nach dessen Ziffer 19 beenden.
+    </li>
+    <li>
+      <strong>Schweiz.</strong> Soweit das schweizerische Bundesgesetz über den Datenschutz (DSG) gilt, gelten die
+      Standardvertragsklauseln mit der Maßgabe, dass Verweise auf die DSGVO als Verweise auf dieses Gesetz zu verstehen
+      sind und der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (EDÖB) die zuständige Aufsichtsbehörde ist.
+      Der Begriff „Mitgliedstaat“ hindert betroffene Personen in der Schweiz nicht daran, gemäß Klausel 18 Buchstabe c an
+      ihrem gewöhnlichen Aufenthaltsort Ansprüche geltend zu machen.
+    </li>
+    <li>
+      <strong>Weiterübermittlungen.</strong> Soweit die Verarbeitung durch unsere Unterauftragsverarbeiter einen
+      Übermittlungsmechanismus erfordert, stützen wir uns auf die Standardvertragsklauseln oder einen anderen
+      Mechanismus, den Datenschutzgesetze anerkennen. Sie sind dafür verantwortlich, dass das Senden von Kundendaten an die
+      KI-Assistenten, die Ihr Team verbindet, eine rechtmäßige Übermittlung ist.
+    </li>
+  </ul>
+  <p>
+    Wenn etwas in diesen Nutzungsbedingungen im Widerspruch zu den Standardvertragsklauseln oder dem UK-Addendum steht,
+    haben die Standardvertragsklauseln bzw. das UK-Addendum Vorrang.
+  </p>
+
+  <h3>Datenschutzgesetze von US-Bundesstaaten</h3>
+  <p>
+    Soweit der California Consumer Privacy Act oder ein vergleichbares Gesetz eines US-Bundesstaats gilt, sind wir für
+    Kundendaten Ihr Dienstleister („service provider“) bzw. Auftragsverarbeiter („processor“). Wir verarbeiten
+    Kundendaten nur für die in diesem Abschnitt genannten Zwecke. Wir werden sie nicht verkaufen oder weitergeben („sell“
+    bzw. „share“), sie nicht außerhalb unserer direkten Geschäftsbeziehung mit Ihnen aufbewahren, verwenden oder
+    offenlegen und sie nicht mit anderen personenbezogenen Informationen zusammenführen, außer soweit diese Gesetze es
+    erlauben. Wir erfüllen die Pflichten, die diese Gesetze Dienstleistern auferlegen, und teilen Ihnen mit, wenn wir
+    dazu nicht mehr in der Lage sind. Sie dürfen angemessene Maßnahmen ergreifen, um sicherzustellen, dass wir
+    Kundendaten im Einklang mit Ihren Pflichten nach diesen Gesetzen verwenden, und um jede unbefugte Nutzung zu
+    unterbinden und zu beheben.
+  </p>
+
+  <h3>Indien</h3>
+  <p>
+    Soweit der indische Digital Personal Data Protection Act, 2023 (Gesetz über den Schutz digitaler personenbezogener
+    Daten) für Kundendaten gilt, sind Sie der „Data Fiduciary“ (Datentreuhänder), und wir sind Ihr „Data Processor“
+    (Auftragsverarbeiter).
+  </p>
+
+  <h2 id="suspension-and-termination">14. Sperrung und Beendigung</h2>
+  <ul>
+    <li>
+      <strong>Beendigung Ihrer Nutzung.</strong> Sie können die Nutzung von Emploist jederzeit beenden, indem Sie Ihren
+      Tarif kündigen und, wenn Sie die Löschung der Daten Ihres Unternehmens wünschen, Ihr Unternehmen löschen. Diese
+      Nutzungsbedingungen enden, wenn Ihr Unternehmen gelöscht wird.
+    </li>
+    <li>
+      <strong>Sperrung.</strong> Wir dürfen den Zugriff Ihres Unternehmens auf Emploist oder auf Teile davon sperren, wenn
+      eine Zahlung fehlschlägt oder beanstandet wird, wenn Sie oder Ihre Teammitglieder schwerwiegend oder wiederholt
+      gegen diese Nutzungsbedingungen verstoßen, wenn Ihre Nutzung ein Sicherheitsrisiko schafft oder anderen schaden
+      könnte oder wenn das Gesetz dies verlangt.
+    </li>
+    <li>
+      <strong>Beendigung wegen Vertragsverletzung.</strong> Wir dürfen diese Nutzungsbedingungen beenden, wenn Sie
+      wesentlich gegen sie verstoßen und den Verstoß nicht innerhalb von 30 Tagen nach unserer Mitteilung beheben, oder
+      sofort, wenn der Verstoß nicht behoben werden kann oder schwerwiegend ist, etwa bei Betrug, betrügerischen Stellen
+      oder illegalen Inhalten. Soweit angemessen, geben wir Ihren Admins Gelegenheit, Kundendaten zu exportieren, bevor
+      wir sie löschen.
+    </li>
+    <li>
+      <strong>Wenn wir das Angebot von Emploist einstellen.</strong> Wir informieren Ihre Admins mindestens 30 Tage im
+      Voraus per E-Mail und veranlassen über Dodo eine Erstattung für den ungenutzten Teil Ihres laufenden
+      Abrechnungszeitraums.
+    </li>
+    <li>
+      <strong>Nach dem Ende Ihres Tarifs.</strong> Ihr Unternehmen bleibt schreibgeschützt. Wir dürfen ein Unternehmen und
+      alle seine Daten löschen, sobald es 12 aufeinanderfolgende Monate keinen aktiven Tarif hatte oder nachdem wir diese
+      Nutzungsbedingungen nach diesem Abschnitt beendet haben.
+    </li>
+    <li>
+      <strong>Was fortgilt.</strong> Teile dieser Nutzungsbedingungen, die ihrer Natur nach über das Ende der
+      Nutzungsbedingungen hinaus fortgelten sollten, gelten fort, einschließlich geschuldeter Beträge, des Abschnitts 13, solange wir Kundendaten
+      speichern, sowie der Bestimmungen zu Vertraulichkeit, geistigem Eigentum, Gewährleistungsausschlüssen,
+      Haftungsbeschränkung, Freistellung und anwendbarem Recht.
+    </li>
+  </ul>
+
+  <h2 id="disclaimers">15. Gewährleistungsausschlüsse</h2>
+  <p>
+    <strong
+      >Soweit diese Nutzungsbedingungen nicht ausdrücklich etwas anderes bestimmen und soweit gesetzlich zulässig, wird
+      Emploist „wie besehen“ („as is“) und „wie verfügbar“ („as available“) bereitgestellt, ohne Gewährleistungen
+      jeglicher Art, ob ausdrücklich, stillschweigend oder gesetzlich, einschließlich Gewährleistungen der
+      Marktgängigkeit, der Eignung für einen bestimmten Zweck, der Rechtsinhaberschaft, der Nichtverletzung von Rechten
+      Dritter und der Richtigkeit, sowie jeglicher Gewährleistung, dass Emploist unterbrechungsfrei, sicher oder
+      fehlerfrei sein wird.</strong
+    >
+  </p>
+  <p>
+    Insbesondere sagen wir nicht zu, dass Match-Scores oder andere KI-Ausgaben richtig, vollständig oder frei von
+    Verzerrungen sind, dass KI-Assistenten korrekt funktionieren oder Anweisungen in den Texten von Bewerbenden
+    ignorieren, dass irgendein Einstellungsergebnis erzielt wird oder dass Ihre Nutzung von Emploist den Gesetzen
+    entspricht, die für Ihr Recruiting gelten. Nichts in Emploist oder in unseren Leitfäden ist Rechtsberatung.
+  </p>
+
+  <h2 id="liability">16. Haftungsbeschränkung</h2>
+  <p>Soweit gesetzlich zulässig:</p>
+  <ul>
+    <li>
+      Keine Partei haftet der anderen gegenüber für indirekte Schäden, Begleitschäden, besondere Schäden, Folgeschäden
+      oder Strafschadensersatz oder für den Verlust von Gewinnen, Umsätzen, Geschäften, Goodwill oder Daten, selbst wenn
+      sie auf deren Möglichkeit hingewiesen wurde.
+    </li>
+    <li>
+      <strong
+        >Unsere Gesamthaftung für alle Ansprüche, die sich aus oder im Zusammenhang mit diesen Nutzungsbedingungen oder
+        Emploist ergeben, ist auf den Betrag begrenzt, den Sie in den 12 Monaten vor Entstehung des Anspruchs für Emploist
+        gezahlt haben, ohne Steuern.</strong
+      >
+    </li>
+    <li>
+      Diese Beschränkungen gelten für jegliche Haftung zwischen Ihnen und uns, einschließlich nach Abschnitt 13 und den
+      Standardvertragsklauseln. Nicht beschränkt werden dadurch die Rechte betroffener Personen nach Datenschutzgesetzen
+      oder den Standardvertragsklauseln sowie eine Haftung, deren Beschränkung das Gesetz nicht zulässt, etwa für Betrug.
+    </li>
+    <li>
+      Der erste Punkt beschränkt weder die Beträge, die Sie für Ihren Tarif und Ihre Credits schulden, noch Ihre Pflichten
+      nach <a href="#indemnity">Abschnitt 17</a> oder Ihre Haftung für Verstöße gegen <a href="#acceptable-use"
+        >Abschnitt 8</a
+      > oder für die Verletzung unseres geistigen Eigentums.
+    </li>
+  </ul>
+
+  <h2 id="indemnity">17. Freistellung</h2>
+  <p>
+    Soweit gesetzlich zulässig, übernehmen Sie unsere Verteidigung gegen Ansprüche, Forderungen oder Verfahren Dritter,
+    etwa von Bewerbenden oder Behörden, und zahlen alle daraus resultierenden Schadensersatzbeträge, Bußgelder,
+    Vergleichsbeträge, Kosten und angemessenen Anwaltskosten, soweit der Anspruch, die Forderung oder das Verfahren aus
+    Folgendem entsteht:
+  </p>
+  <ul>
+    <li>Kundendaten oder andere Inhalte, die Sie oder Ihre Teammitglieder in Emploist einbringen oder darüber veröffentlichen</li>
+    <li>Ihre Einstellungsentscheidungen</li>
+    <li>Code, den Sie oder Ihre Teammitglieder zu Emploist hinzufügen</li>
+    <li>das, was die KI-Assistenten Ihrer Teammitglieder in Emploist tun, und die Kundendaten, die sie erhalten</li>
+    <li>ein Verstoß gegen diese Nutzungsbedingungen oder gegen das Gesetz durch Sie oder Ihre Teammitglieder</li>
+  </ul>
+  <p>
+    Dies gilt nicht, soweit der Anspruch durch unsere Verletzung dieser Nutzungsbedingungen verursacht wird. Wir
+    informieren Sie umgehend über den Anspruch, überlassen Ihnen die Kontrolle über die Verteidigung, außer in
+    Angelegenheiten, die unsere eigenen regulatorischen Pflichten betreffen, und unterstützen Sie auf Ihre Kosten in
+    angemessenem Umfang. Sie werden ohne unsere schriftliche Zustimmung keinen Anspruch durch einen Vergleich beilegen,
+    der in unserem Namen ein Verschulden anerkennt oder uns Pflichten auferlegt.
+  </p>
+
+  <h2 id="changes">18. Änderungen dieser Nutzungsbedingungen</h2>
+  <p>
+    Wir dürfen diese Nutzungsbedingungen aktualisieren, indem wir hier eine neue Fassung veröffentlichen und das Datum
+    oben auf der Seite aktualisieren. Bei wesentlichen Änderungen informieren wir Ihre Admins mindestens 30 Tage vor deren
+    Inkrafttreten per E-Mail. Wenn Sie nicht einverstanden sind, können Sie vorher Ihren Tarif kündigen oder Ihr
+    Unternehmen löschen. Wenn Sie Emploist weiter nutzen, nachdem Änderungen in Kraft getreten sind, akzeptieren Sie
+    diese. Änderungen werden den Schutz, den Abschnitt 13 Kundendaten gewährt, nicht verringern, es sei denn, das Gesetz
+    verlangt dies.
+  </p>
+
+  <h2 id="disputes">19. Anwendbares Recht und Streitigkeiten</h2>
+  <p>
+    Diese Nutzungsbedingungen und alle Streitigkeiten, die sich aus oder im Zusammenhang mit ihnen oder Emploist ergeben,
+    unterliegen dem Recht Indiens. Bevor Sie ein Rechtsverfahren einleiten, senden Sie uns die Einzelheiten der
+    Streitigkeit per E-Mail, und beide Parteien werden nach Treu und Glauben versuchen, sie innerhalb von 30 Tagen
+    beizulegen.
+    Gelingt dies nicht, sind die Gerichte in Kozhikode, Kerala, Indien, ausschließlich zuständig. Jede Partei darf
+    dennoch bei jedem Gericht Eilrechtsschutz beantragen, etwa zum Schutz von geistigem Eigentum oder vertraulichen
+    Informationen. Streitigkeiten nach den Standardvertragsklauseln unterliegen dem Recht und den Gerichten, die die
+    Standardvertragsklauseln festlegen.
+  </p>
+
+  <h2 id="general">20. Allgemeines</h2>
+  <ul>
+    <li>
+      <strong>Gesamte Vereinbarung.</strong> Diese Nutzungsbedingungen, einschließlich unserer Liste der
+      Unterauftragsverarbeiter, sind die gesamte Vereinbarung zwischen Ihnen und uns über Emploist und ersetzen alle
+      früheren Vereinbarungen darüber. Bedingungen in Ihren Bestellungen oder sonstigen Dokumenten gelten nicht.
+    </li>
+    <li>
+      <strong>Übertragung.</strong> Sie dürfen diese Nutzungsbedingungen nicht ohne unsere schriftliche Zustimmung
+      übertragen. Wir dürfen sie auf einen Nachfolger übertragen, der Emploist übernimmt, etwa auf eine zum Betrieb von
+      Emploist gegründete Gesellschaft oder auf einen Käufer, und wir informieren Ihre Admins, wenn wir dies tun.
+    </li>
+    <li>
+      <strong>Ereignisse außerhalb unserer Kontrolle.</strong> Keine Partei ist verantwortlich für Verzögerungen oder
+      Ausfälle, die durch Ereignisse außerhalb zumutbarer Kontrolle verursacht werden, etwa Naturkatastrophen, Krieg,
+      behördliche Maßnahmen oder Ausfälle des Internets oder unserer Anbieter. Dies entbindet nicht von der
+      Zahlungspflicht.
+    </li>
+    <li>
+      <strong>Mitteilungen.</strong> Wir senden Mitteilungen an die E-Mail-Adressen Ihrer Admins. Senden Sie Mitteilungen
+      an uns an <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Eine Mitteilung per E-Mail gilt mit
+      ihrem Versand als zugegangen, es sei denn, der Absender erhält eine Unzustellbarkeitsnachricht.
+    </li>
+    <li>
+      <strong>Salvatorische Klausel und Verzicht.</strong> Ist ein Teil dieser Nutzungsbedingungen nicht durchsetzbar,
+      gilt der Rest weiterhin. Wird ein Teil dieser Nutzungsbedingungen nicht durchgesetzt, bedeutet dies keinen Verzicht
+      auf das Recht, dies später zu tun.
+    </li>
+    <li>
+      <strong>Verhältnis zueinander.</strong> Sie und wir sind voneinander unabhängig. Diese Nutzungsbedingungen begründen keine
+      Partnerschaft, kein Joint Venture, kein Arbeitsverhältnis und kein Vertretungsverhältnis, und niemand sonst hat
+      Rechte aus ihnen, außer betroffenen Personen nach den Standardvertragsklauseln.
+    </li>
+    <li>
+      <strong>Sanktionen.</strong> Sie bestätigen, dass Sie nicht in einem Land oder einer Region ansässig oder gegründet
+      sind, das bzw. die umfassenden Sanktionen unterliegt, und dass weder Sie noch Ihre Teammitglieder auf einer
+      Sanktionsliste stehen.
+    </li>
+    <li>
+      <strong>Sprache und Auslegung.</strong> Diese Nutzungsbedingungen sind in englischer Sprache verfasst, und die
+      englische Fassung ist gegenüber jeder Übersetzung maßgeblich. „Einschließlich“ („including“) und „zum Beispiel“
+      („for example“) bedeuten „einschließlich, ohne darauf beschränkt zu sein“ („including without limitation“), und
+      Überschriften dienen nur der Übersichtlichkeit.
+    </li>
+  </ul>
+
+  <h2 id="contact">21. Kontakt</h2>
+  <p>
+    Emploist wird von Navaneeth CT betrieben, einer in Indien ansässigen natürlichen Person, die unter der
+    Geschäftsbezeichnung Emploist tätig ist. Bei Fragen, Mitteilungen oder Beschwerden zu diesen Nutzungsbedingungen
+    schreiben Sie uns eine E-Mail an <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Unser Grievance
+    Officer (Beschwerdebeauftragter) nach dem indischen Information Technology Act ist Navaneeth CT, erreichbar unter
+    derselben Adresse.
+  </p>
+</LegalLayout>

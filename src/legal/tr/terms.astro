@@ -1,0 +1,856 @@
+---
+import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SITE } from "../../lib/site";
+
+const sections = [
+  { id: "about", title: "Bu Şartlar hakkında" },
+  { id: "accounts", title: "Hesabınız ve ekibiniz" },
+  { id: "service", title: "Hizmet" },
+  { id: "ai-ranking", title: "Yapay zekâ puanlaması" },
+  { id: "ai-assistants", title: "Yapay zekâ asistanları" },
+  { id: "plans-and-payments", title: "Planlar, ödemeler ve iptal" },
+  { id: "your-content", title: "Müşteri Verileri" },
+  { id: "acceptable-use", title: "Kabul edilebilir kullanım" },
+  { id: "careers-pages", title: "Kariyer sayfaları, alan adları ve kod" },
+  { id: "third-party-services", title: "Üçüncü taraf hizmetleri" },
+  { id: "our-property", title: "Fikri mülkiyet" },
+  { id: "confidentiality", title: "Gizlilik yükümlülüğü" },
+  { id: "data-processing", title: "Veri işleme" },
+  { id: "suspension-and-termination", title: "Askıya alma ve fesih" },
+  { id: "disclaimers", title: "Sorumluluk reddi beyanları" },
+  { id: "liability", title: "Sorumluluğun sınırlandırılması" },
+  { id: "indemnity", title: "Tazmin yükümlülüğü" },
+  { id: "changes", title: "Bu Şartlar'daki değişiklikler" },
+  { id: "disputes", title: "Uygulanacak hukuk ve uyuşmazlıklar" },
+  { id: "general", title: "Genel hükümler" },
+  { id: "contact", title: "İletişim" },
+] as const;
+---
+
+<LegalLayout
+  document="terms"
+  title="Hizmet Şartları"
+  description="Emploist kullanım şartları: planlar, ödemeler, yapay zekâ puanlaması ve asistanları, kabul edilebilir kullanım ve aday verilerini sizin için nasıl işlediğimiz."
+  translatedFrom="2026-10-28"
+  sections={sections}
+>
+  <h2 id="about">1. Bu Şartlar hakkında</h2>
+  <p>
+    Bu Hizmet Şartları ("Şartlar"; "Terms"), siz ile Hindistan'da yerleşik bir gerçek kişi olan ve Emploist ticari
+    adıyla faaliyet gösteren Navaneeth CT ("biz"; "we", "us" veya "our") arasındaki bir sözleşmedir. "Siz" ("You") ve
+    "Müşteri" ("Customer"), Emploist'i kullanan işletme veya diğer kuruluş anlamına gelir.
+  </p>
+  <ul>
+    <li>Emploist, işe alım yapan kuruluşlar içindir. Kişisel, ailevi veya ev içi kullanım için değildir.</li>
+    <li>
+      Emploist'e giriş yaptığınızda, bir şirket oluşturduğunuzda, bir Plan başlattığınızda veya Emploist'i başka
+      herhangi bir şekilde kullandığınızda bu Şartlar'ı kabul etmiş olursunuz. Kabul etmiyorsanız Emploist'i
+      kullanmayın.
+    </li>
+    <li>
+      Bu Şartlar'ı kuruluşunuz adına kabul eden kişi, en az 18 yaşında olduğunu ve kuruluşunuzu bağlama yetkisine sahip
+      olduğunu teyit eder. Ekibinizde Emploist'i kullanan herkes en az 18 yaşında olmalıdır.
+    </li>
+    <li>
+      Bir kariyer sayfası aracılığıyla ilanlara başvuran kişiler bu Şartlar ile bağlı değildir. Bu kişilerin <a
+        href="/tr/privacy/#applicants">verilerinin nasıl işlendiği</a
+      > Gizlilik Politikamızda açıklanmaktadır.
+    </li>
+  </ul>
+  <p>
+    <a href="#data-processing">13. bölümdeki</a> veri işleme şartları ve <a href="/tr/privacy/#subprocessors"
+      >alt veri işleyenler listemiz</a
+    > bu Şartlar'ın bir parçasıdır. <a href="/tr/privacy/">Gizlilik Politikamız</a>, kişisel verileri veri sorumlusu
+    olarak nasıl işlediğimizi açıklar. Alt veri işleyenler listesi dışında bu politika, bu Şartlar'ın bir parçası
+    değildir.
+  </p>
+
+  <h3>Kullandığımız terimler</h3>
+  <ul>
+    <li>
+      <strong>"Emploist"</strong>, Emploist web uygulaması, bu uygulamanın sağladığı kariyer sayfaları ve e-postalar,
+      yapay zekâ asistanlarına yönelik MCP sunucusu ve ilgili desteğimiz anlamına gelir.
+    </li>
+    <li>
+      <strong>"Şirketiniz"</strong> ("Your company"), kuruluşunuzun Emploist'teki çalışma alanı anlamına gelir; bu
+      çalışma alanı kuruluşunuzun ilanlarını, kariyer sayfasını, ekibini, ayarlarını ve başvurularını barındırır.
+    </li>
+    <li>
+      <strong>"Ekip üyeleri"</strong> ("Team members"), Emploist'te şirketinizde yönetici veya üye olarak yer alan
+      kişiler anlamına gelir.
+    </li>
+    <li>
+      <strong>"Adaylar"</strong> ("Applicants"), Emploist üzerinden ilanlarınıza başvuran kişiler anlamına gelir.
+    </li>
+    <li>
+      <strong>"Müşteri Verileri"</strong> ("Customer Data"), sizin ve ekip üyelerinizin Emploist'e girdiği içerikler,
+      adayların Emploist üzerinden gönderdiği bilgiler ve Emploist'in bunlardan oluşturduğu eşleşme puanları ile diğer
+      kayıtlar anlamına gelir.
+    </li>
+    <li>
+      <strong>"Plan"</strong>, ücretsiz denemesi dahil şirketinizin Emploist aboneliği anlamına gelir. Plan'ınız ücretsiz
+      deneme sürecindeyken, ödemeleri eksiksiz yapılmışken veya başarısız bir ödemenin ardından tanınan ek süre
+      içindeyken <strong>"etkin"</strong> ("active") sayılır.
+    </li>
+    <li>
+      <strong>"Krediler"</strong> ("Credits"), başvuruları puanlamak için kullanılan yapay zekâ kredileri anlamına
+      gelir.
+    </li>
+  </ul>
+
+  <h2 id="accounts">2. Hesabınız ve ekibiniz</h2>
+  <ul>
+    <li>Kendiniz ve şirketiniz hakkında doğru bilgiler verin ve bu bilgileri güncel tutun.</li>
+    <li>
+      E-posta hesabınız ile Google veya Microsoft hesabınız gibi giriş yöntemlerinizi güvende tutun. Bunları kontrol eden
+      herkes sizin kimliğinizle giriş yapabilir. Giriş kodlarını veya davet bağlantılarını paylaşmayın.
+    </li>
+    <li>
+      Yöneticiler şirketinizin faturalandırmasını, ayarlarını ve ekibini yönetir. Yöneticilerinizi seçmekten, ekip
+      üyelerinizin Emploist'te yaptığı her şeyden ve ekip üyelerinizin bu Şartlar'a uymasını sağlamaktan siz
+      sorumlusunuz.
+    </li>
+    <li>
+      Erişime artık ihtiyacı olmayan kişileri şirketinizden çıkarın. Birinin şirketinize izinsiz eriştiğini
+      düşünüyorsanız bunu ivedilikle <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> adresinden bize bildirin.
+    </li>
+  </ul>
+
+  <h2 id="service">3. Hizmet</h2>
+  <p>
+    Emploist, işe alım için kullanılan bir yazılım aracıdır. Biz bir istihdam bürosu veya işe alım danışmanı değiliz ve
+    sizin yerinize işe alım kararları vermeyiz.
+  </p>
+  <ul>
+    <li>
+      <strong>Değişiklikler.</strong> Özellikleri değiştirebilir, yeni özellikler ekleyebilir veya mevcut özellikleri
+      kaldırabiliriz. Bir değişiklik Plan'ınızın kapsamını esaslı ölçüde azaltırsa, makul olarak mümkün olduğu durumlarda
+      bunu yöneticilerinize önceden bildireceğiz.
+    </li>
+    <li>
+      <strong>Sınırlar.</strong> Emploist'te dosya boyutları ve isteklerin ne sıklıkla yapılabileceği gibi konularda
+      makul teknik sınırlar bulunur ve bu sınırları değiştirebiliriz. Kullanımınız normal kullanımın çok ötesine geçerse
+      veya Emploist'i riske atarsa kullanımınızı sınırlayabiliriz.
+    </li>
+    <li>
+      <strong>Destek ve erişilebilirlik.</strong> <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+      adresi üzerinden e-postayla destek sağlarız. Hizmet seviyesi sözleşmesi sunmayız ve Emploist zaman zaman, örneğin
+      bakım sırasında, kullanılamayabilir.
+    </li>
+    <li>
+      <strong>Ücretsiz denemeler ve beta özellikleri.</strong> Ücretsiz denemeler ile beta veya önizleme olarak
+      etiketlediğimiz özellikler olduğu gibi sunulur. Bunlar herhangi bir zamanda değişebilir veya sona erebilir.
+    </li>
+  </ul>
+
+  <h2 id="ai-ranking">4. Yapay zekâ puanlaması</h2>
+  <p>
+    Yapay zekâ puanlaması açıkken Emploist, her başvuruyu özgeçmişe, adayın yanıtlarına ve ilanın ayrıntılarına dayanarak
+    ilgili ilana göre puanlamak için bir yapay zekâ modeli kullanır. Yapay zekâ puanlaması varsayılan olarak açıktır ve
+    Plan'ınız etkinken bir yönetici bunu Ayarlar sayfasından kapatabilir. Yapay zekâ puanlaması tek başına hiç kimseyi
+    reddetmez, sonraki aşamaya taşımaz veya kimseye e-posta göndermez.
+  </p>
+  <p>
+    Eşleşme puanları yanlış, eksik veya yanlı olabilir. Bu puanlar, hangi başvuruların önce inceleneceği konusunda yol
+    gösterir; birinin yeterli olup olmadığına dair bir tespit değildir. Yapay zekâ puanlamasını kullanıp
+    kullanmayacağınıza ve nasıl kullanacağınıza siz karar verirsiniz ve verdiğiniz her işe alım kararından siz
+    sorumlusunuz. Kullanıyorsanız şunlarla yükümlüsünüz:
+  </p>
+  <ul>
+    <li>
+      başvuruların insanlar tarafından incelenmesini sağlamak; bir aday hakkındaki hiçbir kararı asla yalnızca bir
+      eşleşme puanına dayandırmamak ve hiçbir başvuruyu puanı düşük olduğu veya hiç puanı olmadığı için atlamamak
+    </li>
+    <li>
+      adaylara, başvuruların incelenmesinde yapay zekânın yardımcı olduğunu bildirmek ve işe alımda yapay zekâ
+      kullanmanız nedeniyle kanunun size yüklediği diğer tüm bildirimleri yapmak ve diğer tüm gereklilikleri karşılamak.
+      Yapay zekâ puanlaması açıkken varsayılan kariyer sayfası böyle bir bildirim gösterir. Kendi kariyer sayfası
+      kodunuzu kullanıyorsanız böyle bir bildirimi kendiniz ekleyin.
+    </li>
+    <li>
+      bunu, adayları ırk, din, kast, cinsiyet, yaş veya engellilik gibi korunan özelliklere ya da bu özelliklerin yerine
+      geçen unsurlara göre elemek için kullanmamak
+    </li>
+    <li>
+      bunu, başvuruları yapıldıkları ilan için incelemek dışında herhangi bir amaçla, örneğin çalışanları değerlendirmek
+      veya izlemek için kullanmamak
+    </li>
+    <li>
+      bunu, bir yapay zekâ asistanı aracılığıyla da dahil olmak üzere, bir insanın incelemesi olmadan adaylar hakkında
+      karar vermek için kullanmamak
+    </li>
+  </ul>
+  <p>
+    Başvuruları puanlamak için bunları, <a href="/tr/privacy/#subprocessors">alt veri işleyenler listemizde</a> adı
+    belirtilen yapay zekâ sağlayıcımıza göndeririz. Yapay zekâ sağlayıcımızı veya modelimizi değiştirebiliriz. Kanunun
+    gerektirdiği durumlarda, bazı bölgelerde veya bazı şirketler için yapay zekâ puanlamasını sınırlayabilir ya da
+    kapatabiliriz.
+  </p>
+
+  <h2 id="ai-assistants">5. Yapay zekâ asistanları</h2>
+  <p>
+    Ekip üyeleri, Claude veya ChatGPT gibi yapay zekâ asistanlarını MCP sunucumuz aracılığıyla Emploist'e bağlayabilir.
+    Bağlanan bir asistan, onu bağlayan kişinin kimliğiyle ve rolüyle çalışır; başvuruları okumak ve taşımak,
+    ilanları düzenlemek gibi, o kişinin Emploist'te yapabildiklerinin çoğunu yapabilir. Yapay zekâ asistanları varsayılan
+    olarak açıktır ve bir yönetici bunları şirketiniz için Ayarlar sayfasından kapatabilir.
+  </p>
+  <p>
+    Yapay zekâ asistanları, sizin ve ekip üyelerinizin seçtiği üçüncü taraf hizmetleridir. Emploist'in bir parçası
+    değildir ve sağlayıcıları alt veri işleyenlerimiz değildir. Bir asistanın aldığı Müşteri Verileri, asistanın
+    sağlayıcısı ile siz veya ekip üyeniz arasındaki koşullar kapsamında işlenir ve bu veriler üzerinde kontrolümüz
+    yoktur. Şunlardan siz sorumlusunuz:
+  </p>
+  <ul>
+    <li>
+      ekibinizin hangi asistanları kullanabileceğine karar vermek ve Müşteri Verileri'nin bu asistanlara
+      gönderilmesinin hukuka uygun olmasını sağlamak
+    </li>
+    <li>
+      ekip üyelerinizin asistanlarının Emploist'te yaptığı her şey; tıpkı bunları ekip üyeleriniz bizzat yapmış gibi
+    </li>
+    <li>
+      bir asistan başvurular ve eşleşme puanlarıyla çalıştığında <a href="#ai-ranking">4. bölüme</a> uymak
+    </li>
+  </ul>
+  <p>
+    Güvenli olmadığına, zararlı olduğuna veya bu Şartlar'a aykırı şekilde kullanıldığına makul olarak inandığımız bir
+    asistanı engelleyebilir veya bağlantısını kesebiliriz.
+  </p>
+
+  <h2 id="plans-and-payments">6. Planlar, ödemeler ve iptal</h2>
+
+  <h3>Dodo Payments</h3>
+  <p>
+    Sipariş sürecimiz, çevrim içi yeniden satıcımız Dodo Payments ("Dodo") tarafından yürütülür. Dodo, tüm
+    siparişlerimizin kayıtlı satıcısıdır (merchant of record). Dodo; satın alma işlemini, ödemeleri, faturaları, satış
+    vergisi ve KDV'yi, ödemeyle ilgili soruları ve iadeleri yürütür. Dodo'nun <a
+      href="https://dodopayments.com/legal/buyer-terms">Alıcı Koşulları</a
+    > (Buyer Terms) da satın alımlarınız için geçerlidir.
+  </p>
+
+  <h3>Plan ve faturalandırma</h3>
+  <ul>
+    <li>
+      Plan, ödeme sırasında gösterilen fiyat üzerinden, geçerli vergiler eklenerek, aylık veya yıllık olarak peşin
+      faturalandırılır. Plan, iptal edilene kadar aynı uzunlukta yeni bir dönem için otomatik olarak yenilenir.
+    </li>
+    <li>
+      Fiyatlarımızı değiştirebiliriz. Bir fiyat artışı Plan'ınıza uygulanmadan en az 30 gün önce yöneticilerinize
+      e-posta göndereceğiz ve o tarihten önce iptal edebilirsiniz.
+    </li>
+    <li>
+      Bir ödeme başarısız olursa Emploist kısa bir ek süre boyunca çalışmaya devam eder. Ödeme bu sürenin sonunda hâlâ
+      gerçekleşmemişse şirketiniz, ödeme yapılana kadar salt okunur hâle gelir.
+    </li>
+  </ul>
+
+  <h3>Ücretsiz deneme</h3>
+  <p>
+    Şirketinizin ilk Plan'ı ücretsiz denemeyle başlayabilir. Ödeme sırasında bir ödeme yöntemi eklersiniz ve bir
+    yönetici deneme bitmeden önce iptal etmedikçe Dodo, deneme bittiğinde ilk fatura dönemi için ücret tahsil eder. Her
+    şirket ve her kişi yalnızca bir ücretsiz deneme kullanabilir.
+  </p>
+
+  <h3>Yapay zekâ kredileri</h3>
+  <ul>
+    <li>
+      Bir başvurunun puanlanması bir Kredi kullanır; aynı başvurunun yeniden puanlanması da bir Kredi daha kullanır.
+    </li>
+    <li>
+      Plan'ınız, her fatura dönemi için, o dönem başladığında <a href="/tr/#pricing">fiyatlandırma sayfamızda</a>
+      gösterildiği şekilde Krediler içerir. Bu Krediler bir sonraki döneme aktarılmaz.
+    </li>
+    <li>
+      Yöneticiler paketler hâlinde ek Kredi satın alabilir. Paketle alınan Krediler'in süresi dolmaz, ancak şirketiniz
+      silinirse bu Krediler kaybolur.
+    </li>
+    <li>
+      Krediler yalnızca Plan'ınız etkinken satın alınabilir ve kullanılabilir. Krediler'in nakit değeri yoktur,
+      devredilemez ve iade edilemez; kanunun gerektirdiği durumlar bunun dışındadır. Bir kredi paketinin bedeli iade
+      edilirse, o paketteki kullanılmamış Krediler kaldırılır.
+    </li>
+  </ul>
+
+  <h3>İptal ve iadeler</h3>
+  <ul>
+    <li>
+      Bir yönetici, Faturalandırma sayfasından istediği zaman iptal edebilir. Plan'ınız mevcut deneme süresinin veya
+      fatura döneminin sonuna kadar etkin kalır ve sizden tekrar ücret alınmaz.
+    </li>
+    <li>
+      Ödemeler iade edilmez. Kısmi fatura dönemleri veya kullanılmayan Krediler için iade ya da mahsup yapılmaz. Bunun
+      istisnaları; kanunun iade veya mahsup gerektirdiği durumlar, yıllık faturalandırmaya geçtiğinizde ödeme sırasında
+      gösterilen orantılı mahsuplar ve Emploist'i sunmayı bırakmamızdır (<a
+        href="#suspension-and-termination">14. bölüm</a
+      >). İadeler Dodo tarafından ödenir.
+    </li>
+    <li>
+      Şirketinizi silmek, Plan'ınızı iade yapılmadan derhal iptal eder ve şirketinizin verilerini kalıcı olarak siler.
+    </li>
+  </ul>
+
+  <h3>Plan'ınız etkin olmadığında</h3>
+  <p>
+    Plan'ınız sona erdiğinde ve şirketiniz bir Plan başlatmadan önce şirketiniz salt okunur durumdadır. Ekibiniz yine de
+    giriş yapabilir, şirketin verilerini görüntüleyebilir ve başvuruları dışa aktarabilir; ancak çoğu değişikliği
+    yapamaz, başvurular puanlanmaz ve kariyer sayfanız başvuru almayı durdurur.
+  </p>
+
+  <h2 id="your-content">7. Müşteri Verileri</h2>
+  <ul>
+    <li><strong>Veriler sizindir.</strong> Müşteri Verileri üzerindeki tüm haklarınız sizde kalır.</li>
+    <li>
+      <strong>Lisansımız.</strong> Müşteri Verileri'ni, alt veri işleyenlerimiz aracılığıyla da dahil olmak üzere,
+      yalnızca Emploist'i bu Şartlar kapsamında sağlamak, güvenliğini sağlamak ve desteklemek için gerektiği ölçüde,
+      dünya çapında barındırmamıza, depolamamıza, kopyalamamıza, işlememize, iletmemize, görüntülememize ve
+      yayınlamamıza izin verirsiniz. Örneğin ilanlarınızı kariyer sayfanızda yayınlarız, e-postalarınızı adaylara
+      göndeririz ve Müşteri Verileri'ni ekip üyelerinizin bağladığı yapay zekâ asistanlarına göndeririz.
+    </li>
+    <li>
+      <strong>Yapmadıklarımız.</strong> Müşteri Verileri'ni satmayız, reklam için kullanmayız veya yapay zekâ
+      modellerini eğitmek için kullanmayız.
+    </li>
+    <li>
+      <strong>Kullanım verileri.</strong> Emploist'in nasıl kullanıldığına ve nasıl performans gösterdiğine ilişkin
+      bilgileri, Emploist'i işletmek ve geliştirmek için kullanabiliriz. Emploist'i size sağlamanın ötesinde kullandığımız
+      veya paylaştığımız her şey toplulaştırılmış veya kimliksizleştirilmiştir; dolayısıyla sizin, ekip üyelerinizin veya
+      adayların kimliğini belirlemez ve bunları yeniden kimliklendirmeye çalışmayacağız.
+    </li>
+    <li>
+      <strong>Kopyalarınız.</strong> Ekibiniz bir ilanın başvurularını dışa aktarabilir. İhtiyaç duyduğunuz Müşteri
+      Verileri'nin kendi kopyalarını saklamaktan siz sorumlusunuz.
+    </li>
+    <li>
+      <strong>Kaldırabileceğimiz içerikler.</strong> Müşteri Verileri'ni izlemeyiz. Bu Şartlar'ı veya kanunu ihlal
+      ettiğine makul olarak inandığımız içerikleri ya da bir mahkeme veya resmi makam gerektirdiğinde içerikleri
+      kaldırabilir veya devre dışı bırakabiliriz.
+    </li>
+  </ul>
+
+  <h3>Adayların verilerine ilişkin sorumluluklarınız</h3>
+  <p>
+    Adaylardan neleri toplayacağınıza ve bunları nasıl kullanacağınıza siz karar verirsiniz. Şunlarla yükümlüsünüz:
+  </p>
+  <ul>
+    <li>
+      adayların verilerini Emploist'te toplamak ve kullanmak için, yapay zekâ puanlaması, ekibinizin kullandığı yapay
+      zekâ asistanları ve <a href="#data-processing">13. bölüm</a> kapsamındaki işlememiz dahil olmak üzere, bir
+      hukuki sebebe ve kanunun gerektirdiği tüm rızalara sahip olmak
+    </li>
+    <li>
+      adaylara, başvurdukları anda veya daha önce, Emploist'i kullanımınızı kapsayan kendi aydınlatma metninizi sunmak.
+      Varsayılan kariyer sayfası böyle bir metin içermez.
+    </li>
+    <li>
+      yalnızca kanunun sormanıza izin verdiği soruları sormak ve kanun izin vermedikçe sağlık, din veya adli sicil
+      kayıtları gibi konularda hassas bilgiler istememek
+    </li>
+    <li>
+      adayların kendi verilerine ilişkin taleplerine yanıt vermek ve artık ihtiyacınız kalmadığında verilerini silmek.
+      Emploist başvuruları otomatik olarak silmez.
+    </li>
+    <li>
+      ilanlar, kariyer sayfaları ve adaylara gönderilen e-postalar gibi yayınladığınız ve gönderdiğiniz her şeyin doğru
+      ve hukuka uygun olmasını sağlamak. Adaylara gönderilen e-postalar yalnızca başvurularıyla ilgili olmalıdır.
+      Yanıtlar, bir yöneticinin belirlediği yanıt adresine gider; bu nedenle kontrolünüzde olan bir adres kullanın.
+    </li>
+  </ul>
+
+  <h2 id="acceptable-use">8. Kabul edilebilir kullanım</h2>
+  <p>Siz ve ekibiniz Emploist'i şunlar için kullanmamalısınız:</p>
+  <ul>
+    <li>
+      sahte, yanıltıcı veya dolandırıcılık amaçlı iş ilanları yayınlamak, adaylardan herhangi bir ücret almak veya
+      toplama hakkınız olmayan kişisel verileri toplamak
+    </li>
+    <li>hukuka aykırı şekilde ayrımcılık yapan iş ilanları, kriterler veya sorular yayınlamak</li>
+    <li>
+      şirket adınız, kariyer sayfası adresiniz, e-posta gönderen adınız veya yanıt adresiniz aracılığıyla da dahil
+      olmak üzere, herhangi birinin kimliğine bürünmek veya insanları kim olduğunuz konusunda yanıltmak
+    </li>
+    <li>spam, pazarlama e-postası veya hukuka aykırı başka herhangi bir e-posta göndermek</li>
+    <li>yeniden ücretsiz deneme almak için ek hesaplar veya şirketler oluşturmak</li>
+  </ul>
+  <p>Emploist'e şu nitelikteki hiçbir şeyi koymayın:</p>
+  <ul>
+    <li>
+      başkasına ait olan ve kullanma hakkınız bulunmayan ya da herhangi bir patenti, markayı, telif hakkını veya diğer
+      mülkiyet hakkını ihlal eden
+    </li>
+    <li>
+      müstehcen, pornografik, pedofilik veya çocuklar için zararlı olan ya da beden mahremiyeti dahil herhangi bir
+      kişinin mahremiyetini ihlal eden
+    </li>
+    <li>
+      karalayıcı, taciz edici (cinsiyete dayalı taciz dahil), ırksal veya etnik açıdan sakıncalı olan ya da din veya
+      kast temelinde gruplar arasında düşmanlığı teşvik eden
+    </li>
+    <li>kara para aklama veya kumarla ilgili olan ya da bunları teşvik eden</li>
+    <li>
+      bir mesajın kaynağı konusunda herhangi birini yanıltan, bilerek yanlış veya yanıltıcı bilgi yayan ya da başka bir
+      kişinin kimliğine bürünen
+    </li>
+    <li>
+      Hindistan'ın birliğini, bütünlüğünü, savunmasını, güvenliğini veya egemenliğini, Hindistan'ın diğer ülkelerle
+      dostane ilişkilerini ya da kamu düzenini tehdit eden, herhangi bir suça tahrik eden, herhangi bir suçun
+      soruşturulmasını engelleyen veya başka herhangi bir millete hakaret eden
+    </li>
+    <li>virüs veya başka zararlı kod içeren</li>
+    <li>herhangi bir kanunu ihlal eden</li>
+  </ul>
+  <p>Ayrıca şunları yapmayın:</p>
+  <ul>
+    <li>
+      diğer şirketlerin verilerine erişmek, güvenliğimizi yoklamak veya test etmek ya da güvenlik tedbirlerimizi veya
+      sınırlarımızı atlatmak
+    </li>
+    <li>
+      Emploist'e aşırı yük bindirmek veya işleyişini bozmak ya da MCP sunucumuz gibi sağladığımız özellikler üzerinden
+      erişim dışında Emploist'e botlar, veri kazıyıcılar veya diğer otomatik araçlarla erişmek
+    </li>
+    <li>
+      kanunun izin verdiği durumlar dışında Emploist'i kopyalamak, kaynak koda dönüştürmek veya tersine mühendislik
+      uygulamak
+    </li>
+    <li>
+      Emploist'i yeniden satmak veya alt lisansa konu etmek ya da başkalarına hizmet olarak sunmak. Kendi
+      müşterileriniz için işe alım yapmanızda bir sakınca yoktur.
+    </li>
+    <li>Emploist'i rakip bir ürün geliştirmek için kullanmak</li>
+    <li>Emploist'i yaptırım veya ihracat kontrolü mevzuatını ihlal edecek şekilde kullanmak</li>
+    <li>
+      Emploist'i yapay zekâ sağlayıcımızın <a href="https://typesafe.ai/legal/acceptable-use-policy"
+        >kabul edilebilir kullanım politikasını</a
+      > ihlal edecek şekilde kullanmak
+    </li>
+  </ul>
+  <p>
+    Bu kurallar ihlal edilirse içerikleri kaldırabilir, şirketinizi askıya alabilir veya bu Şartlar'ı sona
+    erdirebiliriz (bkz. <a href="#suspension-and-termination">14. bölüm</a>).
+  </p>
+
+  <h2 id="careers-pages">9. Kariyer sayfaları, alan adları ve kod</h2>
+  <ul>
+    <li>
+      Kariyer sayfanız, emploist.com altında sizin seçtiğiniz bir alt alan adında veya bağladığınız bir alan adında yer
+      alır. Yanıltıcı olan, herhangi birinin haklarını ihlal eden veya başka birinin kimliğine bürünen bir alt alan
+      adını reddedebilir veya geri alabiliriz.
+    </li>
+    <li>
+      Kendi alan adınızı bağlarsanız, bu alan adını kontrol ettiğinizi teyit eder ve bu alan adı için TLS sertifikaları
+      almamıza izin verirsiniz. Alan adının DNS kayıtlarından siz sorumlusunuz.
+    </li>
+    <li>
+      Yöneticilerinizin yazdığı her türlü kariyer sayfası kodundan ve e-posta şablonundan, başka web sitelerinden
+      yüklenen her şey ve gösterilmesi gereken bildirimler dahil, siz sorumlusunuz. Zararlı, güvensiz veya bu Şartlar'a
+      aykırı olduğuna makul olarak inandığımız kodları devre dışı bırakabiliriz.
+    </li>
+    <li>
+      Varsayılan kariyer sayfası kodu ve indirilebilir önizleme kiti bize aittir. Bu Şartlar yürürlükte olduğu sürece
+      bunları yalnızca şirketinizin Emploist'teki kariyer sayfasını oluşturmak için kullanabilir, kopyalayabilir ve
+      değiştirebilirsiniz. Bunlardaki açık kaynak bileşenler kendi lisanslarına tabi olmaya devam eder.
+    </li>
+  </ul>
+
+  <h2 id="third-party-services">10. Üçüncü taraf hizmetleri</h2>
+  <p>
+    Emploist; giriş için Google ve Microsoft, ödemeler için Dodo ve ekibinizin bağladığı yapay zekâ asistanları gibi
+    başkaları tarafından işletilen hizmetlerle birlikte çalışır. Bu hizmetleri kullandığınızda kendi koşulları geçerlidir
+    ve bunlardan sorumlu değiliz. Microsoft ve Google bu Şartlar'ın tarafı değildir. Kanunun izin verdiği ölçüde, onlar
+    adına tüm garantiler ve tüm sorumluluk reddedilir.
+  </p>
+
+  <h2 id="our-property">11. Fikri mülkiyet</h2>
+  <p>
+    Yazılımı, tasarımı, dokümantasyonu ve Emploist adı ile logosu dahil Emploist bize aittir. Bu Şartlar size
+    Emploist'i bu Şartlar'da açıklandığı şekilde kullanma hakkı verir; başka hiçbir hak vermez. Bize geri bildirim
+    gönderirseniz, bunu size karşı herhangi bir yükümlülüğümüz olmaksızın serbestçe kullanabiliriz. Kuruluşunuzu, adı ve
+    logosuyla da dahil olmak üzere, bir Emploist müşterisi olarak belirtebiliriz. Bunu bırakmamızı isterseniz
+    bırakacağız.
+  </p>
+
+  <h2 id="confidentiality">12. Gizlilik yükümlülüğü</h2>
+  <p>
+    "Gizli Bilgi" ("Confidential Information"), taraflardan birinin Emploist ile bağlantılı olarak diğeriyle paylaştığı,
+    kamuya açık olmayan ve gizli olarak işaretlenmiş ya da makul olarak gizli olduğunun anlaşılması gereken bilgiler
+    anlamına gelir. Müşteri Verileri sizin Gizli Bilgi'nizdir. Gizli Bilgi'yi alan taraf, bunu yalnızca bu Şartlar'ın
+    amaçları doğrultusunda kullanacak, makul özenle koruyacak ve yalnızca bu amaçlar için ona ihtiyaç duyan ve gizlilik
+    yükümlülükleriyle bağlı olan kişiler ve hizmet sağlayıcılarla ya da diğer tarafın talimatı doğrultusunda
+    paylaşacaktır. Bu hüküm; alıcı tarafın kusuru olmaksızın kamuya açık olan veya kamuya açık hâle gelen, alıcı tarafın
+    zaten sahip olduğu veya bağımsız olarak geliştirdiği ya da başka birinden hukuka uygun şekilde edindiği bilgiler için
+    geçerli değildir. Kanun gerektirdiğinde taraflardan her biri Gizli Bilgi'yi ifşa edebilir.
+  </p>
+
+  <h2 id="data-processing">13. Veri işleme</h2>
+  <p>
+    Bu bölüm, veri işleme sözleşmemizdir. Müşteri Verileri'ndeki kişisel verileri sizin adınıza işlediğimizde uygulanır.
+    "Veri koruma mevzuatı" ("Data protection laws"), Müşteri Verileri'ne uygulanan veri koruma ve gizlilik mevzuatı
+    anlamına gelir. "Veri sorumlusu" ("controller"), "veri işleyen" ("processor"), "kişisel veri" ("personal data") ve
+    "kişisel veri ihlali" ("personal data breach") gibi terimler, AB ve Birleşik Krallık Genel Veri Koruma Tüzüğü'nde
+    (GDPR) ya da diğer veri koruma mevzuatındaki en yakın karşılıklarında verilen anlamları taşır.
+  </p>
+
+  <h3>Roller</h3>
+  <p>
+    Müşteri Verileri'ndeki kişisel veriler bakımından veri sorumlusu sizsiniz, biz ise veri işleyeniniz konumundayız.
+    Siz de veri işleyen konumundaysanız, örneğin bir müşteriniz için işe alım yapan bir işe alım danışmanıysanız, biz
+    sizin alt veri işleyeniniz konumunda oluruz ve veri sorumlunuzun bizim gerçekleştirdiğimiz işlemeye izin verdiğini
+    teyit edersiniz. <a href="/tr/privacy/">Gizlilik Politikamızda</a> açıklandığı üzere, ekip üyelerinizin hesap
+    bilgileri gibi işimizi yürütmek için kullandığımız kişisel veriler bakımından ise veri sorumlusu biziz.
+  </p>
+
+  <h3>İşlemenin ayrıntıları</h3>
+  <table>
+    <tbody>
+      <tr>
+        <th scope="row">Konu ve süre</th>
+        <td>Emploist'in size sağlanması; Emploist'i kullandığınız süre boyunca ve Müşteri Verileri silinene kadar.</td>
+      </tr>
+      <tr>
+        <th scope="row">Nitelik ve amaç</th>
+        <td>
+          Emploist'i sağlamak amacıyla Müşteri Verileri'nin sürekli olarak barındırılması, depolanması, görüntülenmesi ve
+          iletilmesi: kariyer sayfalarının yayınlanması, başvuruların toplanması, yapay zekâ puanlaması açıkken
+          başvuruların yapay zekâ ile puanlanması, adaylara e-posta gönderilmesi, ekip üyelerinizin bağladığı yapay zekâ
+          asistanlarına veri gönderilmesi, Emploist'e destek verilmesi ve Emploist'in güvenliğinin sağlanması ile
+          Emploist'i işletmek ve geliştirmek için toplulaştırılmış veya kimliksizleştirilmiş bilgiler oluşturulması
+          (bkz. 7. bölüm).
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">İlgili kişiler</th>
+        <td>
+          Adaylar, ekip üyeleriniz ve davet ettiğiniz kişiler ile bir özgeçmişte yer alan referanslar gibi Müşteri
+          Verileri'nde adı geçen diğer kişiler.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Kişisel veriler</th>
+        <td>
+          Adayların adları, e-posta adresleri, istemeniz hâlinde telefon numaraları, özgeçmişleri ve özgeçmişlerindeki
+          her şey, sorularınıza verdikleri yanıtlar, eşleşme puanları, işe alım aşamaları, kendilerine gönderilen
+          e-postalar ve ekibinizin onlar hakkındaki yorumları. Ekip üyelerinin ve davet edilen kişilerin, Müşteri
+          Verileri'nde yer aldığı şekliyle adları ve e-posta adresleri. İçeriğinizdeki diğer tüm kişisel veriler.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Hassas veriler</th>
+        <td>
+          Emploist hassas veri istemez, ancak özgeçmişler ve yanıtlar hassas veri içerebilir. Hassas veriler aşağıdaki
+          güvenlik tedbirleriyle korunur ve bunlara erişim; ekibiniz ve ekibinizin bağladığı yapay zekâ asistanları ile,
+          Emploist'i sağlamak için gerektiği ölçüde, biz ve alt veri işleyenlerimizle sınırlıdır.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Konumlar ve alt veri işleyenler</th>
+        <td>
+          <a href="/tr/privacy/#subprocessors">Alt veri işleyenler listemizde</a> gösterildiği gibidir. Müşteri
+          Verileri'ne Hindistan'dan erişiriz.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Taahhütlerimiz</h3>
+  <ul>
+    <li>
+      <strong>Talimatlar.</strong> Kanun aksini gerektirmedikçe Müşteri Verileri'ni, diğer ülkelere aktarımlara ilişkin
+      olanlar dahil, yalnızca belgelenmiş talimatlarınız doğrultusunda işleriz. Kanunun aksini gerektirdiği durumda,
+      kanun yasaklamadıkça bunu önce size bildireceğiz. Talimatlarınız, bu Şartlar ile sizin ve ekibinizin Emploist'i
+      nasıl kullandığı ve yapılandırdığıdır. Bir ekip üyesi bir yapay zekâ asistanı bağladığında, asistanın istediği
+      Müşteri Verileri'ni ona göndermemiz için bize talimat vermiş olur ve siz de ekip üyesini bunu yapmaya
+      yetkilendirirsiniz. Bir talimatın veri koruma mevzuatını ihlal ettiğini düşünürsek bunu size derhal bildireceğiz
+      ve o talimata uymak zorunda değiliz.
+    </li>
+    <li>
+      <strong>Gizlilik.</strong> Müşteri Verileri'ni işlemeye yetkilendirdiğimiz herkes bir gizlilik yükümlülüğüyle
+      bağlıdır.
+    </li>
+    <li>
+      <strong>Güvenlik.</strong> Müşteri Verileri'ni korumak için aşağıdakiler dahil olmak üzere uygun teknik ve idari
+      tedbirler alırız: şifreli bağlantılar (HTTPS); uygulamada bir şirketin verilerini yalnızca o şirketin ekip
+      üyelerinin ve onların bağladığı yapay zekâ asistanlarının, rollerine göre görebilmesini sağlayan erişim
+      kontrolleri; özgeçmişler için özel depolama; parolasız giriş; kariyer sayfası kodu ve özgeçmişlerin okunması için
+      zaman ve bellek sınırları olan yalıtılmış çalışma süreçleri; yüklenen dosyalara yönelik kontroller; istek hızı
+      sınırları; düzenli veritabanı yedekleri ve üretim sistemlerine yalnızca ihtiyacı olan kişilerin erişebilmesi.
+      Müşteri Verileri'nin genel korunma düzeyini düşürmediğimiz sürece bu tedbirleri değiştirebiliriz.
+    </li>
+    <li>
+      <strong>Alt veri işleyenler.</strong> Alt veri işleyen kullanmamız için bize genel yetki verirsiniz. Mevcut alt
+      veri işleyenlerimiz listemizde yer alır. Her biriyle yazılı veri koruma koşullarımız vardır ve onlardan size karşı
+      sorumlu olmaya devam ederiz. Bir alt veri işleyen eklemeden veya mevcut bir alt veri işleyeni değiştirmeden en az
+      30 gün önce yöneticilerinize e-posta göndereceğiz. Değişiklikten önce bize e-posta göndererek makul veri koruma
+      gerekçeleriyle itiraz edebilirsiniz. Endişenizi gideremezsek başvurabileceğiniz çare, değişiklik yürürlüğe
+      girmeden önce Plan'ınızı iptal etmek veya şirketinizi silmektir.
+    </li>
+    <li>
+      <strong>Destek gelen kutusu.</strong> Destek gelen kutumuzu Müşteri Verileri'ni işlemek için kullanmayız. Destek
+      gelen kutumuz, Google tarafından kendi standart Gmail koşulları kapsamında barındırılır; bu nedenle bize
+      gönderdiğiniz e-postalara adayların bilgilerini eklemeyin. Bunun yerine ilanlara ve başvurulara, içinde bir adayın
+      adı gibi arama terimleri bulunmayan Emploist'teki adresleriyle atıfta bulunun.
+    </li>
+    <li>
+      <strong>Yardım.</strong> İşlemenin niteliğini dikkate alarak ilgili kişilerden gelen talepler, veri koruma etki
+      değerlendirmeleri ve resmi makamlarla yapılacak istişareler konusunda size makul ölçüde yardımcı olacağız. Çoğu
+      talep, Emploist'te verileri görüntüleyerek, dışa aktararak veya silerek karşılanabilir. Bir ilgili kişi Müşteri
+      Verileri hakkında bizimle iletişime geçerse, kendisini size yönlendireceğiz veya talebi size ileteceğiz.
+    </li>
+    <li>
+      <strong>İhlaller.</strong> Müşteri Verileri'ni etkileyen bir kişisel veri ihlalinden haberdar olduktan sonra,
+      elimizdeki bilgilerle birlikte yöneticilerinizi gereksiz gecikme olmaksızın bilgilendireceğiz ve ihlali kontrol
+      altına almak için makul adımlar atacağız. Size bildirimde bulunmamız kusur kabulü anlamına gelmez.
+    </li>
+    <li>
+      <strong>Silme.</strong> Plan'ınız etkinken ekibiniz Emploist'te başvuruları ve ilanları silebilir. Bir yönetici,
+      şirketinizin tamamını istediği zaman silebilir. Başka Müşteri Verileri'nin silinmesine ihtiyacınız varsa bize
+      e-posta gönderin ve adayların bilgilerini eklemeden, bu verileri Emploist'teki adresiyle veya bulunduğu yerle
+      belirtin. Emploist'i kullanmayı bıraktığınızda, iade ile silme arasındaki seçiminizi başvuruları dışa aktararak ve
+      şirketinizi silerek yaparsınız. Müşteri Verileri silindiğinde onları aktif sistemlerimizden sileriz. Yedeklerimizdeki
+      ve log kayıtlarımızdaki kopyalar, bunlar zamanla yenileriyle değiştirildikçe kaldırılır ve bazı ayrıntılar,
+      bildirimler gibi şirketinizin diğer kayıtlarında, bu kayıtlar silinene kadar kalabilir.
+    </li>
+    <li>
+      <strong>Denetimler.</strong> Bu bölüme uyduğumuzu göstermek için makul olarak gerekli bilgileri sağlayacağız. Veri
+      koruma mevzuatı veya SCC'ler daha fazlasını gerektirdiğinde, siz veya atadığınız bağımsız bir denetçi, yılda bir
+      kez, makul bir süre önceden bildirimde bulunarak, masrafı size ait olmak üzere ve bir gizlilik yükümlülüğü altında
+      uyumumuzu denetleyebilir.
+    </li>
+  </ul>
+
+  <h3>Uluslararası aktarımlar</h3>
+  <p>
+    Müşteri Verileri, alt veri işleyenler listemizde gösterilen konumlarda işlenir ve bu verilere tarafımızca
+    Hindistan'dan erişilir.
+  </p>
+  <ul>
+    <li>
+      <strong>AB.</strong> Müşteri Verileri'nin sizden bize aktarımına AB GDPR uygulandığında, Avrupa Komisyonu'nun <a
+        href="https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj">(AB) 2021/914 sayılı Uygulama Kararı</a
+      > ile onaylanan standart sözleşme maddeleri ("SCC'ler"; "SCCs") bu Şartlar'a dahil edilmiştir. Veri sorumlusu
+      olduğunuz durumlarda Modül 2, veri işleyen olduğunuz durumlarda Modül 3 uygulanır. Veri aktaran siz, veri alıcı
+      ise biziz. Madde 7 uygulanır. Madde 9(a) kapsamında, yukarıda belirtilen bildirim süresiyle birlikte Seçenek 2
+      uygulanır. Madde 11(a) kapsamındaki seçenek uygulanmaz. Yetkili denetim makamı Madde 13(a) uyarınca belirlenir.
+      Madde 17 ve 18(b) uyarınca SCC'ler İrlanda hukukuna tabidir ve uyuşmazlıklar İrlanda mahkemelerinde görülür. Ek
+      I; yukarıdaki işlemenin ayrıntıları, 21. bölüm ve hesap bilgileriniz esas alınarak doldurulur. Ek II yukarıdaki
+      güvenlik tedbirlerinden, Ek III ise alt veri işleyenler listemizden oluşur. Bu Şartlar'ı kabul etmeniz, kabul
+      ettiğiniz tarih itibarıyla SCC'leri ve Eklerini imzalamanız sayılır.
+    </li>
+    <li>
+      <strong>Birleşik Krallık.</strong> Birleşik Krallık GDPR uygulandığında SCC'ler, Birleşik Krallık Bilgi
+      Komiseri'nin Uluslararası Veri Aktarımı Ek Protokolü (International Data Transfer Addendum), B1.0 sürümü ile
+      değiştirilmiş hâliyle uygulanır; Ek Protokol'ün tabloları bu bölüm ve 21. bölüm esas alınarak doldurulur.
+      Taraflardan hiçbiri Ek Protokol'ü, Ek Protokol'ün 19. Bölümü uyarınca sona erdiremez.
+    </li>
+    <li>
+      <strong>İsviçre.</strong> Swiss Federal Act on Data Protection (İsviçre Federal Veri Koruma Kanunu)
+      uygulandığında SCC'ler; içlerindeki GDPR atıfları bu Kanun'a yapılmış sayılarak ve yetkili denetim makamı İsviçre
+      Federal Veri Koruma ve Bilgi Komiseri (Swiss Federal Data Protection and Information Commissioner) olmak üzere
+      uygulanır. "Üye Devlet" ("Member State") terimi, İsviçre'deki ilgili kişilerin Madde 18(c) uyarınca mutat
+      meskenlerinin bulunduğu yerde taleplerini ileri sürmelerine engel olmaz.
+    </li>
+    <li>
+      <strong>Sonraki aktarımlar.</strong> Alt veri işleyenlerimizin işleme faaliyetleri bir aktarım mekanizması
+      gerektirdiğinde SCC'lere veya veri koruma mevzuatının tanıdığı başka bir mekanizmaya dayanırız. Müşteri
+      Verileri'nin ekibinizin bağladığı yapay zekâ asistanlarına gönderilmesinin hukuka uygun bir aktarım olmasını
+      sağlamaktan siz sorumlusunuz.
+    </li>
+  </ul>
+  <p>
+    Bu Şartlar'daki herhangi bir hüküm SCC'lerle veya Birleşik Krallık Ek Protokolü ile çelişirse, SCC'ler veya Ek Protokol
+    geçerli olur.
+  </p>
+
+  <h3>ABD eyaletlerinin gizlilik kanunları</h3>
+  <p>
+    Kaliforniya Tüketici Gizliliği Kanunu (California Consumer Privacy Act) veya benzer bir ABD eyalet kanunu
+    uygulandığında, Müşteri Verileri bakımından sizin hizmet sağlayıcınız veya veri işleyeniniz konumundayız. Müşteri
+    Verileri'ni yalnızca bu bölümde belirtilen amaçlarla işleyeceğiz. Bu kanunların izin verdiği durumlar dışında Müşteri
+    Verileri'ni satmayacak veya paylaşmayacak; sizinle doğrudan iş ilişkimiz dışında saklamayacak, kullanmayacak veya
+    ifşa etmeyecek ya da başka kişisel bilgilerle birleştirmeyeceğiz. Bu kanunların hizmet sağlayıcılara yönelik
+    yükümlülüklerine uyacağız ve artık uyamayacak duruma gelirsek size bildireceğiz. Müşteri Verileri'ni bu kanunlar
+    kapsamındaki yükümlülüklerinize uygun şekilde kullanmamızı sağlamak ve her türlü yetkisiz kullanımı durdurmak ve
+    düzeltmek için makul adımlar atabilirsiniz.
+  </p>
+
+  <h3>Hindistan</h3>
+  <p>
+    Müşteri Verileri'ne Hindistan'ın Digital Personal Data Protection Act, 2023 (2023 tarihli Dijital Kişisel Verilerin
+    Korunması Kanunu) uygulandığında, veri emanetçisi (data fiduciary) siz, veri işleyeniniz (data processor) ise biziz.
+  </p>
+
+  <h2 id="suspension-and-termination">14. Askıya alma ve fesih</h2>
+  <ul>
+    <li>
+      <strong>Kullanımınızı sona erdirme.</strong> Plan'ınızı iptal ederek ve verilerinin silinmesini istiyorsanız
+      şirketinizi silerek Emploist'i kullanmayı istediğiniz zaman bırakabilirsiniz. Bu Şartlar, şirketiniz silindiğinde
+      sona erer.
+    </li>
+    <li>
+      <strong>Askıya alma.</strong> Bir ödeme başarısız olursa veya ödemeye itiraz edilirse, siz veya ekip üyeleriniz bu
+      Şartlar'ı ciddi şekilde ya da tekrar tekrar ihlal ederseniz, kullanımınız bir güvenlik riski oluşturursa veya
+      başkalarına zarar verebilecek nitelikteyse ya da kanun gerektiriyorsa, şirketinizin Emploist'e veya Emploist'in
+      bir kısmına erişimini askıya alabiliriz.
+    </li>
+    <li>
+      <strong>İhlal nedeniyle fesih.</strong> Bu Şartlar'ı esaslı şekilde ihlal eder ve ihlali bildirimimizden itibaren
+      30 gün içinde gidermezseniz bu Şartlar'ı feshedebiliriz; ihlal giderilemiyorsa veya dolandırıcılık,
+      dolandırıcılık amaçlı ilanlar ya da yasa dışı içerik gibi ciddi bir ihlalse bu Şartlar'ı derhal feshedebiliriz.
+      Makul olduğu durumlarda, Müşteri Verileri'ni silmeden önce yöneticilerinize bu verileri dışa aktarma fırsatı
+      vereceğiz.
+    </li>
+    <li>
+      <strong>Emploist'i sunmayı bırakırsak.</strong> Yöneticilerinize en az 30 gün önceden e-posta göndereceğiz ve
+      mevcut fatura döneminizin kullanılmayan kısmının bedelinin Dodo aracılığıyla iade edilmesini sağlayacağız.
+    </li>
+    <li>
+      <strong>Plan'ınız sona erdikten sonra.</strong> Şirketiniz salt okunur durumda kalır. Bir şirketin art arda 12 ay
+      boyunca etkin bir Plan'ı olmamışsa veya bu bölüm kapsamında bu Şartlar'ı feshetmemizin ardından, şirketi ve tüm
+      verilerini silebiliriz.
+    </li>
+    <li>
+      <strong>Yürürlükte kalan hükümler.</strong> Bu Şartlar'ın, nitelikleri gereği Şartlar sona erdikten sonra da
+      devam etmesi gereken kısımları; ödenmesi gereken tutarlar, Müşteri Verileri'ni elimizde tuttuğumuz sürece 13.
+      bölüm, gizlilik yükümlülüğü, fikri mülkiyet, sorumluluk reddi beyanları, sorumluluğun sınırlandırılması, tazmin
+      yükümlülüğü ve uygulanacak hukuk dahil olmak üzere devam eder.
+    </li>
+  </ul>
+
+  <h2 id="disclaimers">15. Sorumluluk reddi beyanları</h2>
+  <p>
+    <strong
+      >Bu Şartlar'da açıkça belirtilenler dışında ve kanunun izin verdiği ölçüde Emploist; ticarete elverişlilik,
+      belirli bir amaca uygunluk, mülkiyet, hak ihlali yapmama ve doğruluk garantileri ile Emploist'in kesintisiz,
+      güvenli veya hatasız olacağına dair her türlü garanti dahil olmak üzere, açık, zımni veya kanundan doğan hiçbir
+      garanti verilmeksizin "olduğu gibi" ve "mevcut olduğu şekilde" sunulur.</strong
+    >
+  </p>
+  <p>
+    Özellikle; eşleşme puanlarının veya diğer yapay zekâ çıktılarının doğru, eksiksiz veya yanlılıktan arınmış
+    olacağını, yapay zekâ asistanlarının doğru çalışacağını veya adayların yazdıklarındaki talimatları dikkate
+    almayacağını, herhangi bir işe alım sonucunu ya da Emploist'i kullanımınızın işe alımınıza uygulanan kanunlara uygun
+    olacağını taahhüt etmeyiz. Emploist'teki veya kılavuzlarımızdaki hiçbir şey hukuki tavsiye değildir.
+  </p>
+
+  <h2 id="liability">16. Sorumluluğun sınırlandırılması</h2>
+  <p>Kanunun izin verdiği ölçüde:</p>
+  <ul>
+    <li>
+      Taraflardan hiçbiri diğerine karşı dolaylı, arızi, özel, sonuçsal veya cezai nitelikteki zararlardan ya da kâr,
+      gelir, iş, itibar veya veri kayıplarından, bu zararların olasılığı kendisine bildirilmiş olsa bile sorumlu
+      olmayacaktır.
+    </li>
+    <li>
+      <strong
+        >Bu Şartlar'dan veya Emploist'ten doğan ya da bunlarla ilgili tüm taleplere ilişkin toplam sorumluluğumuz,
+        vergiler hariç olmak üzere, talebin doğduğu tarihten önceki 12 ay içinde Emploist için ödediğiniz tutarla
+        sınırlıdır.</strong
+      >
+    </li>
+    <li>
+      Bu sınırlamalar, 13. bölüm ve SCC'ler kapsamındaki sorumluluk dahil, aramızdaki tüm sorumluluklar için geçerlidir.
+      Bu sınırlamalar; ilgili kişilerin veri koruma mevzuatı veya SCC'ler kapsamındaki haklarını ya da dolandırıcılık
+      gibi kanunen sınırlandırılmasına izin verilmeyen sorumlulukları sınırlamaz.
+    </li>
+    <li>
+      İlk bent; Plan'ınız ve Krediler için borçlu olduğunuz tutarları, <a href="#indemnity">17. bölüm</a> kapsamındaki
+      yükümlülüklerinizi veya <a href="#acceptable-use">8. bölümü</a> ihlal etmenizden ya da fikri mülkiyetimizi ihlal
+      etmenizden doğan sorumluluğunuzu sınırlamaz.
+    </li>
+  </ul>
+
+  <h2 id="indemnity">17. Tazmin yükümlülüğü</h2>
+  <p>
+    Kanunun izin verdiği ölçüde; bir aday veya resmi makam gibi üçüncü bir tarafın her türlü talebine, istemine veya
+    başlattığı hukuki sürece karşı, söz konusu talep, istem veya süreç aşağıdakilerden kaynaklandığı ölçüde, bizi
+    savunacak ve bunlardan doğan tüm tazminatları, para cezalarını, sulh bedellerini, masrafları ve makul avukatlık
+    ücretlerini ödeyeceksiniz:
+  </p>
+  <ul>
+    <li>
+      sizin veya ekip üyelerinizin Emploist'e girdiği ya da Emploist üzerinden yayınladığı Müşteri Verileri veya diğer
+      içerikler
+    </li>
+    <li>işe alım kararlarınız</li>
+    <li>sizin veya ekip üyelerinizin Emploist'e eklediği kodlar</li>
+    <li>ekip üyelerinizin yapay zekâ asistanlarının Emploist'te yaptıkları ve bu asistanların aldığı Müşteri Verileri</li>
+    <li>sizin veya ekip üyelerinizin bu Şartlar'ı veya kanunu ihlal etmesi</li>
+  </ul>
+  <p>
+    Talep, bu Şartlar'ı bizim ihlal etmemizden kaynaklandığı ölçüde bu yükümlülük uygulanmaz. Talep hakkında sizi
+    ivedilikle bilgilendireceğiz, kendi düzenleyici yükümlülüklerimize ilişkin konular dışında savunmanın kontrolünü size
+    bırakacağız ve masrafı size ait olmak üzere size makul ölçüde yardımcı olacağız. Yazılı onayımız olmadan, bir talebi
+    bizim adımıza kusur kabul eden veya bize yükümlülük getiren bir şekilde sulh yoluyla sonuçlandırmayacaksınız.
+  </p>
+
+  <h2 id="changes">18. Bu Şartlar'daki değişiklikler</h2>
+  <p>
+    Bu Şartlar'ı, yeni bir sürümü burada yayınlayarak ve en üstteki tarihi güncelleyerek güncelleyebiliriz. Esaslı
+    değişiklikler için, değişiklikler yürürlüğe girmeden en az 30 gün önce yöneticilerinize e-posta göndereceğiz. Kabul
+    etmiyorsanız, o tarihten önce Plan'ınızı iptal edebilir veya şirketinizi silebilirsiniz. Değişiklikler yürürlüğe
+    girdikten sonra Emploist'i kullanmaya devam ederseniz değişiklikleri kabul etmiş olursunuz. Kanun gerektirmedikçe
+    değişiklikler, 13. bölümün Müşteri Verileri'ne sağladığı korumayı azaltmayacaktır.
+  </p>
+
+  <h2 id="disputes">19. Uygulanacak hukuk ve uyuşmazlıklar</h2>
+  <p>
+    Bu Şartlar ve bu Şartlar'dan veya Emploist'ten doğan ya da bunlarla ilgili her türlü uyuşmazlık Hindistan
+    hukukuna tabidir. Hukuki süreç başlatmadan önce uyuşmazlığın ayrıntılarını bize e-postayla gönderin; iki taraf da
+    uyuşmazlığı 30 gün içinde çözmek için iyi niyetle çaba gösterecektir. Çözemezsek, Kozhikode, Kerala, Hindistan'daki
+    mahkemeler münhasır yetkiye sahiptir. Taraflardan her biri, fikri mülkiyeti veya gizli bilgileri korumak gibi
+    amaçlarla, yine de herhangi bir mahkemeden acil tedbir talep edebilir. SCC'ler kapsamındaki uyuşmazlıklar, SCC'lerde
+    belirtilen hukuka ve mahkemelere tabidir.
+  </p>
+
+  <h2 id="general">20. Genel hükümler</h2>
+  <ul>
+    <li>
+      <strong>Sözleşmenin bütünlüğü.</strong> Alt veri işleyenler listemiz dahil bu Şartlar, Emploist'e ilişkin olarak
+      aramızdaki sözleşmenin tamamını oluşturur ve bu konudaki önceki tüm sözleşmelerin yerini alır. Satın alma
+      siparişlerinizdeki veya diğer belgelerinizdeki koşullar uygulanmaz.
+    </li>
+    <li>
+      <strong>Devir.</strong> Yazılı onayımız olmadan bu Şartlar'ı devredemezsiniz. Bu Şartlar'ı, Emploist'i işletmek
+      için kurulan bir şirket veya bir alıcı gibi Emploist'i devralan bir halefe devredebiliriz ve bunu yaptığımızda
+      yöneticilerinizi bilgilendireceğiz.
+    </li>
+    <li>
+      <strong>Kontrolümüz dışındaki olaylar.</strong> Taraflardan hiçbiri; doğal afetler, savaş, hükümet eylemleri veya
+      internette ya da sağlayıcılarımızda yaşanan arızalar gibi makul kontrol dışındaki olayların neden olduğu
+      gecikmelerden veya ifa edememe durumlarından sorumlu değildir. Bu hüküm, ödeme yükümlülüğünü ortadan kaldırmaz.
+    </li>
+    <li>
+      <strong>Bildirimler.</strong> Bildirimleri yöneticilerinizin e-posta adreslerine göndeririz. Bize yönelik
+      bildirimleri <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> adresine gönderin. E-postayla
+      yapılan bir bildirim, gönderen bir teslim hatası bildirimi almadıkça gönderildiği anda alınmış sayılır.
+    </li>
+    <li>
+      <strong>Bölünebilirlik ve feragat.</strong> Bu Şartlar'ın herhangi bir kısmı uygulanamazsa geri kalanı geçerli
+      olmaya devam eder. Bu Şartlar'ın bir kısmının uygulatılmaması, bunu daha sonra uygulatma hakkından feragat
+      edildiği anlamına gelmez.
+    </li>
+    <li>
+      <strong>Taraflar arasındaki ilişki.</strong> Taraflar birbirinden bağımsızdır. Bu Şartlar bir ortaklık, ortak
+      girişim, iş veya temsil ilişkisi oluşturmaz ve SCC'ler kapsamındaki ilgili kişiler dışında hiç kimse bu Şartlar
+      kapsamında hak sahibi değildir.
+    </li>
+    <li>
+      <strong>Yaptırımlar.</strong> Kapsamlı yaptırımlara tabi bir ülke veya bölgede bulunmadığınızı ve böyle bir
+      ülke veya bölgede kurulmamış olduğunuzu, ayrıca sizin ve ekip üyelerinizin herhangi bir yaptırım listesinde yer
+      almadığını teyit edersiniz.
+    </li>
+    <li>
+      <strong>Dil ve yorum.</strong> Bu Şartlar İngilizce yazılmıştır ve İngilizce metin her türlü çeviriye üstün gelir.
+      "Dahil" ("including") ve "örneğin" ("for example") ifadeleri "dahil ancak bunlarla sınırlı olmamak üzere"
+      ("including without limitation") anlamına gelir ve başlıklar yalnızca kolaylık amaçlıdır.
+    </li>
+  </ul>
+
+  <h2 id="contact">21. İletişim</h2>
+  <p>
+    Emploist, Hindistan'da yerleşik bir gerçek kişi olan ve Emploist ticari adıyla faaliyet gösteren Navaneeth CT
+    tarafından işletilmektedir. Bu Şartlar'a ilişkin sorularınız, bildirimleriniz veya şikâyetleriniz için <a
+      href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+    > adresine e-posta gönderin. Hindistan'ın Information Technology Act (Bilgi Teknolojileri Kanunu) kapsamındaki
+    Şikâyet Görevlimiz (Grievance Officer), aynı adresten ulaşılabilecek olan Navaneeth CT'dir.
+  </p>
+</LegalLayout>

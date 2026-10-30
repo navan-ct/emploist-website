@@ -1,0 +1,880 @@
+---
+import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SITE } from "../../lib/site";
+
+const sections = [
+  { id: "about", title: "Informazioni sui presenti Termini" },
+  { id: "accounts", title: "Il vostro account e il vostro team" },
+  { id: "service", title: "Il servizio" },
+  { id: "ai-ranking", title: "Valutazione con l'IA" },
+  { id: "ai-assistants", title: "Assistenti IA" },
+  { id: "plans-and-payments", title: "Piani, pagamenti e disdetta" },
+  { id: "your-content", title: "Dati del Cliente" },
+  { id: "acceptable-use", title: "Uso accettabile" },
+  { id: "careers-pages", title: "Pagine carriere, domini e codice" },
+  { id: "third-party-services", title: "Servizi di terze parti" },
+  { id: "our-property", title: "Proprietà intellettuale" },
+  { id: "confidentiality", title: "Riservatezza" },
+  { id: "data-processing", title: "Trattamento dei dati" },
+  { id: "suspension-and-termination", title: "Sospensione e cessazione" },
+  { id: "disclaimers", title: "Esclusioni di garanzia" },
+  { id: "liability", title: "Limitazione di responsabilità" },
+  { id: "indemnity", title: "Manleva" },
+  { id: "changes", title: "Modifiche ai presenti Termini" },
+  { id: "disputes", title: "Legge applicabile e controversie" },
+  { id: "general", title: "Disposizioni generali" },
+  { id: "contact", title: "Contatti" },
+] as const;
+---
+
+<LegalLayout
+  document="terms"
+  title="Termini di servizio"
+  description="Le condizioni d'uso di Emploist: piani e pagamenti, valutazione con l'IA, assistenti IA, uso accettabile e come trattiamo per vostro conto i dati dei candidati."
+  translatedFrom="2026-10-28"
+  sections={sections}
+>
+  <h2 id="about">1. Informazioni sui presenti Termini</h2>
+  <p>
+    I presenti Termini di servizio (i «Termini», "Terms") costituiscono un accordo tra voi e Navaneeth CT, persona fisica
+    con sede in India, che opera con il nome commerciale Emploist («noi», «ci» o «nostro»). «Voi» e «Cliente»
+    ("Customer") indicano l'impresa o altra organizzazione che utilizza Emploist.
+  </p>
+  <ul>
+    <li>
+      Emploist è destinato alle organizzazioni che assumono personale. Non è destinato a un uso personale, familiare o
+      domestico.
+    </li>
+    <li>
+      Accettate i presenti Termini quando accedete a Emploist, create un'azienda, avviate un Piano o utilizzate Emploist
+      in qualsiasi altro modo. Se non siete d'accordo, non utilizzate Emploist.
+    </li>
+    <li>
+      La persona che accetta i presenti Termini per conto della vostra organizzazione conferma di avere almeno 18 anni e
+      il potere di vincolarla. Chiunque, nel vostro team, utilizzi Emploist deve avere almeno 18 anni.
+    </li>
+    <li>
+      Le persone che si candidano a posizioni tramite una pagina carriere non sono vincolate dai presenti Termini. La
+      nostra Informativa sulla privacy spiega <a href="/it/privacy/#applicants">come vengono trattati i loro dati</a>.
+    </li>
+  </ul>
+  <p>
+    Le condizioni sul trattamento dei dati di cui alla <a href="#data-processing">sezione 13</a> e il nostro <a
+      href="/it/privacy/#subprocessors">elenco dei sub-responsabili del trattamento</a
+    > fanno parte dei presenti Termini. La nostra <a href="/it/privacy/">Informativa sulla privacy</a> spiega come trattiamo
+    i dati personali in qualità di titolare del trattamento. Ad eccezione dell'elenco dei sub-responsabili del
+    trattamento, l'Informativa sulla privacy non fa parte dei presenti Termini.
+  </p>
+
+  <h3>Le parole che usiamo</h3>
+  <ul>
+    <li>
+      <strong>«Emploist»</strong> indica l'app web Emploist, le pagine carriere e le email che essa fornisce, il suo server
+      MCP per gli assistenti IA e il nostro relativo servizio di assistenza.
+    </li>
+    <li>
+      <strong>«La vostra azienda»</strong> ("Your company") indica l'area di lavoro della vostra organizzazione in
+      Emploist, che ne contiene le posizioni, la pagina carriere, il team, le impostazioni e le candidature.
+    </li>
+    <li>
+      <strong>«Membri del team»</strong> ("Team members") indica le persone che fanno parte della vostra azienda in
+      Emploist, con il ruolo di amministratore o di membro.
+    </li>
+    <li>
+      <strong>«Candidati»</strong> ("Applicants") indica le persone che si candidano alle vostre posizioni tramite
+      Emploist.
+    </li>
+    <li>
+      <strong>«Dati del Cliente»</strong> ("Customer Data") indica i contenuti che voi e i membri del vostro team inserite
+      in Emploist, le informazioni che i candidati inviano tramite Emploist e i punteggi di affinità e gli altri record
+      che Emploist genera a partire da essi.
+    </li>
+    <li>
+      <strong>«Piano»</strong> ("Plan") indica l'abbonamento Emploist della vostra azienda, compresa la relativa prova
+      gratuita. Il vostro Piano è <strong
+        >«attivo»</strong
+      > ("active") durante la prova gratuita, quando è in regola con i pagamenti o durante il periodo di tolleranza
+      successivo a un pagamento non riuscito.
+    </li>
+    <li><strong>«Crediti»</strong> ("Credits") indica i crediti IA utilizzati per valutare le candidature.</li>
+  </ul>
+
+  <h2 id="accounts">2. Il vostro account e il vostro team</h2>
+  <ul>
+    <li>Fornite informazioni accurate su di voi e sulla vostra azienda e mantenetele aggiornate.</li>
+    <li>
+      Mantenete al sicuro i vostri metodi di accesso, come il vostro account email e il vostro account Google o
+      Microsoft. Chiunque li controlli può accedere come voi. Non condividete codici di accesso né link di invito.
+    </li>
+    <li>
+      Gli amministratori gestiscono la fatturazione, le impostazioni e il team della vostra azienda. Siete responsabili
+      della scelta dei vostri amministratori, di tutto ciò che i membri del vostro team fanno in Emploist e di assicurarvi
+      che rispettino i presenti Termini.
+    </li>
+    <li>
+      Rimuovete le persone dalla vostra azienda quando non hanno più bisogno di accedervi. Se ritenete che qualcuno abbia
+      avuto accesso alla vostra azienda senza autorizzazione, informateci tempestivamente all'indirizzo <a
+        href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+      >.
+    </li>
+  </ul>
+
+  <h2 id="service">3. Il servizio</h2>
+  <p>
+    Emploist è uno strumento software per le assunzioni. Non siamo un'agenzia per il lavoro né un recruiter, e non
+    prendiamo decisioni di assunzione al vostro posto.
+  </p>
+  <ul>
+    <li>
+      <strong>Modifiche.</strong> Possiamo modificare, aggiungere o rimuovere funzionalità. Se una modifica riduce in modo
+      sostanziale ciò che il vostro Piano include, ne informeremo in anticipo i vostri amministratori, ove ragionevolmente
+      possibile.
+    </li>
+    <li>
+      <strong>Limiti.</strong> Emploist prevede limiti tecnici ragionevoli, ad esempio sulle dimensioni dei file e sulla
+      frequenza con cui possono essere effettuate le richieste, e possiamo modificarli. Se il vostro utilizzo va ben oltre
+      il normale utilizzo o mette a rischio Emploist, possiamo limitarlo.
+    </li>
+    <li>
+      <strong>Assistenza e disponibilità.</strong> Forniamo assistenza via email all'indirizzo <a
+        href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+      >. Non offriamo un accordo sul livello di servizio, ed Emploist potrebbe talvolta non essere disponibile, ad esempio
+      durante la manutenzione.
+    </li>
+    <li>
+      <strong>Prove gratuite e funzionalità beta.</strong> Le prove gratuite e le funzionalità che contrassegniamo come
+      beta o anteprima sono fornite così come sono. Possono cambiare o terminare in qualsiasi momento.
+    </li>
+  </ul>
+
+  <h2 id="ai-ranking">4. Valutazione con l'IA</h2>
+  <p>
+    Quando la valutazione con l'IA è attiva, Emploist utilizza un modello di IA per assegnare a ogni candidatura un
+    punteggio rispetto alla relativa posizione, sulla base del CV, delle risposte del candidato e dei dettagli della
+    posizione. La valutazione con l'IA è attiva per impostazione predefinita e, finché il vostro Piano è attivo, un
+    amministratore può disattivarla nelle Impostazioni. Di per sé, la valutazione con l'IA non scarta né fa avanzare
+    nessuno, e non invia email a nessuno.
+  </p>
+  <p>
+    I punteggi di affinità possono essere errati, incompleti o distorti. Sono un'indicazione su quali candidature
+    esaminare per prime, non un accertamento dell'idoneità di una persona. Siete voi a decidere se e come utilizzare la
+    valutazione con l'IA e siete responsabili di ogni decisione di assunzione che prendete. Se la utilizzate, dovete:
+  </p>
+  <ul>
+    <li>
+      far esaminare le candidature da persone, e non basare mai una decisione su un candidato unicamente su un punteggio
+      di affinità, né tralasciare una candidatura perché il suo punteggio è basso o assente
+    </li>
+    <li>
+      informare i candidati che l'IA contribuisce all'esame delle candidature, e fornire ogni altro avviso e rispettare
+      ogni altro requisito che la legge vi impone per l'uso dell'IA nelle assunzioni. Mentre la valutazione con l'IA è
+      attiva, la pagina carriere predefinita mostra un avviso di questo tipo. Se utilizzate un vostro codice per la pagina
+      carriere, aggiungetene uno voi stessi.
+    </li>
+    <li>
+      non utilizzarla per selezionare i candidati in base a caratteristiche protette, come razza, religione, casta, sesso,
+      età o disabilità, o in base a elementi che ne fanno le veci
+    </li>
+    <li>
+      non utilizzarla per scopi diversi dall'esame delle candidature per la posizione per cui sono state presentate, come
+      la valutazione o il monitoraggio dei dipendenti
+    </li>
+    <li>
+      non utilizzarla, anche tramite un assistente IA, per prendere decisioni sui candidati senza l'esame da parte di una
+      persona
+    </li>
+  </ul>
+  <p>
+    Per valutare le candidature, le inviamo al nostro fornitore di IA, indicato nel nostro <a
+      href="/it/privacy/#subprocessors">elenco dei sub-responsabili del trattamento</a
+    >. Possiamo cambiare il nostro fornitore o modello di IA. Possiamo limitare o disattivare la valutazione con l'IA in
+    alcune regioni, o per alcune aziende, ove la legge lo richieda.
+  </p>
+
+  <h2 id="ai-assistants">5. Assistenti IA</h2>
+  <p>
+    I membri del team possono connettere a Emploist assistenti IA, come Claude o ChatGPT, tramite il nostro server MCP.
+    Un assistente connesso agisce come la persona che lo ha connesso, con il suo ruolo, e può fare gran parte di ciò che
+    quella persona può fare in Emploist, come leggere e spostare candidature e modificare posizioni. Gli assistenti IA
+    sono attivi per impostazione predefinita e un amministratore può disattivarli per la vostra azienda nelle
+    Impostazioni.
+  </p>
+  <p>
+    Gli assistenti IA sono servizi di terze parti scelti da voi e dai membri del vostro team. Non fanno parte di Emploist
+    e i loro fornitori non sono nostri sub-responsabili del trattamento. I Dati del Cliente ricevuti da un assistente sono
+    trattati in base alle condizioni in essere tra il suo fornitore e voi o il membro del vostro team, e non ne abbiamo
+    il controllo. Siete responsabili:
+  </p>
+  <ul>
+    <li>
+      di decidere quali assistenti può utilizzare il vostro team e di assicurarvi che l'invio dei Dati del Cliente a tali
+      assistenti sia lecito
+    </li>
+    <li>
+      di tutto ciò che gli assistenti dei membri del vostro team fanno in Emploist, come se lo avessero fatto i membri del
+      vostro team stessi
+    </li>
+    <li>
+      del rispetto della <a href="#ai-ranking">sezione 4</a> quando un assistente opera su candidature e punteggi di
+      affinità
+    </li>
+  </ul>
+  <p>
+    Possiamo bloccare o disconnettere un assistente che riteniamo ragionevolmente non sicuro, dannoso o utilizzato in
+    violazione dei presenti Termini.
+  </p>
+
+  <h2 id="plans-and-payments">6. Piani, pagamenti e disdetta</h2>
+
+  <h3>Dodo Payments</h3>
+  <p>
+    Il nostro processo di ordinazione è gestito dal nostro rivenditore online Dodo Payments («Dodo»). Dodo è il merchant
+    of record per tutti i nostri ordini. Dodo gestisce la procedura di acquisto, i pagamenti, le fatture, le imposte
+    sulle vendite e l'IVA, nonché le domande sui pagamenti e i rimborsi. Ai vostri acquisti si applicano anche le <a
+      href="https://dodopayments.com/legal/buyer-terms">condizioni per gli acquirenti</a
+    > di Dodo.
+  </p>
+
+  <h3>Piano e fatturazione</h3>
+  <ul>
+    <li>
+      Il Piano viene fatturato mensilmente o annualmente, in anticipo, al prezzo indicato durante la procedura di
+      acquisto, più le imposte applicabili. Si rinnova automaticamente per un ulteriore periodo di pari durata finché non
+      viene disdetto.
+    </li>
+    <li>
+      Possiamo modificare i nostri prezzi. Invieremo un'email ai vostri amministratori almeno 30 giorni prima che un
+      aumento di prezzo si applichi al vostro Piano, e potrete disdirlo prima di allora.
+    </li>
+    <li>
+      Se un pagamento non va a buon fine, Emploist continua a funzionare per un breve periodo di tolleranza. Se entro la
+      fine di tale periodo il pagamento non è ancora andato a buon fine, la vostra azienda passa in sola lettura fino al
+      pagamento.
+    </li>
+  </ul>
+
+  <h3>Prova gratuita</h3>
+  <p>
+    Il primo Piano della vostra azienda può iniziare con una prova gratuita. Aggiungete un metodo di pagamento durante la
+    procedura di acquisto e Dodo addebita il primo periodo di fatturazione alla fine della prova, a meno che un
+    amministratore non disdica il Piano prima di allora. Ogni azienda e ogni persona possono usufruire di una sola prova
+    gratuita.
+  </p>
+
+  <h3>Crediti IA</h3>
+  <ul>
+    <li>La valutazione di una candidatura utilizza un Credito, e una sua nuova valutazione ne utilizza un altro.</li>
+    <li>
+      Il vostro Piano include Crediti per ogni periodo di fatturazione, come indicato nella nostra <a href="/it/#pricing"
+        >pagina dei prezzi</a
+      > all'inizio di tale periodo. I Crediti non vengono riportati al periodo successivo.
+    </li>
+    <li>
+      Gli amministratori possono acquistare Crediti aggiuntivi in pacchetti. I Crediti dei pacchetti non scadono, ma
+      vanno persi se la vostra azienda viene eliminata.
+    </li>
+    <li>
+      I Crediti possono essere acquistati e utilizzati solo finché il vostro Piano è attivo. Non hanno valore monetario,
+      non sono trasferibili e non sono rimborsabili, salvo ove la legge lo richieda. Se un pacchetto di crediti viene
+      rimborsato, i relativi Crediti non utilizzati vengono rimossi.
+    </li>
+  </ul>
+
+  <h3>Disdetta e rimborsi</h3>
+  <ul>
+    <li>
+      Un amministratore può disdire il Piano in qualsiasi momento dalla pagina Fatturazione. Il vostro Piano resta attivo
+      fino alla fine della prova o del periodo di fatturazione in corso, e non vi verranno effettuati ulteriori addebiti.
+    </li>
+    <li>
+      I pagamenti non sono rimborsabili. Non sono previsti rimborsi né accrediti per periodi di fatturazione parziali o
+      per Crediti non utilizzati, salvo ove la legge lo richieda, per l'eventuale accredito pro rata indicato durante la
+      procedura di acquisto quando passate alla fatturazione annuale, o se smettiamo di offrire Emploist (<a
+        href="#suspension-and-termination">sezione 14</a
+      >). I rimborsi sono corrisposti da Dodo.
+    </li>
+    <li>
+      L'eliminazione della vostra azienda disdice immediatamente il vostro Piano, senza rimborso, ed elimina
+      definitivamente i dati dell'azienda.
+    </li>
+  </ul>
+
+  <h3>Quando il vostro Piano non è attivo</h3>
+  <p>
+    Quando il vostro Piano termina, e prima che la vostra azienda ne avvii uno, la vostra azienda è in sola lettura. Il
+    vostro team può comunque accedere, visualizzarne i dati ed esportare le candidature, ma non può apportare la maggior
+    parte delle modifiche, le candidature non vengono valutate e la vostra pagina carriere smette di accettare
+    candidature.
+  </p>
+
+  <h2 id="your-content">7. Dati del Cliente</h2>
+  <ul>
+    <li><strong>Sono vostri.</strong> Conservate tutti i vostri diritti sui Dati del Cliente.</li>
+    <li>
+      <strong>La nostra licenza.</strong> Ci autorizzate a ospitare, archiviare, copiare, trattare, trasmettere,
+      visualizzare e pubblicare i Dati del Cliente, in tutto il mondo, solo nella misura necessaria per fornire Emploist,
+      garantirne la sicurezza e prestare assistenza ai sensi dei presenti Termini, anche tramite i nostri sub-responsabili
+      del trattamento. Ad esempio, pubblichiamo le vostre posizioni sulla vostra pagina carriere, inviamo le vostre email
+      ai candidati e inviamo i Dati del Cliente agli assistenti IA connessi dai membri del vostro team.
+    </li>
+    <li>
+      <strong>Cosa non facciamo.</strong> Non vendiamo i Dati del Cliente, non li utilizziamo per pubblicità e non li
+      utilizziamo per addestrare modelli di IA.
+    </li>
+    <li>
+      <strong>Dati di utilizzo.</strong> Possiamo utilizzare informazioni su come Emploist viene utilizzato e sulle sue
+      prestazioni per gestirlo e migliorarlo. Tutto ciò che utilizziamo o condividiamo al di là della fornitura di
+      Emploist a voi è aggregato o de-identificato, in modo da non identificare voi, i membri del vostro team o i
+      candidati, e non tenteremo di re-identificarlo.
+    </li>
+    <li>
+      <strong>Le vostre copie.</strong> Il vostro team può esportare le candidature di una posizione. Siete responsabili
+      di conservare copie proprie dei Dati del Cliente di cui avete bisogno.
+    </li>
+    <li>
+      <strong>Contenuti che possiamo rimuovere.</strong> Non monitoriamo i Dati del Cliente. Possiamo rimuovere o
+      disabilitare contenuti che riteniamo ragionevolmente in violazione dei presenti Termini o della legge, oppure quando
+      un tribunale o un'autorità lo richiede.
+    </li>
+  </ul>
+
+  <h3>Le vostre responsabilità sui dati dei candidati</h3>
+  <p>Siete voi a decidere cosa raccogliere dai candidati e come utilizzarlo. Dovete:</p>
+  <ul>
+    <li>
+      disporre di una base giuridica, e di ogni consenso richiesto dalla legge, per raccogliere e utilizzare i dati dei
+      candidati in Emploist, anche per la valutazione con l'IA, per gli assistenti IA utilizzati dal vostro team e per il
+      nostro trattamento ai sensi della <a href="#data-processing">sezione 13</a>
+    </li>
+    <li>
+      fornire ai candidati, al momento della candidatura o prima, una vostra informativa sulla privacy che copra il vostro
+      utilizzo di Emploist. La pagina carriere predefinita non ne include una.
+    </li>
+    <li>
+      porre solo le domande che la legge vi consente di porre, e non chiedere informazioni sensibili, ad esempio sulla
+      salute, sulla religione o sui precedenti penali, salvo ove la legge lo consenta
+    </li>
+    <li>
+      rispondere alle richieste dei candidati relative ai loro dati, ed eliminarne i dati quando non vi servono più.
+      Emploist non elimina automaticamente le candidature.
+    </li>
+    <li>
+      assicurarvi che ciò che pubblicate e inviate, come posizioni, pagine carriere ed email ai candidati, sia accurato e
+      lecito. Le email ai candidati devono riguardare esclusivamente le loro candidature. Le risposte arrivano
+      all'indirizzo di risposta impostato da un amministratore, quindi usatene uno che controllate.
+    </li>
+  </ul>
+
+  <h2 id="acceptable-use">8. Uso accettabile</h2>
+  <p>Voi e il vostro team non dovete utilizzare Emploist per:</p>
+  <ul>
+    <li>
+      pubblicare posizioni false, ingannevoli o fraudolente, addebitare ai candidati qualsiasi commissione o raccogliere
+      dati personali che non avete il diritto di raccogliere
+    </li>
+    <li>pubblicare annunci di lavoro, criteri o domande illecitamente discriminatori</li>
+    <li>
+      impersonare chiunque, o trarre in inganno le persone su chi siete, anche tramite il nome della vostra azienda,
+      l'indirizzo della pagina carriere, il nome del mittente delle email o l'indirizzo di risposta
+    </li>
+    <li>inviare spam, email di marketing o qualsiasi altra email illecita</li>
+    <li>creare account o aziende aggiuntivi per ottenere un'altra prova gratuita</li>
+  </ul>
+  <p>Non inserite in Emploist nulla che:</p>
+  <ul>
+    <li>
+      appartenga a qualcun altro e che non abbiate il diritto di utilizzare, o violi brevetti, marchi, diritti d'autore o
+      altri diritti di proprietà
+    </li>
+    <li>
+      sia osceno, pornografico, pedofilo o dannoso per i minori, o violi la privacy di chiunque, compresa la privacy
+      corporea
+    </li>
+    <li>
+      sia diffamatorio, costituisca molestia (anche basata sul genere), sia offensivo sotto il profilo razziale o etnico,
+      o promuova l'inimicizia tra gruppi in base alla religione o alla casta
+    </li>
+    <li>riguardi o incoraggi il riciclaggio di denaro o il gioco d'azzardo</li>
+    <li>
+      inganni chiunque sull'origine di un messaggio, diffonda consapevolmente informazioni false o fuorvianti, o impersoni
+      un'altra persona
+    </li>
+    <li>
+      minacci l'unità, l'integrità, la difesa, la sicurezza o la sovranità dell'India, le relazioni amichevoli dell'India
+      con altri paesi o l'ordine pubblico, inciti alla commissione di qualsiasi reato, impedisca le indagini su qualsiasi
+      reato o offenda qualsiasi altra nazione
+    </li>
+    <li>contenga virus o altro codice dannoso</li>
+    <li>violi qualsiasi legge</li>
+  </ul>
+  <p>Inoltre, non dovete:</p>
+  <ul>
+    <li>
+      accedere ai dati di altre aziende, sondare o testare la nostra sicurezza, o aggirare le nostre misure di sicurezza o
+      i nostri limiti
+    </li>
+    <li>
+      sovraccaricare o interrompere il funzionamento di Emploist, o accedervi con bot, scraper o altri strumenti
+      automatizzati, salvo tramite le funzionalità che forniamo, come il nostro server MCP
+    </li>
+    <li>copiare o decompilare Emploist, o sottoporlo a reverse engineering, salvo ove la legge lo consenta</li>
+    <li>
+      rivendere o concedere in sublicenza Emploist, od offrirlo ad altri come servizio. Assumere per conto dei vostri
+      clienti è consentito.
+    </li>
+    <li>utilizzare Emploist per sviluppare un prodotto concorrente</li>
+    <li>
+      utilizzare Emploist in violazione delle leggi in materia di sanzioni o di controllo delle esportazioni
+    </li>
+    <li>
+      utilizzare Emploist in modo da violare la <a href="https://typesafe.ai/legal/acceptable-use-policy"
+        >politica di uso accettabile</a
+      > del nostro fornitore di IA
+    </li>
+  </ul>
+  <p>
+    In caso di violazione di queste regole, possiamo rimuovere contenuti, sospendere la vostra azienda o risolvere i
+    presenti Termini (si veda la <a href="#suspension-and-termination">sezione 14</a>).
+  </p>
+
+  <h2 id="careers-pages">9. Pagine carriere, domini e codice</h2>
+  <ul>
+    <li>
+      La vostra pagina carriere si trova su un sottodominio di emploist.com da voi scelto, o su un dominio che collegate.
+      Possiamo rifiutare o revocare un sottodominio che sia ingannevole, violi i diritti di chiunque o impersoni qualcuno.
+    </li>
+    <li>
+      Se collegate un vostro dominio, confermate di averne il controllo e ci autorizzate a ottenere certificati TLS per
+      esso. Siete responsabili dei relativi record DNS.
+    </li>
+    <li>
+      Siete responsabili di qualsiasi codice della pagina carriere e layout delle email scritti dai vostri
+      amministratori, compreso tutto ciò che caricano da altri siti web e gli avvisi che devono mostrare. Possiamo
+      disabilitare codice che riteniamo ragionevolmente dannoso, non sicuro o contrario ai presenti Termini.
+    </li>
+    <li>
+      Siamo proprietari del codice predefinito della pagina carriere e del kit di anteprima scaricabile. Finché i presenti
+      Termini sono in vigore, potete utilizzarli, copiarli e modificarli solo per realizzare la pagina carriere della
+      vostra azienda su Emploist. I componenti open source in essi contenuti restano soggetti alle rispettive licenze.
+    </li>
+  </ul>
+
+  <h2 id="third-party-services">10. Servizi di terze parti</h2>
+  <p>
+    Emploist funziona con servizi gestiti da terzi, come Google e Microsoft per l'accesso, Dodo per i pagamenti e gli
+    assistenti IA connessi dal vostro team. Quando li utilizzate si applicano le loro condizioni, e non ne siamo
+    responsabili. Microsoft e Google non sono parti dei presenti Termini. Nella misura consentita dalla legge, sono
+    escluse, per loro conto, tutte le garanzie e tutte le responsabilità.
+  </p>
+
+  <h2 id="our-property">11. Proprietà intellettuale</h2>
+  <p>
+    Siamo proprietari di Emploist, compresi il suo software, il design, la documentazione, nonché il nome e il logo
+    Emploist. I presenti Termini vi concedono il diritto di utilizzare Emploist secondo quanto in essi descritto, e
+    nessun altro diritto. Se ci inviate un feedback, possiamo utilizzarlo liberamente, senza alcun obbligo nei vostri
+    confronti. Possiamo indicare la vostra organizzazione come cliente di Emploist, anche tramite il suo nome e il suo
+    logo. Se ci chiedete di smettere, lo faremo.
+  </p>
+
+  <h2 id="confidentiality">12. Riservatezza</h2>
+  <p>
+    Per «Informazioni Riservate» ("Confidential Information") si intendono le informazioni non pubbliche che una parte
+    condivide con l'altra in relazione a Emploist e che sono contrassegnate come riservate o che dovrebbero
+    ragionevolmente essere considerate tali. I Dati del Cliente sono vostre Informazioni Riservate. Chi riceve
+    Informazioni Riservate le utilizzerà solo per le finalità dei presenti Termini, le proteggerà con ragionevole
+    diligenza e le condividerà solo con le persone e i fornitori di servizi che ne hanno bisogno per tali finalità e sono
+    vincolati da obblighi di riservatezza, oppure secondo le indicazioni dell'altra parte. Ciò non si applica alle
+    informazioni che sono o diventano pubbliche senza colpa del destinatario, che il destinatario possedeva già o ha
+    sviluppato autonomamente, o che ha ricevuto lecitamente da terzi. Ciascuna parte può divulgare Informazioni Riservate
+    quando la legge lo richiede.
+  </p>
+
+  <h2 id="data-processing">13. Trattamento dei dati</h2>
+  <p>
+    La presente sezione costituisce il nostro accordo sul trattamento dei dati. Si applica quando trattiamo per vostro
+    conto dati personali contenuti nei Dati del Cliente. Per «normativa sulla protezione dei dati» ("Data protection
+    laws") si intendono le leggi in materia di protezione dei dati e di privacy applicabili ai Dati del Cliente.
+    Espressioni come «titolare del trattamento» ("controller"), «responsabile del trattamento» ("processor"), «dati
+    personali» ("personal data") e «violazione dei dati personali» ("personal data breach") hanno il significato loro
+    attribuito dal regolamento generale sulla protezione dei dati (GDPR) dell'UE e del Regno Unito, o quello degli
+    equivalenti più prossimi in altre normative sulla protezione dei dati.
+  </p>
+
+  <h3>Ruoli</h3>
+  <p>
+    Voi siete il titolare del trattamento dei dati personali contenuti nei Dati del Cliente e noi siamo il vostro
+    responsabile del trattamento. Se siete voi stessi un responsabile del trattamento, ad esempio un recruiter che assume
+    per conto di un cliente, noi siamo il vostro sub-responsabile del trattamento, e confermate che il vostro titolare
+    del trattamento ha autorizzato il nostro trattamento. Siamo titolari del trattamento dei dati personali che
+    utilizziamo per gestire la nostra attività, come i dati dell'account dei membri del vostro team, secondo quanto
+    descritto nella nostra <a href="/it/privacy/">Informativa sulla privacy</a>.
+  </p>
+
+  <h3>Dettagli del trattamento</h3>
+  <table>
+    <tbody>
+      <tr>
+        <th scope="row">Oggetto e durata</th>
+        <td>
+          Fornitura di Emploist a voi, per tutto il tempo in cui lo utilizzate e fino alla cancellazione dei Dati del
+          Cliente.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Natura e finalità</th>
+        <td>
+          Hosting, archiviazione, visualizzazione e trasmissione dei Dati del Cliente, su base continuativa, per fornire
+          Emploist: pubblicazione delle pagine carriere, raccolta delle candidature, loro valutazione con l'IA mentre la
+          valutazione con l'IA è attiva, invio di email ai candidati, invio di dati agli assistenti IA connessi dai membri
+          del vostro team, prestazione di assistenza per Emploist e garanzia della sua sicurezza, e creazione di
+          informazioni aggregate o de-identificate per gestire e migliorare Emploist (si veda la sezione 7).
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Interessati</th>
+        <td>
+          Candidati, membri del vostro team e persone che invitate, e altre persone nominate nei Dati del Cliente, come le
+          persone indicate come referenze in un CV.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Dati personali</th>
+        <td>
+          Nomi e indirizzi email dei candidati, i loro numeri di telefono se li richiedete, i loro CV e tutto ciò che
+          contengono, le risposte alle vostre domande, i punteggi di affinità, le fasi di selezione, le email loro inviate
+          e i commenti del vostro team su di loro. Nomi e indirizzi email dei membri del team e delle persone invitate,
+          così come compaiono nei Dati del Cliente. Qualsiasi altro dato personale presente nei vostri contenuti.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Dati sensibili</th>
+        <td>
+          Emploist non li richiede, ma i CV e le risposte possono contenerli. Sono protetti dalle misure di sicurezza
+          indicate di seguito, e l'accesso è limitato al vostro team e agli assistenti IA che esso connette, nonché a noi
+          e ai nostri sub-responsabili del trattamento nella misura necessaria per fornire Emploist.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Luoghi e sub-responsabili del trattamento</th>
+        <td>
+          Come indicato nel nostro <a href="/it/privacy/#subprocessors">elenco dei sub-responsabili del trattamento</a>.
+          Accediamo ai Dati del Cliente dall'India.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>I nostri impegni</h3>
+  <ul>
+    <li>
+      <strong>Istruzioni.</strong> Trattiamo i Dati del Cliente soltanto su vostra istruzione documentata, anche in caso
+      di trasferimenti verso altri paesi, salvo che la legge disponga altrimenti. In tal caso, vi informeremo prima,
+      salvo che la legge lo vieti. Le vostre istruzioni sono costituite dai presenti Termini e dal modo in cui voi e il
+      vostro team utilizzate e configurate Emploist. Quando un membro del team connette un assistente IA, ci dà istruzione
+      di inviare all'assistente i Dati del Cliente che questo richiede, e voi autorizzate il membro del team a farlo. Vi
+      informeremo immediatamente se riteniamo che un'istruzione violi la normativa sulla protezione dei dati, e non siamo
+      tenuti a seguirla.
+    </li>
+    <li>
+      <strong>Riservatezza.</strong> Chiunque autorizziamo a trattare i Dati del Cliente è vincolato da un obbligo di
+      riservatezza.
+    </li>
+    <li>
+      <strong>Sicurezza.</strong> Adottiamo misure tecniche e organizzative adeguate per proteggere i Dati del Cliente,
+      comprese connessioni cifrate (HTTPS); controlli di accesso affinché, nell'app, solo i membri del team di
+      un'azienda e gli assistenti IA che essi connettono possano vederne i dati, in base ai rispettivi ruoli; archiviazione
+      privata dei CV; accesso senza password; processi worker isolati con limiti di tempo e di memoria per il codice
+      delle pagine carriere e per la lettura dei CV; controlli sui file caricati; limiti di frequenza delle richieste;
+      backup regolari del database; e accesso ai sistemi di produzione riservato alle sole persone che ne hanno bisogno.
+      Possiamo modificare queste misure, purché non riduciamo la protezione complessiva dei Dati del Cliente.
+    </li>
+    <li>
+      <strong>Sub-responsabili del trattamento.</strong> Ci concedete un'autorizzazione generale a ricorrere a
+      sub-responsabili del trattamento. I nostri attuali sub-responsabili del trattamento sono indicati nel nostro
+      elenco. Abbiamo stipulato con ciascuno di essi condizioni scritte sulla protezione dei dati, e restiamo responsabili
+      nei vostri confronti del loro operato. Invieremo un'email ai vostri amministratori almeno 30 giorni prima di
+      aggiungere o sostituire un sub-responsabile del trattamento. Potete opporvi per ragionevoli motivi attinenti alla
+      protezione dei dati inviandoci un'email prima della modifica. Se non riusciamo a risolvere la vostra
+      preoccupazione, il vostro rimedio consiste nel disdire il vostro Piano o nell'eliminare la vostra azienda prima che
+      la modifica abbia effetto.
+    </li>
+    <li>
+      <strong>Casella di posta dell'assistenza.</strong> Non utilizziamo la nostra casella di posta dell'assistenza per
+      trattare i Dati del Cliente. È ospitata da Google in base alle condizioni standard di Gmail, quindi non includete i
+      dati dei candidati nelle email che ci inviate. Fate invece riferimento alle posizioni e alle candidature tramite i
+      loro indirizzi in Emploist, senza termini di ricerca al loro interno, come il nome di un candidato.
+    </li>
+    <li>
+      <strong>Assistenza.</strong> Tenendo conto della natura del trattamento, vi forniremo un'assistenza ragionevole in
+      relazione alle richieste degli interessati, alle valutazioni d'impatto sulla protezione dei dati e alle
+      consultazioni con le autorità. La maggior parte delle richieste può essere gestita in Emploist visualizzando,
+      esportando o eliminando i dati. Se un interessato ci contatta in merito ai Dati del Cliente, lo indirizzeremo a voi
+      o vi inoltreremo la richiesta.
+    </li>
+    <li>
+      <strong>Violazioni.</strong> Dopo essere venuti a conoscenza di una violazione dei dati personali che riguarda i
+      Dati del Cliente, la notificheremo ai vostri amministratori senza ingiustificato ritardo, fornendo le informazioni
+      di cui disponiamo, e adotteremo misure ragionevoli per contenerla. La notifica non costituisce
+      un'ammissione di colpa.
+    </li>
+    <li>
+      <strong>Cancellazione.</strong> Finché il vostro Piano è attivo, il vostro team può eliminare candidature e
+      posizioni in Emploist. Un amministratore può eliminare l'intera azienda in qualsiasi momento. Se avete bisogno che
+      altri Dati del Cliente vengano cancellati, inviateci un'email e identificateli tramite il loro indirizzo in Emploist
+      o indicando dove si trovano, senza includere dati dei candidati. Quando smettete di utilizzare Emploist, scegliete
+      tra la restituzione e la cancellazione esportando le candidature ed eliminando la vostra azienda. Quando i Dati del
+      Cliente vengono eliminati, li cancelliamo dai nostri sistemi attivi. Le copie presenti nei nostri backup e nei
+      nostri log vengono rimosse man mano che questi vengono sostituiti nel tempo, e alcuni dettagli possono rimanere in
+      altri record della vostra azienda, come le notifiche, finché questi non vengono eliminati.
+    </li>
+    <li>
+      <strong>Audit.</strong> Metteremo a disposizione le informazioni ragionevolmente necessarie per dimostrare che
+      rispettiamo la presente sezione. Ove la normativa sulla protezione dei dati o le CCT richiedano di più, voi o un
+      revisore indipendente da voi incaricato potete sottoporre ad audit la nostra conformità una volta all'anno, con
+      ragionevole preavviso, a vostre spese e nel rispetto di un obbligo di riservatezza.
+    </li>
+  </ul>
+
+  <h3>Trasferimenti internazionali</h3>
+  <p>
+    I Dati del Cliente sono trattati nei luoghi indicati nel nostro elenco dei sub-responsabili del trattamento, e noi vi
+    accediamo dall'India.
+  </p>
+  <ul>
+    <li>
+      <strong>UE.</strong> Ove il GDPR dell'UE si applichi a un trasferimento di Dati del Cliente da voi a noi, le
+      clausole contrattuali tipo approvate dalla Commissione europea con la <a
+        href="https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32021D0914">decisione di esecuzione (UE) 2021/914</a
+      > (le «CCT», "SCCs") sono incorporate nei presenti Termini. Si applica il modulo 2 ove siate un titolare del
+      trattamento, e il modulo 3 ove siate un responsabile del trattamento. Voi siete l'esportatore di dati e noi siamo
+      l'importatore di dati. Si applica la clausola 7. Ai sensi della clausola 9, lettera a), si applica l'opzione 2, con
+      il periodo di preavviso indicato sopra. L'opzione di cui alla clausola 11, lettera a), non si applica. L'autorità di
+      controllo competente è determinata ai sensi della clausola 13, lettera a). Ai sensi delle clausole 17 e 18, lettera
+      b), le CCT sono disciplinate dal diritto irlandese e le controversie sono devolute alle autorità giurisdizionali
+      irlandesi. L'allegato I è compilato sulla base dei dettagli del trattamento indicati sopra, della sezione 21 e dei
+      dati del vostro account. L'allegato II è costituito dalle misure di sicurezza indicate sopra e l'allegato III dal
+      nostro elenco dei sub-responsabili del trattamento. L'accettazione dei presenti Termini equivale alla sottoscrizione
+      delle CCT e dei relativi allegati, alla data in cui accettate i presenti Termini.
+    </li>
+    <li>
+      <strong>Regno Unito.</strong> Ove si applichi il GDPR del Regno Unito, le CCT si applicano come modificate
+      dall'International Data Transfer Addendum (addendum sul trasferimento internazionale dei dati) dell'Information
+      Commissioner del Regno Unito, versione B1.0, le cui tabelle sono compilate sulla base della presente sezione e della
+      sezione 21. Nessuna delle parti può porre fine all'Addendum ai sensi della sua sezione 19.
+    </li>
+    <li>
+      <strong>Svizzera.</strong> Ove si applichi la legge federale svizzera sulla protezione dei dati (LPD), le CCT si
+      applicano intendendo i riferimenti al GDPR come riferimenti a tale legge, e con l'Incaricato federale della
+      protezione dei dati e della trasparenza (IFPDT) quale autorità di controllo competente. L'espressione «Stato membro»
+      non impedisce agli interessati in Svizzera di agire in giudizio nel luogo in cui risiedono abitualmente, ai sensi
+      della clausola 18, lettera c).
+    </li>
+    <li>
+      <strong>Trasferimenti successivi.</strong> Ove il trattamento da parte dei nostri sub-responsabili del trattamento
+      richieda un meccanismo di trasferimento, ci avvaliamo delle CCT o di un altro meccanismo riconosciuto dalla
+      normativa sulla protezione dei dati. Siete responsabili di assicurarvi che l'invio dei Dati del Cliente agli
+      assistenti IA connessi dal vostro team costituisca un trasferimento lecito.
+    </li>
+  </ul>
+  <p>
+    In caso di conflitto tra i presenti Termini e le CCT o l'Addendum del Regno Unito, prevalgono questi ultimi.
+  </p>
+
+  <h3>Leggi statali statunitensi sulla privacy</h3>
+  <p>
+    Ove si applichi il California Consumer Privacy Act o un'analoga legge di uno Stato degli Stati Uniti, siamo il
+    vostro fornitore di servizi o responsabile del trattamento per i Dati del Cliente. Li tratteremo solo per le finalità
+    indicate nella presente sezione. Non li venderemo né condivideremo, non li conserveremo, utilizzeremo o divulgheremo
+    al di fuori del nostro rapporto commerciale diretto con voi, né li combineremo con altre informazioni personali,
+    salvo nella misura consentita da tali leggi. Rispetteremo gli obblighi previsti da tali leggi per i fornitori di
+    servizi e vi informeremo se non saremo più in grado di farlo. Potete adottare misure ragionevoli per assicurarvi che
+    utilizziamo i Dati del Cliente in conformità ai vostri obblighi ai sensi di tali leggi, nonché per far cessare e
+    porre rimedio a qualsiasi utilizzo non autorizzato.
+  </p>
+
+  <h3>India</h3>
+  <p>
+    Ove ai Dati del Cliente si applichi il Digital Personal Data Protection Act, 2023 dell'India, voi siete il data
+    fiduciary (titolare del trattamento) e noi siamo il vostro data processor (responsabile del trattamento).
+  </p>
+
+  <h2 id="suspension-and-termination">14. Sospensione e cessazione</h2>
+  <ul>
+    <li>
+      <strong>Cessazione dell'utilizzo da parte vostra.</strong> Potete smettere di utilizzare Emploist in qualsiasi
+      momento disdicendo il vostro Piano e, se desiderate che i dati della vostra azienda vengano eliminati, eliminando
+      l'azienda. I presenti Termini cessano quando la vostra azienda viene eliminata.
+    </li>
+    <li>
+      <strong>Sospensione.</strong> Possiamo sospendere l'accesso della vostra azienda a Emploist, o a parte di esso, se
+      un pagamento non va a buon fine o viene contestato, se voi o i membri del vostro team violate i presenti Termini in
+      modo grave o ripetuto, se il vostro utilizzo crea un rischio per la sicurezza o potrebbe arrecare danno ad altri, o
+      se la legge lo richiede.
+    </li>
+    <li>
+      <strong>Risoluzione per inadempimento.</strong> Possiamo risolvere i presenti Termini se li violate in modo
+      sostanziale e non ponete rimedio alla violazione entro 30 giorni dalla nostra comunicazione, oppure con effetto
+      immediato se la violazione non è rimediabile o è grave, come in caso di frode, posizioni fraudolente o contenuti
+      illeciti. Ove ragionevole, daremo ai vostri amministratori la possibilità di esportare i Dati del Cliente prima di
+      eliminarli.
+    </li>
+    <li>
+      <strong>Se smettiamo di offrire Emploist.</strong> Invieremo un'email ai vostri amministratori con almeno 30 giorni
+      di anticipo e disporremo, tramite Dodo, il rimborso della parte non utilizzata del vostro periodo di fatturazione in
+      corso.
+    </li>
+    <li>
+      <strong>Dopo la fine del vostro Piano.</strong> La vostra azienda resta in sola lettura. Possiamo eliminare
+      un'azienda e tutti i suoi dati quando è rimasta senza un Piano attivo per 12 mesi consecutivi, o dopo aver risolto i
+      presenti Termini ai sensi della presente sezione.
+    </li>
+    <li>
+      <strong>Cosa resta in vigore.</strong> Le disposizioni dei presenti Termini che per loro natura dovrebbero restare in
+      vigore dopo la loro cessazione resteranno in vigore, compresi gli importi dovuti, la sezione 13 per tutto il tempo in
+      cui conserviamo Dati del Cliente, la riservatezza, la proprietà intellettuale, le esclusioni di garanzia, la
+      limitazione di responsabilità, la manleva e la legge applicabile.
+    </li>
+  </ul>
+
+  <h2 id="disclaimers">15. Esclusioni di garanzia</h2>
+  <p>
+    <strong
+      >Salvo quanto espressamente previsto dai presenti Termini, e nella misura consentita dalla legge, Emploist è fornito
+      «così com'è» e «come disponibile», senza garanzie di alcun tipo, espresse, implicite o previste dalla legge,
+      comprese le garanzie di commerciabilità, idoneità a uno scopo particolare, titolarità, non violazione di diritti
+      altrui e accuratezza, e qualsiasi garanzia che Emploist sia ininterrotto, sicuro o privo di errori.</strong
+    >
+  </p>
+  <p>
+    In particolare, non promettiamo che i punteggi di affinità o altri output dell'IA siano accurati, completi o privi di
+    distorsioni, che gli assistenti IA funzionino correttamente o ignorino le istruzioni contenute in ciò che scrivono i
+    candidati, alcun risultato in termini di assunzioni, né che il vostro utilizzo di Emploist sia conforme alle leggi
+    applicabili alle vostre assunzioni. Nulla in Emploist o nelle nostre guide costituisce consulenza legale.
+  </p>
+
+  <h2 id="liability">16. Limitazione di responsabilità</h2>
+  <p>Nella misura consentita dalla legge:</p>
+  <ul>
+    <li>
+      Nessuna delle parti sarà responsabile nei confronti dell'altra per qualsiasi danno indiretto, incidentale, speciale,
+      consequenziale o punitivo, né per qualsiasi perdita di profitti, ricavi, affari, avviamento o dati, anche se
+      informata della loro possibilità.
+    </li>
+    <li>
+      <strong
+        >La nostra responsabilità complessiva per tutte le pretese derivanti dai presenti Termini o da Emploist, o comunque
+        connesse ad essi, è limitata all'importo da voi pagato per Emploist nei 12 mesi precedenti il sorgere della
+        pretesa, imposte escluse.</strong
+      >
+    </li>
+    <li>
+      Questi limiti si applicano a qualsiasi responsabilità tra le parti, compresa quella ai sensi della sezione 13 e
+      delle CCT. Non limitano i diritti degli interessati ai sensi della normativa sulla protezione dei dati o delle CCT,
+      né la responsabilità che la legge non consente di limitare, come quella per frode.
+    </li>
+    <li>
+      Il primo punto non limita quanto da voi dovuto per il vostro Piano e i Crediti, i vostri obblighi ai sensi della <a
+        href="#indemnity">sezione 17</a
+      >, né la vostra responsabilità per la violazione della <a href="#acceptable-use">sezione 8</a> o della nostra
+      proprietà intellettuale.
+    </li>
+  </ul>
+
+  <h2 id="indemnity">17. Manleva</h2>
+  <p>
+    Nella misura consentita dalla legge, ci difenderete da qualsiasi pretesa, richiesta o procedimento promosso da terzi,
+    come un candidato o un'autorità, e pagherete qualsiasi conseguente risarcimento, sanzione, importo transattivo, costo
+    e onorario legale ragionevole, nella misura in cui derivi da:
+  </p>
+  <ul>
+    <li>
+      Dati del Cliente o altri contenuti che voi o i membri del vostro team inserite in Emploist o pubblicate tramite
+      Emploist
+    </li>
+    <li>le vostre decisioni di assunzione</li>
+    <li>codice che voi o i membri del vostro team aggiungete a Emploist</li>
+    <li>ciò che gli assistenti IA dei membri del vostro team fanno in Emploist, e i Dati del Cliente che ricevono</li>
+    <li>una violazione dei presenti Termini o della legge da parte vostra o dei membri del vostro team</li>
+  </ul>
+  <p>
+    Ciò non si applica nella misura in cui la pretesa sia causata da una nostra violazione dei presenti Termini. Vi
+    informeremo tempestivamente della pretesa, vi lasceremo il controllo della relativa difesa, salvo per le questioni
+    relative ai nostri obblighi regolamentari, e vi forniremo un'assistenza ragionevole a vostre spese. Non definirete in
+    via transattiva una pretesa in un modo che ammetta una colpa per nostro conto o ci imponga obblighi senza il nostro
+    consenso scritto.
+  </p>
+
+  <h2 id="changes">18. Modifiche ai presenti Termini</h2>
+  <p>
+    Possiamo aggiornare i presenti Termini pubblicandone qui una nuova versione e aggiornando la data in alto. Per le
+    modifiche sostanziali, invieremo un'email ai vostri amministratori almeno 30 giorni prima della loro entrata in
+    vigore. Se non siete d'accordo, potete disdire il vostro Piano o eliminare la vostra azienda prima di allora. Se
+    continuate a utilizzare Emploist dopo l'entrata in vigore delle modifiche, le accettate. Le modifiche non ridurranno
+    la protezione che la sezione 13 garantisce ai Dati del Cliente, salvo ove la legge lo richieda.
+  </p>
+
+  <h2 id="disputes">19. Legge applicabile e controversie</h2>
+  <p>
+    I presenti Termini, e qualsiasi controversia derivante da essi o da Emploist o comunque ad essi connessa, sono
+    disciplinati dalle leggi dell'India. Prima di avviare un procedimento giudiziario, inviateci via email i dettagli
+    della controversia, e le parti tenteranno entrambe in buona fede di risolverla entro 30 giorni. Se ciò non è
+    possibile, i tribunali di Kozhikode, Kerala, India, hanno competenza esclusiva. Ciascuna parte può comunque chiedere a
+    qualsiasi tribunale un provvedimento d'urgenza, ad esempio per tutelare la proprietà intellettuale o informazioni
+    riservate. Le controversie ai sensi delle CCT sono disciplinate dalla legge e dalle autorità giurisdizionali indicate
+    nelle CCT.
+  </p>
+
+  <h2 id="general">20. Disposizioni generali</h2>
+  <ul>
+    <li>
+      <strong>Intero accordo.</strong> I presenti Termini, compreso il nostro elenco dei sub-responsabili del
+      trattamento, costituiscono l'intero accordo tra le parti in merito a Emploist e sostituiscono qualsiasi accordo
+      precedente in materia. Le condizioni contenute nei vostri ordini di acquisto o in altri documenti non si applicano.
+    </li>
+    <li>
+      <strong>Cessione.</strong> Non potete cedere i presenti Termini senza il nostro consenso scritto. Possiamo cederli a
+      un successore che rilevi Emploist, come una società costituita per gestirlo o un acquirente, e quando lo faremo ne
+      informeremo i vostri amministratori.
+    </li>
+    <li>
+      <strong>Eventi al di fuori del nostro controllo.</strong> Nessuna delle parti è responsabile per ritardi o
+      inadempimenti causati da eventi al di fuori del ragionevole controllo, come calamità naturali, guerre, provvedimenti
+      delle autorità pubbliche o guasti di internet o dei nostri fornitori. Ciò non esonera dal pagamento.
+    </li>
+    <li>
+      <strong>Comunicazioni.</strong> Inviamo le comunicazioni agli indirizzi email dei vostri amministratori. Inviate a
+      noi le comunicazioni all'indirizzo <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Una
+      comunicazione via email si considera ricevuta al momento dell'invio, salvo che il mittente riceva un avviso di
+      mancato recapito.
+    </li>
+    <li>
+      <strong>Invalidità parziale e rinuncia.</strong> Se una qualsiasi disposizione dei presenti Termini non può essere
+      fatta valere, il resto continua ad applicarsi. Il fatto di non far valere una disposizione dei presenti Termini non
+      comporta la rinuncia al diritto di farla valere in seguito.
+    </li>
+    <li>
+      <strong>Rapporto tra le parti.</strong> Le parti sono indipendenti l'una dall'altra. I presenti Termini non creano
+      alcun rapporto di società, joint venture, lavoro o rappresentanza, e nessun altro soggetto ha diritti in base ad
+      essi, ad eccezione degli interessati ai sensi delle CCT.
+    </li>
+    <li>
+      <strong>Sanzioni.</strong> Confermate di non essere stabiliti né costituiti in un paese o in una regione soggetti
+      a sanzioni di portata generale, e che né voi né i membri del vostro team figurate in un elenco di soggetti
+      sanzionati.
+    </li>
+    <li>
+      <strong>Lingua e interpretazione.</strong> I presenti Termini sono redatti in inglese, versione che prevale su
+      qualsiasi traduzione. Le espressioni «compreso», «incluso» e «ad esempio», in qualsiasi loro forma, significano «a
+      titolo esemplificativo e non esaustivo», e i titoli sono inseriti solo per comodità di consultazione.
+    </li>
+  </ul>
+
+  <h2 id="contact">21. Contatti</h2>
+  <p>
+    Emploist è gestito da Navaneeth CT, persona fisica con sede in India, che opera con il nome commerciale Emploist. Per
+    domande, comunicazioni o reclami relativi ai presenti Termini, scriveteci all'indirizzo <a
+      href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+    >. Il nostro Grievance Officer (responsabile dei reclami) ai sensi dell'Information Technology Act dell'India è
+    Navaneeth CT, contattabile allo stesso indirizzo.
+  </p>
+</LegalLayout>

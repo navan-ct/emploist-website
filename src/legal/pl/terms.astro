@@ -1,0 +1,886 @@
+---
+import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SITE } from "../../lib/site";
+
+const sections = [
+  { id: "about", title: "O niniejszym Regulaminie" },
+  { id: "accounts", title: "Państwa konto i zespół" },
+  { id: "service", title: "Usługa" },
+  { id: "ai-ranking", title: "Ocena AI" },
+  { id: "ai-assistants", title: "Asystenci AI" },
+  { id: "plans-and-payments", title: "Plany, płatności i anulowanie" },
+  { id: "your-content", title: "Dane Klienta" },
+  { id: "acceptable-use", title: "Dopuszczalne korzystanie" },
+  { id: "careers-pages", title: "Strony kariery, domeny i kod" },
+  { id: "third-party-services", title: "Usługi podmiotów trzecich" },
+  { id: "our-property", title: "Własność intelektualna" },
+  { id: "confidentiality", title: "Poufność" },
+  { id: "data-processing", title: "Przetwarzanie danych" },
+  { id: "suspension-and-termination", title: "Zawieszenie i rozwiązanie" },
+  { id: "disclaimers", title: "Wyłączenia gwarancji" },
+  { id: "liability", title: "Ograniczenie odpowiedzialności" },
+  { id: "indemnity", title: "Zwolnienie z odpowiedzialności" },
+  { id: "changes", title: "Zmiany niniejszego Regulaminu" },
+  { id: "disputes", title: "Prawo właściwe i spory" },
+  { id: "general", title: "Postanowienia ogólne" },
+  { id: "contact", title: "Kontakt" },
+] as const;
+---
+
+<LegalLayout
+  document="terms"
+  title="Regulamin"
+  description="Regulamin korzystania z Emploist: plany i płatności, ocena AI, asystenci AI, dopuszczalne korzystanie oraz przetwarzanie danych kandydatów w Państwa imieniu."
+  translatedFrom="2026-10-28"
+  sections={sections}
+>
+  <h2 id="about">1. O niniejszym Regulaminie</h2>
+  <p>
+    Niniejszy regulamin („Regulamin”; ang. „Terms of Service”, „Terms”) stanowi umowę między Państwem a Navaneeth CT,
+    osobą fizyczną zamieszkałą w Indiach, prowadzącą działalność pod nazwą Emploist („my”, „nas”, „nasz”; ang. „we”,
+    „us”, „our”). „Państwo” („you”) i „Klient” („Customer”) oznaczają przedsiębiorcę lub inną organizację, która
+    korzysta z Emploist.
+  </p>
+  <ul>
+    <li>
+      Emploist jest przeznaczony dla organizacji prowadzących rekrutację. Nie jest przeznaczony do użytku osobistego,
+      rodzinnego ani domowego.
+    </li>
+    <li>
+      Akceptują Państwo niniejszy Regulamin, logując się do Emploist, tworząc firmę, rozpoczynając Plan lub korzystając z
+      Emploist w inny sposób. Jeśli nie akceptują Państwo Regulaminu, nie należy korzystać z Emploist.
+    </li>
+    <li>
+      Osoba, która akceptuje niniejszy Regulamin w imieniu Państwa organizacji, potwierdza, że ma co najmniej 18 lat i jest
+      upoważniona do zaciągania zobowiązań w jej imieniu. Każda osoba z Państwa zespołu, która korzysta z Emploist, musi
+      mieć co najmniej 18 lat.
+    </li>
+    <li>
+      Osoby, które aplikują na oferty pracy za pośrednictwem strony kariery, nie są związane niniejszym Regulaminem. Nasza
+      Polityka prywatności wyjaśnia, <a href="/pl/privacy/#applicants">w jaki sposób przetwarzane są ich dane</a>.
+    </li>
+  </ul>
+  <p>
+    Postanowienia dotyczące przetwarzania danych zawarte w <a href="#data-processing">sekcji 13</a> oraz nasz <a
+      href="/pl/privacy/#subprocessors">wykaz dalszych podmiotów przetwarzających</a
+    > stanowią część niniejszego Regulaminu. Nasza <a href="/pl/privacy/">Polityka prywatności</a> wyjaśnia, w jaki sposób
+    przetwarzamy dane osobowe jako administrator. Z wyjątkiem wykazu dalszych podmiotów przetwarzających nie stanowi ona
+    części niniejszego Regulaminu.
+  </p>
+
+  <h3>Stosowane pojęcia</h3>
+  <ul>
+    <li>
+      <strong>„Emploist”</strong> oznacza aplikację internetową Emploist, udostępniane przez nią strony kariery i e-maile,
+      jej serwer MCP dla asystentów AI oraz świadczone przez nas związane z nimi wsparcie.
+    </li>
+    <li>
+      <strong>„Państwa firma”</strong> („Your company”) oznacza obszar roboczy Państwa organizacji w Emploist, który
+      obejmuje jej oferty pracy, stronę kariery, zespół, ustawienia i aplikacje.
+    </li>
+    <li>
+      <strong>„Członkowie zespołu”</strong> („Team members”) oznaczają osoby należące do Państwa firmy w Emploist, z rolą
+      administratora lub członka.
+    </li>
+    <li>
+      <strong>„Kandydaci”</strong> („Applicants”) oznaczają osoby, które aplikują na Państwa oferty pracy za
+      pośrednictwem Emploist.
+    </li>
+    <li>
+      <strong>„Dane Klienta”</strong> („Customer Data”) oznaczają treści, które Państwo i członkowie Państwa zespołu
+      umieszczają w Emploist, informacje przekazywane za jego pośrednictwem przez kandydatów oraz wyniki dopasowania i
+      inne zapisy tworzone na ich podstawie przez Emploist.
+    </li>
+    <li>
+      <strong>„Plan”</strong> oznacza subskrypcję Emploist Państwa firmy, w tym jej bezpłatny okres próbny. Państwa Plan jest <strong>„aktywny”</strong> („active”), gdy trwa jego bezpłatny okres próbny, gdy jest
+      opłacony lub gdy trwa okres karencji po nieudanej płatności.
+    </li>
+    <li><strong>„Kredyty”</strong> („Credits”) oznaczają kredyty AI wykorzystywane do oceny aplikacji.</li>
+  </ul>
+
+  <h2 id="accounts">2. Państwa konto i zespół</h2>
+  <ul>
+    <li>Należy podawać prawidłowe informacje o sobie i o Państwa firmie oraz dbać o ich aktualność.</li>
+    <li>
+      Należy dbać o bezpieczeństwo swoich metod logowania, takich jak konto e-mail oraz konto Google lub Microsoft.
+      Każdy, kto ma nad nimi kontrolę, może zalogować się jako Państwo. Nie należy udostępniać kodów logowania ani
+      linków z zaproszeniami.
+    </li>
+    <li>
+      Administratorzy zarządzają płatnościami, ustawieniami i zespołem Państwa firmy. Odpowiadają Państwo za wybór
+      administratorów, za wszystko, co członkowie Państwa zespołu robią w Emploist, oraz za zapewnienie, że przestrzegają
+      oni niniejszego Regulaminu.
+    </li>
+    <li>
+      Należy usuwać z Państwa firmy osoby, które nie potrzebują już dostępu. Jeśli uważają Państwo, że ktoś uzyskał
+      dostęp do Państwa firmy bez upoważnienia, należy niezwłocznie poinformować nas o tym pod adresem <a
+        href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+      >.
+    </li>
+  </ul>
+
+  <h2 id="service">3. Usługa</h2>
+  <p>
+    Emploist jest narzędziem programowym do prowadzenia rekrutacji. Nie jesteśmy agencją zatrudnienia ani rekruterem i
+    nie podejmujemy za Państwa decyzji rekrutacyjnych.
+  </p>
+  <ul>
+    <li>
+      <strong>Zmiany.</strong> Możemy zmieniać, dodawać lub usuwać funkcje. Jeśli zmiana w istotny sposób ograniczy to,
+      co obejmuje Państwa Plan, poinformujemy o tym z wyprzedzeniem Państwa administratorów, o ile będzie to w
+      rozsądnym zakresie możliwe.
+    </li>
+    <li>
+      <strong>Limity.</strong> Emploist ma rozsądne limity techniczne, takie jak limity rozmiaru plików i częstotliwości
+      wysyłania żądań, i możemy je zmieniać. Jeśli Państwa korzystanie znacznie wykracza poza normalne użytkowanie lub
+      stwarza zagrożenie dla Emploist, możemy je ograniczyć.
+    </li>
+    <li>
+      <strong>Wsparcie i dostępność.</strong> Wsparcia udzielamy e-mailowo pod adresem <a
+        href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+      >. Nie oferujemy umowy o poziomie usług (service level agreement), a Emploist może być czasami niedostępny, na
+      przykład podczas prac konserwacyjnych.
+    </li>
+    <li>
+      <strong>Bezpłatne okresy próbne i funkcje w wersji beta.</strong> Bezpłatne okresy próbne oraz funkcje oznaczone
+      przez nas jako beta lub wersja zapoznawcza (preview) są udostępniane w stanie, w jakim są. Mogą zostać zmienione
+      lub zakończone w dowolnym momencie.
+    </li>
+  </ul>
+
+  <h2 id="ai-ranking">4. Ocena AI</h2>
+  <p>
+    Gdy ocena AI jest włączona, Emploist wykorzystuje model AI do oceny dopasowania każdej aplikacji do jej oferty pracy
+    na podstawie CV, odpowiedzi kandydata i szczegółów oferty. Ocena AI jest domyślnie włączona, a gdy Państwa Plan jest
+    aktywny, administrator może ją wyłączyć w Ustawieniach. Sama ocena AI nikogo nie odrzuca, nie przenosi do kolejnego
+    etapu ani nie wysyła nikomu e-maili.
+  </p>
+  <p>
+    Wyniki dopasowania mogą być błędne, niepełne lub stronnicze. Stanowią wskazówkę, które aplikacje przejrzeć w
+    pierwszej kolejności, a nie ustalenie, czy dana osoba ma odpowiednie kwalifikacje. To Państwo decydują, czy i w jaki
+    sposób korzystać z oceny AI, i odpowiadają Państwo za każdą podjętą przez siebie decyzję rekrutacyjną. Jeśli
+    korzystają Państwo z oceny AI, muszą Państwo:
+  </p>
+  <ul>
+    <li>
+      zapewnić, aby aplikacje przeglądali ludzie, i nigdy nie opierać decyzji dotyczącej kandydata wyłącznie na wyniku
+      dopasowania ani nie pomijać aplikacji z powodu niskiego wyniku lub jego braku
+    </li>
+    <li>
+      informować kandydatów, że AI pomaga w przeglądaniu aplikacji, a także przekazywać wszelkie inne informacje i
+      spełniać wszelkie inne wymogi, jakie prawo nakłada na Państwa w związku z wykorzystywaniem AI w rekrutacji. Gdy
+      ocena AI jest włączona, domyślna strona kariery wyświetla taką informację. Jeśli używają Państwo własnego kodu
+      strony kariery, należy ją dodać samodzielnie.
+    </li>
+    <li>
+      nie wykorzystywać jej do selekcji kandydatów na podstawie cech chronionych, takich jak rasa, religia, kasta, płeć,
+      wiek lub niepełnosprawność, ani na podstawie czynników, które pełnią rolę ich zamienników
+    </li>
+    <li>
+      nie wykorzystywać jej do żadnych celów innych niż przeglądanie aplikacji pod kątem oferty pracy, na którą zostały
+      złożone, takich jak ocena lub monitorowanie pracowników
+    </li>
+    <li>
+      nie wykorzystywać jej, również za pośrednictwem asystenta AI, do podejmowania decyzji dotyczących kandydatów bez
+      weryfikacji przez człowieka
+    </li>
+  </ul>
+  <p>
+    W celu oceny aplikacji przesyłamy je naszemu dostawcy AI, wskazanemu w naszym <a href="/pl/privacy/#subprocessors"
+      >wykazie dalszych podmiotów przetwarzających</a
+    >. Możemy zmienić naszego dostawcę AI lub model. Możemy ograniczyć lub wyłączyć ocenę AI w niektórych regionach lub
+    dla niektórych firm, jeśli wymaga tego prawo.
+  </p>
+
+  <h2 id="ai-assistants">5. Asystenci AI</h2>
+  <p>
+    Członkowie zespołu mogą łączyć asystentów AI, takich jak Claude lub ChatGPT, z Emploist za pośrednictwem naszego
+    serwera MCP. Połączony asystent działa jako osoba, która go połączyła, z jej rolą, i może robić znaczną część tego,
+    co ta osoba może robić w Emploist, na przykład odczytywać i przenosić aplikacje oraz edytować oferty pracy. Asystenci
+    AI są domyślnie włączeni, a administrator może ich wyłączyć dla Państwa firmy w Ustawieniach.
+  </p>
+  <p>
+    Asystenci AI są usługami podmiotów trzecich wybieranymi przez Państwa i członków Państwa zespołu. Nie są częścią
+    Emploist, a ich dostawcy nie są naszymi dalszymi podmiotami przetwarzającymi. Dane Klienta otrzymane przez asystenta
+    są przetwarzane na warunkach obowiązujących między jego dostawcą a Państwem lub członkiem Państwa zespołu, a my nie
+    mamy kontroli nad tymi danymi. Odpowiadają Państwo za:
+  </p>
+  <ul>
+    <li>
+      decydowanie, z których asystentów może korzystać Państwa zespół, oraz zapewnienie, że przesyłanie do nich Danych
+      Klienta jest zgodne z prawem
+    </li>
+    <li>
+      wszystko, co asystenci członków Państwa zespołu robią w Emploist, tak jakby członkowie Państwa zespołu zrobili to
+      sami
+    </li>
+    <li>
+      przestrzeganie <a href="#ai-ranking">sekcji 4</a>, gdy asystent pracuje z aplikacjami i wynikami dopasowania
+    </li>
+  </ul>
+  <p>
+    Możemy zablokować lub odłączyć asystenta, co do którego mamy uzasadnione podstawy sądzić, że jest niezabezpieczony,
+    szkodliwy lub wykorzystywany w sposób sprzeczny z niniejszym Regulaminem.
+  </p>
+
+  <h2 id="plans-and-payments">6. Plany, płatności i anulowanie</h2>
+
+  <h3>Dodo Payments</h3>
+  <p>
+    Proces składania zamówień prowadzi nasz internetowy odsprzedawca, Dodo Payments („Dodo”). Dodo jest sprzedawcą
+    (merchant of record) w odniesieniu do wszystkich naszych zamówień. Dodo obsługuje proces zakupu, płatności, faktury,
+    podatek od sprzedaży i VAT oraz pytania dotyczące płatności i zwroty. Do Państwa zakupów mają również zastosowanie <a
+      href="https://dodopayments.com/legal/buyer-terms">warunki Dodo dla kupujących (Buyer Terms)</a
+    >.
+  </p>
+
+  <h3>Plan i rozliczenia</h3>
+  <ul>
+    <li>
+      Plan jest rozliczany miesięcznie lub rocznie, z góry, według ceny podanej w formularzu płatności, powiększonej o
+      należne podatki. Odnawia się automatycznie na kolejny okres o tej samej długości, dopóki nie zostanie anulowany.
+    </li>
+    <li>
+      Możemy zmieniać nasze ceny. Poinformujemy Państwa administratorów e-mailem co najmniej 30 dni przed tym, jak
+      podwyżka ceny zacznie dotyczyć Państwa Planu, a Państwo mogą anulować Plan przed tym terminem.
+    </li>
+    <li>
+      Jeśli płatność się nie powiedzie, Emploist działa nadal przez krótki okres karencji. Jeśli do tego czasu płatność
+      nadal nie zostanie zrealizowana, Państwa firma przechodzi w tryb tylko do odczytu do czasu jej uregulowania.
+    </li>
+  </ul>
+
+  <h3>Bezpłatny okres próbny</h3>
+  <p>
+    Pierwszy Plan Państwa firmy może rozpocząć się od bezpłatnego okresu próbnego. Metodę płatności dodają Państwo w
+    formularzu płatności, a Dodo pobiera opłatę za pierwszy okres rozliczeniowy po zakończeniu okresu próbnego, chyba że
+    administrator wcześniej anuluje Plan. Każda firma i każda osoba może skorzystać tylko z jednego bezpłatnego okresu
+    próbnego.
+  </p>
+
+  <h3>Kredyty AI</h3>
+  <ul>
+    <li>Ocena aplikacji zużywa jeden Kredyt, a jej ponowna ocena – kolejny.</li>
+    <li>
+      Państwa Plan obejmuje Kredyty na każdy okres rozliczeniowy, zgodnie z informacjami podanymi na naszej <a
+        href="/pl/#pricing">stronie z cennikiem</a
+      > w chwili rozpoczęcia danego okresu. Nie przechodzą one na kolejny okres.
+    </li>
+    <li>
+      Administratorzy mogą kupować dodatkowe Kredyty w pakietach. Kredyty z pakietów nie wygasają, ale przepadają w razie
+      usunięcia Państwa firmy.
+    </li>
+    <li>
+      Kredyty można kupować i wykorzystywać wyłącznie wtedy, gdy Państwa Plan jest aktywny. Nie mają wartości pieniężnej,
+      nie można ich przenosić i nie podlegają zwrotowi, chyba że wymaga tego prawo. Jeśli za pakiet kredytów zostanie
+      dokonany zwrot, jego niewykorzystane Kredyty zostaną usunięte.
+    </li>
+  </ul>
+
+  <h3>Anulowanie i zwroty</h3>
+  <ul>
+    <li>
+      Administrator może w dowolnym momencie anulować Plan na stronie Płatności. Państwa Plan pozostaje aktywny do końca
+      bieżącego okresu próbnego lub rozliczeniowego, a kolejne opłaty nie będą już pobierane.
+    </li>
+    <li>
+      Płatności nie podlegają zwrotowi. Nie przysługują zwroty ani odliczenia za niepełne okresy rozliczeniowe lub
+      niewykorzystane Kredyty, z wyjątkiem przypadków, w których wymaga tego prawo, odliczenia proporcjonalnego
+      wyświetlonego w formularzu płatności przy przejściu na rozliczenie roczne oraz sytuacji, w której przestaniemy
+      oferować Emploist (<a href="#suspension-and-termination">sekcja 14</a>). Zwrotów dokonuje Dodo.
+    </li>
+    <li>
+      Usunięcie Państwa firmy powoduje natychmiastowe anulowanie Planu bez zwrotu środków oraz trwałe usunięcie jej
+      danych.
+    </li>
+  </ul>
+
+  <h3>Gdy Państwa Plan nie jest aktywny</h3>
+  <p>
+    Po zakończeniu Planu, a także zanim Państwa firma rozpocznie Plan, Państwa firma działa w trybie tylko do odczytu.
+    Państwa zespół nadal może się logować, przeglądać jej dane i eksportować aplikacje, ale nie może wprowadzać większości
+    zmian, aplikacje nie są oceniane, a Państwa strona kariery przestaje przyjmować aplikacje.
+  </p>
+
+  <h2 id="your-content">7. Dane Klienta</h2>
+  <ul>
+    <li><strong>Należą do Państwa.</strong> Zachowują Państwo wszystkie swoje prawa do Danych Klienta.</li>
+    <li>
+      <strong>Nasza licencja.</strong> Zezwalają nam Państwo na hostowanie, przechowywanie, kopiowanie, przetwarzanie,
+      przesyłanie, wyświetlanie i publikowanie Danych Klienta na całym świecie, wyłącznie w zakresie potrzebnym do
+      udostępniania i zabezpieczania Emploist oraz zapewniania wsparcia zgodnie z niniejszym Regulaminem, w tym za
+      pośrednictwem naszych dalszych podmiotów przetwarzających. Na przykład publikujemy Państwa oferty pracy na Państwa
+      stronie kariery, wysyłamy Państwa e-maile do kandydatów i przesyłamy Dane Klienta do asystentów AI połączonych
+      przez członków Państwa zespołu.
+    </li>
+    <li>
+      <strong>Czego nie robimy.</strong> Nie sprzedajemy Danych Klienta, nie wykorzystujemy ich do celów reklamowych ani
+      do trenowania modeli AI.
+    </li>
+    <li>
+      <strong>Dane o użytkowaniu.</strong> Możemy wykorzystywać informacje o tym, jak Emploist jest używany i jak działa,
+      do jego obsługi i ulepszania. Wszystko, co wykorzystujemy lub przekazujemy w zakresie wykraczającym poza
+      udostępnianie Państwu Emploist, jest zagregowane lub pozbawione cech identyfikujących, tak aby nie identyfikowało
+      Państwa, członków Państwa zespołu ani kandydatów, i nie będziemy podejmować prób ponownej identyfikacji.
+    </li>
+    <li>
+      <strong>Państwa kopie.</strong> Państwa zespół może eksportować aplikacje złożone na daną ofertę pracy. Odpowiadają
+      Państwo za przechowywanie własnych kopii wszelkich potrzebnych Państwu Danych Klienta.
+    </li>
+    <li>
+      <strong>Treści, które możemy usunąć.</strong> Nie monitorujemy Danych Klienta. Możemy usunąć lub zablokować
+      treści, co do których mamy uzasadnione podstawy sądzić, że naruszają niniejszy Regulamin lub prawo, albo gdy wymaga
+      tego sąd lub organ.
+    </li>
+  </ul>
+
+  <h3>Państwa obowiązki dotyczące danych kandydatów</h3>
+  <p>To Państwo decydują, jakie informacje zbierać od kandydatów i jak je wykorzystywać. Muszą Państwo:</p>
+  <ul>
+    <li>
+      mieć podstawę prawną oraz wszelkie wymagane przez prawo zgody na zbieranie i wykorzystywanie danych kandydatów w
+      Emploist, w tym na potrzeby oceny AI, asystentów AI używanych przez Państwa zespół oraz naszego przetwarzania
+      zgodnie z <a href="#data-processing">sekcją 13</a>
+    </li>
+    <li>
+      przekazywać kandydatom własną informację o ochronie prywatności, w momencie składania przez nich aplikacji lub
+      wcześniej, obejmującą korzystanie przez Państwa z Emploist. Domyślna strona kariery nie zawiera takiej informacji.
+    </li>
+    <li>
+      zadawać wyłącznie pytania, które prawo pozwala Państwu zadawać, i nie prosić o informacje wrażliwe, np. dotyczące
+      zdrowia, religii lub karalności, chyba że prawo na to zezwala
+    </li>
+    <li>
+      odpowiadać na żądania kandydatów dotyczące ich danych i usuwać ich dane, gdy przestaną być Państwu potrzebne.
+      Emploist nie usuwa aplikacji automatycznie.
+    </li>
+    <li>
+      zapewnić, aby publikowane i wysyłane przez Państwa treści, takie jak oferty pracy, strony kariery i e-maile do
+      kandydatów, były prawidłowe i zgodne z prawem. E-maile do kandydatów muszą dotyczyć wyłącznie ich aplikacji.
+      Odpowiedzi trafiają na adres do odpowiedzi ustawiony przez administratora, dlatego należy używać adresu, nad którym
+      mają Państwo kontrolę.
+    </li>
+  </ul>
+
+  <h2 id="acceptable-use">8. Dopuszczalne korzystanie</h2>
+  <p>Państwo i Państwa zespół nie mogą używać Emploist, aby:</p>
+  <ul>
+    <li>
+      publikować fałszywe, wprowadzające w błąd lub oszukańcze oferty pracy, pobierać od kandydatów jakiekolwiek opłaty
+      lub zbierać dane osobowe, do których zbierania nie mają Państwo prawa
+    </li>
+    <li>publikować ogłoszenia o pracy, kryteria lub pytania, które dyskryminują w sposób niezgodny z prawem</li>
+    <li>
+      podszywać się pod kogokolwiek lub wprowadzać innych w błąd co do tego, kim Państwo są, w tym za pomocą nazwy firmy,
+      adresu strony kariery, nazwy nadawcy e-maili lub adresu do odpowiedzi
+    </li>
+    <li>wysyłać spam, e-maile marketingowe lub jakiekolwiek inne niezgodne z prawem e-maile</li>
+    <li>tworzyć dodatkowe konta lub firmy w celu uzyskania kolejnego bezpłatnego okresu próbnego</li>
+  </ul>
+  <p>Nie wolno umieszczać w Emploist niczego, co:</p>
+  <ul>
+    <li>
+      należy do kogoś innego, a Państwo nie mają prawa z tego korzystać, lub narusza jakikolwiek patent, znak towarowy,
+      prawo autorskie lub inne prawo wyłączne
+    </li>
+    <li>
+      jest obsceniczne, pornograficzne, pedofilskie lub szkodliwe dla dzieci albo narusza czyjąkolwiek prywatność, w tym
+      prywatność cielesną
+    </li>
+    <li>
+      jest zniesławiające, stanowi nękanie (w tym ze względu na płeć), jest obraźliwe ze względów rasowych lub etnicznych
+      albo propaguje wrogość między grupami ze względu na religię lub kastę
+    </li>
+    <li>dotyczy prania pieniędzy lub hazardu albo do nich zachęca</li>
+    <li>
+      wprowadza kogokolwiek w błąd co do pochodzenia wiadomości, świadomie rozpowszechnia fałszywe lub wprowadzające w
+      błąd informacje albo podszywa się pod inną osobę
+    </li>
+    <li>
+      zagraża jedności, integralności, obronności, bezpieczeństwu lub suwerenności Indii, przyjaznym stosunkom Indii z
+      innymi państwami lub porządkowi publicznemu, podżega do popełnienia jakiegokolwiek przestępstwa, uniemożliwia
+      prowadzenie postępowania w sprawie jakiegokolwiek przestępstwa lub znieważa jakikolwiek inny naród
+    </li>
+    <li>zawiera wirusy lub inny szkodliwy kod</li>
+    <li>narusza jakiekolwiek przepisy prawa</li>
+  </ul>
+  <p>Nie wolno też:</p>
+  <ul>
+    <li>
+      uzyskiwać dostępu do danych innych firm, badać ani testować naszych zabezpieczeń ani obchodzić naszych środków
+      bezpieczeństwa lub limitów
+    </li>
+    <li>
+      przeciążać Emploist ani zakłócać jego działania, ani uzyskiwać do niego dostępu za pomocą botów, scraperów lub
+      innych zautomatyzowanych narzędzi, chyba że za pośrednictwem udostępnianych przez nas funkcji, takich jak nasz
+      serwer MCP
+    </li>
+    <li>kopiować, dekompilować Emploist ani poddawać go inżynierii wstecznej, chyba że prawo na to zezwala</li>
+    <li>
+      odsprzedawać Emploist ani udzielać do niego sublicencji, ani oferować go innym jako usługi. Prowadzenie rekrutacji
+      dla własnych klientów jest dozwolone.
+    </li>
+    <li>używać Emploist do tworzenia konkurencyjnego produktu</li>
+    <li>używać Emploist z naruszeniem przepisów dotyczących sankcji lub kontroli eksportu</li>
+    <li>
+      używać Emploist w sposób naruszający <a href="https://typesafe.ai/legal/acceptable-use-policy"
+        >zasady dopuszczalnego użytkowania</a
+      > naszego dostawcy AI
+    </li>
+  </ul>
+  <p>
+    W razie naruszenia tych zasad możemy usunąć treści, zawiesić Państwa firmę lub rozwiązać umowę zawartą na podstawie
+    niniejszego Regulaminu (zob. <a
+      href="#suspension-and-termination">sekcję 14</a
+    >).
+  </p>
+
+  <h2 id="careers-pages">9. Strony kariery, domeny i kod</h2>
+  <ul>
+    <li>
+      Państwa strona kariery znajduje się w wybranej przez Państwa subdomenie emploist.com lub w połączonej przez Państwa
+      domenie. Możemy odmówić przydzielenia subdomeny lub ją odebrać, jeśli wprowadza w błąd, narusza czyjekolwiek prawa
+      lub podszywa się pod kogoś.
+    </li>
+    <li>
+      Jeśli połączą Państwo własną domenę, potwierdzają Państwo, że mają nad nią kontrolę, i zezwalają nam na uzyskiwanie
+      dla niej certyfikatów TLS. Odpowiadają Państwo za jej rekordy DNS.
+    </li>
+    <li>
+      Odpowiadają Państwo za wszelki kod strony kariery i szablony e-maili tworzone przez Państwa administratorów, w tym
+      za wszystko, co jest wczytywane z innych witryn, oraz za informacje, które muszą być wyświetlane. Możemy wyłączyć
+      kod, co do którego mamy uzasadnione podstawy sądzić, że jest szkodliwy, niezabezpieczony lub sprzeczny z
+      niniejszym Regulaminem.
+    </li>
+    <li>
+      Jesteśmy właścicielem domyślnego kodu strony kariery oraz zestawu do podglądu dostępnego do pobrania. W okresie
+      obowiązywania niniejszego Regulaminu mogą Państwo używać ich, kopiować je i modyfikować wyłącznie w celu tworzenia
+      strony kariery Państwa firmy w Emploist. Zawarte w nich komponenty open source pozostają objęte własnymi
+      licencjami.
+    </li>
+  </ul>
+
+  <h2 id="third-party-services">10. Usługi podmiotów trzecich</h2>
+  <p>
+    Emploist współdziała z usługami prowadzonymi przez inne podmioty, takimi jak Google i Microsoft do logowania, Dodo do
+    płatności oraz asystentami AI połączonymi przez Państwa zespół. Gdy Państwo z nich korzystają, obowiązują ich własne
+    warunki i nie ponosimy za nie odpowiedzialności. Microsoft i Google nie są stronami umowy zawartej na podstawie
+    niniejszego Regulaminu. W zakresie dozwolonym przez prawo wyłącza się w ich imieniu wszelkie gwarancje i wszelką odpowiedzialność.
+  </p>
+
+  <h2 id="our-property">11. Własność intelektualna</h2>
+  <p>
+    Jesteśmy właścicielem Emploist, w tym jego oprogramowania, projektu, dokumentacji oraz nazwy i logo Emploist.
+    Niniejszy Regulamin daje Państwu prawo do korzystania z Emploist w sposób w nim opisany i nie daje żadnych innych
+    praw. Jeśli przekażą nam Państwo opinie, możemy swobodnie z nich korzystać bez jakichkolwiek zobowiązań wobec
+    Państwa. Możemy wskazywać Państwa organizację jako klienta Emploist, w tym za pomocą jej nazwy i logo. Jeśli
+    poproszą nas Państwo o zaprzestanie, zrobimy to.
+  </p>
+
+  <h2 id="confidentiality">12. Poufność</h2>
+  <p>
+    „Informacje Poufne” („Confidential Information”) oznaczają niepubliczne informacje, które jedna ze stron przekazuje
+    drugiej w związku z Emploist i które zostały oznaczone jako poufne lub które w uzasadniony sposób należy uznać za
+    poufne. Dane Klienta stanowią Państwa Informacje Poufne. Strona, która otrzymuje Informacje Poufne, będzie je
+    wykorzystywać wyłącznie do celów niniejszego Regulaminu, chronić je z należytą starannością i udostępniać je wyłącznie
+    osobom i usługodawcom, którzy potrzebują ich do tych celów i są związani obowiązkiem zachowania poufności, lub
+    zgodnie z poleceniem drugiej strony. Nie dotyczy to informacji, które są lub staną się publicznie dostępne bez winy
+    strony otrzymującej, które strona otrzymująca już posiadała lub opracowała niezależnie albo które zgodnie z prawem
+    otrzymała od kogoś innego. Każda ze stron może ujawnić Informacje Poufne, gdy wymaga tego prawo.
+  </p>
+
+  <h2 id="data-processing">13. Przetwarzanie danych</h2>
+  <p>
+    Niniejsza sekcja stanowi naszą umowę powierzenia przetwarzania danych. Ma ona zastosowanie, gdy przetwarzamy w
+    Państwa imieniu dane osobowe zawarte w Danych Klienta. „Przepisy o ochronie danych” („Data protection laws”)
+    oznaczają przepisy o ochronie danych i prywatności mające zastosowanie do Danych Klienta. Pojęcia takie jak
+    „administrator”, „podmiot przetwarzający”, „dane osobowe” i „naruszenie ochrony danych osobowych” („controller”,
+    „processor”, „personal data”, „personal data breach”) mają znaczenie nadane im w unijnym i brytyjskim ogólnym
+    rozporządzeniu o ochronie danych (RODO) albo znaczenie ich najbliższych odpowiedników w innych przepisach o ochronie
+    danych.
+  </p>
+
+  <h3>Role</h3>
+  <p>
+    Są Państwo administratorem danych osobowych zawartych w Danych Klienta, a my jesteśmy Państwa podmiotem
+    przetwarzającym. Jeśli sami są Państwo podmiotem przetwarzającym, na przykład jako rekruter prowadzący rekrutację dla
+    klienta, jesteśmy Państwa dalszym podmiotem przetwarzającym, a Państwo potwierdzają, że Państwa administrator
+    zezwolił na nasze przetwarzanie. Jesteśmy administratorem danych osobowych, które wykorzystujemy do prowadzenia naszej
+    działalności, takich jak dane kont członków Państwa zespołu, zgodnie z opisem w naszej <a href="/pl/privacy/"
+      >Polityce prywatności</a
+    >.
+  </p>
+
+  <h3>Szczegóły przetwarzania</h3>
+  <table>
+    <tbody>
+      <tr>
+        <th scope="row">Przedmiot i czas trwania</th>
+        <td>
+          Udostępnianie Państwu Emploist przez okres, w którym Państwo z niego korzystają, i do czasu usunięcia Danych
+          Klienta.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Charakter i cel</th>
+        <td>
+          Hostowanie, przechowywanie, wyświetlanie i przesyłanie Danych Klienta, w sposób ciągły, w celu udostępniania
+          Emploist: publikowanie stron kariery, zbieranie aplikacji, ocenianie ich za pomocą AI, gdy ocena AI jest
+          włączona, wysyłanie e-maili do kandydatów, przesyłanie danych do asystentów AI połączonych przez członków
+          Państwa zespołu, zapewnianie wsparcia i bezpieczeństwa Emploist oraz tworzenie zagregowanych lub pozbawionych
+          cech identyfikujących informacji w celu obsługi i ulepszania Emploist (zob. sekcję 7).
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Osoby, których dane dotyczą</th>
+        <td>
+          Kandydaci, członkowie Państwa zespołu i zapraszane przez Państwa osoby oraz inne osoby wymienione w Danych
+          Klienta, np. osoby udzielające referencji wskazane w CV.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Dane osobowe</th>
+        <td>
+          Imiona i nazwiska kandydatów, adresy e-mail, numery telefonów, jeśli Państwo o nie proszą, CV wraz z całą ich
+          zawartością, odpowiedzi na Państwa pytania, wyniki dopasowania, etapy rekrutacji, wysłane do nich e-maile oraz
+          komentarze Państwa zespołu na ich temat. Imiona i nazwiska oraz adresy e-mail członków zespołu i zaproszonych
+          osób w postaci, w jakiej występują w Danych Klienta. Wszelkie inne dane osobowe zawarte w Państwa treściach.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Dane wrażliwe</th>
+        <td>
+          Emploist nie prosi o ich podanie, ale mogą się one znajdować w CV i odpowiedziach. Są chronione opisanymi
+          poniżej środkami bezpieczeństwa, a dostęp do nich mają wyłącznie Państwa zespół i połączeni przez niego
+          asystenci AI oraz my i nasze dalsze podmioty przetwarzające w zakresie potrzebnym do udostępniania Emploist.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Lokalizacje i dalsze podmioty przetwarzające</th>
+        <td>
+          Zgodnie z naszym <a href="/pl/privacy/#subprocessors">wykazem dalszych podmiotów przetwarzających</a>.
+          Uzyskujemy dostęp do Danych Klienta z Indii.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Nasze zobowiązania</h3>
+  <ul>
+    <li>
+      <strong>Polecenia.</strong> Przetwarzamy Dane Klienta wyłącznie na Państwa udokumentowane polecenie, w tym w
+      zakresie przekazywania ich do innych państw, chyba że prawo wymaga inaczej. W takim przypadku najpierw Państwa o
+      tym poinformujemy, chyba że prawo tego zabrania. Państwa poleceniami są niniejszy Regulamin oraz sposób, w jaki
+      Państwo i Państwa zespół korzystają z Emploist i go konfigurują. Gdy członek zespołu łączy asystenta AI, poleca nam
+      przesyłać do niego Dane Klienta, o które asystent prosi, a Państwo go do tego upoważniają. Niezwłocznie
+      poinformujemy Państwa, jeśli uznamy, że polecenie narusza przepisy o ochronie danych, i nie mamy obowiązku go
+      wykonać.
+    </li>
+    <li>
+      <strong>Poufność.</strong> Każda osoba upoważniona przez nas do przetwarzania Danych Klienta jest związana
+      obowiązkiem zachowania poufności.
+    </li>
+    <li>
+      <strong>Bezpieczeństwo.</strong> Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony Danych
+      Klienta, w tym szyfrowane połączenia (HTTPS), kontrolę dostępu zapewniającą, że w aplikacji dane firmy widzą
+      wyłącznie członkowie jej zespołu i połączeni przez nich asystenci AI, zgodnie z ich rolami, prywatny magazyn plików
+      na CV, logowanie bez haseł, odizolowane procesy robocze z limitami czasu i pamięci dla kodu stron kariery i do
+      odczytywania CV, sprawdzanie przesyłanych plików, limity częstotliwości żądań, regularne kopie zapasowe bazy danych
+      oraz dostęp do systemów produkcyjnych wyłącznie dla osób, które go potrzebują. Możemy zmieniać te środki, pod
+      warunkiem że nie obniżymy ogólnego poziomu ochrony Danych Klienta.
+    </li>
+    <li>
+      <strong>Dalsze podmioty przetwarzające.</strong> Udzielają nam Państwo ogólnego zezwolenia na korzystanie z
+      dalszych podmiotów przetwarzających. Nasze obecne dalsze podmioty przetwarzające są wymienione w naszym wykazie. Z
+      każdym z nich mamy zawarte pisemne postanowienia dotyczące ochrony danych i pozostajemy wobec Państwa odpowiedzialni
+      za nie. Poinformujemy Państwa administratorów e-mailem co najmniej 30 dni przed dodaniem lub zastąpieniem dalszego
+      podmiotu przetwarzającego. Mogą Państwo wnieść sprzeciw z uzasadnionych przyczyn związanych z ochroną danych,
+      wysyłając nam e-mail przed wprowadzeniem zmiany. Jeśli nie będziemy w stanie rozwiać Państwa zastrzeżeń,
+      przysługującym Państwu środkiem jest anulowanie Planu lub usunięcie firmy przed wejściem zmiany w życie.
+    </li>
+    <li>
+      <strong>Skrzynka wsparcia.</strong> Nie używamy naszej skrzynki wsparcia do przetwarzania Danych Klienta. Jest ona
+      hostowana przez Google na standardowych warunkach Gmail, dlatego nie należy podawać danych kandydatów w e-mailach do
+      nas. Zamiast tego należy wskazywać oferty pracy i aplikacje za pomocą ich adresów w Emploist, niezawierających
+      wyszukiwanych fraz, takich jak imię i nazwisko kandydata.
+    </li>
+    <li>
+      <strong>Pomoc.</strong> Uwzględniając charakter przetwarzania, udzielimy Państwu rozsądnej pomocy w związku z
+      żądaniami osób, których dane dotyczą, ocenami skutków dla ochrony danych i konsultacjami z organami. Większość żądań
+      można obsłużyć w Emploist, przeglądając, eksportując lub usuwając dane. Jeśli osoba, której dane dotyczą, skontaktuje
+      się z nami w sprawie Danych Klienta, odeślemy ją do Państwa lub przekażemy Państwu jej żądanie.
+    </li>
+    <li>
+      <strong>Naruszenia.</strong> Po stwierdzeniu naruszenia ochrony danych osobowych dotyczącego Danych Klienta bez
+      zbędnej zwłoki powiadomimy o nim Państwa administratorów, przekazując posiadane informacje, i podejmiemy rozsądne
+      kroki w celu jego opanowania. Powiadomienie Państwa nie oznacza przyznania się do winy.
+    </li>
+    <li>
+      <strong>Usuwanie.</strong> Gdy Państwa Plan jest aktywny, Państwa zespół może usuwać aplikacje i oferty pracy w
+      Emploist. Administrator może w dowolnym momencie usunąć całą Państwa firmę. Jeśli potrzebują Państwo usunięcia innych
+      Danych Klienta, należy wysłać nam e-mail i wskazać je za pomocą ich adresu w Emploist lub miejsca, w którym się
+      znajdują, bez podawania danych kandydatów. Gdy zaprzestają Państwo korzystania z Emploist, dokonują Państwo wyboru
+      między zwrotem a usunięciem danych, eksportując aplikacje i usuwając swoją firmę. Gdy Dane Klienta zostaną usunięte,
+      usuwamy je z naszych aktywnych systemów. Kopie przechowywane w naszych kopiach zapasowych i logach są usuwane w miarę
+      ich stopniowego zastępowania, a niektóre informacje mogą pozostać w innych zapisach Państwa firmy, np. w
+      powiadomieniach, do czasu ich usunięcia.
+    </li>
+    <li>
+      <strong>Audyty.</strong> Udostępnimy informacje w rozsądnym zakresie potrzebne do wykazania, że przestrzegamy
+      niniejszej sekcji. Jeśli przepisy o ochronie danych lub SKU wymagają więcej, Państwo lub wyznaczony przez Państwa
+      niezależny audytor mogą raz w roku przeprowadzić audyt naszej zgodności, po uprzednim powiadomieniu z rozsądnym
+      wyprzedzeniem, na Państwa koszt i z zachowaniem obowiązku poufności.
+    </li>
+  </ul>
+
+  <h3>Międzynarodowe przekazywanie danych</h3>
+  <p>
+    Dane Klienta są przetwarzane w lokalizacjach wskazanych w naszym wykazie dalszych podmiotów przetwarzających, a my
+    uzyskujemy do nich dostęp z Indii.
+  </p>
+  <ul>
+    <li>
+      <strong>UE.</strong> Jeśli do przekazania Danych Klienta od Państwa do nas ma zastosowanie unijne RODO, do
+      niniejszego Regulaminu włącza się standardowe klauzule umowne zatwierdzone przez Komisję Europejską w <a
+        href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32021D0914">decyzji wykonawczej Komisji (UE)
+        2021/914</a
+      > („SKU”; ang. „SCCs”). Moduł drugi ma zastosowanie, gdy są Państwo administratorem, a moduł trzeci – gdy są Państwo
+      podmiotem przetwarzającym. Są Państwo podmiotem przekazującym dane, a my jesteśmy podmiotem odbierającym dane. Ma
+      zastosowanie klauzula 7. W ramach klauzuli 9 lit. a) ma zastosowanie opcja 2 z okresem wyprzedzenia wskazanym
+      powyżej. Opcja przewidziana w klauzuli 11 lit. a) nie ma zastosowania. Właściwy organ nadzorczy ustala się zgodnie
+      z klauzulą 13 lit. a). Zgodnie z klauzulami 17 i 18 lit. b) SKU podlegają prawu Irlandii, a spory rozstrzygają
+      sądy Irlandii. Załącznik I uzupełnia się na podstawie powyższych szczegółów przetwarzania, sekcji 21 oraz danych
+      Państwa konta. Załącznik II stanowią opisane powyżej środki bezpieczeństwa, a Załącznik III – nasz wykaz dalszych
+      podmiotów przetwarzających. Akceptacja niniejszego Regulaminu jest równoznaczna z podpisaniem SKU i ich załączników
+      w dniu tej akceptacji.
+    </li>
+    <li>
+      <strong>Wielka Brytania.</strong> Jeśli ma zastosowanie brytyjskie RODO (UK GDPR), SKU stosuje się ze zmianami
+      wprowadzonymi przez aneks dotyczący międzynarodowego przekazywania danych (International Data Transfer Addendum)
+      wydany przez brytyjskiego Komisarza ds. Informacji (Information Commissioner), w wersji B1.0, przy czym tabele tego
+      aneksu uzupełnia się na podstawie niniejszej sekcji i sekcji 21. Żadna ze stron nie może rozwiązać tego aneksu na
+      podstawie jego sekcji 19.
+    </li>
+    <li>
+      <strong>Szwajcaria.</strong> Jeśli ma zastosowanie szwajcarska federalna ustawa o ochronie danych (FADP/nDSG), SKU
+      stosuje się w taki sposób, że odniesienia do RODO należy rozumieć jako odniesienia do tej ustawy, a właściwym
+      organem nadzorczym jest szwajcarski Federalny Komisarz ds. Ochrony Danych i Informacji. Termin „państwo
+      członkowskie” nie uniemożliwia osobom, których dane dotyczą, znajdującym się w Szwajcarii dochodzenia roszczeń w
+      miejscu ich zwykłego pobytu zgodnie z klauzulą 18 lit. c).
+    </li>
+    <li>
+      <strong>Dalsze przekazywanie.</strong> Jeśli przetwarzanie przez nasze dalsze podmioty przetwarzające wymaga
+      mechanizmu przekazywania danych, opieramy się na SKU lub innym mechanizmie uznawanym przez przepisy o ochronie
+      danych. Odpowiadają Państwo za zapewnienie, aby przesyłanie Danych Klienta do asystentów AI połączonych przez
+      Państwa zespół stanowiło zgodne z prawem przekazanie danych.
+    </li>
+  </ul>
+  <p>
+    W razie sprzeczności między niniejszym Regulaminem a SKU lub brytyjskim aneksem pierwszeństwo mają SKU lub brytyjski
+    aneks.
+  </p>
+
+  <h3>Przepisy stanowe USA dotyczące prywatności</h3>
+  <p>
+    Jeśli ma zastosowanie kalifornijska ustawa o ochronie prywatności konsumentów (California Consumer Privacy Act) lub
+    podobna ustawa stanowa w USA, w odniesieniu do Danych Klienta jesteśmy Państwa usługodawcą (service provider) lub
+    podmiotem przetwarzającym (processor). Będziemy je przetwarzać wyłącznie w celach określonych w niniejszej sekcji.
+    Nie będziemy ich sprzedawać ani udostępniać, przechowywać, wykorzystywać ani ujawniać poza naszą bezpośrednią
+    relacją biznesową z Państwem ani łączyć ich z innymi danymi osobowymi, chyba że te przepisy na to zezwalają. Będziemy
+    wypełniać obowiązki nałożone przez te przepisy na usługodawców i poinformujemy Państwa, jeśli nie będziemy już w
+    stanie tego robić. Mogą Państwo podejmować rozsądne kroki, aby zapewnić, że wykorzystujemy Dane Klienta zgodnie z
+    Państwa obowiązkami wynikającymi z tych przepisów, oraz aby powstrzymać i naprawić wszelkie nieuprawnione
+    wykorzystanie.
+  </p>
+
+  <h3>Indie</h3>
+  <p>
+    Jeśli do Danych Klienta ma zastosowanie indyjska ustawa Digital Personal Data Protection Act, 2023 (ustawa o
+    ochronie cyfrowych danych osobowych z 2023 r.), są Państwo powiernikiem danych (data fiduciary), a my jesteśmy
+    Państwa podmiotem przetwarzającym dane (data processor).
+  </p>
+
+  <h2 id="suspension-and-termination">14. Zawieszenie i rozwiązanie</h2>
+  <ul>
+    <li>
+      <strong>Zakończenie korzystania.</strong> Mogą Państwo w dowolnym momencie zaprzestać korzystania z Emploist,
+      anulując swój Plan oraz – jeśli chcą Państwo, aby dane firmy zostały usunięte – usuwając swoją firmę. Umowa
+      zawarta na podstawie niniejszego Regulaminu wygasa z chwilą usunięcia Państwa firmy.
+    </li>
+    <li>
+      <strong>Zawieszenie.</strong> Możemy zawiesić dostęp Państwa firmy do Emploist lub do jego części, jeśli płatność
+      nie powiedzie się lub zostanie zakwestionowana, jeśli Państwo lub członkowie Państwa zespołu poważnie lub
+      wielokrotnie naruszają niniejszy Regulamin, jeśli Państwa korzystanie stwarza zagrożenie dla bezpieczeństwa lub
+      mogłoby zaszkodzić innym albo jeśli wymaga tego prawo.
+    </li>
+    <li>
+      <strong>Rozwiązanie z powodu naruszenia.</strong> Możemy rozwiązać umowę zawartą na podstawie niniejszego
+      Regulaminu, jeśli w istotny sposób naruszą Państwo Regulamin i nie usuną naruszenia w ciągu 30 dni od naszego
+      powiadomienia, lub ze skutkiem natychmiastowym, jeśli naruszenia nie da się usunąć lub jest ono poważne, np. w przypadku oszustwa, oszukańczych ofert pracy lub
+      nielegalnych treści. Jeśli będzie to uzasadnione, przed usunięciem Danych Klienta damy Państwa administratorom
+      możliwość ich wyeksportowania.
+    </li>
+    <li>
+      <strong>Jeśli przestaniemy oferować Emploist.</strong> Poinformujemy o tym Państwa administratorów e-mailem co
+      najmniej 30 dni wcześniej i zorganizujemy za pośrednictwem Dodo zwrot środków za niewykorzystaną część bieżącego
+      okresu rozliczeniowego.
+    </li>
+    <li>
+      <strong>Po zakończeniu Planu.</strong> Państwa firma pozostaje w trybie tylko do odczytu. Możemy usunąć firmę wraz
+      ze wszystkimi jej danymi, gdy przez 12 miesięcy z rzędu nie ma ona aktywnego Planu, lub po rozwiązaniu przez nas
+      umowy na podstawie niniejszej sekcji.
+    </li>
+    <li>
+      <strong>Postanowienia obowiązujące nadal.</strong> Postanowienia niniejszego Regulaminu, które ze względu na swój
+      charakter powinny obowiązywać po zakończeniu umowy, pozostają w mocy, w tym dotyczące należnych kwot,
+      sekcja 13 – tak długo, jak przechowujemy Dane Klienta – a także postanowienia dotyczące poufności, własności
+      intelektualnej, wyłączeń gwarancji, ograniczenia odpowiedzialności, zwolnienia z odpowiedzialności i prawa
+      właściwego.
+    </li>
+  </ul>
+
+  <h2 id="disclaimers">15. Wyłączenia gwarancji</h2>
+  <p>
+    <strong
+      >Z wyjątkiem przypadków wyraźnie wskazanych w niniejszym Regulaminie i w zakresie dozwolonym przez prawo Emploist
+      jest udostępniany w stanie, w jakim jest („as is”), i w miarę dostępności („as available”), bez jakichkolwiek
+      gwarancji, wyraźnych, dorozumianych lub ustawowych, w tym gwarancji przydatności handlowej, przydatności do
+      określonego celu, tytułu prawnego, nienaruszania praw osób trzecich i dokładności, a także bez jakiejkolwiek
+      gwarancji, że Emploist będzie działał nieprzerwanie, bezpiecznie lub bezbłędnie.</strong
+    >
+  </p>
+  <p>
+    W szczególności nie obiecujemy, że wyniki dopasowania lub inne wyniki generowane przez AI będą dokładne, kompletne
+    lub wolne od stronniczości, że asystenci AI będą działać prawidłowo lub ignorować polecenia zawarte w treściach
+    pisanych przez kandydatów, nie obiecujemy też żadnego wyniku rekrutacji ani tego, że korzystanie przez Państwa z
+    Emploist będzie spełniać wymogi przepisów mających zastosowanie do prowadzonej przez Państwa rekrutacji. Żadne
+    treści w Emploist ani w naszych poradnikach nie stanowią porady prawnej.
+  </p>
+
+  <h2 id="liability">16. Ograniczenie odpowiedzialności</h2>
+  <p>W zakresie dozwolonym przez prawo:</p>
+  <ul>
+    <li>
+      Żadna ze stron nie będzie ponosić odpowiedzialności wobec drugiej strony za jakiekolwiek szkody pośrednie,
+      przypadkowe, szczególne, wynikowe ani odszkodowania o charakterze karnym, ani za utratę zysków, przychodów,
+      interesów handlowych, renomy lub danych, nawet jeśli została poinformowana o możliwości ich wystąpienia.
+    </li>
+    <li>
+      <strong
+        >Nasza łączna odpowiedzialność z tytułu wszystkich roszczeń wynikających z niniejszego Regulaminu lub Emploist albo
+        z nimi związanych jest ograniczona do kwoty zapłaconej przez Państwa za Emploist w okresie 12 miesięcy przed
+        powstaniem roszczenia, bez uwzględnienia podatków.</strong
+      >
+    </li>
+    <li>
+      Powyższe ograniczenia mają zastosowanie do wszelkiej odpowiedzialności między stronami, w tym na podstawie sekcji 13
+      i SKU. Nie ograniczają one praw osób, których dane dotyczą, wynikających z przepisów o ochronie danych lub SKU, ani
+      odpowiedzialności, której prawo nie pozwala ograniczyć, np. za oszustwo.
+    </li>
+    <li>
+      Pierwszy z powyższych punktów nie ogranicza kwot należnych od Państwa za Plan i Kredyty, Państwa zobowiązań
+      wynikających z <a href="#indemnity">sekcji 17</a> ani Państwa odpowiedzialności za naruszenie <a
+        href="#acceptable-use">sekcji 8</a
+      > lub naruszenie naszej własności intelektualnej.
+    </li>
+  </ul>
+
+  <h2 id="indemnity">17. Zwolnienie z odpowiedzialności</h2>
+  <p>
+    W zakresie dozwolonym przez prawo będą Państwo bronić nas przed wszelkimi roszczeniami, żądaniami lub postępowaniami
+    osób trzecich, takich jak kandydat lub organ, i pokryją wszelkie wynikające z nich odszkodowania, kary pieniężne,
+    kwoty ugód, koszty i uzasadnione koszty zastępstwa prawnego, w zakresie, w jakim dane roszczenie, żądanie lub
+    postępowanie wynika z:
+  </p>
+  <ul>
+    <li>
+      Danych Klienta lub innych treści, które Państwo lub członkowie Państwa zespołu umieszczają w Emploist lub publikują
+      za jego pośrednictwem
+    </li>
+    <li>Państwa decyzji rekrutacyjnych</li>
+    <li>kodu, który Państwo lub członkowie Państwa zespołu dodają do Emploist</li>
+    <li>działań asystentów AI członków Państwa zespołu w Emploist oraz otrzymywanych przez nich Danych Klienta</li>
+    <li>naruszenia niniejszego Regulaminu lub prawa przez Państwa lub członków Państwa zespołu</li>
+  </ul>
+  <p>
+    Nie dotyczy to zakresu, w jakim roszczenie zostało spowodowane naruszeniem przez nas niniejszego Regulaminu.
+    Niezwłocznie poinformujemy Państwa o roszczeniu, pozwolimy Państwu kierować obroną, z wyjątkiem kwestii dotyczących
+    naszych własnych obowiązków regulacyjnych, i udzielimy Państwu rozsądnej pomocy na Państwa koszt. Bez naszej
+    pisemnej zgody nie zawrą Państwo ugody w sprawie roszczenia w sposób oznaczający przyznanie się do winy w naszym
+    imieniu lub nakładający na nas zobowiązania.
+  </p>
+
+  <h2 id="changes">18. Zmiany niniejszego Regulaminu</h2>
+  <p>
+    Możemy aktualizować niniejszy Regulamin, publikując tutaj nową wersję i aktualizując datę u góry strony. O istotnych
+    zmianach poinformujemy Państwa administratorów e-mailem co najmniej 30 dni przed ich wejściem w życie. Jeśli nie
+    zgadzają się Państwo na zmiany, mogą Państwo przed tym terminem anulować Plan lub usunąć firmę. Jeśli będą Państwo
+    nadal korzystać z Emploist po wejściu zmian w życie, oznacza to ich akceptację. Zmiany nie obniżą poziomu ochrony,
+    jaki sekcja 13 zapewnia Danym Klienta, chyba że wymaga tego prawo.
+  </p>
+
+  <h2 id="disputes">19. Prawo właściwe i spory</h2>
+  <p>
+    Niniejszy Regulamin oraz wszelkie spory wynikające z niego lub z Emploist albo z nimi związane podlegają prawu Indii.
+    Przed wszczęciem postępowania sądowego należy przesłać nam e-mailem szczegóły sporu, a obie strony podejmą w dobrej
+    wierze próbę jego rozwiązania w ciągu 30 dni. Jeśli się to nie uda, wyłączną jurysdykcję mają sądy w Kozhikode
+    (Kerala, Indie). Każda ze stron może jednak zwrócić się do dowolnego sądu o zastosowanie pilnych środków ochrony
+    prawnej, np. w celu ochrony własności intelektualnej lub informacji poufnych. Spory na podstawie SKU podlegają
+    prawu i sądom wskazanym w SKU.
+  </p>
+
+  <h2 id="general">20. Postanowienia ogólne</h2>
+  <ul>
+    <li>
+      <strong>Całość umowy.</strong> Niniejszy Regulamin, w tym nasz wykaz dalszych podmiotów przetwarzających, stanowi
+      całość umowy między stronami dotyczącej Emploist i zastępują wszelkie wcześniejsze umowy w tym zakresie.
+      Postanowienia zawarte w Państwa zamówieniach zakupu lub innych dokumentach nie mają zastosowania.
+    </li>
+    <li>
+      <strong>Przeniesienie.</strong> Nie mogą Państwo przenieść praw i obowiązków wynikających z niniejszego Regulaminu bez
+      naszej pisemnej zgody. Możemy je przenieść na następcę, który przejmie Emploist, np. na spółkę utworzoną w celu jego
+      prowadzenia lub na nabywcę, i poinformujemy o tym Państwa administratorów.
+    </li>
+    <li>
+      <strong>Zdarzenia od nas niezależne.</strong> Żadna ze stron nie ponosi odpowiedzialności za opóźnienia lub
+      niewykonanie zobowiązań spowodowane zdarzeniami pozostającymi poza rozsądną kontrolą, takimi jak klęski
+      żywiołowe, wojna, działania władz publicznych lub awarie internetu bądź naszych dostawców. Nie zwalnia to z
+      obowiązku zapłaty.
+    </li>
+    <li>
+      <strong>Zawiadomienia.</strong> Zawiadomienia wysyłamy na adresy e-mail Państwa administratorów. Zawiadomienia do
+      nas należy wysyłać na adres <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Zawiadomienie wysłane
+      e-mailem uważa się za doręczone w chwili jego wysłania, chyba że nadawca otrzyma informację o niedoręczeniu.
+    </li>
+    <li>
+      <strong>Rozdzielność postanowień i zrzeczenie się praw.</strong> Jeśli którekolwiek postanowienie niniejszego
+      Regulaminu nie może zostać wyegzekwowane, pozostałe postanowienia nadal obowiązują. Nieegzekwowanie któregokolwiek
+      postanowienia niniejszego Regulaminu nie oznacza zrzeczenia się prawa do jego egzekwowania w przyszłości.
+    </li>
+    <li>
+      <strong>Relacja między stronami.</strong> Strony są od siebie niezależne. Niniejszy Regulamin nie tworzy spółki,
+      wspólnego przedsięwzięcia, stosunku pracy ani stosunku przedstawicielstwa, a nikt inny nie ma praw na jego
+      podstawie, z wyjątkiem osób, których dane dotyczą, na podstawie SKU.
+    </li>
+    <li>
+      <strong>Sankcje.</strong> Potwierdzają Państwo, że nie znajdują się Państwo ani nie zostali utworzeni w państwie
+      lub regionie objętym kompleksowymi sankcjami oraz że ani Państwo, ani członkowie Państwa zespołu nie figurują na
+      żadnej liście sankcyjnej.
+    </li>
+    <li>
+      <strong>Język i wykładnia.</strong> Niniejszy Regulamin został sporządzony w języku angielskim, a wersja angielska ma
+      pierwszeństwo przed wszelkimi tłumaczeniami. Wyrażenia „w tym” i „na przykład” („including”, „for example”)
+      oznaczają „w tym w szczególności, lecz nie wyłącznie” („including without limitation”), a nagłówki służą wyłącznie
+      ułatwieniu lektury.
+    </li>
+  </ul>
+
+  <h2 id="contact">21. Kontakt</h2>
+  <p>
+    Emploist jest prowadzony przez Navaneeth CT, osobę fizyczną zamieszkałą w Indiach, prowadzącą działalność pod nazwą
+    Emploist. W sprawie pytań, zawiadomień lub skarg dotyczących niniejszego Regulaminu prosimy pisać na adres <a
+      href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+    >. Naszym pełnomocnikiem ds. skarg (Grievance Officer) w rozumieniu indyjskiej ustawy Information Technology Act jest
+    Navaneeth CT, dostępny pod tym samym adresem.
+  </p>
+</LegalLayout>

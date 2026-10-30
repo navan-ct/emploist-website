@@ -1,0 +1,20 @@
+---
+// The translated Privacy Policy, from src/legal/<language>/privacy.astro.
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+export function getStaticPaths() {
+  const pages = import.meta.glob<{ default: AstroComponentFactory }>("../../legal/*/privacy.astro", { eager: true });
+  return Object.entries(pages).map(([path, page]) => ({
+    params: { lang: path.split("/").at(-2) },
+    props: { Page: page.default },
+  }));
+}
+
+interface Props {
+  Page: AstroComponentFactory;
+}
+
+const { Page } = Astro.props;
+---
+
+<Page />

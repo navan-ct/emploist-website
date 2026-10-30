@@ -1,27 +1,57 @@
 ---
-import { Font } from "astro:assets";
+import { Font, fontData } from "astro:assets";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Seo, { type SeoProps } from "../components/Seo.astro";
-import { SITE } from "../lib/site";
+import { getLocale, getMessages } from "../i18n";
+import { LOCALES, type Locale, localizePath, splitPath } from "../i18n/locales";
 import "../styles/global.css";
 
-type Props = SeoProps;
+interface Props extends SeoProps {
+  /**
+   * The page's address in each language, for the language switcher and
+   * search engines. Pages in every language can leave it out; pages that
+   * aren't (like an untranslated post) list only those that exist.
+   */
+  alternates?: Partial<Record<Locale, string>>;
+}
 
-const props = Astro.props;
+const { alternates, ...seo } = Astro.props;
+const locale = getLocale(Astro);
+const t = getMessages(locale);
+const { path } = splitPath(Astro.url.pathname);
+
+const translations: Partial<Record<Locale, string>> =
+  alternates ?? Object.fromEntries(LOCALES.map((option) => [option, localizePath(path, option)]));
+// The switcher offers every language: where this page isn't translated, it
+// goes to the blog in that language, or its home page.
+const switcherLinks = Object.fromEntries(
+  LOCALES.map((option) => [
+    option,
+    translations[option] ?? localizePath(path.startsWith("/blog/") ? "/blog/" : "/", option),
+  ]),
+) as Record<Locale, string>;
+
+// Inter's first file has the basic Latin letters every page needs. Polish and
+// Turkish pages also preload the second, with their extra letters.
+const fonts = fontData["--font-inter"] ?? [];
+const preloads = (locale === "pl" || locale === "tr" ? fonts.slice(0, 2) : fonts.slice(0, 1)).flatMap((font) =>
+  font.src.slice(0, 1),
+);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <Font cssVariable="--font-inter" preload />
-    <Seo {...props} />
+    <Font cssVariable="--font-inter" />
+    {preloads.map((src) => <link rel="preload" href={src.url} as="font" type={`font/${src.format}`} crossorigin />)}
+    <Seo {...seo} locale={locale} alternates={translations} />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} blog`} href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={t.site.blogFeedTitle} href={localizePath("/rss.xml", locale)} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="generator" content={Astro.generator} />
@@ -32,12 +62,12 @@ const props = Astro.props;
       href="#main"
       class="sr-only z-50 rounded-full bg-brand px-4 py-2 text-sm font-medium text-on-brand focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
     >
-      Skip to content
+      {t.site.skipToContent}
     </a>
-    <Header />
+    <Header alternates={switcherLinks} />
     <main id="main" class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer alternates={switcherLinks} />
   </body>
 </html>

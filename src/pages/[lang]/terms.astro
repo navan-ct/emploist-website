@@ -1,0 +1,20 @@
+---
+// The translated Terms of Service, from src/legal/<language>/terms.astro.
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+export function getStaticPaths() {
+  const pages = import.meta.glob<{ default: AstroComponentFactory }>("../../legal/*/terms.astro", { eager: true });
+  return Object.entries(pages).map(([path, page]) => ({
+    params: { lang: path.split("/").at(-2) },
+    props: { Page: page.default },
+  }));
+}
+
+interface Props {
+  Page: AstroComponentFactory;
+}
+
+const { Page } = Astro.props;
+---
+
+<Page />

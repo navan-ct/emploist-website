@@ -1,24 +1,18 @@
 ---
+import { getLocale, getMessages } from "../../i18n";
 import Screenshot from "../Screenshot.astro";
+
+const t = getMessages(getLocale(Astro)).stagesAndEmails;
 ---
 
 <section aria-labelledby="stages-title" class="overflow-hidden border-y border-line bg-subtle py-20 sm:py-28">
   <div class="container-page grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
     <div class="lg:col-span-5">
-      <p class="text-eyebrow">Stages and emails</p>
-      <h2 id="stages-title" class="text-heading mt-4">Keep candidates in the loop, automatically.</h2>
-      <p class="text-lead mt-6">
-        Every job has its own stages. Move an applicant to the next one, and that stage's email goes out on its own,
-        written once and personal for everyone.
-      </p>
+      <p class="text-eyebrow">{t.eyebrow}</p>
+      <h2 id="stages-title" class="text-heading mt-4">{t.title}</h2>
+      <p class="text-lead mt-6">{t.lead}</p>
       <ul class="check-list mt-8 flex flex-col gap-4 text-[0.9375rem] leading-relaxed">
-        <li>Start with ready-made stages, then rename, reorder, and add your own to fit each role.</li>
-        <li>
-          Each stage comes with a ready-made email. Personalize it with details like first name and job title, and check
-          it in a live preview.
-        </li>
-        <li>Moved someone by mistake? Undo it, and the email isn't sent.</li>
-        <li>Emails use your company's template and logo, and replies go to the address you choose.</li>
+        {t.points.map((point) => <li>{point}</li>)}
       </ul>
     </div>
 
@@ -28,14 +22,14 @@ import Screenshot from "../Screenshot.astro";
         <div class="shot w-[92%]">
           <Screenshot
             name="stage-email"
-            alt="The email for the Interviewing stage in Emploist. The subject and message use variables for the applicant's first name, the job title, and the company name."
+            alt={t.editorScreenshotAlt}
             sizes="(min-width: 76rem) 39rem, (min-width: 64rem) 52vw, 92vw"
           />
         </div>
         <div class="relative z-10 -mt-10 ml-auto w-[78%] rounded-xl shadow-[var(--shot-shadow)] sm:-mt-16">
           <Screenshot
             name="stage-email-preview"
-            alt="The finished email, as an applicant named Sam receives it: Northwind Labs at the top, a personal invitation to interview for the Senior Product Designer role, and a link to open roles."
+            alt={t.previewScreenshotAlt}
             sizes="(min-width: 76rem) 33rem, (min-width: 64rem) 44vw, 78vw"
             class="rounded-xl"
           />

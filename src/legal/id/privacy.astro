@@ -1,0 +1,506 @@
+---
+import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SITE } from "../../lib/site";
+
+const sections = [
+  { id: "who-we-are", title: "Siapa kami" },
+  { id: "scope", title: "Peran kami" },
+  { id: "applicants", title: "Untuk pelamar kerja" },
+  { id: "information-we-collect", title: "Informasi yang kami kumpulkan" },
+  { id: "how-we-use-information", title: "Cara kami menggunakan informasi" },
+  { id: "subprocessors", title: "Berbagi data dan subprosesor" },
+  { id: "international-transfers", title: "Transfer internasional" },
+  { id: "retention", title: "Berapa lama kami menyimpan informasi" },
+  { id: "security", title: "Keamanan" },
+  { id: "your-rights", title: "Hak Anda" },
+  { id: "cookies", title: "Cookie" },
+  { id: "children", title: "Anak-anak" },
+  { id: "changes", title: "Perubahan atas kebijakan ini" },
+  { id: "contact", title: "Kontak" },
+] as const;
+---
+
+<LegalLayout
+  document="privacy"
+  title="Kebijakan Privasi"
+  description="Cara Emploist menangani Data Pribadi: apa yang kami kumpulkan, cara penilaian AI dan asisten AI memakai lamaran kerja, pihak yang menerima data, dan hak Anda."
+  translatedFrom="2026-10-30"
+  sections={sections}
+>
+  <h2 id="who-we-are">1. Siapa kami</h2>
+  <p>
+    Emploist adalah sistem pelacakan pelamar (applicant tracking system) untuk pelaku usaha, dengan halaman karier yang
+    di-hosting dan penilaian AI opsional atas lamaran. Emploist dioperasikan oleh Navaneeth CT, orang perseorangan yang
+    berdomisili di India ("Emploist" atau "kami").
+  </p>
+  <p>
+    Kebijakan ini menjelaskan cara kami menangani Data Pribadi saat Anda menggunakan aplikasi Emploist, termasuk
+    melalui asisten AI yang Anda hubungkan ke aplikasi tersebut, melamar pekerjaan di halaman karier yang berjalan di
+    Emploist, mengunjungi emploist.com, atau menghubungi kami. Anda dapat menghubungi kami di <a
+      href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+    >.
+  </p>
+
+  <h2 id="scope">2. Peran kami</h2>
+  <p>
+    Perusahaan yang menggunakan Emploist ("pelanggan" atau "pemberi kerja"; bahasa Inggris: "customers" atau
+    "employers") memasukkan konten mereka sendiri ke dalamnya, seperti lowongan dan komentar, dan menerima lamaran
+    melaluinya. Bersama dengan skor kecocokan dan catatan lain yang dibuat Emploist dari konten dan lamaran tersebut,
+    semua ini merupakan "Data Pelanggan" ("Customer Data") sebagaimana didefinisikan dalam <a href="/id/terms/"
+      >Ketentuan</a
+    > kami. Setiap pelanggan mengendalikan Data Pelanggan miliknya, dan kami memprosesnya atas nama pelanggan berdasarkan
+    <a href="/id/terms/#data-processing">ketentuan pemrosesan data</a> kami.
+  </p>
+  <p>
+    Kami adalah Pengendali Data Pribadi atas Data Pribadi yang kami gunakan sendiri untuk menjalankan Emploist: detail
+    akun anggota tim, undangan yang kami kirim, koneksi asisten AI, catatan penagihan, email dukungan, log keamanan, dan
+    data tentang pengunjung situs web kami. Kebijakan ini terutama mencakup data tersebut.
+  </p>
+
+  <h2 id="applicants">3. Untuk pelamar kerja</h2>
+  <p>
+    Jika Anda melamar pekerjaan melalui halaman karier yang berjalan di Emploist, pemberi kerja pemilik halaman tersebut
+    yang mengendalikan lamaran Anda. Pemberi kerja menentukan apa yang ditanyakan dalam formulir, siapa yang melihat
+    lamaran Anda, apakah AI digunakan, dan berapa lama lamaran Anda disimpan. Harap baca pemberitahuan privasi pemberi
+    kerja, dan hubungi pemberi kerja untuk pertanyaan atau permintaan tentang lamaran Anda. Jika Anda menghubungi kami
+    sebagai gantinya, kami akan merujuk Anda kepada pemberi kerja atau meneruskan permintaan Anda kepadanya. Email Anda
+    disimpan di kotak masuk dukungan kami, yang di-hosting oleh Google.
+  </p>
+  <p>Untuk pemberi kerja, Emploist:</p>
+  <ul>
+    <li>
+      menyimpan nama, alamat email, CV, dan jawaban Anda atas pertanyaan pemberi kerja, serta tahap dan riwayat lamaran
+      Anda, dan menyediakannya bagi tim pemberi kerja
+    </li>
+    <li>
+      mengirim email yang diatur oleh pemberi kerja, misalnya saat Anda melamar atau lamaran Anda dipindahkan ke tahap
+      baru, melalui penyedia email kami
+    </li>
+    <li>
+      jika pemberi kerja mengaktifkan penilaian AI, mengirim teks CV Anda, jawaban Anda (kecuali nomor telepon), dan
+      detail lowongan ke penyedia AI kami, TypeSafe AI, Inc., di Amerika Serikat, untuk memberi skor seberapa cocok
+      lamaran Anda dengan lowongan tersebut. Skor tersebut membantu pemberi kerja menentukan lamaran mana yang perlu
+      ditinjau lebih dulu. Skor tersebut dengan sendirinya tidak menolak, meloloskan, atau mengirim email kepada Anda.
+      Orang-orang di tim pemberi kerja yang membuat keputusan.
+    </li>
+    <li>
+      mengirim lamaran Anda ke asisten AI, seperti Claude atau ChatGPT, yang dihubungkan ke Emploist oleh orang-orang di
+      tim pemberi kerja, saat diminta. Asisten ini dijalankan oleh perusahaan yang dipilih oleh tim pemberi
+      kerja, berdasarkan syarat dan ketentuan yang disepakati pemberi kerja atau anggota timnya dengan perusahaan
+      tersebut.
+    </li>
+  </ul>
+  <p>
+    Saat Anda mengunjungi halaman karier atau melamar, server kami juga mencatat data teknis, seperti alamat IP dan detail
+    browser Anda, dalam log permintaan. Kami mengendalikan log ini dan menggunakannya untuk menjaga agar Emploist tetap
+    berfungsi dan aman.
+  </p>
+
+  <h2 id="information-we-collect">4. Informasi yang kami kumpulkan</h2>
+  <ul>
+    <li>
+      <strong>Informasi akun.</strong> Nama dan alamat email Anda, yang Anda berikan kepada kami atau yang kami peroleh
+      dari Google atau Microsoft jika Anda masuk menggunakan layanan tersebut. Anda perlu memberikan informasi ini kepada
+      kami untuk menggunakan Emploist.
+    </li>
+    <li>
+      <strong>Aktivitas Anda di Emploist.</strong> Apa yang Anda lakukan untuk perusahaan Anda, seperti lowongan yang Anda
+      buat, komentar Anda, dan lamaran yang Anda pindahkan, termasuk melalui asisten AI yang Anda hubungkan, disimpan
+      bersama nama Anda dan dapat dilihat oleh rekan tim Anda. Informasi ini merupakan bagian dari Data Pelanggan
+      perusahaan Anda.
+    </li>
+    <li>
+      <strong>Undangan.</strong> Saat admin mengundang seseorang, kami menyimpan alamat email orang yang diundang,
+      perannya, dan siapa yang mengundangnya, serta mengirimkan undangan kepadanya melalui email.
+    </li>
+    <li>
+      <strong>Koneksi asisten AI.</strong> Jika Anda menghubungkan asisten AI, kami menyimpan asisten mana yang Anda
+      izinkan, detailnya, dan token yang memungkinkannya bekerja untuk Anda.
+    </li>
+    <li>
+      <strong>Penagihan.</strong> Dodo Payments menjual paket kami dan menangani detail pembayaran, dan kami tidak pernah
+      melihat nomor kartu Anda secara lengkap. Kami mengirimkan kepada Dodo alamat email admin yang pertama kali
+      melakukan checkout dan nama perusahaan, dan kami menerima status paket dan catatan pembayaran dari Dodo. Kami juga
+      menyimpan catatan tentang siapa yang telah menggunakan uji coba gratis.
+    </li>
+    <li>
+      <strong>Informasi teknis.</strong> Saat Anda masuk, kami menyimpan catatan sesi beserta alamat IP dan detail
+      browser Anda. Server kami menyimpan log permintaan yang berisi alamat IP, detail browser, serta alamat halaman dan
+      data yang diminta, yang dapat mencakup detail dari Data Pelanggan, seperti kata kunci pencarian. Kami menggunakan
+      Data Pelanggan dalam log kami hanya untuk menyediakan, mengamankan, dan mendukung Emploist, sebagaimana dijelaskan
+      dalam ketentuan pemrosesan data kami.
+    </li>
+    <li>
+      <strong>Dukungan.</strong> Jika Anda mengirim email kepada kami, kami menerima alamat email Anda, pesan Anda, dan
+      apa pun yang Anda sertakan. Cloudflare meneruskan email ini ke kotak masuk dukungan kami, yang di-hosting oleh
+      Google (Gmail).
+    </li>
+    <li>
+      <strong>Pengunjung situs web.</strong> emploist.com tidak memiliki analitik, formulir, atau skrip pihak ketiga.
+      Penyedia hosting-nya menerima data permintaan standar, seperti alamat IP dan detail browser Anda.
+    </li>
+  </ul>
+
+  <h3 id="google-microsoft">Masuk dengan Google dan Microsoft</h3>
+  <p>
+    Jika Anda masuk dengan Google atau Microsoft, kami menerima nama, alamat email, ID akun, dan token masuk Anda, serta,
+    dari Google, tautan ke foto profil Anda. Kami hanya meminta akses profil dasar, bukan akses ke email, file, atau apa
+    pun lainnya di akun Anda. Proses masuk dengan Microsoft juga meminta untuk mempertahankan akses dasar tersebut dari
+    waktu ke waktu, sehingga Microsoft memberi kami token berjangka panjang. Kami menggunakan data ini hanya untuk
+    memungkinkan Anda masuk dan untuk menampilkan nama dan alamat email Anda di Emploist, termasuk kepada rekan tim Anda
+    dan asisten AI yang mereka hubungkan. Kami menyimpannya bersama akun Anda hingga Anda menghapus akun Anda, dan kami
+    tidak menjualnya, tidak menggunakannya untuk iklan, dan tidak membagikannya kecuali sebagaimana dijelaskan dalam
+    kebijakan ini. Anda dapat mencabut akses Emploist di pengaturan akun Google atau Microsoft Anda.
+  </p>
+
+  <h2 id="how-we-use-information">5. Cara kami menggunakan informasi</h2>
+  <p>
+    Kami menggunakan Data Pribadi hanya untuk tujuan-tujuan berikut. Jika Anda berada di Kawasan Ekonomi Eropa (EEA)
+    atau Britania Raya, tabel ini juga menunjukkan dasar hukum yang kami andalkan.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Tujuan</th>
+        <th>Dasar hukum</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Menyediakan Emploist: menjalankan akun dan perusahaan, halaman karier, email yang diatur oleh pelanggan, dan
+          asisten AI yang dihubungkan oleh orang-orang
+        </td>
+        <td>
+          Kepentingan yang sah dalam menyediakan layanan yang menjadi langganan perusahaan Anda, atau kontrak kami dengan
+          Anda jika Anda secara pribadi merupakan pihak dalam kontrak tersebut
+        </td>
+      </tr>
+      <tr>
+        <td>Memungkinkan Anda masuk dan menjaga keamanan Emploist, termasuk mencegah spam dan penyalahgunaan</td>
+        <td>Kepentingan yang sah dalam menjaga Emploist dan orang-orang yang menggunakannya tetap aman</td>
+      </tr>
+      <tr>
+        <td>Melakukan penagihan melalui Dodo, mencatat kredit AI, dan mencegah uji coba gratis berulang</td>
+        <td>
+          Kepentingan yang sah dalam menjalankan paket dan menyimpan catatan pajak dan akuntansi yang diwajibkan oleh
+          hukum
+        </td>
+      </tr>
+      <tr>
+        <td>Menjawab pertanyaan dan permintaan Anda</td>
+        <td>Kepentingan yang sah dalam membantu orang-orang yang menggunakan Emploist</td>
+      </tr>
+      <tr>
+        <td>Email layanan, seperti kode masuk, undangan, dan pemberitahuan penting tentang Emploist</td>
+        <td>Kepentingan yang sah dalam memungkinkan orang masuk dan memastikan pelanggan tetap mendapat informasi</td>
+      </tr>
+      <tr>
+        <td>
+          Menemukan dan memperbaiki masalah, menjaga agar Emploist dan situs web kami tetap berfungsi, dan meningkatkan
+          Emploist menggunakan informasi penggunaan yang diagregasi atau dihilangkan unsur identitasnya
+        </td>
+        <td>Kepentingan yang sah dalam menjalankan Emploist dengan baik</td>
+      </tr>
+      <tr>
+        <td>Mematuhi hukum, menegakkan Ketentuan kami, dan menangani klaim hukum</td>
+        <td>
+          Kewajiban hukum berdasarkan hukum Uni Eropa atau Britania Raya, apabila berlaku, dan dalam hal lainnya,
+          kepentingan yang sah dalam mematuhi hukum dan melindungi hak-hak kami
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Kami tidak menjual Data Pribadi, tidak menggunakannya untuk iklan, dan tidak mengirim email pemasaran. Kami tidak
+    menggunakan Data Pelanggan untuk melatih model AI. Kami tidak membuat keputusan tentang Anda yang semata-mata
+    didasarkan pada pemrosesan secara otomatis yang menimbulkan akibat hukum atau akibat signifikan serupa bagi Anda.
+  </p>
+
+  <h3 id="right-to-object">Hak Anda untuk mengajukan keberatan</h3>
+  <p>
+    <strong
+      >Jika Anda berada di EEA atau Britania Raya, Anda dapat sewaktu-waktu mengajukan keberatan, atas dasar yang
+      berkaitan dengan situasi Anda, terhadap penggunaan Data Pribadi Anda oleh kami yang didasarkan pada kepentingan
+      yang sah.</strong
+    > Untuk mengajukan keberatan, kirim email ke <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Kami
+    kemudian akan berhenti melakukannya, kecuali kami memiliki alasan sah yang kuat yang mengesampingkan kepentingan,
+    hak, dan kebebasan Anda, atau kami memerlukan data tersebut untuk klaim hukum.
+  </p>
+
+  <h2 id="subprocessors">6. Berbagi data dan subprosesor</h2>
+
+  <h3>Subprosesor</h3>
+  <p>
+    Penyedia berikut memproses Data Pribadi untuk kami dalam menjalankan Emploist. Untuk Data Pelanggan, penyedia
+    tersebut adalah subprosesor kami, dan inilah daftar yang dirujuk dalam <a href="/id/terms/#data-processing"
+      >ketentuan pemrosesan data</a
+    > kami.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Penyedia</th>
+        <th>Fungsinya</th>
+        <th>Lokasi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>OVHcloud</td>
+        <td>Hosting server dan basis data aplikasi</td>
+        <td>Singapura</td>
+      </tr>
+      <tr>
+        <td>Cloudflare, Inc.</td>
+        <td>
+          Penyimpanan file dan cadangan basis data, DNS, pengiriman logo, dan penerusan email yang dikirim ke alamat
+          dukungan kami
+        </td>
+        <td>Asia-Pasifik (penyimpanan file) dan seluruh dunia</td>
+      </tr>
+      <tr>
+        <td>TypeSafe AI, Inc.</td>
+        <td>Penilaian AI atas lamaran, untuk perusahaan yang mengaktifkannya</td>
+        <td>Amerika Serikat</td>
+      </tr>
+      <tr>
+        <td>Resend (Plus Five Five, Inc.)</td>
+        <td>Pengiriman email</td>
+        <td>Jepang dan Amerika Serikat</td>
+      </tr>
+    </tbody>
+  </table>
+  <p id="about-typesafe">
+    Syarat dan ketentuan TypeSafe menyatakan bahwa TypeSafe tidak akan menggunakan data yang kami kirimkan untuk melatih
+    model AI-nya. Syarat dan ketentuan tersebut mengizinkan TypeSafe menyimpan dan menggunakan data tersebut untuk
+    tujuannya sendiri, seperti mencegah penipuan dan penyalahgunaan, mematuhi hukum, dan telemetri layanan. Lihat <a
+      href="https://typesafe.ai/legal/privacy-policy">kebijakan privasi</a
+    > dan <a href="https://typesafe.ai/legal/data-processing">adendum pemrosesan data</a> TypeSafe.
+  </p>
+  <p>
+    Kami akan memperbarui daftar ini sebelum kami menambahkan atau mengganti subprosesor, dan memberi tahu pelanggan
+    sebagaimana dijelaskan dalam ketentuan pemrosesan data kami. Situs web kami, emploist.com, di-hosting oleh Vercel,
+    yang menerima data permintaan dari pengunjung situs web, tetapi tidak menerima data di aplikasi Emploist.
+  </p>
+
+  <h3>Penerima lain</h3>
+  <ul>
+    <li>
+      <strong>Dodo Payments</strong> (<a href="https://dodopayments.com/legal/privacy-policy">kebijakan privasi</a>),
+      merchant of record (penjual tercatat) untuk paket kami, yang menggunakan detail penagihan yang dijelaskan di atas
+      berdasarkan kebijakan privasinya sendiri.
+    </li>
+    <li>
+      <strong>Google</strong> (<a href="https://policies.google.com/privacy">kebijakan privasi</a>) dan <strong
+        >Microsoft</strong
+      > (<a href="https://privacy.microsoft.com/privacystatement">pernyataan privasi</a>), jika Anda masuk menggunakan
+      layanan tersebut.
+    </li>
+    <li>
+      <strong>Google</strong>, yang meng-hosting kotak masuk dukungan kami (Gmail) berdasarkan syarat dan ketentuannya
+      sendiri serta <a href="https://policies.google.com/privacy">kebijakan privasinya</a>, bukan berdasarkan perjanjian
+      pemrosesan data. Google menyimpan email yang dikirim orang kepada kami, dan balasan kami dikirim dari alamat Gmail.
+      Jika Anda pelanggan, jangan sertakan detail pelamar dalam email kepada kami. Sebagai gantinya, rujuklah lowongan
+      dan lamaran menggunakan alamatnya di Emploist, tanpa kata kunci pencarian di dalamnya, seperti nama pelamar.
+    </li>
+    <li>
+      <strong>Asisten AI</strong> yang Anda atau rekan tim Anda hubungkan. Kami mengirimkan kepada asisten data yang
+      dimintanya, yang dapat mencakup nama, alamat email, dan peran Anda, serta Data Pelanggan perusahaan Anda. Setiap
+      asisten dijalankan oleh perusahaan yang dipilih oleh Anda atau perusahaan Anda, seperti Anthropic atau OpenAI,
+      berdasarkan syarat dan ketentuannya sendiri. Asisten tersebut bukan subprosesor kami, dan kami tidak mengendalikan
+      apa yang diterimanya.
+    </li>
+    <li>
+      <strong>Perusahaan Anda.</strong> Rekan tim Anda dapat melihat nama, alamat email, dan aktivitas Anda di Emploist.
+    </li>
+    <li>
+      <strong>Penasihat profesional</strong>, seperti pengacara dan akuntan, yang wajib menjaga kerahasiaannya.
+    </li>
+    <li>
+      <strong>Otoritas dan pihak lain</strong>, apabila diwajibkan oleh hukum, atau apabila diperlukan untuk melindungi
+      hak, keselamatan, atau keamanan orang-orang yang menggunakan Emploist, masyarakat, atau Emploist.
+    </li>
+    <li>
+      <strong>Penerus</strong>, jika usaha Emploist dialihkan, misalnya kepada perusahaan yang didirikan untuk
+      menjalankannya atau kepada pembeli.
+    </li>
+  </ul>
+
+  <h2 id="international-transfers">7. Transfer internasional</h2>
+  <p>
+    Server kami berada di Singapura, dan penyimpanan file kami berada di kawasan Asia-Pasifik. Kami mengakses data dari
+    India, dan beberapa penyedia memprosesnya di negara lain, termasuk Amerika Serikat dan Jepang, sebagaimana
+    ditunjukkan dalam daftar di atas. Google dapat menyimpan kotak masuk dukungan kami di pusat datanya di seluruh dunia.
+  </p>
+  <p>
+    Saat Anda menggunakan Emploist atau mengirim email kepada kami, Anda memberikan Data Pribadi Anda secara langsung
+    kepada kami, dan kami melindunginya sebagaimana dijelaskan dalam kebijakan ini. Untuk Data Pelanggan dari EEA,
+    Britania Raya, atau Swiss, ketentuan pemrosesan data kami mencakup Klausul Kontrak Standar (SCC) Komisi Eropa.
+    Apabila pemrosesan oleh penyedia kami memerlukan mekanisme transfer, kami mengandalkan Klausul Kontrak Standar,
+    keputusan kecukupan seperti Kerangka Privasi Data UE-AS, atau mekanisme lain yang diakui oleh hukum pelindungan
+    data. Untuk kotak masuk dukungan kami, kami tidak memiliki Klausul Kontrak Standar dengan Google, dan kami
+    mengandalkan sertifikasi Google LLC berdasarkan Kerangka Privasi Data UE-AS, Perluasan Britania Raya (UK Extension)
+    atas kerangka tersebut, dan Kerangka Privasi Data Swiss-AS. Anda dapat meminta salinan langkah-langkah pelindungan
+    ini kepada kami.
+  </p>
+
+  <h2 id="retention">8. Berapa lama kami menyimpan informasi</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Informasi</th>
+        <th>Berapa lama kami menyimpannya</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Informasi akun</td>
+        <td>
+          Hingga Anda menghapus akun Anda, kecuali nama Anda, yang kami simpan agar komentar dan aktivitas Anda tetap
+          menunjukkan siapa yang melakukannya.
+        </td>
+      </tr>
+      <tr>
+        <td>Informasi perusahaan, undangan, dan Data Pelanggan</td>
+        <td>
+          Hingga admin menghapus perusahaan, atau kami menghapusnya berdasarkan <a
+            href="/id/terms/#suspension-and-termination">Ketentuan</a
+          > kami, misalnya setelah perusahaan tersebut tidak memiliki Paket aktif, sebagaimana didefinisikan dalam
+          Ketentuan kami, selama 12 bulan berturut-turut.
+        </td>
+      </tr>
+      <tr>
+        <td>Data pelamar</td>
+        <td>
+          Pemberi kerja yang menentukan. Saat pemberi kerja menghapus lamaran, lowongan, atau perusahaan, kami
+          menghapusnya dari sistem aktif kami. Salinan dalam cadangan dan log akan terhapus seiring waktu, dan beberapa
+          detail mungkin tetap ada dalam catatan lain milik pemberi kerja, seperti notifikasi, hingga catatan tersebut
+          dihapus.
+        </td>
+      </tr>
+      <tr>
+        <td>Koneksi asisten AI</td>
+        <td>Hingga Anda memutuskan koneksi asisten atau menghapus akun Anda.</td>
+      </tr>
+      <tr>
+        <td>Catatan penagihan</td>
+        <td>
+          Hingga perusahaan dihapus, kecuali catatan tentang siapa yang telah menggunakan uji coba gratis, yang kami
+          simpan untuk mencegah uji coba berulang, dan catatan yang wajib kami simpan menurut hukum.
+        </td>
+      </tr>
+      <tr>
+        <td>Email dukungan</td>
+        <td>Selama kami memerlukannya untuk menangani permintaan Anda dan setiap tindak lanjutnya.</td>
+      </tr>
+      <tr>
+        <td>Log dan cadangan</td>
+        <td>Untuk jangka waktu terbatas, untuk keperluan keamanan, pemecahan masalah, dan pemulihan, lalu dihapus atau ditimpa.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Data yang telah dikirim ke penyedia kami atau ke asisten AI disimpan berdasarkan syarat dan ketentuan mereka sendiri.</p>
+
+  <h2 id="security">9. Keamanan</h2>
+  <p>
+    Kami melindungi Data Pribadi dengan langkah-langkah yang wajar, termasuk koneksi terenkripsi (HTTPS); kontrol akses
+    sehingga, di dalam aplikasi, hanya tim suatu perusahaan dan asisten AI yang mereka hubungkan yang dapat melihat data
+    perusahaan tersebut; penyimpanan privat untuk CV; proses masuk tanpa kata sandi; dan pencadangan basis data secara
+    berkala. Tidak ada sistem yang sepenuhnya aman. Jika terjadi kegagalan Pelindungan Data Pribadi yang memengaruhi
+    Data Pribadi yang kami kendalikan, kami akan memberi tahu Anda dan otoritas sebagaimana diwajibkan oleh hukum. Jika
+    kegagalan tersebut memengaruhi Data Pelanggan, kami akan memberi tahu pelanggan, sebagaimana dijelaskan dalam
+    ketentuan pemrosesan data kami.
+  </p>
+
+  <h2 id="your-rights">10. Hak Anda</h2>
+  <p>
+    Tergantung pada tempat tinggal Anda, Anda mungkin memiliki hak untuk mengakses, memperbaiki, atau menghapus Data
+    Pribadi Anda, untuk memperoleh salinannya dalam format yang dapat dipindahkan, untuk membatasi atau mengajukan
+    keberatan atas cara kami menggunakannya, untuk menarik persetujuan apabila kami mengandalkan persetujuan tersebut,
+    dan untuk mengajukan pengaduan kepada otoritas pelindungan data.
+  </p>
+  <p>
+    Untuk mengajukan permintaan, kirim email ke <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>,
+    sebaiknya dari alamat email yang terdaftar di akun Anda. Kami mungkin perlu memastikan identitas Anda, dan kami akan
+    menanggapi dalam jangka waktu yang diwajibkan oleh hukum. Anda juga dapat menghapus akun Anda di Pengaturan atau,
+    jika Anda tidak lagi tergabung dalam perusahaan, dengan mengirim email kepada kami. Jika Anda melamar pekerjaan,
+    hubungi pemberi kerja terkait lamaran Anda (lihat <a href="#applicants">Untuk pelamar kerja</a>).
+  </p>
+
+  <h3>EEA dan Britania Raya</h3>
+  <p>
+    Anda dapat mengajukan pengaduan kepada otoritas pelindungan data di tempat Anda tinggal atau bekerja, atau di tempat
+    yang menurut Anda terjadi pelanggaran. Di Britania Raya, otoritas tersebut adalah Information Commissioner's Office.
+    Anda juga dapat mengajukan pengaduan kepada kami melalui email, dan kami akan mengonfirmasi penerimaan pengaduan Anda
+    dalam waktu 30 hari.
+  </p>
+
+  <h3>India</h3>
+  <p>
+    Anda dapat meninjau dan memperbaiki informasi yang telah Anda berikan kepada kami, atau menarik persetujuan yang
+    telah Anda berikan, dengan mengirim email kepada kami. Jika Anda menarik persetujuan atau tidak memberikan informasi
+    yang kami perlukan, kami mungkin tidak dapat menyediakan Emploist kepada Anda. Anda dapat menyampaikan pengaduan apa
+    pun kepada Petugas Pengaduan (Grievance Officer) kami, Navaneeth CT, di <a href={`mailto:${SITE.supportEmail}`}
+      >{SITE.supportEmail}</a
+    >. Seiring mulai berlakunya Digital Personal Data Protection Act, 2023 (Undang-Undang Pelindungan Data Pribadi
+    Digital Tahun 2023) India, Anda juga akan memiliki hak-hak yang diberikan oleh undang-undang tersebut.
+  </p>
+
+  <h2 id="cookies">11. Cookie</h2>
+  <p>Aplikasi Emploist hanya menggunakan cookie berikut, yang diperlukan agar Anda dapat masuk:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Cookie</th>
+        <th>Fungsinya</th>
+        <th>Masa berlaku</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>__Secure-emploist.session_token</code></td>
+        <td>Menjaga Anda tetap masuk</td>
+        <td>7 hari, diperpanjang selama Anda menggunakan aplikasi</td>
+      </tr>
+      <tr>
+        <td><code>__Secure-emploist.state</code></td>
+        <td>Melindungi proses masuk Anda dengan Google atau Microsoft</td>
+        <td>5 menit</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Aplikasi ini juga menggunakan penyimpanan lokal (local storage) browser Anda untuk mengingat tema Anda dan apakah
+    bilah sisi diciutkan. Emploist tidak memasang cookie apa pun di halaman karier atau situs web kami, dan kami tidak
+    menggunakan cookie analitik, iklan, atau pelacakan. Jika desain halaman karier suatu pemberi kerja memuat konten dari
+    situs web lain, situs web tersebut dapat menerima alamat IP Anda dan memasang cookie mereka sendiri.
+  </p>
+
+  <h2 id="children">12. Anak-anak</h2>
+  <p>
+    Emploist ditujukan bagi pelaku usaha, dan Anda harus berusia 18 tahun atau lebih untuk menggunakan aplikasi ini.
+    Kami tidak secara sadar mengumpulkan Data Pribadi dari anak-anak dalam kapasitas kami sebagai Pengendali Data
+    Pribadi. Jika Anda meyakini bahwa kami telah melakukannya, kirim email kepada kami dan kami akan menghapusnya.
+    Pemberi kerja menentukan siapa yang dapat melamar lowongan mereka, dan bertanggung jawab atas setiap persetujuan yang
+    diwajibkan oleh hukum bagi pelamar yang berusia di bawah 18 tahun.
+  </p>
+
+  <h2 id="changes">13. Perubahan atas kebijakan ini</h2>
+  <p>
+    Kami dapat memperbarui kebijakan ini, dan kami akan mengubah tanggal di bagian atas saat melakukannya. Kami akan
+    mengirim email kepada orang-orang yang memiliki akun Emploist mengenai perubahan material sebelum perubahan tersebut
+    berlaku.
+  </p>
+  <p>
+    Kami menerbitkan kebijakan ini dalam bahasa Inggris dan menerjemahkannya ke bahasa lain. Jika suatu terjemahan
+    berbeda dari versi bahasa Inggris, versi bahasa Inggris yang berlaku, sepanjang diizinkan oleh hukum.
+  </p>
+
+  <h2 id="contact">14. Kontak</h2>
+  <p>
+    Untuk pertanyaan atau permintaan terkait privasi, atau untuk menghubungi Petugas Pengaduan kami, Navaneeth CT, kirim
+    email ke <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Emploist dioperasikan oleh Navaneeth CT,
+    orang perseorangan yang berdomisili di India, yang menjalankan usaha dengan nama Emploist.
+  </p>
+</LegalLayout>

@@ -1,0 +1,500 @@
+---
+import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SITE } from "../../lib/site";
+
+const sections = [
+  { id: "who-we-are", title: "Biz kimiz" },
+  { id: "scope", title: "Rolümüz" },
+  { id: "applicants", title: "İş adayları için" },
+  { id: "information-we-collect", title: "Topladığımız bilgiler" },
+  { id: "how-we-use-information", title: "Bilgileri nasıl kullanıyoruz" },
+  { id: "subprocessors", title: "Paylaşım ve alt veri işleyenler" },
+  { id: "international-transfers", title: "Uluslararası aktarımlar" },
+  { id: "retention", title: "Bilgileri ne kadar süre saklıyoruz" },
+  { id: "security", title: "Güvenlik" },
+  { id: "your-rights", title: "Haklarınız" },
+  { id: "cookies", title: "Çerezler" },
+  { id: "children", title: "Çocuklar" },
+  { id: "changes", title: "Bu politikadaki değişiklikler" },
+  { id: "contact", title: "İletişim" },
+] as const;
+---
+
+<LegalLayout
+  document="privacy"
+  title="Gizlilik Politikası"
+  description="Emploist kişisel verileri nasıl işler: topladıklarımız, yapay zekâ puanlaması ve asistanların başvuruları nasıl kullandığı, kimlerle paylaştığımız ve haklarınız."
+  translatedFrom="2026-10-30"
+  sections={sections}
+>
+  <h2 id="who-we-are">1. Biz kimiz</h2>
+  <p>
+    Emploist; barındırılan kariyer sayfaları ve isteğe bağlı olarak başvuruların yapay zekâ ile puanlanmasını sunan,
+    işletmeler için bir aday takip sistemidir. Hindistan'da yerleşik bir gerçek kişi olan Navaneeth CT ("Emploist" veya
+    "biz"; "we", "us") tarafından işletilmektedir.
+  </p>
+  <p>
+    Bu politika; Emploist uygulamasını, uygulamaya bağladığınız bir yapay zekâ asistanı aracılığıyla da dahil olmak
+    üzere, kullandığınızda, Emploist üzerinde çalışan bir kariyer sayfasında bir ilana başvurduğunuzda, emploist.com'u
+    ziyaret ettiğinizde veya bizimle iletişime geçtiğinizde kişisel verileri nasıl işlediğimizi açıklar. Bize <a
+      href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> adresinden ulaşabilirsiniz.
+  </p>
+
+  <h2 id="scope">2. Rolümüz</h2>
+  <p>
+    Emploist'i kullanan şirketler ("müşteriler" veya "işverenler"; "customers", "employers") Emploist'e ilanlar ve
+    yorumlar gibi kendi içeriklerini girer ve Emploist üzerinden başvurular alır. Emploist'in bunlardan oluşturduğu
+    eşleşme puanları ve diğer kayıtlarla birlikte bunlar, <a href="/tr/terms/">Şartlar'ımızda</a> tanımlandığı
+    şekliyle "Müşteri Verileri"ni ("Customer Data") oluşturur. Her müşteri kendi Müşteri Verileri'ni kontrol eder ve biz
+    bu verileri müşteri adına <a href="/tr/terms/#data-processing">veri işleme şartlarımız</a> kapsamında işleriz.
+  </p>
+  <p>
+    Emploist'i kendimiz işletmek için kullandığımız kişisel verilerin veri sorumlusu biziz: ekip üyelerinin hesap
+    bilgileri, gönderdiğimiz davetler, yapay zekâ asistanı bağlantıları, faturalandırma kayıtları, destek e-postaları,
+    güvenlik log kayıtları ve web sitemizin ziyaretçilerine ilişkin veriler. Bu politika esas olarak bu verileri kapsar.
+  </p>
+
+  <h2 id="applicants">3. İş adayları için</h2>
+  <p>
+    Emploist üzerinde çalışan bir kariyer sayfası aracılığıyla bir ilana başvurduysanız, başvurunuzu sayfanın sahibi
+    olan işveren kontrol eder. Formda nelerin sorulacağına, başvurunuzu kimlerin göreceğine, yapay zekâ kullanılıp
+    kullanılmayacağına ve başvurunuzun ne kadar süre saklanacağına işveren karar verir. Lütfen işverenin aydınlatma
+    metnini okuyun ve başvurunuzla ilgili soru veya talepleriniz için işverenle iletişime geçin. Bunun yerine bizimle
+    iletişime geçerseniz sizi işverene yönlendireceğiz veya talebinizi işverene ileteceğiz. E-postanız, Google tarafından
+    barındırılan destek gelen kutumuzda saklanır.
+  </p>
+  <p>Emploist, işveren adına:</p>
+  <ul>
+    <li>
+      adınızı, e-posta adresinizi, özgeçmişinizi, işverenin sorularına verdiğiniz yanıtları ve başvurunuzun aşamasını
+      ve geçmişini saklar ve bunları işverenin ekibinin erişimine sunar
+    </li>
+    <li>
+      işverenin ayarladığı e-postaları, örneğin başvurduğunuzda veya başvurunuz yeni bir aşamaya geçtiğinde, e-posta
+      sağlayıcımız aracılığıyla gönderir
+    </li>
+    <li>
+      işveren yapay zekâ puanlamasını açmışsa, başvurunuzun ilanla ne kadar iyi eşleştiğini puanlamak için
+      özgeçmişinizin metnini, yanıtlarınızı (telefon numaraları hariç) ve ilanın ayrıntılarını, Amerika Birleşik
+      Devletleri'nde bulunan yapay zekâ sağlayıcımız TypeSafe AI, Inc. şirketine gönderir. Puan, işverenin hangi
+      başvuruları önce inceleyeceğine karar vermesine yardımcı olur. Puan tek başına sizi reddetmez, sonraki aşamaya
+      taşımaz veya size e-posta göndermez. Kararları işverenin ekibindeki kişiler verir.
+    </li>
+    <li>
+      işverenin ekibindeki kişilerin Emploist'e bağladığı, Claude veya ChatGPT gibi yapay zekâ asistanlarına, talep
+      edildiğinde başvurunuzu gönderir. Bu asistanlar, işverenin ekibinin seçtiği şirketler tarafından, işverenin veya
+      ekip üyelerinin bu şirketlerle kabul ettiği koşullar kapsamında işletilir.
+    </li>
+  </ul>
+  <p>
+    Bir kariyer sayfasını ziyaret ettiğinizde veya başvurduğunuzda sunucularımız, IP adresiniz ve tarayıcı bilgileriniz
+    gibi teknik verileri de istek log kayıtlarına kaydeder. Bu log kayıtlarını biz kontrol ederiz ve bunları Emploist'in
+    çalışır ve güvenli kalması için kullanırız.
+  </p>
+
+  <h2 id="information-we-collect">4. Topladığımız bilgiler</h2>
+  <ul>
+    <li>
+      <strong>Hesap bilgileri.</strong> Bize verdiğiniz veya Google ya da Microsoft ile giriş yaparsanız bu şirketlerden
+      aldığımız adınız ve e-posta adresiniz. Emploist'i kullanmak için bu bilgileri bize vermeniz gerekir.
+    </li>
+    <li>
+      <strong>Emploist'teki çalışmalarınız.</strong> Bağladığınız yapay zekâ asistanları aracılığıyla yaptıklarınız
+      dahil, oluşturduğunuz ilanlar, yorumlarınız ve taşıdığınız başvurular gibi şirketiniz için yaptıklarınız adınızla
+      birlikte saklanır ve ekip arkadaşlarınız tarafından görülebilir. Bunlar şirketinizin Müşteri Verileri'nin bir
+      parçasıdır.
+    </li>
+    <li>
+      <strong>Davetler.</strong> Bir yönetici birini davet ettiğinde, davet edilen kişinin e-posta adresini, rolünü ve
+      onu kimin davet ettiğini saklar ve bu kişiye e-postayla bir davet göndeririz.
+    </li>
+    <li>
+      <strong>Yapay zekâ asistanı bağlantıları.</strong> Bir yapay zekâ asistanı bağlarsanız, hangi asistana izin
+      verdiğinizi, asistanın bilgilerini ve asistanın sizin adınıza çalışmasını sağlayan belirteçleri saklarız.
+    </li>
+    <li>
+      <strong>Faturalandırma.</strong> Planımızı Dodo Payments satar ve ödeme bilgilerini Dodo Payments işler; kart
+      numaranızın tamamını hiçbir zaman görmeyiz. Dodo'ya ödeme işlemini ilk yapan yöneticinin e-posta adresini ve
+      şirketin adını göndeririz; planın durumunu ve ödeme kayıtlarını da Dodo'dan alırız. Ayrıca kimlerin ücretsiz
+      deneme kullandığının kaydını tutarız.
+    </li>
+    <li>
+      <strong>Teknik bilgiler.</strong> Giriş yaptığınızda IP adresinizi ve tarayıcı bilgilerinizi içeren bir oturum
+      kaydı tutarız. Sunucularımız; IP adreslerini, tarayıcı bilgilerini ve istenen sayfaların ve verilerin adreslerini
+      içeren istek log kayıtları tutar; bunlar, bir arama terimi gibi Müşteri Verileri'nden ayrıntılar içerebilir. Log
+      kayıtlarımızdaki Müşteri Verileri'ni, veri işleme şartlarımızda açıklandığı üzere yalnızca Emploist'i sağlamak,
+      güvenliğini sağlamak ve desteklemek için kullanırız.
+    </li>
+    <li>
+      <strong>Destek.</strong> Bize e-posta gönderirseniz e-posta adresinizi, mesajınızı ve eklediğiniz her şeyi alırız.
+      Cloudflare bu e-postaları, Google tarafından barındırılan destek gelen kutumuza (Gmail) iletir.
+    </li>
+    <li>
+      <strong>Web sitesi ziyaretçileri.</strong> emploist.com'da analiz araçları, formlar veya üçüncü taraf betikleri
+      bulunmaz. Sitenin barındırma sağlayıcısı, IP adresiniz ve tarayıcı bilgileriniz gibi standart istek verilerini
+      alır.
+    </li>
+  </ul>
+
+  <h3 id="google-microsoft">Google ve Microsoft ile giriş</h3>
+  <p>
+    Google veya Microsoft ile giriş yaparsanız adınızı, e-posta adresinizi, hesap kimliğinizi ve giriş belirteçlerinizi,
+    Google'dan ise ayrıca profil fotoğrafınızın bağlantısını alırız. Yalnızca temel profil erişimi isteriz;
+    e-postalarınıza, dosyalarınıza veya hesabınızdaki başka herhangi bir şeye erişim istemeyiz. Microsoft ile giriş, bu
+    temel erişimin zaman içinde sürdürülmesini de ister; bu nedenle Microsoft bize uzun ömürlü bir belirteç verir. Bu
+    verileri yalnızca girişinizi sağlamak ve adınızı ve e-posta adresinizi, ekip arkadaşlarınıza ve onların bağladığı
+    yapay zekâ asistanlarına gösterilmesi dahil olmak üzere, Emploist'te göstermek için kullanırız. Bu verileri, hesabınızı silene kadar
+    hesabınızla birlikte saklarız; bu verileri satmayız, reklam için kullanmayız veya bu politikada açıklananlar dışında
+    paylaşmayız. Emploist'in erişimini Google veya Microsoft hesap ayarlarınızdan kaldırabilirsiniz.
+  </p>
+
+  <h2 id="how-we-use-information">5. Bilgileri nasıl kullanıyoruz</h2>
+  <p>
+    Kişisel verileri yalnızca aşağıdaki amaçlarla kullanırız. Avrupa Ekonomik Alanı'nda (AEA) veya Birleşik
+    Krallık'taysanız, tablo dayandığımız hukuki sebebi de gösterir.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Amaç</th>
+        <th>Hukuki sebep</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Emploist'i sağlamak: hesapları ve şirketleri, kariyer sayfalarını, müşterilerin ayarladığı e-postaları ve
+          kişilerin bağladığı yapay zekâ asistanlarını işletmek
+        </td>
+        <td>
+          Şirketinizin kaydolduğu hizmeti sağlamaya yönelik meşru menfaatler veya kişisel olarak sözleşmenin tarafıysanız
+          sizinle yaptığımız sözleşme
+        </td>
+      </tr>
+      <tr>
+        <td>Girişinizi sağlamak ve spam ile kötüye kullanımı önlemek dahil Emploist'in güvenliğini sağlamak</td>
+        <td>Emploist'i ve onu kullanan kişileri güvende tutmaya yönelik meşru menfaatler</td>
+      </tr>
+      <tr>
+        <td>Dodo ile faturalandırma yapmak, yapay zekâ kredilerini takip etmek ve tekrarlanan ücretsiz denemeleri önlemek</td>
+        <td>
+          Planı yürütmeye ve kanunun gerektirdiği vergi ve muhasebe kayıtlarını tutmaya yönelik meşru menfaatler
+        </td>
+      </tr>
+      <tr>
+        <td>Sorularınızı ve taleplerinizi yanıtlamak</td>
+        <td>Emploist'i kullanan kişilere yardımcı olmaya yönelik meşru menfaatler</td>
+      </tr>
+      <tr>
+        <td>Giriş kodları, davetler ve Emploist hakkındaki önemli bildirimler gibi hizmet e-postaları</td>
+        <td>Kişilerin girişini sağlamaya ve müşterileri bilgilendirmeye yönelik meşru menfaatler</td>
+      </tr>
+      <tr>
+        <td>
+          Sorunları bulmak ve düzeltmek, Emploist'in ve web sitemizin çalışmasını sürdürmek ve toplulaştırılmış veya
+          kimliksizleştirilmiş kullanım bilgilerini kullanarak Emploist'i geliştirmek
+        </td>
+        <td>Emploist'i iyi bir şekilde işletmeye yönelik meşru menfaatler</td>
+      </tr>
+      <tr>
+        <td>Kanunlara uymak, Şartlar'ımızı uygulamak ve hukuki talepleri yönetmek</td>
+        <td>
+          Uygulandıkları durumlarda AB veya Birleşik Krallık hukukundan doğan hukuki yükümlülükler; diğer durumlarda
+          kanunlara uymaya ve haklarımızı korumaya yönelik meşru menfaatler
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Kişisel verileri satmayız, reklam için kullanmayız veya pazarlama e-postaları göndermeyiz. Müşteri Verileri'ni yapay
+    zekâ modellerini eğitmek için kullanmayız. Hakkınızda, yalnızca otomatik işlemeye dayanan ve sizin üzerinizde
+    hukuki veya benzer şekilde önemli etkiler doğuran kararlar vermeyiz.
+  </p>
+
+  <h3 id="right-to-object">İtiraz hakkınız</h3>
+  <p>
+    <strong
+      >AEA'da veya Birleşik Krallık'taysanız, kişisel verilerinizi meşru menfaatlere dayanarak kullanmamıza, durumunuzla
+      ilgili gerekçelerle her zaman itiraz edebilirsiniz.</strong
+    > İtiraz etmek için <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a> adresine e-posta gönderin.
+    Bunun üzerine, menfaatlerinizin, haklarınızın ve özgürlüklerinizin önüne geçen zorlayıcı meşru gerekçelerimiz
+    olmadıkça veya verilere hukuki talepler için ihtiyaç duymadıkça bu kullanımı durduracağız.
+  </p>
+
+  <h2 id="subprocessors">6. Paylaşım ve alt veri işleyenler</h2>
+
+  <h3>Alt veri işleyenler</h3>
+  <p>
+    Aşağıdaki sağlayıcılar, Emploist'i işletebilmemiz için kişisel verileri bizim adımıza işler. Müşteri Verileri
+    bakımından bu sağlayıcılar alt veri işleyenlerimizdir ve bu liste, <a href="/tr/terms/#data-processing"
+      >veri işleme şartlarımızın</a
+    > atıfta bulunduğu listedir.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Sağlayıcı</th>
+        <th>İşlevi</th>
+        <th>Konum</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>OVHcloud</td>
+        <td>Uygulamanın sunucularının ve veritabanının barındırılması</td>
+        <td>Singapur</td>
+      </tr>
+      <tr>
+        <td>Cloudflare, Inc.</td>
+        <td>
+          Dosyaların ve veritabanı yedeklerinin depolanması, DNS, logoların sunulması ve destek adresimize gönderilen
+          e-postaların iletilmesi
+        </td>
+        <td>Asya-Pasifik (dosya depolama) ve dünya genelinde</td>
+      </tr>
+      <tr>
+        <td>TypeSafe AI, Inc.</td>
+        <td>Bu özelliği açmış şirketler için başvuruların yapay zekâ ile puanlanması</td>
+        <td>Amerika Birleşik Devletleri</td>
+      </tr>
+      <tr>
+        <td>Resend (Plus Five Five, Inc.)</td>
+        <td>E-posta gönderimi</td>
+        <td>Japonya ve Amerika Birleşik Devletleri</td>
+      </tr>
+    </tbody>
+  </table>
+  <p id="about-typesafe">
+    TypeSafe'in koşulları, gönderdiğimiz verileri kendi yapay zekâ modellerini eğitmek için kullanmayacağını belirtir. Bu
+    koşullar TypeSafe'in, söz konusu verileri dolandırıcılığı ve kötüye kullanımı önleme, kanunlara uyum ve hizmet
+    telemetrisi gibi kendi amaçları için saklamasına ve kullanmasına izin verir. TypeSafe'in <a
+      href="https://typesafe.ai/legal/privacy-policy">gizlilik politikasına</a
+    > ve <a href="https://typesafe.ai/legal/data-processing">veri işleme ekine</a> bakın.
+  </p>
+  <p>
+    Bir alt veri işleyen eklemeden veya mevcut bir alt veri işleyeni değiştirmeden önce bu listeyi güncelleyeceğiz ve
+    müşterileri veri işleme şartlarımızda açıklandığı şekilde bilgilendireceğiz. Web sitemiz emploist.com, Vercel
+    tarafından barındırılır; Vercel, web sitesi ziyaretçilerinin istek verilerini alır, ancak Emploist uygulamasındaki
+    verileri almaz.
+  </p>
+
+  <h3>Diğer alıcılar</h3>
+  <ul>
+    <li>
+      <strong>Dodo Payments</strong> (<a href="https://dodopayments.com/legal/privacy-policy">gizlilik politikası</a>):
+      planımızın kayıtlı satıcısıdır (merchant of record) ve yukarıda açıklanan faturalandırma bilgilerini kendi
+      gizlilik politikası kapsamında kullanır.
+    </li>
+    <li>
+      <strong>Google</strong> (<a href="https://policies.google.com/privacy">gizlilik politikası</a>) ve <strong
+        >Microsoft</strong
+      > (<a href="https://privacy.microsoft.com/privacystatement">gizlilik bildirimi</a>): bu şirketlerle giriş
+      yaparsanız.
+    </li>
+    <li>
+      <strong>Google</strong>: destek gelen kutumuzu (Gmail), bir veri işleme sözleşmesine göre değil, kendi koşullarına
+      ve <a href="https://policies.google.com/privacy">gizlilik politikasına</a> göre barındırır. İnsanların bize
+      gönderdiği e-postaları saklar ve yanıtlarımız bir Gmail adresinden gönderilir. Müşteriyseniz bize gönderdiğiniz
+      e-postalara adayların bilgilerini eklemeyin. Bunun yerine ilanlara ve başvurulara, içinde bir adayın adı gibi
+      arama terimleri bulunmayan Emploist'teki adresleriyle atıfta bulunun.
+    </li>
+    <li>
+      <strong>Yapay zekâ asistanları</strong>: sizin veya ekip arkadaşlarınızın bağladığı asistanlar. Bir asistana,
+      istediği verileri göndeririz; bu veriler adınızı, e-posta adresinizi ve rolünüzü ve şirketinizin Müşteri
+      Verileri'ni içerebilir. Her asistan, sizin veya şirketinizin seçtiği, Anthropic veya OpenAI gibi bir şirket
+      tarafından kendi koşulları kapsamında işletilir. Asistan alt veri işleyenimiz değildir ve neleri aldığını kontrol
+      etmeyiz.
+    </li>
+    <li>
+      <strong>Şirketiniz.</strong> Ekip arkadaşlarınız adınızı, e-posta adresinizi ve Emploist'teki etkinliklerinizi
+      görebilir.
+    </li>
+    <li>
+      <strong>Profesyonel danışmanlar</strong>: avukatlar ve muhasebeciler gibi, bu bilgileri gizli tutmakla yükümlü
+      danışmanlar.
+    </li>
+    <li>
+      <strong>Resmi makamlar ve diğerleri</strong>: kanunun gerektirdiği durumlarda veya Emploist'i kullanan kişilerin,
+      kamunun ya da Emploist'in haklarını, emniyetini veya güvenliğini korumak için gerekli olduğunda.
+    </li>
+    <li>
+      <strong>Bir halef</strong>: Emploist'in işi, örneğin onu işletmek için kurulan bir şirkete veya bir alıcıya
+      devredilirse.
+    </li>
+  </ul>
+
+  <h2 id="international-transfers">7. Uluslararası aktarımlar</h2>
+  <p>
+    Sunucularımız Singapur'da, dosya depolamamız ise Asya-Pasifik bölgesindedir. Verilere Hindistan'dan erişiriz ve
+    yukarıdaki listede gösterildiği üzere bazı sağlayıcılar verileri Amerika Birleşik Devletleri ve Japonya dahil başka
+    ülkelerde işler. Google, destek gelen kutumuzu dünya genelindeki veri merkezlerinde saklayabilir.
+  </p>
+  <p>
+    Emploist'i kullandığınızda veya bize e-posta gönderdiğinizde kişisel verilerinizi doğrudan bize vermiş olursunuz ve
+    bu verileri bu politikada açıklandığı şekilde koruruz. AEA'dan, Birleşik Krallık'tan veya İsviçre'den gelen Müşteri
+    Verileri için veri işleme şartlarımız, Avrupa Komisyonu'nun Standart Sözleşme Maddeleri'ni (SCC) içerir.
+    Sağlayıcılarımızın işleme faaliyetleri bir aktarım mekanizması gerektirdiğinde Standart Sözleşme Maddeleri'ne,
+    AB-ABD Veri Gizliliği Çerçevesi gibi bir yeterlilik kararına veya veri koruma mevzuatının tanıdığı başka bir
+    mekanizmaya dayanırız. Destek gelen kutumuz için Google ile aramızda Standart Sözleşme Maddeleri bulunmaz; Google
+    LLC'nin AB-ABD Veri Gizliliği Çerçevesi, bu Çerçeve'nin Birleşik Krallık Uzantısı ve İsviçre-ABD Veri Gizliliği
+    Çerçevesi kapsamındaki sertifikasyonuna dayanırız. Bu güvencelerin bir kopyasını bizden talep edebilirsiniz.
+  </p>
+
+  <h2 id="retention">8. Bilgileri ne kadar süre saklıyoruz</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Bilgi</th>
+        <th>Saklama süresi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hesap bilgileri</td>
+        <td>
+          Hesabınızı silene kadar; ancak yorumlarınızın ve etkinliklerinizin kime ait olduğu görünmeye devam etsin diye
+          adınızı saklarız.
+        </td>
+      </tr>
+      <tr>
+        <td>Şirket bilgileri, davetler ve Müşteri Verileri</td>
+        <td>
+          Bir yönetici şirketi silene veya biz şirketi <a href="/tr/terms/#suspension-and-termination"
+            >Şartlar'ımız</a
+          > kapsamında silene kadar; örneğin şirketin, Şartlar'ımızda tanımlandığı şekliyle etkin bir Plan'ı art arda 12
+          ay boyunca olmamışsa.
+        </td>
+      </tr>
+      <tr>
+        <td>Adayların verileri</td>
+        <td>
+          İşveren karar verir. İşveren bir başvuruyu, ilanı veya şirketi sildiğinde, bunu aktif sistemlerimizden sileriz.
+          Yedeklerdeki ve log kayıtlarındaki kopyalar zamanla kaldırılır ve bazı ayrıntılar, bildirimler gibi işverenin
+          diğer kayıtlarında, bu kayıtlar silinene kadar kalabilir.
+        </td>
+      </tr>
+      <tr>
+        <td>Yapay zekâ asistanı bağlantıları</td>
+        <td>Asistanın bağlantısını kesene veya hesabınızı silene kadar.</td>
+      </tr>
+      <tr>
+        <td>Faturalandırma kayıtları</td>
+        <td>
+          Şirket silinene kadar; ancak tekrarlanan denemeleri önlemek için sakladığımız, kimlerin ücretsiz deneme
+          kullandığına ilişkin kayıtlar ile kanunen saklamamız gereken kayıtlar bunun dışındadır.
+        </td>
+      </tr>
+      <tr>
+        <td>Destek e-postaları</td>
+        <td>Talebinizi ve sonrasındaki işlemleri yürütmek için ihtiyaç duyduğumuz sürece.</td>
+      </tr>
+      <tr>
+        <td>Log kayıtları ve yedekler</td>
+        <td>Güvenlik, sorun giderme ve kurtarma amacıyla sınırlı bir süre boyunca; ardından silinir veya üzerine yazılır.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Sağlayıcılarımıza veya yapay zekâ asistanlarına daha önce gönderilmiş veriler, bunların kendi koşulları kapsamında
+    saklanır.
+  </p>
+
+  <h2 id="security">9. Güvenlik</h2>
+  <p>
+    Kişisel verileri; şifreli bağlantılar (HTTPS), uygulamada bir şirketin verilerini yalnızca o şirketin ekibinin ve
+    ekibin bağladığı yapay zekâ asistanlarının görebilmesini sağlayan erişim kontrolleri, özgeçmişler için özel
+    depolama, parolasız giriş ve düzenli veritabanı yedekleri dahil olmak üzere makul tedbirlerle koruruz. Hiçbir sistem
+    kusursuz şekilde güvenli değildir. Bir ihlal, kontrol ettiğimiz kişisel verileri etkilerse, kanunun gerektirdiği
+    şekilde size ve resmi makamlara bildirimde bulunacağız. İhlal Müşteri Verileri'ni etkilerse, veri işleme
+    şartlarımızda açıklandığı üzere müşteriyi bilgilendireceğiz.
+  </p>
+
+  <h2 id="your-rights">10. Haklarınız</h2>
+  <p>
+    Yaşadığınız yere bağlı olarak; kişisel verilerinize erişme, bunları düzeltme veya silme, taşınabilir bir formatta
+    kopyasını alma, bunları kullanma şeklimizi kısıtlama veya buna itiraz etme, rızanıza dayandığımız durumlarda
+    rızanızı geri çekme ve bir veri koruma makamına şikâyette bulunma haklarına sahip olabilirsiniz.
+  </p>
+  <p>
+    Talepte bulunmak için, tercihen hesabınızda kayıtlı e-posta adresinden, <a href={`mailto:${SITE.supportEmail}`}
+      >{SITE.supportEmail}</a
+    > adresine e-posta gönderin. Kimliğinizi doğrulamamız gerekebilir; kanunun gerektirdiği süre içinde yanıt vereceğiz.
+    Hesabınızı Ayarlar sayfasından veya artık bir şirkette değilseniz bize e-posta göndererek de silebilirsiniz. Bir
+    ilana başvurduysanız, başvurunuzla ilgili olarak işverenle iletişime geçin (bkz. <a href="#applicants"
+      >İş adayları için</a
+    >).
+  </p>
+
+  <h3>AEA ve Birleşik Krallık</h3>
+  <p>
+    Yaşadığınız veya çalıştığınız yerdeki ya da bir ihlalin gerçekleştiğini düşündüğünüz yerdeki veri koruma makamına
+    şikâyette bulunabilirsiniz. Birleşik Krallık'ta bu makam Bilgi Komiserliği Ofisi'dir (Information Commissioner's
+    Office). Bize e-postayla da şikâyette bulunabilirsiniz; şikâyetinizin alındığını 30 gün içinde size bildireceğiz.
+  </p>
+
+  <h3>Hindistan</h3>
+  <p>
+    Bize e-posta göndererek bize verdiğiniz bilgileri inceleyebilir ve düzeltebilir ya da verdiğiniz rızayı geri
+    çekebilirsiniz. Rızanızı geri çekerseniz veya ihtiyaç duyduğumuz bilgileri bize vermezseniz Emploist'i size
+    sağlayamayabiliriz. Her türlü şikâyetinizi Şikâyet Görevlimiz (Grievance Officer) Navaneeth CT'ye <a
+      href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+    > adresinden iletebilirsiniz. Hindistan'ın Digital Personal Data Protection Act, 2023 (2023 tarihli Dijital Kişisel
+    Verilerin Korunması Kanunu) yürürlüğe girdikçe, bu Kanun'un size tanıdığı haklara da sahip olacaksınız.
+  </p>
+
+  <h2 id="cookies">11. Çerezler</h2>
+  <p>Emploist uygulaması yalnızca, girişinizi sağlamak için gerekli olan aşağıdaki çerezleri kullanır:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Çerez</th>
+        <th>İşlevi</th>
+        <th>Süresi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>__Secure-emploist.session_token</code></td>
+        <td>Oturumunuzun açık kalmasını sağlar</td>
+        <td>7 gün; uygulamayı kullandıkça yenilenir</td>
+      </tr>
+      <tr>
+        <td><code>__Secure-emploist.state</code></td>
+        <td>Google veya Microsoft ile girişinizi korur</td>
+        <td>5 dakika</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Uygulama ayrıca temanızı ve kenar çubuğunun daraltılıp daraltılmadığını hatırlamak için tarayıcınızın yerel depolama
+    alanını kullanır. Emploist, kariyer sayfalarında veya web sitemizde çerez yerleştirmez; analiz, reklam veya izleme
+    çerezleri kullanmayız. Bir işverenin kariyer sayfası tasarımı başka web sitelerinden içerik yüklüyorsa, bu web
+    siteleri IP adresinizi alabilir ve kendi çerezlerini yerleştirebilir.
+  </p>
+
+  <h2 id="children">12. Çocuklar</h2>
+  <p>
+    Emploist işletmeler içindir ve uygulamayı kullanmak için 18 yaşında veya daha büyük olmalısınız. Veri sorumlusu
+    sıfatıyla çocuklardan bilerek kişisel veri toplamayız. Topladığımızı düşünüyorsanız bize e-posta gönderin; bu
+    verileri sileceğiz. İlanlarına kimlerin başvurabileceğine işverenler karar verir ve 18 yaşından küçük adaylar için
+    kanunun gerektirdiği her türlü rızadan işverenler sorumludur.
+  </p>
+
+  <h2 id="changes">13. Bu politikadaki değişiklikler</h2>
+  <p>
+    Bu politikayı güncelleyebiliriz; güncellediğimizde en üstteki tarihi değiştireceğiz. Esaslı değişiklikler hakkında,
+    bu değişiklikler yürürlüğe girmeden önce Emploist hesabı olan kişilere e-posta göndereceğiz.
+  </p>
+  <p>
+    Bu politikayı İngilizce olarak yayınlar ve başka dillere çeviririz. Bir çeviri İngilizce sürümden farklıysa,
+    kanunun izin verdiği ölçüde İngilizce sürüm geçerli olur.
+  </p>
+
+  <h2 id="contact">14. İletişim</h2>
+  <p>
+    Gizlilikle ilgili sorularınız veya talepleriniz için ya da Şikâyet Görevlimiz Navaneeth CT'ye ulaşmak için <a
+      href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+    > adresine e-posta gönderin. Emploist, Hindistan'da yerleşik bir gerçek kişi olan ve Emploist ticari adıyla faaliyet
+    gösteren Navaneeth CT tarafından işletilmektedir.
+  </p>
+</LegalLayout>

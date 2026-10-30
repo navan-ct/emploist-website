@@ -1,0 +1,509 @@
+---
+import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SITE } from "../../lib/site";
+
+const sections = [
+  { id: "who-we-are", title: "Quiénes somos" },
+  { id: "scope", title: "Nuestro papel" },
+  { id: "applicants", title: "Para candidatos a un empleo" },
+  { id: "information-we-collect", title: "Información que recopilamos" },
+  { id: "how-we-use-information", title: "Cómo usamos la información" },
+  { id: "subprocessors", title: "Comunicación de datos y subencargados del tratamiento" },
+  { id: "international-transfers", title: "Transferencias internacionales" },
+  { id: "retention", title: "Cuánto tiempo conservamos la información" },
+  { id: "security", title: "Seguridad" },
+  { id: "your-rights", title: "Sus derechos" },
+  { id: "cookies", title: "Cookies" },
+  { id: "children", title: "Menores" },
+  { id: "changes", title: "Cambios en esta política" },
+  { id: "contact", title: "Contacto" },
+] as const;
+---
+
+<LegalLayout
+  document="privacy"
+  title="Política de privacidad"
+  description="Cómo trata Emploist los datos personales: qué recopilamos, cómo la evaluación con IA y los asistentes de IA usan las candidaturas, a quién comunicamos los datos y sus derechos."
+  translatedFrom="2026-10-30"
+  sections={sections}
+>
+  <h2 id="who-we-are">1. Quiénes somos</h2>
+  <p>
+    Emploist es un sistema de seguimiento de candidatos para empresas, con páginas de empleo alojadas y evaluación
+    opcional de candidaturas con IA. Lo gestiona Navaneeth CT, persona física establecida en India («Emploist»,
+    «nosotros», «nos»).
+  </p>
+  <p>
+    Esta política explica cómo tratamos los datos personales cuando usted usa la aplicación Emploist, incluso a través de
+    un asistente de IA que conecte a ella, se presenta a una vacante en una página de empleo que funciona con Emploist,
+    visita emploist.com o se pone en contacto con nosotros. Puede escribirnos a <a href={`mailto:${SITE.supportEmail}`}
+      >{SITE.supportEmail}</a
+    >.
+  </p>
+
+  <h2 id="scope">2. Nuestro papel</h2>
+  <p>
+    Las empresas que usan Emploist («clientes» ["customers"] o «empleadores» ["employers"]) introducen en él su propio
+    contenido, como vacantes y comentarios, y reciben candidaturas a través de él. Junto con las puntuaciones de afinidad y
+    demás registros que Emploist crea a partir de ellos, esto constituye los «Datos del Cliente» ("Customer Data"), tal
+    como los definen nuestros <a href="/es/terms/">Términos</a>. Cada cliente controla sus Datos del Cliente, y nosotros
+    los tratamos por cuenta del cliente conforme a nuestras <a href="/es/terms/#data-processing"
+      >condiciones de tratamiento de datos</a
+    >.
+  </p>
+  <p>
+    Somos el responsable del tratamiento de los datos personales que usamos nosotros mismos para gestionar Emploist: los
+    datos de las cuentas de los miembros del equipo, las invitaciones que enviamos, las conexiones de asistentes de IA,
+    los registros de facturación, los correos de soporte, los registros de seguridad y los datos sobre los visitantes de
+    nuestro sitio web. Esta política se refiere principalmente a esos datos.
+  </p>
+
+  <h2 id="applicants">3. Para candidatos a un empleo</h2>
+  <p>
+    Si se presentó a una vacante a través de una página de empleo que funciona con Emploist, el empleador al que pertenece
+    esa página controla su candidatura. Es quien decide qué pregunta el formulario, quién ve su candidatura, si se usa IA
+    y durante cuánto tiempo se conserva su candidatura. Le rogamos que lea el aviso de privacidad del empleador y que se
+    ponga en contacto con el empleador si tiene preguntas o solicitudes sobre su candidatura. Si, en su lugar, se pone en
+    contacto con nosotros, le remitiremos al empleador o trasladaremos su solicitud a este. Su mensaje de correo
+    electrónico se almacena en nuestro buzón de soporte, que aloja Google.
+  </p>
+  <p>Por cuenta del empleador, Emploist:</p>
+  <ul>
+    <li>
+      almacena su nombre, su dirección de correo electrónico, su currículum, sus respuestas a las preguntas del empleador,
+      y la etapa y el historial de su candidatura, y los pone a disposición del equipo del empleador
+    </li>
+    <li>
+      envía los correos que configura el empleador, por ejemplo, cuando usted se presenta a una vacante o cuando su
+      candidatura pasa a una nueva etapa, a través de nuestro proveedor de correo electrónico
+    </li>
+    <li>
+      si el empleador tiene activada la evaluación con IA, envía el texto de su currículum, sus respuestas (excepto los
+      números de teléfono) y los detalles de la vacante a nuestro proveedor de IA, TypeSafe AI, Inc., en Estados Unidos,
+      para puntuar en qué medida su candidatura se ajusta a la vacante. La puntuación ayuda al empleador a decidir qué
+      candidaturas revisar primero. Por sí sola, no le rechaza, no le hace avanzar en el proceso ni le envía correos. Las
+      decisiones las toman personas del equipo del empleador.
+    </li>
+    <li>
+      envía su candidatura a los asistentes de IA, como Claude o ChatGPT, que personas del equipo del empleador conecten a
+      Emploist, cuando lo soliciten. Estos asistentes los gestionan empresas que elige el equipo del empleador, conforme a
+      las condiciones que el empleador o los miembros de su equipo hayan acordado con ellas.
+    </li>
+  </ul>
+  <p>
+    Cuando usted visita una página de empleo o se presenta a una vacante, nuestros servidores también registran datos
+    técnicos, como su dirección IP y los datos de su navegador, en registros de solicitudes. Nosotros controlamos estos
+    registros y los usamos para que Emploist siga funcionando y sea seguro.
+  </p>
+
+  <h2 id="information-we-collect">4. Información que recopilamos</h2>
+  <ul>
+    <li>
+      <strong>Información de la cuenta.</strong> Su nombre y su dirección de correo electrónico, que usted nos
+      proporciona o que obtenemos de Google o Microsoft si inicia sesión con ellos. Necesita proporcionarnos estos datos
+      para usar Emploist.
+    </li>
+    <li>
+      <strong>Su trabajo en Emploist.</strong> Lo que hace para su empresa, como las vacantes que crea, sus comentarios
+      y las candidaturas que mueve, incluso a través de los asistentes de IA que conecte, se almacena con su nombre y es
+      visible para sus compañeros de equipo. Forma parte de los Datos del Cliente de su empresa.
+    </li>
+    <li>
+      <strong>Invitaciones.</strong> Cuando un administrador invita a alguien, almacenamos la dirección de correo
+      electrónico de la persona invitada, su rol y quién la invitó, y le enviamos una invitación por correo electrónico.
+    </li>
+    <li>
+      <strong>Conexiones de asistentes de IA.</strong> Si conecta un asistente de IA, almacenamos qué asistente
+      autorizó, los datos de ese asistente y los tokens que le permiten trabajar en su nombre.
+    </li>
+    <li>
+      <strong>Facturación.</strong> Dodo Payments vende nuestro plan y gestiona los datos de pago, y nunca vemos el
+      número completo de su tarjeta. Enviamos a Dodo la dirección de correo electrónico del primer administrador que
+      completa el proceso en la página de pago y el nombre de la empresa, y recibimos de Dodo el estado del plan y los
+      registros de pago. También guardamos un registro de quién ha usado una prueba gratuita.
+    </li>
+    <li>
+      <strong>Información técnica.</strong> Cuando inicia sesión, guardamos un registro de la sesión con su dirección IP
+      y los datos de su navegador. Nuestros servidores guardan registros de solicitudes con direcciones IP, datos del
+      navegador y las direcciones de las páginas y los datos solicitados, que pueden incluir información procedente de
+      los Datos del Cliente, como un término de búsqueda. Solo usamos los Datos del Cliente que figuran en nuestros
+      registros para proporcionar, proteger y dar soporte a Emploist, tal como describen nuestras condiciones de
+      tratamiento de datos.
+    </li>
+    <li>
+      <strong>Soporte.</strong> Si nos envía un correo electrónico, recibimos su dirección de correo electrónico, su
+      mensaje y todo lo que incluya. Cloudflare reenvía estos correos a nuestro buzón de soporte, que aloja Google
+      (Gmail).
+    </li>
+    <li>
+      <strong>Visitantes del sitio web.</strong> emploist.com no tiene herramientas de analítica, formularios ni scripts
+      de terceros. El proveedor de alojamiento del sitio recibe los datos habituales de las solicitudes, como su dirección
+      IP y los datos de su navegador.
+    </li>
+  </ul>
+
+  <h3 id="google-microsoft">Inicio de sesión con Google y Microsoft</h3>
+  <p>
+    Si inicia sesión con Google o Microsoft, recibimos su nombre, su dirección de correo electrónico, el identificador de
+    su cuenta y sus tokens de inicio de sesión, y, de Google, un enlace a su foto de perfil. Solo pedimos acceso básico al
+    perfil, no acceso a su correo electrónico, sus archivos ni ninguna otra cosa de su cuenta. El inicio de sesión con
+    Microsoft también pide mantener ese acceso básico a lo largo del tiempo, por lo que Microsoft nos proporciona un token
+    de larga duración. Usamos estos datos únicamente para iniciar su sesión y para mostrar su nombre y su dirección de
+    correo electrónico en Emploist, también a sus compañeros de equipo y a los asistentes de IA que estos conecten. Los
+    conservamos junto con su cuenta hasta que usted la elimine, y no los vendemos, no los usamos para publicidad ni los
+    compartimos, salvo en los casos que describe esta política. Puede retirar el acceso de Emploist en la configuración
+    de su cuenta de Google o Microsoft.
+  </p>
+
+  <h2 id="how-we-use-information">5. Cómo usamos la información</h2>
+  <p>
+    Usamos los datos personales únicamente para estos fines. Si se encuentra en el Espacio Económico Europeo (EEE) o en
+    el Reino Unido, la tabla también indica la base jurídica en la que nos basamos.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Finalidad</th>
+        <th>Base jurídica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Proporcionar Emploist: gestionar cuentas y empresas, páginas de empleo, los correos que configuran los clientes
+          y los asistentes de IA que conectan las personas
+        </td>
+        <td>
+          Intereses legítimos en proporcionar el servicio que contrató su empresa, o nuestro contrato con usted si usted
+          es parte de él a título personal
+        </td>
+      </tr>
+      <tr>
+        <td>Iniciar su sesión y mantener Emploist seguro, incluida la prevención del spam y los abusos</td>
+        <td>Intereses legítimos en mantener a salvo Emploist y a las personas que lo usan</td>
+      </tr>
+      <tr>
+        <td>Facturación con Dodo, seguimiento de los créditos de IA y prevención de pruebas gratuitas repetidas</td>
+        <td>
+          Intereses legítimos en gestionar el plan y en llevar los registros fiscales y contables que exige la ley
+        </td>
+      </tr>
+      <tr>
+        <td>Responder a sus preguntas y solicitudes</td>
+        <td>Intereses legítimos en ayudar a las personas que usan Emploist</td>
+      </tr>
+      <tr>
+        <td>Correos del servicio, como códigos de inicio de sesión, invitaciones y avisos importantes sobre Emploist</td>
+        <td>Intereses legítimos en permitir que las personas inicien sesión y en mantener informados a los clientes</td>
+      </tr>
+      <tr>
+        <td>
+          Detectar y corregir problemas, mantener en funcionamiento Emploist y nuestro sitio web, y mejorar Emploist
+          mediante información de uso agregada o desidentificada
+        </td>
+        <td>Intereses legítimos en gestionar bien Emploist</td>
+      </tr>
+      <tr>
+        <td>Cumplir la ley, hacer cumplir nuestros Términos y gestionar reclamaciones legales</td>
+        <td>
+          Obligaciones legales en virtud del Derecho de la UE o del Reino Unido, cuando se apliquen, y, en los demás
+          casos, intereses legítimos en cumplir la ley y proteger nuestros derechos
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    No vendemos datos personales, no los usamos para publicidad ni enviamos correos de marketing. No usamos los Datos del
+    Cliente para entrenar modelos de IA. No tomamos decisiones sobre usted basadas únicamente en el tratamiento
+    automatizado que produzcan efectos jurídicos en usted o le afecten significativamente de modo similar.
+  </p>
+
+  <h3 id="right-to-object">Su derecho de oposición</h3>
+  <p>
+    <strong
+      >Si se encuentra en el EEE o en el Reino Unido, puede oponerse en cualquier momento, por motivos relacionados con su
+      situación, a que usemos sus datos personales sobre la base de intereses legítimos.</strong
+    > Para oponerse, escriba a <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Entonces dejaremos de
+    hacerlo, salvo que tengamos motivos legítimos imperiosos que prevalezcan sobre sus intereses, derechos y libertades,
+    o que necesitemos los datos para reclamaciones legales.
+  </p>
+
+  <h2 id="subprocessors">6. Comunicación de datos y subencargados del tratamiento</h2>
+
+  <h3>Subencargados del tratamiento</h3>
+  <p>
+    Estos proveedores tratan datos personales por nuestra cuenta para gestionar Emploist. Respecto a los Datos del
+    Cliente, son nuestros subencargados del tratamiento, y esta es la lista a la que se refieren nuestras <a
+      href="/es/terms/#data-processing">condiciones de tratamiento de datos</a
+    >.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Proveedor</th>
+        <th>Qué hace</th>
+        <th>Ubicación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>OVHcloud</td>
+        <td>Alojamiento de los servidores y la base de datos de la aplicación</td>
+        <td>Singapur</td>
+      </tr>
+      <tr>
+        <td>Cloudflare, Inc.</td>
+        <td>
+          Almacenamiento de archivos y de copias de seguridad de la base de datos, DNS, entrega de logotipos y reenvío de
+          los correos enviados a nuestra dirección de soporte
+        </td>
+        <td>Asia-Pacífico (almacenamiento de archivos) y todo el mundo</td>
+      </tr>
+      <tr>
+        <td>TypeSafe AI, Inc.</td>
+        <td>Evaluación de candidaturas con IA, para las empresas que la tienen activada</td>
+        <td>Estados Unidos</td>
+      </tr>
+      <tr>
+        <td>Resend (Plus Five Five, Inc.)</td>
+        <td>Envío de correos electrónicos</td>
+        <td>Japón y Estados Unidos</td>
+      </tr>
+    </tbody>
+  </table>
+  <p id="about-typesafe">
+    Las condiciones de TypeSafe establecen que no usará los datos que le enviamos para entrenar sus modelos de IA. Le
+    permiten conservar y usar esos datos para sus propios fines, como la prevención del fraude y los abusos, el
+    cumplimiento de la ley y la telemetría del servicio. Consulte la <a href="https://typesafe.ai/legal/privacy-policy"
+      >política de privacidad</a
+    > y la <a href="https://typesafe.ai/legal/data-processing">adenda de tratamiento de datos</a> de TypeSafe.
+  </p>
+  <p>
+    Actualizaremos esta lista antes de añadir o sustituir un subencargado del tratamiento, y lo comunicaremos a los
+    clientes tal como describen nuestras condiciones de tratamiento de datos. Nuestro sitio web, emploist.com, está
+    alojado en Vercel, que recibe los datos de las solicitudes de los visitantes del sitio web, pero no los datos de la
+    aplicación Emploist.
+  </p>
+
+  <h3>Otros destinatarios</h3>
+  <ul>
+    <li>
+      <strong>Dodo Payments</strong> (<a href="https://dodopayments.com/legal/privacy-policy">política de privacidad</a
+      >), el comerciante registrado (merchant of record) de nuestro plan, que usa los datos de facturación descritos más
+      arriba conforme a su propia política de privacidad.
+    </li>
+    <li>
+      <strong>Google</strong> (<a href="https://policies.google.com/privacy">política de privacidad</a>) y <strong
+        >Microsoft</strong
+      > (<a href="https://privacy.microsoft.com/privacystatement">declaración de privacidad</a>), si inicia sesión con
+      ellos.
+    </li>
+    <li>
+      <strong>Google</strong>, que aloja nuestro buzón de soporte (Gmail) conforme a sus propias condiciones y su <a
+        href="https://policies.google.com/privacy">política de privacidad</a
+      >, no conforme a un acuerdo de encargo del tratamiento. Almacena los correos que nos envían las personas, y
+      nuestras respuestas proceden de una dirección de Gmail. Si es cliente, no incluya datos de candidatos en los
+      correos que nos envíe. En su lugar, refiérase a las vacantes y candidaturas mediante sus direcciones en Emploist,
+      sin términos de búsqueda en ellas, como el nombre de un candidato.
+    </li>
+    <li>
+      <strong>Asistentes de IA</strong> que usted o sus compañeros de equipo conecten. Enviamos a un asistente los datos
+      que solicita, que pueden incluir su nombre, su dirección de correo electrónico y su rol, así como los Datos del
+      Cliente de su empresa. Cada asistente lo gestiona una empresa que usted o su empresa eligen, como Anthropic u
+      OpenAI, conforme a sus propias condiciones. No es uno de nuestros subencargados del tratamiento, y no controlamos
+      lo que recibe.
+    </li>
+    <li>
+      <strong>Su empresa.</strong> Sus compañeros de equipo pueden ver su nombre, su dirección de correo electrónico y su
+      actividad en Emploist.
+    </li>
+    <li><strong>Asesores profesionales</strong>, como abogados y contables, que deben mantener la confidencialidad de los datos.</li>
+    <li>
+      <strong>Autoridades y otros</strong>, cuando la ley lo exija o cuando sea necesario para proteger los derechos, la
+      integridad o la seguridad de las personas que usan Emploist, del público o de Emploist.
+    </li>
+    <li>
+      <strong>Un sucesor</strong>, si se transmite el negocio de Emploist, por ejemplo, a una empresa creada para
+      gestionarlo o a un comprador.
+    </li>
+  </ul>
+
+  <h2 id="international-transfers">7. Transferencias internacionales</h2>
+  <p>
+    Nuestros servidores están en Singapur, y nuestro almacenamiento de archivos está en la región de Asia-Pacífico.
+    Accedemos a los datos desde India, y algunos proveedores los tratan en otros países, incluidos Estados Unidos y
+    Japón, como muestra la lista anterior. Google puede almacenar nuestro buzón de soporte en sus centros de datos de
+    todo el mundo.
+  </p>
+  <p>
+    Cuando usa Emploist o nos envía un correo electrónico, nos proporciona sus datos personales directamente, y los
+    protegemos tal como describe esta política. Para los Datos del Cliente procedentes del EEE, el Reino Unido o Suiza,
+    nuestras condiciones de tratamiento de datos incluyen las cláusulas contractuales tipo de la Comisión Europea. Cuando
+    el tratamiento por parte de nuestros proveedores requiere un mecanismo de transferencia, nos basamos en las cláusulas
+    contractuales tipo, en una decisión de adecuación, como el Marco de Privacidad de Datos UE-EE. UU. (EU-US Data
+    Privacy Framework), o en otro mecanismo reconocido por la legislación de protección de datos. Para nuestro buzón de
+    soporte, no tenemos cláusulas contractuales tipo con Google, y nos basamos en la certificación de Google LLC conforme
+    al Marco de Privacidad de Datos UE-EE. UU., su Extensión para el Reino Unido (UK Extension) y el Marco de Privacidad
+    de Datos Suiza-EE. UU. (Swiss-US Data Privacy Framework). Puede solicitarnos una copia de estas garantías.
+  </p>
+
+  <h2 id="retention">8. Cuánto tiempo conservamos la información</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Información</th>
+        <th>Cuánto tiempo la conservamos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Información de la cuenta</td>
+        <td>
+          Hasta que elimine su cuenta, excepto su nombre, que conservamos para que sus comentarios y su actividad sigan
+          mostrando quién los hizo.
+        </td>
+      </tr>
+      <tr>
+        <td>Información de la empresa, invitaciones y Datos del Cliente</td>
+        <td>
+          Hasta que un administrador elimine la empresa o la eliminemos nosotros conforme a nuestros <a
+            href="/es/terms/#suspension-and-termination">Términos</a
+          >, por ejemplo, después de que haya estado sin un Plan activo, tal como lo definen nuestros Términos, durante 12
+          meses seguidos.
+        </td>
+      </tr>
+      <tr>
+        <td>Datos de los candidatos</td>
+        <td>
+          Lo decide el empleador. Cuando el empleador elimina una candidatura, una vacante o una empresa, la eliminamos de
+          nuestros sistemas activos. Las copias que haya en copias de seguridad y registros de actividad se eliminan con el
+          tiempo, y algunos datos pueden permanecer en otros registros del empleador, como las notificaciones, hasta que
+          estos se eliminen.
+        </td>
+      </tr>
+      <tr>
+        <td>Conexiones de asistentes de IA</td>
+        <td>Hasta que desconecte el asistente o elimine su cuenta.</td>
+      </tr>
+      <tr>
+        <td>Registros de facturación</td>
+        <td>
+          Hasta que se elimine la empresa, excepto los registros de quién ha usado una prueba gratuita, que conservamos
+          para evitar pruebas repetidas, y los registros que la ley nos exige conservar.
+        </td>
+      </tr>
+      <tr>
+        <td>Correos de soporte</td>
+        <td>Durante el tiempo que los necesitemos para atender su solicitud y cualquier seguimiento.</td>
+      </tr>
+      <tr>
+        <td>Registros de actividad y copias de seguridad</td>
+        <td>
+          Durante un periodo limitado, por motivos de seguridad, resolución de problemas y recuperación, y después se
+          eliminan o se sobrescriben.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Los datos ya enviados a nuestros proveedores o a asistentes de IA se conservan conforme a sus propias condiciones.</p>
+
+  <h2 id="security">9. Seguridad</h2>
+  <p>
+    Protegemos los datos personales con medidas razonables, incluidas conexiones cifradas (HTTPS); controles de acceso
+    para que, en la aplicación, solo el equipo de una empresa y los asistentes de IA que este conecte puedan ver sus
+    datos; almacenamiento privado para los currículums; inicio de sesión sin contraseña; y copias de seguridad periódicas
+    de la base de datos. Ningún sistema es perfectamente seguro. Si una violación de la seguridad afecta a datos
+    personales que controlamos, se lo notificaremos a usted y a las autoridades según exija la ley. Si afecta a Datos
+    del Cliente, se lo notificaremos al cliente, tal como describen nuestras condiciones de tratamiento de datos.
+  </p>
+
+  <h2 id="your-rights">10. Sus derechos</h2>
+  <p>
+    Según dónde viva, puede tener derecho a acceder a sus datos personales, rectificarlos o suprimirlos, a obtener una
+    copia de ellos en un formato portable, a limitar el uso que hacemos de ellos u oponerse a él, a retirar su
+    consentimiento cuando nos basemos en él, y a presentar una reclamación ante una autoridad de protección de datos.
+  </p>
+  <p>
+    Para presentar una solicitud, escriba a <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>,
+    preferiblemente desde la dirección de correo electrónico de su cuenta. Es posible que necesitemos confirmar su
+    identidad, y responderemos en el plazo que exija la ley. También puede eliminar su cuenta en Configuración o, si ya
+    no forma parte de ninguna empresa, enviándonos un correo electrónico. Si se presentó a una vacante, diríjase al
+    empleador en relación con su candidatura (véase <a href="#applicants">Para candidatos a un empleo</a>).
+  </p>
+
+  <h3>EEE y Reino Unido</h3>
+  <p>
+    Puede presentar una reclamación ante la autoridad de protección de datos del lugar en el que vive o trabaja, o del
+    lugar en el que cree que se produjo una infracción. En el Reino Unido, es la Oficina del Comisionado de Información
+    (Information Commissioner's Office). También puede presentarnos una reclamación por correo electrónico, y acusaremos
+    recibo de su reclamación en un plazo de 30 días.
+  </p>
+
+  <h3>India</h3>
+  <p>
+    Puede revisar y corregir la información que nos ha proporcionado, o retirar el consentimiento que haya dado,
+    enviándonos un correo electrónico. Si retira su consentimiento o no nos proporciona la información que necesitamos,
+    es posible que no podamos proporcionarle Emploist. Puede presentar cualquier queja ante nuestro Responsable de Quejas
+    ("Grievance Officer"), Navaneeth CT, en <a href={`mailto:${SITE.supportEmail}`}
+      >{SITE.supportEmail}</a
+    >. A medida que entre en vigor la Digital Personal Data Protection Act, 2023 (Ley de Protección de Datos Personales
+    Digitales de 2023) de India, también tendrá los derechos que esta le otorga.
+  </p>
+
+  <h2 id="cookies">11. Cookies</h2>
+  <p>La aplicación Emploist solo usa estas cookies, que son necesarias para iniciar su sesión:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Cookie</th>
+        <th>Qué hace</th>
+        <th>Cuánto dura</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>__Secure-emploist.session_token</code></td>
+        <td>Mantiene su sesión iniciada</td>
+        <td>7 días, y se renueva mientras usa la aplicación</td>
+      </tr>
+      <tr>
+        <td><code>__Secure-emploist.state</code></td>
+        <td>Protege su inicio de sesión con Google o Microsoft</td>
+        <td>5 minutos</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    La aplicación también usa el almacenamiento local de su navegador para recordar su tema y si la barra lateral está
+    contraída. Emploist no instala cookies en las páginas de empleo ni en nuestro sitio web, y no usamos cookies
+    analíticas, publicitarias ni de seguimiento. Si el diseño de la página de empleo de un empleador carga contenido de
+    otros sitios web, esos sitios web pueden recibir su dirección IP e instalar sus propias cookies.
+  </p>
+
+  <h2 id="children">12. Menores</h2>
+  <p>
+    Emploist está destinado a empresas, y usted debe tener 18 años o más para usar la aplicación. No recopilamos a
+    sabiendas datos personales de menores como responsable del tratamiento. Si cree que lo hemos hecho, escríbanos y los
+    eliminaremos. Los empleadores deciden quién puede presentarse a sus vacantes, y son responsables de cualquier
+    consentimiento que exija la ley para los candidatos menores de 18 años.
+  </p>
+
+  <h2 id="changes">13. Cambios en esta política</h2>
+  <p>
+    Podemos actualizar esta política y, cuando lo hagamos, cambiaremos la fecha que figura al principio. Informaremos
+    por correo electrónico a las personas que tengan una cuenta de Emploist sobre los cambios sustanciales antes de que
+    surtan efecto.
+  </p>
+  <p>
+    Publicamos esta política en inglés y la traducimos a otros idiomas. Si una traducción difiere de la versión en
+    inglés, se aplica la versión en inglés, en la medida en que la ley lo permita.
+  </p>
+
+  <h2 id="contact">14. Contacto</h2>
+  <p>
+    Si tiene preguntas o solicitudes sobre privacidad, o para ponerse en contacto con nuestro Responsable de Quejas,
+    Navaneeth CT, escriba a <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+    >. Emploist está gestionado por Navaneeth CT, persona física establecida en India, que opera con el nombre comercial
+    Emploist.
+  </p>
+</LegalLayout>

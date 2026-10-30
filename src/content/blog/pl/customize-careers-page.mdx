@@ -1,0 +1,272 @@
+---
+title: "Jak dostosować stronę kariery za pomocą kodu lub AI"
+description: "Dopasuj stronę kariery do reszty swojej witryny. Edytuj jej kod w Emploist z podglądem na żywo albo zleć to asystentowi AI, takiemu jak Claude."
+pubDate: 2026-10-22
+author: "Navaneeth CT"
+image: ../images/customize-careers-page/cover.png
+imageAlt: "Przeprojektowana strona kariery obok edytora kodu w Emploist."
+tags: ["Strona kariery", "Poradniki"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import careersBefore from "../images/customize-careers-page/careers-before.png";
+import careersAfter from "../images/customize-careers-page/careers-after.png";
+import careersAfterMobile from "../images/customize-careers-page/careers-after-mobile.png";
+import claudePrompt from "../images/customize-careers-page/claude-prompt.png";
+import claudeReply from "../images/customize-careers-page/claude-reply.png";
+import designTab from "../images/customize-careers-page/design-tab.png";
+import editor from "../images/customize-careers-page/editor.png";
+import editorFont from "../images/customize-careers-page/editor-font.png";
+import editorHeadline from "../images/customize-careers-page/editor-headline.png";
+import editorMenu from "../images/customize-careers-page/editor-menu.png";
+import editorMobile from "../images/customize-careers-page/editor-mobile.png";
+import editorProblem from "../images/customize-careers-page/editor-problem.png";
+import editorReference from "../images/customize-careers-page/editor-reference.png";
+import editorUpload from "../images/customize-careers-page/editor-upload.png";
+
+Strona kariery to często pierwsze miejsce, w którym kandydat może bliżej poznać Twoją firmę. Gdy wygląda jak reszta Twojej witryny, z tymi samymi czcionkami, kolorami i tonem, jest odbierana jako część Twojej marki, a nie podstrona z narzędzia rekrutacyjnego.
+
+Każda firma w Emploist dostaje [stronę kariery gotową od pierwszego dnia](/pl/#careers-page), z własnym logo i kolorem. Gdy chcesz czegoś więcej, możesz zmienić w jej wyglądzie wszystko, edytując jej kod. Brzmi technicznie, ale nie trzeba umieć programować. Ten poradnik pokazuje dwa sposoby:
+
+1. [**Edytuj kod w Emploist.**](#sposób-1-edytuj-kod-w-emploist) Sprawdza się przy drobnych zmianach, takich jak nowy nagłówek czy czcionka. Każdą zmianę widzisz w podglądzie na żywo już podczas pisania.
+2. [**Zleć to asystentowi AI.**](#sposób-2-zleć-zmiany-asystentowi-ai) Sprawdza się przy większych zmianach, takich jak nowa sekcja. Pobierasz kod, opisujesz zwykłymi słowami, czego chcesz, i przesyłasz to, co odeśle asystent.
+
+Oba sposoby pokażemy na przykładzie Northwind Labs, firmy demonstracyjnej. Tak wygląda jej strona kariery, zanim zaczniemy.
+
+<Figure
+  src={careersBefore}
+  url="northwind.emploist.com"
+  alt="Strona kariery Northwind Labs z domyślnym wyglądem: nagłówek z logo, duży tytuł „Join Northwind Labs” z krótkim opisem firmy i lista otwartych stanowisk z filtrami działu i lokalizacji."
+  caption="Strona kariery Northwind Labs z domyślnym wyglądem Emploist."
+/>
+
+## Co możesz zmienić
+
+Twoja strona kariery składa się z sześciu plików. Każdy z nich to mały plik tekstowy, który możesz otworzyć i edytować:
+
+| Plik | Za co odpowiada |
+| --- | --- |
+| `layout.liquid` | Rama wokół każdej strony: nagłówek, stopka i to, co wczytuje się na każdej stronie, np. czcionki |
+| `jobs.liquid` | Strona główna z Twoim wprowadzeniem i listą otwartych stanowisk |
+| `job.liquid` | Strona pojedynczej oferty |
+| `apply.liquid` | Formularz aplikacyjny |
+| `applied.liquid` | Strona z podziękowaniem, którą kandydaci widzą po złożeniu aplikacji |
+| `styles.css` | Wygląd wszystkiego: kolory, czcionki, rozmiary i odstępy |
+
+Pliki są napisane w trzech prostych językach. **HTML** określa, co jest na stronie, np. nagłówki i przyciski. **CSS** określa, jak to wygląda. **Liquid** dodaje zmienne, takie jak `{{ company.name }}`, które Emploist zastępuje nazwą Twojej firmy, Twoimi ofertami i innymi szczegółami, gdy kandydat otwiera stronę.
+
+Eksperymentując, nie zepsujesz swojej strony kariery:
+
+- Dla kandydatów nic się nie zmieni, dopóki nie klikniesz **Zapisz**.
+- Emploist sprawdza kod przed zapisaniem i podpowiada, co poprawić, jeśli coś jest nie tak.
+- W każdej chwili możesz wrócić do domyślnego wyglądu.
+
+Na początek zaloguj się jako administrator i otwórz sekcję **Strona kariery** na pasku bocznym. Karta **Wygląd** zawiera kolor i kod Twojej strony. Jeśli potrzebujesz tylko koloru marki, wybierz go w polu **Kolor główny** i gotowe. Bez kodu.
+
+<Figure
+  src={designTab}
+  alt="Karta „Design” w ustawieniach strony kariery w Emploist: wybór koloru „Primary color” i sekcja „Code” z przyciskami „Edit code”, „Download ZIP” i „Upload ZIP”."
+  caption="Strona kariery → Wygląd. W sekcji Kod jest wszystko, czego używamy w tym poradniku."
+/>
+
+## Sposób 1: Edytuj kod w Emploist
+
+### Otwórz edytor
+
+Kliknij **Edytuj kod**. Po lewej stronie jest kod Twojej strony, z kartą dla każdego pliku i krótką informacją o jego przeznaczeniu. Po prawej widać podgląd strony kariery na żywo, wypełniony przykładowymi ofertami.
+
+<Figure
+  src={editor}
+  alt="Edytor kodu w Emploist: karty plików i kod pliku layout.liquid po lewej oraz podgląd strony kariery na żywo po prawej."
+  caption="Edytor kodu. Podgląd po prawej aktualizuje się podczas pisania."
+/>
+
+Nad podglądem znajdziesz menu **Przejdź do strony**, które przełącza między wszystkimi stronami widocznymi dla kandydatów: listą ofert, ofertą, formularzem aplikacyjnym, stroną z podziękowaniem, zamkniętą ofertą i stroną „Nie znaleziono strony”. Kliknięcie karty pliku również pokazuje stronę, za którą ten plik odpowiada.
+
+### Zmień nagłówek
+
+Kliknij kartę `jobs.liquid`. W wierszu 3 jest duży nagłówek na górze strony:
+
+```liquid
+<h1 class="hero-title">Join {{ company.name }}</h1>
+```
+
+Zmień słowo „Join” na „Build what's next at”. Pozostaw `{{ company.name }}` bez zmian: w tym miejscu Emploist wstawia nazwę Twojej firmy. Chwilę po tym, jak przestaniesz pisać, podgląd pokaże nowy nagłówek.
+
+<Figure
+  src={editorHeadline}
+  alt="Plik jobs.liquid w edytorze z nagłówkiem zmienionym na „Build what's next at {{ company.name }}” i podgląd z nagłówkiem „Build what's next at Northwind Labs”."
+  caption="Edytuj tekst między tagami, a podgląd od razu się zaktualizuje."
+/>
+
+### Użyj własnej czcionki
+
+Zmiana czcionki wymaga dwóch drobnych poprawek. Użyjemy Fraunces, darmowej czcionki z [Google Fonts](https://fonts.google.com).
+
+1. **Wczytaj czcionkę.** W Google Fonts otwórz czcionkę, kliknij **Get font**, a potem **Get embed code** i skopiuj wiersz `<link>` zawierający `fonts.googleapis.com/css2`. W pliku `layout.liquid` wklej go w nowym wierszu tuż nad wierszem zawierającym `stylesheet_url`:
+
+   ```html
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&display=swap">
+   ```
+
+2. **Użyj jej.** W pliku `styles.css` znajdź wiersz blisko początku, który zaczyna się od `--font:`, i wpisz nazwę czcionki w cudzysłowie na początku listy, a po niej przecinek:
+
+   ```css
+   --font: "Fraunces", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+   ```
+
+   Pozostałe czcionki na liście są zapasowe, na wypadek gdyby przeglądarka nie mogła wczytać Twojej.
+
+<Figure
+  src={editorFont}
+  alt="Plik styles.css w edytorze z czcionką Fraunces dodaną do wiersza --font i podgląd strony kariery w czcionce Fraunces."
+  caption="Fraunces jest teraz używana na całej stronie."
+/>
+
+### Sprawdź stronę na telefonie
+
+Wielu kandydatów otworzy Twoją stronę kariery na telefonie. Kliknij ikonę telefonu nad podglądem, aby zobaczyć stronę w rozmiarze telefonu.
+
+<Figure
+  src={editorMobile}
+  alt="Podgląd w edytorze przełączony na rozmiar telefonu: strona kariery z nowym nagłówkiem i czcionką w wąskiej kolumnie."
+  caption="Ikona telefonu pokazuje podgląd w rozmiarze telefonu."
+/>
+
+### Popraw błędy przed publikacją
+
+Jeśli zmiana coś zepsuje, Emploist od razu Ci o tym powie. Karta pliku dostaje czerwony znacznik, podgląd zamiast strony pokazuje, co poszło nie tak, a lista pod kodem informuje, co jest źle i w którym wierszu. Kliknij problem, aby do niego przejść. Większość problemów to literówki lub brakujące tagi zamykające, a cofnięcie ostatniej zmiany (<kbd>Cmd</kbd>+<kbd>Z</kbd> na Macu, <kbd>Ctrl</kbd>+<kbd>Z</kbd> w systemie Windows) zwykle wystarcza.
+
+<Figure
+  src={editorProblem}
+  alt="Edytor z problemem: karta jobs.liquid ma czerwony znacznik, wiersz 4 jest podkreślony, podgląd informuje, że nie udało się wyświetlić strony, a lista pod kodem mówi o 1 problemie do poprawienia przed zapisaniem: jobs.liquid, wiersz 4, niezamknięty tag."
+  caption="Gdy przez pomyłkę usuniesz {% endif %}, tag {% if %} pozostaje otwarty, a Emploist wskazuje dokładny wiersz."
+/>
+
+Dopóki są problemy, nie da się zapisać, więc kandydaci nigdy nie zobaczą zepsutej strony.
+
+### Sprawdź, czego możesz użyć
+
+Kliknij **Dokumentacja** u góry edytora, aby zobaczyć wszystkie zmienne, których możesz użyć, np. lokalizację oferty czy opis Twojej firmy, wraz z informacją, co każda z nich wyświetla.
+
+<Figure
+  src={editorReference}
+  alt="Panel „Reference” otwarty nad edytorem, z listą zmiennych, takich jak company.name i company.description, oraz opisem tego, co każda z nich wyświetla."
+  caption="Dokumentacja zawiera wszystko, co mogą wyświetlać szablony."
+/>
+
+### Zapisz zmiany
+
+Gdy podgląd Ci się podoba, kliknij **Zapisz**. Twoja strona kariery od razu zaktualizuje się dla kandydatów.
+
+Zmieniasz zdanie? W menu **Więcej opcji** (trzy kropki obok przycisku **Odrzuć**) znajdziesz opcję **Przywróć kod domyślny**, która przywraca domyślny wygląd Emploist. Jak przy każdej zmianie, na Twojej stronie kariery nic się nie zmieni, dopóki nie zapiszesz.
+
+<Figure
+  src={editorMenu}
+  frame="plain"
+  narrow
+  alt="Menu „More actions” w edytorze z opcjami „Download ZIP”, „Upload ZIP” i „Reset to default code”."
+  caption="Więcej opcji: pobierz lub prześlij kod jako ZIP albo zacznij od nowa."
+/>
+
+## Sposób 2: Zleć zmiany asystentowi AI
+
+Przy większych zmianach, takich jak nowa sekcja czy inny układ, często łatwiej jest opisać, czego chcesz, i zlecić napisanie kodu asystentowi AI. My użyjemy [Claude](https://claude.ai), ale każdy asystent, który potrafi czytać i odsyłać pliki, działa bardzo podobnie.
+
+### Pobierz kod
+
+Na karcie **Wygląd** kliknij **Pobierz ZIP**. Otrzymasz plik `careers-page.zip`, który zawiera:
+
+- **Sześć plików Twojej strony** ze wszystkimi zapisanymi zmianami.
+- **Przewodnik `README.md`**, który wyjaśnia zasady obowiązujące na stronach kariery i opisuje wszystkie zmienne, których możesz użyć. To on pomaga asystentowi AI napisać poprawny kod już za pierwszym razem.
+- **Zestaw podglądu** (`preview.mjs` i `company.json`), dzięki któremu zobaczysz stronę na swoim komputerze. Jest opcjonalny, a opisujemy go [na końcu](#podgląd-na-własnym-komputerze-opcjonalnie).
+
+Nie musisz go rozpakowywać: Claude odczyta plik ZIP w takiej postaci, w jakiej jest.
+
+### Poproś o zmiany
+
+Otwórz [claude.ai](https://claude.ai), rozpocznij nowy czat i dołącz `careers-page.zip` przyciskiem **+**. Potem opisz zwykłymi słowami, czego oczekujesz – tak jak w rozmowie z projektantem. Oto nasza prośba:
+
+> Oto kod naszej strony kariery w Emploist. Spraw, proszę, żeby strona z ofertami była cieplejsza i bardziej przyjazna: większe wprowadzenie z przyciskiem prowadzącym do otwartych stanowisk i sekcja „Why join us” z kilkoma benefitami (możliwość pracy zdalnej, budżet na rozwój, 30 dni wolnego, wyjazdy integracyjne). Postępuj zgodnie z README.md i odeślij mi plik ZIP gotowy do przesłania.
+
+<Figure
+  src={claudePrompt}
+  frame="plain"
+  narrow
+  alt="Nowy czat w claude.ai z dołączonym plikiem careers-page.zip i prośbą o cieplejszą stronę z ofertami, z większym wprowadzeniem i sekcją „Why join us”."
+  caption="Dołącz plik ZIP i opisz, czego chcesz."
+/>
+
+Jeśli od razu poprosisz o trzymanie się `README.md` i odesłanie pliku ZIP, oszczędzisz sobie kilku rund poprawek.
+
+### Odbierz zaktualizowany kod
+
+Claude potrzebował około czterech minut. Przeczytał przewodnik i kod, wprowadził zmiany, a potem sprawdził własną pracę: za pomocą zestawu podglądu obejrzał stronę w rozmiarze komputera i telefonu, a także uruchomił to samo sprawdzenie, które Emploist wykonuje przed zapisaniem. Następnie odesłał nowy plik `careers-page.zip` z podsumowaniem zmian:
+
+- **Większe, cieplejsze wprowadzenie** z nowym nagłówkiem, zdaniem na powitanie i przyciskiem **See open roles** („Zobacz otwarte stanowiska”), który przenosi do listy.
+- **Sekcja „Why join us”** z czterema kafelkami: możliwość pracy zdalnej, budżet na rozwój, 30 dni wolnego i wyjazdy integracyjne.
+- **Drobne poprawki listy otwartych stanowisk**, np. krótkie wprowadzenie nad listą.
+
+<Figure
+  src={claudeReply}
+  frame="plain"
+  narrow
+  alt="Claude odpowiada w claude.ai: plik careers-page.zip jest gotowy do przesłania, lista zmian w jobs.liquid i styles.css, uwaga, że nowy nagłówek jest stałym tekstem, oraz plik ZIP z przyciskiem „Download”."
+  caption="Claude wyjaśnia, co zmienił, i odsyła plik ZIP do pobrania."
+/>
+
+Przeczytaj podsumowanie przed przesłaniem. W naszym przypadku Claude zaznaczył, że zastąpił nasz nowy nagłówek własnym, „Come build what's next with us” („Twórz z nami przyszłość”), i wskazał, który wiersz edytować, aby go zmienić. Benefity opisał też ogólnie, bez wymyślania szczegółów, takich jak wysokość budżetu na rozwój, żebyśmy mogli dodać własne.
+
+Jeśli wynik nie jest jeszcze taki, jak trzeba, kontynuuj rozmowę: „zmień kolor przycisku na zielony”, „dodaj benefit o prywatnej opiece medycznej” albo „skróć wprowadzenie”. Na koniec poproś o zaktualizowany plik ZIP.
+
+### Prześlij kod do Emploist
+
+Wróć na kartę **Wygląd**, kliknij **Prześlij ZIP** i wybierz plik ZIP, który odesłał Claude. Emploist otworzy edytor z wczytanym nowym kodem, ale jeszcze niezapisanym, więc możesz wszystko obejrzeć, zanim cokolwiek zmieni się dla kandydatów.
+
+<Figure
+  src={editorUpload}
+  alt="Edytor zaraz po przesłaniu pliku ZIP: status „Unsaved changes”, komunikat, że pliki wczytano z careers-page.zip i trzeba sprawdzić podgląd, a potem zapisać, oraz podgląd z nowym wprowadzeniem i przyciskiem „See open roles”."
+  caption="Przesłany kod otwiera się w edytorze, gotowy do sprawdzenia."
+/>
+
+Użyj menu **Przejdź do strony** i ikony telefonu, aby sprawdzić każdą stronę. Jeśli coś jest nie tak, popraw to w edytorze albo wróć do czatu z Claude. Gdy wszystko wygląda dobrze, kliknij **Zapisz**.
+
+## Efekt
+
+Tak wygląda strona kariery Northwind Labs po obu zmianach: z czcionką Fraunces dodaną w edytorze i nowym projektem przygotowanym przez Claude. Porównaj ją z domyślnym wyglądem na początku tego poradnika.
+
+<Figure
+  src={careersAfter}
+  url="northwind.emploist.com"
+  alt="Przeprojektowana strona kariery Northwind Labs w czcionce Fraunces: etykieta „Careers at Northwind Labs”, nagłówek „Come build what's next with us”, opis firmy, zdanie na powitanie, przycisk „See open roles” z liczbą otwartych stanowisk oraz sekcja „Why join us” z czterema kafelkami: „Remote-friendly”, „Learning budget”, „30 days off” i „Team offsites”."
+  caption="Gotowa strona kariery – otwarte stanowiska są niżej."
+/>
+
+A tak wygląda na telefonie:
+
+<Figure
+  src={careersAfterMobile}
+  frame="plain"
+  narrow
+  alt="Przeprojektowana strona kariery na telefonie: nagłówek, opis firmy i przycisk „See open roles” na całą szerokość, a pod nimi początek sekcji „Why join us”."
+  caption="Ta sama strona na telefonie."
+/>
+
+## Podgląd na własnym komputerze (opcjonalnie)
+
+Jeśli chcesz wypróbować zmiany na swoim komputerze przed przesłaniem, zestaw podglądu z pliku ZIP pokaże Twoją stronę kariery z przykładowymi ofertami, tak jak podgląd w Emploist. Potrzebny jest [Node.js](https://nodejs.org) w wersji 22 lub nowszej.
+
+1. Rozpakuj `careers-page.zip`.
+2. Otwórz terminal w rozpakowanym folderze i uruchom `node preview.mjs`.
+3. Otwórz `http://localhost:4321` w przeglądarce i odświeżaj stronę po każdej zmianie.
+
+Aby sprawdzić kod pod kątem problemów tak samo, jak robi to Emploist przed zapisaniem, uruchom `node preview.mjs check`. Jeśli korzystasz z asystenta AI, który pracuje na plikach na Twoim komputerze, takiego jak Claude Code, możesz poprosić go o uruchomienie tych poleceń.
+
+## Warto wiedzieć
+
+- **Tylko administratorzy mogą edytować kod.** Pozostali członkowie zespołu widzą kartę Wygląd, ale nie mogą jej zmieniać.
+- **JavaScript nie działa na stronach kariery.** Dzięki temu Twoja strona i Twoi kandydaci są bezpieczni. Wszystko z tego poradnika działa bez niego.
+- **Obrazy, czcionki i arkusze stylów mogą być wczytywane z innych witryn**, o ile ich adresy zaczynają się od `https://`. Tak właśnie działa Google Fonts.
+- **Formularze aplikacyjne działają dalej** niezależnie od tego, jak zmienisz wygląd, więc aplikacje nadal trafiają do skrzynki odbiorczej każdej oferty.
+
+Chcesz zobaczyć własną stronę kariery? [Rozpocznij bezpłatny okres próbny](https://app.emploist.com/sign-in), a strona będzie gotowa, gdy tylko skonfigurujesz firmę. Potem nadaj jej własny charakter.

@@ -1,0 +1,272 @@
+---
+title: "Personnaliser votre page carrière avec du code ou l’IA"
+description: "Harmonisez votre page carrière avec votre site. Modifiez son code dans Emploist avec un aperçu en direct, ou laissez un assistant IA comme Claude s’en charger."
+pubDate: 2026-10-22
+author: "Navaneeth CT"
+image: ../images/customize-careers-page/cover.png
+imageAlt: "Une page carrière repensée à côté de l’éditeur de code d’Emploist."
+tags: ["Page carrière", "Guides"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import careersBefore from "../images/customize-careers-page/careers-before.png";
+import careersAfter from "../images/customize-careers-page/careers-after.png";
+import careersAfterMobile from "../images/customize-careers-page/careers-after-mobile.png";
+import claudePrompt from "../images/customize-careers-page/claude-prompt.png";
+import claudeReply from "../images/customize-careers-page/claude-reply.png";
+import designTab from "../images/customize-careers-page/design-tab.png";
+import editor from "../images/customize-careers-page/editor.png";
+import editorFont from "../images/customize-careers-page/editor-font.png";
+import editorHeadline from "../images/customize-careers-page/editor-headline.png";
+import editorMenu from "../images/customize-careers-page/editor-menu.png";
+import editorMobile from "../images/customize-careers-page/editor-mobile.png";
+import editorProblem from "../images/customize-careers-page/editor-problem.png";
+import editorReference from "../images/customize-careers-page/editor-reference.png";
+import editorUpload from "../images/customize-careers-page/editor-upload.png";
+
+Votre page carrière est souvent le premier vrai contact d’un candidat avec votre entreprise. Quand elle reprend les codes du reste de votre site web, avec les mêmes polices, les mêmes couleurs et le même ton, elle s’inscrit dans votre marque au lieu d’avoir l’air d’une page sortie d’un outil de recrutement.
+
+Chaque entreprise sur Emploist dispose d’une [page carrière prête dès le premier jour](/fr/#careers-page), à son logo et à sa couleur. Pour aller plus loin, vous pouvez changer toute son apparence en modifiant son code. Cela peut sembler technique, mais nul besoin d’être développeur. Ce guide présente deux façons de procéder :
+
+1. [**Modifier le code dans Emploist.**](#option-1-modifier-le-code-dans-emploist) Idéal pour les petits changements, comme un nouveau titre ou une nouvelle police. Vous voyez chaque modification dans un aperçu en direct, au fur et à mesure de la saisie.
+2. [**Confier les modifications à un assistant IA.**](#option-2-confier-les-modifications-à-un-assistant-ia) Idéal pour les changements plus importants, comme une nouvelle section. Vous téléchargez le code, décrivez ce que vous voulez en termes simples, puis importez ce que l’assistant vous renvoie.
+
+Nous allons prendre l’exemple de Northwind Labs, une entreprise fictive, pour illustrer les deux méthodes. Voici sa page carrière avant de commencer.
+
+<Figure
+  src={careersBefore}
+  url="northwind.emploist.com"
+  alt="La page carrière de Northwind Labs avec le design par défaut : un en-tête avec le logo, un grand titre « Join Northwind Labs » accompagné d’une courte description de l’entreprise, et une liste de postes ouverts avec des filtres par département et par lieu."
+  caption="La page carrière de Northwind Labs avec le design par défaut d’Emploist."
+/>
+
+## Ce que vous pouvez modifier
+
+Votre page carrière est construite à partir de six fichiers. Chacun est un petit fichier texte que vous pouvez ouvrir et modifier :
+
+| Fichier | Ce qu’il contrôle |
+| --- | --- |
+| `layout.liquid` | Le cadre de chaque page : l’en-tête, le pied de page et ce qui se charge sur toutes les pages, comme les polices |
+| `jobs.liquid` | La page principale, avec votre présentation et la liste des postes ouverts |
+| `job.liquid` | La page d’une offre |
+| `apply.liquid` | Le formulaire de candidature |
+| `applied.liquid` | La page de remerciement que les candidats voient après avoir postulé |
+| `styles.css` | L’apparence de l’ensemble : couleurs, polices, tailles et espacements |
+
+Les fichiers utilisent trois langages simples. **HTML** décrit le contenu de la page, comme les titres et les boutons. **CSS** définit son apparence. **Liquid** ajoute des variables, comme `{{ company.name }}`, qu’Emploist remplace par le nom de votre entreprise, vos offres et d’autres informations lorsqu’un candidat ouvre la page.
+
+Vous ne risquez pas de casser votre page carrière en faisant des essais :
+
+- Rien ne change pour les candidats tant que vous n’avez pas cliqué sur **Enregistrer**.
+- Emploist vérifie votre code avant de l’enregistrer, et vous indique ce qu’il faut corriger en cas de problème.
+- Vous pouvez revenir au design par défaut à tout moment.
+
+Pour commencer, connectez-vous en tant qu’administrateur et ouvrez **Page carrière** dans la barre latérale. L’onglet **Design** contient la couleur de votre page et son code. Si vous avez seulement besoin de la couleur de votre marque, choisissez-la sous **Couleur principale**, et le tour est joué. Aucun code nécessaire.
+
+<Figure
+  src={designTab}
+  alt="L’onglet Design des paramètres de la page carrière dans Emploist : un sélecteur « Primary color », et une section « Code » avec les boutons « Edit code », « Download ZIP » et « Upload ZIP »."
+  caption="Page carrière → Design. La section Code contient tout ce qu’utilise ce guide."
+/>
+
+## Option 1 : modifier le code dans Emploist
+
+### Ouvrir l’éditeur
+
+Cliquez sur **Modifier le code**. Le code de votre page s’affiche à gauche, avec un onglet par fichier et une courte note sur le rôle de chacun. À droite se trouve un aperçu en direct de votre page carrière, avec des offres d’exemple.
+
+<Figure
+  src={editor}
+  alt="L’éditeur de code d’Emploist : les onglets des fichiers et le code de layout.liquid à gauche, et un aperçu en direct de la page carrière à droite."
+  caption="L’éditeur de code. L’aperçu de droite se met à jour pendant que vous tapez."
+/>
+
+Au-dessus de l’aperçu, **Aller à la page** permet d’afficher chacune des pages que voient les candidats : la liste des offres, une offre, le formulaire de candidature, la page de remerciement, une offre clôturée et « Page introuvable ». Cliquer sur l’onglet d’un fichier affiche aussi la page qu’il contrôle.
+
+### Changer le titre
+
+Cliquez sur l’onglet `jobs.liquid`. La ligne 3 contient le grand titre en haut de la page :
+
+```liquid
+<h1 class="hero-title">Join {{ company.name }}</h1>
+```
+
+Remplacez le mot « Join » par « Build what’s next at ». Laissez `{{ company.name }}` tel quel : Emploist y insère le nom de votre entreprise. Un instant après que vous avez fini de taper, l’aperçu affiche le nouveau titre.
+
+<Figure
+  src={editorHeadline}
+  alt="Le fichier jobs.liquid dans l’éditeur, avec le titre modifié en « Build what’s next at {{ company.name }} », et l’aperçu qui affiche « Build what’s next at Northwind Labs »."
+  caption="Modifiez le texte entre les balises, et l’aperçu suit."
+/>
+
+### Utiliser votre propre police
+
+Changer de police demande deux petites modifications. Nous allons utiliser Fraunces, une police gratuite proposée par [Google Fonts](https://fonts.google.com).
+
+1. **Chargez la police.** Sur Google Fonts, ouvrez la police, cliquez sur **Get font**, puis sur **Get embed code**, et copiez la ligne `<link>` qui contient `fonts.googleapis.com/css2`. Dans `layout.liquid`, collez-la sur une nouvelle ligne, juste au-dessus de celle qui contient `stylesheet_url` :
+
+   ```html
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&display=swap">
+   ```
+
+2. **Utilisez-la.** Dans `styles.css`, repérez, vers le haut du fichier, la ligne qui commence par `--font:`, et ajoutez le nom de la police entre guillemets au début de la liste, suivi d’une virgule :
+
+   ```css
+   --font: "Fraunces", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+   ```
+
+   Les autres polices de la liste servent de solutions de secours, au cas où un navigateur ne parviendrait pas à charger la vôtre.
+
+<Figure
+  src={editorFont}
+  alt="Le fichier styles.css dans l’éditeur, avec Fraunces ajoutée à la ligne --font, et l’aperçu qui affiche la page carrière dans la police Fraunces."
+  caption="Fraunces est désormais utilisée partout sur la page."
+/>
+
+### Vérifier sur téléphone
+
+De nombreux candidats ouvriront votre page carrière sur leur téléphone. Cliquez sur l’icône de téléphone au-dessus de l’aperçu pour afficher la page au format d’un téléphone.
+
+<Figure
+  src={editorMobile}
+  alt="L’aperçu de l’éditeur passé au format téléphone, qui affiche la page carrière avec le nouveau titre et la nouvelle police dans une colonne étroite."
+  caption="L’icône de téléphone affiche l’aperçu au format d’un téléphone."
+/>
+
+### Corriger les erreurs avant la mise en ligne
+
+Si une modification casse quelque chose, Emploist vous le signale immédiatement. L’onglet du fichier reçoit une marque rouge, l’aperçu indique ce qui ne va pas à la place de la page, et une liste sous le code précise le problème et la ligne concernée. Cliquez sur un problème pour y accéder directement. La plupart des problèmes viennent d’une faute de frappe ou d’une balise fermante manquante, et annuler votre dernière modification (<kbd>Cmd</kbd>+<kbd>Z</kbd> sur Mac, <kbd>Ctrl</kbd>+<kbd>Z</kbd> sur Windows) suffit généralement à tout remettre en ordre.
+
+<Figure
+  src={editorProblem}
+  alt="L’éditeur avec un problème : l’onglet jobs.liquid porte une marque rouge, la ligne 4 est soulignée, l’aperçu indique que la page n’a pas pu être affichée, et une liste sous le code signale 1 problème à corriger avant d’enregistrer : jobs.liquid, ligne 4, balise non fermée."
+  caption="Supprimer un {% endif %} par erreur laisse son {% if %} ouvert, et Emploist indique la ligne exacte."
+/>
+
+Vous ne pouvez pas enregistrer tant qu’il reste des problèmes : les candidats ne voient donc jamais de page cassée.
+
+### Consulter les variables disponibles
+
+Cliquez sur **Référence** en haut de l’éditeur pour voir toutes les variables que vous pouvez utiliser, comme le lieu d’une offre ou la description de votre entreprise, avec une note sur ce que chacune affiche.
+
+<Figure
+  src={editorReference}
+  alt="Le panneau « Reference » ouvert par-dessus l’éditeur, qui liste des variables comme company.name et company.description, avec ce que chacune affiche."
+  caption="La référence liste tout ce que les modèles peuvent afficher."
+/>
+
+### Enregistrer vos modifications
+
+Quand l’aperçu vous convient, cliquez sur **Enregistrer**. Votre page carrière est immédiatement mise à jour pour les candidats.
+
+Vous avez changé d’avis ? Le menu **Plus d’actions** (les trois points à côté d’**Abandonner**) propose **Rétablir le code par défaut**, qui remet en place le design par défaut d’Emploist. Comme pour toute modification, rien ne change sur votre page carrière tant que vous n’enregistrez pas.
+
+<Figure
+  src={editorMenu}
+  frame="plain"
+  narrow
+  alt="Le menu « More actions » de l’éditeur, avec « Download ZIP », « Upload ZIP » et « Reset to default code »."
+  caption="Plus d’actions : téléchargez ou importez le code au format ZIP, ou repartez de zéro."
+/>
+
+## Option 2 : confier les modifications à un assistant IA
+
+Pour des changements plus importants, comme une nouvelle section ou une mise en page différente, il est souvent plus simple de décrire ce que vous voulez et de laisser un assistant IA écrire le code. Nous allons utiliser [Claude](https://claude.ai), mais tout assistant capable de lire des fichiers et d’en renvoyer fonctionne à peu près de la même façon.
+
+### Télécharger votre code
+
+Dans l’onglet **Design**, cliquez sur **Télécharger le ZIP**. Vous obtenez un fichier nommé `careers-page.zip` qui contient :
+
+- **Vos six fichiers**, avec toutes les modifications que vous avez enregistrées.
+- **Un guide, `README.md`**, qui explique les règles des pages carrière et toutes les variables que vous pouvez utiliser. C’est ce qui permet à un assistant IA d’écrire un code correct du premier coup.
+- **Un kit d’aperçu** (`preview.mjs` et `company.json`) pour prévisualiser la page sur votre ordinateur. Il est facultatif, et nous le présentons [à la fin](#prévisualiser-sur-votre-ordinateur-facultatif).
+
+Inutile de le décompresser : Claude peut lire le ZIP tel quel.
+
+### Demander les modifications
+
+Ouvrez [claude.ai](https://claude.ai), lancez une nouvelle discussion et joignez `careers-page.zip` avec le bouton **+**. Décrivez ensuite ce que vous souhaitez en termes simples, comme vous le feriez auprès d’un designer. Voici ce que nous avons demandé :
+
+> Voici le code de notre page carrière sur Emploist. Peux-tu rendre la page des offres plus chaleureuse et plus accueillante, avec une introduction plus grande et un bouton vers les postes ouverts, ainsi qu’une section « Why join us » présentant quelques avantages (télétravail possible, budget formation, 30 jours de congés, séminaires d’équipe) ? Suis les consignes de README.md et renvoie-moi un ZIP que je peux importer.
+
+<Figure
+  src={claudePrompt}
+  frame="plain"
+  narrow
+  alt="Une nouvelle discussion sur claude.ai avec careers-page.zip en pièce jointe, et la demande d’une page des offres plus chaleureuse avec une introduction plus grande et une section « Why join us »."
+  caption="Joignez le ZIP et décrivez ce que vous voulez."
+/>
+
+Lui demander de suivre `README.md` et de renvoyer un ZIP vous évite quelques allers-retours.
+
+### Récupérer le code mis à jour
+
+Claude a mis environ quatre minutes. Il a lu le guide et le code, effectué les modifications, puis vérifié son propre travail : il a prévisualisé la page aux formats ordinateur et téléphone avec le kit d’aperçu, et lancé la même vérification qu’Emploist effectue avant d’enregistrer. Il a ensuite renvoyé un nouveau `careers-page.zip`, avec un résumé de ses modifications :
+
+- **Une introduction plus grande et plus chaleureuse**, avec un nouveau titre, une phrase d’accueil et un bouton **See open roles** qui renvoie directement à la liste.
+- **Une section « Why join us »** avec quatre cartes : télétravail possible, budget formation, 30 jours de congés et séminaires d’équipe.
+- **Quelques retouches sur les postes ouverts**, comme une courte introduction au-dessus de la liste.
+
+<Figure
+  src={claudeReply}
+  frame="plain"
+  narrow
+  alt="La réponse de Claude sur claude.ai : careers-page.zip est prêt à être importé, une liste des modifications apportées à jobs.liquid et styles.css, une note précisant que le nouveau titre est un texte fixe, et le ZIP avec un bouton « Download »."
+  caption="Claude explique ce qu’il a modifié et renvoie un ZIP à télécharger."
+/>
+
+Lisez le résumé avant d’importer le fichier. Ici, Claude a signalé qu’il avait remplacé notre nouveau titre par le sien, « Come build what’s next with us », et nous a indiqué quelle ligne modifier pour le changer. Il a aussi gardé des avantages génériques, sans inventer de détails comme le montant du budget formation, pour que nous puissions ajouter les nôtres.
+
+Si le résultat ne vous convient pas tout à fait, poursuivez la conversation : « rends le bouton vert », « ajoute un avantage sur l’assurance santé » ou « raccourcis l’introduction ». Demandez le ZIP mis à jour une fois que vous avez terminé.
+
+### L’importer dans Emploist
+
+De retour dans l’onglet **Design**, cliquez sur **Importer un ZIP** et choisissez le ZIP envoyé par Claude. Emploist ouvre l’éditeur avec le nouveau code chargé, mais pas encore enregistré : vous pouvez ainsi vérifier le résultat avant que quoi que ce soit ne change pour les candidats.
+
+<Figure
+  src={editorUpload}
+  alt="L’éditeur juste après l’import du ZIP : l’état indique « Unsaved changes », un message précise que les fichiers ont été chargés depuis careers-page.zip et invite à vérifier l’aperçu, puis à enregistrer, et l’aperçu montre l’introduction repensée avec un bouton « See open roles »."
+  caption="Le code importé s’ouvre dans l’éditeur, prêt à être vérifié."
+/>
+
+Utilisez **Aller à la page** et l’icône de téléphone pour vérifier chaque page. Si quelque chose ne va pas, corrigez-le dans l’éditeur ou redemandez à Claude. Quand tout vous convient, cliquez sur **Enregistrer**.
+
+## Le résultat
+
+Voici la page carrière de Northwind Labs après les deux séries de modifications : la police Fraunces ajoutée dans l’éditeur, et la refonte de Claude. Comparez-la avec le design par défaut, en haut de ce guide.
+
+<Figure
+  src={careersAfter}
+  url="northwind.emploist.com"
+  alt="La page carrière repensée de Northwind Labs, dans la police Fraunces : une étiquette « Careers at Northwind Labs », le titre « Come build what’s next with us », la description de l’entreprise, une phrase d’accueil, un bouton « See open roles » avec le nombre de postes ouverts, et une section « Why join us » avec quatre cartes : « Remote-friendly », « Learning budget », « 30 days off » et « Team offsites »."
+  caption="La page carrière terminée, avec les postes ouverts plus bas."
+/>
+
+Et sur téléphone :
+
+<Figure
+  src={careersAfterMobile}
+  frame="plain"
+  narrow
+  alt="La page carrière repensée sur un téléphone : le titre, la description de l’entreprise et un bouton « See open roles » sur toute la largeur, avec la section « Why join us » qui commence en dessous."
+  caption="La même page sur téléphone."
+/>
+
+## Prévisualiser sur votre ordinateur (facultatif)
+
+Si vous souhaitez tester des modifications sur votre ordinateur avant de les importer, le kit d’aperçu du ZIP affiche votre page carrière avec des offres d’exemple, comme l’aperçu d’Emploist. Il nécessite [Node.js](https://nodejs.org) 22 ou une version ultérieure.
+
+1. Décompressez `careers-page.zip`.
+2. Ouvrez un terminal dans le dossier décompressé et exécutez `node preview.mjs`.
+3. Ouvrez `http://localhost:4321` dans votre navigateur, et rechargez la page après chaque modification.
+
+Pour rechercher les problèmes dans votre code de la même façon qu’Emploist avant d’enregistrer, exécutez `node preview.mjs check`. Si vous utilisez un assistant IA qui travaille avec les fichiers de votre ordinateur, comme Claude Code, vous pouvez lui demander d’exécuter ces commandes pour vous.
+
+## Bon à savoir
+
+- **Seuls les administrateurs peuvent modifier le code.** Les autres membres de l’équipe peuvent voir l’onglet Design, mais pas le modifier.
+- **JavaScript ne s’exécute pas sur les pages carrière.** Cela protège votre page et vos candidats. Tout ce que présente ce guide fonctionne sans.
+- **Les images, polices et feuilles de style peuvent être chargées depuis d’autres sites web**, à condition que leur adresse commence par `https://`. C’est ainsi que fonctionne Google Fonts.
+- **Les formulaires de candidature continuent de fonctionner**, quelle que soit la façon dont vous modifiez le design : les candidatures arrivent toujours dans la boîte de réception de chaque offre.
+
+Envie de voir votre propre page carrière ? [Démarrez votre essai gratuit](https://app.emploist.com/sign-in) : elle est prête dès que vous avez configuré votre entreprise. Il ne vous reste plus qu’à la faire vôtre.

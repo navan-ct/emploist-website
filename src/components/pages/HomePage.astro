@@ -1,0 +1,98 @@
+---
+// The landing page, in the language of its address (/ or /fr/, /de/, …).
+import { getLocale, getMessages, PLAN_FACTS } from "../../i18n";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { APP, PLAN, SITE } from "../../lib/site";
+import CallToAction from "../CallToAction.astro";
+import AiAssistants from "../sections/AiAssistants.astro";
+import CareersPage from "../sections/CareersPage.astro";
+import Details from "../sections/Details.astro";
+import DesignInCode from "../sections/DesignInCode.astro";
+import Faq from "../sections/Faq.astro";
+import FormsAndTeam from "../sections/FormsAndTeam.astro";
+import Hero from "../sections/Hero.astro";
+import HowItWorks from "../sections/HowItWorks.astro";
+import Pricing from "../sections/Pricing.astro";
+import Ranking from "../sections/Ranking.astro";
+import StagesAndEmails from "../sections/StagesAndEmails.astro";
+
+const locale = getLocale(Astro);
+const t = getMessages(locale);
+const pageUrl = new URL(Astro.url.pathname, SITE.url).href;
+const organizationId = `${SITE.url}/#organization`;
+const description = t.site.description(PLAN_FACTS);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": organizationId,
+        name: SITE.name,
+        url: `${SITE.url}/`,
+        logo: `${SITE.url}/apple-touch-icon.png`,
+        email: SITE.supportEmail,
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE.url}/#website`,
+        name: SITE.name,
+        url: `${SITE.url}/`,
+        publisher: { "@id": organizationId },
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: SITE.name,
+        url: pageUrl,
+        inLanguage: locale,
+        applicationCategory: "BusinessApplication",
+        applicationSubCategory: "Applicant tracking system",
+        operatingSystem: "Web",
+        description,
+        publisher: { "@id": organizationId },
+        offers: [
+          {
+            "@type": "Offer",
+            price: String(PLAN.priceUsd),
+            priceCurrency: "USD",
+            url: APP.signUpUrl,
+            description: t.site.monthlyOffer(PLAN_FACTS),
+          },
+          {
+            "@type": "Offer",
+            price: String(PLAN.yearlyPriceUsd),
+            priceCurrency: "USD",
+            url: APP.signUpUrl,
+            description: t.site.yearlyOffer(PLAN_FACTS),
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        inLanguage: locale,
+        mainEntity: t.faq.items(PLAN_FACTS).map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={t.site.title} description={description} jsonLd={jsonLd}>
+  <Hero />
+  <HowItWorks />
+  <Ranking />
+  <CareersPage />
+  <DesignInCode />
+  <FormsAndTeam />
+  <StagesAndEmails />
+  <AiAssistants />
+  <Details />
+  <Pricing />
+  <Faq />
+  <CallToAction />
+</BaseLayout>

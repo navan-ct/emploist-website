@@ -1,0 +1,141 @@
+---
+// A blog post, in English or in one of its translations.
+import { Image } from "astro:assets";
+import { render } from "astro:content";
+import { getLocale, getMessages, PLAN_FACTS } from "../../i18n";
+import { formatDate } from "../../i18n/format";
+import { DEFAULT_LOCALE, type Locale, LOCALES, localizePath } from "../../i18n/locales";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getTranslations, type Post, type PostTranslation, postUrl, readingMinutes } from "../../lib/blog";
+import { APP, SITE } from "../../lib/site";
+import Button from "../Button.astro";
+
+interface Props {
+  post: Post;
+  /** On a translated post's page: the translation to show. */
+  translation?: PostTranslation;
+}
+
+const { post, translation } = Astro.props;
+const locale = getLocale(Astro);
+const t = getMessages(locale);
+const entry = translation ?? post;
+const { Content } = await render(entry);
+const { title, description, pubDate, updatedDate, image, imageAlt, tags } = entry.data;
+const author = entry.data.author === "The Emploist team" ? t.blog.defaultAuthor : entry.data.author;
+const url = `${SITE.url}${postUrl(post.id, locale)}`;
+
+// The post in each language it's translated into, for the switcher and search engines.
+const translations = await getTranslations();
+const alternates: Partial<Record<Locale, string>> = Object.fromEntries(
+  LOCALES.filter((option) => option === DEFAULT_LOCALE || translations.get(option)?.has(post.id)).map((option) => [
+    option,
+    postUrl(post.id, option),
+  ]),
+);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    url,
+    mainEntityOfPage: url,
+    inLanguage: locale,
+    datePublished: pubDate.toISOString(),
+    dateModified: (updatedDate ?? pubDate).toISOString(),
+    author: { "@type": "Organization", name: author, url: `${SITE.url}/` },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: `${SITE.url}/`,
+      logo: { "@type": "ImageObject", url: `${SITE.url}/apple-touch-icon.png` },
+    },
+    ...(image && { image: new URL(image.src, SITE.url).href }),
+    ...(tags.length > 0 && { keywords: tags.join(", ") }),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: t.blog.home, item: new URL(localizePath("/", locale), SITE.url).href },
+      { "@type": "ListItem", position: 2, name: t.blog.title, item: new URL(localizePath("/blog/", locale), SITE.url).href },
+      { "@type": "ListItem", position: 3, name: title, item: url },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={`${title} | ${SITE.name}`}
+  description={description}
+  type="article"
+  image={image?.src}
+  imageAlt={imageAlt ?? title}
+  publishedTime={pubDate}
+  modifiedTime={updatedDate}
+  noindex={entry.data.draft}
+  jsonLd={jsonLd}
+  alternates={alternates}
+>
+  <article class="container-page pt-12 pb-20 sm:pt-16 sm:pb-28">
+    <div class="mx-auto max-w-[44rem]">
+      <nav aria-label={t.blog.breadcrumb}>
+        <a href={localizePath("/blog/", locale)} class="text-[0.9375rem] font-medium text-faint transition-colors hover:text-ink">
+          ← {t.blog.title}
+        </a>
+      </nav>
+
+      <header class="mt-10">
+        <p class="text-sm text-faint">
+          <time datetime={pubDate.toISOString()}>{formatDate(pubDate, locale)}</time>
+          <span aria-hidden="true"> · </span>
+          {t.blog.minutesToRead(readingMinutes(entry, locale))}
+          {
+            updatedDate && (
+              <>
+                <span aria-hidden="true"> · </span>
+                <time datetime={updatedDate.toISOString()}>{t.blog.updated(formatDate(updatedDate, locale))}</time>
+              </>
+            )
+          }
+        </p>
+        <h1 class="text-heading mt-4">{title}</h1>
+        <p class="text-lead mt-5">{description}</p>
+        <p class="mt-6 text-[0.9375rem] font-medium text-ink">{author}</p>
+      </header>
+    </div>
+
+    {
+      image && (
+        <div class="mx-auto mt-12 max-w-5xl overflow-hidden rounded-3xl border border-line bg-subtle">
+          <Image
+            src={image}
+            alt={imageAlt ?? ""}
+            widths={[640, 960, 1280, 1600]}
+            sizes="(min-width: 64rem) 64rem, 100vw"
+            loading="eager"
+            fetchpriority="high"
+            class="w-full"
+          />
+        </div>
+      )
+    }
+
+    <div class="prose-post prose prose-zinc mx-auto mt-12 max-w-[44rem] sm:prose-lg">
+      <Content />
+    </div>
+
+    <aside
+      aria-label={t.blog.tryEmploist}
+      class="mx-auto mt-16 flex max-w-[44rem] flex-col gap-6 rounded-3xl border border-line bg-subtle p-8 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <div>
+        <p class="font-semibold text-ink">{t.blog.ctaTitle}</p>
+        <p class="mt-1 text-[0.9375rem]">{t.blog.ctaText(PLAN_FACTS)}</p>
+      </div>
+      <Button href={APP.signUpUrl}>{t.nav.startFreeTrial}</Button>
+    </aside>
+  </article>
+</BaseLayout>

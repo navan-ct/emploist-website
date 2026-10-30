@@ -197,6 +197,30 @@
   }
 }
 
+/* Japanese and Korean pages. Inter has no letters for them, so they come from
+   the system's fonts, which need more line height than Inter's display cut
+   and none of its tight tracking. Lines break between words (Korean) or
+   phrases (Japanese, where browsers support it) rather than mid-word. */
+:lang(ja),
+:lang(ko) {
+  & :is(.text-display, .text-heading, .text-subheading) {
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  & :is(.text-lead, .text-eyebrow) {
+    letter-spacing: normal;
+  }
+}
+
+:lang(ko) {
+  word-break: keep-all;
+}
+
+:lang(ja) :is(h1, h2, h3) {
+  word-break: auto-phrase;
+}
+
 /* Blog posts and legal pages: the typography plugin's prose, in our colors. */
 .prose-post {
   --tw-prose-links: var(--brand-ink);
@@ -229,5 +253,12 @@
 
   & :where(pre) {
     border: 1px solid var(--line);
+  }
+
+  /* Long words (German compounds, cookie names) break rather than push a
+     table past the edge of a phone's screen. */
+  & :where(th, td) {
+    hyphens: auto;
+    overflow-wrap: anywhere;
   }
 }

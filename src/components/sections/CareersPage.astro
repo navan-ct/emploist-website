@@ -1,33 +1,9 @@
 ---
+import { getLocale, getMessages } from "../../i18n";
 import Screenshot from "../Screenshot.astro";
 import Window from "../Window.astro";
 
-const facts = [
-  {
-    title: "Your address, or your domain",
-    text: "Start at yourcompany.emploist.com, then connect a domain of your own, like careers.yourcompany.com.",
-  },
-  {
-    title: "Easy to browse",
-    text: "Open roles are grouped by department, and candidates can filter them by department and location.",
-  },
-  {
-    title: "Fast on every screen",
-    text: "Pages load quickly and look great everywhere, from phones to wide monitors.",
-  },
-  {
-    title: "Applying takes minutes",
-    text: "No accounts or passwords. Candidates fill in your form, attach their resume, and they're done.",
-  },
-  {
-    title: "Transparent about AI",
-    text: "Your page lets candidates know when AI helps review their application.",
-  },
-  {
-    title: "Protected from spam",
-    text: "Built-in protection keeps spam out of your inbox, so you only see real applicants.",
-  },
-];
+const t = getMessages(getLocale(Astro)).careersPage;
 ---
 
 <section
@@ -37,19 +13,16 @@ const facts = [
 >
   <div class="container-page">
     <div class="mx-auto max-w-3xl text-center">
-      <p class="text-eyebrow">Careers page</p>
-      <h2 id="careers-title" class="text-heading mt-4">A careers page that's ready on day one.</h2>
-      <p class="text-lead mx-auto mt-6 max-w-2xl">
-        Every company gets a fast, polished careers page with its logo and color. New jobs show up the moment you
-        publish them, and applications land straight in the job's inbox.
-      </p>
+      <p class="text-eyebrow">{t.eyebrow}</p>
+      <h2 id="careers-title" class="text-heading mt-4">{t.title}</h2>
+      <p class="text-lead mx-auto mt-6 max-w-2xl">{t.lead}</p>
     </div>
 
     <div class="relative mx-auto mt-14 max-w-5xl pb-6 sm:mt-16 lg:pr-20">
       <Window url="northwind.emploist.com">
         <Screenshot
           name="careers-page"
-          alt="Northwind Labs' careers page: a header with the company's logo, a short introduction, and open roles grouped by department with filters for department and location."
+          alt={t.screenshotAlt}
           sizes="(min-width: 64rem) 58rem, calc(100vw - 2.5rem)"
         />
       </Window>
@@ -59,7 +32,7 @@ const facts = [
         <div class="overflow-hidden rounded-[1.75rem] bg-white">
           <Screenshot
             name="careers-job-mobile"
-            alt="A job page on a phone: Senior Product Designer in Berlin, hybrid and full-time, with an Apply for this job button and the job description."
+            alt={t.mobileScreenshotAlt}
             sizes="16rem"
           />
         </div>
@@ -68,7 +41,7 @@ const facts = [
 
     <dl class="mt-20 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
       {
-        facts.map((fact) => (
+        t.facts.map((fact) => (
           <div class="border-t border-line-strong pt-5">
             <dt class="font-semibold text-ink">{fact.title}</dt>
             <dd class="mt-2 text-[0.9375rem] leading-relaxed">{fact.text}</dd>

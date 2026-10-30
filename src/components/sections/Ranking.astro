@@ -1,34 +1,24 @@
 ---
-import { PLAN, formatNumber } from "../../lib/site";
+import { getLocale, getMessages, PLAN_FACTS } from "../../i18n";
 import Screenshot from "../Screenshot.astro";
+
+const t = getMessages(getLocale(Astro)).ranking;
 ---
 
 <section id="features" aria-labelledby="ranking-title" class="py-20 sm:py-28">
   <div class="container-page grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
     <div class="lg:col-span-5">
-      <p class="text-eyebrow">AI ranking</p>
-      <h2 id="ranking-title" class="text-heading mt-4">A match score you can actually read.</h2>
-      <p class="text-lead mt-6">
-        Every application is scored against the job as soon as it arrives. Instead of a mystery number, you see
-        how each applicant measures up on the things that matter for the role.
-      </p>
+      <p class="text-eyebrow">{t.eyebrow}</p>
+      <h2 id="ranking-title" class="text-heading mt-4">{t.title}</h2>
+      <p class="text-lead mt-6">{t.lead}</p>
       <ul class="check-list mt-8 flex flex-col gap-4 text-[0.9375rem] leading-relaxed">
-        <li>
-          <strong class="font-semibold text-ink">A clear breakdown.</strong> Skills, experience, seniority fit, and
-          qualifications are each scored, so you can see exactly where someone stands out.
-        </li>
-        <li>
-          <strong class="font-semibold text-ink">More than a resume.</strong> Answers to your application questions are
-          part of the picture too.
-        </li>
-        <li>
-          <strong class="font-semibold text-ink">Fair and consistent.</strong> Every applicant for a job is scored the
-          same way, against the same criteria.
-        </li>
-        <li>
-          <strong class="font-semibold text-ink">You stay in charge.</strong> The match is there to guide your review, not
-          replace it. Update a job, and you can rank its applicants again.
-        </li>
+        {
+          t.points.map((point) => (
+            <li>
+              <strong class="font-semibold text-ink">{point.title}</strong> {point.text}
+            </li>
+          ))
+        }
       </ul>
     </div>
 
@@ -37,13 +27,11 @@ import Screenshot from "../Screenshot.astro";
         <div class="shot">
           <Screenshot
             name="match"
-            alt="An applicant's 91% match in Emploist, broken down into skills (93), experience (88), seniority fit (95), and qualifications (85), each with a short explanation."
+            alt={t.screenshotAlt}
             sizes="(min-width: 76rem) 40rem, (min-width: 64rem) 52vw, calc(100vw - 5rem)"
           />
         </div>
-        <figcaption class="mt-5 text-sm text-faint sm:mt-6">
-          Each ranking uses one AI credit. Your plan comes with {formatNumber(PLAN.credits)} every month.
-        </figcaption>
+        <figcaption class="mt-5 text-sm text-faint sm:mt-6">{t.caption(PLAN_FACTS)}</figcaption>
       </figure>
     </div>
   </div>

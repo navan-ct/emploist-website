@@ -1,26 +1,21 @@
 ---
+import { getLocale, getMessages } from "../../i18n";
 import Screenshot from "../Screenshot.astro";
 import Window from "../Window.astro";
+
+const t = getMessages(getLocale(Astro)).designInCode;
 ---
 
 <section aria-labelledby="code-title" class="scheme-dark overflow-hidden py-20 sm:py-28">
   <div class="container-page">
     <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
       <div class="lg:col-span-6">
-        <p class="text-eyebrow">Design in code</p>
-        <h2 id="code-title" class="text-heading mt-4">Make it look exactly like your website.</h2>
-        <p class="text-lead mt-6">
-          The default design looks good with just your logo and color. When you want more, every page of your careers
-          site is HTML, CSS, and Liquid templates you can change.
-        </p>
+        <p class="text-eyebrow">{t.eyebrow}</p>
+        <h2 id="code-title" class="text-heading mt-4">{t.title}</h2>
+        <p class="text-lead mt-6">{t.lead}</p>
       </div>
       <ul class="check-list flex flex-col gap-4 self-end text-[0.9375rem] leading-relaxed lg:col-span-5 lg:col-start-8">
-        <li>Edit right in Emploist, with a live preview at desktop and phone sizes.</li>
-        <li>
-          Or download the code, change it in your own editor or with an AI assistant, and preview it on your computer
-          with a single command.
-        </li>
-        <li>Mistakes are caught before you save, so candidates always see a working page.</li>
+        {t.points.map((point) => <li>{point}</li>)}
       </ul>
     </div>
 
@@ -28,7 +23,7 @@ import Window from "../Window.astro";
       <Screenshot
         name="careers-code"
         scheme="dark"
-        alt="The careers page code editor in Emploist: the layout template with syntax highlighting on the left, and a live preview of the careers page on the right."
+        alt={t.screenshotAlt}
         sizes="(min-width: 76rem) 72rem, calc(100vw - 2.5rem)"
       />
     </Window>

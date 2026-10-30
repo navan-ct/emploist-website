@@ -1,0 +1,866 @@
+---
+import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SITE } from "../../lib/site";
+
+const sections = [
+  { id: "about", title: "Tentang Ketentuan ini" },
+  { id: "accounts", title: "Akun dan tim Anda" },
+  { id: "service", title: "Layanan" },
+  { id: "ai-ranking", title: "Penilaian AI" },
+  { id: "ai-assistants", title: "Asisten AI" },
+  { id: "plans-and-payments", title: "Paket, pembayaran, dan pembatalan" },
+  { id: "your-content", title: "Data Pelanggan" },
+  { id: "acceptable-use", title: "Penggunaan yang dapat diterima" },
+  { id: "careers-pages", title: "Halaman karier, domain, dan kode" },
+  { id: "third-party-services", title: "Layanan pihak ketiga" },
+  { id: "our-property", title: "Kekayaan intelektual" },
+  { id: "confidentiality", title: "Kerahasiaan" },
+  { id: "data-processing", title: "Pemrosesan data" },
+  { id: "suspension-and-termination", title: "Penangguhan dan pengakhiran" },
+  { id: "disclaimers", title: "Penafian" },
+  { id: "liability", title: "Batasan tanggung jawab" },
+  { id: "indemnity", title: "Ganti rugi" },
+  { id: "changes", title: "Perubahan atas Ketentuan ini" },
+  { id: "disputes", title: "Hukum yang berlaku dan penyelesaian sengketa" },
+  { id: "general", title: "Umum" },
+  { id: "contact", title: "Kontak" },
+] as const;
+---
+
+<LegalLayout
+  document="terms"
+  title="Ketentuan Layanan"
+  description="Ketentuan penggunaan Emploist: paket dan pembayaran, penilaian AI, asisten AI, penggunaan yang dapat diterima, dan cara kami memproses data pelamar untuk Anda."
+  translatedFrom="2026-10-28"
+  sections={sections}
+>
+  <h2 id="about">1. Tentang Ketentuan ini</h2>
+  <p>
+    Ketentuan Layanan ini ("Ketentuan"; bahasa Inggris: "Terms") merupakan perjanjian antara Anda dan Navaneeth CT,
+    orang perseorangan yang berdomisili di India, yang menjalankan usaha dengan nama Emploist ("kami"). "Anda" dan
+    "Pelanggan" ("Customer") berarti pelaku usaha atau organisasi lain yang menggunakan Emploist.
+  </p>
+  <ul>
+    <li>
+      Emploist ditujukan bagi organisasi yang sedang merekrut. Emploist tidak ditujukan untuk keperluan pribadi,
+      keluarga, atau rumah tangga.
+    </li>
+    <li>
+      Anda menerima Ketentuan ini saat Anda masuk ke Emploist, membuat perusahaan, memulai Paket, atau menggunakan
+      Emploist dengan cara lain. Jika Anda tidak setuju, jangan gunakan Emploist.
+    </li>
+    <li>
+      Orang yang menerima Ketentuan ini atas nama organisasi Anda menyatakan bahwa ia berusia sekurang-kurangnya 18 tahun
+      dan berwenang untuk mengikat organisasi tersebut. Setiap orang dalam tim Anda yang menggunakan Emploist harus
+      berusia sekurang-kurangnya 18 tahun.
+    </li>
+    <li>
+      Orang yang melamar pekerjaan melalui halaman karier tidak terikat oleh Ketentuan ini. Kebijakan Privasi kami
+      menjelaskan <a href="/id/privacy/#applicants">cara data mereka ditangani</a>.
+    </li>
+  </ul>
+  <p>
+    Ketentuan pemrosesan data dalam <a href="#data-processing">bagian 13</a> dan <a href="/id/privacy/#subprocessors"
+      >daftar subprosesor</a
+    > kami merupakan bagian dari Ketentuan ini. <a href="/id/privacy/">Kebijakan Privasi</a> kami menjelaskan cara kami
+    menangani Data Pribadi sebagai Pengendali Data Pribadi. Selain daftar subprosesor, Kebijakan Privasi tersebut bukan
+    bagian dari Ketentuan ini.
+  </p>
+
+  <h3>Istilah yang kami gunakan</h3>
+  <ul>
+    <li>
+      <strong>"Emploist"</strong> berarti aplikasi web Emploist, halaman karier dan email yang disediakannya, server MCP-nya
+      untuk asisten AI, serta dukungan terkait dari kami.
+    </li>
+    <li>
+      <strong>"Perusahaan Anda"</strong> ("Your company") berarti ruang kerja organisasi Anda di Emploist, yang berisi
+      lowongan, halaman karier, tim, pengaturan, dan lamaran organisasi tersebut.
+    </li>
+    <li>
+      <strong>"Anggota tim"</strong> ("Team members") berarti orang-orang di perusahaan Anda di Emploist, baik sebagai
+      admin maupun anggota.
+    </li>
+    <li><strong>"Pelamar"</strong> ("Applicants") berarti orang yang melamar lowongan Anda melalui Emploist.</li>
+    <li>
+      <strong>"Data Pelanggan"</strong> ("Customer Data") berarti konten yang Anda dan anggota tim Anda masukkan ke
+      Emploist, informasi yang dikirimkan pelamar melalui Emploist, serta skor kecocokan dan catatan lain yang dibuat
+      Emploist dari konten dan informasi tersebut.
+    </li>
+    <li>
+      <strong>"Paket"</strong> ("Plan") berarti langganan Emploist perusahaan Anda, termasuk uji coba gratisnya. Paket
+      Anda <strong>"aktif"</strong> ("active") selama Paket tersebut berada dalam masa uji coba gratis, telah dibayar, atau
+      berada dalam masa tenggang setelah pembayaran gagal.
+    </li>
+    <li><strong>"Kredit"</strong> ("Credits") berarti kredit AI yang digunakan untuk menilai lamaran.</li>
+  </ul>
+
+  <h2 id="accounts">2. Akun dan tim Anda</h2>
+  <ul>
+    <li>
+      Berikan informasi yang akurat tentang diri Anda dan perusahaan Anda, dan jaga agar informasi tersebut tetap
+      mutakhir.
+    </li>
+    <li>
+      Jaga keamanan metode masuk Anda, seperti akun email Anda serta akun Google atau Microsoft Anda. Siapa pun yang
+      menguasai metode tersebut dapat masuk sebagai Anda. Jangan bagikan kode masuk atau tautan undangan.
+    </li>
+    <li>
+      Admin mengelola penagihan, pengaturan, dan tim perusahaan Anda. Anda bertanggung jawab untuk memilih admin Anda,
+      atas segala hal yang dilakukan anggota tim Anda di Emploist, dan untuk memastikan bahwa mereka mematuhi Ketentuan
+      ini.
+    </li>
+    <li>
+      Keluarkan orang dari perusahaan Anda apabila mereka tidak lagi memerlukan akses. Jika Anda menduga seseorang telah
+      mengakses perusahaan Anda tanpa izin, segera beri tahu kami di <a href={`mailto:${SITE.supportEmail}`}
+        >{SITE.supportEmail}</a
+      >.
+    </li>
+  </ul>
+
+  <h2 id="service">3. Layanan</h2>
+  <p>
+    Emploist adalah alat perangkat lunak untuk rekrutmen. Kami bukan lembaga penempatan tenaga kerja ataupun perekrut,
+    dan kami tidak membuat keputusan rekrutmen untuk Anda.
+  </p>
+  <ul>
+    <li>
+      <strong>Perubahan.</strong> Kami dapat mengubah, menambah, atau menghapus fitur. Jika suatu perubahan secara
+      material mengurangi apa yang tercakup dalam Paket Anda, kami akan memberi tahu admin Anda sebelumnya sepanjang hal
+      itu secara wajar dapat kami lakukan.
+    </li>
+    <li>
+      <strong>Batasan.</strong> Emploist memiliki batasan teknis yang wajar, seperti pada ukuran file dan seberapa sering
+      permintaan dapat diajukan, dan kami dapat mengubahnya. Jika penggunaan Anda jauh melampaui penggunaan normal atau
+      menimbulkan risiko bagi Emploist, kami dapat membatasinya.
+    </li>
+    <li>
+      <strong>Dukungan dan ketersediaan.</strong> Kami menyediakan dukungan melalui email di <a
+        href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+      >. Kami tidak menawarkan perjanjian tingkat layanan, dan Emploist terkadang mungkin tidak tersedia, misalnya
+      selama pemeliharaan.
+    </li>
+    <li>
+      <strong>Uji coba gratis dan fitur beta.</strong> Uji coba gratis, serta fitur yang kami beri label beta atau
+      pratinjau, disediakan sebagaimana adanya. Uji coba dan fitur tersebut dapat berubah atau berakhir sewaktu-waktu.
+    </li>
+  </ul>
+
+  <h2 id="ai-ranking">4. Penilaian AI</h2>
+  <p>
+    Saat penilaian AI aktif, Emploist menggunakan model AI untuk memberi skor pada setiap lamaran terhadap lowongannya,
+    berdasarkan CV, jawaban pelamar, dan detail lowongan. Penilaian AI aktif secara bawaan, dan selama Paket Anda aktif,
+    admin dapat menonaktifkannya di Pengaturan. Penilaian AI dengan sendirinya tidak menolak, meloloskan, atau mengirim
+    email kepada siapa pun.
+  </p>
+  <p>
+    Skor kecocokan dapat keliru, tidak lengkap, atau bias. Skor tersebut merupakan panduan untuk menentukan lamaran mana
+    yang perlu ditinjau lebih dulu, bukan kesimpulan tentang apakah seseorang memenuhi kualifikasi. Anda yang memutuskan
+    apakah dan bagaimana menggunakan penilaian AI, dan Anda bertanggung jawab atas setiap keputusan rekrutmen yang Anda
+    buat. Jika Anda menggunakannya, Anda wajib:
+  </p>
+  <ul>
+    <li>
+      memastikan lamaran ditinjau oleh manusia, tidak sekali-kali mendasarkan keputusan tentang pelamar hanya pada skor
+      kecocokan, dan tidak sekali-kali melewatkan lamaran karena skornya rendah atau tidak ada
+    </li>
+    <li>
+      memberi tahu pelamar bahwa AI membantu meninjau lamaran, serta memberikan setiap pemberitahuan lain dan memenuhi
+      setiap persyaratan lain yang dibebankan hukum kepada Anda atas penggunaan AI dalam rekrutmen. Selama penilaian AI
+      aktif, halaman karier bawaan menampilkan pemberitahuan semacam itu. Jika Anda menggunakan kode halaman karier Anda
+      sendiri, tambahkan sendiri pemberitahuan tersebut.
+    </li>
+    <li>
+      tidak menggunakannya untuk menyaring pelamar berdasarkan karakteristik yang dilindungi, seperti ras, agama, kasta,
+      jenis kelamin, usia, atau disabilitas, atau berdasarkan hal-hal yang menjadi proksi atas karakteristik tersebut
+    </li>
+    <li>
+      tidak menggunakannya untuk tujuan lain, seperti mengevaluasi atau memantau karyawan, selain meninjau lamaran untuk
+      lowongan tempat lamaran tersebut diajukan
+    </li>
+    <li>
+      tidak menggunakannya, termasuk melalui asisten AI, untuk membuat keputusan tentang pelamar tanpa peninjauan oleh
+      manusia
+    </li>
+  </ul>
+  <p>
+    Untuk menilai lamaran, kami mengirimkannya ke penyedia AI kami, yang disebutkan dalam <a
+      href="/id/privacy/#subprocessors">daftar subprosesor</a
+    > kami. Kami dapat mengganti penyedia AI atau model AI kami. Kami dapat membatasi atau menonaktifkan penilaian AI di
+    wilayah tertentu, atau untuk perusahaan tertentu, apabila diwajibkan oleh hukum.
+  </p>
+
+  <h2 id="ai-assistants">5. Asisten AI</h2>
+  <p>
+    Anggota tim dapat menghubungkan asisten AI, seperti Claude atau ChatGPT, ke Emploist melalui server MCP kami.
+    Asisten yang terhubung bekerja sebagai orang yang menghubungkannya, dengan peran orang tersebut, dan dapat melakukan
+    banyak hal yang dapat dilakukan orang tersebut di Emploist, seperti membaca dan memindahkan lamaran serta mengedit
+    lowongan. Asisten AI aktif secara bawaan, dan admin dapat menonaktifkannya untuk perusahaan Anda di Pengaturan.
+  </p>
+  <p>
+    Asisten AI adalah layanan pihak ketiga yang dipilih oleh Anda dan anggota tim Anda. Asisten AI bukan bagian dari
+    Emploist, dan penyedianya bukan subprosesor kami. Data Pelanggan yang diterima suatu asisten ditangani berdasarkan
+    syarat dan ketentuan yang berlaku antara penyedianya dan Anda atau anggota tim Anda, dan kami tidak mengendalikannya.
+    Anda bertanggung jawab:
+  </p>
+  <ul>
+    <li>
+      untuk menentukan asisten mana yang boleh digunakan tim Anda, dan untuk memastikan bahwa pengiriman Data Pelanggan
+      ke asisten tersebut sah menurut hukum
+    </li>
+    <li>
+      atas segala hal yang dilakukan asisten milik anggota tim Anda di Emploist, seolah-olah anggota tim Anda sendiri
+      yang melakukannya
+    </li>
+    <li>
+      untuk mematuhi <a href="#ai-ranking">bagian 4</a> saat suatu asisten bekerja dengan lamaran dan skor kecocokan
+    </li>
+  </ul>
+  <p>
+    Kami dapat memblokir atau memutuskan koneksi asisten yang secara wajar kami yakini tidak aman, berbahaya, atau
+    digunakan secara bertentangan dengan Ketentuan ini.
+  </p>
+
+  <h2 id="plans-and-payments">6. Paket, pembayaran, dan pembatalan</h2>
+
+  <h3>Dodo Payments</h3>
+  <p>
+    Proses pemesanan kami dilaksanakan oleh penjual kembali daring kami, Dodo Payments ("Dodo"). Dodo adalah merchant of
+    record (penjual tercatat) untuk semua pesanan kami. Dodo menangani checkout, pembayaran, faktur, pajak penjualan dan
+    PPN, serta pertanyaan terkait pembayaran dan pengembalian dana. <a
+      href="https://dodopayments.com/legal/buyer-terms">Ketentuan Pembeli</a
+    > Dodo juga berlaku untuk pembelian Anda.
+  </p>
+
+  <h3>Paket dan penagihan</h3>
+  <ul>
+    <li>
+      Paket ditagih bulanan atau tahunan, di muka, sesuai harga yang ditampilkan saat checkout, ditambah pajak yang
+      berlaku. Paket diperpanjang secara otomatis untuk periode berikutnya dengan durasi yang sama hingga dibatalkan.
+    </li>
+    <li>
+      Kami dapat mengubah harga kami. Kami akan mengirim email kepada admin Anda sekurang-kurangnya 30 hari sebelum
+      kenaikan harga berlaku untuk Paket Anda, dan Anda dapat membatalkan Paket sebelum saat itu.
+    </li>
+    <li>
+      Jika pembayaran gagal, Emploist tetap berfungsi selama masa tenggang yang singkat. Jika pembayaran masih belum
+      berhasil hingga akhir masa tersebut, perusahaan Anda masuk ke mode hanya baca hingga pembayaran tersebut dilunasi.
+    </li>
+  </ul>
+
+  <h3>Uji coba gratis</h3>
+  <p>
+    Paket pertama perusahaan Anda dapat dimulai dengan uji coba gratis. Anda menambahkan metode pembayaran saat
+    checkout, dan Dodo menagih biaya untuk periode penagihan pertama saat uji coba berakhir, kecuali admin membatalkannya
+    sebelum saat itu. Setiap perusahaan dan setiap orang hanya boleh menggunakan satu kali uji coba gratis.
+  </p>
+
+  <h3>Kredit AI</h3>
+  <ul>
+    <li>Menilai satu lamaran menggunakan satu Kredit, dan menilainya ulang menggunakan satu Kredit lagi.</li>
+    <li>
+      Paket Anda mencakup Kredit untuk setiap periode penagihan, sebagaimana ditampilkan di <a href="/id/#pricing"
+        >halaman harga</a
+      > kami saat periode tersebut dimulai. Kredit tersebut tidak terbawa ke periode berikutnya.
+    </li>
+    <li>
+      Admin dapat membeli Kredit tambahan dalam bentuk paket kredit. Kredit tambahan tidak kedaluwarsa, tetapi akan
+      hilang jika perusahaan Anda dihapus.
+    </li>
+    <li>
+      Kredit hanya dapat dibeli dan digunakan selama Paket Anda aktif. Kredit tidak memiliki nilai tunai, tidak dapat
+      dialihkan, dan tidak dapat dimintakan pengembalian dana, kecuali jika diwajibkan oleh hukum. Jika dana atas suatu
+      paket kredit dikembalikan, Kredit yang belum terpakai dari paket kredit tersebut akan dihapus.
+    </li>
+  </ul>
+
+  <h3>Pembatalan dan pengembalian dana</h3>
+  <ul>
+    <li>
+      Admin dapat melakukan pembatalan kapan saja dari halaman Penagihan. Paket Anda tetap aktif hingga akhir masa uji
+      coba atau periode penagihan yang sedang berjalan, dan Anda tidak akan ditagih lagi.
+    </li>
+    <li>
+      Pembayaran tidak dapat dikembalikan. Tidak ada pengembalian dana maupun potongan tagihan untuk sebagian periode
+      penagihan atau untuk Kredit yang tidak terpakai, kecuali jika diwajibkan oleh hukum, untuk setiap potongan prorata
+      yang ditampilkan saat checkout ketika Anda beralih ke penagihan tahunan, atau jika kami berhenti menawarkan
+      Emploist (<a href="#suspension-and-termination">bagian 14</a>). Pengembalian dana dibayarkan oleh Dodo.
+    </li>
+    <li>
+      Menghapus perusahaan Anda akan langsung membatalkan Paket Anda, tanpa pengembalian dana, dan menghapus data
+      perusahaan tersebut secara permanen.
+    </li>
+  </ul>
+
+  <h3>Saat Paket Anda tidak aktif</h3>
+  <p>
+    Saat Paket Anda berakhir, dan sebelum perusahaan Anda memulai Paket, perusahaan Anda berada dalam mode hanya baca.
+    Tim Anda tetap dapat masuk, melihat data perusahaan, dan mengekspor lamaran, tetapi tidak dapat melakukan sebagian
+    besar perubahan, lamaran tidak dinilai, dan halaman karier Anda berhenti menerima lamaran.
+  </p>
+
+  <h2 id="your-content">7. Data Pelanggan</h2>
+  <ul>
+    <li><strong>Data tersebut milik Anda.</strong> Anda tetap memegang seluruh hak Anda atas Data Pelanggan.</li>
+    <li>
+      <strong>Lisensi kami.</strong> Anda mengizinkan kami untuk meng-hosting, menyimpan, menyalin, memproses,
+      mentransmisikan, menampilkan, dan memublikasikan Data Pelanggan, di seluruh dunia, hanya sejauh diperlukan untuk
+      menyediakan, mengamankan, dan mendukung Emploist berdasarkan Ketentuan ini, termasuk melalui subprosesor kami.
+      Misalnya, kami memublikasikan lowongan Anda di halaman karier Anda, mengirim email Anda kepada pelamar, dan
+      mengirim Data Pelanggan ke asisten AI yang dihubungkan oleh anggota tim Anda.
+    </li>
+    <li>
+      <strong>Yang tidak kami lakukan.</strong> Kami tidak menjual Data Pelanggan, tidak menggunakannya untuk iklan, dan
+      tidak menggunakannya untuk melatih model AI.
+    </li>
+    <li>
+      <strong>Data penggunaan.</strong> Kami dapat menggunakan informasi tentang cara Emploist digunakan dan bagaimana
+      kinerjanya untuk mengoperasikan dan meningkatkan Emploist. Apa pun yang kami gunakan atau bagikan di luar
+      keperluan penyediaan Emploist kepada Anda telah diagregasi atau dihilangkan unsur identitasnya, sehingga tidak
+      mengidentifikasi Anda, anggota tim Anda, atau pelamar, dan kami tidak akan berupaya mengidentifikasinya kembali.
+    </li>
+    <li>
+      <strong>Salinan Anda.</strong> Tim Anda dapat mengekspor lamaran suatu lowongan. Anda bertanggung jawab untuk
+      menyimpan salinan Anda sendiri atas Data Pelanggan yang Anda perlukan.
+    </li>
+    <li>
+      <strong>Konten yang dapat kami hapus.</strong> Kami tidak memantau Data Pelanggan. Kami dapat menghapus atau
+      menonaktifkan konten yang secara wajar kami yakini melanggar Ketentuan ini atau hukum, atau apabila diwajibkan oleh
+      pengadilan atau otoritas.
+    </li>
+  </ul>
+
+  <h3>Tanggung jawab Anda atas data pelamar</h3>
+  <p>Anda yang menentukan apa yang dikumpulkan dari pelamar dan cara menggunakannya. Anda wajib:</p>
+  <ul>
+    <li>
+      memiliki dasar hukum, dan setiap persetujuan yang diwajibkan oleh hukum, untuk mengumpulkan dan menggunakan data
+      pelamar di Emploist, termasuk untuk penilaian AI, untuk asisten AI yang digunakan tim Anda, dan untuk pemrosesan
+      oleh kami berdasarkan <a href="#data-processing">bagian 13</a>
+    </li>
+    <li>
+      memberikan pemberitahuan privasi Anda sendiri kepada pelamar, pada saat atau sebelum mereka melamar, yang mencakup
+      penggunaan Emploist oleh Anda. Halaman karier bawaan tidak menyertakan pemberitahuan tersebut.
+    </li>
+    <li>
+      hanya mengajukan pertanyaan yang diizinkan oleh hukum, dan tidak meminta informasi sensitif, seperti tentang
+      kesehatan, agama, atau catatan kriminal, kecuali jika diizinkan oleh hukum
+    </li>
+    <li>
+      menanggapi permintaan pelamar terkait data mereka, dan menghapus data mereka apabila Anda tidak lagi
+      memerlukannya. Emploist tidak menghapus lamaran secara otomatis.
+    </li>
+    <li>
+      memastikan bahwa apa yang Anda publikasikan dan kirimkan, seperti lowongan, halaman karier, dan email kepada
+      pelamar, akurat dan sah menurut hukum. Email kepada pelamar hanya boleh membahas lamaran mereka. Balasan dikirim ke
+      alamat balasan yang ditetapkan admin, jadi gunakan alamat yang Anda kendalikan.
+    </li>
+  </ul>
+
+  <h2 id="acceptable-use">8. Penggunaan yang dapat diterima</h2>
+  <p>Anda dan tim Anda tidak boleh menggunakan Emploist untuk:</p>
+  <ul>
+    <li>
+      memasang lowongan yang palsu, menyesatkan, atau bersifat penipuan, memungut biaya apa pun dari pelamar, atau
+      mengumpulkan Data Pribadi yang tidak berhak Anda kumpulkan
+    </li>
+    <li>memublikasikan iklan lowongan, kriteria, atau pertanyaan yang mengandung diskriminasi yang melanggar hukum</li>
+    <li>
+      menyamar sebagai siapa pun, atau menyesatkan orang tentang siapa Anda, termasuk melalui nama perusahaan Anda,
+      alamat halaman karier, nama pengirim email, atau alamat balasan
+    </li>
+    <li>mengirim spam, email pemasaran, atau email lain apa pun yang melanggar hukum</li>
+    <li>membuat akun atau perusahaan tambahan untuk mendapatkan uji coba gratis lagi</li>
+  </ul>
+  <p>Jangan memasukkan apa pun ke Emploist yang:</p>
+  <ul>
+    <li>
+      merupakan milik orang lain dan tidak berhak Anda gunakan, atau melanggar paten, merek dagang, hak cipta, atau hak
+      milik lainnya
+    </li>
+    <li>
+      bersifat cabul, pornografi, pedofilia, atau membahayakan anak-anak, atau melanggar privasi siapa pun, termasuk
+      privasi tubuh
+    </li>
+    <li>
+      bersifat mencemarkan nama baik, melecehkan (termasuk berdasarkan gender), tidak pantas secara rasial atau etnis,
+      atau memicu permusuhan antarkelompok berdasarkan agama atau kasta
+    </li>
+    <li>berkaitan dengan atau mendorong pencucian uang atau perjudian</li>
+    <li>
+      menyesatkan siapa pun tentang asal suatu pesan, dengan sengaja menyebarkan informasi yang salah atau menyesatkan,
+      atau menyamar sebagai orang lain
+    </li>
+    <li>
+      mengancam persatuan, keutuhan, pertahanan, keamanan, atau kedaulatan India, hubungan persahabatan India dengan
+      negara lain, atau ketertiban umum, menghasut dilakukannya tindak pidana apa pun, menghalangi penyidikan atas tindak
+      pidana apa pun, atau menghina bangsa lain mana pun
+    </li>
+    <li>mengandung virus atau kode berbahaya lainnya</li>
+    <li>melanggar hukum apa pun</li>
+  </ul>
+  <p>Selain itu, jangan:</p>
+  <ul>
+    <li>
+      mengakses data perusahaan lain, menyelidiki atau menguji keamanan kami, atau menghindari langkah-langkah keamanan
+      atau batasan kami
+    </li>
+    <li>
+      membebani secara berlebihan atau mengganggu Emploist, atau mengaksesnya dengan bot, scraper, atau alat otomatis
+      lainnya, kecuali melalui fitur yang kami sediakan, seperti server MCP kami
+    </li>
+    <li>menyalin, mendekompilasi, atau melakukan rekayasa balik terhadap Emploist, kecuali jika diizinkan oleh hukum</li>
+    <li>
+      menjual kembali atau menyublisensikan Emploist, atau menawarkannya kepada pihak lain sebagai layanan. Merekrut
+      untuk klien Anda sendiri diperbolehkan.
+    </li>
+    <li>menggunakan Emploist untuk membangun produk pesaing</li>
+    <li>menggunakan Emploist secara melanggar hukum sanksi atau hukum pengendalian ekspor</li>
+    <li>
+      menggunakan Emploist dengan cara yang melanggar <a href="https://typesafe.ai/legal/acceptable-use-policy"
+        >kebijakan penggunaan yang dapat diterima</a
+      > penyedia AI kami
+    </li>
+  </ul>
+  <p>
+    Jika aturan ini dilanggar, kami dapat menghapus konten, menangguhkan perusahaan Anda, atau mengakhiri Ketentuan ini
+    (lihat <a href="#suspension-and-termination">bagian 14</a>).
+  </p>
+
+  <h2 id="careers-pages">9. Halaman karier, domain, dan kode</h2>
+  <ul>
+    <li>
+      Halaman karier Anda berada di subdomain emploist.com yang Anda pilih, atau di domain yang Anda hubungkan. Kami
+      dapat menolak atau mengambil kembali subdomain yang menyesatkan, melanggar hak siapa pun, atau menyamar sebagai
+      pihak lain.
+    </li>
+    <li>
+      Jika Anda menghubungkan domain Anda sendiri, Anda menyatakan bahwa Anda mengendalikan domain tersebut, dan Anda
+      mengizinkan kami untuk memperoleh sertifikat TLS untuk domain tersebut. Anda bertanggung jawab atas record DNS-nya.
+    </li>
+    <li>
+      Anda bertanggung jawab atas setiap kode halaman karier dan tata letak email yang ditulis oleh admin Anda, termasuk
+      apa pun yang dimuat dari situs web lain dan pemberitahuan yang wajib ditampilkan. Kami dapat
+      menonaktifkan kode yang secara wajar kami yakini berbahaya, tidak aman, atau bertentangan dengan Ketentuan ini.
+    </li>
+    <li>
+      Kode halaman karier bawaan dan kit pratinjau yang dapat diunduh adalah milik kami. Selama Ketentuan ini berlaku,
+      Anda dapat menggunakan, menyalin, dan memodifikasinya hanya untuk membangun halaman karier perusahaan Anda di
+      Emploist. Komponen sumber terbuka di dalamnya tetap tunduk pada lisensinya masing-masing.
+    </li>
+  </ul>
+
+  <h2 id="third-party-services">10. Layanan pihak ketiga</h2>
+  <p>
+    Emploist bekerja dengan layanan yang dijalankan oleh pihak lain, seperti Google dan Microsoft untuk proses masuk,
+    Dodo untuk pembayaran, dan asisten AI yang dihubungkan oleh tim Anda. Syarat dan ketentuan mereka sendiri berlaku
+    saat Anda menggunakannya, dan kami tidak bertanggung jawab atas layanan tersebut. Microsoft dan Google bukan pihak
+    dalam Ketentuan ini. Sepanjang diizinkan oleh hukum, segala jaminan dan segala tanggung jawab atas nama mereka
+    dikesampingkan.
+  </p>
+
+  <h2 id="our-property">11. Kekayaan intelektual</h2>
+  <p>
+    Emploist adalah milik kami, termasuk perangkat lunak, desain, dokumentasi, serta nama dan logo Emploist. Ketentuan
+    ini memberi Anda hak untuk menggunakan Emploist sebagaimana dijelaskan di dalamnya, dan tidak memberikan hak lain apa
+    pun. Jika Anda mengirimkan masukan kepada kami, kami dapat menggunakannya secara bebas, tanpa kewajiban apa pun
+    kepada Anda. Kami dapat menyebutkan organisasi Anda sebagai pelanggan Emploist, termasuk dengan menggunakan nama dan
+    logonya. Jika Anda meminta kami untuk berhenti, kami akan berhenti.
+  </p>
+
+  <h2 id="confidentiality">12. Kerahasiaan</h2>
+  <p>
+    "Informasi Rahasia" ("Confidential Information") berarti informasi yang tidak bersifat publik yang dibagikan oleh
+    salah satu pihak kepada pihak lainnya sehubungan dengan Emploist, dan yang ditandai sebagai rahasia atau secara
+    wajar patut dipahami sebagai rahasia. Data Pelanggan merupakan Informasi Rahasia Anda. Pihak yang menerima Informasi
+    Rahasia hanya akan menggunakannya untuk tujuan Ketentuan ini, melindunginya dengan kehati-hatian yang wajar, dan
+    hanya membagikannya kepada orang dan penyedia layanan yang memerlukannya untuk tujuan tersebut dan terikat kewajiban
+    kerahasiaan, atau sesuai arahan pihak lainnya. Hal ini tidak berlaku untuk informasi yang telah atau menjadi publik
+    bukan karena kesalahan penerima, yang telah dimiliki atau dikembangkan secara mandiri oleh penerima, atau yang
+    diterima penerima secara sah dari pihak lain. Masing-masing pihak dapat mengungkapkan Informasi Rahasia apabila
+    diwajibkan oleh hukum.
+  </p>
+
+  <h2 id="data-processing">13. Pemrosesan data</h2>
+  <p>
+    Bagian ini merupakan perjanjian pemrosesan data kami. Bagian ini berlaku apabila kami memproses Data Pribadi dalam
+    Data Pelanggan atas nama Anda. "Hukum pelindungan data" ("Data protection laws") berarti hukum pelindungan data dan
+    privasi yang berlaku terhadap Data Pelanggan. Istilah seperti "Pengendali Data Pribadi" ("controller"), "Prosesor
+    Data Pribadi" ("processor"), "Data Pribadi" ("personal data"), dan "kegagalan Pelindungan Data Pribadi" ("personal
+    data breach") memiliki arti sebagaimana diberikan dalam Peraturan Umum Pelindungan Data Uni Eropa dan Britania Raya
+    (GDPR), atau padanan terdekatnya dalam hukum pelindungan data lainnya.
+  </p>
+
+  <h3>Peran</h3>
+  <p>
+    Anda adalah Pengendali Data Pribadi atas Data Pribadi dalam Data Pelanggan, dan kami adalah Prosesor Data Pribadi
+    Anda. Jika Anda sendiri merupakan Prosesor Data Pribadi, misalnya perekrut yang merekrut untuk klien, kami adalah
+    subprosesor Anda, dan Anda menyatakan bahwa Pengendali Data Pribadi Anda telah memberikan otorisasi atas pemrosesan
+    oleh kami. Kami adalah Pengendali Data Pribadi atas Data Pribadi yang kami gunakan untuk menjalankan usaha kami,
+    seperti detail akun anggota tim Anda, sebagaimana dijelaskan dalam <a href="/id/privacy/">Kebijakan Privasi</a> kami.
+  </p>
+
+  <h3>Rincian pemrosesan</h3>
+  <table>
+    <tbody>
+      <tr>
+        <th scope="row">Pokok dan jangka waktu</th>
+        <td>Penyediaan Emploist kepada Anda, selama Anda menggunakannya dan hingga Data Pelanggan dihapus.</td>
+      </tr>
+      <tr>
+        <th scope="row">Sifat dan tujuan</th>
+        <td>
+          Meng-hosting, menyimpan, menampilkan, dan mentransmisikan Data Pelanggan, secara berkelanjutan, untuk
+          menyediakan Emploist: memublikasikan halaman karier, mengumpulkan lamaran, menilainya dengan AI selama
+          penilaian AI aktif, mengirim email kepada pelamar, mengirim data ke asisten AI yang dihubungkan oleh anggota tim
+          Anda, mendukung dan mengamankan Emploist, serta membuat informasi yang diagregasi atau dihilangkan unsur
+          identitasnya untuk mengoperasikan dan meningkatkan Emploist (lihat bagian 7).
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Subjek Data Pribadi</th>
+        <td>
+          Pelamar, anggota tim Anda dan orang yang Anda undang, serta orang lain yang disebutkan dalam Data Pelanggan,
+          seperti pemberi referensi yang tercantum dalam CV.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Data Pribadi</th>
+        <td>
+          Nama pelamar, alamat email mereka, nomor telepon mereka jika Anda memintanya, CV mereka beserta seluruh isinya,
+          jawaban mereka atas pertanyaan Anda, skor kecocokan, tahap rekrutmen, email yang dikirim kepada mereka, dan
+          komentar tim Anda tentang mereka. Nama dan alamat email anggota tim dan orang yang diundang sebagaimana
+          tercantum dalam Data Pelanggan. Data Pribadi lain apa pun dalam konten Anda.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Data sensitif</th>
+        <td>
+          Emploist tidak memintanya, tetapi CV dan jawaban dapat memuatnya. Data tersebut dilindungi oleh langkah-langkah
+          keamanan di bawah ini, dan aksesnya terbatas pada tim Anda dan asisten AI yang mereka hubungkan, serta pada kami
+          dan subprosesor kami sejauh diperlukan untuk menyediakan Emploist.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Lokasi dan subprosesor</th>
+        <td>
+          Sebagaimana tercantum dalam <a href="/id/privacy/#subprocessors">daftar subprosesor</a> kami. Kami mengakses
+          Data Pelanggan dari India.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Komitmen kami</h3>
+  <ul>
+    <li>
+      <strong>Instruksi.</strong> Kami memproses Data Pelanggan hanya berdasarkan instruksi terdokumentasi dari Anda,
+      termasuk mengenai transfer ke negara lain, kecuali jika hukum mewajibkan sebaliknya. Dalam hal demikian, kami akan
+      memberi tahu Anda terlebih dahulu, kecuali jika hukum melarangnya. Instruksi Anda adalah Ketentuan ini serta cara
+      Anda dan tim Anda menggunakan dan mengatur Emploist. Saat anggota tim menghubungkan asisten AI, anggota tim
+      tersebut menginstruksikan kami untuk mengirimkan kepada asisten tersebut Data Pelanggan yang dimintanya, dan Anda
+      memberi mereka wewenang untuk melakukannya. Kami akan segera memberi tahu Anda jika menurut kami suatu instruksi
+      melanggar hukum pelindungan data, dan kami tidak wajib mengikutinya.
+    </li>
+    <li>
+      <strong>Kerahasiaan.</strong> Setiap orang yang kami beri wewenang untuk memproses Data Pelanggan terikat
+      kewajiban kerahasiaan.
+    </li>
+    <li>
+      <strong>Keamanan.</strong> Kami menerapkan langkah-langkah teknis dan organisasional yang sesuai untuk melindungi
+      Data Pelanggan, termasuk koneksi terenkripsi (HTTPS); kontrol akses sehingga, di dalam aplikasi, hanya anggota tim
+      suatu perusahaan dan asisten AI yang mereka hubungkan yang dapat melihat data perusahaan tersebut, sesuai dengan
+      peran mereka; penyimpanan privat untuk CV; proses masuk tanpa kata sandi; proses pekerja (worker) terisolasi dengan
+      batas waktu dan memori untuk kode halaman karier dan untuk membaca CV; pemeriksaan atas file yang diunggah;
+      pembatasan laju permintaan; pencadangan basis data secara berkala; dan akses ke sistem produksi hanya bagi orang
+      yang memerlukannya. Kami dapat mengubah langkah-langkah ini, selama kami tidak mengurangi pelindungan Data
+      Pelanggan secara keseluruhan.
+    </li>
+    <li>
+      <strong>Subprosesor.</strong> Anda memberi kami otorisasi umum untuk menggunakan subprosesor. Subprosesor kami
+      saat ini tercantum dalam daftar kami. Kami memiliki ketentuan pelindungan data secara tertulis dengan
+      masing-masing subprosesor, dan kami tetap bertanggung jawab kepada Anda atas mereka. Kami akan mengirim email
+      kepada admin Anda sekurang-kurangnya 30 hari sebelum kami menambahkan atau mengganti subprosesor. Anda dapat
+      mengajukan keberatan atas dasar pelindungan data yang wajar dengan mengirim email kepada kami sebelum perubahan
+      tersebut. Jika kami tidak dapat menyelesaikan kekhawatiran Anda, upaya pemulihan bagi Anda adalah membatalkan Paket
+      Anda atau menghapus perusahaan Anda sebelum perubahan tersebut berlaku.
+    </li>
+    <li>
+      <strong>Kotak masuk dukungan.</strong> Kami tidak menggunakan kotak masuk dukungan kami untuk memproses Data
+      Pelanggan. Google meng-hosting kotak masuk tersebut berdasarkan syarat dan ketentuan standar Gmail, jadi jangan sertakan
+      detail pelamar dalam email kepada kami. Sebagai gantinya, rujuklah lowongan dan lamaran menggunakan alamatnya di
+      Emploist, tanpa kata kunci pencarian di dalamnya, seperti nama pelamar.
+    </li>
+    <li>
+      <strong>Bantuan.</strong> Dengan mempertimbangkan sifat pemrosesan, kami akan memberikan bantuan yang wajar kepada
+      Anda terkait permintaan dari Subjek Data Pribadi, penilaian dampak pelindungan data, dan konsultasi dengan
+      otoritas. Sebagian besar permintaan dapat ditangani di Emploist dengan melihat, mengekspor, atau menghapus data.
+      Jika Subjek Data Pribadi menghubungi kami terkait Data Pelanggan, kami akan merujuknya kepada Anda atau meneruskan
+      permintaannya kepada Anda.
+    </li>
+    <li>
+      <strong>Kegagalan Pelindungan Data Pribadi.</strong> Kami akan memberi tahu admin Anda tanpa penundaan yang tidak
+      semestinya setelah mengetahui adanya kegagalan Pelindungan Data Pribadi yang memengaruhi Data Pelanggan, dengan
+      informasi yang kami miliki, dan mengambil langkah-langkah yang wajar untuk menanggulanginya. Pemberitahuan kepada
+      Anda bukan merupakan pengakuan kesalahan.
+    </li>
+    <li>
+      <strong>Penghapusan.</strong> Selama Paket Anda aktif, tim Anda dapat menghapus lamaran dan lowongan di Emploist.
+      Admin dapat menghapus seluruh perusahaan Anda kapan saja. Jika Anda memerlukan penghapusan Data Pelanggan lainnya,
+      kirim email kepada kami dan identifikasi data tersebut melalui alamatnya di Emploist atau dengan menyebutkan
+      letaknya, tanpa menyertakan detail pelamar. Saat Anda berhenti menggunakan Emploist, Anda menentukan pilihan antara
+      pengembalian dan penghapusan dengan mengekspor lamaran dan menghapus perusahaan Anda. Saat Data Pelanggan dihapus,
+      kami menghapusnya dari sistem aktif kami. Salinan dalam cadangan dan log kami akan terhapus seiring penggantian
+      cadangan dan log tersebut dari waktu ke waktu, dan beberapa detail mungkin tetap ada dalam catatan lain perusahaan
+      Anda, seperti notifikasi, hingga catatan tersebut dihapus.
+    </li>
+    <li>
+      <strong>Audit.</strong> Kami akan menyediakan informasi yang secara wajar diperlukan untuk menunjukkan bahwa kami
+      mematuhi bagian ini. Apabila hukum pelindungan data atau SCC mensyaratkan lebih dari itu, Anda atau auditor
+      independen yang Anda tunjuk dapat mengaudit kepatuhan kami sekali setahun, dengan pemberitahuan yang wajar, atas
+      biaya Anda, dan dengan kewajiban kerahasiaan.
+    </li>
+  </ul>
+
+  <h3>Transfer internasional</h3>
+  <p>
+    Data Pelanggan diproses di lokasi yang tercantum dalam daftar subprosesor kami, dan diakses oleh kami dari India.
+  </p>
+  <ul>
+    <li>
+      <strong>Uni Eropa.</strong> Apabila GDPR Uni Eropa berlaku untuk transfer Data Pelanggan dari Anda kepada kami,
+      Klausul Kontrak Standar yang disetujui oleh Komisi Eropa dalam <a
+        href="https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj">Keputusan Pelaksanaan (UE) 2021/914</a
+      > ("SCC") dimasukkan ke dalam Ketentuan ini. Modul 2 berlaku apabila Anda adalah Pengendali Data Pribadi, dan
+      Modul 3 apabila Anda adalah Prosesor Data Pribadi. Anda adalah pengekspor data, dan kami adalah pengimpor data.
+      Klausul 7 berlaku. Berdasarkan Klausul 9(a), Opsi 2 berlaku, dengan jangka waktu pemberitahuan sebagaimana
+      disebutkan di atas. Opsi dalam Klausul 11(a) tidak berlaku. Otoritas pengawas yang berwenang ditentukan berdasarkan
+      Klausul 13(a). Berdasarkan Klausul 17 dan 18(b), SCC tunduk pada hukum Irlandia, dan sengketa diajukan ke
+      pengadilan Irlandia. Lampiran I diisi berdasarkan rincian pemrosesan di atas, bagian 21, dan detail akun Anda.
+      Lampiran II adalah langkah-langkah keamanan di atas, dan Lampiran III adalah daftar subprosesor kami. Penerimaan
+      Ketentuan ini berlaku sebagai penandatanganan SCC beserta Lampirannya, pada tanggal Anda menerima Ketentuan ini.
+    </li>
+    <li>
+      <strong>Britania Raya.</strong> Apabila GDPR Britania Raya berlaku, SCC berlaku sebagaimana diubah oleh
+      International Data Transfer Addendum (Adendum Transfer Data Internasional) dari Information Commissioner Britania
+      Raya, versi B1.0, dengan tabel-tabelnya diisi berdasarkan bagian ini dan bagian 21. Tidak satu pun pihak boleh
+      mengakhiri Adendum tersebut berdasarkan Bagian 19 Adendum.
+    </li>
+    <li>
+      <strong>Swiss.</strong> Apabila Federal Act on Data Protection Swiss (Undang-Undang Federal tentang Pelindungan
+      Data) berlaku, SCC berlaku dengan ketentuan bahwa rujukan pada GDPR dibaca sebagai rujukan pada Undang-Undang
+      tersebut, dan Federal Data Protection and Information Commissioner Swiss (Komisioner Federal Pelindungan Data dan
+      Informasi) menjadi otoritas pengawas yang berwenang. Istilah "Negara Anggota" ("Member State") tidak menghalangi
+      Subjek Data Pribadi di Swiss untuk mengajukan klaim di tempat mereka biasa bertempat tinggal, sesuai dengan
+      Klausul 18(c).
+    </li>
+    <li>
+      <strong>Transfer lanjutan.</strong> Apabila pemrosesan oleh subprosesor kami memerlukan mekanisme transfer, kami
+      mengandalkan SCC atau mekanisme lain yang diakui oleh hukum pelindungan data. Anda bertanggung jawab untuk
+      memastikan bahwa pengiriman Data Pelanggan ke asisten AI yang dihubungkan oleh tim Anda merupakan transfer yang sah
+      menurut hukum.
+    </li>
+  </ul>
+  <p>
+    Jika terdapat pertentangan antara Ketentuan ini dan SCC atau Adendum Britania Raya, SCC atau Adendum Britania Raya
+    tersebut yang berlaku.
+  </p>
+
+  <h3>Undang-undang privasi negara bagian Amerika Serikat</h3>
+  <p>
+    Apabila California Consumer Privacy Act atau undang-undang negara bagian AS yang serupa berlaku, kami adalah
+    penyedia layanan (service provider) atau Prosesor Data Pribadi Anda untuk Data Pelanggan. Kami hanya akan memproses
+    Data Pelanggan untuk tujuan yang disebutkan dalam bagian ini. Kami tidak akan menjual atau membagikannya; menyimpan,
+    menggunakan, atau mengungkapkannya di luar hubungan bisnis langsung kami dengan Anda; atau menggabungkannya dengan
+    informasi pribadi lain, kecuali sebagaimana diizinkan oleh undang-undang tersebut. Kami akan mematuhi kewajiban
+    penyedia layanan berdasarkan undang-undang tersebut, dan memberi tahu Anda jika kami tidak lagi dapat melakukannya.
+    Anda dapat mengambil langkah-langkah yang wajar untuk memastikan bahwa kami menggunakan Data Pelanggan sesuai dengan
+    kewajiban Anda berdasarkan undang-undang tersebut, serta untuk menghentikan dan memperbaiki setiap penggunaan yang
+    tidak sah.
+  </p>
+
+  <h3>India</h3>
+  <p>
+    Apabila undang-undang India, Digital Personal Data Protection Act, 2023 (Undang-Undang Pelindungan Data Pribadi
+    Digital Tahun 2023), berlaku untuk Data Pelanggan, Anda adalah data fiduciary, dan kami adalah data processor Anda.
+  </p>
+
+  <h2 id="suspension-and-termination">14. Penangguhan dan pengakhiran</h2>
+  <ul>
+    <li>
+      <strong>Mengakhiri penggunaan Anda.</strong> Anda dapat berhenti menggunakan Emploist kapan saja dengan
+      membatalkan Paket Anda dan, jika Anda ingin data perusahaan Anda dihapus, menghapus perusahaan Anda. Ketentuan ini
+      berakhir saat perusahaan Anda dihapus.
+    </li>
+    <li>
+      <strong>Penangguhan.</strong> Kami dapat menangguhkan akses perusahaan Anda ke Emploist, atau ke sebagian darinya,
+      jika pembayaran gagal atau disengketakan, jika Anda atau anggota tim Anda melanggar Ketentuan ini secara serius
+      atau berulang kali, jika penggunaan Anda menimbulkan risiko keamanan atau dapat merugikan pihak lain, atau jika
+      diwajibkan oleh hukum.
+    </li>
+    <li>
+      <strong>Pengakhiran karena pelanggaran.</strong> Kami dapat mengakhiri Ketentuan ini jika Anda melakukan
+      pelanggaran material terhadap Ketentuan ini dan tidak memperbaiki pelanggaran tersebut dalam waktu 30 hari sejak
+      pemberitahuan dari kami, atau seketika jika pelanggaran tersebut tidak dapat diperbaiki atau bersifat serius,
+      seperti penipuan, lowongan penipuan, atau konten ilegal. Apabila wajar, kami akan memberi admin Anda kesempatan
+      untuk mengekspor Data Pelanggan sebelum kami menghapusnya.
+    </li>
+    <li>
+      <strong>Jika kami berhenti menawarkan Emploist.</strong> Kami akan mengirim email kepada admin Anda
+      sekurang-kurangnya 30 hari sebelumnya, dan mengatur, melalui Dodo, pengembalian dana atas bagian yang belum
+      terpakai dari periode penagihan Anda yang sedang berjalan.
+    </li>
+    <li>
+      <strong>Setelah Paket Anda berakhir.</strong> Perusahaan Anda tetap dalam mode hanya baca. Kami dapat menghapus
+      suatu perusahaan beserta seluruh datanya setelah perusahaan tersebut tidak memiliki Paket aktif selama 12 bulan
+      berturut-turut, atau setelah kami mengakhiri Ketentuan ini berdasarkan bagian ini.
+    </li>
+    <li>
+      <strong>Yang tetap berlaku.</strong> Bagian-bagian Ketentuan ini yang menurut sifatnya seharusnya tetap berlaku
+      setelah Ketentuan ini berakhir akan tetap berlaku, termasuk jumlah yang terutang, bagian 13 selama kami menyimpan
+      Data Pelanggan, kerahasiaan, kekayaan intelektual, penafian, batasan tanggung jawab, ganti rugi, dan hukum yang
+      berlaku.
+    </li>
+  </ul>
+
+  <h2 id="disclaimers">15. Penafian</h2>
+  <p>
+    <strong
+      >Kecuali sebagaimana dinyatakan secara tegas dalam Ketentuan ini, dan sepanjang diizinkan oleh hukum, Emploist
+      disediakan "sebagaimana adanya" ("as is") dan "sebagaimana tersedia" ("as available"), tanpa jaminan apa pun, baik
+      tersurat, tersirat, maupun berdasarkan undang-undang, termasuk jaminan kelayakan untuk diperdagangkan, kesesuaian
+      untuk tujuan tertentu, hak kepemilikan, tidak adanya pelanggaran hak pihak lain, dan akurasi, serta jaminan apa pun
+      bahwa Emploist akan bebas dari gangguan, aman, atau bebas dari kesalahan.</strong
+    >
+  </p>
+  <p>
+    Secara khusus, kami tidak menjanjikan bahwa skor kecocokan atau keluaran AI lainnya akan akurat, lengkap, atau bebas
+    dari bias, bahwa asisten AI akan bekerja dengan benar atau mengabaikan instruksi yang terdapat dalam tulisan pelamar,
+    hasil rekrutmen apa pun, atau bahwa penggunaan Emploist oleh Anda akan memenuhi hukum yang berlaku untuk rekrutmen
+    Anda. Tidak ada apa pun di Emploist atau dalam panduan kami yang merupakan nasihat hukum.
+  </p>
+
+  <h2 id="liability">16. Batasan tanggung jawab</h2>
+  <p>Sepanjang diizinkan oleh hukum:</p>
+  <ul>
+    <li>
+      Tidak satu pun pihak akan bertanggung jawab kepada pihak lainnya atas ganti rugi apa pun yang bersifat tidak
+      langsung, insidental, khusus, konsekuensial, atau menghukum, atau atas kehilangan keuntungan, pendapatan, usaha,
+      nama baik, atau data, bahkan jika telah diberi tahu tentang kemungkinan terjadinya hal tersebut.
+    </li>
+    <li>
+      <strong
+        >Total tanggung jawab kami atas seluruh klaim yang timbul dari atau berkaitan dengan Ketentuan ini atau Emploist
+        terbatas pada jumlah yang Anda bayarkan untuk Emploist dalam 12 bulan sebelum klaim tersebut timbul, tidak
+        termasuk pajak.</strong
+      >
+    </li>
+    <li>
+      Batasan ini berlaku untuk seluruh tanggung jawab antara Anda dan kami, termasuk berdasarkan bagian 13 dan SCC.
+      Batasan ini tidak membatasi hak Subjek Data Pribadi berdasarkan hukum pelindungan data atau SCC, atau tanggung
+      jawab yang menurut hukum tidak boleh dibatasi, seperti atas penipuan.
+    </li>
+    <li>
+      Butir pertama tidak membatasi jumlah yang terutang oleh Anda untuk Paket dan Kredit Anda, kewajiban Anda
+      berdasarkan <a href="#indemnity">bagian 17</a>, atau tanggung jawab Anda atas pelanggaran terhadap <a
+        href="#acceptable-use">bagian 8</a
+      > atau atas pelanggaran kekayaan intelektual kami.
+    </li>
+  </ul>
+
+  <h2 id="indemnity">17. Ganti rugi</h2>
+  <p>
+    Sepanjang diizinkan oleh hukum, Anda akan membela kami dalam menghadapi setiap klaim, tuntutan, atau proses hukum
+    dari pihak ketiga, seperti pelamar atau otoritas, dan membayar setiap ganti rugi, denda, nilai penyelesaian, biaya,
+    dan biaya jasa hukum yang wajar yang timbul darinya, sepanjang hal tersebut timbul dari:
+  </p>
+  <ul>
+    <li>
+      Data Pelanggan atau konten lain yang Anda atau anggota tim Anda masukkan ke dalam atau publikasikan melalui
+      Emploist
+    </li>
+    <li>keputusan rekrutmen Anda</li>
+    <li>kode yang Anda atau anggota tim Anda tambahkan ke Emploist</li>
+    <li>apa yang dilakukan asisten AI milik anggota tim Anda di Emploist, dan Data Pelanggan yang diterima asisten tersebut</li>
+    <li>pelanggaran terhadap Ketentuan ini atau terhadap hukum oleh Anda atau anggota tim Anda</li>
+  </ul>
+  <p>
+    Hal ini tidak berlaku sepanjang klaim tersebut disebabkan oleh pelanggaran kami terhadap Ketentuan ini. Kami akan
+    segera memberi tahu Anda tentang klaim tersebut, mengizinkan Anda mengendalikan pembelaannya, kecuali untuk hal-hal
+    yang berkaitan dengan kewajiban regulasi kami sendiri, dan memberikan bantuan yang wajar kepada Anda atas biaya Anda.
+    Anda tidak akan menyelesaikan klaim dengan cara yang mengakui kesalahan atas nama kami atau membebankan kewajiban
+    kepada kami tanpa persetujuan tertulis dari kami.
+  </p>
+
+  <h2 id="changes">18. Perubahan atas Ketentuan ini</h2>
+  <p>
+    Kami dapat memperbarui Ketentuan ini dengan memasang versi baru di sini dan memperbarui tanggal di bagian atas.
+    Untuk perubahan material, kami akan mengirim email kepada admin Anda sekurang-kurangnya 30 hari sebelum perubahan
+    tersebut berlaku. Jika Anda tidak setuju, Anda dapat membatalkan Paket Anda atau menghapus perusahaan Anda sebelum
+    saat itu. Jika Anda tetap menggunakan Emploist setelah perubahan berlaku, Anda menerima perubahan tersebut.
+    Perubahan tidak akan mengurangi pelindungan yang diberikan bagian 13 kepada Data Pelanggan, kecuali jika diwajibkan
+    oleh hukum.
+  </p>
+
+  <h2 id="disputes">19. Hukum yang berlaku dan penyelesaian sengketa</h2>
+  <p>
+    Ketentuan ini, serta setiap sengketa yang timbul dari atau berkaitan dengan Ketentuan ini atau Emploist, diatur oleh
+    hukum India. Sebelum memulai proses hukum, kirimkan rincian sengketa kepada kami melalui email, dan kedua belah pihak
+    akan berupaya dengan iktikad baik untuk menyelesaikannya dalam waktu 30 hari. Jika upaya tersebut tidak berhasil,
+    pengadilan di Kozhikode, Kerala, India memiliki yurisdiksi eksklusif. Masing-masing pihak tetap dapat memohon upaya
+    pemulihan yang mendesak kepada pengadilan mana pun, seperti untuk melindungi kekayaan intelektual atau informasi
+    rahasia. Sengketa berdasarkan SCC diatur oleh hukum dan pengadilan yang ditentukan dalam SCC.
+  </p>
+
+  <h2 id="general">20. Umum</h2>
+  <ul>
+    <li>
+      <strong>Keseluruhan perjanjian.</strong> Ketentuan ini, termasuk daftar subprosesor kami, merupakan keseluruhan
+      perjanjian antara Anda dan kami mengenai Emploist, dan menggantikan setiap perjanjian sebelumnya mengenai hal
+      tersebut. Syarat dan ketentuan dalam pesanan pembelian atau dokumen lain milik Anda tidak berlaku.
+    </li>
+    <li>
+      <strong>Pengalihan.</strong> Anda tidak boleh mengalihkan Ketentuan ini tanpa persetujuan tertulis dari kami. Kami
+      dapat mengalihkannya kepada penerus yang mengambil alih Emploist, seperti perusahaan yang didirikan untuk
+      menjalankannya atau pembeli, dan kami akan memberi tahu admin Anda saat kami melakukannya.
+    </li>
+    <li>
+      <strong>Peristiwa di luar kendali para pihak.</strong> Tidak satu pun pihak bertanggung jawab atas keterlambatan
+      atau kegagalan yang disebabkan oleh peristiwa di luar kendali yang wajar, seperti bencana alam, perang, tindakan
+      pemerintah, atau kegagalan internet atau penyedia kami. Hal ini tidak membebaskan kewajiban pembayaran.
+    </li>
+    <li>
+      <strong>Pemberitahuan.</strong> Kami mengirimkan pemberitahuan ke alamat email admin Anda. Kirimkan pemberitahuan
+      kepada kami di <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Pemberitahuan melalui email
+      dianggap telah diterima pada saat dikirim, kecuali pengirim menerima pemberitahuan kegagalan pengiriman.
+    </li>
+    <li>
+      <strong>Keterpisahan dan pengesampingan.</strong> Jika suatu bagian dari Ketentuan ini tidak dapat ditegakkan,
+      bagian lainnya tetap berlaku. Tidak ditegakkannya suatu bagian dari Ketentuan ini tidak berarti melepaskan hak
+      untuk menegakkannya di kemudian hari.
+    </li>
+    <li>
+      <strong>Hubungan.</strong> Anda dan kami adalah pihak yang saling independen. Ketentuan ini tidak menciptakan
+      hubungan kemitraan, usaha patungan, ketenagakerjaan, atau keagenan, dan tidak ada pihak lain yang memiliki hak
+      berdasarkan Ketentuan ini, kecuali Subjek Data Pribadi berdasarkan SCC.
+    </li>
+    <li>
+      <strong>Sanksi.</strong> Anda menyatakan bahwa Anda tidak berlokasi atau didirikan di negara atau wilayah yang
+      dikenai sanksi menyeluruh, dan bahwa Anda dan anggota tim Anda tidak tercantum dalam daftar sanksi.
+    </li>
+    <li>
+      <strong>Bahasa dan penafsiran.</strong> Ketentuan ini ditulis dalam bahasa Inggris, dan versi bahasa Inggris
+      tersebut lebih diutamakan daripada terjemahan apa pun. Kata "termasuk" dan "misalnya" berarti "termasuk tetapi tidak
+      terbatas pada", dan judul hanya dimaksudkan untuk kemudahan.
+    </li>
+  </ul>
+
+  <h2 id="contact">21. Kontak</h2>
+  <p>
+    Emploist dioperasikan oleh Navaneeth CT, orang perseorangan yang berdomisili di India, yang menjalankan usaha dengan
+    nama Emploist. Untuk pertanyaan, pemberitahuan, atau pengaduan mengenai Ketentuan ini, kirim email kepada kami di <a
+      href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a
+    >. Petugas Pengaduan (Grievance Officer) kami berdasarkan Information Technology Act (Undang-Undang Teknologi
+    Informasi) India adalah Navaneeth CT, di alamat yang sama.
+  </p>
+</LegalLayout>
