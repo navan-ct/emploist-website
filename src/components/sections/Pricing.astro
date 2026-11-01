@@ -50,7 +50,7 @@ const intervals = [
               <div class="flex rounded-full bg-subtle p-1 ring-1 ring-line">
                 {
                   intervals.map((interval, index) => (
-                    <label class="flex h-9 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-2 text-sm font-medium whitespace-nowrap sm:px-4 text-body transition-colors duration-150 hover:text-ink has-checked:bg-raised has-checked:text-ink has-checked:shadow-[0_1px_2px_oklch(0%_0_0/0.08),0_0_0_1px_var(--line)] has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-indigo-500">
+                    <label class="flex h-9 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-2 text-sm font-medium whitespace-nowrap sm:px-4 text-body transition-colors duration-150 hover:text-ink has-checked:bg-raised has-checked:text-ink has-checked:shadow-[0_1px_2px_oklch(0%_0_0/0.08),0_0_0_1px_var(--line)] has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ring">
                       <input type="radio" name="billing" id={interval.id} checked={index === 0} class="sr-only" />
                       {interval.label}
                       {interval.note && (

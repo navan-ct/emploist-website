@@ -38,7 +38,14 @@ const OUT_DIR = new URL("../src/assets/screenshots/", import.meta.url);
 const SCALE = 2;
 const DESKTOP = { width: 1280, height: 800 };
 
-const browser = await chromium.launch({ channel: "chrome" });
+// The careers page and email previews are sandboxed iframes, which Chrome
+// draws in a process of their own that the context's deviceScaleFactor
+// doesn't reach, so they came out at 1x and blurry. Forcing the scale on the
+// whole browser draws them at 2x too.
+const browser = await chromium.launch({
+  channel: "chrome",
+  args: [`--force-device-scale-factor=${SCALE}`],
+});
 
 /** Signs in with an email code and saves the session, unless it still works. */
 async function signIn() {
@@ -139,7 +146,7 @@ async function openFirstApplication(page, jobId) {
 
 /** Opens the Interviewing stage's email panel and waits for its preview. */
 async function openStageEmail(page) {
-  const row = page.locator("li, [role='listitem'], div").filter({ hasText: /^Interviewing/ }).last();
+  const row = page.getByRole("listitem").filter({ has: page.getByText("Interviewing", { exact: true }) });
   await row.getByRole("button", { name: "Edit email" }).click();
   await page.frameLocator("iframe[title='Preview of the email']").locator("body").waitFor();
   await settle(page);
@@ -169,7 +176,7 @@ const shots = (jobId) => [
   {
     name: "comments",
     // Short enough that the comments sit right above the new one.
-    viewport: { width: 1280, height: 680 },
+    viewport: { width: 1280, height: 712 },
     prepare: async (page) => {
       await openFirstApplication(page, jobId);
       // Start a comment that mentions a teammate, so the suggestions show.
@@ -179,7 +186,8 @@ const shots = (jobId) => [
       await settle(page);
     },
     clip: (page) =>
-      around(page, [page.getByRole("heading", { name: "Comments", exact: true }).locator("xpath=..")]),
+      // The heading's name ends with the comment count ("Comments 3").
+      around(page, [page.getByRole("heading", { name: /^Comments\b/ }).locator("xpath=..")]),
   },
   {
     name: "form",

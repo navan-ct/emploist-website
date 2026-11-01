@@ -24,6 +24,7 @@
   --color-brand-ink: var(--brand-ink);
   --color-brand-soft: var(--brand-soft);
   --color-on-brand: var(--on-brand);
+  --color-ring: var(--ring);
 }
 
 :root {
@@ -35,11 +36,14 @@
   --faint: var(--color-zinc-500);
   --line: var(--color-zinc-200);
   --line-strong: var(--color-zinc-300);
-  --brand: var(--color-indigo-600);
-  --brand-hover: var(--color-indigo-700);
-  --brand-ink: var(--color-indigo-600);
-  --brand-soft: var(--color-indigo-50);
+  /* The brand colors are the app's (primary, primary-hover, link, accent,
+     and ring in its index.css), so the site and the app match. */
+  --brand: #4f46e5;
+  --brand-hover: #4338ca;
+  --brand-ink: #4f46e5;
+  --brand-soft: #eef0ff;
   --on-brand: var(--color-white);
+  --ring: #6366f1;
   --shot-shadow:
     0 1px 2px oklch(0% 0 0 / 0.04), 0 4px 12px -2px oklch(0% 0 0 / 0.06),
     0 24px 48px -12px oklch(25% 0.05 277 / 0.16);
@@ -57,8 +61,10 @@
   --faint: oklch(65% 0.02 280);
   --line: oklch(100% 0 0 / 0.1);
   --line-strong: oklch(100% 0 0 / 0.16);
-  --brand-ink: var(--color-indigo-300);
-  --brand-soft: oklch(58.5% 0.233 277 / 0.22);
+  /* The app's dark link, accent, and ring. */
+  --brand-ink: #a5a8ff;
+  --brand-soft: #23264a;
+  --ring: #7c7ff5;
   --shot-shadow:
     0 0 0 1px oklch(100% 0 0 / 0.04), 0 24px 64px -16px oklch(0% 0 0 / 0.7);
   color-scheme: dark;
@@ -103,11 +109,11 @@
   }
 
   ::selection {
-    background-color: oklch(58.5% 0.233 277 / 0.22);
+    background-color: color-mix(in srgb, var(--ring) 22%, transparent);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-indigo-500);
+    outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
 }
@@ -188,7 +194,7 @@
     height: 1.0625rem;
     border-radius: 9999px;
     background-color: var(--brand-soft);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%234f39f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 8.25 7 10.5l4.5-5'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%234f46e5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 8.25 7 10.5l4.5-5'/%3E%3C/svg%3E");
     background-size: 100%;
   }
 

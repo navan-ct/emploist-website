@@ -29,7 +29,7 @@ const html = `<!doctype html>
   .brand { display: flex; align-items: center; gap: 12px; font-size: 30px; font-weight: 600; letter-spacing: -0.02em; }
   h1 { margin-top: 96px; font-size: 68px; line-height: 1.02; font-weight: 600; letter-spacing: -0.04em; }
   p { margin-top: 24px; font-size: 24px; line-height: 1.45; color: #52525c; letter-spacing: -0.01em; }
-  .url { position: absolute; left: 72px; bottom: 56px; font-size: 20px; font-weight: 500; color: #4f39f6; }
+  .url { position: absolute; left: 72px; bottom: 56px; font-size: 20px; font-weight: 500; color: #4f46e5; }
   .stage {
     position: absolute; left: 676px; top: 0; right: 0; bottom: 0;
     background: #f7f7f8; border-left: 1px solid #e4e4e7;
@@ -46,11 +46,11 @@ const html = `<!doctype html>
   <div class="text">
     <div class="brand">
       <svg viewBox="0 0 64 64" width="44" height="44">
-        <rect width="64" height="64" rx="14" fill="#4f39f6"/>
+        <rect width="64" height="64" rx="16" fill="#4f46e5"/>
         <g fill="#fff">
-          <rect x="16" y="18" width="32" height="7" rx="3.5"/>
-          <rect x="16" y="28.5" width="24" height="7" rx="3.5" opacity="0.72"/>
-          <rect x="16" y="39" width="16" height="7" rx="3.5" opacity="0.45"/>
+          <rect x="15" y="17" width="34" height="8" rx="4"/>
+          <rect x="15" y="28" width="24" height="8" rx="4" opacity="0.7"/>
+          <rect x="15" y="39" width="14" height="8" rx="4" opacity="0.42"/>
         </g>
       </svg>
       Emploist
