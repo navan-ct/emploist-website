@@ -58,4 +58,14 @@ export const DIRECTORIES: Directory[] = [
     // ToolPilot gives no embed code, only its badge image to link to it.
     badge: `<a href="https://www.toolpilot.ai" target="_blank" rel="noopener"><img src="https://www.toolpilot.ai/cdn/shop/files/f-b.png" alt="Featured on ToolPilot" width="300" height="66" /></a>`,
   },
+  {
+    name: "LaunchIgniter",
+    url: "https://launchigniter.com/product/emploist?ref=badge-emploist",
+    badge: `<a href="https://launchigniter.com/product/emploist?ref=badge-emploist" target="_blank">
+  <img src="https://launchigniter.com/api/badge/emploist?theme=dark" alt="Featured on LaunchIgniter" width="212" height="55" />
+</a>`,
+    homeBadge: `<a href="https://launchigniter.com/product/emploist?ref=badge-emploist" target="_blank">
+  <img src="https://launchigniter.com/api/badge/emploist?theme=light" alt="Featured on LaunchIgniter" width="212" height="55" />
+</a>`,
+  },
 ];
