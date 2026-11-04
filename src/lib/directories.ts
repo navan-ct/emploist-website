@@ -46,4 +46,10 @@ export const DIRECTORIES: Directory[] = [
   <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style="height: 54px; width: auto;" />
 </a>`,
   },
+  {
+    name: "Twelve Tools",
+    url: "https://twelve.tools",
+    badge: `<a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge0-dark.svg" alt="Featured on Twelve Tools" width="148" height="40"></a>`,
+    homeBadge: `<a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" width="148" height="40"></a>`,
+  },
 ];
