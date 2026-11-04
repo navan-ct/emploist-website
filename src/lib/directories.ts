@@ -21,4 +21,11 @@ export const DIRECTORIES: Directory[] = [
     url: "https://dang.ai",
     badge: `<a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;"><img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" /></a>`,
   },
+  {
+    name: "Findly.tools",
+    url: "https://findly.tools/emploist?utm_source=emploist",
+    badge: `<a href="https://findly.tools/emploist?utm_source=emploist" target="_blank" rel="noopener noreferrer">
+  <img src="https://findly.tools/badges/findly-tools-badge-dark.svg" alt="Featured on Findly.tools" width="175" height="55" />
+</a>`,
+  },
 ];
