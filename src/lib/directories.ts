@@ -79,4 +79,14 @@ export const DIRECTORIES: Directory[] = [
   <img src="https://aiagentsdirectory.com/featured-badge.svg?v=2024" alt="Emploist - Featured on AI Agents Directory" width="200" height="50" />
 </a>`,
   },
+  {
+    name: "Smol Launch",
+    url: "https://smollaunch.com",
+    badge: `<a href="https://smollaunch.com" target="_blank" rel="noopener">
+  <img src="https://smollaunch.com/badges/featured-dark.svg" alt="Emploist — Featured on Smol Launch" loading="lazy" width="250" height="60" />
+</a>`,
+    homeBadge: `<a href="https://smollaunch.com" target="_blank" rel="noopener">
+  <img src="https://smollaunch.com/badges/featured.svg" alt="Emploist — Featured on Smol Launch" loading="lazy" width="250" height="60" />
+</a>`,
+  },
 ];
