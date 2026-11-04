@@ -239,7 +239,9 @@
     text-underline-offset: 3px;
   }
 
-  & :where(img) {
+  /* Plain images only: a Figure's screenshot is not-prose and has its own
+     frame, which a second border and radius would leave a gap inside. */
+  & :where(img):not(:where(.not-prose, .not-prose *)) {
     border-radius: 1rem;
     border: 1px solid var(--line);
   }
