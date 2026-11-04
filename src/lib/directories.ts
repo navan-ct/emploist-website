@@ -52,4 +52,10 @@ export const DIRECTORIES: Directory[] = [
     badge: `<a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge0-dark.svg" alt="Featured on Twelve Tools" width="148" height="40"></a>`,
     homeBadge: `<a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" width="148" height="40"></a>`,
   },
+  {
+    name: "ToolPilot",
+    url: "https://www.toolpilot.ai",
+    // ToolPilot gives no embed code, only its badge image to link to it.
+    badge: `<a href="https://www.toolpilot.ai" target="_blank" rel="noopener"><img src="https://www.toolpilot.ai/cdn/shop/files/f-b.png" alt="Featured on ToolPilot" width="300" height="66" /></a>`,
+  },
 ];
