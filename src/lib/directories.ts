@@ -68,4 +68,15 @@ export const DIRECTORIES: Directory[] = [
   <img src="https://launchigniter.com/api/badge/emploist?theme=light" alt="Featured on LaunchIgniter" width="212" height="55" />
 </a>`,
   },
+  {
+    name: "AI Agents Directory",
+    url: "https://aiagentsdirectory.com/agent/emploist",
+    // Its badge comes in one color only, so both places use the same code.
+    badge: `<a href="https://aiagentsdirectory.com/agent/emploist" target="_blank" rel="noopener" title="Discover Emploist on AI Agents Directory">
+  <img src="https://aiagentsdirectory.com/featured-badge.svg?v=2024" alt="Emploist - Featured on AI Agents Directory" width="200" height="50" />
+</a>`,
+    homeBadge: `<a href="https://aiagentsdirectory.com/agent/emploist" target="_blank" rel="noopener" title="Discover Emploist on AI Agents Directory">
+  <img src="https://aiagentsdirectory.com/featured-badge.svg?v=2024" alt="Emploist - Featured on AI Agents Directory" width="200" height="50" />
+</a>`,
+  },
 ];
