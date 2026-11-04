@@ -458,6 +458,16 @@ const en = {
     defaultAuthor: "The Emploist team",
   },
 
+  /** The directories that list Emploist (/listed-on/), linked from the footer. */
+  listedOn: {
+    /** The page's title, and the footer link. */
+    title: "Listed on",
+    description:
+      "The software directories that list Emploist, the applicant tracking system with a careers page, a hiring pipeline, and AI ranking.",
+    heading: "Find Emploist around the web.",
+    lead: "The directories where Emploist is listed.",
+  },
+
   legal: {
     lastUpdated: (date: string) => `Last updated ${date}`,
     contents: "Contents",

@@ -1,0 +1,44 @@
+---
+// The directories that list Emploist, with their badges, in the language of
+// its address. Only the footer links here.
+import { getLocale, getMessages } from "../../i18n";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { DIRECTORIES } from "../../lib/directories";
+import { SITE } from "../../lib/site";
+
+const t = getMessages(getLocale(Astro)).listedOn;
+---
+
+<BaseLayout title={`${t.title} | ${SITE.name}`} description={t.description}>
+  <section class="container-page pt-16 pb-20 sm:pt-24 sm:pb-28">
+    <header class="max-w-2xl">
+      <p class="text-eyebrow">{t.title}</p>
+      <h1 class="text-display mt-4">{t.heading}</h1>
+      <p class="text-lead mt-6">{t.lead}</p>
+    </header>
+
+    <ul class="badges mt-16 flex flex-wrap items-center gap-x-6 gap-y-4 border-t border-line pt-14">
+      {
+        DIRECTORIES.map((directory) => (
+          <li class="flex">
+            {directory.badge ? (
+              <Fragment set:html={directory.badge} />
+            ) : (
+              <a href={directory.url} class="font-medium text-brand-ink underline-offset-4 hover:underline">
+                {directory.name}
+              </a>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Every badge the same height, whatever size its embed code sets. */
+  .badges :global(img) {
+    width: auto !important;
+    height: 54px !important;
+  }
+</style>

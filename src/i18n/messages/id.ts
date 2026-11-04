@@ -436,6 +436,14 @@ const id: Messages = {
     defaultAuthor: "Tim Emploist",
   },
 
+  listedOn: {
+    title: "Tercantum di",
+    description:
+      "Direktori perangkat lunak yang mencantumkan Emploist, ATS dengan halaman karier, alur rekrutmen, dan penilaian AI.",
+    heading: "Temukan Emploist di web.",
+    lead: "Direktori yang mencantumkan Emploist.",
+  },
+
   legal: {
     lastUpdated: (date) => `Terakhir diperbarui ${date}`,
     contents: "Daftar isi",

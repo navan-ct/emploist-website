@@ -439,6 +439,14 @@ const ja: Messages = {
     defaultAuthor: "Emploistチーム",
   },
 
+  listedOn: {
+    title: "掲載サイト",
+    description:
+      "採用ページとAI評価を備えた採用管理システム「Emploist」を掲載しているソフトウェアディレクトリの一覧です。",
+    heading: "Emploistの掲載先。",
+    lead: "Emploistを掲載しているディレクトリの一覧です。",
+  },
+
   legal: {
     lastUpdated: (date) => `最終更新日：${date}`,
     contents: "目次",

@@ -439,6 +439,14 @@ const tr: Messages = {
     defaultAuthor: "Emploist ekibi",
   },
 
+  listedOn: {
+    title: "Listelendiğimiz yerler",
+    description:
+      "Kariyer sayfası ve yapay zekâ puanlaması sunan aday takip sistemi Emploist'in listelendiği yazılım dizinleri.",
+    heading: "Emploist'i internette bulun.",
+    lead: "Emploist'in listelendiği dizinler.",
+  },
+
   legal: {
     lastUpdated: (date) => `Son güncelleme: ${date}`,
     contents: "İçindekiler",

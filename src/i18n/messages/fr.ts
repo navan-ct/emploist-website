@@ -441,6 +441,14 @@ const fr: Messages = {
     defaultAuthor: "L’équipe Emploist",
   },
 
+  listedOn: {
+    title: "Référencé sur",
+    description:
+      "Les annuaires de logiciels qui référencent Emploist, le logiciel de recrutement avec page carrière, suivi des candidatures et évaluation par IA.",
+    heading: "Retrouvez Emploist sur le web.",
+    lead: "Les annuaires où Emploist est référencé.",
+  },
+
   legal: {
     lastUpdated: (date) => `Dernière mise à jour : ${date}`,
     contents: "Sommaire",

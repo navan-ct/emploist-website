@@ -446,6 +446,14 @@ const de: Messages = {
     defaultAuthor: "Das Emploist-Team",
   },
 
+  listedOn: {
+    title: "Gelistet auf",
+    description:
+      "In diesen Softwareverzeichnissen finden Sie Emploist, das Bewerbermanagementsystem mit Karriereseite, Recruiting-Pipeline und KI-Bewertung.",
+    heading: "Hier finden Sie Emploist.",
+    lead: "Die Verzeichnisse, in denen Emploist gelistet ist.",
+  },
+
   legal: {
     lastUpdated: (date) => `Zuletzt aktualisiert am ${date}`,
     contents: "Inhalt",

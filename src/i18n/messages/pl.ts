@@ -444,6 +444,14 @@ const pl: Messages = {
     defaultAuthor: "Zespół Emploist",
   },
 
+  listedOn: {
+    title: "Katalogi",
+    description:
+      "Katalogi oprogramowania, w których znajdziesz Emploist, system ATS ze stroną kariery, procesem rekrutacji i oceną AI.",
+    heading: "Znajdź Emploist w sieci.",
+    lead: "Katalogi, w których znajdziesz Emploist.",
+  },
+
   legal: {
     lastUpdated: (date) => `Ostatnia aktualizacja: ${date}`,
     contents: "Spis treści",

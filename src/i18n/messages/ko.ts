@@ -423,6 +423,13 @@ const ko: Messages = {
     defaultAuthor: "Emploist 팀",
   },
 
+  listedOn: {
+    title: "소개된 곳",
+    description: "채용 페이지와 AI 평가를 갖춘 채용 관리 시스템, Emploist가 소개된 소프트웨어 디렉터리예요.",
+    heading: "웹에서 Emploist를 찾아보세요.",
+    lead: "Emploist가 소개된 디렉터리예요.",
+  },
+
   legal: {
     lastUpdated: (date) => `최종 업데이트: ${date}`,
     contents: "목차",

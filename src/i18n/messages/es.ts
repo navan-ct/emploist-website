@@ -445,6 +445,14 @@ const es: Messages = {
     defaultAuthor: "El equipo de Emploist",
   },
 
+  listedOn: {
+    title: "Aparece en",
+    description:
+      "Los directorios de software en los que aparece Emploist, el sistema de seguimiento de candidatos con página de empleo, proceso de selección y evaluación con IA.",
+    heading: "Encuentra Emploist en la web.",
+    lead: "Los directorios en los que aparece Emploist.",
+  },
+
   legal: {
     lastUpdated: (date) => `Última actualización: ${date}`,
     contents: "Índice",

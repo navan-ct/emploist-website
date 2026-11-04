@@ -48,7 +48,8 @@ src/
   assets/screenshots/    App screenshots
   components/            Header, footer, SEO tags, screenshots, buttons,
                          the language switcher
-    pages/               The home page, blog, post, and 404, in any language
+    pages/               The home page, blog, post, Listed on, and 404, in any
+                         language
     sections/            The landing page's sections, in page order
   content/blog/          Blog posts (Markdown or MDX), and their
                          translations in a folder per language
@@ -63,9 +64,10 @@ src/
     site.ts              URLs, prices, credits, and the trial
     legal.ts             The English Terms' and Privacy Policy's dates
     blog.ts              Post helpers: sorting, translations, reading time
-  pages/                 Routes: home, blog, posts, terms, privacy, 404,
-                         rss.xml, robots.txt; [lang]/ has the same for the
-                         other languages
+    directories.ts       The directories on /listed-on/, with their badges
+  pages/                 Routes: home, blog, posts, listed-on, terms, privacy,
+                         404, rss.xml, robots.txt; [lang]/ has the same for
+                         the other languages
   styles/global.css      Design tokens and shared styles
 ```
 
