@@ -7,12 +7,17 @@
 //   these images loading from the directories' own servers.
 // - Leave `badge` out for a directory that asks only for a link: the page
 //   then shows its name, linked.
+// - `homeBadge` is for a directory that requires its badge on the home page.
+//   It's shown small in the home page's footer, which the Privacy Policy
+//   also covers. Same rules as `badge`.
 
 export interface Directory {
   name: string;
   url: string;
   /** HTML: the directory's badge embed code. */
   badge?: string;
+  /** HTML: the embed code for the home page's footer, exactly as given. */
+  homeBadge?: string;
 }
 
 export const DIRECTORIES: Directory[] = [
@@ -26,6 +31,9 @@ export const DIRECTORIES: Directory[] = [
     url: "https://findly.tools/emploist?utm_source=emploist",
     badge: `<a href="https://findly.tools/emploist?utm_source=emploist" target="_blank" rel="noopener noreferrer">
   <img src="https://findly.tools/badges/findly-tools-badge-dark.svg" alt="Featured on Findly.tools" width="175" height="55" />
+</a>`,
+    homeBadge: `<a href="https://findly.tools/emploist?utm_source=emploist" target="_blank" rel="noopener noreferrer">
+  <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" />
 </a>`,
   },
 ];
