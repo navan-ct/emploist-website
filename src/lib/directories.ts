@@ -36,4 +36,14 @@ export const DIRECTORIES: Directory[] = [
   <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" />
 </a>`,
   },
+  {
+    name: "Turbo0",
+    url: "https://turbo0.com/item/emploist",
+    badge: `<a href="https://turbo0.com/item/emploist" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.turbo0.com/badge-listed-dark.svg" alt="Listed on Turbo0" style="height: 54px; width: auto;" />
+</a>`,
+    homeBadge: `<a href="https://turbo0.com/item/emploist" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style="height: 54px; width: auto;" />
+</a>`,
+  },
 ];
