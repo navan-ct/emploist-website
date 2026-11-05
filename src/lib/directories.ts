@@ -89,4 +89,15 @@ export const DIRECTORIES: Directory[] = [
   <img src="https://smollaunch.com/badges/featured.svg" alt="Emploist — Featured on Smol Launch" loading="lazy" width="250" height="60" />
 </a>`,
   },
+  {
+    name: "OpenHunts",
+    url: "https://openhunts.com",
+    // Its badge comes in one color only, so both places use the same code.
+    badge: `<a href="https://openhunts.com" target="_blank" title="OpenHunts Club">
+  <img alt="OpenHunts Club Member" height="105" src="https://cdn.openhunts.com/badges/club.webp" style="width: 195px; height: auto;" width="486">
+</a>`,
+    homeBadge: `<a href="https://openhunts.com" target="_blank" title="OpenHunts Club">
+  <img alt="OpenHunts Club Member" height="105" src="https://cdn.openhunts.com/badges/club.webp" style="width: 195px; height: auto;" width="486">
+</a>`,
+  },
 ];
