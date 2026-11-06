@@ -106,4 +106,10 @@ export const DIRECTORIES: Directory[] = [
     badge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=dark" width=250 alt="Fazier badge" /></a>`,
     homeBadge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" width=250 alt="Fazier badge" /></a>`,
   },
+  {
+    name: "Startup Fame",
+    url: "https://startupfa.me/s/emploist?utm_source=www.emploist.com",
+    badge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge-dark.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
+    homeBadge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
+  },
 ];
