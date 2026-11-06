@@ -1,7 +1,8 @@
 // The directories that list Emploist, shown on /listed-on/ in this order.
 // Directories check that page for their backlink or badge.
 //
-// - `badge` is the directory's embed code, pasted exactly as it gives it. It
+// - `badge` is the directory's embed code, pasted as it gives it, but with
+//   its light badge where it has one, to suit the light page. It
 //   must be a plain link around an image: no scripts, iframes, or images that
 //   set cookies. The Privacy Policy says the website has none, and covers only
 //   these images loading from the directories' own servers.
@@ -24,25 +25,27 @@ export const DIRECTORIES: Directory[] = [
   {
     name: "Fazier",
     url: "https://fazier.com/launches/www.emploist.com",
-    badge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=dark" width=250 alt="Fazier badge" /></a>`,
+    badge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" width=250 alt="Fazier badge" /></a>`,
     homeBadge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" width=250 alt="Fazier badge" /></a>`,
   },
   {
     name: "Startup Fame",
     url: "https://startupfa.me/s/emploist?utm_source=www.emploist.com",
-    badge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge-dark.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
+    badge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
     homeBadge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
   },
   {
     name: "DANG!",
     url: "https://dang.ai",
-    badge: `<a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;"><img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" /></a>`,
+    // DANG!'s code gives its dark badge. Its server also has a light one,
+    // dang-verified-light.png, which the page uses.
+    badge: `<a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;"><img src="https://assets.dang.ai/badges/dang-verified-light.png" alt="Verified on DANG!" width="260" height="94" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" /></a>`,
   },
   {
     name: "Findly.tools",
     url: "https://findly.tools/emploist?utm_source=emploist",
     badge: `<a href="https://findly.tools/emploist?utm_source=emploist" target="_blank" rel="noopener noreferrer">
-  <img src="https://findly.tools/badges/findly-tools-badge-dark.svg" alt="Featured on Findly.tools" width="175" height="55" />
+  <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" />
 </a>`,
     homeBadge: `<a href="https://findly.tools/emploist?utm_source=emploist" target="_blank" rel="noopener noreferrer">
   <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" />
@@ -52,7 +55,7 @@ export const DIRECTORIES: Directory[] = [
     name: "Turbo0",
     url: "https://turbo0.com/item/emploist",
     badge: `<a href="https://turbo0.com/item/emploist" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.turbo0.com/badge-listed-dark.svg" alt="Listed on Turbo0" style="height: 54px; width: auto;" />
+  <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style="height: 54px; width: auto;" />
 </a>`,
     homeBadge: `<a href="https://turbo0.com/item/emploist" target="_blank" rel="noopener noreferrer">
   <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style="height: 54px; width: auto;" />
@@ -61,20 +64,21 @@ export const DIRECTORIES: Directory[] = [
   {
     name: "Twelve Tools",
     url: "https://twelve.tools",
-    badge: `<a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge0-dark.svg" alt="Featured on Twelve Tools" width="148" height="40"></a>`,
+    badge: `<a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" width="148" height="40"></a>`,
     homeBadge: `<a href="https://twelve.tools" target="_blank"><img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" width="148" height="40"></a>`,
   },
   {
     name: "ToolPilot",
     url: "https://www.toolpilot.ai",
     // ToolPilot gives no embed code, only its badge image to link to it.
-    badge: `<a href="https://www.toolpilot.ai" target="_blank" rel="noopener"><img src="https://www.toolpilot.ai/cdn/shop/files/f-b.png" alt="Featured on ToolPilot" width="300" height="66" /></a>`,
+    // Its server also has a light one, f-w.png, which the page uses.
+    badge: `<a href="https://www.toolpilot.ai" target="_blank" rel="noopener"><img src="https://www.toolpilot.ai/cdn/shop/files/f-w.png" alt="Featured on ToolPilot" width="300" height="66" /></a>`,
   },
   {
     name: "LaunchIgniter",
     url: "https://launchigniter.com/product/emploist?ref=badge-emploist",
     badge: `<a href="https://launchigniter.com/product/emploist?ref=badge-emploist" target="_blank">
-  <img src="https://launchigniter.com/api/badge/emploist?theme=dark" alt="Featured on LaunchIgniter" width="212" height="55" />
+  <img src="https://launchigniter.com/api/badge/emploist?theme=light" alt="Featured on LaunchIgniter" width="212" height="55" />
 </a>`,
     homeBadge: `<a href="https://launchigniter.com/product/emploist?ref=badge-emploist" target="_blank">
   <img src="https://launchigniter.com/api/badge/emploist?theme=light" alt="Featured on LaunchIgniter" width="212" height="55" />
@@ -95,7 +99,7 @@ export const DIRECTORIES: Directory[] = [
     name: "Smol Launch",
     url: "https://smollaunch.com",
     badge: `<a href="https://smollaunch.com" target="_blank" rel="noopener">
-  <img src="https://smollaunch.com/badges/featured-dark.svg" alt="Emploist — Featured on Smol Launch" loading="lazy" width="250" height="60" />
+  <img src="https://smollaunch.com/badges/featured.svg" alt="Emploist — Featured on Smol Launch" loading="lazy" width="250" height="60" />
 </a>`,
     homeBadge: `<a href="https://smollaunch.com" target="_blank" rel="noopener">
   <img src="https://smollaunch.com/badges/featured.svg" alt="Emploist — Featured on Smol Launch" loading="lazy" width="250" height="60" />
@@ -138,17 +142,17 @@ export const DIRECTORIES: Directory[] = [
     name: "DevHunt",
     url: "https://devhunt.org/tool/emploist",
     // DevHunt's code gives its dark badge. Its server also serves a light
-    // one when "?theme=light" is added, which the footer uses.
-    badge: `<a href="https://devhunt.org/tool/emploist" target="_blank" title="Emploist on DevHunt"><img src="https://devhunt.org/badge/emploist.svg" alt="Emploist - Featured on DevHunt" width="220" height="54" /></a>`,
+    // one when "?theme=light" is added, which both places use.
+    badge: `<a href="https://devhunt.org/tool/emploist" target="_blank" title="Emploist on DevHunt"><img src="https://devhunt.org/badge/emploist.svg?theme=light" alt="Emploist - Featured on DevHunt" width="220" height="54" /></a>`,
     homeBadge: `<a href="https://devhunt.org/tool/emploist" target="_blank" title="Emploist on DevHunt"><img src="https://devhunt.org/badge/emploist.svg?theme=light" alt="Emploist - Featured on DevHunt" width="220" height="54" /></a>`,
   },
   {
     name: "Huzzler",
     url: "https://huzzler.so/products/PtRzohv6Zg/emploist-com?utm_source=huzzler_product_website&utm_medium=badge&utm_campaign=free_listing",
     // Huzzler's code gives its dark badge. Its server also has a light one,
-    // featured-light.png, which the footer uses.
+    // featured-light.png, which both places use.
     badge: `<a href="https://huzzler.so/products/PtRzohv6Zg/emploist-com?utm_source=huzzler_product_website&amp;utm_medium=badge&amp;utm_campaign=free_listing" target="_blank" rel="noopener noreferrer">
-    <img alt="Huzzler Embed Badge" src="https://huzzler.so/assets/images/embeddable-badges/featured.png" width="159" height="55" />
+    <img alt="Huzzler Embed Badge" src="https://huzzler.so/assets/images/embeddable-badges/featured-light.png" width="159" height="55" />
 </a>`,
     homeBadge: `<a href="https://huzzler.so/products/PtRzohv6Zg/emploist-com?utm_source=huzzler_product_website&amp;utm_medium=badge&amp;utm_campaign=free_listing" target="_blank" rel="noopener noreferrer">
     <img alt="Huzzler Embed Badge" src="https://huzzler.so/assets/images/embeddable-badges/featured-light.png" width="159" height="55" />

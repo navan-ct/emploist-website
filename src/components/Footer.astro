@@ -62,15 +62,6 @@ const columns = [
     <div class="flex flex-col items-start gap-4">
       <a href={page("/")} class="-m-1 rounded-md p-1" aria-label={t.site.home}><Wordmark /></a>
       <p class="max-w-xs text-[0.9375rem] leading-relaxed">{t.footer.tagline}</p>
-      {
-        homeBadges.length > 0 && (
-          <div class="mt-2 flex max-w-xs flex-wrap items-center gap-2">
-            {homeBadges.map((badge) => (
-              <div class="home-badge flex" set:html={badge} />
-            ))}
-          </div>
-        )
-      }
     </div>
     {
       columns.map((column) => (
@@ -90,6 +81,15 @@ const columns = [
     }
   </div>
   <div class="container-page">
+    {
+      homeBadges.length > 0 && (
+        <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3 pb-10">
+          {homeBadges.map((badge) => (
+            <div class="home-badge flex" set:html={badge} />
+          ))}
+        </div>
+      )
+    }
     <!-- On large screens, equal side columns keep the language picker in the
          center. Every language's text fits them from lg up, not below. -->
     <div class="flex flex-col gap-3 border-t border-line py-6 text-sm text-faint sm:flex-row sm:items-center sm:justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-x-6">
