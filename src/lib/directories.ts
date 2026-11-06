@@ -22,6 +22,18 @@ export interface Directory {
 
 export const DIRECTORIES: Directory[] = [
   {
+    name: "Fazier",
+    url: "https://fazier.com/launches/www.emploist.com",
+    badge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=dark" width=250 alt="Fazier badge" /></a>`,
+    homeBadge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" width=250 alt="Fazier badge" /></a>`,
+  },
+  {
+    name: "Startup Fame",
+    url: "https://startupfa.me/s/emploist?utm_source=www.emploist.com",
+    badge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge-dark.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
+    homeBadge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
+  },
+  {
     name: "DANG!",
     url: "https://dang.ai",
     badge: `<a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;"><img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" /></a>`,
@@ -101,15 +113,25 @@ export const DIRECTORIES: Directory[] = [
 </a>`,
   },
   {
-    name: "Fazier",
-    url: "https://fazier.com/launches/www.emploist.com",
-    badge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=dark" width=250 alt="Fazier badge" /></a>`,
-    homeBadge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" width=250 alt="Fazier badge" /></a>`,
-  },
-  {
-    name: "Startup Fame",
-    url: "https://startupfa.me/s/emploist?utm_source=www.emploist.com",
-    badge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge-dark.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
-    homeBadge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
+    name: "Startup Fast",
+    url: "https://startupfa.st",
+    // Its dark badge is light text on a see-through background, which
+    // disappears on a white page, so both places use the light one.
+    badge: `<a href="https://startupfa.st" target="_blank" title="Powered by Startup Fast">
+  <img
+    src="https://startupfa.st/images/badges/powered-by-light.svg"
+    alt="Powered by Startup Fast"
+    width="150"
+    height="44"
+  />
+</a>`,
+    homeBadge: `<a href="https://startupfa.st" target="_blank" title="Powered by Startup Fast">
+  <img
+    src="https://startupfa.st/images/badges/powered-by-light.svg"
+    alt="Powered by Startup Fast"
+    width="150"
+    height="44"
+  />
+</a>`,
   },
 ];
