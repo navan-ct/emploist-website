@@ -134,4 +134,12 @@ export const DIRECTORIES: Directory[] = [
   />
 </a>`,
   },
+  {
+    name: "DevHunt",
+    url: "https://devhunt.org/tool/emploist",
+    // DevHunt's code gives its dark badge. Its server also serves a light
+    // one when "?theme=light" is added, which the footer uses.
+    badge: `<a href="https://devhunt.org/tool/emploist" target="_blank" title="Emploist on DevHunt"><img src="https://devhunt.org/badge/emploist.svg" alt="Emploist - Featured on DevHunt" width="220" height="54" /></a>`,
+    homeBadge: `<a href="https://devhunt.org/tool/emploist" target="_blank" title="Emploist on DevHunt"><img src="https://devhunt.org/badge/emploist.svg?theme=light" alt="Emploist - Featured on DevHunt" width="220" height="54" /></a>`,
+  },
 ];
