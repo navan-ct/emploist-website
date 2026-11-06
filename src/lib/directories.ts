@@ -100,4 +100,10 @@ export const DIRECTORIES: Directory[] = [
   <img alt="OpenHunts Club Member" height="105" src="https://cdn.openhunts.com/badges/club.webp" style="width: 195px; height: auto;" width="486">
 </a>`,
   },
+  {
+    name: "Fazier",
+    url: "https://fazier.com/launches/www.emploist.com",
+    badge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=dark" width=250 alt="Fazier badge" /></a>`,
+    homeBadge: `<a href="https://fazier.com/launches/www.emploist.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" width=250 alt="Fazier badge" /></a>`,
+  },
 ];
