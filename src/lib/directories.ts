@@ -142,4 +142,16 @@ export const DIRECTORIES: Directory[] = [
     badge: `<a href="https://devhunt.org/tool/emploist" target="_blank" title="Emploist on DevHunt"><img src="https://devhunt.org/badge/emploist.svg" alt="Emploist - Featured on DevHunt" width="220" height="54" /></a>`,
     homeBadge: `<a href="https://devhunt.org/tool/emploist" target="_blank" title="Emploist on DevHunt"><img src="https://devhunt.org/badge/emploist.svg?theme=light" alt="Emploist - Featured on DevHunt" width="220" height="54" /></a>`,
   },
+  {
+    name: "Huzzler",
+    url: "https://huzzler.so/products/PtRzohv6Zg/emploist-com?utm_source=huzzler_product_website&utm_medium=badge&utm_campaign=free_listing",
+    // Huzzler's code gives its dark badge. Its server also has a light one,
+    // featured-light.png, which the footer uses.
+    badge: `<a href="https://huzzler.so/products/PtRzohv6Zg/emploist-com?utm_source=huzzler_product_website&amp;utm_medium=badge&amp;utm_campaign=free_listing" target="_blank" rel="noopener noreferrer">
+    <img alt="Huzzler Embed Badge" src="https://huzzler.so/assets/images/embeddable-badges/featured.png" width="159" height="55" />
+</a>`,
+    homeBadge: `<a href="https://huzzler.so/products/PtRzohv6Zg/emploist-com?utm_source=huzzler_product_website&amp;utm_medium=badge&amp;utm_campaign=free_listing" target="_blank" rel="noopener noreferrer">
+    <img alt="Huzzler Embed Badge" src="https://huzzler.so/assets/images/embeddable-badges/featured-light.png" width="159" height="55" />
+</a>`,
+  },
 ];
