@@ -24,7 +24,7 @@ const sections = [
   document="privacy"
   title="Datenschutzerklärung"
   description="Wie Emploist personenbezogene Daten verarbeitet: was wir erheben, wie KI-Bewertung und KI-Assistenten Bewerbungen nutzen, wer Daten erhält und Ihre Rechte."
-  translatedFrom="2026-11-04"
+  translatedFrom="2026-11-07"
   sections={sections}
 >
   <h2 id="who-we-are">1. Wer wir sind</h2>
@@ -52,8 +52,8 @@ const sections = [
   <p>
     Wir sind der Verantwortliche für die personenbezogenen Daten, die wir selbst zum Betrieb von Emploist verwenden:
     Kontodaten von Teammitgliedern, die von uns versendeten Einladungen, Verbindungen von KI-Assistenten,
-    Abrechnungsdaten, Support-E-Mails, Sicherheits-Logs und Daten über Besucher unserer Website. Diese
-    Datenschutzerklärung betrifft hauptsächlich diese Daten.
+    Abrechnungsdaten, Support-E-Mails, Sicherheits-Logs, Nutzungsstatistiken der App und Daten über Besucher unserer
+    Website. Diese Datenschutzerklärung betrifft hauptsächlich diese Daten.
   </p>
 
   <h2 id="applicants">3. Für Bewerbende</h2>
@@ -127,12 +127,27 @@ const sections = [
       in unseren Bestimmungen zur Auftragsverarbeitung beschrieben.
     </li>
     <li>
+      <strong>Nutzungsstatistiken.</strong> Wenn Sie die Emploist-App nutzen, einschließlich ihrer Anmelde- und
+      Einladungsseiten, erfassen wir die Seiten, die Sie öffnen, und einige Ihrer Aktionen, jeweils mit dem Zeitpunkt.
+      Diese Aktionen sind die Registrierung, das Erstellen eines Unternehmens, das Veröffentlichen einer Stelle, das
+      Starten eines Testzeitraums und das Abonnieren eines Tarifs. Wir erfassen jede Seite nach ihrem Typ, etwa die
+      Detailseite einer Stelle, nie jedoch, um welche Stelle es sich handelt oder wonach Sie gesucht haben. Bei der
+      ersten Seite, die Sie öffnen, erfassen wir außerdem gegebenenfalls die Website, von der Sie gekommen sind, jedoch
+      nur deren Adresse, etwa google.com. Aus Ihrer IP-Adresse und Ihren Browserdetails ermitteln wir Ihren ungefähren
+      Standort (Land, Region und Stadt), Ihren Browser, Ihr Betriebssystem und Ihren Gerätetyp sowie eine Kennung für
+      Ihre Besuche, die sich mindestens monatlich ändert. Außerdem erfassen wir die Sprache Ihres Browsers. Ihre
+      IP-Adresse und Ihre übrigen Browserdetails speichern wir dafür nicht, und wir fügen diesen Statistiken weder Ihren
+      Namen noch Ihre E-Mail-Adresse, Ihr Konto oder Ihr Unternehmen hinzu. Wir verwenden sie, um zu verstehen, wie
+      Emploist genutzt wird, und um es zu verbessern. Wenn Ihr Browser das Signal Global Privacy Control sendet,
+      erfassen wir diese Statistiken von diesem Browser aus nicht.
+    </li>
+    <li>
       <strong>Support.</strong> Wenn Sie uns eine E-Mail senden, erhalten wir Ihre E-Mail-Adresse, Ihre Nachricht und
       alles, was Sie mitsenden. Cloudflare leitet diese E-Mails an unser Support-Postfach weiter, das von Google gehostet
       wird (Gmail).
     </li>
     <li>
-      <strong>Website-Besucher.</strong> emploist.com hat keine Analysetools, keine Formulare und keine Skripte von
+      <strong>Website-Besucher.</strong> Unsere Website emploist.com hat keine Analysetools, keine Formulare und keine Skripte von
       Drittanbietern. Der Hosting-Anbieter der Website erhält übliche Anfragedaten wie Ihre IP-Adresse und Browserdetails.
       Einige unserer Seiten, etwa die Seite <a href="/de/listed-on/">Gelistet auf</a>, zeigen Badges der Verzeichnisse, in denen Emploist gelistet
       ist. Die Badges werden von den Websites dieser Verzeichnisse geladen. Wenn Sie diese Seiten öffnen, erhalten daher
@@ -226,9 +241,7 @@ const sections = [
       widersprechen.</strong
     > Um Widerspruch einzulegen, senden Sie eine E-Mail an <a href={`mailto:${SITE.supportEmail}`}
       >{SITE.supportEmail}</a
-    >. Wir stellen die Verwendung dann ein, es sei denn, wir haben zwingende schutzwürdige Gründe, die Ihre Interessen,
-    Rechte und Freiheiten überwiegen, oder wir benötigen die Daten zur Geltendmachung, Ausübung oder Verteidigung von
-    Rechtsansprüchen.
+    >.
   </p>
 
   <h2 id="subprocessors">6. Weitergabe und Unterauftragsverarbeiter</h2>
@@ -401,6 +414,10 @@ const sections = [
       <tr>
         <td>Support-E-Mails</td>
         <td>So lange, wie wir sie zur Bearbeitung Ihrer Anfrage und etwaiger Folgeanfragen benötigen.</td>
+      </tr>
+      <tr>
+        <td>Nutzungsstatistiken</td>
+        <td>25 Monate, danach werden sie gelöscht.</td>
       </tr>
       <tr>
         <td>Logs und Backups</td>

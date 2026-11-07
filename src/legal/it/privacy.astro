@@ -24,7 +24,7 @@ const sections = [
   document="privacy"
   title="Informativa sulla privacy"
   description="Come Emploist tratta i dati personali: cosa raccogliamo, come la valutazione con l'IA e gli assistenti IA usano le candidature, con chi li condividiamo e i tuoi diritti."
-  translatedFrom="2026-11-04"
+  translatedFrom="2026-11-07"
   sections={sections}
 >
   <h2 id="who-we-are">1. Chi siamo</h2>
@@ -54,8 +54,8 @@ const sections = [
   <p>
     Siamo titolari del trattamento dei dati personali che utilizziamo noi stessi per gestire Emploist: i dati
     dell'account dei membri del team, gli inviti che inviamo, le connessioni degli assistenti IA, i dati di
-    fatturazione, le email all'assistenza, i log di sicurezza e i dati sui visitatori del nostro sito web. La presente
-    informativa riguarda principalmente tali dati.
+    fatturazione, le email all'assistenza, i log di sicurezza, le statistiche di utilizzo dell'app e i dati sui
+    visitatori del nostro sito web. La presente informativa riguarda principalmente tali dati.
   </p>
 
   <h2 id="applicants">3. Per i candidati</h2>
@@ -130,12 +130,26 @@ const sections = [
       sicurezza e prestare assistenza, come descritto nelle nostre condizioni sul trattamento dei dati.
     </li>
     <li>
+      <strong>Statistiche di utilizzo.</strong> Quando utilizzi l'app Emploist, comprese le sue pagine di accesso e di
+      invito, registriamo le pagine che apri e alcune delle tue azioni, con la data e l'ora di ciascuna. Le azioni sono
+      la creazione del tuo account, la creazione di un'azienda, la pubblicazione di una posizione, l'avvio di una prova
+      gratuita e la sottoscrizione di un piano. Di ogni pagina registriamo il tipo, come la pagina dei dettagli di una
+      posizione, e mai di quale posizione si tratta né che cosa hai cercato. Con la prima pagina che apri, registriamo
+      anche l'eventuale sito web da cui provieni, ma solo il suo indirizzo, come google.com. Dal tuo indirizzo IP e dai
+      dettagli del browser ricaviamo la tua ubicazione approssimativa (paese, regione e città), il tuo browser, il
+      sistema operativo e il tipo di dispositivo, nonché un identificativo delle tue visite che cambia almeno una volta
+      al mese. Registriamo inoltre la lingua del tuo browser. Non conserviamo a questo scopo il tuo indirizzo IP né gli
+      altri dettagli del browser, e non aggiungiamo a queste statistiche il tuo nome, indirizzo email, account o la tua
+      azienda. Le utilizziamo per capire come viene utilizzato Emploist e per migliorarlo. Se il tuo browser invia un
+      segnale Global Privacy Control, non registriamo queste statistiche da quel browser.
+    </li>
+    <li>
       <strong>Assistenza.</strong> Se ci invii un'email, riceviamo il tuo indirizzo email, il tuo messaggio e tutto ciò
       che vi includi. Cloudflare inoltra queste email alla nostra casella di posta dell'assistenza, ospitata da Google
       (Gmail).
     </li>
     <li>
-      <strong>Visitatori del sito web.</strong> emploist.com non utilizza strumenti di analisi, moduli o script di terze
+      <strong>Visitatori del sito web.</strong> Il nostro sito web, emploist.com, non utilizza strumenti di analisi, moduli o script di terze
       parti. Il suo fornitore di hosting riceve i dati standard delle richieste, come il tuo indirizzo IP e i dettagli del
       browser. Alcune delle nostre pagine, come la pagina <a href="/it/listed-on/">Presente su</a>, mostrano i badge delle directory in cui è presente
       Emploist. I badge vengono caricati dai siti web di queste directory, che quindi ricevono anch'esse questi dati delle
@@ -225,9 +239,7 @@ const sections = [
     <strong
       >Se ti trovi nel SEE o nel Regno Unito, puoi opporti in qualsiasi momento, per motivi connessi alla tua situazione,
       all'utilizzo dei tuoi dati personali basato sul legittimo interesse.</strong
-    > Per opporti, scrivi a <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. In tal caso smetteremo, a
-    meno che non abbiamo motivi legittimi cogenti che prevalgano sui tuoi interessi, diritti e libertà, oppure i dati ci
-    servano per azioni legali.
+    > Per opporti, scrivi a <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
   </p>
 
   <h2 id="subprocessors">6. Condivisione e sub-responsabili del trattamento</h2>
@@ -398,6 +410,10 @@ const sections = [
       <tr>
         <td>Email all'assistenza</td>
         <td>Per tutto il tempo necessario a gestire la tua richiesta e gli eventuali seguiti.</td>
+      </tr>
+      <tr>
+        <td>Statistiche di utilizzo</td>
+        <td>25 mesi, dopodiché vengono cancellate.</td>
       </tr>
       <tr>
         <td>Log e backup</td>

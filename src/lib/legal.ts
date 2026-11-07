@@ -5,7 +5,7 @@
 
 export const LEGAL_VERSIONS = {
   terms: "2026-10-28",
-  privacy: "2026-11-04",
+  privacy: "2026-11-07",
 } as const;
 
 export type LegalDocument = keyof typeof LEGAL_VERSIONS;

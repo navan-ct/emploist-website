@@ -24,7 +24,7 @@ const sections = [
   document="privacy"
   title="Politique de confidentialité"
   description="Comment Emploist traite les données à caractère personnel : collecte, candidatures et évaluation par IA, assistants IA, destinataires et vos droits."
-  translatedFrom="2026-11-04"
+  translatedFrom="2026-11-07"
   sections={sections}
 >
   <h2 id="who-we-are">1. Qui nous sommes</h2>
@@ -55,8 +55,8 @@ const sections = [
     Nous agissons en tant que responsable du traitement des données à caractère personnel que nous utilisons pour
     exploiter nous-mêmes Emploist : les informations de compte des membres des équipes, les invitations que nous
     envoyons, les connexions d’assistants IA, les données de facturation, les e-mails d’assistance, les journaux de
-    sécurité et les données relatives aux visiteurs de notre site web. La présente politique couvre principalement ces
-    données.
+    sécurité, les statistiques d’utilisation de l’application et les données relatives aux visiteurs de notre site
+    web. La présente politique couvre principalement ces données.
   </p>
 
   <h2 id="applicants">3. Pour les candidats</h2>
@@ -136,14 +136,31 @@ const sections = [
       l’assistance, comme le décrivent nos conditions de traitement des données.
     </li>
     <li>
+      <strong>Statistiques d’utilisation.</strong> Lorsque vous utilisez l’application Emploist, y compris ses pages de
+      connexion et d’invitation, nous enregistrons les pages que vous ouvrez et certaines de vos actions, avec la date
+      et l’heure de chacune. Ces actions sont l’inscription, la création d’une entreprise, la publication d’une offre,
+      le démarrage d’un essai et la souscription d’un forfait. Pour chaque page, nous enregistrons son type, comme la
+      page de détails d’une offre, mais jamais l’offre dont il s’agit ni ce que vous avez recherché. Avec la première
+      page que vous ouvrez, nous enregistrons également le site web d’où vous venez, le cas échéant, mais uniquement son
+      adresse, comme google.com. À partir de votre adresse IP et des informations sur votre navigateur, nous déterminons
+      votre localisation approximative (pays, région et ville), votre navigateur, votre système d’exploitation et votre
+      type d’appareil, ainsi qu’un identifiant de vos visites qui change au moins tous les mois. Nous enregistrons
+      également la langue de votre navigateur. Nous ne conservons pas à cette fin votre adresse IP ni les autres
+      informations sur votre navigateur, et nous n’ajoutons à ces statistiques ni votre nom, ni votre adresse e-mail, ni
+      votre compte, ni votre entreprise. Nous les utilisons pour comprendre comment Emploist est utilisé et pour
+      l’améliorer. Si votre navigateur envoie un signal Global Privacy Control, nous n’enregistrons pas ces statistiques
+      depuis ce navigateur.
+    </li>
+    <li>
       <strong>Assistance.</strong> Si vous nous envoyez un e-mail, nous recevons votre adresse e-mail, votre message et
       tout ce que vous y incluez. Cloudflare transfère ces e-mails vers notre boîte de réception de l’assistance, hébergée
       par Google (Gmail).
     </li>
     <li>
-      <strong>Visiteurs du site web.</strong> emploist.com ne comporte aucun outil d’analyse, aucun formulaire ni aucun
-      script tiers. Son hébergeur reçoit les données de requête standard, comme votre adresse IP et des informations sur
-      votre navigateur. Certaines de nos pages, comme la page <a href="/fr/listed-on/">Référencé sur</a>, affichent les badges des annuaires qui
+      <strong>Visiteurs du site web.</strong> Notre site web, emploist.com, ne comporte aucun outil d’analyse, aucun
+      formulaire ni aucun script tiers. Son hébergeur reçoit les données de requête standard, comme votre adresse IP et
+      des informations sur votre navigateur. Certaines de nos pages, comme la page
+      <a href="/fr/listed-on/">Référencé sur</a>, affichent les badges des annuaires qui
       référencent Emploist. Ces badges sont chargés depuis les sites web de ces annuaires, qui reçoivent donc eux aussi
       ces données de requête lorsque vous ouvrez ces pages, et les traitent selon leurs propres politiques de
       confidentialité.
@@ -235,9 +252,7 @@ const sections = [
     <strong
       >Si vous vous trouvez dans l’EEE ou au Royaume-Uni, vous pouvez vous opposer à tout moment, pour des raisons tenant
       à votre situation, à notre utilisation de vos données à caractère personnel fondée sur des intérêts légitimes.</strong
-    > Pour vous opposer, envoyez un e-mail à <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Nous
-    cesserons alors cette utilisation, sauf si nous avons des motifs légitimes et impérieux qui prévalent sur vos
-    intérêts, droits et libertés, ou si nous avons besoin des données dans le cadre d’actions en justice.
+    > Pour vous opposer, envoyez un e-mail à <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
   </p>
 
   <h2 id="subprocessors">6. Partage et sous-traitants ultérieurs</h2>
@@ -413,6 +428,10 @@ const sections = [
       <tr>
         <td>E-mails d’assistance</td>
         <td>Aussi longtemps que nous en avons besoin pour traiter votre demande et tout suivi éventuel.</td>
+      </tr>
+      <tr>
+        <td>Statistiques d’utilisation</td>
+        <td>25 mois, puis supprimées.</td>
       </tr>
       <tr>
         <td>Journaux et sauvegardes</td>

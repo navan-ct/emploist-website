@@ -46,8 +46,8 @@ const sections = [
   </p>
   <p>
     We're the controller of the personal data we use to run Emploist ourselves: team members' account details, the
-    invitations we send, AI assistant connections, billing records, support emails, security logs, and data about
-    visitors to our website. This policy mainly covers that data.
+    invitations we send, AI assistant connections, billing records, support emails, security logs, app usage
+    statistics, and data about visitors to our website. This policy mainly covers that data.
   </p>
 
   <h2 id="applicants">3. For job applicants</h2>
@@ -116,11 +116,24 @@ const sections = [
       our logs only to provide, secure, and support Emploist, as our data processing terms describe.
     </li>
     <li>
+      <strong>Usage statistics.</strong> When you use the Emploist app, including its sign-in and invitation pages, we
+      record the pages you open and some of your actions, with the time of each. The actions are signing up, creating a
+      company, publishing a job, starting a trial, and subscribing to a plan. We record each page by its type, such as a
+      job's details page, never which job it is or what you searched for. With the first page you open, we also record
+      the website you came from, if any, but only its address, such as google.com. From your IP address and browser
+      details, we work out your approximate location (country, region, and city), your browser, operating system, and
+      type of device, and an identifier for your visits that changes at least every month. We also record your
+      browser's language. We don't keep your IP address or the rest of your browser details for this, and we don't
+      add your name, email address, account, or company to these statistics. We use them to understand how Emploist
+      is used and to improve it. If your browser sends a Global Privacy Control signal, we don't record these
+      statistics from that browser.
+    </li>
+    <li>
       <strong>Support.</strong> If you email us, we receive your email address, your message, and anything you include.
       Cloudflare forwards these emails to our support inbox, which Google hosts (Gmail).
     </li>
     <li>
-      <strong>Website visitors.</strong> emploist.com has no analytics, forms, or third-party scripts. Its host receives
+      <strong>Website visitors.</strong> Our website, emploist.com, has no analytics, forms, or third-party scripts. Its host receives
       standard request data, such as your IP address and browser details. Some of our pages, such as our <a href="/listed-on/">Listed on</a>
       page, show badges from the directories that list Emploist. The badges load from those directories' websites, so the
       directories also receive this request data when you open those pages, and handle it under their own privacy
@@ -207,8 +220,7 @@ const sections = [
     <strong
       >If you're in the EEA or the UK, you can object at any time, on grounds relating to your situation, to our use of
       your personal data based on legitimate interests.</strong
-    > To object, email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. We'll then stop, unless we have
-    compelling legitimate grounds that override your interests, rights, and freedoms, or we need the data for legal claims.
+    > To object, email <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
   </p>
 
   <h2 id="subprocessors">6. Sharing and subprocessors</h2>
@@ -361,6 +373,10 @@ const sections = [
       <tr>
         <td>Support emails</td>
         <td>As long as we need them to handle your request and any follow-up.</td>
+      </tr>
+      <tr>
+        <td>Usage statistics</td>
+        <td>25 months, then deleted.</td>
       </tr>
       <tr>
         <td>Logs and backups</td>

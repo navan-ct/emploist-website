@@ -24,7 +24,7 @@ const sections = [
   document="privacy"
   title="Polityka prywatności"
   description="Jak Emploist przetwarza dane osobowe: co zbieramy, jak ocena AI i asystenci AI wykorzystują aplikacje kandydatów, komu udostępniamy dane i Państwa prawa."
-  translatedFrom="2026-11-04"
+  translatedFrom="2026-11-07"
   sections={sections}
 >
   <h2 id="who-we-are">1. Kim jesteśmy</h2>
@@ -53,8 +53,8 @@ const sections = [
   <p>
     Jesteśmy administratorem danych osobowych, które sami wykorzystujemy do prowadzenia Emploist: danych kont członków
     zespołów, wysyłanych przez nas zaproszeń, połączeń z asystentami AI, dokumentacji rozliczeniowej, e-maili kierowanych
-    do wsparcia, logów bezpieczeństwa oraz danych o osobach odwiedzających naszą witrynę. Niniejsza polityka dotyczy
-    przede wszystkim tych danych.
+    do wsparcia, logów bezpieczeństwa, statystyk użytkowania aplikacji oraz danych o osobach odwiedzających naszą
+    witrynę. Niniejsza polityka dotyczy przede wszystkim tych danych.
   </p>
 
   <h2 id="applicants">3. Dla kandydatów do pracy</h2>
@@ -131,12 +131,26 @@ const sections = [
       zapewniania wsparcia, zgodnie z naszymi postanowieniami dotyczącymi przetwarzania danych.
     </li>
     <li>
+      <strong>Statystyki użytkowania.</strong> Gdy korzystają Państwo z aplikacji Emploist, w tym z jej strony logowania
+      i strony zaproszenia, zapisujemy otwierane przez Państwa strony i niektóre Państwa działania wraz z datą i godziną
+      każdego z nich. Te działania to rejestracja, utworzenie firmy, opublikowanie oferty pracy, rozpoczęcie okresu próbnego
+      i wykupienie planu. Każdą stronę zapisujemy według jej rodzaju, takiego jak strona szczegółów oferty pracy, i nigdy
+      nie zapisujemy, której oferty pracy ona dotyczy ani czego Państwo szukali. Przy pierwszej otwartej przez Państwa
+      stronie zapisujemy też ewentualną witrynę, z której Państwo do nas trafili, ale tylko jej adres, np. google.com.
+      Na podstawie Państwa adresu IP i informacji o przeglądarce ustalamy Państwa przybliżoną lokalizację (kraj, region
+      i miasto), przeglądarkę, system operacyjny i rodzaj urządzenia oraz identyfikator Państwa wizyt, który zmienia się
+      co najmniej raz w miesiącu. Zapisujemy też język Państwa przeglądarki. Nie przechowujemy w tym celu Państwa adresu
+      IP ani pozostałych informacji o przeglądarce i nie dodajemy do tych statystyk Państwa imienia i nazwiska, adresu
+      e-mail, konta ani firmy. Wykorzystujemy je, aby zrozumieć, w jaki sposób korzysta się z Emploist, i go ulepszać.
+      Jeśli Państwa przeglądarka wysyła sygnał Global Privacy Control, nie zapisujemy tych statystyk z tej przeglądarki.
+    </li>
+    <li>
       <strong>Wsparcie.</strong> Jeśli napiszą Państwo do nas e-mail, otrzymujemy Państwa adres e-mail, wiadomość i
       wszystko, co Państwo w niej zawrą. Cloudflare przekazuje te e-maile do naszej skrzynki wsparcia hostowanej przez
       Google (Gmail).
     </li>
     <li>
-      <strong>Osoby odwiedzające witrynę.</strong> Witryna emploist.com nie zawiera narzędzi analitycznych, formularzy
+      <strong>Osoby odwiedzające witrynę.</strong> Nasza witryna emploist.com nie zawiera narzędzi analitycznych, formularzy
       ani skryptów podmiotów trzecich. Jej dostawca hostingu otrzymuje standardowe dane żądań, takie jak Państwa adres IP
       i informacje o przeglądarce. Niektóre z naszych stron, takie jak strona <a href="/pl/listed-on/">Katalogi</a>, pokazują odznaki katalogów, w których
       wymieniono Emploist. Odznaki są wczytywane z witryn tych katalogów, dlatego gdy otworzą Państwo te strony, katalogi
@@ -229,8 +243,6 @@ const sections = [
       przyczyn związanych z Państwa sytuacją – wobec wykorzystywania przez nas Państwa danych osobowych na podstawie
       prawnie uzasadnionych interesów.</strong
     > Aby wnieść sprzeciw, należy wysłać e-mail na adres <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
-    Wówczas zaprzestaniemy takiego wykorzystywania, chyba że mamy ważne prawnie uzasadnione podstawy, nadrzędne wobec
-    Państwa interesów, praw i wolności, lub potrzebujemy tych danych w związku z roszczeniami prawnymi.
   </p>
 
   <h2 id="subprocessors">6. Udostępnianie danych i dalsze podmioty przetwarzające</h2>
@@ -397,6 +409,10 @@ const sections = [
       <tr>
         <td>E-maile kierowane do wsparcia</td>
         <td>Tak długo, jak są nam potrzebne do obsługi Państwa sprawy i ewentualnych dalszych działań.</td>
+      </tr>
+      <tr>
+        <td>Statystyki użytkowania</td>
+        <td>Przez 25 miesięcy, a następnie są usuwane.</td>
       </tr>
       <tr>
         <td>Logi i kopie zapasowe</td>

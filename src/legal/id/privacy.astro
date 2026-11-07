@@ -24,7 +24,7 @@ const sections = [
   document="privacy"
   title="Kebijakan Privasi"
   description="Cara Emploist menangani Data Pribadi: apa yang kami kumpulkan, cara penilaian AI dan asisten AI memakai lamaran kerja, pihak yang menerima data, dan hak Anda."
-  translatedFrom="2026-11-04"
+  translatedFrom="2026-11-07"
   sections={sections}
 >
   <h2 id="who-we-are">1. Siapa kami</h2>
@@ -53,8 +53,9 @@ const sections = [
   </p>
   <p>
     Kami adalah Pengendali Data Pribadi atas Data Pribadi yang kami gunakan sendiri untuk menjalankan Emploist: detail
-    akun anggota tim, undangan yang kami kirim, koneksi asisten AI, catatan penagihan, email dukungan, log keamanan, dan
-    data tentang pengunjung situs web kami. Kebijakan ini terutama mencakup data tersebut.
+    akun anggota tim, undangan yang kami kirim, koneksi asisten AI, catatan penagihan, email dukungan, log keamanan,
+    statistik penggunaan aplikasi, dan data tentang pengunjung situs web kami. Kebijakan ini terutama mencakup data
+    tersebut.
   </p>
 
   <h2 id="applicants">3. Untuk pelamar kerja</h2>
@@ -131,12 +132,27 @@ const sections = [
       dalam ketentuan pemrosesan data kami.
     </li>
     <li>
+      <strong>Statistik penggunaan.</strong> Saat Anda menggunakan aplikasi Emploist, termasuk halaman masuk dan halaman
+      undangannya, kami mencatat halaman yang Anda buka dan beberapa tindakan Anda, beserta waktunya masing-masing.
+      Tindakan tersebut adalah membuat akun, membuat perusahaan, memublikasikan lowongan, memulai uji coba, dan
+      berlangganan paket. Kami mencatat setiap halaman berdasarkan jenisnya, seperti halaman detail suatu lowongan, dan
+      tidak pernah mencatat lowongan mana yang dimaksud atau apa yang Anda cari. Bersama dengan halaman pertama yang
+      Anda buka, kami juga mencatat situs web asal kunjungan Anda, jika ada, tetapi hanya alamatnya, seperti google.com.
+      Dari alamat IP dan detail browser Anda, kami menentukan perkiraan lokasi Anda (negara, wilayah, dan kota),
+      browser, sistem operasi, dan jenis perangkat Anda, serta pengenal kunjungan Anda yang berubah sekurang-kurangnya
+      sebulan sekali. Kami juga mencatat bahasa browser Anda. Kami tidak menyimpan alamat IP Anda atau detail browser
+      Anda selebihnya untuk keperluan ini, dan kami tidak menambahkan nama, alamat email, akun, atau perusahaan Anda ke
+      dalam statistik ini. Kami menggunakan statistik ini untuk memahami cara Emploist digunakan dan untuk
+      meningkatkannya. Jika browser Anda mengirimkan sinyal Global Privacy Control, kami tidak mencatat statistik ini
+      dari browser tersebut.
+    </li>
+    <li>
       <strong>Dukungan.</strong> Jika Anda mengirim email kepada kami, kami menerima alamat email Anda, pesan Anda, dan
       apa pun yang Anda sertakan. Cloudflare meneruskan email ini ke kotak masuk dukungan kami, yang di-hosting oleh
       Google (Gmail).
     </li>
     <li>
-      <strong>Pengunjung situs web.</strong> emploist.com tidak memiliki analitik, formulir, atau skrip pihak ketiga.
+      <strong>Pengunjung situs web.</strong> Situs web kami, emploist.com, tidak memiliki analitik, formulir, atau skrip pihak ketiga.
       Penyedia hosting-nya menerima data permintaan standar, seperti alamat IP dan detail browser Anda. Di beberapa halaman kami, seperti halaman <a
         href="/id/listed-on/">Tercantum di</a>, kami menampilkan lencana dari direktori yang mencantumkan Emploist. Lencana
       tersebut dimuat dari situs web direktori-direktori itu, sehingga direktori tersebut juga menerima data permintaan ini
@@ -226,9 +242,7 @@ const sections = [
       >Jika Anda berada di EEA atau Britania Raya, Anda dapat sewaktu-waktu mengajukan keberatan, atas dasar yang
       berkaitan dengan situasi Anda, terhadap penggunaan Data Pribadi Anda oleh kami yang didasarkan pada kepentingan
       yang sah.</strong
-    > Untuk mengajukan keberatan, kirim email ke <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>. Kami
-    kemudian akan berhenti melakukannya, kecuali kami memiliki alasan sah yang kuat yang mengesampingkan kepentingan,
-    hak, dan kebebasan Anda, atau kami memerlukan data tersebut untuk klaim hukum.
+    > Untuk mengajukan keberatan, kirim email ke <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
   </p>
 
   <h2 id="subprocessors">6. Berbagi data dan subprosesor</h2>
@@ -396,6 +410,10 @@ const sections = [
       <tr>
         <td>Email dukungan</td>
         <td>Selama kami memerlukannya untuk menangani permintaan Anda dan setiap tindak lanjutnya.</td>
+      </tr>
+      <tr>
+        <td>Statistik penggunaan</td>
+        <td>25 bulan, lalu dihapus.</td>
       </tr>
       <tr>
         <td>Log dan cadangan</td>
