@@ -114,4 +114,12 @@ const columns = [
     width: auto !important;
     height: 28px !important;
   }
+  /* SourceForge's script draws its badges in a box of a set width, with a
+     minimum width. Fit the box to the badge. */
+  .home-badge :global(.sf-root) {
+    width: auto !important;
+  }
+  .home-badge :global(.sf-root img) {
+    min-width: 0 !important;
+  }
 </style>

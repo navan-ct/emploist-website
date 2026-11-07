@@ -2,10 +2,10 @@
 // Directories check that page for their backlink or badge.
 //
 // - `badge` is the directory's embed code, pasted as it gives it, but with
-//   its light badge where it has one, to suit the light page. It
-//   must be a plain link around an image: no scripts, iframes, or images that
-//   set cookies. The Privacy Policy says the website has none, and covers only
-//   these images loading from the directories' own servers.
+//   its light badge where it has one, to suit the light page. It must be a
+//   plain link around an image, or a directory's script that only shows one:
+//   no iframes, and nothing that sets cookies. The Privacy Policy covers only
+//   these badges and scripts loading from the directories' own servers.
 // - Leave `badge` out for a directory that asks only for a link: the page
 //   then shows its name, linked.
 // - `homeBadge` is for a directory that requires its badge on the home page.
@@ -22,6 +22,63 @@ export interface Directory {
 }
 
 export const DIRECTORIES: Directory[] = [
+  // SourceForge, Slashdot, and Top Business Software are one company's sites.
+  // Their embed code, used as given in both places, loads a script from its
+  // server (b.sf-syn.com) that only replaces the link with a linked badge.
+  {
+    name: "SourceForge",
+    url: "https://sourceforge.net/software/product/Emploist/",
+    badge: `<!-- Begin SF Tag -->
+<div class="sf-root" data-id="4163392" data-badge="customers-love-us-white" data-variant-id="sf" style="width:125px">
+    <a href="https://sourceforge.net/software/product/Emploist/" target="_blank">Emploist Reviews</a>
+</div>
+<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=4163392&variant_id=sf';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+</script>
+<!-- End SF Tag -->`,
+    homeBadge: `<!-- Begin SF Tag -->
+<div class="sf-root" data-id="4163392" data-badge="customers-love-us-white" data-variant-id="sf" style="width:125px">
+    <a href="https://sourceforge.net/software/product/Emploist/" target="_blank">Emploist Reviews</a>
+</div>
+<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=4163392&variant_id=sf';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+</script>
+<!-- End SF Tag -->`,
+  },
+  {
+    name: "Slashdot",
+    url: "https://slashdot.org/software/p/Emploist/",
+    badge: `<!-- Begin Slashdot Tag -->
+<div class="sf-root" data-id="4163392" data-badge="users-love-us-new-white" data-variant-id="sd" style="width:125px">
+    <a href="https://slashdot.org/software/p/Emploist/" target="_blank">Emploist Reviews</a>
+</div>
+<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=4163392&variant_id=sd';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+</script>
+<!-- End Slashdot Tag -->`,
+    homeBadge: `<!-- Begin Slashdot Tag -->
+<div class="sf-root" data-id="4163392" data-badge="users-love-us-new-white" data-variant-id="sd" style="width:125px">
+    <a href="https://slashdot.org/software/p/Emploist/" target="_blank">Emploist Reviews</a>
+</div>
+<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=4163392&variant_id=sd';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+</script>
+<!-- End Slashdot Tag -->`,
+  },
+  {
+    name: "Top Business Software",
+    url: "https://topbusinesssoftware.com/products/Emploist/reviews/",
+    badge: `<!-- Begin TBS Tag -->
+<div class="sf-root" data-id="4163392" data-badge="most-loved" data-variant-id="tbs" style="width:125px">
+    <a href="https://topbusinesssoftware.com/products/Emploist/reviews/" target="_blank">Emploist Reviews</a>
+</div>
+<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=4163392&variant_id=tbs';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+</script>
+<!-- End TBS Tag -->`,
+    homeBadge: `<!-- Begin TBS Tag -->
+<div class="sf-root" data-id="4163392" data-badge="most-loved" data-variant-id="tbs" style="width:125px">
+    <a href="https://topbusinesssoftware.com/products/Emploist/reviews/" target="_blank">Emploist Reviews</a>
+</div>
+<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=4163392&variant_id=tbs';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+</script>
+<!-- End TBS Tag -->`,
+  },
   {
     name: "Fazier",
     url: "https://fazier.com/launches/www.emploist.com",

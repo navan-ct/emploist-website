@@ -41,4 +41,13 @@ const t = getMessages(getLocale(Astro)).listedOn;
     width: auto !important;
     height: 54px !important;
   }
+  /* SourceForge's script draws its badges in a box of a set width, with a
+     minimum width. Fit the box to the badge. */
+  .badges :global(.sf-root) {
+    width: auto !important;
+  }
+  .badges :global(.sf-root img) {
+    display: block !important;
+    min-width: 0 !important;
+  }
 </style>
