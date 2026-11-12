@@ -179,7 +179,24 @@ The same script takes the screenshots in the "How to customize your careers
 page with code or AI" post (`ONLY=post`), and draws its cover. It edits the
 sample company's careers page code as it goes, using the redesign in
 `scripts/fixtures/careers-page-redesign/` (made by Claude on claude.ai), then
-puts the code back. The post's two claude.ai screenshots were taken by hand.
+puts the code back. The post's two claude.ai screenshots were taken by hand,
+and the reply was padded like the MCP post's (below).
+
+The "How to manage hiring from Claude with MCP" post's Emploist screenshots
+and cover come from the script too (`ONLY=mcp-post`). Start the app with
+Emploist's real MCP address, so its MCP page shows it:
+
+```bash
+RATE_LIMIT_MAX=5000 MCP_URL=https://mcp.emploist.com npm run dev
+```
+
+The script connects an assistant named Claude to the sample admin, and adds
+the comment Claude left in the post's chat if it isn't there. The post's
+claude.ai screenshots (`claude-*.png`) were taken on claude.ai, connected to
+the app's sample data through a temporary public tunnel, then trimmed to
+their content with 48 pixels (24 at 1x) of their own background around it, so
+the post's rounded frames don't cut into them. The cover uses
+`claude-hiring-stats.png`, so keep it when retaking the shots.
 
 ## Keeping facts in sync
 

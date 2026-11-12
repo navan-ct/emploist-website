@@ -1,0 +1,240 @@
+---
+title: "How to manage hiring from Claude with MCP"
+description: "Connect Claude to Emploist in a few minutes. Then ask about your applicants, move them forward, and create jobs, right from a chat."
+pubDate: 2026-11-12
+author: "Navaneeth CT"
+image: ./images/manage-hiring-from-claude/cover.png
+imageAlt: "Emploist's MCP page, with Claude's chart of applications per day over the last 30 days in front of it."
+tags: ["AI assistants", "Guides"]
+---
+
+import Figure from "../../components/blog/Figure.astro";
+import addConnector from "./images/manage-hiring-from-claude/claude-add-connector.png";
+import approval from "./images/manage-hiring-from-claude/claude-approval.png";
+import bestMatches from "./images/manage-hiring-from-claude/claude-best-matches.png";
+import connectorAuth from "./images/manage-hiring-from-claude/claude-connector-auth.png";
+import createJob from "./images/manage-hiring-from-claude/claude-create-job.png";
+import hiringStats from "./images/manage-hiring-from-claude/claude-hiring-stats.png";
+import moveComment from "./images/manage-hiring-from-claude/claude-move-comment.png";
+import stagesPublish from "./images/manage-hiring-from-claude/claude-stages-publish.png";
+import toolPermissions from "./images/manage-hiring-from-claude/claude-tool-permissions.png";
+import emploistComment from "./images/manage-hiring-from-claude/emploist-comment.png";
+import emploistConsent from "./images/manage-hiring-from-claude/emploist-consent.png";
+import emploistMcpPage from "./images/manage-hiring-from-claude/emploist-mcp-page.png";
+import emploistSettings from "./images/manage-hiring-from-claude/emploist-settings-mcp.png";
+
+You can connect Claude to Emploist and manage your hiring by chatting. Ask which applicants fit a job best, move people to the next stage, leave notes for your team, or draft a new job, and Claude does it in Emploist for you.
+
+This works through **MCP** (Model Context Protocol), an open standard that lets AI assistants connect to other apps. You don't need to know how it works to use it. Setting it up takes a few minutes and doesn't involve any code.
+
+This guide shows how to connect Claude, what you can ask it to do, and how you stay in control. We'll use Northwind Labs, a sample company, for every example.
+
+## What you need
+
+- **An Emploist account.** Admins and members can both connect Claude.
+- **Claude**, on the web at [claude.ai](https://claude.ai) or in the Claude desktop app.
+
+On Claude's Team and Enterprise plans, an owner first adds Emploist in **Organization settings** → **Connectors**. You then click **Connect** next to it under **Customize** → **Connectors** and skip to [step 3](#3-sign-in-to-emploist).
+
+## Connect Claude to Emploist
+
+Emploist's **MCP** page, in the sidebar, has these steps and the address to copy.
+
+<Figure
+  src={emploistMcpPage}
+  url="app.emploist.com/mcp"
+  alt="Emploist's MCP page: tabs for Claude, ChatGPT, Claude Code, Cursor, VS Code, and Other, with Claude selected and four steps to connect it, including the address https://mcp.emploist.com, and a Connected assistants list with Claude."
+  caption="The MCP page in Emploist. Connected assistants appear at the bottom."
+/>
+
+### 1. Open Claude's connector settings
+
+In Claude, go to **Customize** → **[Connectors](https://claude.ai/customize/connectors)**.
+
+### 2. Add Emploist
+
+Click **+ Add** and choose **Add custom connector**. Name it Emploist, paste this address, and click **Continue**:
+
+```
+https://mcp.emploist.com
+```
+
+<Figure
+  src={addConnector}
+  frame="plain"
+  narrow
+  alt="Claude's Add custom connector dialog, with Emploist as the name and https://mcp.emploist.com as the MCP server URL."
+  caption="The name is only for you. The address is what connects Claude to Emploist."
+/>
+
+Claude checks the address, then shows how to sign in. It picks the right options for Emploist, **Sign in now** and **Use Claude's published identity**, so leave them as they are and click **Add**.
+
+<Figure
+  src={connectorAuth}
+  frame="plain"
+  narrow
+  alt="The second step of Claude's dialog: Authentication set to Sign in now, and OAuth client set to Use Claude's published identity, both marked Detected."
+  caption="Claude detects these settings from Emploist."
+/>
+
+### 3. Sign in to Emploist
+
+Click **Connect**. Emploist opens: sign in if it asks you to, check what Claude will be able to do, and click **Allow**.
+
+<Figure
+  src={emploistConsent}
+  frame="plain"
+  narrow
+  alt="Emploist's page asking 'Allow Claude to use Emploist?': it will be able to view and manage Northwind Labs's jobs and applications, view and change jobs, stages, and application forms, read applications and resumes, move them between stages, and comment, working as you with your role. Billing, members, and deleting your company or account aren't included."
+  caption="Emploist lists what Claude can and can't do before you allow it."
+/>
+
+You're back in Claude, and the Emploist connector is ready.
+
+### 4. Use it in a chat
+
+In a chat, click **+**, open **Connectors**, and make sure Emploist is turned on. Then ask what you need, in your own words.
+
+## What you can ask Claude to do
+
+Claude can work with everything you see in Emploist's jobs and applications. Here are some examples from Northwind Labs.
+
+### Find your best applicants
+
+> Which applicants for the Senior Product Designer job are the best match?
+
+Claude went through the applications in the inbox, read the top five in full (resumes, answers, and the team's comments), and came back with a shortlist. It also pointed out that the two highest scores each had a problem the AI match doesn't catch, such as a resume that disagrees with the form.
+
+<Figure
+  src={bestMatches}
+  frame="plain"
+  narrow
+  alt="Claude's answer: Fatima Lindqvist is the strongest new applicant. A list of the best fits in the inbox (Fatima Lindqvist at 86%, Sara Nair at 81%, Amara Adeyemi at 77%) with the reasons for each, a section on high scores to treat with care (Diego Varga at 91% and Kofi Clarke at 88%), and an offer to move Fatima and Amara to the phone screen stage."
+  caption="Claude explains each pick, and offers the next step."
+/>
+
+### Move applicants and leave notes for your team
+
+> Yes, move Fatima and Amara to Phone screen. Also leave a comment on Sara's application asking Priya to check the answer that matches Fatima's.
+
+Claude moved both applicants and left the comment, mentioning Priya so she gets a notification.
+
+<Figure
+  src={moveComment}
+  frame="plain"
+  narrow
+  alt="Claude's reply: it moved Fatima and Amara to Phone screen without emailing them, because that stage's email is off, and left a comment on Sara's application that tags Priya. It notes that the comment was posted under your name and that Taylor Kim will be notified too."
+  caption="Claude says what it did, and what happens next."
+/>
+
+Everything Claude does shows up in Emploist like your own work. Here's the comment on Sara's application, posted under the name of the person who connected Claude.
+
+<Figure
+  src={emploistComment}
+  frame="plain"
+  narrow
+  alt="The Comments panel on Sara Nair's application in Emploist: comments from Priya Shah and Taylor Kim, then Alex Morgan's comment mentioning @Priya Shah and asking her to check Sara's answer."
+  caption="The comment in Emploist, with Priya mentioned."
+/>
+
+If a stage sends applicants an email, Emploist waits 2 minutes before sending it. Changed your mind? Ask Claude to undo the move within those 2 minutes, and the email won't go out.
+
+### Create and publish jobs
+
+> Create a draft job for a Customer Support Specialist. It's remote and full-time, in the Support department. Write a short description, and add a question asking about their experience with help desk tools.
+
+Claude wrote the description, set up the application form with the new question, and saved the job as a draft.
+
+<Figure
+  src={createJob}
+  frame="plain"
+  narrow
+  alt="Claude's reply: it created the Customer Support Specialist job as a draft, with its settings, a description, an application form with a required question about help desk tools, and the default stages. It notes it didn't set a location and offers to publish the job."
+  caption="Drafts stay off your careers page until you publish them."
+/>
+
+You can shape the hiring process the same way:
+
+> For the Customer Support Specialist job, add a Phone screen stage and a Trial task stage after it, before Interviewing. Then publish the job.
+
+<Figure
+  src={stagesPublish}
+  frame="plain"
+  narrow
+  alt="Claude's reply: the Customer Support Specialist job is live on the careers page, with the stages Inbox, Phone screen (new), Trial task (new), Interviewing, Accepted, and Rejected. Emails are off for every stage, and the new stages' email text can be edited in the Emploist app."
+  caption="The job is live on the careers page, with its new stages."
+/>
+
+### See how hiring is going
+
+> How has hiring gone over the last 30 days?
+
+Claude reads the same statistics as Emploist's Home page and can draw them as a chart.
+
+<Figure
+  src={hiringStats}
+  frame="plain"
+  narrow
+  alt="Claude's answer with a bar chart of applications per day from October 14 to November 12, and a summary: 132 applications in the last 30 days against 12 in the 30 days before, most of them in the last 9 days, and how the numbers are trending."
+  caption="Claude's chart of applications per day, with a summary."
+/>
+
+### Everything Claude can do
+
+- **Overview:** your role, plan, and AI credits; hiring statistics for the last 7, 30, or 90 days; your team; your notifications.
+- **Jobs:** find jobs; read a job's details, application form, and stages; create a job as a draft or publish it; edit its details or application form; publish, open, close, archive, or restore it; duplicate or delete it.
+- **Stages:** add, rename, reorder, or delete a job's stages; switch a stage's email to applicants on or off.
+- **Applications:** list a stage's applications with their AI matches; read an application with its answers, comments, and resume; move it to another stage; undo your latest move; rank it again if ranking failed; delete it.
+- **Comments:** comment on an application and mention teammates; edit or delete your own comments (admins can delete anyone's).
+- **Company settings, for admins:** turn AI ranking on or off; rank or skip applications that came in while you had no AI credits; turn emails to applicants on or off; choose where applicants' replies go.
+
+Some things stay in Emploist: billing, members and invitations, deleting your company or account, your careers page's code and domain, email layouts, and the text of stage emails.
+
+## Stay in control
+
+**Claude works as you.** It has the same access you have in Emploist, and nothing more. If you're a member, Claude can't change company settings either.
+
+**You choose what Claude can do without asking.** In Claude, open **Customize** → **Connectors** → **Emploist** to set permissions for its read-only tools and for those that make changes: **Always allow**, **Needs approval**, or **Blocked**.
+
+<Figure
+  src={toolPermissions}
+  frame="plain"
+  narrow
+  alt="Emploist's tool permissions in Claude: Read-only tools (8) and Write/delete tools (22), with a menu open showing Blocked, Needs approval, Always allow, and Custom."
+  caption="Set permissions for a whole group, or for each tool."
+/>
+
+With **Needs approval**, Claude shows you what it wants to do and waits for you to click **Allow once** or **Always allow**:
+
+<Figure
+  src={approval}
+  frame="plain"
+  narrow
+  alt="Claude asking to use Move an application from Emploist, with the application and stage it will use, and Decline, Always allow, and Allow once buttons."
+  caption="Claude asks before it moves an applicant."
+/>
+
+These permissions apply in **Manual** mode, which you choose next to the model, below the message box. In **Auto** mode, Claude can act without asking, and pauses to ask only if something looks unsafe.
+
+**Emploist warns Claude about applicants' text.** It tells Claude that names, answers, and resumes are written by applicants, and never to follow instructions in them. If an application contains text that looks like instructions for an AI assistant, Emploist flags it, and Claude tells you.
+
+**You can disconnect anytime.** On Emploist's MCP page, click **Disconnect** next to Claude, and it stops working for you right away. You can connect it again whenever you like.
+
+**Admins can turn it off for everyone.** In **Settings** → **General**, the **MCP** switch decides whether your team can use AI assistants with Emploist at all. Turning it off stops every connected assistant until you turn it back on.
+
+<Figure
+  src={emploistSettings}
+  frame="plain"
+  narrow
+  alt="The MCP setting in Emploist: Let your team connect AI assistants, switched on. People can use Emploist from assistants like Claude and ChatGPT, each with their own role."
+  caption="Settings → General → MCP."
+/>
+
+## Good to know
+
+- **It's included in your plan.** Ranking an application from Claude uses one AI credit, just like in Emploist. Nothing else Claude does uses credits.
+- **Each person connects their own Claude**, and it works with their own role.
+- **Check Claude's work.** Claude can make mistakes. Read its answers, especially before moving applicants or publishing a job.
+- **Other assistants work too.** The MCP page has steps for ChatGPT, Claude Code, Cursor, VS Code, and any other assistant that supports MCP.
+
+Want to try it? [Start your free trial](https://app.emploist.com/sign-in), set up your company, and connect Claude from the MCP page.

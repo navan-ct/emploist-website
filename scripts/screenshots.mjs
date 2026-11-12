@@ -15,9 +15,13 @@
 //   SIGN_IN_EMAIL  who to sign in as  (default alex@example.com)
 //   JOB_TITLE      the job to show    (default Senior Product Designer)
 //   ONLY           names of shots to take, comma-separated (default all);
-//                  "post" takes the blog post's shots (see postShots)
+//                  "post" and "mcp-post" take the blog posts' shots (see
+//                  postShots and mcpPostShots)
+//   MCP_URL        the app's MCP_URL, for "mcp-post"
+//                                     (default https://mcp.emploist.com)
 
 import { execFile } from "node:child_process";
+import { createHash, randomBytes } from "node:crypto";
 import { mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
@@ -26,6 +30,7 @@ import { createInterface } from "node:readline/promises";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import { chromium } from "playwright-core";
+import sharp from "sharp";
 
 const APP_URL = process.env.APP_URL ?? "http://localhost:3000";
 const CAREERS_URL = process.env.CAREERS_URL ?? "http://northwind.localhost:3000";
@@ -262,6 +267,23 @@ const EDITOR = { width: 1400, height: 860 };
 const FONT_LINK =
   '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&display=swap">';
 
+/**
+ * Adds room to a shot's edges, in points, by repeating their pixels. For
+ * crops whose content sits close to the page's edge, where the page itself
+ * has nothing more to show.
+ */
+async function extendEdges(file, edges) {
+  const image = await sharp(fileURLToPath(file))
+    .extend({ top: 0, right: 0, bottom: 0, left: 0, ...scaled(edges), extendWith: "copy" })
+    .toBuffer();
+  await writeFile(file, image);
+}
+
+/** Points to the shots' pixels. */
+function scaled(edges) {
+  return Object.fromEntries(Object.entries(edges).map(([edge, points]) => [edge, points * SCALE]));
+}
+
 /** Calls the app's API from a page on it, with the page's session. */
 function api(page, method, path, body) {
   return page.evaluate(
@@ -272,7 +294,7 @@ function api(page, method, path, body) {
         body: body ? JSON.stringify(body) : undefined,
       });
       if (!response.ok) throw new Error(`${method} ${path}: ${response.status} ${await response.text()}`);
-      return response.json();
+      return response.status === 204 ? null : response.json();
     },
     [method, path, body],
   );
@@ -457,6 +479,9 @@ async function postShots(storageState) {
       width: 640,
       height: box.y + box.height + 24,
     });
+    // The toolbar sits close to the page's top and right edges, so the
+    // post's rounded frame would crowd it: give it room there.
+    await extendEdges(new URL("editor-menu.png", POST_DIR), { top: 14, right: 12 });
     await press(page, "Escape");
 
     await page.getByRole("button", { name: "Save", exact: true }).click();
@@ -499,6 +524,177 @@ async function postShots(storageState) {
   }
 }
 
+// The blog post "How to manage hiring from Claude with MCP"
+// (src/content/blog/manage-hiring-from-claude.mdx), taken with
+// `ONLY=mcp-post`. These are Emploist's side of connecting Claude: the page
+// that asks to allow it, the MCP page with Claude connected, MCP in Settings,
+// and the comment Claude left in the post's chat. Start the app with
+// MCP_URL=https://mcp.emploist.com, so the MCP page shows Emploist's real
+// address. The post's claude.ai shots were taken separately (see the README).
+
+const MCP_POST_DIR = new URL("../src/content/blog/images/manage-hiring-from-claude/", import.meta.url);
+/** The app's MCP_URL: the address assistants sign in for. */
+const MCP_URL = process.env.MCP_URL ?? "https://mcp.emploist.com";
+/** Where claude.ai takes the sign-in back. The browser is stopped before it gets there. */
+const CLAUDE_CALLBACK = "https://claude.ai/api/mcp/auth_callback";
+/** The comment Claude left on Sara Nair's application in the post's chat. */
+const CLAUDE_COMMENT = (priya) =>
+  `<@${priya}> Could you check Sara's answer to "Tell us about a project you're proud of"? It's word-for-word identical to Fatima Lindqvist's (the scheduling tool redesign for 400 warehouse supervisors, three hours down to forty minutes). Worth finding out whether they worked on the same project or something else is going on before we move her forward.`;
+
+/** A PKCE code challenge, which the authorization request needs. */
+function codeChallenge() {
+  const verifier = randomBytes(32).toString("base64url");
+  return createHash("sha256").update(verifier).digest("base64url");
+}
+
+/**
+ * The post's cover and link preview, 1200 × 630: Emploist's MCP page, and
+ * Claude's answer about the last 30 days of hiring in front of it.
+ */
+async function drawMcpCover() {
+  const asDataUrl = async (name) =>
+    `data:image/png;base64,${(await readFile(new URL(`${name}.png`, MCP_POST_DIR))).toString("base64")}`;
+  const [emploist, claude] = await Promise.all([asDataUrl("emploist-mcp-page"), asDataUrl("claude-hiring-stats")]);
+  const html = `<!doctype html>
+<html>
+<head>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden; position: relative;
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 55%, #ede9fe 100%);
+  }
+  .window {
+    position: absolute; left: 56px; top: 56px; width: 720px; height: 620px;
+    border-radius: 14px; overflow: hidden; border: 1px solid #e4e4e7; background: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.04), 0 30px 60px -16px rgb(40 30 120 / 0.28);
+  }
+  .bar { display: flex; gap: 6px; align-items: center; height: 30px; padding: 0 12px; background: #fafafa; border-bottom: 1px solid #e4e4e7; }
+  .bar span { width: 9px; height: 9px; border-radius: 50%; background: #d4d4d8; }
+  .window img { display: block; width: 100%; }
+  .chat {
+    position: absolute; right: 56px; top: 126px; width: 520px;
+    border-radius: 16px; overflow: hidden; background: #191919; padding-bottom: 14px;
+    box-shadow: 0 30px 60px -12px rgb(24 24 27 / 0.5);
+  }
+  /* Down to the end of Claude's first paragraph. The image has its own padding. */
+  .chat div { height: 374px; overflow: hidden; }
+  .chat img { display: block; width: 100%; }
+</style>
+</head>
+<body>
+  <div class="window"><div class="bar"><span></span><span></span><span></span></div><img src="${emploist}"></div>
+  <div class="chat"><div><img src="${claude}"></div></div>
+</body>
+</html>`;
+  const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: SCALE });
+  await page.setContent(html);
+  await page.screenshot({ path: new URL("cover.png", MCP_POST_DIR).pathname });
+  await page.close();
+  console.log("Saved cover.png");
+}
+
+async function mcpPostShots(storageState, jobId) {
+  await mkdir(MCP_POST_DIR, { recursive: true });
+  const context = await browser.newContext({
+    storageState,
+    colorScheme: "light",
+    viewport: DESKTOP,
+    deviceScaleFactor: SCALE,
+    reducedMotion: "reduce",
+  });
+  const page = await context.newPage();
+  const shot = async (name, options = {}) => {
+    await page.screenshot({ path: new URL(`${name}.png`, MCP_POST_DIR).pathname, animations: "disabled", ...options });
+    console.log(`Saved ${name}.png`);
+  };
+  // Allowing an assistant sends the browser back to claude.ai; stay here.
+  await page.route(`${CLAUDE_CALLBACK}**`, (route) => route.fulfill({ status: 200, body: "" }));
+
+  // Start with no assistants connected, then connect one as claude.ai does.
+  await page.goto(`${APP_URL}/mcp`);
+  const { connections } = await api(page, "GET", "/api/mcp/connections");
+  for (const connection of connections) await api(page, "DELETE", `/api/mcp/connections/${connection.id}`);
+  const client = await api(page, "POST", "/api/auth/oauth2/register", {
+    client_name: "Claude",
+    client_uri: "https://claude.ai",
+    redirect_uris: [CLAUDE_CALLBACK],
+    token_endpoint_auth_method: "none",
+    grant_types: ["authorization_code", "refresh_token"],
+    response_types: ["code"],
+  });
+  const authorize = new URL("/api/auth/oauth2/authorize", APP_URL);
+  authorize.search = new URLSearchParams({
+    response_type: "code",
+    client_id: client.client_id,
+    redirect_uri: CLAUDE_CALLBACK,
+    scope: "emploist offline_access",
+    state: "screenshots",
+    code_challenge: codeChallenge(),
+    code_challenge_method: "S256",
+    resource: MCP_URL,
+    prompt: "consent",
+  }).toString();
+  await page.goto(authorize.href);
+  const allow = page.getByRole("button", { name: "Allow", exact: true });
+  await allow.waitFor();
+  await settle(page);
+  const heading = page.getByRole("heading", { name: "Allow Claude to use Emploist?" });
+  await shot("emploist-consent", {
+    clip: await around(page, [page.locator("main img, main svg").first(), heading.locator("xpath=ancestor::*[contains(@class,'border')][1]")], 32),
+  });
+  await allow.click();
+  await page.waitForURL(`${CLAUDE_CALLBACK}**`);
+
+  // The MCP page, with Claude connected and the steps for Claude.
+  await page.goto(`${APP_URL}/mcp`);
+  await page.getByText("claude.ai").waitFor();
+  await settle(page);
+  await shot("emploist-mcp-page", { fullPage: true });
+
+  // The comment Claude left, as the team sees it in Emploist.
+  const { stages } = await api(page, "GET", `/api/jobs/${jobId}`);
+  const { applications } = await api(
+    page,
+    "GET",
+    `/api/jobs/${jobId}/applications?${new URLSearchParams({ stage: stages[0].id, q: "Sara Nair" })}`,
+  );
+  const sara = applications[0].id;
+  const { timeline } = await api(page, "GET", `/api/applications/${sara}`);
+  if (!JSON.stringify(timeline).includes("word-for-word identical")) {
+    const { members } = await api(page, "GET", "/api/members");
+    const priya = members.find((member) => member.name === "Priya Shah");
+    await api(page, "POST", `/api/applications/${sara}/comments`, { body: CLAUDE_COMMENT(priya.userId) });
+  }
+  await page.setViewportSize({ width: 1280, height: 1000 });
+  await page.goto(`${APP_URL}/jobs/${jobId}/applications/${sara}`);
+  const comments = page.getByRole("heading", { name: /^Comments\b/ }).locator("xpath=..");
+  const comment = page.getByText("word-for-word identical");
+  await comment.waitFor();
+  await settle(page);
+  // Down to Claude's comment, inside the panel's borders.
+  const panel = await around(page, [comments]);
+  const commentBox = await comment.boundingBox();
+  await shot("emploist-comment", {
+    clip: { x: panel.x + 1, y: panel.y, width: panel.width - 2, height: commentBox.y + commentBox.height + 24 - panel.y },
+  });
+
+  // MCP in Settings, where admins can turn assistants off for everyone.
+  await page.setViewportSize(DESKTOP);
+  await page.goto(`${APP_URL}/settings/general`);
+  const mcpRow = page.getByRole("heading", { name: "MCP", exact: true }).locator("xpath=..");
+  await mcpRow.scrollIntoViewIfNeeded();
+  await settle(page);
+  // Inside the card's borders. The post's frame hides its rounded corners.
+  const row = await around(page, [mcpRow]);
+  await shot("emploist-settings-mcp", {
+    clip: { x: row.x + 1, y: row.y + 1, width: row.width - 2, height: row.height - 6 },
+  });
+
+  await context.close();
+  await drawMcpCover();
+}
+
 const storageState = await signIn();
 const jobId = await findJobId(storageState);
 await mkdir(OUT_DIR, { recursive: true });
@@ -528,5 +724,6 @@ for (const shot of shots(jobId)) {
 }
 
 if (!ONLY || ONLY.includes("post")) await postShots(storageState);
+if (!ONLY || ONLY.includes("mcp-post")) await mcpPostShots(storageState, jobId);
 
 await browser.close();
