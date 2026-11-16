@@ -1,0 +1,240 @@
+---
+title: "MCP ile işe alımı Claude'dan yönetin"
+description: "Claude'u birkaç dakikada Emploist'e bağlayın. Ardından doğrudan sohbetten adaylarınız hakkında soru sorun, onları sonraki aşamaya taşıyın ve ilan oluşturun."
+pubDate: 2026-11-12
+author: "Navaneeth CT"
+image: ../images/manage-hiring-from-claude/cover.png
+imageAlt: "Emploist'in MCP sayfasının önünde, Claude'un son 30 güne ait günlük başvuru grafiği."
+tags: ["Yapay zekâ asistanları", "Kılavuzlar"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import addConnector from "../images/manage-hiring-from-claude/claude-add-connector.png";
+import approval from "../images/manage-hiring-from-claude/claude-approval.png";
+import bestMatches from "../images/manage-hiring-from-claude/claude-best-matches.png";
+import connectorAuth from "../images/manage-hiring-from-claude/claude-connector-auth.png";
+import createJob from "../images/manage-hiring-from-claude/claude-create-job.png";
+import hiringStats from "../images/manage-hiring-from-claude/claude-hiring-stats.png";
+import moveComment from "../images/manage-hiring-from-claude/claude-move-comment.png";
+import stagesPublish from "../images/manage-hiring-from-claude/claude-stages-publish.png";
+import toolPermissions from "../images/manage-hiring-from-claude/claude-tool-permissions.png";
+import emploistComment from "../images/manage-hiring-from-claude/emploist-comment.png";
+import emploistConsent from "../images/manage-hiring-from-claude/emploist-consent.png";
+import emploistMcpPage from "../images/manage-hiring-from-claude/emploist-mcp-page.png";
+import emploistSettings from "../images/manage-hiring-from-claude/emploist-settings-mcp.png";
+
+Claude'u Emploist'e bağlayıp işe alım sürecinizi sohbet ederek yönetebilirsiniz. Bir ilana en uygun adayları sorun; kişileri bir sonraki aşamaya taşımasını, ekibinize not bırakmasını veya yeni bir ilan taslağı hazırlamasını isteyin. Claude bunları sizin yerinize Emploist'te yapar.
+
+Bu, yapay zekâ asistanlarının başka uygulamalara bağlanmasını sağlayan açık bir standart olan **MCP** (Model Context Protocol) sayesinde çalışır. Kullanmak için nasıl çalıştığını bilmeniz gerekmez. Kurulumu birkaç dakika sürer ve hiç kod gerektirmez.
+
+Bu kılavuz Claude'u nasıl bağlayacağınızı, ondan neler isteyebileceğinizi ve kontrolün nasıl sizde kaldığını gösteriyor. Tüm örnekleri, örnek bir şirket olan Northwind Labs üzerinden göstereceğiz.
+
+## İhtiyacınız olanlar
+
+- **Bir Emploist hesabı.** Claude'u hem yöneticiler hem de üyeler bağlayabilir.
+- **Claude**, web'de [claude.ai](https://claude.ai) adresinde veya Claude masaüstü uygulamasında.
+
+Claude'un Team ve Enterprise planlarında önce bir sahip Emploist'i **Organization settings** → **Connectors** bölümünden ekler. Ardından siz **Customize** → **Connectors** bölümünde yanındaki **Connect**'e tıklar ve doğrudan [3. adıma](#3-emploistte-oturum-açın) geçersiniz.
+
+## Claude'u Emploist'e bağlayın
+
+Emploist'in kenar çubuğundaki **MCP** sayfasında bu adımları ve kopyalamanız gereken adresi bulabilirsiniz.
+
+<Figure
+  src={emploistMcpPage}
+  url="app.emploist.com/mcp"
+  alt="Emploist'in MCP sayfası: Claude, ChatGPT, Claude Code, Cursor, VS Code ve “Other” sekmeleri; Claude seçili ve onu bağlamak için https://mcp.emploist.com adresini de içeren dört adım görünüyor; altta Claude'un yer aldığı bir “Connected assistants” listesi var."
+  caption="Emploist'teki MCP sayfası. Bağlı asistanlar en altta görünür."
+/>
+
+### 1. Claude'un bağlayıcı ayarlarını açın
+
+Claude'da **Customize** → **[Connectors](https://claude.ai/customize/connectors)** bölümüne gidin.
+
+### 2. Emploist'i ekleyin
+
+**+ Add**'e tıklayın ve **Add custom connector**'ı seçin. Adını Emploist koyun, şu adresi yapıştırın ve **Continue**'ya tıklayın:
+
+```
+https://mcp.emploist.com
+```
+
+<Figure
+  src={addConnector}
+  frame="plain"
+  narrow
+  alt="Claude'un “Add custom connector” penceresi: ad olarak Emploist, MCP sunucu URL'si olarak https://mcp.emploist.com girilmiş."
+  caption="Ad yalnızca sizin içindir. Claude'u Emploist'e bağlayan şey adrestir."
+/>
+
+Claude adresi kontrol eder, ardından nasıl oturum açılacağını gösterir. Emploist için doğru ayarları, yani **Sign in now** ve **Use Claude's published identity** seçeneklerini kendisi belirler; bu yüzden onlara dokunmadan **Add**'e tıklayın.
+
+<Figure
+  src={connectorAuth}
+  frame="plain"
+  narrow
+  alt="Claude'un penceresinin ikinci adımı: “Authentication” için “Sign in now”, “OAuth client” için “Use Claude's published identity” seçili; ikisi de “Detected” olarak işaretli."
+  caption="Claude bu ayarları Emploist'ten algılar."
+/>
+
+### 3. Emploist'te oturum açın
+
+**Connect**'e tıklayın. Emploist açılır: istenirse oturum açın, Claude'un neler yapabileceğini kontrol edin ve **İzin ver**'e tıklayın.
+
+<Figure
+  src={emploistConsent}
+  frame="plain"
+  narrow
+  alt="Emploist'in “Allow Claude to use Emploist?” diye soran sayfası: Claude, Northwind Labs şirketinin ilanlarını ve başvurularını görüntüleyip yönetebilecek; ilanları, aşamaları ve başvuru formlarını görüntüleyip değiştirebilecek, başvuruları ve özgeçmişleri okuyabilecek, bunları aşamalar arasında taşıyabilecek ve yorum yapabilecek; tüm bunları sizin adınıza, sizin rolünüzle yapacak. Faturalandırma, üyeler ve şirketinizi ya da hesabınızı silme dahil değildir."
+  caption="Emploist, siz izin vermeden önce Claude'un neleri yapabileceğini ve neleri yapamayacağını listeler."
+/>
+
+Claude'a geri dönersiniz ve Emploist bağlayıcısı kullanıma hazırdır.
+
+### 4. Sohbette kullanın
+
+Bir sohbette **+**'ya tıklayın, **Connectors**'ı açın ve Emploist'in açık olduğundan emin olun. Ardından ihtiyacınız olanı kendi cümlelerinizle sorun.
+
+## Claude'dan neler isteyebilirsiniz
+
+Claude, Emploist'te ilanlarda ve başvurularda gördüğünüz her şeyle çalışabilir. İşte Northwind Labs üzerinden birkaç örnek.
+
+### En iyi adaylarınızı bulun
+
+> Senior Product Designer ilanına en uygun adaylar kimler?
+
+Claude gelen kutusundaki başvuruları gözden geçirdi, en iyi beşini baştan sona okudu (özgeçmişler, yanıtlar ve ekibin yorumları) ve kısa bir listeyle geri döndü. Ayrıca en yüksek puanı alan iki adayın her birinde, yapay zekâ eşleşmesinin yakalamadığı bir sorun olduğuna dikkat çekti; örneğin formdaki yanıtlarla çelişen bir özgeçmiş.
+
+<Figure
+  src={bestMatches}
+  frame="plain"
+  narrow
+  alt="Claude'un yanıtı: Fatima Lindqvist en güçlü yeni aday. Gelen kutusundaki en uygun adayların gerekçeleriyle birlikte listesi (Fatima Lindqvist %86, Sara Nair %81, Amara Adeyemi %77), dikkatle değerlendirilmesi gereken yüksek puanlarla ilgili bir bölüm (Diego Varga %91 ve Kofi Clarke %88) ve Fatima ile Amara'yı Phone screen aşamasına taşıma önerisi."
+  caption="Claude her seçimini açıklıyor ve bir sonraki adımı öneriyor."
+/>
+
+### Adayları taşıyın ve ekibinize not bırakın
+
+> Evet, Fatima ile Amara'yı Phone screen aşamasına taşı. Bir de Sara'nın başvurusuna, Priya'dan Fatima'nınkiyle aynı olan yanıtı kontrol etmesini isteyen bir yorum bırak.
+
+Claude iki adayı da taşıdı ve yorumu bıraktı; Priya'nın bildirim alması için yorumda ondan bahsetti.
+
+<Figure
+  src={moveComment}
+  frame="plain"
+  narrow
+  alt="Claude'un yanıtı: o aşamanın e-postası kapalı olduğu için Fatima ile Amara'yı onlara e-posta göndermeden Phone screen aşamasına taşıdı ve Sara'nın başvurusuna Priya'yı etiketleyen bir yorum bıraktı. Yorumun sizin adınızla gönderildiğini ve Taylor Kim'in de bildirim alacağını belirtiyor."
+  caption="Claude ne yaptığını ve bundan sonra ne olacağını söylüyor."
+/>
+
+Claude'un yaptığı her şey Emploist'te sizin kendi işiniz gibi görünür. İşte Sara'nın başvurusundaki yorum; Claude'u bağlayan kişinin adıyla gönderilmiş.
+
+<Figure
+  src={emploistComment}
+  frame="plain"
+  narrow
+  alt="Emploist'te Sara Nair'in başvurusundaki “Comments” paneli: Priya Shah ve Taylor Kim'in yorumları, ardından Alex Morgan'ın @Priya Shah'tan bahseden ve ondan Sara'nın yanıtını kontrol etmesini isteyen yorumu."
+  caption="Emploist'te Priya'dan bahseden yorum."
+/>
+
+Bir aşama adaylara e-posta gönderiyorsa Emploist, e-postayı göndermeden önce 2 dakika bekler. Fikrinizi mi değiştirdiniz? Bu 2 dakika içinde Claude'dan taşımayı geri almasını isteyin; e-posta gönderilmez.
+
+### İlan oluşturun ve yayınlayın
+
+> Customer Support Specialist için taslak bir ilan oluştur. Pozisyon uzaktan ve tam zamanlı, Support departmanında. Kısa bir açıklama yaz ve adayların yardım masası araçlarıyla ilgili deneyimini soran bir soru ekle.
+
+Claude açıklamayı yazdı, başvuru formunu yeni soruyla hazırladı ve ilanı taslak olarak kaydetti.
+
+<Figure
+  src={createJob}
+  frame="plain"
+  narrow
+  alt="Claude'un yanıtı: Customer Support Specialist ilanını ayarları, açıklaması, yardım masası araçlarıyla ilgili zorunlu bir soru içeren başvuru formu ve varsayılan aşamalarıyla birlikte taslak olarak oluşturdu. Konum eklemediğini belirtiyor ve ilanı yayınlamayı öneriyor."
+  caption="Taslaklar, siz yayınlayana kadar kariyer sayfanızda görünmez."
+/>
+
+İşe alım sürecini de aynı şekilde düzenleyebilirsiniz:
+
+> Customer Support Specialist ilanına, Interviewing aşamasından önce bir Phone screen aşaması ve onun ardından bir Trial task aşaması ekle. Sonra ilanı yayınla.
+
+<Figure
+  src={stagesPublish}
+  frame="plain"
+  narrow
+  alt="Claude'un yanıtı: Customer Support Specialist ilanı kariyer sayfasında yayında; aşamaları Inbox, Phone screen (yeni), Trial task (yeni), Interviewing, Accepted ve Rejected. E-postalar tüm aşamalarda kapalı ve yeni aşamaların e-posta metni Emploist uygulamasında düzenlenebilir."
+  caption="İlan, yeni aşamalarıyla kariyer sayfasında yayında."
+/>
+
+### İşe alımın nasıl gittiğini görün
+
+> Son 30 günde işe alım nasıl gitti?
+
+Claude, Emploist'in Ana sayfasındaki istatistiklerin aynısını okur ve bunları grafik olarak çizebilir.
+
+<Figure
+  src={hiringStats}
+  frame="plain"
+  narrow
+  alt="Claude'un yanıtı: 14 Ekim'den 12 Kasım'a kadar günlük başvuruları gösteren bir çubuk grafik ve son 30 günde gelen 132 başvuruyu önceki 30 gündeki 12 başvuruyla karşılaştıran, çoğunun son 9 günde geldiğini belirten ve sayıların gidişatını anlatan bir özet."
+  caption="Claude'un günlük başvuru grafiği ve özeti."
+/>
+
+### Claude'un yapabildiği her şey
+
+- **Genel bakış:** rolünüz, planınız ve yapay zekâ kredileriniz; son 7, 30 veya 90 günün işe alım istatistikleri; ekibiniz; bildirimleriniz.
+- **İlanlar:** ilanları bulma; bir ilanın ayrıntılarını, başvuru formunu ve aşamalarını okuma; ilanı taslak olarak oluşturma veya yayınlama; ayrıntılarını ya da başvuru formunu düzenleme; ilanı yayınlama, açma, kapatma, arşivleme veya geri yükleme; ilanı çoğaltma veya silme.
+- **Aşamalar:** bir ilanın aşamalarını ekleme, yeniden adlandırma, yeniden sıralama veya silme; bir aşamanın adaylara giden e-postasını açma veya kapatma.
+- **Başvurular:** bir aşamadaki başvuruları yapay zekâ eşleşme puanlarıyla listeleme; bir başvuruyu yanıtları, yorumları ve özgeçmişiyle birlikte okuma; başvuruyu başka bir aşamaya taşıma; son taşıma işleminizi geri alma; puanlama başarısız olduysa yeniden puanlama; başvuruyu silme.
+- **Yorumlar:** bir başvuruya yorum yapma ve ekip arkadaşlarınızdan bahsetme; kendi yorumlarınızı düzenleme veya silme (yöneticiler herkesin yorumunu silebilir).
+- **Yöneticiler için şirket ayarları:** yapay zekâ puanlamasını açma veya kapatma; yapay zekâ krediniz yokken gelen başvuruları puanlama veya puanlamadan bırakma; adaylara giden e-postaları açma veya kapatma; adayların yanıtlarının nereye gideceğini seçme.
+
+Bazı işler ise yalnızca Emploist'te yapılır: faturalandırma, üyeler ve davetler, şirketinizi veya hesabınızı silme, kariyer sayfanızın kodu ve alan adı, e-posta şablonları ve aşama e-postalarının metni.
+
+## Kontrol sizde kalsın
+
+**Claude sizin adınıza çalışır.** Emploist'te sizinle aynı erişime sahip olur, fazlasına değil. Üyeyseniz Claude da şirket ayarlarını değiştiremez.
+
+**Claude'un size sormadan neler yapabileceğini siz seçersiniz.** Claude'da **Customize** → **Connectors** → **Emploist** bölümünü açarak Emploist'in salt okunur araçları ve değişiklik yapan araçları için izinleri belirleyin: **Always allow**, **Needs approval** veya **Blocked**.
+
+<Figure
+  src={toolPermissions}
+  frame="plain"
+  narrow
+  alt="Claude'da Emploist'in araç izinleri: “Read-only tools” (8) ve “Write/delete tools” (22); açık bir menüde “Blocked”, “Needs approval”, “Always allow” ve “Custom” seçenekleri görünüyor."
+  caption="İzinleri bir grubun tamamı için veya her araç için ayrı ayrı belirleyin."
+/>
+
+**Needs approval** seçiliyken Claude ne yapmak istediğini size gösterir ve **Allow once** veya **Always allow** düğmesine tıklamanızı bekler:
+
+<Figure
+  src={approval}
+  frame="plain"
+  narrow
+  alt="Claude'un Emploist'teki “Move an application” aracını kullanmak için izin istediği pencere: kullanacağı başvuru ve aşama ile “Decline”, “Always allow” ve “Allow once” düğmeleri."
+  caption="Claude bir adayı taşımadan önce sorar."
+/>
+
+Bu izinler, mesaj kutusunun altında modelin yanından seçtiğiniz **Manual** modunda geçerlidir. **Auto** modunda Claude sormadan işlem yapabilir ve yalnızca bir şey güvenli görünmezse durup size sorar.
+
+**Emploist, adayların yazdığı metinler konusunda Claude'u uyarır.** Claude'a adların, yanıtların ve özgeçmişlerin adaylar tarafından yazıldığını ve bunlardaki talimatlara asla uymaması gerektiğini söyler. Bir başvuruda bir yapay zekâ asistanına yönelik talimat gibi görünen bir metin varsa Emploist bunu işaretler ve Claude da size bildirir.
+
+**Bağlantıyı istediğiniz zaman kesebilirsiniz.** Emploist'in MCP sayfasında Claude'un yanındaki **Bağlantıyı kes**'e tıklayın; Claude sizin yerinize çalışmayı hemen bırakır. İstediğiniz zaman yeniden bağlayabilirsiniz.
+
+**Yöneticiler bunu herkes için kapatabilir.** **Ayarlar** → **Genel** bölümündeki **MCP** anahtarı, ekibinizin Emploist'i yapay zekâ asistanlarıyla kullanıp kullanamayacağını belirler. Anahtarı kapatmak, siz yeniden açana kadar bağlı tüm asistanları durdurur.
+
+<Figure
+  src={emploistSettings}
+  frame="plain"
+  narrow
+  alt="Emploist'teki MCP ayarı: “Let your team connect AI assistants” anahtarı açık; açıklamasında “People can use Emploist from assistants like Claude and ChatGPT, each with their own role” yazıyor."
+  caption="Ayarlar → Genel → MCP."
+/>
+
+## Bilmeniz gerekenler
+
+- **Planınıza dahildir.** Claude üzerinden bir başvuruyu puanlamak, tıpkı Emploist'te olduğu gibi bir yapay zekâ kredisi kullanır. Claude'un yaptığı başka hiçbir şey kredi kullanmaz.
+- **Herkes kendi Claude'unu bağlar** ve Claude o kişinin kendi rolüyle çalışır.
+- **Claude'un işini kontrol edin.** Claude hata yapabilir. Özellikle adayları taşımadan veya bir ilanı yayınlamadan önce yanıtlarını okuyun.
+- **Diğer asistanlar da çalışır.** MCP sayfasında ChatGPT, Claude Code, Cursor, VS Code ve MCP destekleyen diğer tüm asistanlar için adımlar bulunur.
+
+Denemek ister misiniz? [Ücretsiz denemenizi başlatın](https://app.emploist.com/sign-in), şirketinizi oluşturun ve Claude'u MCP sayfasından bağlayın.

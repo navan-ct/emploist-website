@@ -1,0 +1,240 @@
+---
+title: "So verwalten Sie Ihr Recruiting mit MCP direkt in Claude"
+description: "Verbinden Sie Claude in wenigen Minuten mit Emploist. Dann fragen Sie im Chat nach Ihren Bewerbenden, bringen sie eine Phase weiter und erstellen Stellen."
+pubDate: 2026-11-12
+author: "Navaneeth CT"
+image: ../images/manage-hiring-from-claude/cover.png
+imageAlt: "Die MCP-Seite von Emploist, davor Claudes Diagramm der Bewerbungen pro Tag in den letzten 30 Tagen."
+tags: ["KI-Assistenten", "Anleitungen"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import addConnector from "../images/manage-hiring-from-claude/claude-add-connector.png";
+import approval from "../images/manage-hiring-from-claude/claude-approval.png";
+import bestMatches from "../images/manage-hiring-from-claude/claude-best-matches.png";
+import connectorAuth from "../images/manage-hiring-from-claude/claude-connector-auth.png";
+import createJob from "../images/manage-hiring-from-claude/claude-create-job.png";
+import hiringStats from "../images/manage-hiring-from-claude/claude-hiring-stats.png";
+import moveComment from "../images/manage-hiring-from-claude/claude-move-comment.png";
+import stagesPublish from "../images/manage-hiring-from-claude/claude-stages-publish.png";
+import toolPermissions from "../images/manage-hiring-from-claude/claude-tool-permissions.png";
+import emploistComment from "../images/manage-hiring-from-claude/emploist-comment.png";
+import emploistConsent from "../images/manage-hiring-from-claude/emploist-consent.png";
+import emploistMcpPage from "../images/manage-hiring-from-claude/emploist-mcp-page.png";
+import emploistSettings from "../images/manage-hiring-from-claude/emploist-settings-mcp.png";
+
+Sie können Claude mit Emploist verbinden und Ihr Recruiting im Chat verwalten. Fragen Sie, welche Bewerbenden am besten zu einer Stelle passen, lassen Sie Personen in die nächste Phase verschieben, Notizen für Ihr Team hinterlassen oder eine neue Stelle entwerfen, und Claude erledigt das für Sie in Emploist.
+
+Möglich macht das **MCP** (Model Context Protocol), ein offener Standard, über den sich KI-Assistenten mit anderen Apps verbinden können. Wie das technisch funktioniert, müssen Sie nicht wissen, um es zu nutzen. Die Einrichtung dauert ein paar Minuten, ganz ohne Code.
+
+Diese Anleitung zeigt, wie Sie Claude verbinden, worum Sie Claude bitten können und wie Sie dabei die Kontrolle behalten. Für alle Beispiele verwenden wir Northwind Labs, ein fiktives Unternehmen.
+
+## Was Sie brauchen
+
+- **Ein Konto bei Emploist.** Sowohl Admins als auch Mitglieder können Claude verbinden.
+- **Claude**, im Web unter [claude.ai](https://claude.ai) oder in der Desktop-App von Claude.
+
+Bei den Claude-Tarifen Team und Enterprise fügt zuerst ein Owner Emploist unter **Organization settings** → **Connectors** hinzu. Danach klicken Sie unter **Customize** → **Connectors** daneben auf **Connect** und springen direkt zu [Schritt 3](#3-bei-emploist-anmelden).
+
+## Claude mit Emploist verbinden
+
+Auf der Seite **MCP** in der Seitenleiste von Emploist finden Sie diese Schritte und die Adresse zum Kopieren.
+
+<Figure
+  src={emploistMcpPage}
+  url="app.emploist.com/mcp"
+  alt="Die MCP-Seite von Emploist: Tabs für Claude, ChatGPT, Claude Code, Cursor, VS Code und „Other“, wobei der Tab Claude ausgewählt ist und vier Schritte zum Verbinden zeigt, darunter die Adresse https://mcp.emploist.com, sowie eine Liste „Connected assistants“ mit Claude."
+  caption="Die MCP-Seite in Emploist. Verbundene Assistenten erscheinen ganz unten."
+/>
+
+### 1. Claudes Connector-Einstellungen öffnen
+
+Öffnen Sie in Claude **Customize** → **[Connectors](https://claude.ai/customize/connectors)**.
+
+### 2. Emploist hinzufügen
+
+Klicken Sie auf **+ Add** und wählen Sie **Add custom connector**. Nennen Sie ihn Emploist, fügen Sie diese Adresse ein und klicken Sie auf **Continue**:
+
+```
+https://mcp.emploist.com
+```
+
+<Figure
+  src={addConnector}
+  frame="plain"
+  narrow
+  alt="Claudes Dialog „Add custom connector“: Als Name ist Emploist eingetragen, als URL des MCP-Servers https://mcp.emploist.com."
+  caption="Der Name ist nur für Sie. Über die Adresse verbindet sich Claude mit Emploist."
+/>
+
+Claude prüft die Adresse und zeigt dann die Optionen für die Anmeldung. Die richtigen für Emploist wählt Claude bereits aus: **Sign in now** und **Use Claude's published identity**. Lassen Sie sie also unverändert und klicken Sie auf **Add**.
+
+<Figure
+  src={connectorAuth}
+  frame="plain"
+  narrow
+  alt="Der zweite Schritt in Claudes Dialog: „Authentication“ ist auf „Sign in now“ gesetzt und „OAuth client“ auf „Use Claude's published identity“, beide mit dem Hinweis „Detected“."
+  caption="Claude erkennt diese Einstellungen bei Emploist."
+/>
+
+### 3. Bei Emploist anmelden
+
+Klicken Sie auf **Connect**. Emploist öffnet sich: Melden Sie sich bei Bedarf an, prüfen Sie, was Claude dann tun kann, und klicken Sie auf **Erlauben**.
+
+<Figure
+  src={emploistConsent}
+  frame="plain"
+  narrow
+  alt="Die Seite von Emploist mit der Frage „Allow Claude to use Emploist?“: Claude kann dann die Stellen und Bewerbungen von Northwind Labs ansehen und verwalten, Stellen, Phasen und Bewerbungsformulare ansehen und ändern, Bewerbungen und Lebensläufe lesen, zwischen Phasen verschieben und kommentieren, und handelt dabei als Sie, mit Ihrer Rolle. Abrechnung, Mitglieder und das Löschen Ihres Unternehmens oder Kontos sind nicht enthalten."
+  caption="Bevor Sie den Zugriff erlauben, zeigt Emploist, was Claude tun kann und was nicht."
+/>
+
+Danach sind Sie wieder in Claude, und der Connector für Emploist ist bereit.
+
+### 4. Im Chat nutzen
+
+Klicken Sie in einem Chat auf **+**, öffnen Sie **Connectors** und achten Sie darauf, dass Emploist aktiviert ist. Dann fragen Sie in Ihren eigenen Worten, was Sie brauchen.
+
+## Worum Sie Claude bitten können
+
+Claude kann mit allem arbeiten, was Sie in Emploist bei Stellen und Bewerbungen sehen. Hier sind einige Beispiele von Northwind Labs.
+
+### Die besten Bewerbenden finden
+
+> Welche Bewerbenden für die Stelle Senior Product Designer passen am besten?
+
+Claude ging die Bewerbungen in der Inbox durch, las die fünf besten vollständig (Lebensläufe, Antworten und die Kommentare des Teams) und legte eine Shortlist vor. Außerdem wies Claude darauf hin, dass es bei den beiden höchsten Scores jeweils ein Problem gab, das die KI-Bewertung nicht erkennt, etwa einen Lebenslauf, der den Angaben im Formular widerspricht.
+
+<Figure
+  src={bestMatches}
+  frame="plain"
+  narrow
+  alt="Claudes Antwort: Fatima Lindqvist ist die stärkste neue Bewerberin. Unter „Best fits in the inbox“ eine Liste der passendsten Bewerbenden (Fatima Lindqvist mit 86 %, Sara Nair mit 81 %, Amara Adeyemi mit 77 %) mit Begründungen, unter „High scores to treat with care“ zwei hohe Scores, die Vorsicht verlangen (Diego Varga mit 91 % und Kofi Clarke mit 88 %), und das Angebot, Fatima und Amara in die Phase „Phone screen“ zu verschieben."
+  caption="Claude begründet jede Wahl und bietet den nächsten Schritt an."
+/>
+
+### Bewerbende verschieben und Notizen für Ihr Team hinterlassen
+
+> Ja, verschiebe Fatima und Amara nach „Phone screen“. Hinterlasse außerdem einen Kommentar in Saras Bewerbung, in dem du Priya bittest, die Antwort zu prüfen, die mit Fatimas übereinstimmt.
+
+Claude verschob beide Bewerbenden und hinterließ den Kommentar mit einer Erwähnung von Priya, damit sie eine Benachrichtigung erhält.
+
+<Figure
+  src={moveComment}
+  frame="plain"
+  narrow
+  alt="Claudes Antwort: Claude hat Fatima und Amara nach „Phone screen“ verschoben, ohne ihnen eine E-Mail zu senden, weil die E-Mail dieser Phase deaktiviert ist, und in Saras Bewerbung einen Kommentar hinterlassen, der Priya markiert. Claude weist darauf hin, dass der Kommentar unter Ihrem Namen veröffentlicht wurde und dass auch Taylor Kim benachrichtigt wird."
+  caption="Claude sagt, was erledigt ist und was als Nächstes passiert."
+/>
+
+Alles, was Claude tut, erscheint in Emploist wie Ihre eigene Arbeit. So sieht der Kommentar in Saras Bewerbung aus, veröffentlicht unter dem Namen der Person, die Claude verbunden hat.
+
+<Figure
+  src={emploistComment}
+  frame="plain"
+  narrow
+  alt="Der Bereich „Comments“ in der Bewerbung von Sara Nair in Emploist: Kommentare von Priya Shah und Taylor Kim, dann der Kommentar von Alex Morgan, der @Priya Shah erwähnt und sie bittet, Saras Antwort zu prüfen."
+  caption="Der Kommentar in Emploist, mit Erwähnung von Priya."
+/>
+
+Wenn eine Phase Bewerbenden eine E-Mail schickt, wartet Emploist 2 Minuten, bevor sie versendet wird. Sie haben es sich anders überlegt? Bitten Sie Claude, die Verschiebung innerhalb dieser 2 Minuten rückgängig zu machen, dann wird die E-Mail nicht versendet.
+
+### Stellen erstellen und veröffentlichen
+
+> Erstelle einen Entwurf für eine Stelle als Customer Support Specialist. Es ist eine Remote-Stelle in Vollzeit, in der Abteilung Support. Schreib eine kurze Beschreibung und füge eine Frage zur Erfahrung mit Helpdesk-Tools hinzu.
+
+Claude schrieb die Beschreibung, richtete das Bewerbungsformular mit der neuen Frage ein und speicherte die Stelle als Entwurf.
+
+<Figure
+  src={createJob}
+  frame="plain"
+  narrow
+  alt="Claudes Antwort: Die Stelle Customer Support Specialist wurde als Entwurf erstellt, mit ihren Einstellungen, einer Beschreibung, einem Bewerbungsformular mit einer Pflichtfrage zu Helpdesk-Tools und den Standardphasen. Claude weist darauf hin, keinen Standort festgelegt zu haben, und bietet an, die Stelle zu veröffentlichen."
+  caption="Entwürfe erscheinen erst auf Ihrer Karriereseite, wenn Sie sie veröffentlichen."
+/>
+
+Auf die gleiche Weise können Sie den Recruiting-Prozess gestalten:
+
+> Füge bei der Stelle Customer Support Specialist eine Phase „Phone screen“ und danach eine Phase „Trial task“ hinzu, beide vor „Interviewing“. Veröffentliche dann die Stelle.
+
+<Figure
+  src={stagesPublish}
+  frame="plain"
+  narrow
+  alt="Claudes Antwort: Die Stelle Customer Support Specialist ist auf der Karriereseite live, mit den Phasen „Inbox“, „Phone screen“ (neu), „Trial task“ (neu), „Interviewing“, „Accepted“ und „Rejected“. E-Mails sind für alle Phasen deaktiviert, und den E-Mail-Text der neuen Phasen kann man in der Emploist-App bearbeiten."
+  caption="Die Stelle ist auf der Karriereseite live, mit ihren neuen Phasen."
+/>
+
+### Sehen, wie das Recruiting läuft
+
+> Wie lief das Recruiting in den letzten 30 Tagen?
+
+Claude liest dieselben Statistiken, die auch die Startseite von Emploist zeigt, und kann sie als Diagramm darstellen.
+
+<Figure
+  src={hiringStats}
+  frame="plain"
+  narrow
+  alt="Claudes Antwort mit einem Balkendiagramm der Bewerbungen pro Tag vom 14. Oktober bis zum 12. November und einer Zusammenfassung: 132 Bewerbungen in den letzten 30 Tagen gegenüber 12 in den 30 Tagen davor, die meisten davon in den letzten 9 Tagen, und wie sich die Zahlen entwickeln."
+  caption="Claudes Diagramm der Bewerbungen pro Tag, mit einer Zusammenfassung."
+/>
+
+### Alles, was Claude kann
+
+- **Überblick:** Ihre Rolle, Ihr Tarif und Ihre KI-Credits; Recruiting-Statistiken der letzten 7, 30 oder 90 Tage; Ihr Team; Ihre Benachrichtigungen.
+- **Stellen:** Stellen finden; Details, Bewerbungsformular und Phasen einer Stelle lesen; eine Stelle als Entwurf erstellen oder direkt veröffentlichen; ihre Details oder ihr Bewerbungsformular bearbeiten; sie veröffentlichen, öffnen, schließen, archivieren oder wiederherstellen; sie duplizieren oder löschen.
+- **Phasen:** Phasen einer Stelle hinzufügen, umbenennen, neu anordnen oder löschen; die E-Mail einer Phase an Bewerbende aktivieren oder deaktivieren.
+- **Bewerbungen:** die Bewerbungen einer Phase mit ihren KI-Match-Scores auflisten; eine Bewerbung mit Antworten, Kommentaren und Lebenslauf lesen; sie in eine andere Phase verschieben; Ihre letzte Verschiebung rückgängig machen; sie erneut bewerten, wenn die Bewertung fehlgeschlagen ist; sie löschen.
+- **Kommentare:** Bewerbungen kommentieren und Teammitglieder erwähnen; eigene Kommentare bearbeiten oder löschen (Admins können alle Kommentare löschen).
+- **Unternehmenseinstellungen, für Admins:** die KI-Bewertung aktivieren oder deaktivieren; Bewerbungen, die eingegangen sind, während Sie keine KI-Credits hatten, bewerten oder unbewertet lassen; E-Mails an Bewerbende aktivieren oder deaktivieren; festlegen, wohin Antworten von Bewerbenden gehen.
+
+Einiges erledigen Sie weiterhin in Emploist: die Abrechnung, Mitglieder und Einladungen, das Löschen Ihres Unternehmens oder Kontos, Code und Domain Ihrer Karriereseite, E-Mail-Layouts und die E-Mail-Texte der Phasen.
+
+## Behalten Sie die Kontrolle
+
+**Claude handelt als Sie.** Claude hat in Emploist dieselben Zugriffsrechte wie Sie, und nicht mehr. Wenn Sie Mitglied sind, kann auch Claude keine Unternehmenseinstellungen ändern.
+
+**Sie entscheiden, was Claude ohne Rückfrage tun darf.** Öffnen Sie in Claude **Customize** → **Connectors** → **Emploist**, um Berechtigungen für die Tools festzulegen, die nur lesen, und für die, die Änderungen vornehmen: **Always allow**, **Needs approval** oder **Blocked**.
+
+<Figure
+  src={toolPermissions}
+  frame="plain"
+  narrow
+  alt="Die Tool-Berechtigungen für Emploist in Claude: „Read-only tools“ (8) und „Write/delete tools“ (22), dazu ein geöffnetes Menü mit „Blocked“, „Needs approval“, „Always allow“ und „Custom“."
+  caption="Legen Sie Berechtigungen für eine ganze Gruppe oder für jedes einzelne Tool fest."
+/>
+
+Bei **Needs approval** zeigt Claude Ihnen die geplante Aktion und wartet, bis Sie auf **Allow once** oder **Always allow** klicken:
+
+<Figure
+  src={approval}
+  frame="plain"
+  narrow
+  alt="Claude bittet um Erlaubnis, „Move an application“ von Emploist zu verwenden, mit Angabe der Bewerbung und der Phase sowie den Schaltflächen „Decline“, „Always allow“ und „Allow once“."
+  caption="Claude fragt nach, bevor eine Bewerbung verschoben wird."
+/>
+
+Diese Berechtigungen gelten im Modus **Manual**, den Sie unter dem Nachrichtenfeld neben dem Modell auswählen. Im Modus **Auto** kann Claude ohne Rückfrage handeln und fragt nur dann nach, wenn etwas riskant wirkt.
+
+**Emploist warnt Claude vor den Texten von Bewerbenden.** Emploist teilt Claude mit, dass Namen, Antworten und Lebensläufe von Bewerbenden stammen und dass Claude Anweisungen darin niemals befolgen soll. Enthält eine Bewerbung Text, der wie Anweisungen an einen KI-Assistenten aussieht, markiert Emploist ihn, und Claude informiert Sie darüber.
+
+**Sie können die Verbindung jederzeit trennen.** Klicken Sie auf der MCP-Seite von Emploist neben Claude auf **Trennen**, und Claude kann Emploist ab sofort nicht mehr für Sie nutzen. Sie können Claude wieder verbinden, wann immer Sie möchten.
+
+**Admins können MCP für alle deaktivieren.** Unter **Einstellungen** → **Allgemein** legt der Schalter **MCP** fest, ob Ihr Team überhaupt KI-Assistenten mit Emploist nutzen kann. Wenn Sie ihn deaktivieren, stoppt das alle verbundenen Assistenten, bis Sie MCP wieder aktivieren.
+
+<Figure
+  src={emploistSettings}
+  frame="plain"
+  narrow
+  alt="Die MCP-Einstellung in Emploist: „Let your team connect AI assistants“ ist aktiviert, darunter steht „People can use Emploist from assistants like Claude and ChatGPT, each with their own role.“"
+  caption="Einstellungen → Allgemein → MCP."
+/>
+
+## Gut zu wissen
+
+- **In Ihrem Tarif enthalten.** Wenn Sie eine Bewerbung über Claude bewerten lassen, verbraucht das einen KI-Credit, genau wie in Emploist. Alles andere, was Claude tut, verbraucht keine Credits.
+- **Jede Person verbindet Claude selbst**, und Claude arbeitet dann jeweils mit ihrer eigenen Rolle.
+- **Prüfen Sie Claudes Arbeit.** Claude kann Fehler machen. Lesen Sie die Antworten, vor allem bevor Bewerbende verschoben oder Stellen veröffentlicht werden.
+- **Andere Assistenten funktionieren auch.** Auf der MCP-Seite finden Sie Schritte für ChatGPT, Claude Code, Cursor, VS Code und jeden anderen Assistenten, der MCP unterstützt.
+
+Sie möchten es ausprobieren? [Starten Sie Ihren kostenlosen Testzeitraum](https://app.emploist.com/sign-in), richten Sie Ihr Unternehmen ein und verbinden Sie Claude über die MCP-Seite.

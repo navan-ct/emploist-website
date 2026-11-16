@@ -1,0 +1,240 @@
+---
+title: "Gérer vos recrutements depuis Claude avec le MCP"
+description: "Connectez Claude à Emploist en quelques minutes. Interrogez-le ensuite sur vos candidats, faites-les avancer et créez des offres sans quitter la discussion."
+pubDate: 2026-11-12
+author: "Navaneeth CT"
+image: ../images/manage-hiring-from-claude/cover.png
+imageAlt: "La page MCP d’Emploist et, au premier plan, le graphique de Claude montrant les candidatures par jour sur les 30 derniers jours."
+tags: ["Assistants IA", "Guides"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import addConnector from "../images/manage-hiring-from-claude/claude-add-connector.png";
+import approval from "../images/manage-hiring-from-claude/claude-approval.png";
+import bestMatches from "../images/manage-hiring-from-claude/claude-best-matches.png";
+import connectorAuth from "../images/manage-hiring-from-claude/claude-connector-auth.png";
+import createJob from "../images/manage-hiring-from-claude/claude-create-job.png";
+import hiringStats from "../images/manage-hiring-from-claude/claude-hiring-stats.png";
+import moveComment from "../images/manage-hiring-from-claude/claude-move-comment.png";
+import stagesPublish from "../images/manage-hiring-from-claude/claude-stages-publish.png";
+import toolPermissions from "../images/manage-hiring-from-claude/claude-tool-permissions.png";
+import emploistComment from "../images/manage-hiring-from-claude/emploist-comment.png";
+import emploistConsent from "../images/manage-hiring-from-claude/emploist-consent.png";
+import emploistMcpPage from "../images/manage-hiring-from-claude/emploist-mcp-page.png";
+import emploistSettings from "../images/manage-hiring-from-claude/emploist-settings-mcp.png";
+
+Vous pouvez connecter Claude à Emploist et gérer vos recrutements en discutant. Demandez-lui quels candidats correspondent le mieux à une offre, ou chargez-le de faire passer des candidats à l’étape suivante, de laisser des notes à votre équipe ou de rédiger une nouvelle offre : il s’en occupe pour vous dans Emploist.
+
+Tout cela fonctionne grâce au **MCP** (Model Context Protocol), un standard ouvert qui permet aux assistants IA de se connecter à d’autres applications. Nul besoin de savoir comment il fonctionne pour l’utiliser. La configuration prend quelques minutes et ne demande aucune ligne de code.
+
+Ce guide explique comment connecter Claude, ce que vous pouvez lui demander et comment vous gardez le contrôle. Tous les exemples portent sur Northwind Labs, une entreprise fictive.
+
+## Ce qu’il vous faut
+
+- **Un compte Emploist.** Les administrateurs comme les membres peuvent connecter Claude.
+- **Claude**, sur le web à l’adresse [claude.ai](https://claude.ai) ou dans l’application de bureau Claude.
+
+Avec les forfaits Team et Enterprise de Claude, un propriétaire ajoute d’abord Emploist dans **Organization settings** → **Connectors**. Vous cliquez ensuite sur **Connect** à côté de lui dans **Customize** → **Connectors**, et passez directement à l’[étape 3](#3-se-connecter-à-emploist).
+
+## Connecter Claude à Emploist
+
+La page **MCP** d’Emploist, dans la barre latérale, reprend ces étapes et l’adresse à copier.
+
+<Figure
+  src={emploistMcpPage}
+  url="app.emploist.com/mcp"
+  alt="La page MCP d’Emploist : des onglets pour Claude, ChatGPT, Claude Code, Cursor, VS Code et « Other », avec Claude sélectionné et quatre étapes pour le connecter, dont l’adresse https://mcp.emploist.com, et une liste « Connected assistants » qui contient Claude."
+  caption="La page MCP dans Emploist. Les assistants connectés s’affichent en bas."
+/>
+
+### 1. Ouvrir les paramètres des connecteurs de Claude
+
+Dans Claude, ouvrez **Customize** → **[Connectors](https://claude.ai/customize/connectors)**.
+
+### 2. Ajouter Emploist
+
+Cliquez sur **+ Add** et choisissez **Add custom connector**. Nommez-le Emploist, collez cette adresse et cliquez sur **Continue** :
+
+```
+https://mcp.emploist.com
+```
+
+<Figure
+  src={addConnector}
+  frame="plain"
+  narrow
+  alt="La boîte de dialogue « Add custom connector » de Claude, avec Emploist comme nom et https://mcp.emploist.com comme URL du serveur MCP."
+  caption="Le nom n’est là que pour vous. C’est l’adresse qui connecte Claude à Emploist."
+/>
+
+Claude vérifie l’adresse, puis vous indique comment vous connecter. Il sélectionne les bons réglages pour Emploist, **Sign in now** et **Use Claude’s published identity** : laissez-les tels quels et cliquez sur **Add**.
+
+<Figure
+  src={connectorAuth}
+  frame="plain"
+  narrow
+  alt="La deuxième étape de la boîte de dialogue de Claude : « Authentication » réglé sur « Sign in now » et « OAuth client » réglé sur « Use Claude’s published identity », tous deux marqués « Detected »."
+  caption="Claude détecte ces réglages à partir d’Emploist."
+/>
+
+### 3. Se connecter à Emploist
+
+Cliquez sur **Connect**. Emploist s’ouvre : connectez-vous si on vous le demande, vérifiez ce que Claude pourra faire, puis cliquez sur **Autoriser**.
+
+<Figure
+  src={emploistConsent}
+  frame="plain"
+  narrow
+  alt="La page d’Emploist qui demande « Allow Claude to use Emploist? » : Claude pourra consulter et gérer les offres et candidatures de Northwind Labs, consulter et modifier les offres, les étapes et les formulaires de candidature, lire les candidatures et les CV, les déplacer entre les étapes et les commenter, en agissant en votre nom avec votre rôle. La facturation, les membres et la suppression de votre entreprise ou de votre compte ne sont pas inclus."
+  caption="Emploist liste ce que Claude peut faire ou non avant que vous ne l’autorisiez."
+/>
+
+Vous revenez dans Claude, et le connecteur Emploist est prêt.
+
+### 4. L’utiliser dans une discussion
+
+Dans une discussion, cliquez sur **+**, ouvrez **Connectors** et vérifiez qu’Emploist est activé. Demandez ensuite ce dont vous avez besoin, avec vos propres mots.
+
+## Ce que vous pouvez demander à Claude
+
+Claude peut travailler avec tout ce que vous voyez dans les offres et les candidatures d’Emploist. Voici quelques exemples chez Northwind Labs.
+
+### Trouver vos meilleurs candidats
+
+> Quels candidats au poste de Senior Product Designer correspondent le mieux ?
+
+Claude a passé en revue les candidatures de la boîte de réception, lu en entier les cinq meilleures (CV, réponses et commentaires de l’équipe), puis proposé une présélection. Il a aussi signalé que les deux candidats les mieux notés présentaient chacun un problème qui échappe au score de compatibilité de l’IA, comme un CV qui contredit le formulaire.
+
+<Figure
+  src={bestMatches}
+  frame="plain"
+  narrow
+  alt="La réponse de Claude : Fatima Lindqvist est la nouvelle candidate la plus solide. Une liste des profils les plus adaptés dans la boîte de réception (Fatima Lindqvist à 86 %, Sara Nair à 81 %, Amara Adeyemi à 77 %), avec les raisons de chaque choix, une section sur les scores élevés à prendre avec précaution (Diego Varga à 91 % et Kofi Clarke à 88 %), et la proposition de faire passer Fatima et Amara à l’étape Phone screen."
+  caption="Claude explique chacun de ses choix et propose la suite."
+/>
+
+### Déplacer des candidats et laisser des notes à votre équipe
+
+> Oui, déplace Fatima et Amara vers Phone screen. Laisse aussi un commentaire sur la candidature de Sara pour demander à Priya de vérifier la réponse identique à celle de Fatima.
+
+Claude a déplacé les deux candidates et laissé le commentaire, en mentionnant Priya pour qu’elle reçoive une notification.
+
+<Figure
+  src={moveComment}
+  frame="plain"
+  narrow
+  alt="La réponse de Claude : il a déplacé Fatima et Amara vers Phone screen sans leur envoyer d’e-mail, car l’e-mail de cette étape est désactivé, et a laissé sur la candidature de Sara un commentaire qui mentionne Priya. Il précise que le commentaire a été publié sous votre nom et que Taylor Kim recevra aussi une notification."
+  caption="Claude indique ce qu’il a fait et ce qui va se passer ensuite."
+/>
+
+Tout ce que fait Claude apparaît dans Emploist comme si vous l’aviez fait vous-même. Voici le commentaire sur la candidature de Sara, publié sous le nom de la personne qui a connecté Claude.
+
+<Figure
+  src={emploistComment}
+  frame="plain"
+  narrow
+  alt="Le panneau « Comments » de la candidature de Sara Nair dans Emploist : des commentaires de Priya Shah et de Taylor Kim, puis celui d’Alex Morgan, qui mentionne @Priya Shah et lui demande de vérifier la réponse de Sara."
+  caption="Le commentaire dans Emploist, avec la mention de Priya."
+/>
+
+Si une étape envoie un e-mail aux candidats, Emploist attend 2 minutes avant de l’envoyer. Vous avez changé d’avis ? Demandez à Claude d’annuler le déplacement dans ces 2 minutes, et l’e-mail ne partira pas.
+
+### Créer et publier des offres
+
+> Crée une offre en brouillon pour un Customer Support Specialist. C’est un poste à distance et à temps plein, dans le département Support. Rédige une courte description et ajoute une question sur l’expérience des candidats avec les outils de help desk.
+
+Claude a rédigé la description, configuré le formulaire de candidature avec la nouvelle question et enregistré l’offre comme brouillon.
+
+<Figure
+  src={createJob}
+  frame="plain"
+  narrow
+  alt="La réponse de Claude : il a créé l’offre Customer Support Specialist en brouillon, avec ses paramètres, une description, un formulaire de candidature comprenant une question obligatoire sur les outils de help desk, et les étapes par défaut. Il précise qu’il n’a pas renseigné de lieu et propose de publier l’offre."
+  caption="Les brouillons n’apparaissent pas sur votre page carrière tant que vous ne les avez pas publiés."
+/>
+
+Vous pouvez organiser le processus de recrutement de la même manière :
+
+> Pour l’offre Customer Support Specialist, ajoute une étape Phone screen suivie d’une étape Trial task, avant Interviewing. Publie ensuite l’offre.
+
+<Figure
+  src={stagesPublish}
+  frame="plain"
+  narrow
+  alt="La réponse de Claude : l’offre Customer Support Specialist est en ligne sur la page carrière, avec les étapes Inbox, Phone screen (nouvelle), Trial task (nouvelle), Interviewing, Accepted et Rejected. Les e-mails sont désactivés pour toutes les étapes, et le texte des e-mails des nouvelles étapes peut être modifié dans l’application Emploist."
+  caption="L’offre est en ligne sur la page carrière, avec ses nouvelles étapes."
+/>
+
+### Voir où en est le recrutement
+
+> Comment s’est passé le recrutement ces 30 derniers jours ?
+
+Claude lit les mêmes statistiques que la page Accueil d’Emploist et peut les présenter sous forme de graphique.
+
+<Figure
+  src={hiringStats}
+  frame="plain"
+  narrow
+  alt="La réponse de Claude, avec un graphique en barres des candidatures par jour du 14 octobre au 12 novembre, et un résumé : 132 candidatures sur les 30 derniers jours contre 12 sur les 30 jours précédents, la plupart au cours des 9 derniers jours, et l’évolution des chiffres."
+  caption="Le graphique des candidatures par jour réalisé par Claude, avec un résumé."
+/>
+
+### Tout ce que Claude peut faire
+
+- **Vue d’ensemble :** votre rôle, votre forfait et vos crédits IA ; les statistiques de recrutement des 7, 30 ou 90 derniers jours ; votre équipe ; vos notifications.
+- **Offres :** rechercher des offres ; consulter les informations, le formulaire de candidature et les étapes d’une offre ; créer une offre en brouillon ou la publier ; modifier ses informations ou son formulaire de candidature ; la publier, l’ouvrir, la clôturer, l’archiver ou la restaurer ; la dupliquer ou la supprimer.
+- **Étapes :** ajouter, renommer, réorganiser ou supprimer les étapes d’une offre ; activer ou désactiver l’e-mail qu’une étape envoie aux candidats.
+- **Candidatures :** lister les candidatures d’une étape avec les scores de compatibilité attribués par l’IA ; lire une candidature avec ses réponses, ses commentaires et son CV ; la déplacer vers une autre étape ; annuler votre dernier déplacement ; la réévaluer si l’évaluation a échoué ; la supprimer.
+- **Commentaires :** commenter une candidature et mentionner des collègues ; modifier ou supprimer vos propres commentaires (les administrateurs peuvent supprimer ceux de tout le monde).
+- **Paramètres de l’entreprise, pour les administrateurs :** activer ou désactiver l’évaluation par IA ; évaluer les candidatures arrivées alors que vous n’aviez plus de crédits IA, ou les laisser sans évaluation ; activer ou désactiver les e-mails aux candidats ; choisir où arrivent les réponses des candidats.
+
+Certaines choses se gèrent uniquement dans Emploist : la facturation, les membres et les invitations, la suppression de votre entreprise ou de votre compte, le code et le domaine de votre page carrière, les mises en page des e-mails et le texte des e-mails d’étape.
+
+## Garder le contrôle
+
+**Claude agit en votre nom.** Il dispose des mêmes accès que vous dans Emploist, et rien de plus. Si vous êtes membre, Claude ne peut pas non plus modifier les paramètres de l’entreprise.
+
+**Vous choisissez ce que Claude peut faire sans vous demander votre accord.** Dans Claude, ouvrez **Customize** → **Connectors** → **Emploist** pour définir les autorisations de ses outils en lecture seule et de ceux qui apportent des modifications : **Always allow**, **Needs approval** ou **Blocked**.
+
+<Figure
+  src={toolPermissions}
+  frame="plain"
+  narrow
+  alt="Les autorisations des outils d’Emploist dans Claude : « Read-only tools » (8) et « Write/delete tools » (22), avec un menu ouvert qui propose « Blocked », « Needs approval », « Always allow » et « Custom »."
+  caption="Définissez les autorisations pour tout un groupe, ou outil par outil."
+/>
+
+Avec **Needs approval**, Claude vous montre ce qu’il veut faire et attend que vous cliquiez sur **Allow once** ou **Always allow** :
+
+<Figure
+  src={approval}
+  frame="plain"
+  narrow
+  alt="Claude demande à utiliser l’outil « Move an application » d’Emploist, avec la candidature et l’étape qu’il utilisera, et les boutons « Decline », « Always allow » et « Allow once »."
+  caption="Claude demande avant de déplacer un candidat."
+/>
+
+Ces autorisations s’appliquent en mode **Manual**, que vous choisissez à côté du modèle, sous la zone de saisie. En mode **Auto**, Claude peut agir sans vous demander votre accord, et ne s’arrête pour vous consulter que si quelque chose paraît risqué.
+
+**Emploist met Claude en garde contre le texte des candidats.** Il indique à Claude que les noms, les réponses et les CV sont rédigés par les candidats, et qu’il ne faut jamais suivre les instructions qu’ils contiennent. Si une candidature contient du texte qui ressemble à des instructions destinées à un assistant IA, Emploist le signale, et Claude vous en informe.
+
+**Vous pouvez déconnecter Claude à tout moment.** Sur la page MCP d’Emploist, cliquez sur **Déconnecter** à côté de Claude : il cesse immédiatement de fonctionner pour vous. Vous pouvez le reconnecter quand vous le souhaitez.
+
+**Les administrateurs peuvent désactiver le MCP pour tout le monde.** Dans **Paramètres** → **Général**, le bouton **MCP** détermine si votre équipe peut utiliser ou non des assistants IA avec Emploist. Le désactiver arrête tous les assistants connectés jusqu’à ce que vous le réactiviez.
+
+<Figure
+  src={emploistSettings}
+  frame="plain"
+  narrow
+  alt="Le réglage MCP dans Emploist : « Let your team connect AI assistants », activé, avec le texte « People can use Emploist from assistants like Claude and ChatGPT, each with their own role. »"
+  caption="Paramètres → Général → MCP."
+/>
+
+## Bon à savoir
+
+- **C’est inclus dans votre forfait.** Évaluer une candidature depuis Claude utilise un crédit IA, comme dans Emploist. Aucune autre action de Claude n’utilise de crédits.
+- **Chacun connecte son propre Claude**, qui fonctionne avec son propre rôle.
+- **Vérifiez le travail de Claude.** Claude peut faire des erreurs. Lisez ses réponses, surtout avant de déplacer des candidats ou de publier une offre.
+- **D’autres assistants fonctionnent aussi.** La page MCP propose des étapes pour ChatGPT, Claude Code, Cursor, VS Code et tout autre assistant compatible MCP.
+
+Envie d’essayer ? [Démarrez votre essai gratuit](https://app.emploist.com/sign-in), configurez votre entreprise et connectez Claude depuis la page MCP.
