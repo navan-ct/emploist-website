@@ -1,0 +1,11 @@
+---
+// The band of fine vertical lines between sections, with hairlines above and
+// below it that run the window's full width.
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={["container-page band rule-t rule-b", className]} aria-hidden="true"></div>

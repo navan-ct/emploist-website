@@ -1,24 +1,30 @@
 ---
 import { getLocale, getMessages } from "../../i18n";
+import SectionHeader from "../SectionHeader.astro";
+import StepVisual from "../StepVisual.astro";
 
 const t = getMessages(getLocale(Astro)).howItWorks;
 ---
 
-<section id="how-it-works" aria-labelledby="how-title" class="border-b border-line py-20 sm:py-28">
-  <div class="container-page">
-    <div class="max-w-2xl">
-      <p class="text-eyebrow">{t.eyebrow}</p>
-      <h2 id="how-title" class="text-heading mt-4">{t.title}</h2>
-    </div>
-    <ol class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+<section id="how-it-works" aria-labelledby="how-title" class="section-y">
+  <SectionHeader eyebrow={t.eyebrow} title={t.title} id="how-title" />
+
+  <div class="container-page rule-b mt-14 sm:mt-16">
+    <ol class="cells sm:grid-cols-2 lg:grid-cols-4" data-stagger style="--stagger-step: 110ms">
       {
         t.steps.map((step, index) => (
-          <li class="flex flex-col bg-page p-6 sm:p-7">
-            <span class="font-mono text-sm text-faint tabular-nums" aria-hidden="true">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <h3 class="mt-10 text-lg font-semibold tracking-[-0.012em]">{step.title}</h3>
-            <p class="mt-2 text-[0.9375rem] leading-relaxed">{step.text}</p>
+          <li class="row-span-4 grid grid-rows-subgrid">
+            <p class="rule-t flex items-center px-5 py-4 max-sm:hidden" aria-hidden="true">
+              <span class="tag tag-solid">{String(index + 1).padStart(2, "0")}</span>
+            </p>
+            <h3 class="text-title rule-t flex items-center gap-3 px-5 py-5">
+              <span class="tag tag-solid sm:hidden" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              {step.title}
+            </h3>
+            <div class="rule-t h-52 sm:h-56">
+              <StepVisual step={index} />
+            </div>
+            <p class="rule-t px-5 pt-5 pb-7 leading-relaxed text-ink/75">{step.text}</p>
           </li>
         ))
       }

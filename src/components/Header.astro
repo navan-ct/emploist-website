@@ -3,6 +3,7 @@ import { getLocale, getMessages } from "../i18n";
 import { LANGUAGE_NAMES, LOCALES, type Locale, localizePath } from "../i18n/locales";
 import { APP, NAV } from "../lib/site";
 import Button from "./Button.astro";
+import Roll from "./Roll.astro";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import Wordmark from "./Wordmark.astro";
 
@@ -17,22 +18,19 @@ const t = getMessages(locale);
 const nav = NAV.map((item) => ({ label: t.nav[item.key], href: localizePath(item.href, locale) }));
 ---
 
-<header class="sticky top-0 z-40 border-b border-line/70 bg-page/85 backdrop-blur-md backdrop-saturate-150">
-  <div class="container-page flex h-16 items-center gap-4 sm:gap-8">
-    <a href={localizePath("/", locale)} class="-m-1 rounded-md p-1" aria-label={t.site.home}>
-      <Wordmark />
+<header class="rule-b sticky top-0 z-40 bg-page/90 backdrop-blur-md backdrop-saturate-150">
+  <div class="container-page flex h-(--header-height) items-center gap-2 pr-2 pl-3 sm:gap-4 sm:px-6 lg:px-8">
+    <a href={localizePath("/", locale)} class="-m-1 shrink-0 p-1" aria-label={t.site.home}>
+      <Wordmark class="max-sm:text-[1.125rem] max-sm:[&_svg]:size-6 max-[22rem]:[&>span]:sr-only" />
     </a>
 
-    <nav aria-label={t.nav.main} class="hidden lg:block">
-      <ul class="flex items-center gap-1">
+    <nav aria-label={t.nav.main} class="mx-auto hidden lg:block">
+      <ul class="flex items-center xl:gap-3">
         {
           nav.map((item) => (
             <li>
-              <a
-                href={item.href}
-                class="rounded-full px-3 py-1.5 text-[0.9375rem] text-body transition-colors hover:text-ink"
-              >
-                {item.label}
+              <a href={item.href} class="px-2.5 py-2 text-[0.9375rem] tracking-[-0.02em] text-ink xl:px-3">
+                <Roll text={item.label} />
               </a>
             </li>
           ))
@@ -40,56 +38,65 @@ const nav = NAV.map((item) => ({ label: t.nav[item.key], href: localizePath(item
       </ul>
     </nav>
 
-    <div class="ml-auto flex items-center gap-2">
+    <div class="ml-auto flex items-center gap-1 lg:ml-0 xl:gap-2">
       <div class="max-lg:hidden">
         <LanguageSwitcher alternates={alternates} placement="header" />
       </div>
-      <Button href={APP.signInUrl} variant="ghost" class="max-sm:hidden">{t.nav.signIn}</Button>
-      <Button href={APP.signUpUrl}>{t.nav.startFreeTrial}</Button>
+      <a
+        href={APP.signInUrl}
+        class="px-2.5 py-2 text-[0.9375rem] tracking-[-0.02em] text-ink max-sm:hidden xl:px-3"
+      >
+        <Roll text={t.nav.signIn} />
+      </a>
+      <Button href={APP.signUpUrl} class="max-sm:h-9 max-sm:px-3 max-sm:text-[0.75rem] sm:ml-1 xl:ml-2">{t.nav.startFreeTrial}</Button>
       <button
         type="button"
         popovertarget="mobile-nav"
-        class="-mr-2 inline-flex size-10 items-center justify-center rounded-full text-ink hover:bg-subtle lg:hidden"
+        class="inline-flex size-9 shrink-0 items-center justify-center text-ink ring-1 ring-line transition-colors ring-inset hover:bg-subtle sm:size-10 lg:hidden"
         aria-label={t.nav.menu}
       >
-        <svg viewBox="0 0 20 20" class="size-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+        <svg viewBox="0 0 20 20" class="size-5" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <path d="M3.5 7h13M3.5 13h13"></path>
         </svg>
       </button>
     </div>
   </div>
 
-  <div
-    id="mobile-nav"
-    popover
-    class="mobile-nav inset-x-0 top-16 m-0 w-full max-w-none border-b border-line bg-page p-0 shadow-lg lg:hidden"
-  >
-    <nav aria-label={t.nav.main} class="container-page py-4">
+  <div id="mobile-nav" popover class="mobile-nav m-0 border-x-0 border-t-0 border-b border-line bg-page p-0 shadow-xl lg:hidden">
+    <nav aria-label={t.nav.main}>
       <ul class="flex flex-col">
         {
           nav.map((item) => (
             <li>
-              <a href={item.href} class="block border-b border-line py-3.5 text-lg font-medium text-ink">
+              <a href={item.href} class="flex items-center justify-between border-b border-line px-5 py-4 text-xl tracking-[-0.035em] text-ink">
                 {item.label}
+                <svg viewBox="0 0 16 16" class="size-4 text-faint" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M6 3.5 10.5 8 6 12.5" />
+                </svg>
               </a>
             </li>
           ))
         }
         <li>
-          <a href={APP.signInUrl} class="block border-b border-line py-3.5 text-lg font-medium text-ink">{t.nav.signIn}</a>
+          <a href={APP.signInUrl} class="flex items-center justify-between border-b border-line px-5 py-4 text-xl tracking-[-0.035em] text-ink">
+            {t.nav.signIn}
+            <svg viewBox="0 0 16 16" class="size-4 text-faint" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M6 3.5 10.5 8 6 12.5" />
+            </svg>
+          </a>
         </li>
       </ul>
-      <h2 id="mobile-language" class="mt-6 text-sm font-semibold text-faint">{t.language.label}</h2>
-      <ul aria-labelledby="mobile-language" class="mt-2 grid grid-cols-2 gap-x-4">
+      <h2 id="mobile-language" class="text-label border-b border-line bg-subtle px-5 py-3 text-ink">{t.language.label}</h2>
+      <ul aria-labelledby="mobile-language" class="grid grid-cols-2 gap-px bg-line">
         {
           LOCALES.map((option) => (
-            <li>
+            <li class="bg-page">
               <a
                 href={alternates[option]}
                 hreflang={option}
                 lang={option}
                 aria-current={option === locale ? "page" : undefined}
-                class="block py-2 text-[0.9375rem] text-body aria-[current=page]:font-semibold aria-[current=page]:text-ink"
+                class="block px-5 py-3 text-[0.9375rem] text-body aria-[current=page]:text-brand-ink"
               >
                 {LANGUAGE_NAMES[option]}
               </a>
@@ -120,11 +127,19 @@ const nav = NAV.map((item) => ({ label: t.nav[item.key], href: localizePath(item
 </script>
 
 <style>
+  /* Opens below the header, between the rails. */
   .mobile-nav:popover-open {
     position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: min(var(--content-max), 100% - 2 * var(--inset));
+    max-height: calc(100dvh - var(--header-height));
+    overflow-y: auto;
   }
 
   .mobile-nav::backdrop {
-    background: oklch(0% 0 0 / 0.2);
+    background: rgb(13 13 13 / 0.18);
   }
 </style>

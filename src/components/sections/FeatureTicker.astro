@@ -1,0 +1,32 @@
+---
+// Below the hero: two rows of what's included, moving sideways in opposite
+// directions, like the logos of a "trusted by" strip.
+import { getLocale, getMessages } from "../../i18n";
+import { CHECK_ICON, DETAIL_ICONS } from "../../lib/icons";
+import Icon from "../Icon.astro";
+
+const t = getMessages(getLocale(Astro));
+const rows = [
+  t.pricing.included.map((label) => ({ label, icon: CHECK_ICON })),
+  t.details.items.map((item, i) => ({ label: item.title, icon: DETAIL_ICONS[i] ?? CHECK_ICON })),
+];
+---
+
+<section aria-label={t.pricing.title} class="container-page rule-t rule-b" data-reveal>
+  {
+    rows.map((row, r) => (
+      <div class:list={["ticker", r === 1 && "ticker-reverse border-t border-line"]} style={`--ticker-duration: ${r === 0 ? 70 : 60}s`}>
+        {[0, 1].map((copy) => (
+          <ul class="ticker-track" aria-hidden={copy === 1 ? "true" : undefined}>
+            {row.map((item) => (
+              <li class="flex h-16 items-center gap-3 border-r border-line px-7 whitespace-nowrap text-ink/75 sm:h-[4.5rem]">
+                <Icon path={item.icon} class="size-5 shrink-0 text-brand-ink" />
+                <span class="text-[1rem] tracking-[-0.03em]">{item.label}</span>
+              </li>
+            ))}
+          </ul>
+        ))}
+      </div>
+    ))
+  }
+</section>

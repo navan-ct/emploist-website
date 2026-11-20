@@ -1,5 +1,6 @@
 ---
 import { getLocale, getMessages } from "../../i18n";
+import SectionHeader from "../SectionHeader.astro";
 
 const t = getMessages(getLocale(Astro)).details;
 
@@ -17,30 +18,44 @@ const icons = [
 ];
 ---
 
-<section aria-labelledby="details-title" class="py-20 sm:py-28">
-  <div class="container-page">
-    <div class="max-w-2xl">
-      <p class="text-eyebrow">{t.eyebrow}</p>
-      <h2 id="details-title" class="text-heading mt-4">{t.title}</h2>
-    </div>
-    <ul class="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+<section aria-labelledby="details-title" class="section-y">
+  <SectionHeader eyebrow={t.eyebrow} title={t.title} id="details-title" />
+
+  <div class="container-page rule-b mt-14 sm:mt-16">
+    <ul class="cells sm:grid-cols-2 lg:grid-cols-4" data-stagger style="--stagger-step: 60ms">
       {
         t.items.map((detail, index) => (
-          <li>
-            <svg
-              viewBox="0 0 20 20"
-              class="size-6 text-brand-ink"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d={icons[index]} />
-            </svg>
-            <h3 class="mt-4 font-semibold">{detail.title}</h3>
-            <p class="mt-2 text-[0.9375rem] leading-relaxed">{detail.text}</p>
+          <li class="row-span-3 grid grid-rows-subgrid">
+            <div class="rule-t px-5 pt-6 pb-5 max-sm:hidden sm:px-6">
+              <svg
+                viewBox="0 0 20 20"
+                class="size-8 text-ink"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.15"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d={icons[index]} />
+              </svg>
+            </div>
+            <h3 class="rule-t flex items-center gap-3 bg-surface/70 px-5 py-4 text-[1.25rem] leading-snug tracking-[-0.04em] sm:px-6">
+              <svg
+                viewBox="0 0 20 20"
+                class="size-6 shrink-0 text-ink sm:hidden"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d={icons[index]} />
+              </svg>
+              {detail.title}
+            </h3>
+            <p class="rule-t px-5 pt-5 pb-7 leading-relaxed sm:px-6">{detail.text}</p>
           </li>
         ))
       }

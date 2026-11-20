@@ -1,0 +1,351 @@
+---
+// Small drawings of each "How it works" step: a job being written and
+// published, an application being filled in and sent, applications ranked,
+// and an applicant moving to the next stage. Shapes stand in for words, so
+// they read the same in every language. They loop while on screen.
+import { getLocale } from "../i18n";
+import { formatPercent } from "../i18n/format";
+
+interface Props {
+  step: number;
+}
+
+const { step } = Astro.props;
+const locale = getLocale(Astro);
+const ranked = [
+  { match: 91, width: "68%", tone: "high" },
+  { match: 88, width: "52%", tone: "high" },
+  { match: 86, width: "60%", tone: "high" },
+  { match: 71, width: "44%", tone: "mid" },
+];
+---
+
+<div class="step-visual flex h-full items-center justify-center overflow-hidden bg-subtle p-5 sm:p-6" data-play aria-hidden="true">
+  {
+    step === 0 && (
+      <div class="w-full max-w-60 border border-line bg-raised p-4 shadow-(--shot-shadow)">
+        <div class="flex items-center gap-2.5">
+          <span class="flex size-7 shrink-0 items-center justify-center bg-brand-soft">
+            <span class="h-2.5 w-3 border-[1.5px] border-brand" />
+          </span>
+          <span class="type h-2 w-24 bg-ink/80" style="--d: 0s" />
+          <span class="live ml-auto flex items-center gap-1.5 bg-emerald-50 px-1.5 py-1">
+            <span class="pulse size-1.5 rounded-full bg-emerald-500" />
+            <span class="h-1 w-5 bg-emerald-600/50" />
+          </span>
+        </div>
+        <div class="mt-4 flex flex-col gap-2">
+          <span class="type h-1.5 w-full bg-line" style="--d: 0.25s" />
+          <span class="type h-1.5 w-11/12 bg-line" style="--d: 0.45s" />
+          <span class="type h-1.5 w-3/4 bg-line" style="--d: 0.65s" />
+        </div>
+        <div class="mt-4 flex items-center gap-1.5">
+          <span class="h-4 w-10 border border-line" />
+          <span class="h-4 w-12 border border-line" />
+          <span class="press ml-auto flex h-6 w-16 items-center justify-center bg-brand">
+            <span class="h-1 w-8 bg-white/80" />
+          </span>
+        </div>
+      </div>
+    )
+  }
+  {
+    step === 1 && (
+      <div class="relative w-full max-w-60 border border-line bg-raised p-4 shadow-(--shot-shadow)">
+        <div class="flex flex-col gap-2.5">
+          {[0, 1].map((field) => (
+            <span class="flex h-7 items-center border border-line px-2">
+              <span class="type h-1 bg-line-strong" style={`--d: ${0.2 + field * 0.5}s; width: ${field ? "4.5rem" : "6rem"}`} />
+            </span>
+          ))}
+          <div class="flex h-9 items-center justify-center border border-dashed border-line-strong">
+            <span class="drop flex items-center gap-1.5 bg-brand-soft px-2 py-1">
+              <svg viewBox="0 0 16 16" class="size-3.5 text-brand" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M4 1.75h5.25L12.5 5v9.25H4z M9 1.75V5.25h3.5" />
+              </svg>
+              <span class="h-1 w-10 bg-brand/40" />
+            </span>
+          </div>
+          <span class="press flex h-7 items-center justify-center bg-brand">
+            <span class="h-1 w-12 bg-white/80" />
+          </span>
+        </div>
+        <span class="sent absolute -top-2.5 -right-2.5 flex size-6 items-center justify-center rounded-full bg-emerald-500 text-white shadow-md">
+          <svg viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m4 8.25 2.5 2.5L12 5.5" />
+          </svg>
+        </span>
+      </div>
+    )
+  }
+  {
+    step === 2 && (
+      <ol class="relative w-full max-w-60 divide-y divide-line overflow-hidden border border-line bg-raised shadow-(--shot-shadow)">
+        <span class="scan pointer-events-none absolute inset-x-0 top-0 h-9 bg-gradient-to-b from-transparent via-brand/10 to-transparent" />
+        {ranked.map((row, index) => (
+          <li class="flex items-center gap-2.5 px-3 py-2.5">
+            <span class:list={["size-5 shrink-0 rounded-full", index === 0 ? "first bg-brand" : "bg-line"]} />
+            <span class="bar h-1.5 bg-ink/70" style={`width: ${row.width}; --d: ${0.15 + index * 0.12}s`} />
+            <span
+              class:list={[
+                "ml-auto px-1.5 py-0.5 font-mono text-[0.625rem] tabular-nums",
+                row.tone === "high" ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700",
+              ]}
+              data-count={row.match}
+              data-format="percent"
+              data-count-delay={150 + index * 120}
+            >
+              {formatPercent(row.match, locale)}
+            </span>
+          </li>
+        ))}
+      </ol>
+    )
+  }
+  {
+    step === 3 && (
+      <div class="relative grid w-full max-w-60 grid-cols-3 gap-2">
+        {[3, 1, 1].map((cards, column) => (
+          <div class="flex flex-col gap-1.5 border border-line bg-raised p-1.5 shadow-(--shot-shadow)">
+            <span class:list={["mx-0.5 my-1 h-1 w-8", column === 1 ? "bg-brand/50" : "bg-faint/40"]} />
+            {column === 1 && <span class="h-7 border border-dashed border-line-strong" />}
+            {Array.from({ length: cards }, (_, card) => (
+              <span class:list={["flex h-7 items-center gap-1.5 bg-subtle px-1.5", column === 0 && card === 0 && "invisible"]}>
+                <span class="size-3 shrink-0 rounded-full bg-line-strong" />
+                <span class="h-1 w-full bg-line-strong" />
+              </span>
+            ))}
+          </div>
+        ))}
+        <span class="mover absolute flex h-7 items-center gap-1.5 bg-brand-soft px-1.5 ring-1 ring-brand">
+          <span class="size-3 shrink-0 rounded-full bg-brand" />
+          <span class="h-1 w-full bg-brand/40" />
+        </span>
+        <span class="mail absolute flex size-6 items-center justify-center rounded-full bg-brand text-white shadow-md">
+          <svg viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">
+            <path d="M2.5 4.5h11v7h-11z M2.5 4.75 8 8.75l5.5-4" />
+          </svg>
+        </span>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  /* Each drawing loops every 6 seconds. */
+  .step-visual {
+    --loop: 6s;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* Lines being written. */
+    .type {
+      transform-origin: left;
+      animation: sv-type var(--loop) var(--ease-out) var(--d, 0s) infinite;
+    }
+
+    @keyframes sv-type {
+      0%,
+      4% {
+        transform: scaleX(0);
+      }
+      22%,
+      90% {
+        transform: scaleX(1);
+      }
+      100% {
+        transform: scaleX(0);
+      }
+    }
+
+    /* A button being pressed. */
+    .press {
+      animation: sv-press var(--loop) var(--ease-in-out) infinite;
+    }
+
+    @keyframes sv-press {
+      0%,
+      44% {
+        transform: scale(1);
+        filter: none;
+      }
+      48% {
+        transform: scale(0.9);
+        filter: brightness(1.15);
+      }
+      54%,
+      100% {
+        transform: scale(1);
+        filter: none;
+      }
+    }
+
+    /* The job goes live once it's published. */
+    .live {
+      animation: sv-appear var(--loop) var(--ease-out) infinite;
+    }
+
+    .pulse {
+      animation: sv-pulse 1.2s ease-out infinite;
+    }
+
+    @keyframes sv-appear {
+      0%,
+      50% {
+        opacity: 0;
+        transform: scale(0.6);
+      }
+      56%,
+      90% {
+        opacity: 1;
+        transform: none;
+      }
+      96%,
+      100% {
+        opacity: 0;
+        transform: scale(0.6);
+      }
+    }
+
+    @keyframes sv-pulse {
+      from {
+        box-shadow: 0 0 0 0 rgb(16 185 129 / 0.5);
+      }
+      to {
+        box-shadow: 0 0 0 6px rgb(16 185 129 / 0);
+      }
+    }
+
+    /* A resume dropped in, the form sent. */
+    .drop {
+      animation: sv-drop var(--loop) var(--ease-out) infinite;
+    }
+
+    @keyframes sv-drop {
+      0%,
+      24% {
+        opacity: 0;
+        transform: translateY(-0.75rem) scale(0.9);
+      }
+      32%,
+      90% {
+        opacity: 1;
+        transform: none;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .sent {
+      animation: sv-appear var(--loop) cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+    }
+
+    /* Applications ranked: bars grow, a scan runs down the list. */
+    .bar {
+      transform-origin: left;
+      animation: sv-grow 1.2s var(--ease-out) var(--d) both;
+    }
+
+    @keyframes sv-grow {
+      from {
+        transform: scaleX(0);
+      }
+    }
+
+    .scan {
+      animation: sv-scan 3s var(--ease-in-out) infinite;
+    }
+
+    @keyframes sv-scan {
+      0% {
+        transform: translateY(-100%);
+      }
+      70%,
+      100% {
+        transform: translateY(450%);
+      }
+    }
+
+    .first {
+      animation: sv-pulse-brand 2s ease-out infinite;
+    }
+
+    @keyframes sv-pulse-brand {
+      from {
+        box-shadow: 0 0 0 0 rgb(79 70 229 / 0.45);
+      }
+      to {
+        box-shadow: 0 0 0 7px rgb(79 70 229 / 0);
+      }
+    }
+  }
+
+  /* An applicant moves to the next stage, and its email goes out. */
+  .mover {
+    top: calc(0.375rem + 0.75rem + 0.375rem + 1px);
+    left: calc(0.375rem + 1px);
+    width: calc((100% - 1rem) / 3 - 0.75rem - 2px);
+  }
+
+  .mail {
+    top: -0.625rem;
+    left: calc((100% - 1rem) / 3 * 2 + 0.5rem - 0.75rem);
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .mover {
+      animation: sv-move var(--loop) var(--ease-in-out) infinite;
+    }
+
+    @keyframes sv-move {
+      0%,
+      20% {
+        transform: none;
+        opacity: 1;
+      }
+      42%,
+      88% {
+        transform: translateX(calc(100% + 1.25rem + 2px));
+        opacity: 1;
+      }
+      96% {
+        transform: translateX(calc(100% + 1.25rem + 2px));
+        opacity: 0;
+      }
+      100% {
+        transform: none;
+        opacity: 0;
+      }
+    }
+
+    .mail {
+      animation: sv-mail var(--loop) cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+    }
+
+    @keyframes sv-mail {
+      0%,
+      44% {
+        opacity: 0;
+        transform: scale(0.4);
+      }
+      50%,
+      86% {
+        opacity: 1;
+        transform: none;
+      }
+      92%,
+      100% {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mover {
+      transform: translateX(calc(100% + 1.25rem + 2px));
+    }
+  }
+</style>

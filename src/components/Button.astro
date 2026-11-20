@@ -1,26 +1,23 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import Roll from "./Roll.astro";
 
 interface Props extends HTMLAttributes<"a"> {
   href: string;
-  variant?: "primary" | "secondary" | "ghost";
+  /** `light` and `outline-light` are for dark backgrounds. */
+  variant?: "primary" | "secondary" | "ghost" | "light" | "outline-light";
   size?: "md" | "lg";
 }
 
 const { href, variant = "primary", size = "md", class: className, ...rest } = Astro.props;
+// The label rolls on hover. It's plain text, so undo the slot's escaping.
+const label = (await Astro.slots.render("default"))
+  .trim()
+  .replace(/&(#39|#x27|quot|lt|gt|amp);/g, (_, entity: string) =>
+    ({ "#39": "'", "#x27": "'", quot: '"', lt: "<", gt: ">", amp: "&" })[entity] ?? "",
+  );
 ---
 
-<a
-  href={href}
-  class:list={[
-    "inline-flex shrink-0 items-center justify-center gap-2 rounded-full font-medium whitespace-nowrap transition-colors duration-150",
-    size === "md" ? "h-9 px-4 text-[0.9375rem]" : "h-12 px-6 text-base",
-    variant === "primary" && "bg-brand text-on-brand shadow-[inset_0_1px_0_oklch(100%_0_0/0.18),0_1px_2px_oklch(30%_0.15_277/0.3)] hover:bg-brand-hover",
-    variant === "secondary" && "border border-line-strong bg-raised text-ink hover:border-faint/60 hover:bg-subtle",
-    variant === "ghost" && "text-ink hover:bg-subtle",
-    className,
-  ]}
-  {...rest}
->
-  <slot />
+<a href={href} class:list={["btn", `btn-${variant}`, size === "lg" && "btn-lg", className]} {...rest}>
+  <Roll text={label} wrap={size === "lg"} />
 </a>

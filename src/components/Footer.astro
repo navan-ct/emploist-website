@@ -3,6 +3,8 @@ import { getLocale, getMessages } from "../i18n";
 import { type Locale, localizePath, splitPath } from "../i18n/locales";
 import { DIRECTORIES } from "../lib/directories";
 import { APP, SITE } from "../lib/site";
+import Band from "./Band.astro";
+import Roll from "./Roll.astro";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import Wordmark from "./Wordmark.astro";
 
@@ -55,56 +57,81 @@ const columns = [
     ],
   },
 ];
+// On wide screens the columns are cells of equal height, so the short ones
+// get empty cells below their links.
+const rows = Math.max(...columns.map((column) => column.links.length));
 ---
 
-<footer class="border-t border-line">
-  <div class="container-page grid gap-12 py-16 md:grid-cols-[1.4fr_repeat(4,1fr)] md:gap-8">
-    <div class="flex flex-col items-start gap-4">
-      <a href={page("/")} class="-m-1 rounded-md p-1" aria-label={t.site.home}><Wordmark /></a>
-      <p class="max-w-xs text-[0.9375rem] leading-relaxed">{t.footer.tagline}</p>
+<footer class="mt-auto">
+  <Band />
+  <div class="pt-16 sm:pt-24">
+    <div class="container-page rule-t rule-b">
+      <div class="cells lg:grid-cols-12">
+        <div class="flex flex-col lg:col-span-5">
+          <div class="flex h-16 items-center bg-subtle px-5 sm:px-6">
+            <a href={page("/")} class="-m-1 p-1" aria-label={t.site.home}><Wordmark /></a>
+          </div>
+          <p class="text-lead flex-1 border-t border-line px-5 py-6 sm:px-6 lg:pr-16">{t.footer.tagline}</p>
+          <p class="text-label flex h-16 items-center border-t border-line bg-subtle px-5 text-ink sm:px-6">
+            {t.footer.questions}
+          </p>
+          <a
+            href={`mailto:${SITE.supportEmail}`}
+            class="group/mail flex h-16 items-center justify-between border-t border-line px-5 text-[1.0625rem] tracking-[-0.03em] text-ink transition-colors duration-300 hover:bg-subtle hover:text-brand-ink sm:px-6"
+          >
+            <Roll text={SITE.supportEmail} />
+            <svg viewBox="0 0 16 16" class="size-4 transition-transform duration-300 group-hover/mail:translate-x-0.5 group-hover/mail:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <path d="M5 11 11 5M6 5h5v5" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="cells grid-cols-2 border-t border-line sm:grid-cols-4 lg:col-span-7 lg:border-t-0">
+          {
+            columns.map((column) => (
+              <nav aria-label={column.title} class="flex flex-col">
+                <h2 class="text-label flex h-16 items-center justify-center bg-subtle px-3 text-center text-ink">
+                  {column.title}
+                </h2>
+                <ul class="flex flex-col">
+                  {column.links.map((link) => (
+                    <li class="border-t border-line">
+                      <a
+                        href={link.href}
+                        class="flex min-h-16 items-center justify-center px-3 py-3 text-center text-[0.9375rem] tracking-[-0.02em] text-ink transition-colors duration-300 hover:bg-subtle hover:text-brand-ink"
+                      >
+                        <Roll text={link.label} wrap class="min-w-0" />
+                      </a>
+                    </li>
+                  ))}
+                  {Array.from({ length: rows - column.links.length }, () => (
+                    <li class="hidden h-16 border-t border-line sm:block" aria-hidden="true" />
+                  ))}
+                </ul>
+              </nav>
+            ))
+          }
+        </div>
+      </div>
     </div>
-    {
-      columns.map((column) => (
-        <nav aria-label={column.title}>
-          <h2 class="text-sm font-semibold">{column.title}</h2>
-          <ul class="mt-4 flex flex-col gap-3 text-[0.9375rem]">
-            {column.links.map((link) => (
-              <li>
-                <a href={link.href} class="transition-colors hover:text-ink">
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      ))
-    }
-  </div>
-  <div class="container-page">
+
+    <div class="container-page flex flex-wrap items-center justify-between gap-x-6 gap-y-3 px-5 py-6 text-sm text-faint sm:px-6">
+      <p>{t.footer.copyright(year)}</p>
+      <LanguageSwitcher alternates={alternates} placement="footer" />
+    </div>
+
     {
       homeBadges.length > 0 && (
-        <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3 pb-10">
+        <div class="container-page rule-t flex flex-wrap items-center justify-center gap-3 px-5 py-6">
           {homeBadges.map((badge) => (
             <div class="home-badge flex" set:html={badge} />
           ))}
         </div>
       )
     }
-    <!-- On large screens, equal side columns keep the language picker in the
-         center. Every language's text fits them from lg up, not below. -->
-    <div class="flex flex-col gap-3 border-t border-line py-6 text-sm text-faint sm:flex-row sm:items-center sm:justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-x-6">
-      <p>{t.footer.copyright(year)}</p>
-      <LanguageSwitcher alternates={alternates} placement="footer" />
-      <p class="lg:text-right">
-        <!-- No space after full-width punctuation, as in Japanese. -->
-        {t.footer.questions}{/[　-〿＀-￯]$/.test(t.footer.questions) ? "" : " "}
-        <a
-          href={`mailto:${SITE.supportEmail}`}
-          class="text-body underline-offset-4 hover:text-ink hover:underline">{SITE.supportEmail}</a
-        >
-      </p>
-    </div>
   </div>
+  <Band />
+  <div class="h-10 sm:h-16" aria-hidden="true"></div>
 </footer>
 
 <style>

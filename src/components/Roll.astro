@@ -1,0 +1,52 @@
+---
+// Text whose letters roll up, one after another, when the link or button
+// around it is hovered (see .roll in global.css). Screen readers get the
+// text once, as it is.
+interface Props {
+  text: string;
+  /** Lets the text wrap between words, for buttons that wrap on phones. */
+  wrap?: boolean;
+  class?: string;
+}
+
+const { text, wrap = false, class: className } = Astro.props;
+// Very long words (German compounds) stay plain text, so they can still break
+// to fit a narrow space.
+// So does Japanese that may wrap, which breaks between letters, not spaces.
+const plain =
+  text.split(/\s+/).some((word) => [...word].length > 15) || (wrap && /[\u3040-\u30ff\u3400-\u9fff]/.test(text));
+const graphemes = new Intl.Segmenter(undefined, { granularity: "grapheme" });
+let index = 0;
+// Words stay whole, so lines only break between them.
+const words = text.split(/(\s+)/).map((part) =>
+  /^\s+$/.test(part)
+    ? { space: true as const, text: part }
+    : { space: false as const, chars: [...graphemes.segment(part)].map((g) => ({ char: g.segment, i: index++ })) },
+);
+---
+
+
+{
+  plain ? (
+    <span class={className}>{text}</span>
+  ) : (
+    <span class:list={["roll", wrap && "roll-wrap", className]}>
+      <span class="sr-only">{text}</span>
+      <span aria-hidden="true">
+        {words.map((word) =>
+          word.space ? (
+            " "
+          ) : (
+            <span class="roll-word">
+              {word.chars.map(({ char, i }) => (
+                <span class="roll-char" style={`--i:${Math.min(i, 40)}`}>
+                  <span>{char}</span>
+                </span>
+              ))}
+            </span>
+          ),
+        )}
+      </span>
+    </span>
+  )
+}

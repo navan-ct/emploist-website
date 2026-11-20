@@ -1,31 +1,57 @@
 ---
 import { getLocale, getMessages } from "../../i18n";
+import { CODE_POINT_ICONS } from "../../lib/icons";
+import Icon from "../Icon.astro";
 import Screenshot from "../Screenshot.astro";
+import SectionHeader from "../SectionHeader.astro";
+import Texture from "../Texture.astro";
 import Window from "../Window.astro";
 
 const t = getMessages(getLocale(Astro)).designInCode;
 ---
 
-<section aria-labelledby="code-title" class="scheme-dark overflow-hidden py-20 sm:py-28">
-  <div class="container-page">
-    <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
-      <div class="lg:col-span-6">
-        <p class="text-eyebrow">{t.eyebrow}</p>
-        <h2 id="code-title" class="text-heading mt-4">{t.title}</h2>
-        <p class="text-lead mt-6">{t.lead}</p>
+<section aria-labelledby="code-title" class="section-y">
+  <div class="container-page rule-t rule-b">
+    <div class="texture scheme-dark">
+      <Texture name="code" />
+      <SectionHeader eyebrow={t.eyebrow} title={t.title} id="code-title" lead={t.lead} class="pt-16 sm:pt-24" />
+      <div class="code-stage mt-12 px-3 sm:mt-16 sm:px-10 lg:px-16" data-reveal style="--reveal-delay: 150ms">
+        <Window>
+          <Screenshot
+            name="careers-code"
+            scheme="dark"
+            alt={t.screenshotAlt}
+            sizes="(min-width: 80rem) 72rem, calc(100vw - 2.5rem)"
+          />
+        </Window>
       </div>
-      <ul class="check-list flex flex-col gap-4 self-end text-[0.9375rem] leading-relaxed lg:col-span-5 lg:col-start-8">
-        {t.points.map((point) => <li>{point}</li>)}
-      </ul>
     </div>
 
-    <Window class="mt-14 sm:mt-16">
-      <Screenshot
-        name="careers-code"
-        scheme="dark"
-        alt={t.screenshotAlt}
-        sizes="(min-width: 76rem) 72rem, calc(100vw - 2.5rem)"
-      />
-    </Window>
+    <ul class="cells sm:grid-cols-3" data-stagger style="--stagger-step: 90ms">
+      {
+        t.points.map((point, index) => (
+          <li class="rule-t flex flex-col gap-4 px-5 pt-6 pb-8 sm:px-6">
+            <span class="flex size-10 items-center justify-center bg-surface text-ink">
+              <Icon path={CODE_POINT_ICONS[index] ?? CODE_POINT_ICONS[0]} class="size-5" stroke={1.4} />
+            </span>
+            <p class="leading-relaxed text-ink">{point}</p>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </section>
+
+<style>
+  /* The editor runs off the bottom of the box. */
+  .code-stage {
+    max-height: 34rem;
+    overflow: hidden;
+  }
+
+  @media (width < 40rem) {
+    .code-stage {
+      max-height: 16rem;
+    }
+  }
+</style>

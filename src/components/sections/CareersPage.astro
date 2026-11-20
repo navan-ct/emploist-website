@@ -1,53 +1,61 @@
 ---
 import { getLocale, getMessages } from "../../i18n";
+import { CAREERS_FACT_ICONS } from "../../lib/icons";
+import Icon from "../Icon.astro";
 import Screenshot from "../Screenshot.astro";
+import SectionHeader from "../SectionHeader.astro";
 import Window from "../Window.astro";
 
 const t = getMessages(getLocale(Astro)).careersPage;
 ---
 
-<section
-  id="careers-page"
-  aria-labelledby="careers-title"
-  class="overflow-hidden border-y border-line bg-subtle py-20 sm:py-28"
->
-  <div class="container-page">
-    <div class="mx-auto max-w-3xl text-center">
-      <p class="text-eyebrow">{t.eyebrow}</p>
-      <h2 id="careers-title" class="text-heading mt-4">{t.title}</h2>
-      <p class="text-lead mx-auto mt-6 max-w-2xl">{t.lead}</p>
-    </div>
+<section id="careers-page" aria-labelledby="careers-title" class="section-y">
+  <SectionHeader eyebrow={t.eyebrow} title={t.title} id="careers-title" lead={t.lead} />
 
-    <div class="relative mx-auto mt-14 max-w-5xl pb-6 sm:mt-16 lg:pr-20">
-      <Window url="northwind.emploist.com">
-        <Screenshot
-          name="careers-page"
-          alt={t.screenshotAlt}
-          sizes="(min-width: 64rem) 58rem, calc(100vw - 2.5rem)"
-        />
-      </Window>
-      <div
-        class="absolute right-0 -bottom-4 hidden w-56 rounded-[2.25rem] border-[7px] border-zinc-900 bg-zinc-900 shadow-2xl ring-1 ring-black/10 sm:block lg:w-64"
-      >
-        <div class="overflow-hidden rounded-[1.75rem] bg-white">
-          <Screenshot
-            name="careers-job-mobile"
-            alt={t.mobileScreenshotAlt}
-            sizes="16rem"
-          />
+  <div class="container-page rule-t rule-b mt-14 sm:mt-16">
+    <!-- The careers page on a wide screen, and a job on a phone. -->
+    <div class="careers-stage overflow-hidden bg-subtle px-4 pt-6 pb-6 sm:aspect-[2/1] sm:px-10 sm:pt-12 sm:pb-0 lg:px-16 lg:pt-16">
+      <div class="relative mx-auto max-w-5xl lg:pr-24" data-reveal style="--reveal-delay: 120ms">
+        <Window url="northwind.emploist.com">
+          <Screenshot name="careers-page" alt={t.screenshotAlt} sizes="(min-width: 64rem) 58rem, calc(100vw - 2.5rem)" />
+        </Window>
+        <div
+          class="float-card absolute right-0 -bottom-16 hidden w-48 sm:block lg:-bottom-28 rounded-[2rem] border-[6px] border-[#141414] bg-[#141414] shadow-[0_24px_48px_-16px_rgb(13_13_13/0.45)] lg:w-60"
+        >
+          <div class="overflow-hidden rounded-[1.625rem] bg-white">
+            <Screenshot name="careers-job-mobile" alt={t.mobileScreenshotAlt} sizes="15rem" />
+          </div>
         </div>
       </div>
     </div>
 
-    <dl class="mt-20 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+    <dl class="cells sm:grid-cols-2 lg:grid-cols-3" data-stagger style="--stagger-step: 80ms">
       {
-        t.facts.map((fact) => (
-          <div class="border-t border-line-strong pt-5">
-            <dt class="font-semibold text-ink">{fact.title}</dt>
-            <dd class="mt-2 text-[0.9375rem] leading-relaxed">{fact.text}</dd>
+        t.facts.map((fact, index) => (
+          <div class="row-span-2 grid grid-rows-subgrid">
+            <dt class="rule-t flex items-center gap-3 bg-subtle px-5 py-4 sm:px-6">
+              <Icon
+                path={CAREERS_FACT_ICONS[index] ?? CAREERS_FACT_ICONS[0]}
+                class="size-5 shrink-0 text-brand-ink"
+                stroke={1.4}
+              />
+              <span class="text-[1.25rem] leading-snug tracking-[-0.04em] text-ink">{fact.title}</span>
+            </dt>
+            <dd class="rule-t px-5 pt-5 pb-7 leading-relaxed sm:px-6">{fact.text}</dd>
           </div>
         ))
       }
     </dl>
   </div>
 </section>
+
+<style>
+  /* Hairlines and a fine grid behind the screenshots. */
+  .careers-stage {
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: center top;
+  }
+</style>

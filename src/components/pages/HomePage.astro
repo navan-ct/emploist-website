@@ -3,18 +3,19 @@
 import { getLocale, getMessages, PLAN_FACTS } from "../../i18n";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { APP, PLAN, SITE } from "../../lib/site";
+import Band from "../Band.astro";
 import CallToAction from "../CallToAction.astro";
 import AiAssistants from "../sections/AiAssistants.astro";
 import CareersPage from "../sections/CareersPage.astro";
 import Details from "../sections/Details.astro";
 import DesignInCode from "../sections/DesignInCode.astro";
 import Faq from "../sections/Faq.astro";
-import FormsAndTeam from "../sections/FormsAndTeam.astro";
+import FeatureTicker from "../sections/FeatureTicker.astro";
 import Hero from "../sections/Hero.astro";
+import Overview from "../sections/Overview.astro";
 import HowItWorks from "../sections/HowItWorks.astro";
 import Pricing from "../sections/Pricing.astro";
 import Ranking from "../sections/Ranking.astro";
-import StagesAndEmails from "../sections/StagesAndEmails.astro";
 
 const locale = getLocale(Astro);
 const t = getMessages(locale);
@@ -83,16 +84,28 @@ const jsonLd = [
 ---
 
 <BaseLayout title={t.site.title} description={description} jsonLd={jsonLd}>
+  <Band />
   <Hero />
+  <Band />
+  <FeatureTicker />
+  <Band />
   <HowItWorks />
+  <Band />
   <Ranking />
+  <Band />
   <CareersPage />
+  <Band />
   <DesignInCode />
-  <FormsAndTeam />
-  <StagesAndEmails />
+  <Band />
+  <Overview />
+  <Band />
   <AiAssistants />
+  <Band />
   <Details />
+  <Band />
   <Pricing />
+  <Band />
   <Faq />
+  <Band />
   <CallToAction />
 </BaseLayout>

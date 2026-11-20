@@ -1,0 +1,149 @@
+---
+// Application forms, teamwork, and stages with their emails: a list that
+// stays in place on wide screens while each one's picture scrolls past, the
+// current one open (see [data-overview] in BaseLayout). On phones, each
+// picture has its words above it.
+import { getLocale, getMessages } from "../../i18n";
+import Screenshot from "../Screenshot.astro";
+import Texture from "../Texture.astro";
+
+const messages = getMessages(getLocale(Astro));
+const { forms, team, label } = messages.formsAndTeam;
+const stages = messages.stagesAndEmails;
+
+const items = [
+  { id: "overview-forms", eyebrow: forms.eyebrow, title: forms.title, text: forms.text },
+  { id: "overview-team", eyebrow: team.eyebrow, title: team.title, text: team.text },
+  { id: "overview-stages", eyebrow: stages.eyebrow, title: stages.title, text: stages.lead },
+];
+---
+
+<section aria-label={label} class="section-y">
+  <div class="container-page rule-t rule-b" data-overview>
+    <div class="cells lg:grid-cols-12">
+      <!-- The list, which stays in place on wide screens. -->
+      <div class="hidden lg:col-span-5 lg:block">
+        <ol class="sticky top-(--header-height) flex flex-col">
+          {
+            items.map((item, index) => (
+              <li class:list={["overview-item border-b border-line", index === 0 && "is-current"]} data-overview-item>
+                <a href={`#${item.id}`} class="flex flex-col px-8 py-7 xl:px-10">
+                  <span class="overview-tag tag w-fit">{item.eyebrow}</span>
+                  <h2 class="overview-title text-[1.625rem] leading-[1.2] tracking-[-0.045em] xl:text-[1.875rem]">{item.title}</h2>
+                  <span class="overview-detail grid">
+                    <span class="min-h-0 overflow-hidden">
+                      <span class="block pt-3 leading-relaxed text-body">{item.text}</span>
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+
+      <!-- The pictures. -->
+      <div class="flex flex-col lg:col-span-7">
+        {
+          items.map((item, index) => (
+            <div id={item.id} class:list={["flex flex-col", index > 0 && "border-t border-line"]}>
+              <header class="flex flex-col items-start gap-4 px-5 py-8 sm:px-8 lg:hidden">
+                <p class="tag">{item.eyebrow}</p>
+                <h2 class="text-heading">{item.title}</h2>
+                <p class="text-lead">{item.text}</p>
+              </header>
+              <div
+                class="texture flex min-h-[26rem] items-center justify-center px-4 py-12 max-lg:border-t max-lg:border-line sm:min-h-[34rem] sm:px-10 lg:min-h-[40rem]"
+                data-overview-visual
+              >
+                <Texture name={(["panel", "panel-alt", "cta"] as const)[index]!} />
+                {index === 0 && (
+                  <div class="shot w-full max-w-[34rem]" data-reveal="blur">
+                    <Screenshot
+                      name="form"
+                      alt={forms.screenshotAlt}
+                      sizes="(min-width: 80rem) 34rem, (min-width: 64rem) 50vw, calc(100vw - 4rem)"
+                    />
+                  </div>
+                )}
+                {index === 1 && (
+                  <div class="shot w-full max-w-[26rem]" data-reveal="blur">
+                    <Screenshot name="comments" alt={team.screenshotAlt} sizes="(min-width: 40rem) 26rem, calc(100vw - 4rem)" />
+                  </div>
+                )}
+                {index === 2 && (
+                  <div class="w-full max-w-xl" data-reveal="blur">
+                    <div class="shot w-[90%]">
+                      <Screenshot
+                        name="stage-email"
+                        alt={stages.editorScreenshotAlt}
+                        sizes="(min-width: 80rem) 33rem, (min-width: 64rem) 46vw, 90vw"
+                      />
+                    </div>
+                    <div class="shot float-card relative z-10 -mt-12 ml-auto w-[76%] sm:-mt-24">
+                      <Screenshot
+                        name="stage-email-preview"
+                        alt={stages.previewScreenshotAlt}
+                        sizes="(min-width: 80rem) 28rem, (min-width: 64rem) 38vw, 76vw"
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .overview-item {
+    transition: background-color 0.6s var(--ease-out);
+  }
+
+  .overview-item a {
+    gap: 0.875rem;
+  }
+
+  .overview-title {
+    color: var(--ink);
+    transition: color 0.6s var(--ease-out);
+  }
+
+  .overview-tag {
+    transition: opacity 0.6s var(--ease-out);
+  }
+
+  .overview-detail {
+    grid-template-rows: 1fr;
+    transition:
+      grid-template-rows 0.7s var(--ease-out),
+      opacity 0.6s var(--ease-out);
+  }
+
+  /* With the script, only the current item is open. */
+  :global(.js) .overview-item:not(.is-current) {
+    & .overview-detail {
+      grid-template-rows: 0fr;
+      opacity: 0;
+    }
+
+    & .overview-title {
+      color: var(--faint);
+    }
+
+    & .overview-tag {
+      opacity: 0.55;
+    }
+
+    &:hover .overview-title {
+      color: var(--ink);
+    }
+  }
+
+  :global(.js) .overview-item.is-current {
+    background-color: var(--subtle);
+  }
+</style>

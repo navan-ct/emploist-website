@@ -1,0 +1,37 @@
+---
+// A section's tag, title, and lead, centered above its cells (or to one side).
+interface Props {
+  eyebrow?: string;
+  title: string;
+  /** The title's id, for the section's aria-labelledby. */
+  id: string;
+  lead?: string;
+  align?: "center" | "start";
+  /** h1 on pages whose header this is. */
+  as?: "h1" | "h2";
+  class?: string;
+}
+
+const { eyebrow, title, id, lead, align = "center", as: Heading = "h2", class: className } = Astro.props;
+---
+
+<header
+  data-reveal
+  class:list={[
+    "container-page flex flex-col gap-5 px-5 sm:gap-6 sm:px-8",
+    align === "center" ? "items-center text-center" : "items-start",
+    className,
+  ]}
+>
+  {eyebrow && <p class="tag">{eyebrow}</p>}
+  <Heading
+    id={id}
+    data-reveal="blur"
+    style="--reveal-delay: 80ms"
+    class:list={[Heading === "h1" ? "text-display max-w-[16em]" : "text-heading", align === "center" && Heading === "h2" && "max-w-[13em]"]}
+  >
+    {title}
+  </Heading>
+  {lead && <p class:list={["text-lead", align === "center" && "max-w-[38rem]"]}>{lead}</p>}
+  <slot />
+</header>

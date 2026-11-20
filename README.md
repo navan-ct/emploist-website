@@ -7,8 +7,8 @@ framework, so pages load fast and are easy for search engines to read.
 
 ## Tech stack
 
-- **Astro 7**, static output, with the Fonts API (self-hosted Inter) and
-  `astro:assets` (AVIF and WebP screenshots at several widths)
+- **Astro 7**, static output, with the Fonts API (self-hosted Geist and Geist
+  Mono) and `astro:assets` (AVIF and WebP screenshots at several widths)
 - **Tailwind CSS 4**, configured in `src/styles/global.css`, with the
   typography plugin for blog posts
 - **Markdown and MDX** blog posts in a content collection, with RSS and a
@@ -43,11 +43,14 @@ Open http://localhost:4321.
 public/                  Favicons, and og.png (the link preview image)
 scripts/
   screenshots.mjs        Takes the app screenshots from a local Emploist app
+  textures.mjs           Draws the gradient backgrounds in src/assets/textures/
   og-image.mjs           Draws public/og.png
 src/
   assets/screenshots/    App screenshots
+  assets/textures/       Gradient backgrounds for the dark boxes and panels
   components/            Header, footer, SEO tags, screenshots, buttons,
-                         the language switcher
+                         section headers, bands, gradient boxes, the language
+                         switcher
     pages/               The home page, blog, post, Listed on, and 404, in any
                          language
     sections/            The landing page's sections, in page order
@@ -70,6 +73,47 @@ src/
                          the other languages
   styles/global.css      Design tokens and shared styles
 ```
+
+## Design
+
+The site is a light gray page in a frame: two hatched rails a gutter in from
+each side of the window, with the content between them divided into cells by
+hairlines that run the window's full width. Text is Geist at a regular weight,
+labels and buttons are Geist Mono in capitals, and the accent is the app's
+indigo. The pieces are in `src/styles/global.css`:
+
+- `.container-page` is the column between the rails, and `.rails` draws them.
+- `.rule-t` and `.rule-b` draw a full-width hairline at the top or bottom of
+  an element. `.cells` is a grid with hairlines between its columns (its rows
+  must be full); `.cells-open` takes any number of cells.
+- `Band.astro` is the band of fine lines between sections, and
+  `SectionHeader.astro` a section's tag, title, and lead.
+- `.texture` with `Texture.astro` is a box with a gradient behind its content,
+  and a dot grid and grain on top. The gradients are drawn by
+  `node scripts/textures.mjs`; the dot grid and grain are CSS, so they stay
+  sharp at any size.
+
+### Motion
+
+Like the rest of the look, the motion follows the PayFlow template the
+design is based on. It's all in the "Motion" part of `global.css` and the
+script at the end of `BaseLayout.astro`, and it's extra: without JavaScript,
+or for people who prefer less motion, everything is simply there.
+
+- `data-reveal` fades an element up as it scrolls into view, once;
+  `data-reveal="blur"` brings it into focus instead (section titles).
+  `--reveal-delay` staggers neighbors.
+- `data-stagger` does the same for each of an element's children, one after
+  another (`--stagger-start`, `--stagger-step`).
+- `data-count="91"` counts a number up from zero when it comes into view, in
+  the page's language (`data-format`: `number`, `percent`, or `usd`).
+- `data-play` runs an element's looping animations only while it's on
+  screen, like the "How it works" drawings in `StepVisual.astro`.
+- `Roll.astro` makes a link's or button's letters roll up on hover, one
+  after another. `Button.astro`, the header, and the footer use it.
+- `.ticker` moves a row sideways forever (`FeatureTicker.astro`).
+- `data-overview` is the list that stays in place while each picture scrolls
+  past, the current one open (`Overview.astro`).
 
 ## Writing a blog post
 
@@ -172,8 +216,8 @@ Each shot is taken at 2x in the app's light theme, except `careers-code`, which
 is taken in the dark theme for the dark "Design in code" section. The site
 itself is light only.
 
-After changing the match screenshot or the headline, redraw the link preview
-image with `node scripts/og-image.mjs`.
+After changing the match screenshot, the panel texture, or the headline,
+redraw the link preview image with `node scripts/og-image.mjs`.
 
 The same script takes the screenshots in the "How to customize your careers
 page with code or AI" post (`ONLY=post`), and draws its cover. It edits the

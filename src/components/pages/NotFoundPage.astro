@@ -1,23 +1,51 @@
 ---
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
+import texture from "../../assets/textures/cta.webp";
 import { getLocale, getMessages } from "../../i18n";
 import { LOCALES, localizePath } from "../../i18n/locales";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Band from "../Band.astro";
 import Button from "../Button.astro";
 
 const locale = getLocale(Astro);
 const t = getMessages(locale).notFound;
 // The language switcher goes to each language's home page.
 const homePages = Object.fromEntries(LOCALES.map((option) => [option, localizePath("/", option)]));
+// The big number is filled with a gradient, like the site's gradient boxes.
+const fill = await getImage({ src: texture as ImageMetadata, width: 960, format: "webp", quality: 80 });
 ---
 
 <BaseLayout title={`${t.title} | Emploist`} description={t.description} noindex alternates={homePages}>
-  <section class="container-page flex flex-col items-start py-28 sm:py-40">
-    <p class="font-mono text-sm text-faint">404</p>
-    <h1 class="text-heading mt-4">{t.heading}</h1>
+  <Band />
+  <section aria-labelledby="not-found-title" class="container-page flex flex-col items-center px-5 py-24 text-center sm:px-8 sm:py-32">
+    <p class="tag">404</p>
+    <p class="not-found-number" style={`--fill: url(${fill.src})`} data-reveal="blur" aria-hidden="true">404</p>
+    <h1 id="not-found-title" class="text-heading" data-reveal style="--reveal-delay: 150ms">{t.heading}</h1>
     <p class="text-lead mt-5 max-w-xl">{t.text}</p>
-    <div class="mt-9 flex flex-wrap gap-3">
+    <div class="mt-10 flex flex-wrap justify-center gap-3">
       <Button href={localizePath("/", locale)} size="lg">{t.home}</Button>
       <Button href={localizePath("/blog/", locale)} size="lg" variant="secondary">{t.blog}</Button>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .not-found-number {
+    margin-block: 1.5rem 1rem;
+    font-size: clamp(8rem, 5rem + 16vw, 17rem);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.07em;
+    color: transparent;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Cpath d='M0 2h3v1H0zM2 0h1v2H2z' fill='%23000' fill-opacity='.18'/%3E%3C/svg%3E"),
+      var(--fill);
+    background-size:
+      3px 3px,
+      cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+</style>

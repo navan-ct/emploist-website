@@ -8,7 +8,9 @@ import { DEFAULT_LOCALE, type Locale, LOCALES, localizePath } from "../../i18n/l
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getTranslations, type Post, type PostTranslation, postUrl, readingMinutes } from "../../lib/blog";
 import { APP, SITE } from "../../lib/site";
+import Band from "../Band.astro";
 import Button from "../Button.astro";
+import Texture from "../Texture.astro";
 
 interface Props {
   post: Post;
@@ -20,7 +22,8 @@ const { post, translation } = Astro.props;
 const locale = getLocale(Astro);
 const t = getMessages(locale);
 const entry = translation ?? post;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+const contents = headings.filter((heading) => heading.depth === 2);
 const { title, description, pubDate, updatedDate, image, imageAlt, tags } = entry.data;
 const author = entry.data.author === "The Emploist team" ? t.blog.defaultAuthor : entry.data.author;
 const url = `${SITE.url}${postUrl(post.id, locale)}`;
@@ -79,63 +82,125 @@ const jsonLd = [
   jsonLd={jsonLd}
   alternates={alternates}
 >
-  <article class="container-page pt-12 pb-20 sm:pt-16 sm:pb-28">
-    <div class="mx-auto max-w-[44rem]">
+  <Band />
+  <article class="pt-14 sm:pt-20 lg:pt-24">
+    <header class="container-page flex flex-col items-center gap-6 px-5 text-center sm:px-8" data-reveal>
       <nav aria-label={t.blog.breadcrumb}>
-        <a href={localizePath("/blog/", locale)} class="text-[0.9375rem] font-medium text-faint transition-colors hover:text-ink">
-          ← {t.blog.title}
+        <a href={localizePath("/blog/", locale)} class="tag transition-colors hover:border-line-strong hover:text-brand-ink">
+          {t.blog.title}
         </a>
       </nav>
+      <h1 class="text-heading max-w-4xl" data-reveal="blur" style="--reveal-delay: 80ms">{title}</h1>
+      <p class="text-lead max-w-2xl">{description}</p>
+    </header>
 
-      <header class="mt-10">
-        <p class="text-sm text-faint">
+    <div class="container-page rule-t mt-12 sm:mt-16">
+      <div class="cells grid-cols-2 text-sm text-ink sm:grid-cols-3">
+        <p class="flex flex-col gap-1 px-5 py-4 sm:px-6">
           <time datetime={pubDate.toISOString()}>{formatDate(pubDate, locale)}</time>
-          <span aria-hidden="true"> · </span>
-          {t.blog.minutesToRead(readingMinutes(entry, locale))}
           {
             updatedDate && (
-              <>
-                <span aria-hidden="true"> · </span>
-                <time datetime={updatedDate.toISOString()}>{t.blog.updated(formatDate(updatedDate, locale))}</time>
-              </>
+              <time datetime={updatedDate.toISOString()} class="text-faint">
+                {t.blog.updated(formatDate(updatedDate, locale))}
+              </time>
             )
           }
         </p>
-        <h1 class="text-heading mt-4">{title}</h1>
-        <p class="text-lead mt-5">{description}</p>
-        <p class="mt-6 text-[0.9375rem] font-medium text-ink">{author}</p>
-      </header>
+        <p class="flex items-center px-5 py-4 sm:justify-center sm:px-6">{t.blog.minutesToRead(readingMinutes(entry, locale))}</p>
+        <p class="col-span-2 flex items-center border-t border-line px-5 py-4 sm:col-span-1 sm:justify-end sm:border-t-0 sm:px-6">
+          {author}
+        </p>
+      </div>
     </div>
 
     {
       image && (
-        <div class="mx-auto mt-12 max-w-5xl overflow-hidden rounded-3xl border border-line bg-subtle">
-          <Image
-            src={image}
-            alt={imageAlt ?? ""}
-            widths={[640, 960, 1280, 1600]}
-            sizes="(min-width: 64rem) 64rem, 100vw"
-            loading="eager"
-            fetchpriority="high"
-            class="w-full"
-          />
+        <div class="container-page rule-t bg-subtle p-3 sm:p-5">
+          <div class="overflow-hidden border border-line bg-subtle">
+            <Image
+              src={image}
+              alt={imageAlt ?? ""}
+              widths={[640, 960, 1280, 1600, 2400]}
+              sizes="(min-width: 80rem) 78rem, 100vw"
+              loading="eager"
+              fetchpriority="high"
+              class="w-full"
+            />
+          </div>
         </div>
       )
     }
 
-    <div class="prose-post prose prose-zinc mx-auto mt-12 max-w-[44rem] sm:prose-lg">
-      <Content />
-    </div>
-
-    <aside
-      aria-label={t.blog.tryEmploist}
-      class="mx-auto mt-16 flex max-w-[44rem] flex-col gap-6 rounded-3xl border border-line bg-subtle p-8 sm:flex-row sm:items-center sm:justify-between"
-    >
-      <div>
-        <p class="font-semibold text-ink">{t.blog.ctaTitle}</p>
-        <p class="mt-1 text-[0.9375rem]">{t.blog.ctaText(PLAN_FACTS)}</p>
+    <div class="container-page rule-t rule-b">
+      <div class="cells lg:grid-cols-12">
+        {
+          contents.length > 0 && (
+            <nav aria-labelledby="post-contents" class="hidden lg:col-span-3 lg:block">
+              <div class="sticky top-[calc(var(--header-height)+2.5rem)] px-6 py-12">
+                <h2 id="post-contents" class="text-label text-ink">{t.legal.contents}</h2>
+                <ol class="post-toc mt-5 flex flex-col gap-3 text-[0.9375rem] leading-snug tracking-[-0.015em]">
+                  {contents.map((heading) => (
+                    <li>
+                      <a href={`#${heading.slug}`} class="block text-body transition-colors hover:text-ink">
+                        {heading.text}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </nav>
+          )
+        }
+        <div class:list={["@container px-5 py-12 sm:px-8 sm:py-16", contents.length > 0 ? "lg:col-span-9" : "lg:col-span-12"]}>
+          <div class="prose-post prose prose-zinc mx-auto max-w-[44rem] sm:prose-lg">
+            <Content />
+          </div>
+        </div>
       </div>
-      <Button href={APP.signUpUrl}>{t.nav.startFreeTrial}</Button>
-    </aside>
+    </div>
   </article>
+
+  <Band />
+  <aside aria-label={t.blog.tryEmploist} class="section-y">
+    <div class="container-page rule-t rule-b">
+      <div class="texture scheme-dark flex flex-col items-start gap-6 px-6 py-14 sm:px-12 sm:py-16 lg:flex-row lg:items-center lg:justify-between">
+        <Texture name="cta" />
+        <div class="max-w-xl">
+          <p class="text-heading">{t.blog.ctaTitle}</p>
+          <p class="text-lead mt-4">{t.blog.ctaText(PLAN_FACTS)}</p>
+        </div>
+        <Button href={APP.signUpUrl} size="lg" variant="light">{t.nav.startFreeTrial}</Button>
+      </div>
+    </div>
+  </aside>
 </BaseLayout>
+
+<script is:inline>
+  // Marks the section being read in the contents.
+  (() => {
+    const links = [...document.querySelectorAll(".post-toc a")];
+    if (!links.length || !("IntersectionObserver" in window)) return;
+    const byId = new Map(links.map((link) => [decodeURIComponent(link.hash.slice(1)), link]));
+    const headings = [...byId.keys()].map((id) => document.getElementById(id)).filter(Boolean);
+    const visible = new Set();
+    const update = () => {
+      const current = headings.find((heading) => visible.has(heading)) ?? null;
+      if (!current) return;
+      for (const link of links) link.toggleAttribute("aria-current", link === byId.get(current.id));
+    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target);
+        update();
+      },
+      { rootMargin: "0px 0px -70% 0px" },
+    );
+    headings.forEach((heading) => observer.observe(heading));
+  })();
+</script>
+
+<style>
+  .post-toc :global(a[aria-current]) {
+    color: var(--brand-ink);
+  }
+</style>

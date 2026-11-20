@@ -198,10 +198,19 @@ const shots = (jobId) => [
     name: "form",
     viewport: { width: 1280, height: 1400 },
     url: `${APP_URL}/jobs/${jobId}/form`,
+    // The questions after "Which tools do you use most?" would peek in at
+    // the bottom, so they're hidden.
+    prepare: (page) =>
+      page.getByText("Which tools do you use most?").first().evaluate((title) => {
+        let card = title.closest("div.rounded-xl").nextElementSibling;
+        for (; card; card = card.nextElementSibling) card.style.visibility = "hidden";
+      }),
+    // The same room on every side: the boxes are the questions' cards (not
+    // the rounded buttons inside them).
     clip: (page) =>
       around(page, [
-        page.getByText("Full name", { exact: true }).first().locator("xpath=ancestor::*[contains(@class,'rounded')][1]"),
-        page.getByText("Which tools do you use most?").first().locator("xpath=ancestor::*[contains(@class,'rounded')][1]"),
+        page.getByText("Full name", { exact: true }).first().locator("xpath=ancestor::div[contains(@class,'rounded-xl')][1]"),
+        page.getByText("Which tools do you use most?").first().locator("xpath=ancestor::div[contains(@class,'rounded-xl')][1]"),
       ], 20),
   },
   {

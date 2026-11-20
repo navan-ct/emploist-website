@@ -23,7 +23,7 @@ const sizes = narrow
   : "(min-width: 80rem) 58rem, (min-width: 64rem) 52rem, calc(100vw - 2.5rem)";
 ---
 
-<figure class:list={["not-prose my-10 sm:my-12", narrow ? "mx-auto w-fit max-w-full" : "lg:-mx-16 xl:-mx-28"]}>
+<figure class:list={["not-prose my-10 sm:my-12", narrow ? "mx-auto w-fit max-w-full" : "figure-wide"]}>
   {
     frame === "window" ? (
       <Window url={url}>
@@ -37,3 +37,13 @@ const sizes = narrow
   }
   {caption && <figcaption class="mt-4 text-center text-sm leading-relaxed text-faint">{caption}</figcaption>}
 </figure>
+
+<style>
+  /* Wider than the text on large screens, as far as the column it's in (a
+     size container) allows: up to 58rem, centered on the text. */
+  @media (width >= 64rem) {
+    .figure-wide {
+      margin-inline: calc((100% - min(100cqw - 3rem, 58rem)) / 2);
+    }
+  }
+</style>

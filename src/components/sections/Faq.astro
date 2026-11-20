@@ -6,36 +6,32 @@ const t = getMessages(getLocale(Astro)).faq;
 const email = linkTo(`mailto:${SITE.supportEmail}`)(SITE.supportEmail);
 ---
 
-<section id="faq" aria-labelledby="faq-title" class="border-t border-line py-20 sm:py-28">
-  <div class="container-page grid gap-12 lg:grid-cols-12 lg:gap-16">
-    <div class="lg:col-span-4">
-      <p class="text-eyebrow">{t.eyebrow}</p>
-      <h2 id="faq-title" class="text-heading mt-4">{t.title}</h2>
-      <p
-        class="mt-6 leading-relaxed [&_a]:font-medium [&_a]:text-brand-ink [&_a]:underline-offset-4 [&_a:hover]:underline"
-        set:html={t.intro(email)}
-      />
-    </div>
-    <div class="lg:col-span-8">
-      <div class="border-t border-line">
+<section id="faq" aria-labelledby="faq-title" class="section-y">
+  <div class="container-page rule-t rule-b">
+    <div class="cells lg:grid-cols-12">
+      <div class="pad-x py-10 sm:py-14 lg:col-span-5">
+        <header class="flex flex-col items-start gap-5 lg:sticky lg:top-[calc(var(--header-height)+3.5rem)]" data-reveal>
+          <p class="tag">{t.eyebrow}</p>
+          <h2 id="faq-title" class="text-heading" data-reveal="blur" style="--reveal-delay: 80ms">{t.title}</h2>
+          <p class="text-lead text-links max-w-md" set:html={t.intro(email)} />
+        </header>
+      </div>
+      <div class="max-lg:border-t max-lg:border-line lg:col-span-7" data-stagger style="--stagger-step: 40ms">
         {
-          t.items(PLAN_FACTS).map((item) => (
-            <details class="group border-b border-line" name="faq">
-              <summary class="flex cursor-pointer list-none items-start justify-between gap-6 py-5 text-left text-[1.0625rem] font-medium text-ink [&::-webkit-details-marker]:hidden">
-                {item.question}
-                <svg
-                  viewBox="0 0 20 20"
-                  class="mt-1 size-4.5 shrink-0 text-faint transition-transform duration-200 group-open:rotate-45"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  aria-hidden="true"
-                >
-                  <path d="M10 4v12M4 10h12" />
-                </svg>
+          t.items(PLAN_FACTS).map((item, index) => (
+            <details class:list={["faq-item group", index > 0 && "border-t border-line"]} name="faq">
+              <summary class="flex cursor-pointer list-none items-stretch text-left transition-colors duration-300 hover:bg-subtle group-open:bg-subtle [&::-webkit-details-marker]:hidden">
+                <span class="flex-1 px-5 py-5 text-[1.125rem] leading-snug tracking-[-0.03em] text-ink sm:px-6 sm:text-[1.25rem]">
+                  {item.question}
+                </span>
+                <span class="flex w-14 shrink-0 items-center justify-center border-l border-line sm:w-16" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" class="size-4.5 text-ink transition-transform duration-500 ease-(--ease-out) group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.3">
+                    <path d="M3.5 10h13" />
+                    <path d="M10 3.5v13" class="origin-center transition-transform duration-500 ease-(--ease-out) group-open:scale-y-0" />
+                  </svg>
+                </span>
               </summary>
-              <p class="max-w-2xl pb-6 leading-relaxed">{item.answer}</p>
+              <p class="faq-answer border-t border-line bg-subtle px-5 py-5 leading-relaxed sm:px-6 sm:pr-22">{item.answer}</p>
             </details>
           ))
         }
@@ -43,3 +39,31 @@ const email = linkTo(`mailto:${SITE.supportEmail}`)(SITE.supportEmail);
     </div>
   </div>
 </section>
+
+<style>
+  /* Answers open and close smoothly, where browsers can animate <details>. */
+  @media (prefers-reduced-motion: no-preference) {
+    .faq-item::details-content {
+      block-size: 0;
+      overflow-y: clip;
+      transition:
+        block-size 0.5s var(--ease-out),
+        content-visibility 0.5s allow-discrete;
+    }
+
+    .faq-item[open]::details-content {
+      block-size: auto;
+    }
+
+    .faq-answer {
+      transition:
+        opacity 0.5s var(--ease-out),
+        translate 0.5s var(--ease-out);
+    }
+
+    .faq-item:not([open]) .faq-answer {
+      opacity: 0;
+      translate: 0 -0.5rem;
+    }
+  }
+</style>

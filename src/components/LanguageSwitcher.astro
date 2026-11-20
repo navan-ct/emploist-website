@@ -19,12 +19,12 @@ const t = getMessages(locale);
 <details class="language-switcher group/lang relative">
   <summary
     class:list={[
-      "flex cursor-pointer list-none items-center gap-1.5 rounded-full text-body transition-colors hover:text-ink [&::-webkit-details-marker]:hidden",
-      placement === "header" ? "h-9 px-3 text-[0.9375rem]" : "-mx-1 px-1 py-0.5 text-sm",
+      "flex cursor-pointer list-none items-center gap-1.5 transition-colors hover:text-brand-ink [&::-webkit-details-marker]:hidden",
+      placement === "header" ? "h-10 px-2 font-mono xl:px-3 text-[0.8125rem] text-ink" : "-mx-1 px-1 py-0.5 text-sm text-ink",
     ]}
     aria-label={`${t.language.label}: ${LANGUAGE_NAMES[locale]}`}
   >
-    <svg viewBox="0 0 20 20" class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <svg viewBox="0 0 20 20" class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
       <circle cx="10" cy="10" r="7.25"></circle>
       <path d="M2.75 10h14.5M10 2.75c2 2 3 4.4 3 7.25s-1 5.25-3 7.25c-2-2-3-4.4-3-7.25s1-5.25 3-7.25Z"></path>
     </svg>
@@ -34,9 +34,8 @@ const t = getMessages(locale);
       class="size-3 shrink-0 transition-transform group-open/lang:rotate-180"
       fill="none"
       stroke="currentColor"
-      stroke-width="1.6"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="square"
       aria-hidden="true"
     >
       <path d={placement === "header" ? "m4 6 4 4 4-4" : "m4 10 4-4 4 4"}></path>
@@ -44,35 +43,22 @@ const t = getMessages(locale);
   </summary>
   <ul
     class:list={[
-      "absolute z-50 w-52 rounded-xl border border-line bg-raised p-1.5 shadow-lg",
-      placement === "header" ? "top-full right-0 mt-2" : "bottom-full left-1/2 mb-2 -translate-x-1/2 max-sm:left-0 max-sm:translate-x-0",
+      "absolute z-50 w-52 border border-line bg-raised shadow-[0_16px_40px_-12px_rgb(13_13_13/0.25)]",
+      placement === "header" ? "top-full right-0 mt-2" : "bottom-full mb-3 max-sm:left-0 sm:right-0",
     ]}
   >
     {
       LOCALES.map((option) => (
-        <li>
+        <li class="border-b border-line last:border-b-0">
           <a
             href={alternates[option]}
             hreflang={option}
             lang={option}
             aria-current={option === locale ? "page" : undefined}
-            class="flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-[0.9375rem] text-ink transition-colors hover:bg-subtle aria-[current=page]:font-medium"
+            class="flex items-center justify-between gap-3 px-4 py-2.5 text-[0.9375rem] tracking-[-0.02em] text-ink transition-colors hover:bg-subtle aria-[current=page]:text-brand-ink"
           >
             {LANGUAGE_NAMES[option]}
-            {option === locale && (
-              <svg
-                viewBox="0 0 20 20"
-                class="size-4 text-brand-ink"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m5.5 10.25 3 3 6-6.5" />
-              </svg>
-            )}
+            {option === locale && <span class="size-1.5 bg-brand" aria-hidden="true" />}
           </a>
         </li>
       ))
