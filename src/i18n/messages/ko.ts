@@ -26,6 +26,8 @@ const ko: Messages = {
     features: "기능",
     careersPage: "채용 페이지",
     aiAssistants: "AI 어시스턴트",
+    /** The last item in the Features menu, after the feature sections. */
+    moreFeatures: "그 밖의 기능",
     pricing: "요금제",
     faq: "FAQ",
     blog: "블로그",
@@ -220,7 +222,7 @@ const ko: Messages = {
       },
     ],
     worksWith: "지원하는 어시스턴트",
-    otherClients: "그 밖의 MCP 클라이언트",
+    otherClients: "인기 AI 어시스턴트",
     chat: {
       label: "Emploist에 연결된 AI 어시스턴트와의 채팅 예시",
       assistant: "내 AI 어시스턴트",

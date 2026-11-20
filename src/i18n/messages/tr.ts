@@ -31,6 +31,8 @@ const tr: Messages = {
     features: "Özellikler",
     careersPage: "Kariyer sayfası",
     aiAssistants: "Yapay zekâ asistanları",
+    /** The last item in the Features menu, after the feature sections. */
+    moreFeatures: "Diğer özellikler",
     pricing: "Fiyatlar",
     faq: "SSS",
     blog: "Blog",
@@ -225,7 +227,7 @@ const tr: Messages = {
       },
     ],
     worksWith: "Şunlarla çalışır",
-    otherClients: "ve diğer MCP istemcileri",
+    otherClients: "popüler yapay zekâ asistanları",
     chat: {
       label: "Emploist'e bağlı bir yapay zekâ asistanıyla örnek bir sohbet",
       assistant: "Yapay zekâ asistanınız",

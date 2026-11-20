@@ -25,6 +25,8 @@ const fr: Messages = {
     features: "Fonctionnalités",
     careersPage: "Page carrière",
     aiAssistants: "Assistants IA",
+    /** The last item in the Features menu, after the feature sections. */
+    moreFeatures: "Autres fonctionnalités",
     pricing: "Tarifs",
     faq: "FAQ",
     blog: "Blog",
@@ -222,7 +224,7 @@ const fr: Messages = {
       },
     ],
     worksWith: "Compatible avec",
-    otherClients: "et d’autres clients MCP",
+    otherClients: "les assistants IA populaires",
     chat: {
       label: "Exemple de discussion avec un assistant IA connecté à Emploist",
       assistant: "Votre assistant IA",

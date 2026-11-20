@@ -402,6 +402,29 @@
     }
   }
 
+  /* A fine grid of hairlines behind a picture, `--grid-size` apart. It's
+     centered, and a script in BaseLayout moves it so no line runs just
+     beside an edge, where it would look like a doubled hairline. */
+  .grid-stage {
+    --grid-size: 32px;
+    position: relative;
+    isolation: isolate;
+
+    /* After, since .rule-t draws with ::before. */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: var(--grid-size) var(--grid-size);
+      background-position: var(--grid-x, 50%) var(--grid-y, 50%);
+    }
+  }
+
   /* A screenshot's frame: a hairline edge and a soft shadow. */
   .shot {
     overflow: hidden;

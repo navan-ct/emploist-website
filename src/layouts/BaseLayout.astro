@@ -133,6 +133,63 @@ const preloads = [
           });
         }
 
+        // Fine grids behind pictures (.grid-stage): moved so their lines
+        // stay as far as they can from the stage's edges and from the
+        // framed pictures' (.shot) in it, where a line would look like a
+        // doubled hairline. Between equals, the most even margins win.
+        if ("ResizeObserver" in window) {
+          const offsetIn = (el, stage) => {
+            let x = 0;
+            let y = 0;
+            // Offsets ignore transforms, so pictures still fading in count
+            // where they'll land.
+            for (let node = el; node && node !== stage; node = node.offsetParent) {
+              x += node.offsetLeft;
+              y += node.offsetTop;
+            }
+            return { x, y };
+          };
+          const bestOffset = (length, size, edges) => {
+            let best = 0;
+            let bestDistance = -1;
+            let bestSkew = Infinity;
+            for (let offset = 0; offset < size; offset++) {
+              let distance = Infinity;
+              let last = offset;
+              for (let line = offset; line < length; line += size) {
+                last = line;
+                for (const edge of edges) distance = Math.min(distance, Math.abs(line - edge), Math.abs(line + 1 - edge));
+              }
+              const skew = Math.abs(offset - (length - 1 - last));
+              if (distance > bestDistance || (distance === bestDistance && skew < bestSkew)) {
+                [best, bestDistance, bestSkew] = [offset, distance, skew];
+              }
+            }
+            return best;
+          };
+          const place = (stage) => {
+            const size = parseFloat(getComputedStyle(stage).getPropertyValue("--grid-size")) || 32;
+            const width = stage.clientWidth;
+            const height = stage.clientHeight;
+            const xs = [0, width];
+            const ys = [0, height];
+            stage.querySelectorAll(".shot").forEach((picture) => {
+              const { x, y } = offsetIn(picture, stage);
+              xs.push(x, x + picture.offsetWidth);
+              ys.push(y, y + picture.offsetHeight);
+            });
+            stage.style.setProperty("--grid-x", `${bestOffset(width, size, xs)}px`);
+            stage.style.setProperty("--grid-y", `${bestOffset(height, size, ys)}px`);
+          };
+          const grids = new ResizeObserver((entries) => {
+            new Set(entries.map((entry) => entry.target.closest(".grid-stage"))).forEach(place);
+          });
+          document.querySelectorAll(".grid-stage").forEach((stage) => {
+            grids.observe(stage);
+            stage.querySelectorAll(".shot").forEach((picture) => grids.observe(picture));
+          });
+        }
+
         // Play while on screen.
         observe("[data-play]", { rootMargin: "0px 0px -10% 0px" }, (el, visible) => {
           el.classList.toggle("is-playing", visible);

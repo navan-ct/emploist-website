@@ -88,6 +88,9 @@ indigo. The pieces are in `src/styles/global.css`:
   must be full); `.cells-open` takes any number of cells.
 - `Band.astro` is the band of fine lines between sections, and
   `SectionHeader.astro` a section's tag, title, and lead.
+- `.grid-stage` is a box with a fine grid of hairlines behind its content,
+  `--grid-size` apart. A script in `BaseLayout.astro` places the grid so no
+  line runs just beside the box's edges or a framed picture's (`.shot`).
 - `.texture` with `Texture.astro` is a box with a gradient behind its content,
   and a dot grid and grain on top. The gradients are drawn by
   `node scripts/textures.mjs`; the dot grid and grain are CSS, so they stay

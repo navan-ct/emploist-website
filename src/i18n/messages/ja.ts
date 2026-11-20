@@ -27,6 +27,8 @@ const ja: Messages = {
     features: "機能",
     careersPage: "採用ページ",
     aiAssistants: "AIアシスタント",
+    /** The last item in the Features menu, after the feature sections. */
+    moreFeatures: "その他の機能",
     pricing: "料金",
     faq: "よくある質問",
     blog: "ブログ",
@@ -224,7 +226,7 @@ const ja: Messages = {
       },
     ],
     worksWith: "対応アシスタント",
-    otherClients: "その他のMCPクライアント",
+    otherClients: "人気のAIアシスタント",
     chat: {
       label: "Emploistに接続したAIアシスタントとのチャットの例",
       assistant: "あなたのAIアシスタント",

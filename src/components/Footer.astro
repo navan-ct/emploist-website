@@ -26,7 +26,7 @@ const columns = [
   {
     title: t.footer.product,
     links: [
-      { label: t.nav.features, href: page("/#features") },
+      { label: t.ranking.eyebrow, href: page("/#ai-ranking") },
       { label: t.nav.careersPage, href: page("/#careers-page") },
       { label: t.nav.aiAssistants, href: page("/#ai-assistants") },
       { label: t.nav.pricing, href: page("/#pricing") },
@@ -57,27 +57,31 @@ const columns = [
     ],
   },
 ];
-// On wide screens the columns are cells of equal height, so the short ones
-// get empty cells below their links.
+// The links are cells in rows that run across every column (and, on wide
+// screens, the brand's column too), so their hairlines line up. Shorter
+// columns get empty cells below their links. On phones the columns are in
+// pairs, each pair as tall as its longer column.
 const rows = Math.max(...columns.map((column) => column.links.length));
+const pairRows = (index: number) =>
+  Math.max(...columns.slice(index - (index % 2), index - (index % 2) + 2).map((column) => column.links.length));
 ---
 
 <footer class="mt-auto">
   <Band />
   <div class="pt-16 sm:pt-24">
     <div class="container-page rule-t rule-b">
-      <div class="cells lg:grid-cols-12">
-        <div class="flex flex-col lg:col-span-5">
-          <div class="flex h-16 items-center bg-subtle px-5 sm:px-6">
+      <div class="cells lg:grid-cols-12" style={`--rows: ${rows + 1}`}>
+        <div class="footer-brand flex flex-col lg:col-span-5">
+          <div class="flex min-h-16 items-center bg-subtle px-5 sm:px-6">
             <a href={page("/")} class="-m-1 p-1" aria-label={t.site.home}><Wordmark /></a>
           </div>
-          <p class="text-lead flex-1 border-t border-line px-5 py-6 sm:px-6 lg:pr-16">{t.footer.tagline}</p>
-          <p class="text-label flex h-16 items-center border-t border-line bg-subtle px-5 text-ink sm:px-6">
+          <p class="footer-tagline text-lead flex-1 border-t border-line px-5 py-6 sm:px-6 lg:pr-16">{t.footer.tagline}</p>
+          <p class="text-label flex min-h-16 items-center border-t border-line bg-subtle px-5 text-ink sm:px-6">
             {t.footer.questions}
           </p>
           <a
             href={`mailto:${SITE.supportEmail}`}
-            class="group/mail flex h-16 items-center justify-between border-t border-line px-5 text-[1.0625rem] tracking-[-0.03em] text-ink transition-colors duration-300 hover:bg-subtle hover:text-brand-ink sm:px-6"
+            class="group/mail flex min-h-16 items-center justify-between gap-3 border-t border-line px-5 text-[1.0625rem] tracking-[-0.03em] text-ink transition-colors duration-300 hover:bg-subtle hover:text-brand-ink sm:px-6"
           >
             <Roll text={SITE.supportEmail} />
             <svg viewBox="0 0 16 16" class="size-4 transition-transform duration-300 group-hover/mail:translate-x-0.5 group-hover/mail:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
@@ -86,26 +90,34 @@ const rows = Math.max(...columns.map((column) => column.links.length));
           </a>
         </div>
 
-        <div class="cells grid-cols-2 border-t border-line sm:grid-cols-4 lg:col-span-7 lg:border-t-0">
+        <div class="footer-links cells grid-cols-2 border-t border-line sm:grid-cols-4 lg:col-span-7 lg:border-t-0">
           {
-            columns.map((column) => (
-              <nav aria-label={column.title} class="flex flex-col">
-                <h2 class="text-label flex h-16 items-center justify-center bg-subtle px-3 text-center text-ink">
+            columns.map((column, index) => (
+              <nav aria-label={column.title} class="footer-column" style={`--pair-rows: ${pairRows(index) + 1}`}>
+                <h2
+                  class:list={[
+                    "text-label flex min-h-16 items-center justify-center bg-subtle px-3 text-center text-ink",
+                    index >= 2 && "max-sm:border-t max-sm:border-line",
+                  ]}
+                >
                   {column.title}
                 </h2>
-                <ul class="flex flex-col">
+                <ul class="footer-list">
                   {column.links.map((link) => (
-                    <li class="border-t border-line">
+                    <li class="flex border-t border-line">
                       <a
                         href={link.href}
-                        class="flex min-h-16 items-center justify-center px-3 py-3 text-center text-[0.9375rem] tracking-[-0.02em] text-ink transition-colors duration-300 hover:bg-subtle hover:text-brand-ink"
+                        class="flex min-h-16 min-w-0 flex-1 items-center justify-center px-3 py-3 text-center text-[0.9375rem] tracking-[-0.02em] text-ink hyphens-auto transition-colors duration-300 hover:bg-subtle hover:text-brand-ink"
                       >
                         <Roll text={link.label} wrap class="min-w-0" />
                       </a>
                     </li>
                   ))}
-                  {Array.from({ length: rows - column.links.length }, () => (
-                    <li class="hidden h-16 border-t border-line sm:block" aria-hidden="true" />
+                  {Array.from({ length: rows - column.links.length }, (_, i) => (
+                    <li
+                      class:list={["border-t border-line", column.links.length + i >= pairRows(index) && "max-sm:hidden"]}
+                      aria-hidden="true"
+                    />
                   ))}
                 </ul>
               </nav>
@@ -135,6 +147,49 @@ const rows = Math.max(...columns.map((column) => column.links.length));
 </footer>
 
 <style>
+  /* Each column's heading and links sit in rows shared by every column
+     (`--rows`, or `--pair-rows` on phones), so a link that wraps makes its
+     whole row taller, and the hairlines stay in line. */
+  .footer-column,
+  .footer-list {
+    display: grid;
+    /* Long words wrap within the column, rather than widen it. */
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: subgrid;
+  }
+
+  .footer-column {
+    grid-row: span var(--pair-rows);
+  }
+
+  .footer-list {
+    grid-row: 2 / -1;
+  }
+
+  @media (width >= 40rem) {
+    .footer-column {
+      grid-row: span var(--rows);
+    }
+  }
+
+  /* On wide screens the brand's column shares the rows too: "Questions?"
+     and the email address line up with the last two rows of links. */
+  @media (width >= 64rem) {
+    .footer-brand,
+    .footer-links {
+      grid-row: span var(--rows);
+      grid-template-rows: subgrid;
+    }
+
+    .footer-brand {
+      display: grid;
+    }
+
+    .footer-tagline {
+      grid-row: 2 / -3;
+    }
+  }
+
   /* Small, whatever size its embed code sets. */
   .home-badge :global(img) {
     display: block !important;

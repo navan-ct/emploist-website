@@ -36,6 +36,8 @@ const de: Messages = {
     features: "Funktionen",
     careersPage: "Karriereseite",
     aiAssistants: "KI-Assistenten",
+    /** The last item in the Features menu, after the feature sections. */
+    moreFeatures: "Weitere Funktionen",
     pricing: "Preise",
     faq: "FAQ",
     blog: "Blog",
@@ -58,8 +60,10 @@ const de: Messages = {
     legal: "Rechtliches",
     rssFeed: "RSS-Feed",
     support: "Support",
-    terms: "Nutzungsbedingungen",
-    privacy: "Datenschutzerklärung",
+    // Soft hyphens (\u00AD) mark where these long compounds break when
+    // they don't fit, as in the footer's and the menu's narrow columns.
+    terms: "Nutzungs\u00ADbedingungen",
+    privacy: "Datenschutz\u00ADerklärung",
     copyright: (year) => `© ${year} Emploist. Alle Rechte vorbehalten.`,
     questions: "Fragen?",
   },
@@ -182,7 +186,7 @@ const de: Messages = {
   formsAndTeam: {
     label: "Bewerbungsformulare und Teamarbeit",
     forms: {
-      eyebrow: "Bewerbungsformulare",
+      eyebrow: "Bewerbungs\u00ADformulare",
       title: "Fragen Sie, worauf es bei jeder Stelle ankommt.",
       text: "Erstellen Sie für jede Stelle ein Formular mit kurzen und langen Antworten, Ja-oder-Nein-Fragen, Einfach- und Mehrfachauswahl, Dropdowns, Skalen und Checkboxen, und ziehen Sie alles in die gewünschte Reihenfolge.",
       screenshotAlt:
@@ -232,7 +236,7 @@ const de: Messages = {
       },
     ],
     worksWith: "Funktioniert mit",
-    otherClients: "und anderen MCP-Clients",
+    otherClients: "beliebten KI-Assistenten",
     chat: {
       label: "Ein Beispielchat mit einem KI-Assistenten, der mit Emploist verbunden ist",
       assistant: "Ihr KI-Assistent",

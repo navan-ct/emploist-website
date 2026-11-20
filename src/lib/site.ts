@@ -34,10 +34,11 @@ export const CREDIT_PACKS = [
   { credits: 10000, priceUsd: 69 },
 ] as const;
 
-/** The landing page's sections, in the header, with their words in src/i18n/messages. */
+/**
+ * The header's links after its Features menu (see src/lib/features.ts), with
+ * their words in src/i18n/messages.
+ */
 export const NAV = [
-  { key: "features", href: "/#features" },
-  { key: "careersPage", href: "/#careers-page" },
   { key: "pricing", href: "/#pricing" },
   { key: "faq", href: "/#faq" },
   { key: "blog", href: "/blog/" },

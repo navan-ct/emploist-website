@@ -26,6 +26,8 @@ const pl: Messages = {
     features: "Funkcje",
     careersPage: "Strona kariery",
     aiAssistants: "Asystenci AI",
+    /** The last item in the Features menu, after the feature sections. */
+    moreFeatures: "Więcej funkcji",
     pricing: "Cennik",
     faq: "FAQ",
     blog: "Blog",
@@ -223,7 +225,7 @@ const pl: Messages = {
       },
     ],
     worksWith: "Działa z",
-    otherClients: "i innymi klientami MCP",
+    otherClients: "popularnymi asystentami AI",
     chat: {
       label: "Przykładowa rozmowa z asystentem AI połączonym z Emploist",
       assistant: "Twój asystent AI",

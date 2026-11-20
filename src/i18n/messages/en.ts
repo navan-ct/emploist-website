@@ -48,6 +48,8 @@ const en = {
     features: "Features",
     careersPage: "Careers page",
     aiAssistants: "AI assistants",
+    /** The last item in the Features menu, after the feature sections. */
+    moreFeatures: "More features",
     pricing: "Pricing",
     faq: "FAQ",
     blog: "Blog",
@@ -244,7 +246,7 @@ const en = {
       },
     ],
     worksWith: "Works with",
-    otherClients: "and other MCP clients",
+    otherClients: "popular AI assistants",
     chat: {
       label: "An example chat with an AI assistant connected to Emploist",
       assistant: "Your AI assistant",

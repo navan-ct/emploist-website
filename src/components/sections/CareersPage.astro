@@ -14,7 +14,7 @@ const t = getMessages(getLocale(Astro)).careersPage;
 
   <div class="container-page rule-t rule-b mt-14 sm:mt-16">
     <!-- The careers page on a wide screen, and a job on a phone. -->
-    <div class="careers-stage overflow-hidden bg-subtle px-4 pt-6 pb-6 sm:aspect-[2/1] sm:px-10 sm:pt-12 sm:pb-0 lg:px-16 lg:pt-16">
+    <div class="grid-stage overflow-hidden bg-subtle px-4 pt-6 pb-6 sm:aspect-[2/1] sm:px-10 sm:pt-12 sm:pb-0 lg:px-16 lg:pt-16" style="--grid-size: 48px">
       <div class="relative mx-auto max-w-5xl lg:pr-24" data-reveal style="--reveal-delay: 120ms">
         <Window url="northwind.emploist.com">
           <Screenshot name="careers-page" alt={t.screenshotAlt} sizes="(min-width: 64rem) 58rem, calc(100vw - 2.5rem)" />
@@ -49,13 +49,3 @@ const t = getMessages(getLocale(Astro)).careersPage;
   </div>
 </section>
 
-<style>
-  /* Hairlines and a fine grid behind the screenshots. */
-  .careers-stage {
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 48px 48px;
-    background-position: center top;
-  }
-</style>

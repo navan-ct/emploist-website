@@ -26,6 +26,8 @@ const id: Messages = {
     features: "Fitur",
     careersPage: "Halaman karier",
     aiAssistants: "Asisten AI",
+    /** The last item in the Features menu, after the feature sections. */
+    moreFeatures: "Fitur lainnya",
     pricing: "Harga",
     faq: "FAQ",
     blog: "Blog",
@@ -222,7 +224,7 @@ const id: Messages = {
       },
     ],
     worksWith: "Kompatibel dengan",
-    otherClients: "dan klien MCP lainnya",
+    otherClients: "asisten AI populer",
     chat: {
       label: "Contoh chat dengan asisten AI yang terhubung ke Emploist",
       assistant: "Asisten AI Anda",
