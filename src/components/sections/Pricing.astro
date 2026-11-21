@@ -6,6 +6,12 @@ import Button from "../Button.astro";
 import SectionHeader from "../SectionHeader.astro";
 import Wordmark from "../Wordmark.astro";
 
+interface Props {
+  /** h1 on the dedicated /pricing page. */
+  headingAs?: "h1" | "h2";
+}
+
+const { headingAs = "h2" } = Astro.props;
 const locale = getLocale(Astro);
 const t = getMessages(locale).pricing;
 
@@ -31,7 +37,7 @@ const intervals = [
 ---
 
 <section id="pricing" aria-labelledby="pricing-title" class="group/plan section-y">
-  <SectionHeader eyebrow={t.eyebrow} title={t.title} id="pricing-title" lead={t.lead}>
+  <SectionHeader as={headingAs} eyebrow={t.eyebrow} title={t.title} id="pricing-title" lead={t.lead}>
     <fieldset class="mt-4 w-full max-w-sm sm:w-auto sm:max-w-none">
       <legend class="sr-only">{t.billing}</legend>
       <div class="relative grid grid-cols-2 border border-line bg-subtle p-1">

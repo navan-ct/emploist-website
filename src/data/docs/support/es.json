@@ -1,0 +1,489 @@
+{
+  "title": "Ayuda",
+  "description": "Estamos aquí para ayudarte. Escríbenos o sigue una guía para hacer lo que necesites en Emploist.",
+  "contact": {
+    "title": "Escríbenos",
+    "description": "¿Tienes preguntas o comentarios, o algo no funciona? Solemos responder en menos de 24 horas.",
+    "copied": "Dirección de correo copiada",
+    "copy": "Copiar dirección de correo"
+  },
+  "guideList": {
+    "title": "Guías",
+    "description": "Ayuda paso a paso con las partes principales de Emploist.",
+    "adminOnly": "Solo administradores"
+  },
+  "topics": {
+    "jobsAndApplications": "Vacantes y candidaturas",
+    "careersPage": "Página de empleo",
+    "teamAndEmails": "Equipo y correos",
+    "aiAndBilling": "Evaluación con IA y facturación",
+    "aiAssistants": "Asistentes de IA"
+  },
+  "guides": {
+    "createJob": {
+      "title": "Crear y publicar una vacante",
+      "summary": "Describe el puesto, guarda un borrador y publícalo.",
+      "steps": {
+        "start": {
+          "title": "Empieza una vacante nueva",
+          "body": "Abre <jobs>Vacantes</jobs> y haz clic en <ui>Crear vacante</ui>."
+        },
+        "describe": {
+          "title": "Describe el puesto",
+          "body": "En la pestaña <ui>Detalles</ui>, añade un <ui>Título del puesto</ui> y una <ui>Descripción</ui>. El departamento, la ubicación, la modalidad de trabajo y el tipo de empleo son opcionales. Los departamentos y las ubicaciones que añadas se te volverán a ofrecer en vacantes posteriores."
+        },
+        "formAndStages": {
+          "title": "Revisa el formulario y las etapas",
+          "body": "Las pestañas <ui>Formulario de candidatura</ui> y <ui>Etapas</ui> empiezan con una configuración lista para usar. Puedes ajustarlas ahora o en cualquier otro momento."
+        },
+        "saveOrPublish": {
+          "title": "Guarda o publica",
+          "body": "<ui>Guardar borrador</ui> hace que solo tu equipo vea la vacante. <ui>Publicar</ui> la muestra en tu página de empleo."
+        }
+      }
+    },
+    "applicationForm": {
+      "title": "Crear el formulario de candidatura",
+      "summary": "Elige qué deben completar los candidatos al enviar su candidatura.",
+      "steps": {
+        "open": {
+          "title": "Abre el formulario",
+          "body": "Abre la pestaña <ui>Formulario de candidatura</ui> de una vacante."
+        },
+        "essentials": {
+          "title": "Empieza por lo esencial",
+          "body": "Todos los formularios piden <ui>Nombre completo</ui>, <ui>Correo electrónico</ui> y <ui>Currículum</ui>. Puedes moverlos, pero no quitarlos."
+        },
+        "addQuestions": {
+          "title": "Añade preguntas",
+          "body": "Haz clic en <ui>Añadir</ui> y elige un tipo de pregunta, como <ui>Respuesta corta</ui>, <ui>Opción única</ui> o <ui>Escala lineal</ui>. Añade un <ui>Encabezado</ui> o un <ui>Texto</ui> para dar más contexto a los candidatos."
+        },
+        "setUp": {
+          "title": "Configura cada una",
+          "body": "Haz clic en una pregunta para editarla y activa <ui>Obligatorio</ui> si los candidatos deben responderla. Para cambiar el orden, arrastra las preguntas o usa su menú. Las preguntas marcadas como <ui>Incompleto</ui> deben completarse antes de publicar."
+        },
+        "save": {
+          "title": "Guarda los cambios",
+          "body": "En una vacante existente, haz clic en <ui>Guardar cambios</ui>. Los cambios solo se aplican a las candidaturas nuevas. Las que ya tienes conservan las preguntas que respondieron."
+        }
+      }
+    },
+    "stages": {
+      "title": "Configurar las etapas de selección",
+      "summary": "Define los pasos por los que pasa cada candidatura.",
+      "steps": {
+        "open": {
+          "title": "Abre las etapas",
+          "body": "Abre la pestaña <ui>Etapas</ui> de una vacante. Las vacantes nuevas empiezan con <ui>Inbox</ui>, <ui>Interviewing</ui>, <ui>Accepted</ui> y <ui>Rejected</ui>."
+        },
+        "inbox": {
+          "title": "Conoce la bandeja de entrada",
+          "body": "Las candidaturas nuevas llegan a la primera etapa, la bandeja de entrada. Puedes cambiarle el nombre, pero siempre será la primera y no se puede eliminar."
+        },
+        "addRenameReorder": {
+          "title": "Añade, renombra y reordena",
+          "body": "Haz clic en <ui>Añadir etapa</ui> para añadir una, o elige <ui>Cambiar nombre</ui> en el menú de una etapa. Arrastra las etapas para ordenarlas según tu proceso de selección."
+        },
+        "delete": {
+          "title": "Elimina una etapa",
+          "body": "Elige <ui>Eliminar</ui> en el menú de una etapa. Si tiene candidaturas, elegirás a qué etapa pasan."
+        }
+      }
+    },
+    "reviewApplications": {
+      "title": "Revisar candidaturas",
+      "summary": "Busca, lee y mueve las candidaturas por tus etapas.",
+      "steps": {
+        "openJob": {
+          "title": "Abre una vacante",
+          "body": "Abre una vacante desde <jobs>Vacantes</jobs>. Su pestaña <ui>Candidaturas</ui> muestra cada etapa con el número de candidaturas que tiene."
+        },
+        "find": {
+          "title": "Encuentra a quién revisar",
+          "body": "Busca por nombre o correo, y ordena por <ui>Mayor afinidad</ui>, <ui>Más recientes</ui> o <ui>Más antiguas</ui>. Mayor afinidad está disponible mientras las funciones de IA estén activadas."
+        },
+        "openApplication": {
+          "title": "Abre una candidatura",
+          "body": "Haz clic en un nombre para abrir la candidatura. Haz clic en <ui>Ver currículum</ui> para abrir su currículum en una pestaña nueva. Presiona <ui>←</ui> o <ui>→</ui> para ir a la candidatura anterior o a la siguiente."
+        },
+        "move": {
+          "title": "Muévela a una etapa",
+          "body": "Elige una etapa en el menú <ui>Etapa</ui> de la candidatura, o en <ui>Mover a</ui> en el menú de una fila. Si mueves una por error, haz clic en <ui>Deshacer</ui> en el mensaje que aparece."
+        }
+      }
+    },
+    "comments": {
+      "title": "Comentar y mencionar a compañeros",
+      "summary": "Habla de los candidatos con tu equipo y mantente al día.",
+      "steps": {
+        "write": {
+          "title": "Escribe un comentario",
+          "body": "Abre una candidatura, escribe en el cuadro de comentarios y haz clic en <ui>Comentar</ui>, o presiona <ui>{{shortcut}}</ui>. Solo tu equipo ve los comentarios.",
+          "shortcut": "Ctrl+Enter",
+          "shortcutMac": "⌘+Enter"
+        },
+        "mention": {
+          "title": "Menciona a alguien",
+          "body": "Escribe <ui>@</ui> y elige a alguien de tu equipo para avisarle."
+        },
+        "replies": {
+          "title": "Sigue las respuestas",
+          "body": "Recibirás una notificación cuando alguien te mencione o comente en una candidatura en la que hayas comentado. Las encontrarás en la campana de la parte superior de la página o en <notifications>Notificaciones</notifications>."
+        },
+        "editOrDelete": {
+          "title": "Edita o elimina",
+          "body": "Usa el menú de un comentario para <ui>Editar</ui> o <ui>Eliminar</ui> tus propios comentarios. Los administradores también pueden eliminar los comentarios de cualquier persona."
+        }
+      }
+    },
+    "manageJob": {
+      "title": "Cerrar, archivar o duplicar una vacante",
+      "summary": "Deja de recibir candidaturas, pon orden o reutiliza una vacante.",
+      "steps": {
+        "closeOrReopen": {
+          "title": "Cierra o reabre",
+          "body": "En una vacante publicada, usa el menú de estado de la parte superior: <ui>Cerrada</ui> deja de aceptar candidaturas y <ui>Abierta</ui> vuelve a aceptarlas."
+        },
+        "duplicate": {
+          "title": "Duplica",
+          "body": "Elige <ui>Duplicar</ui> en el menú <ui>Más acciones</ui> de una vacante para crear un borrador con los mismos detalles, formulario y etapas."
+        },
+        "archive": {
+          "title": "Archiva",
+          "body": "Elige <ui>Archivar</ui> en <ui>Más acciones</ui> para retirar una vacante. Las vacantes archivadas son de solo lectura. Haz clic en <ui>Restaurar</ui> para recuperar una."
+        },
+        "delete": {
+          "title": "Elimina",
+          "body": "Elige <ui>Eliminar</ui> en <ui>Más acciones</ui> para eliminar definitivamente una vacante junto con sus candidaturas. Si quieres conservarlas, archiva la vacante."
+        }
+      }
+    },
+    "exportApplications": {
+      "title": "Exportar candidaturas",
+      "summary": "Descarga las candidaturas y los currículums de una vacante.",
+      "steps": {
+        "start": {
+          "title": "Inicia la exportación",
+          "body": "En una vacante con candidaturas, abre <ui>Más acciones</ui> y elige <ui>Exportar candidaturas</ui>."
+        },
+        "openZip": {
+          "title": "Abre el archivo ZIP",
+          "body": "<ui>{{file}}</ui> es una hoja de cálculo con una fila por candidatura. La carpeta <ui>{{folder}}</ui> contiene todos los currículums, con el nombre de cada candidato."
+        }
+      }
+    },
+    "customizeCareersPage": {
+      "title": "Personalizar tu página de empleo",
+      "summary": "Elige tu color o edita el código de la página.",
+      "steps": {
+        "color": {
+          "title": "Elige un color",
+          "body": "Abre la pestaña <design>Diseño</design> en Página de empleo, elige un <ui>Color principal</ui> y haz clic en <ui>Guardar color</ui>. Se usa en los botones y los elementos destacados."
+        },
+        "code": {
+          "title": "Edita el código",
+          "body": "Haz clic en <ui>Editar código</ui> para cambiar las plantillas y los estilos de la página. En <ui>Referencia</ui> encontrarás todo lo que puedes usar en ellos."
+        },
+        "preview": {
+          "title": "Revisa la vista previa sobre la marcha",
+          "body": "La vista previa se actualiza mientras escribes. Usa <ui>Ir a la página</ui> para revisar cada página y cambia entre los tamaños de escritorio y móvil."
+        },
+        "save": {
+          "title": "Guarda",
+          "body": "Haz clic en <ui>Guardar</ui>. Para empezar de cero, elige <ui>Restablecer código predeterminado</ui> en <ui>Más acciones</ui>."
+        }
+      }
+    },
+    "editCodeLocally": {
+      "title": "Editar el código en tu dispositivo",
+      "summary": "Trabaja en tu propio editor, con una vista previa en directo.",
+      "steps": {
+        "download": {
+          "title": "Descarga el código",
+          "body": "En la pestaña <design>Diseño</design>, haz clic en <ui>Descargar ZIP</ui> y descomprímelo."
+        },
+        "preview": {
+          "title": "Abre la vista previa",
+          "body": "Con Node.js {{version}} o posterior, ejecuta <code>{{command}}</code> en la carpeta y abre <code>{{url}}</code>. Muestra tu página con vacantes de ejemplo. Vuelve a cargarla después de cada cambio."
+        },
+        "check": {
+          "title": "Busca problemas",
+          "body": "Ejecuta <code>{{command}}</code> para encontrar los mismos problemas que se detectarían al guardar."
+        },
+        "upload": {
+          "title": "Súbelo",
+          "body": "Comprime los archivos, haz clic en <ui>Subir ZIP</ui>, revisa la vista previa y haz clic en <ui>Guardar</ui>."
+        }
+      }
+    },
+    "changeAddress": {
+      "title": "Cambiar la dirección de tu página de empleo",
+      "summary": "Mueve tu página a una nueva dirección de Emploist.",
+      "steps": {
+        "open": {
+          "title": "Abre la dirección",
+          "body": "Abre la pestaña <domain>Dominio</domain> en Página de empleo y haz clic en <ui>Cambiar</ui>."
+        },
+        "choose": {
+          "title": "Elige una nueva",
+          "body": "Escribe la dirección que quieras. Comprobaremos que esté disponible mientras escribes."
+        },
+        "confirm": {
+          "title": "Confirma el cambio",
+          "body": "Haz clic en <ui>Cambiar dirección</ui>. Tu dirección anterior deja de funcionar de inmediato, incluidos los enlaces a vacantes que hayas compartido, y otra empresa podría usarla después."
+        }
+      }
+    },
+    "customDomain": {
+      "title": "Conectar tu propio dominio",
+      "summary": "Muestra tu página de empleo en una dirección de tu sitio web.",
+      "steps": {
+        "add": {
+          "title": "Añade tu dominio",
+          "body": "En la pestaña <domain>Dominio</domain>, escribe un subdominio de tu sitio web, como careers.acme.com, y haz clic en <ui>Añadir dominio</ui>. Los dominios principales, como acme.com, no se pueden conectar."
+        },
+        "records": {
+          "title": "Añade dos registros DNS",
+          "body": "Donde gestionas tu dominio, añade los registros <ui>CNAME</ui> y <ui>TXT</ui> que se muestran, con los botones de copiar. En Cloudflare, configura el registro CNAME como Solo DNS (DNS only)."
+        },
+        "wait": {
+          "title": "Espera la comprobación",
+          "body": "Los cambios suelen aplicarse en minutos, pero pueden tardar hasta 48 horas. Cuando aparezca <ui>Conectado</ui>, tu página de empleo estará en tu dominio."
+        }
+      }
+    },
+    "inviteTeam": {
+      "title": "Invitar a tu equipo",
+      "summary": "Añade compañeros por correo y elige sus roles.",
+      "steps": {
+        "send": {
+          "title": "Envía una invitación",
+          "body": "Abre la pestaña <members>Miembros</members> en Configuración, haz clic en <ui>Invitar miembro</ui>, escribe su correo electrónico y haz clic en <ui>Enviar invitación</ui>."
+        },
+        "role": {
+          "title": "Elige un rol",
+          "body": "Los <ui>Miembros</ui> trabajan con vacantes y candidaturas. Los <ui>Administradores</ui> también pueden gestionar el equipo, la configuración de la empresa, la página de empleo y la facturación."
+        },
+        "join": {
+          "title": "Se une al equipo",
+          "body_one": "Recibirá un correo con un enlace para unirse, que funciona durante {{count, number}} día.",
+          "body_many": "Recibirá un correo con un enlace para unirse, que funciona durante {{count, number}} de días.",
+          "body_other": "Recibirá un correo con un enlace para unirse, que funciona durante {{count, number}} días."
+        },
+        "followUp": {
+          "title": "Haz seguimiento",
+          "body": "Las invitaciones que esperan respuesta aparecen en <ui>Invitaciones pendientes</ui>. Usa el menú de una invitación para <ui>Reenviar invitación</ui> o <ui>Cancelar invitación</ui>."
+        }
+      }
+    },
+    "manageMembers": {
+      "title": "Gestionar roles y miembros",
+      "summary": "Cambia roles, quita a personas o sal de una empresa.",
+      "steps": {
+        "changeRole": {
+          "title": "Cambia un rol",
+          "body": "En la pestaña <members>Miembros</members> de Configuración, abre el menú de una persona y elige <ui>Convertir en administrador</ui> o <ui>Convertir en miembro</ui>. Solo los administradores pueden cambiar roles."
+        },
+        "remove": {
+          "title": "Quita a alguien",
+          "body": "Elige <ui>Quitar de la empresa</ui> en su menú. Perderá el acceso de inmediato. Solo los administradores pueden quitar a personas."
+        },
+        "leave": {
+          "title": "Sal de la empresa",
+          "body": "Elige <ui>Salir de la empresa</ui> en tu propio menú. Si no hay más administradores que tú, primero nombra administrador a otra persona."
+        }
+      }
+    },
+    "deleteCompanyOrAccount": {
+      "title": "Eliminar tu empresa o tu cuenta",
+      "summary": "Elimina tu empresa de forma permanente, o solo tu cuenta.",
+      "steps": {
+        "open": {
+          "title": "Abre la Zona de peligro",
+          "body": "Abre la pestaña <danger>Zona de peligro</danger> en Configuración."
+        },
+        "deleteCompany": {
+          "title": "Elimina la empresa",
+          "body": "Los administradores pueden hacer clic en <ui>Eliminar empresa</ui>. Se elimina todo su contenido, incluidas las vacantes, las candidaturas y tu página de empleo, y tu plan se cancela de inmediato sin reembolso."
+        },
+        "deleteAccount": {
+          "title": "O elimina tu cuenta",
+          "body": "Haz clic en <ui>Eliminar cuenta</ui>. Si no hay más administradores que tú, primero nombra administrador a otra persona. Si eres la única persona de la empresa, la empresa también se eliminará."
+        },
+        "confirm": {
+          "title": "Confirma",
+          "body": "Escribe el nombre de la empresa o tu correo electrónico y haz clic en el botón de eliminar. Esta acción no se puede deshacer."
+        }
+      }
+    },
+    "stageEmails": {
+      "title": "Enviar correos a los candidatos en cada etapa",
+      "summary": "Avisa a los candidatos cuando envían su candidatura o avanzan de etapa.",
+      "steps": {
+        "open": {
+          "title": "Abre el correo de una etapa",
+          "body": "En la pestaña <ui>Etapas</ui> de una vacante, haz clic en <ui>Editar correo</ui> junto a una etapa."
+        },
+        "customize": {
+          "title": "Personalízalo",
+          "body": "Cada etapa incluye un correo listo para usar. Edita su <ui>Asunto</ui> y su <ui>Mensaje</ui>, y añade datos como el nombre del candidato con <ui>Añadir variable</ui> o escribiendo <code>{{character}}</code>."
+        },
+        "preview": {
+          "title": "Revisa la vista previa y actívalo",
+          "body": "Revisa la <ui>Vista previa</ui>, que usa un candidato de ejemplo. Después, activa <ui>Enviar este correo</ui> y haz clic en <ui>Guardar</ui>."
+        },
+        "timing": {
+          "title": "Cuándo se envía",
+          "body_one": "El correo de la bandeja de entrada se envía en cuanto alguien presenta su candidatura. Las demás etapas esperan {{count, number}} minuto después de un movimiento, así que si lo deshaces o mueves la candidatura a otra etapa, el correo se cancela.",
+          "body_many": "El correo de la bandeja de entrada se envía en cuanto alguien presenta su candidatura. Las demás etapas esperan {{count, number}} de minutos después de un movimiento, así que si lo deshaces o mueves la candidatura a otra etapa, el correo se cancela.",
+          "body_other": "El correo de la bandeja de entrada se envía en cuanto alguien presenta su candidatura. Las demás etapas esperan {{count, number}} minutos después de un movimiento, así que si lo deshaces o mueves la candidatura a otra etapa, el correo se cancela."
+        },
+        "pause": {
+          "title": "Pausa todos los correos",
+          "body": "Los administradores pueden desactivar <ui>Enviar correos a los candidatos</ui> en la pestaña <general>General</general> de Configuración para detener los correos de todas las etapas."
+        }
+      }
+    },
+    "repliesLayout": {
+      "title": "Configurar las respuestas y la plantilla de correo",
+      "summary": "Elige adónde llegan las respuestas y cómo se ven los correos.",
+      "steps": {
+        "replyTo": {
+          "title": "Añade una dirección de respuesta",
+          "body": "En <emails>Correos</emails>, escribe una <ui>Dirección de respuesta</ui> que tu equipo revise y haz clic en <ui>Guardar dirección</ui>. Sin ella, no recibirás las respuestas de los candidatos."
+        },
+        "layout": {
+          "title": "Edita la plantilla",
+          "body": "Todos los correos se envían con tu plantilla, que incluye tu logo y tu color principal. Haz clic en <ui>Editar código</ui> para cambiar su HTML, y mantén <code>{{placeholder}}</code> donde va el mensaje de cada etapa."
+        },
+        "save": {
+          "title": "Guarda",
+          "body": "Haz clic en <ui>Guardar</ui>. Para empezar de cero, elige <ui>Restablecer plantilla predeterminada</ui> en <ui>Más acciones</ui>."
+        }
+      }
+    },
+    "matchScores": {
+      "title": "Entender la puntuación de afinidad",
+      "summary": "Cómo evalúa la IA las candidaturas según su vacante.",
+      "steps": {
+        "read": {
+          "title": "Interpreta la puntuación",
+          "body": "Cada candidatura recibe una puntuación de afinidad de 0 a 100 % según los detalles de su vacante."
+        },
+        "aspects": {
+          "title": "Descubre qué hay detrás",
+          "body": "Abre una candidatura para ver su puntuación en <ui>Habilidades</ui>, <ui>Experiencia</ui>, <ui>Nivel profesional</ui> y <ui>Titulaciones</ui>. Titulaciones solo cuenta cuando el puesto pide títulos, certificaciones o licencias."
+        },
+        "useAsGuide": {
+          "title": "Úsala como orientación",
+          "body": "La afinidad te ayuda a decidir a quién revisar primero. Úsala junto con tu propia revisión, no en su lugar."
+        },
+        "noScore": {
+          "title": "Cuando no hay puntuación",
+          "body": "<ui>Evaluando</ui> significa que está en camino, y <ui>Faltan créditos</ui> significa que te has quedado sin créditos de IA. <ui>Sin evaluar</ui> significa que no se pudo evaluar, por ejemplo, cuando el currículum es una imagen escaneada. Si la evaluación falló, haz clic en <ui>Reintentar</ui> en la candidatura."
+        },
+        "rankAgain": {
+          "title": "Vuelve a evaluar tras hacer cambios",
+          "body": "Cuando cambies el título, el departamento, el tipo de empleo o la descripción de una vacante, elige <ui>Guardar y volver a evaluar</ui> para evaluar sus candidaturas según los nuevos detalles."
+        }
+      }
+    },
+    "aiSwitch": {
+      "title": "Activar o desactivar la evaluación con IA",
+      "summary": "Elige si tus candidaturas se evalúan con IA.",
+      "steps": {
+        "find": {
+          "title": "Busca el interruptor",
+          "body": "En la pestaña <general>General</general> de Configuración, activa o desactiva <ui>Evaluar candidaturas con IA</ui>. Se aplica a toda tu empresa."
+        },
+        "whileOff": {
+          "title": "Mientras está desactivada",
+          "body": "No se envía nada a la IA, las puntuaciones de afinidad se ocultan y las candidaturas nuevas no se evalúan. Las puntuaciones anteriores vuelven cuando la activas de nuevo."
+        },
+        "turnOn": {
+          "title": "Vuelve a activarla",
+          "body": "Si llegaron candidaturas mientras tanto, elegirás si quieres evaluarlas, con un crédito cada una, o dejarlas sin evaluar."
+        },
+        "tellApplicants": {
+          "title": "Informa a los candidatos",
+          "body": "Mientras la evaluación con IA está activada, la página de empleo predeterminada indica a los candidatos que la IA ayuda a revisar las candidaturas. Si usas tu propio código, añade este aviso por tu cuenta."
+        }
+      }
+    },
+    "planCredits": {
+      "title": "Gestionar tu plan y tus créditos",
+      "summary": "Tu prueba, tu suscripción y los créditos de IA.",
+      "credits_one": "{{count, number}} crédito",
+      "credits_many": "{{count, number}} de créditos",
+      "credits_other": "{{count, number}} créditos",
+      "steps": {
+        "startTrial": {
+          "title": "Inicia tu prueba gratuita",
+          "body_one": "En <billing>Facturación</billing>, elige <ui>Mensual</ui> o <ui>Anual</ui> y haz clic en <ui>Iniciar prueba gratuita</ui>. Dura {{count, number}} día e incluye {{credits}}.",
+          "body_many": "En <billing>Facturación</billing>, elige <ui>Mensual</ui> o <ui>Anual</ui> y haz clic en <ui>Iniciar prueba gratuita</ui>. Dura {{count, number}} de días e incluye {{credits}}.",
+          "body_other": "En <billing>Facturación</billing>, elige <ui>Mensual</ui> o <ui>Anual</ui> y haz clic en <ui>Iniciar prueba gratuita</ui>. Dura {{count, number}} días e incluye {{credits}}."
+        },
+        "plan": {
+          "title": "Tu plan",
+          "body": "El plan mensual cuesta {{monthlyPrice}} al mes, con {{monthlyCredits}} cada mes. El anual cuesta {{yearlyPrice}} al año, con {{yearlyCredits}} por adelantado. Los créditos que no uses no se acumulan. Haz clic en <ui>Gestionar suscripción</ui> para actualizar tu tarjeta, consultar tus facturas o cancelar."
+        },
+        "switchToYearly": {
+          "title": "Cambia al plan anual",
+          "body": "En <billing>Facturación</billing>, elige <ui>Anual</ui> en tu plan y haz clic en <ui>Cambiar a anual</ui>. Pagarás {{price}} ahora, menos los días no usados de tu mes actual. Si estás en la prueba gratuita, pagarás cuando termine."
+        },
+        "buyCredits": {
+          "title": "Compra más créditos",
+          "body": "Cada candidatura evaluada por IA usa un crédito. Si necesitas más, compra un paquete en <ui>Comprar créditos</ui>. Los créditos adicionales no caducan y se usan después de los créditos de tu plan."
+        },
+        "runOut": {
+          "title": "Si te quedas sin créditos",
+          "body": "Las candidaturas nuevas esperan con el estado <ui>Faltan créditos</ui>. Cuando vuelvas a tener créditos, evalúalas desde el aviso de <jobs>Vacantes</jobs> o <billing>Facturación</billing>, o déjalas sin evaluar."
+        },
+        "endTrial": {
+          "title": "Finaliza tu prueba antes de tiempo",
+          "body": "Si se agotan los créditos de tu prueba, haz clic en <ui>Finalizar prueba</ui> en el aviso de <jobs>Vacantes</jobs> o <billing>Facturación</billing>. Tu plan empieza hoy, con sus créditos."
+        },
+        "planStops": {
+          "title": "Si tu plan se detiene",
+          "body": "Sin un plan activo, Emploist está en modo de solo lectura y tu página de empleo deja de aceptar candidaturas. Tu equipo puede seguir viéndolo todo y exportar candidaturas, y los administradores pueden volver a suscribirse."
+        }
+      }
+    },
+    "connectAssistant": {
+      "title": "Conectar un asistente de IA",
+      "summary": "Gestiona tus vacantes y candidaturas desde Claude, ChatGPT y otros asistentes.",
+      "steps": {
+        "choose": {
+          "title": "Elige tu asistente",
+          "body": "En la página <mcp>MCP</mcp>, elige tu asistente en <ui>Conecta tu asistente</ui>."
+        },
+        "follow": {
+          "title": "Sigue sus pasos",
+          "body": "Cada asistente tiene sus propios pasos, con la dirección que debes pegar o el comando que debes copiar justo donde lo necesitas."
+        },
+        "allow": {
+          "title": "Inicia sesión y permite el acceso",
+          "body": "Inicia sesión en Emploist cuando tu asistente te lo pida y haz clic en <ui>Permitir</ui>. Tu asistente actúa como tú, con tu rol."
+        },
+        "disconnect": {
+          "title": "Desconéctalo",
+          "body": "Para detener un asistente, haz clic en <ui>Desconectar</ui> junto a él en <ui>Asistentes conectados</ui>, en la página <mcp>MCP</mcp>."
+        }
+      }
+    },
+    "mcpSwitch": {
+      "title": "Activar o desactivar el MCP",
+      "summary": "Elige si tu equipo puede usar Emploist desde asistentes de IA.",
+      "steps": {
+        "find": {
+          "title": "Busca el interruptor",
+          "body": "En la pestaña <general>General</general> de Configuración, activa o desactiva <ui>Permitir que tu equipo conecte asistentes de IA</ui>. Se aplica a toda tu empresa."
+        },
+        "whileOff": {
+          "title": "Mientras está desactivado",
+          "body": "Los asistentes no pueden usar Emploist y nadie puede conectar uno nuevo. Las conexiones se conservan, así que vuelven a funcionar cuando activas el MCP de nuevo."
+        }
+      }
+    }
+  }
+}

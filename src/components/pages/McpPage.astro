@@ -1,0 +1,203 @@
+---
+import { getLocale, getMessages } from "../../i18n";
+import { LOCALES, localizePath } from "../../i18n/locales";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { MCP_SERVER_URL } from "../../lib/mcp-txt";
+import { APP, SITE } from "../../lib/site";
+import Band from "../Band.astro";
+import Button from "../Button.astro";
+import CallToAction from "../CallToAction.astro";
+import SectionHeader from "../SectionHeader.astro";
+import AiAssistants from "../sections/AiAssistants.astro";
+
+const locale = getLocale(Astro);
+const t = getMessages(locale);
+const m = t.mcp;
+const title = `${t.nav.mcp} | ${SITE.name}`;
+const pageUrl = new URL(localizePath("/mcp/", locale), SITE.url).href;
+const alternates = Object.fromEntries(LOCALES.map((lang) => [lang, localizePath("/mcp/", lang)]));
+const guideClaude = localizePath("/blog/how-to-manage-hiring-from-claude-with-mcp/", locale);
+const guideChatgpt = localizePath("/blog/top-chatgpt-plugins-for-hr-managers/", locale);
+const guideDocs = localizePath("/docs/connect-an-ai-assistant/", locale);
+const setupText = m.setupCopy({
+  mcpDocs: new URL("/mcp.txt", SITE.url).href,
+  serverUrl: MCP_SERVER_URL,
+});
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: title,
+    description: m.description,
+    inLanguage: locale,
+    isPartOf: { "@id": `${SITE.url}/#website` },
+  },
+];
+---
+
+<BaseLayout title={title} description={m.description} alternates={alternates} jsonLd={jsonLd}>
+  <Band />
+  <section class="section-y" aria-labelledby="mcp-title">
+    <SectionHeader eyebrow={m.eyebrow} title={m.heading} id="mcp-title" lead={m.lead} as="h1">
+      <div class="mt-2 flex flex-wrap items-center justify-center gap-3">
+        <Button href={APP.signUpUrl} size="lg">{m.cta}</Button>
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg"
+          data-mcp-copy
+          data-label={m.copySetup}
+          data-copied={m.copiedSetup}
+        >
+          <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4">
+            <rect x="7" y="7" width="9" height="10" rx="1.5"></rect>
+            <path d="M13 7V4.5A1.5 1.5 0 0 0 11.5 3h-7A1.5 1.5 0 0 0 3 4.5v9A1.5 1.5 0 0 0 4.5 15H7"></path>
+          </svg>
+          <span data-mcp-copy-text>{m.copySetup}</span>
+        </button>
+      </div>
+      <textarea class="sr-only" aria-hidden="true" readonly data-mcp-setup tabindex="-1">{setupText}</textarea>
+    </SectionHeader>
+  </section>
+
+  <script>
+    function bindMcpCopy() {
+      const button = document.querySelector<HTMLButtonElement>("[data-mcp-copy]");
+      const source = document.querySelector<HTMLTextAreaElement>("[data-mcp-setup]");
+      const text = button?.querySelector("[data-mcp-copy-text]");
+      if (!button || !source || !text || button.dataset.bound === "1") return;
+      button.dataset.bound = "1";
+      const label = button.dataset.label ?? "Copy MCP setup";
+      const copied = button.dataset.copied ?? "Copied";
+      button.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(source.value);
+        text.textContent = copied;
+        window.setTimeout(() => {
+          text.textContent = label;
+        }, 1600);
+      });
+    }
+    bindMcpCopy();
+    document.addEventListener("astro:page-load", bindMcpCopy);
+  </script>
+
+  <Band />
+  <AiAssistants />
+
+  <Band />
+  <section class="section-y" aria-labelledby="mcp-what">
+    <SectionHeader title={m.whatTitle} id="mcp-what" lead={m.whatLead} />
+    <div class="container-page rule-t rule-b mt-14 sm:mt-16">
+      <ul class="cells md:grid-cols-3" data-stagger style="--stagger-start: 80ms; --stagger-step: 70ms">
+        {
+          m.whatPoints.map((point) => (
+            <li class="flex flex-col gap-2.5 px-5 py-8 sm:px-6 sm:py-10">
+              <h3 class="text-title">{point.title}</h3>
+              <p class="leading-relaxed text-body">{point.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <Band />
+  <section class="section-y" aria-labelledby="mcp-how">
+    <SectionHeader title={m.howTitle} id="mcp-how" />
+    <div class="container-page rule-t rule-b mt-14 sm:mt-16">
+      <ol class="divide-y divide-line">
+        {
+          m.howSteps.map((step, index) => (
+            <li class="grid gap-4 px-5 py-8 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-8 sm:px-8 sm:py-10">
+              <p class="text-label tabular-nums text-faint">{String(index + 1).padStart(2, "0")}</p>
+              <div class="min-w-0">
+                <h3 class="text-[1.125rem] font-semibold tracking-[-0.02em] text-ink">{step.title}</h3>
+                <p class="mt-3 text-[1.0625rem] leading-relaxed text-body">{step.text}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <Band />
+  <section class="section-y" aria-labelledby="mcp-connect">
+    <SectionHeader title={m.connectTitle} id="mcp-connect" lead={m.connectLead} />
+    <div class="container-page mt-8 flex justify-center px-5 sm:px-8">
+      <code class="border border-line bg-raised px-4 py-3 text-[0.9375rem] tracking-[-0.02em] text-ink sm:text-[1.0625rem]">
+        {m.serverUrl}
+      </code>
+    </div>
+    <div class="container-page rule-t rule-b mt-10 sm:mt-12">
+      <ul class="cells md:grid-cols-3" data-stagger style="--stagger-start: 80ms; --stagger-step: 70ms">
+        {
+          m.connectClients.map((client) => (
+            <li class="flex flex-col gap-2.5 px-5 py-8 sm:px-6 sm:py-10">
+              <h3 class="text-title">{client.name}</h3>
+              <p class="leading-relaxed text-body">{client.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <Band />
+  <section class="section-y" aria-labelledby="mcp-control">
+    <SectionHeader title={m.controlTitle} id="mcp-control" />
+    <div class="container-page rule-t rule-b mt-14 sm:mt-16">
+      <ul class="cells md:grid-cols-3" data-stagger style="--stagger-start: 80ms; --stagger-step: 70ms">
+        {
+          m.controlPoints.map((point) => (
+            <li class="flex flex-col gap-2.5 px-5 py-8 sm:px-6 sm:py-10">
+              <h3 class="text-title">{point.title}</h3>
+              <p class="leading-relaxed text-body">{point.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <Band />
+  <section class="section-y" aria-labelledby="mcp-guides">
+    <SectionHeader title={m.guidesTitle} id="mcp-guides" lead={m.guidesLead} />
+    <div class="container-page rule-t rule-b mt-14 sm:mt-16">
+      <ul class="divide-y divide-line">
+        <li>
+          <a
+            href={guideClaude}
+            class="flex items-center justify-between gap-4 px-5 py-5 text-[1.0625rem] font-medium tracking-[-0.02em] text-ink transition-colors hover:bg-subtle hover:text-brand-ink sm:px-8"
+          >
+            {m.guideClaude}
+            <span aria-hidden="true" class="text-faint">→</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href={guideChatgpt}
+            class="flex items-center justify-between gap-4 px-5 py-5 text-[1.0625rem] font-medium tracking-[-0.02em] text-ink transition-colors hover:bg-subtle hover:text-brand-ink sm:px-8"
+          >
+            {m.guideChatgpt}
+            <span aria-hidden="true" class="text-faint">→</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href={guideDocs}
+            class="flex items-center justify-between gap-4 px-5 py-5 text-[1.0625rem] font-medium tracking-[-0.02em] text-ink transition-colors hover:bg-subtle hover:text-brand-ink sm:px-8"
+          >
+            {m.guideDocs}
+            <span aria-hidden="true" class="text-faint">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <Band />
+  <CallToAction />
+</BaseLayout>

@@ -1,0 +1,153 @@
+---
+title: "HR 매니저를 위한 ChatGPT 플러그인 추천"
+description: "2026년에 HR이 직접 추가할 수 있는 ChatGPT 플러그인. 채용용 Emploist MCP부터 시작해 Notion, Slack, Zapier 등을 소개해요."
+pubDate: 2026-11-21
+author: "Mighil Puthukkudy"
+image: ../images/top-chatgpt-plugins-for-hr-managers/cover.jpg
+imageAlt: "노트북에 열린 ChatGPT. 뒤에는 흐릿한 도시 풍경."
+tags: ["AI 어시스턴트", "가이드", "ChatGPT"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import emploistMcpPage from "../images/manage-hiring-from-claude/emploist-mcp-page.png";
+
+HR 매니저는 이제 ChatGPT에서 채용을 진행할 수 있어요. 빈 채팅창에 이력서를 붙여 넣는 방식이 아니라, 이미 쓰는 도구와 연결되는 플러그인을 설치하는 방식이에요.
+
+ChatGPT에서 **플러그인**은 [MCP](https://modelcontextprotocol.io/)로 연결된 앱이에요. 서버 URL을 붙여넣고, 로그인한 뒤, 채팅에서 `@`로 플러그인을 언급하면 돼요. 지원자 데이터는 ATS에 그대로 남아요. 모델이 누군가를 옮기기 전에 확인을 요청해요.
+
+이 목록은 벤더 티켓을 기다리지 않고 직접 추가할 수 있는 플러그인만 담았어요. Emploist를 맨 앞에 둔 이유는, 몇 분이면 연결하고 그 자리에서 실제로 채용을 진행할 수 있는 ATS이기 때문이에요.
+
+## 2026년 ChatGPT 플러그인이란?
+
+예전 GPT Store와 Classic Plugins는 사라지고 있어요. OpenAI가 실무용으로 안내하는 건 커스텀 MCP 서버이고, ChatGPT는 이를 플러그인으로 보여 줘요.
+
+이 변화는 HR에게 중요해요. PDF를 올린 Custom GPT는 쉽게 낡아지고 감사하기도 어려워요. 플러그인은 나로 로그인하고, 역할이 허용한 범위만 보며, 쓰기 전에 확인을 받아요.
+
+설치하기 전에 세 가지를 확인하세요.
+
+1. 직접 추가할 수 있나요?
+2. 붙여 넣은 CSV가 아니라 실시간 채용 데이터에 동작하나요?
+3. 기존 권한 안에서 작동하나요?
+
+## 1. Emploist
+
+ChatGPT가 지원자를 순위를 매기고, 단계를 옮기고, 공고 초안을 쓰고, 실제 파이프라인에 댓글을 남기게 하고 싶을 때 Emploist를 쓰세요.
+
+Emploist는 [채용 페이지](/ko/#careers-page), 채용 단계, 공고별 [AI 랭킹](/ko/#ai-ranking)이 있는 지원자 추적 도구예요. 호스팅된 MCP 서버는 `https://mcp.emploist.com`에 있어요. 같은 서버를 Claude와 다른 어시스턴트에서도 쓸 수 있어요.
+
+직접 추가할 수 있어요. Emploist에서 **MCP**를 열고 **ChatGPT** 탭을 선택한 다음, ChatGPT에서 **Plugins**로 가서 커스텀 MCP 서버를 추가하고 그 URL을 붙여넣으세요. 안내가 나오면 Emploist로 로그인하세요. API 키는 없어요. 영업 통화도 없어요.
+
+어시스턴트는 나로 작동해요. Emploist 역할만 받아요. MCP 페이지에서 언제든 연결을 끊을 수 있어요.
+
+회사 요금제 하나로 팀 전체를 커버해요. 결제 전에 무료 체험이 있어요. ChatGPT에서 지원서를 랭킹해도 Emploist 안에서 랭킹할 때와 같은 AI 크레딧을 써요.
+
+<Figure
+  src={emploistMcpPage}
+  url="app.emploist.com/mcp"
+  alt="Emploist의 MCP 페이지. Claude, ChatGPT, 다른 어시스턴트용 탭이 있고, MCP 서버 주소 https://mcp.emploist.com과 연결된 어시스턴트 목록이 보여요."
+  caption="Emploist의 MCP 페이지에는 ChatGPT용 단계와 ChatGPT Plugins에 붙여넣을 주소가 있어요."
+/>
+
+### ChatGPT에 Emploist 추가하기
+
+1. Emploist에서 **MCP**를 열고 **ChatGPT** 탭을 선택하세요.
+2. 웹의 ChatGPT에서 **Plugins**를 열고 **+**를 클릭한 뒤 **Add custom MCP server**를 선택하세요.
+3. 이름을 Emploist로 하세요. 서버 URL은 다음과 같아요.
+
+```
+https://mcp.emploist.com
+```
+
+4. OAuth를 선택하고, 신뢰하는 서버에 대한 경고를 수락한 뒤 플러그인을 만드세요.
+5. 설치하고 채팅을 시작한 뒤 `@`를 입력하고 Emploist를 고르세요.
+
+쓰기 작업은 기본적으로 확인을 요청해요. 단계 이동이나 새 공고를 승인하기 전에 내용을 읽으세요.
+
+### 잘 통하는 프롬프트
+
+- "Using Emploist, which applicants for Senior Product Designer are the best matches, and why?"
+- "Move Priya Shah to Interviewing and leave a comment that her portfolio stood out."
+- "Draft a Product Marketing Manager job for Berlin, hybrid, and show me the form questions before we publish."
+
+더 긴 MCP 안내(Claude UI, 같은 Emploist 서버)는 [MCP로 Claude에서 채용을 관리하는 방법](/ko/blog/how-to-manage-hiring-from-claude-with-mcp/)을 읽어 보세요.
+
+## 2. Notion
+
+핸드북, 면접 키트, 온보딩 체크리스트가 Notion에 있을 때 쓰세요.
+
+ChatGPT는 워크스페이스가 이미 신뢰하는 페이지를 바탕으로 초안을 쓸 수 있어서, 작년 PDF가 아니라 지금 정책에 맞는 답이 나와요. 요금제에서 Notion을 쓸 수 있으면 ChatGPT의 플러그인 또는 앱 설정에서 추가한 뒤 Notion으로 로그인하세요.
+
+보상 관련 페이지는 봇이 읽을 수 있는 공간 밖으로 두거나, 먼저 Notion 공유 설정을 조이세요.
+
+어떻게 채용하는지는 Notion으로. 누구를 채용하는지는 Emploist로.
+
+## 3. Slack
+
+결정의 흔적이 ATS보다 채널에 더 많을 때 Slack을 쓰세요.
+
+ChatGPT는 역할 채널을 따라잡거나, 면접관용 업데이트를 초안하거나, 우려가 나온 스레드를 찾는 데 쓸 수 있어요. 그건 공식 단계 이력이 아니라 조율용으로 보세요.
+
+Slack 계정으로 연결하세요. 이미 볼 수 있는 워크스페이스와 채널로 제한하세요. 쓰기 도구를 신뢰하기 전까지는 읽기 위주 프롬프트를 쓰세요.
+
+## 4. Zapier
+
+두 HR 도구에 아직 공식 MCP가 없을 때 Zapier를 쓰세요.
+
+[Zapier MCP](https://zapier.com/)는 하나의 커넥터로 수천 개의 앱 액션을 노출해요. HR 팀은 캘린더 홀드, 스프레드시트 로그, 폼에서 다른 곳으로 이어지는 연결에 써요.
+
+지원자 개인정보는 짧게 관리하세요. 최소 권한, 명확한 Zap 이름, 프롬프트에 비밀을 넣지 마세요. Zapier는 풀이에요. ATS가 아니에요.
+
+## 5. Breezy HR
+
+회사에서 이미 Breezy로 채용을 돌리고 있다면 Breezy의 MCP를 쓰세요.
+
+Breezy의 공식 서버는 Breezy 권한 아래에서 ChatGPT가 지원자와 포지션을 다루게 해요. 이 경로에서는 ChatGPT가 보통 Business 요금제가 필요해요.
+
+ChatGPT 중심 채용 스택을 고르는 중이고 아직 Breezy를 쓰지 않는다면, 대신 Emploist부터 시작하세요. 연결하는 같은 제품 안에 채용 페이지와 읽기 쉬운 매치 점수가 있어요.
+
+## 6. Greenhouse
+
+이미 Core, Plus, 또는 Pro를 쓰고 IT가 연결해 줄 수 있다면 Greenhouse MCP를 쓰세요.
+
+메모, 단계 이동, 스코어카드, 일정 등을 Site Admin 범위에서 다뤄요. 그 거버넌스는 엔터프라이즈에 맞아요. “오늘 오후에 되게 하고 싶다”는 용도에서 Emploist보다 아래에 둔 이유이기도 해요. 관리자 설정과 변경 관리를 예상하세요.
+
+Greenhouse를 쓴다면 IT에 MCP 활성화를 요청하세요. 그 대기열 없이 작은 팀으로 채용한다면 Emploist가 더 짧은 길이에요.
+
+## 7. Gusto 또는 HiBob
+
+오퍼 이후, 헤드카운트·입사일·연차 같은 질문이 나올 때 이들을 쓰세요.
+
+급여와 HCM 플랫폼은 피플옵스용 MCP 서버를 공개해요. 채용 중 ATS를 대체하지는 않아요. 이미 맞는 HRIS 권한이 있는 계정으로만 연결하세요.
+
+## 빠른 비교
+
+| 플러그인 | HR이 셀프서브 가능? | 채용 액션 | 가장 잘 맞는 용도 |
+| --- | --- | --- | --- |
+| **Emploist** | 예. MCP URL을 붙여넣고 로그인. | 공고, 지원자, 단계, 댓글, 랭킹 | ChatGPT에서의 일상 채용 |
+| **Notion** | 예, 워크스페이스 접근 시 | 문서와 초안 | 정책과 면접 키트 |
+| **Slack** | 예, 워크스페이스 접근 시 | 주로 조율 | 따라잡기와 이해관계자 업데이트 |
+| **Zapier** | 예 | 앱 간 자동화 | 도구 사이 풀 |
+| **Breezy HR** | Breezy 사용 시 가능 (ChatGPT는 Business) | ATS 읽기·쓰기 | Breezy 안에서 유지 |
+| **Greenhouse** | Site Admin 필요 | 깊은 ATS, 거버넌스 | 엔터프라이즈 Greenhouse |
+| **Gusto / HiBob** | 요금제와 역할에 따라 | 직원·급여 맥락 | 채용 후 피플옵스 |
+
+## ChatGPT에 커스텀 MCP 플러그인 추가하기
+
+1. **웹의 ChatGPT**를 쓰세요. 커스텀 MCP 플러그인은 먼저 거기에서 안내돼요.
+2. **Plugins** → **Add custom MCP server**를 여세요.
+3. 벤더 URL을 붙여넣으세요. Emploist는 `https://mcp.emploist.com`이에요.
+4. 채팅에 API 키를 붙여 넣지 않도록 **OAuth**를 우선하세요.
+5. 플러그인을 만들고 설치한 뒤, 새 대화에서 `@`로 언급하세요.
+6. 쓰기 도구는 승인하기 전에 확인 내용을 읽으세요.
+
+워크스페이스 규칙은 그대로 적용돼요. Business, Enterprise, Edu 관리자는 앱과 쓰기 작업을 제한할 수 있어요. 버튼이 안 보이면 ATS 벤더가 아니라 먼저 ChatGPT 관리자에게 개발자 모드와 플러그인 권한을 확인하세요.
+
+## 피할 것
+
+- PDF를 올린 이력서 전용 Custom GPT. 쉽게 낡아지고, 감사하기 어렵고, 플러그인으로 대체되고 있어요.
+- ATS API 키를 모델에 붙여 넣게 하는 것. 대신 OAuth MCP 서버를 쓰세요.
+- 근거를 보여 주지 않는 도구. 디브리핑에서 설명할 수 있는 매치 분석이나 스코어카드를 우선하세요.
+
+## 다음 단계
+
+[무료 체험 시작하기](https://app.emploist.com/sign-in), **MCP** → **ChatGPT**를 열고 `https://mcp.emploist.com`을 플러그인으로 추가하세요. 가장 잘 맞는 지원자를 물은 다음, 같은 채팅에서 알맞은 사람을 앞으로 옮기세요.

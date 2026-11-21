@@ -19,15 +19,16 @@ const post = ({ image }: SchemaContext) =>
     draft: z.boolean().default(false),
   });
 
-// Blog posts: Markdown or MDX files in src/content/blog/. The file name is the
-// post's address, e.g. hiring-checklist.md → /blog/hiring-checklist/.
+// Blog posts: Markdown or MDX files in src/content/blog/. Date-prefix the file
+// name for ordering; the public URL drops it:
+// 2026-10-12-hiring-checklist.mdx → /blog/hiring-checklist/.
 const blog = defineCollection({
   loader: glob({ base: "./src/content/blog", pattern: "*.{md,mdx}" }),
   schema: post,
 });
 
-// Translations of posts, in a folder per language with the English post's
-// file name: src/content/blog/fr/hiring-checklist.md → /fr/blog/hiring-checklist/.
+// Translations use the same dated file name under a language folder:
+// src/content/blog/fr/2026-10-12-hiring-checklist.mdx → /fr/blog/hiring-checklist/.
 const blogTranslations = defineCollection({
   loader: glob({ base: "./src/content/blog", pattern: "{fr,de,es,it,ja,ko,pl,tr,id}/*.{md,mdx}" }),
   schema: post,

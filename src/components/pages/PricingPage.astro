@@ -1,0 +1,82 @@
+---
+// Dedicated pricing page — same rhythm as the Payflow SaaS template
+// (plan → FAQ → CTA), with Emploist's one-plan pricing and site chrome.
+import { getLocale, getMessages, PLAN_FACTS } from "../../i18n";
+import { LOCALES, localizePath } from "../../i18n/locales";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { APP, PLAN, SITE } from "../../lib/site";
+import Band from "../Band.astro";
+import CallToAction from "../CallToAction.astro";
+import Faq from "../sections/Faq.astro";
+import Pricing from "../sections/Pricing.astro";
+
+const locale = getLocale(Astro);
+const t = getMessages(locale);
+const title = `${t.nav.pricing} | ${SITE.name}`;
+const description = t.pricing.lead;
+const pageUrl = new URL(localizePath("/pricing/", locale), SITE.url).href;
+const alternates = Object.fromEntries(LOCALES.map((lang) => [lang, localizePath("/pricing/", lang)]));
+const organizationId = `${SITE.url}/#organization`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: title,
+        description,
+        inLanguage: locale,
+        isPartOf: { "@id": `${SITE.url}/#website` },
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: SITE.name,
+        url: pageUrl,
+        inLanguage: locale,
+        applicationCategory: "BusinessApplication",
+        applicationSubCategory: "Applicant tracking system",
+        operatingSystem: "Web",
+        description: t.site.description(PLAN_FACTS),
+        publisher: { "@type": "Organization", "@id": organizationId, name: SITE.name, url: `${SITE.url}/` },
+        offers: [
+          {
+            "@type": "Offer",
+            price: String(PLAN.priceUsd),
+            priceCurrency: "USD",
+            url: APP.signUpUrl,
+            description: t.site.monthlyOffer(PLAN_FACTS),
+          },
+          {
+            "@type": "Offer",
+            price: String(PLAN.yearlyPriceUsd),
+            priceCurrency: "USD",
+            url: APP.signUpUrl,
+            description: t.site.yearlyOffer(PLAN_FACTS),
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        inLanguage: locale,
+        mainEntity: t.faq.items(PLAN_FACTS).map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} alternates={alternates} jsonLd={jsonLd}>
+  <Band />
+  <Pricing headingAs="h1" />
+  <Band />
+  <Faq />
+  <Band />
+  <CallToAction />
+</BaseLayout>

@@ -1,0 +1,481 @@
+{
+  "title": "Bantuan",
+  "description": "Kami siap membantu. Kirim email kepada kami, atau ikuti panduan untuk menyelesaikan berbagai hal di Emploist.",
+  "contact": {
+    "title": "Kirim email kepada kami",
+    "description": "Ada pertanyaan, masukan, atau sesuatu yang tidak berfungsi? Kami biasanya membalas dalam 24 jam.",
+    "copied": "Alamat email disalin",
+    "copy": "Salin alamat email"
+  },
+  "guideList": {
+    "title": "Panduan",
+    "description": "Bantuan langkah demi langkah untuk bagian-bagian utama Emploist.",
+    "adminOnly": "Khusus admin"
+  },
+  "topics": {
+    "jobsAndApplications": "Lowongan dan lamaran",
+    "careersPage": "Halaman karier",
+    "teamAndEmails": "Tim dan email",
+    "aiAndBilling": "Penilaian AI dan penagihan",
+    "aiAssistants": "Asisten AI"
+  },
+  "guides": {
+    "createJob": {
+      "title": "Membuat dan memublikasikan lowongan",
+      "summary": "Jelaskan posisinya, simpan draf, lalu publikasikan.",
+      "steps": {
+        "start": {
+          "title": "Mulai lowongan baru",
+          "body": "Buka <jobs>Lowongan</jobs> dan klik <ui>Buat lowongan</ui>."
+        },
+        "describe": {
+          "title": "Jelaskan posisinya",
+          "body": "Di tab <ui>Detail</ui>, isi <ui>Judul lowongan</ui> dan <ui>Deskripsi</ui>. Departemen, lokasi, sistem kerja, dan jenis pekerjaan bersifat opsional. Departemen dan lokasi yang Anda tambahkan akan ditawarkan lagi di lowongan berikutnya."
+        },
+        "formAndStages": {
+          "title": "Periksa formulir dan tahapan",
+          "body": "Tab <ui>Formulir lamaran</ui> dan <ui>Tahapan</ui> sudah berisi pengaturan siap pakai. Anda dapat menyesuaikannya sekarang atau kapan saja nanti."
+        },
+        "saveOrPublish": {
+          "title": "Simpan atau publikasikan",
+          "body": "<ui>Simpan draf</ui> membuat lowongan hanya terlihat oleh tim Anda. <ui>Publikasikan</ui> menampilkannya di halaman karier Anda."
+        }
+      }
+    },
+    "applicationForm": {
+      "title": "Menyusun formulir lamaran",
+      "summary": "Pilih apa yang diisi pelamar saat melamar.",
+      "steps": {
+        "open": {
+          "title": "Buka formulir",
+          "body": "Buka tab <ui>Formulir lamaran</ui> pada sebuah lowongan."
+        },
+        "essentials": {
+          "title": "Mulai dari yang utama",
+          "body": "Setiap formulir meminta <ui>Nama lengkap</ui>, <ui>Email</ui>, dan <ui>Resume atau CV</ui>. Anda dapat memindahkannya, tetapi tidak dapat menghapusnya."
+        },
+        "addQuestions": {
+          "title": "Tambahkan pertanyaan",
+          "body": "Klik <ui>Tambah</ui> dan pilih jenis pertanyaan, seperti <ui>Jawaban singkat</ui>, <ui>Pilihan tunggal</ui>, atau <ui>Skala linear</ui>. Tambahkan <ui>Judul</ui> atau <ui>Teks</ui> untuk memberi pelamar konteks tambahan."
+        },
+        "setUp": {
+          "title": "Atur setiap pertanyaan",
+          "body": "Klik pertanyaan untuk mengeditnya, dan aktifkan <ui>Wajib</ui> jika pelamar harus menjawabnya. Seret pertanyaan, atau gunakan menunya, untuk mengubah urutan. Pertanyaan bertanda <ui>Belum lengkap</ui> harus dilengkapi sebelum Anda memublikasikan lowongan."
+        },
+        "save": {
+          "title": "Simpan perubahan Anda",
+          "body": "Pada lowongan yang sudah ada, klik <ui>Simpan perubahan</ui>. Perubahan Anda hanya berlaku untuk lamaran baru. Lamaran yang sudah masuk tetap menyimpan pertanyaan yang dijawabnya."
+        }
+      }
+    },
+    "stages": {
+      "title": "Mengatur tahapan rekrutmen",
+      "summary": "Bentuk langkah-langkah yang dilalui setiap lamaran.",
+      "steps": {
+        "open": {
+          "title": "Buka tahapan",
+          "body": "Buka tab <ui>Tahapan</ui> pada sebuah lowongan. Lowongan baru dimulai dengan <ui>Inbox</ui>, <ui>Interviewing</ui>, <ui>Accepted</ui>, dan <ui>Rejected</ui>."
+        },
+        "inbox": {
+          "title": "Kenali kotak masuk",
+          "body": "Lamaran baru masuk ke tahap pertama, yaitu kotak masuk (Inbox). Anda dapat mengganti namanya, tetapi tahap ini selalu berada di urutan pertama dan tidak dapat dihapus."
+        },
+        "addRenameReorder": {
+          "title": "Tambah, ganti nama, dan ubah urutan",
+          "body": "Klik <ui>Tambah tahap</ui> untuk menambahkan tahap, atau pilih <ui>Ganti nama</ui> dari menu tahap. Seret tahap sesuai urutan rekrutmen Anda."
+        },
+        "delete": {
+          "title": "Hapus tahap",
+          "body": "Pilih <ui>Hapus</ui> dari menu tahap. Jika tahap tersebut berisi lamaran, Anda akan memilih tahap tujuan pemindahannya."
+        }
+      }
+    },
+    "reviewApplications": {
+      "title": "Meninjau lamaran",
+      "summary": "Temukan, baca, dan pindahkan lamaran melalui tahapan Anda.",
+      "steps": {
+        "openJob": {
+          "title": "Buka lowongan",
+          "body": "Buka lowongan dari <jobs>Lowongan</jobs>. Tab <ui>Lamaran</ui> pada lowongan tersebut menampilkan tombol untuk setiap tahap beserta jumlah lamaran di dalamnya."
+        },
+        "find": {
+          "title": "Temukan yang perlu ditinjau",
+          "body": "Cari berdasarkan nama atau email, lalu urutkan berdasarkan <ui>Paling cocok</ui>, <ui>Terbaru</ui>, atau <ui>Terlama</ui>. Paling cocok tersedia selama fitur AI aktif."
+        },
+        "openApplication": {
+          "title": "Buka lamaran",
+          "body": "Klik nama untuk membuka lamaran. Klik <ui>Lihat CV</ui> untuk membuka CV pelamar di tab baru. Tekan <ui>←</ui> atau <ui>→</ui> untuk beralih ke lamaran sebelumnya atau berikutnya."
+        },
+        "move": {
+          "title": "Pindahkan ke tahap lain",
+          "body": "Pilih tahap dari menu <ui>Tahap</ui> di lamaran, atau dari <ui>Pindahkan ke</ui> di menu baris. Jika Anda salah memindahkan, klik <ui>Urungkan</ui> pada pesan yang muncul."
+        }
+      }
+    },
+    "comments": {
+      "title": "Berkomentar dan menyebut rekan tim",
+      "summary": "Diskusikan pelamar dengan tim Anda, dan ikuti terus perkembangannya.",
+      "steps": {
+        "write": {
+          "title": "Tulis komentar",
+          "body": "Buka lamaran, tulis di kotak komentar, lalu klik <ui>Kirim</ui> atau tekan <ui>{{shortcut}}</ui>. Komentar hanya dapat dilihat oleh tim Anda.",
+          "shortcut": "Ctrl+Enter",
+          "shortcutMac": "⌘+Enter"
+        },
+        "mention": {
+          "title": "Sebut seseorang",
+          "body": "Ketik <ui>@</ui> dan pilih rekan tim untuk memberi tahu mereka."
+        },
+        "replies": {
+          "title": "Ikuti balasan",
+          "body": "Anda akan diberi tahu saat seseorang menyebut Anda, atau berkomentar di lamaran yang pernah Anda komentari. Temukan notifikasi ini di ikon lonceng di bagian atas halaman, atau di <notifications>Notifikasi</notifications>."
+        },
+        "editOrDelete": {
+          "title": "Edit atau hapus",
+          "body": "Pilih <ui>Edit</ui> atau <ui>Hapus</ui> dari menu komentar untuk mengubah atau menghapus komentar Anda sendiri. Admin juga dapat menghapus komentar siapa pun."
+        }
+      }
+    },
+    "manageJob": {
+      "title": "Menutup, mengarsipkan, atau menduplikat lowongan",
+      "summary": "Berhenti menerima lamaran, rapikan daftar, atau gunakan kembali lowongan.",
+      "steps": {
+        "closeOrReopen": {
+          "title": "Tutup atau buka kembali",
+          "body": "Pada lowongan yang sudah dipublikasikan, gunakan menu status di bagian atas: <ui>Ditutup</ui> menghentikan penerimaan lamaran, dan <ui>Dibuka</ui> memulainya lagi."
+        },
+        "duplicate": {
+          "title": "Duplikat",
+          "body": "Pilih <ui>Duplikat</ui> dari menu <ui>Tindakan lainnya</ui> pada lowongan untuk membuat draf dengan detail, formulir, dan tahapan yang sama."
+        },
+        "archive": {
+          "title": "Arsipkan",
+          "body": "Pilih <ui>Arsipkan</ui> dari <ui>Tindakan lainnya</ui> untuk menyimpan lowongan di arsip. Lowongan yang diarsipkan bersifat hanya baca. Klik <ui>Pulihkan</ui> untuk mengembalikannya."
+        },
+        "delete": {
+          "title": "Hapus",
+          "body": "Pilih <ui>Hapus</ui> dari <ui>Tindakan lainnya</ui> untuk menghapus lowongan secara permanen, beserta lamarannya. Jika Anda ingin menyimpan lamarannya, arsipkan lowongan tersebut."
+        }
+      }
+    },
+    "exportApplications": {
+      "title": "Mengekspor lamaran",
+      "summary": "Unduh lamaran dan CV dari sebuah lowongan.",
+      "steps": {
+        "start": {
+          "title": "Mulai ekspor",
+          "body": "Pada lowongan yang memiliki lamaran, buka <ui>Tindakan lainnya</ui> dan pilih <ui>Ekspor lamaran</ui>."
+        },
+        "openZip": {
+          "title": "Buka file ZIP",
+          "body": "<ui>{{file}}</ui> adalah spreadsheet dengan satu baris untuk setiap lamaran. Folder <ui>{{folder}}</ui> berisi semua CV, yang diberi nama sesuai nama pelamar."
+        }
+      }
+    },
+    "customizeCareersPage": {
+      "title": "Menyesuaikan halaman karier",
+      "summary": "Pilih warna Anda, atau edit kode halamannya.",
+      "steps": {
+        "color": {
+          "title": "Pilih warna",
+          "body": "Buka tab <design>Desain</design> di Halaman karier, pilih <ui>Warna utama</ui>, lalu klik <ui>Simpan warna</ui>. Warna ini digunakan untuk tombol dan sorotan."
+        },
+        "code": {
+          "title": "Edit kode",
+          "body": "Klik <ui>Edit kode</ui> untuk mengubah template dan gaya halaman. <ui>Referensi</ui> berisi semua yang dapat Anda gunakan di dalamnya."
+        },
+        "preview": {
+          "title": "Pratinjau sambil mengedit",
+          "body": "Pratinjau diperbarui saat Anda mengetik. Gunakan <ui>Buka halaman</ui> untuk memeriksa setiap halaman, dan beralihlah antara ukuran desktop dan seluler."
+        },
+        "save": {
+          "title": "Simpan",
+          "body": "Klik <ui>Simpan</ui>. Untuk memulai dari awal, pilih <ui>Atur ulang ke kode bawaan</ui> dari <ui>Tindakan lainnya</ui>."
+        }
+      }
+    },
+    "editCodeLocally": {
+      "title": "Mengedit kode di komputer Anda",
+      "summary": "Gunakan editor Anda sendiri, dengan pratinjau langsung.",
+      "steps": {
+        "download": {
+          "title": "Unduh kode",
+          "body": "Di tab <design>Desain</design>, klik <ui>Unduh ZIP</ui>, lalu ekstrak file tersebut."
+        },
+        "preview": {
+          "title": "Lihat pratinjaunya",
+          "body": "Dengan Node.js {{version}} atau yang lebih baru, jalankan <code>{{command}}</code> di folder tersebut dan buka <code>{{url}}</code>. Halaman Anda akan ditampilkan dengan contoh lowongan. Muat ulang setelah setiap perubahan."
+        },
+        "check": {
+          "title": "Periksa masalah",
+          "body": "Jalankan <code>{{command}}</code> untuk menemukan masalah yang sama seperti saat menyimpan."
+        },
+        "upload": {
+          "title": "Unggah kode",
+          "body": "Kompres file ke dalam ZIP, klik <ui>Unggah ZIP</ui>, periksa pratinjau, lalu klik <ui>Simpan</ui>."
+        }
+      }
+    },
+    "changeAddress": {
+      "title": "Mengubah alamat halaman karier",
+      "summary": "Pindahkan halaman Anda ke alamat Emploist yang baru.",
+      "steps": {
+        "open": {
+          "title": "Buka alamat",
+          "body": "Buka tab <domain>Domain</domain> di Halaman karier, lalu klik <ui>Ubah</ui>."
+        },
+        "choose": {
+          "title": "Pilih alamat baru",
+          "body": "Ketik alamat yang Anda inginkan. Kami akan memeriksa ketersediaannya saat Anda mengetik."
+        },
+        "confirm": {
+          "title": "Konfirmasi perubahan",
+          "body": "Klik <ui>Ubah alamat</ui>. Alamat lama Anda langsung berhenti berfungsi, termasuk tautan ke lowongan yang telah Anda bagikan, dan perusahaan lain kemudian dapat menggunakannya."
+        }
+      }
+    },
+    "customDomain": {
+      "title": "Menghubungkan domain Anda sendiri",
+      "summary": "Tampilkan halaman karier Anda di alamat situs web Anda.",
+      "steps": {
+        "add": {
+          "title": "Tambahkan domain Anda",
+          "body": "Di tab <domain>Domain</domain>, masukkan subdomain situs web Anda, seperti careers.acme.com, lalu klik <ui>Tambah domain</ui>. Domain utama, seperti acme.com, tidak dapat dihubungkan."
+        },
+        "records": {
+          "title": "Tambahkan dua record DNS",
+          "body": "Di tempat Anda mengelola domain, tambahkan record <ui>CNAME</ui> dan <ui>TXT</ui> yang ditampilkan, menggunakan tombol salin. Di Cloudflare, atur record CNAME ke DNS only."
+        },
+        "wait": {
+          "title": "Tunggu pemeriksaan",
+          "body": "Perubahan biasanya terlihat dalam hitungan menit, tetapi bisa memakan waktu hingga 48 jam. Setelah statusnya <ui>Terhubung</ui>, halaman karier Anda dapat diakses di domain Anda."
+        }
+      }
+    },
+    "inviteTeam": {
+      "title": "Mengundang tim Anda",
+      "summary": "Tambahkan rekan tim melalui email, dan pilih peran mereka.",
+      "steps": {
+        "send": {
+          "title": "Kirim undangan",
+          "body": "Buka tab <members>Anggota</members> di Pengaturan, klik <ui>Undang anggota</ui>, masukkan alamat email mereka, lalu klik <ui>Kirim undangan</ui>."
+        },
+        "role": {
+          "title": "Pilih peran",
+          "body": "<ui>Anggota</ui> mengelola lowongan dan lamaran. <ui>Admin</ui> juga dapat mengelola tim, pengaturan perusahaan, halaman karier, dan penagihan."
+        },
+        "join": {
+          "title": "Mereka bergabung",
+          "body_other": "Mereka akan menerima email berisi tautan untuk bergabung, yang berlaku selama {{count, number}} hari."
+        },
+        "followUp": {
+          "title": "Tindak lanjuti",
+          "body": "Undangan yang belum dijawab tercantum di <ui>Undangan tertunda</ui>. Gunakan menu undangan untuk memilih <ui>Kirim ulang undangan</ui> atau <ui>Batalkan undangan</ui>."
+        }
+      }
+    },
+    "manageMembers": {
+      "title": "Mengelola peran dan anggota",
+      "summary": "Ubah peran, keluarkan orang, atau keluar dari perusahaan.",
+      "steps": {
+        "changeRole": {
+          "title": "Ubah peran",
+          "body": "Di tab <members>Anggota</members> di Pengaturan, buka menu seseorang dan pilih <ui>Jadikan admin</ui> atau <ui>Jadikan anggota</ui>. Hanya admin yang dapat mengubah peran."
+        },
+        "remove": {
+          "title": "Keluarkan seseorang",
+          "body": "Pilih <ui>Keluarkan dari perusahaan</ui> dari menu orang tersebut. Mereka langsung kehilangan akses. Hanya admin yang dapat mengeluarkan orang."
+        },
+        "leave": {
+          "title": "Keluar dari perusahaan",
+          "body": "Pilih <ui>Keluar dari perusahaan</ui> dari menu Anda sendiri. Jika Anda satu-satunya admin, jadikan orang lain admin terlebih dahulu."
+        }
+      }
+    },
+    "deleteCompanyOrAccount": {
+      "title": "Menghapus perusahaan atau akun Anda",
+      "summary": "Hapus perusahaan Anda secara permanen, atau hanya akun Anda sendiri.",
+      "steps": {
+        "open": {
+          "title": "Buka Zona bahaya",
+          "body": "Buka tab <danger>Zona bahaya</danger> di Pengaturan."
+        },
+        "deleteCompany": {
+          "title": "Hapus perusahaan",
+          "body": "Admin dapat memilih <ui>Hapus perusahaan</ui>. Semua data di dalamnya akan dihapus, termasuk lowongan, lamaran, dan halaman karier Anda, dan paket Anda langsung dibatalkan tanpa pengembalian dana."
+        },
+        "deleteAccount": {
+          "title": "Atau hapus akun Anda",
+          "body": "Klik <ui>Hapus akun</ui>. Jika Anda satu-satunya admin, jadikan orang lain admin terlebih dahulu. Jika Anda satu-satunya orang di perusahaan, perusahaan tersebut juga akan dihapus."
+        },
+        "confirm": {
+          "title": "Konfirmasi",
+          "body": "Ketik nama perusahaan atau email Anda, lalu klik tombol hapus. Tindakan ini tidak dapat diurungkan."
+        }
+      }
+    },
+    "stageEmails": {
+      "title": "Mengirim email kepada pelamar di setiap tahap",
+      "summary": "Beri tahu pelamar saat mereka melamar atau melaju ke tahap berikutnya.",
+      "steps": {
+        "open": {
+          "title": "Buka email tahap",
+          "body": "Di tab <ui>Tahapan</ui> pada lowongan, klik <ui>Edit email</ui> di samping tahap."
+        },
+        "customize": {
+          "title": "Sesuaikan email",
+          "body": "Setiap tahap dilengkapi email siap pakai. Edit <ui>Subjek</ui> dan <ui>Pesan</ui> email tersebut, lalu tambahkan detail seperti nama depan pelamar dengan <ui>Tambah variabel</ui>, atau dengan mengetik <code>{{character}}</code>."
+        },
+        "preview": {
+          "title": "Pratinjau dan aktifkan",
+          "body": "Periksa <ui>Pratinjau</ui>, yang menggunakan contoh pelamar. Lalu aktifkan <ui>Kirim email ini</ui> dan klik <ui>Simpan</ui>."
+        },
+        "timing": {
+          "title": "Ketahui kapan email dikirim",
+          "body_other": "Email tahap pertama langsung dikirim begitu seseorang melamar. Tahap lain menunggu {{count, number}} menit setelah pemindahan, jadi jika Anda mengurungkannya atau memindahkan lamaran lagi, email tersebut dibatalkan."
+        },
+        "pause": {
+          "title": "Jeda semua email",
+          "body": "Admin dapat menonaktifkan <ui>Kirim email ke pelamar</ui> di tab <general>Umum</general> di Pengaturan untuk menghentikan email dari semua tahap."
+        }
+      }
+    },
+    "repliesLayout": {
+      "title": "Mengatur balasan dan tata letak email",
+      "summary": "Pilih ke mana balasan dikirim dan seperti apa tampilan email.",
+      "steps": {
+        "replyTo": {
+          "title": "Tambahkan alamat balasan",
+          "body": "Di <emails>Email</emails>, masukkan <ui>Alamat balasan</ui> yang diperiksa tim Anda, lalu klik <ui>Simpan alamat</ui>. Tanpa alamat ini, balasan dari pelamar tidak akan sampai ke Anda."
+        },
+        "layout": {
+          "title": "Edit tata letak",
+          "body": "Setiap email dikirim dalam tata letak Anda, dengan logo dan warna utama Anda. Klik <ui>Edit kode</ui> untuk mengubah HTML-nya, dan pertahankan <code>{{placeholder}}</code> di tempat pesan setiap tahap ditampilkan."
+        },
+        "save": {
+          "title": "Simpan",
+          "body": "Klik <ui>Simpan</ui>. Untuk memulai dari awal, pilih <ui>Atur ulang ke tata letak bawaan</ui> dari <ui>Tindakan lainnya</ui>."
+        }
+      }
+    },
+    "matchScores": {
+      "title": "Memahami skor kecocokan",
+      "summary": "Cara AI menilai lamaran terhadap lowongannya.",
+      "steps": {
+        "read": {
+          "title": "Baca skornya",
+          "body": "Setiap lamaran mendapat skor kecocokan dari 0 hingga 100% berdasarkan detail lowongannya."
+        },
+        "aspects": {
+          "title": "Lihat dasar penilaiannya",
+          "body": "Buka lamaran untuk melihat skornya pada <ui>Keterampilan</ui>, <ui>Pengalaman</ui>, <ui>Kesesuaian senioritas</ui>, dan <ui>Kualifikasi</ui>. Kualifikasi hanya dihitung jika lowongan mensyaratkan gelar, sertifikasi, atau lisensi."
+        },
+        "useAsGuide": {
+          "title": "Gunakan sebagai panduan",
+          "body": "Skor kecocokan membantu Anda memutuskan siapa yang perlu ditinjau lebih dulu. Gunakan skor ini di samping tinjauan Anda sendiri, bukan sebagai penggantinya."
+        },
+        "noScore": {
+          "title": "Jika tidak ada skor",
+          "body": "<ui>Menilai</ui> berarti skornya sedang diproses, dan <ui>Perlu kredit</ui> berarti kredit AI Anda habis. <ui>Tidak dinilai</ui> berarti lamaran tidak dapat dinilai, misalnya jika CV berupa gambar hasil pindaian. Jika penilaian gagal, klik <ui>Coba lagi</ui> di lamaran."
+        },
+        "rankAgain": {
+          "title": "Nilai ulang setelah mengedit",
+          "body": "Saat Anda mengubah judul, departemen, jenis pekerjaan, atau deskripsi lowongan, pilih <ui>Simpan dan nilai ulang</ui> untuk menilai ulang lamarannya berdasarkan detail baru."
+        }
+      }
+    },
+    "aiSwitch": {
+      "title": "Menonaktifkan atau mengaktifkan penilaian AI",
+      "summary": "Pilih apakah lamaran Anda dinilai dengan AI.",
+      "steps": {
+        "find": {
+          "title": "Temukan tombolnya",
+          "body": "Di tab <general>Umum</general> di Pengaturan, nonaktifkan atau aktifkan <ui>Nilai lamaran dengan AI</ui>. Pengaturan ini berlaku untuk seluruh perusahaan Anda."
+        },
+        "whileOff": {
+          "title": "Selama nonaktif",
+          "body": "Tidak ada yang dikirim ke AI, skor kecocokan disembunyikan, dan lamaran baru tidak dinilai. Skor sebelumnya akan muncul kembali saat Anda mengaktifkannya lagi."
+        },
+        "turnOn": {
+          "title": "Aktifkan kembali",
+          "body": "Jika ada lamaran yang masuk selama itu, Anda dapat memilih untuk menilainya, masing-masing dengan satu kredit, atau membiarkannya tanpa penilaian."
+        },
+        "tellApplicants": {
+          "title": "Beri tahu pelamar",
+          "body": "Selama penilaian AI aktif, halaman karier bawaan memberi tahu pelamar bahwa AI membantu meninjau lamaran. Jika Anda menggunakan kode sendiri, tambahkan pemberitahuan ini sendiri."
+        }
+      }
+    },
+    "planCredits": {
+      "title": "Mengelola paket dan kredit",
+      "summary": "Uji coba, langganan, dan kredit AI Anda.",
+      "credits_other": "{{count, number}} kredit",
+      "steps": {
+        "startTrial": {
+          "title": "Mulai uji coba gratis",
+          "body_other": "Di <billing>Penagihan</billing>, pilih <ui>Bulanan</ui> atau <ui>Tahunan</ui>, lalu klik <ui>Mulai uji coba gratis</ui>. Uji coba berlangsung selama {{count, number}} hari dan dilengkapi {{credits}}."
+        },
+        "plan": {
+          "title": "Paket Anda",
+          "body": "Paket Bulanan seharga {{monthlyPrice}} per bulan, dengan {{monthlyCredits}} setiap bulan. Paket Tahunan seharga {{yearlyPrice}} per tahun, dengan {{yearlyCredits}} di awal. Kredit yang tidak terpakai tidak terbawa ke periode berikutnya. Klik <ui>Kelola langganan</ui> untuk memperbarui kartu, melihat faktur, atau membatalkan langganan."
+        },
+        "switchToYearly": {
+          "title": "Beralih ke tahunan",
+          "body": "Di <billing>Penagihan</billing>, pilih <ui>Tahunan</ui> pada paket Anda, lalu klik <ui>Beralih ke tahunan</ui>. Anda membayar {{price}} sekarang, dikurangi sisa hari yang belum terpakai di bulan ini. Jika Anda sedang dalam uji coba gratis, Anda baru membayar saat uji coba berakhir."
+        },
+        "buyCredits": {
+          "title": "Beli kredit tambahan",
+          "body": "Setiap lamaran yang dinilai AI menggunakan satu kredit. Untuk mendapatkan lebih banyak, beli paket kredit di <ui>Beli kredit</ui>. Kredit tambahan tidak pernah kedaluwarsa, dan digunakan setelah kredit dari paket Anda."
+        },
+        "runOut": {
+          "title": "Jika kredit habis",
+          "body": "Lamaran baru akan menunggu dengan status <ui>Perlu kredit</ui>. Setelah Anda memiliki kredit lagi, nilai lamaran tersebut dari pemberitahuan di <jobs>Lowongan</jobs> atau <billing>Penagihan</billing>, atau biarkan tanpa penilaian."
+        },
+        "endTrial": {
+          "title": "Akhiri uji coba lebih awal",
+          "body": "Jika kredit uji coba Anda habis, klik <ui>Akhiri uji coba</ui> pada pemberitahuan di <jobs>Lowongan</jobs> atau <billing>Penagihan</billing>. Paket Anda dimulai hari ini, beserta kreditnya."
+        },
+        "planStops": {
+          "title": "Jika paket Anda berhenti",
+          "body": "Tanpa paket yang aktif, Emploist dalam mode hanya baca dan halaman karier Anda berhenti menerima lamaran. Tim Anda tetap dapat melihat semuanya dan mengekspor lamaran, dan admin dapat berlangganan lagi."
+        }
+      }
+    },
+    "connectAssistant": {
+      "title": "Menghubungkan asisten AI",
+      "summary": "Kelola lowongan dan lamaran Anda dari Claude, ChatGPT, dan asisten lainnya.",
+      "steps": {
+        "choose": {
+          "title": "Pilih asisten Anda",
+          "body": "Di halaman <mcp>MCP</mcp>, pilih asisten Anda di <ui>Hubungkan asisten Anda</ui>."
+        },
+        "follow": {
+          "title": "Ikuti langkahnya",
+          "body": "Setiap asisten punya langkahnya sendiri, dengan alamat untuk ditempel atau perintah untuk disalin tepat di tempat yang Anda perlukan."
+        },
+        "allow": {
+          "title": "Masuk dan izinkan",
+          "body": "Masuk ke Emploist saat asisten Anda memintanya, lalu klik <ui>Izinkan</ui>. Asisten Anda bekerja sebagai Anda, dengan peran Anda."
+        },
+        "disconnect": {
+          "title": "Putuskan koneksinya",
+          "body": "Untuk menghentikan asisten, klik <ui>Putuskan</ui> di sampingnya pada <ui>Asisten yang terhubung</ui> di halaman <mcp>MCP</mcp>."
+        }
+      }
+    },
+    "mcpSwitch": {
+      "title": "Menonaktifkan atau mengaktifkan MCP",
+      "summary": "Pilih apakah tim Anda dapat menggunakan Emploist dari asisten AI.",
+      "steps": {
+        "find": {
+          "title": "Temukan tombolnya",
+          "body": "Di tab <general>Umum</general> di Pengaturan, nonaktifkan atau aktifkan <ui>Izinkan tim Anda menghubungkan asisten AI</ui>. Pengaturan ini berlaku untuk seluruh perusahaan Anda."
+        },
+        "whileOff": {
+          "title": "Saat dinonaktifkan",
+          "body": "Asisten tidak dapat menggunakan Emploist, dan tidak ada yang bisa menghubungkan asisten baru. Koneksi tetap disimpan, sehingga akan berfungsi lagi saat Anda mengaktifkan MCP kembali."
+        }
+      }
+    }
+  }
+}

@@ -26,11 +26,13 @@ const pl: Messages = {
     features: "Funkcje",
     careersPage: "Strona kariery",
     aiAssistants: "Asystenci AI",
+    mcp: "MCP",
     /** The last item in the Features menu, after the feature sections. */
     moreFeatures: "Więcej funkcji",
     pricing: "Cennik",
     faq: "FAQ",
     blog: "Blog",
+    docs: "Dokumentacja",
     signIn: "Zaloguj się",
     startFreeTrial: "Wypróbuj za darmo",
     menu: "Menu",
@@ -50,6 +52,7 @@ const pl: Messages = {
     legal: "Informacje prawne",
     rssFeed: "Kanał RSS",
     support: "Pomoc",
+    llmsTxt: "llms.txt",
     terms: "Regulamin",
     privacy: "Polityka prywatności",
     copyright: (year) => `© ${year} Emploist. Wszelkie prawa zastrzeżone.`,
@@ -63,8 +66,9 @@ const pl: Messages = {
 
   hero: {
     eyebrow: "System ATS z oceną AI",
-    title: "Najlepszych kandydatów zobaczysz najpierw.",
+    title: "Zobacz najlepsze aplikacje bez ręcznych filtrów i skomplikowanego ATS",
     lead: "Emploist daje Ci stronę kariery, prosty proces rekrutacji i AI, która ocenia każdą aplikację pod kątem opisu stanowiska. Twój zespół spędza mniej czasu na przesiewaniu aplikacji, a więcej z osobami, które naprawdę pasują.",
+    cta: "Oceń swoich kandydatów",
     seeHowItWorks: "Zobacz, jak to działa",
     note: (p) =>
       `${f.number(p.trialDays)} ${f.plural(p.trialDays, { one: "dzień", few: "dni", many: "dni", other: "dnia" })} za darmo, potem ${f.usd(p.priceUsd)} miesięcznie. Bez opłat za użytkownika.`,
@@ -128,7 +132,7 @@ const pl: Messages = {
     title: "Strona kariery gotowa od pierwszego dnia.",
     lead: "Każda firma dostaje szybką, dopracowaną stronę kariery ze swoim logo i kolorem. Nowe oferty pojawiają się na niej, gdy tylko je opublikujesz, a aplikacje trafiają prosto do skrzynki odbiorczej oferty.",
     screenshotAlt:
-      "Strona kariery Northwind Labs: nagłówek z logo firmy, krótkie wprowadzenie i otwarte stanowiska pogrupowane według działów, z filtrami działu i lokalizacji.",
+      "Strona kariery Fieldnote Labs: nagłówek z logo firmy, krótkie wprowadzenie i otwarte stanowiska pogrupowane według działów, z filtrami działu i lokalizacji.",
     mobileScreenshotAlt:
       "Strona oferty na telefonie: Senior Product Designer, Berlin, praca hybrydowa na pełny etat, z przyciskiem „Apply for this job” i opisem stanowiska.",
     facts: [
@@ -203,7 +207,7 @@ const pl: Messages = {
     editorScreenshotAlt:
       "E-mail etapu „Interviewing” w Emploist. Temat i wiadomość zawierają zmienne: imię kandydata, nazwę stanowiska i nazwę firmy.",
     previewScreenshotAlt:
-      "Gotowy e-mail w takiej postaci, w jakiej otrzymuje go kandydat o imieniu Sam: Northwind Labs na górze, osobiste zaproszenie na rozmowę na stanowisko Senior Product Designer i link do otwartych stanowisk.",
+      "Gotowy e-mail w takiej postaci, w jakiej otrzymuje go kandydat o imieniu Sam: Fieldnote Labs na górze, osobiste zaproszenie na rozmowę na stanowisko Senior Product Designer i link do otwartych stanowisk.",
   },
 
   aiAssistants: {
@@ -243,6 +247,108 @@ const pl: Messages = {
       placeholder: "Zapytaj o oferty i kandydatów",
     },
     caption: "Każda osoba łączy własnego asystenta w kilku krokach.",
+  },
+
+  /** The /mcp/ landing page. */
+  mcp: {
+    description:
+      "Połącz Claude, ChatGPT i innych asystentów AI z Emploist przez MCP. Pytaj o kandydatów, przenoś między etapami i twórz oferty z czatu, w granicach swoich uprawnień.",
+    eyebrow: "MCP",
+    heading: "Rekrutuj z czatu, którego już używasz.",
+    lead: "MCP łączy Emploist z Claude, ChatGPT i innymi asystentami. Pytasz zwykłymi słowami. Asystent wykonuje pracę w Emploist jako Ty.",
+    whatTitle: "Czym jest MCP?",
+    whatLead:
+      "MCP to skrót od Model Context Protocol. To otwarty sposób, w jaki asystent AI może bezpiecznie korzystać z innej aplikacji.",
+    whatPoints: [
+      {
+        title: "Łącznik, nie nowy produkt.",
+        text: "Oferty i kandydaci nadal są w Emploist. MCP to sposób, w jaki Twój asystent do nich dociera.",
+      },
+      {
+        title: "Jeden adres serwera.",
+        text: "Hostowany serwer MCP Emploist jest pod adresem mcp.emploist.com. Wklejasz go w Claude, ChatGPT lub innym kliencie obsługującym MCP.",
+      },
+      {
+        title: "Wliczone w Twój plan.",
+        text: "Każda osoba z zespołu może połączyć własnego asystenta. Ocena aplikacji z czatu zużywa ten sam kredyt AI co ocena w Emploist.",
+      },
+    ],
+    howTitle: "Jak to działa",
+    howSteps: [
+      {
+        title: "Łączysz raz.",
+        text: "Otwórz MCP w Emploist, wybierz asystenta i wykonaj jego kroki. Zaloguj się do Emploist, gdy o to poprosi. Bez kopiowania kluczy API.",
+      },
+      {
+        title: "Pytasz na czacie.",
+        text: "Wspomnij Emploist, a potem zapytaj, kto pasuje na stanowisko, przenieś kogoś do kolejnego etapu, zostaw komentarz albo przygotuj szkic oferty.",
+      },
+      {
+        title: "Emploist wykonuje pracę.",
+        text: "Asystent wywołuje narzędzia Emploist na Twoim koncie. Operacje zapisu proszą o potwierdzenie, zanim wejdą w życie.",
+      },
+    ],
+    canDoTitle: "O co możesz zapytać",
+    canDo: [
+      "Którzy kandydaci na stanowisko Senior Product Designer są najlepiej dopasowani?",
+      "Przenieś Priyę do etapu „Phone screen” i daj znać, kiedy wyjdzie e-mail tego etapu.",
+      "Podsumuj dzisiejsze nowe aplikacje.",
+      "Przygotuj szkic oferty Customer Support w Berlinie i pokaż mi formularz przed publikacją.",
+      "Zostaw komentarz przy aplikacji Sary dla Priyi.",
+    ],
+    connectTitle: "Połącz asystenta",
+    connectLead: "Strona MCP w Emploist ma karty dla każdego klienta. Adres serwera jest wszędzie taki sam:",
+    serverUrl: "https://mcp.emploist.com",
+    connectClients: [
+      {
+        name: "Claude",
+        text: "W Claude otwórz Customize → Connectors, dodaj własny łącznik, wklej adres URL i zaloguj się do Emploist.",
+      },
+      {
+        name: "ChatGPT",
+        text: "W ChatGPT w przeglądarce otwórz Plugins, dodaj własny serwer MCP, wklej adres URL, utwórz wtyczkę, a potem wspomnij ją przez @.",
+      },
+      {
+        name: "Inne klienty",
+        text: "Cursor, VS Code, Claude Code i inne klienty MCP używają tego samego adresu URL. Strona MCP w Emploist zawiera kroki dla każdego z nich.",
+      },
+    ],
+    controlTitle: "Kontrola zostaje przy Tobie",
+    controlPoints: [
+      {
+        title: "Twoja rola, nic więcej.",
+        text: "Asystent może robić tylko to, co Ty już możesz w Emploist. Płatności, zaproszenia do zespołu i usuwanie firmy pozostają poza zasięgiem.",
+      },
+      {
+        title: "Potwierdzenia przy zapisie.",
+        text: "Przeniesienie kandydata lub utworzenie oferty najpierw prosi o potwierdzenie. Odrzuć wszystko, co wygląda nie tak.",
+      },
+      {
+        title: "Odłącz kiedy chcesz.",
+        text: "Na stronie MCP odłącz asystenta, a przestanie działać. Administratorzy mogą też wyłączyć MCP dla całej firmy.",
+      },
+    ],
+    worksWith: "Działa z",
+    guidesTitle: "Poradniki",
+    guidesLead: "Konfiguracja krok po kroku i przykłady.",
+    guideClaude: "Jak zarządzać rekrutacją z Claude przez MCP",
+    guideChatgpt: "Najlepsze wtyczki ChatGPT dla menedżerów HR",
+    guideDocs: "Połącz asystenta AI",
+    cta: "Połącz asystenta AI",
+    copySetup: "Kopiuj konfigurację MCP",
+    copiedSetup: "Skopiowano",
+    /** Pasted into an AI chat. Keep facts (URL, OAuth) intact across locales. */
+    setupCopy: (u: { mcpDocs: string; serverUrl: string }) =>
+      `Emploist to system ATS. Ten plik mówi asystentowi AI, jak połączyć się z serwerem MCP Emploist i co może robić po połączeniu.
+
+Połącz serwer MCP Emploist, aby zarządzać rekrutacją z tej rozmowy.
+
+MCP Docs: ${u.mcpDocs}
+Server URL: ${u.serverUrl}
+Authentication: OAuth (zaloguj się do Emploist, gdy zostaniesz o to poproszony)
+
+Po połączeniu pomagaj przy ofertach i kandydatach w Emploist: listuj i oceniaj aplikacje, przenoś osoby między etapami, zostawiaj komentarze oraz twórz lub publikuj oferty. Pracuj wyłącznie w ramach moich uprawnień w Emploist. Potwierdzaj przed każdą operacją zapisu.
+`,
   },
 
   details: {
@@ -419,6 +525,16 @@ const pl: Messages = {
     blog: "Przejdź do bloga",
   },
 
+  docs: {
+    title: "Dokumentacja Emploist",
+    lead: "Korzystaj z oficjalnych docs, aby działać w Emploist.",
+    copyMarkdown: "Kopiuj markdown",
+    copied: "Skopiowano",
+    discussWith: "Omów z",
+    discussPrompt: (title, url) =>
+      `Pomóż mi z tym przewodnikiem Emploist: „${title}”. Przeczytaj ${url} i odpowiedz na moje pytania.`,
+  },
+
   blog: {
     title: "Blog",
     description:
@@ -444,6 +560,7 @@ const pl: Messages = {
     ctaText: (p) =>
       `Wypróbuj Emploist za darmo przez ${f.number(p.trialDays)} ${f.plural(p.trialDays, { one: "dzień", few: "dni", many: "dni", other: "dnia" })}, a potem płać ${f.usd(p.priceUsd)} miesięcznie za cały zespół.`,
     defaultAuthor: "Zespół Emploist",
+    writtenBy: (name) => `Napisane przez ${name}`,
   },
 
   listedOn: {

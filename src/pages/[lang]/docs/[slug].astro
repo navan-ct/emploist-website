@@ -1,0 +1,15 @@
+---
+import DocsGuidePage from "../../../components/pages/DocsGuidePage.astro";
+import { TRANSLATED_LOCALES } from "../../../i18n/locales";
+import { GUIDES } from "../../../lib/docs";
+
+export function getStaticPaths() {
+  return TRANSLATED_LOCALES.flatMap((lang) =>
+    GUIDES.map((guide) => ({ params: { lang, slug: guide.slug } })),
+  );
+}
+
+const { slug } = Astro.params;
+---
+
+<DocsGuidePage slug={slug!} />

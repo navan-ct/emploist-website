@@ -1,0 +1,485 @@
+{
+  "title": "Destek",
+  "description": "Size yardımcı olmak için buradayız. Bize e-posta gönderin veya Emploist'te işlerinizi halletmek için bir kılavuzu izleyin.",
+  "contact": {
+    "title": "Bize e-posta gönderin",
+    "description": "Sorunuz veya geri bildiriminiz mi var, ya da bir şey çalışmıyor mu? Genellikle 24 saat içinde yanıt veririz.",
+    "copied": "E-posta adresi kopyalandı",
+    "copy": "E-posta adresini kopyala"
+  },
+  "guideList": {
+    "title": "Kılavuzlar",
+    "description": "Emploist'in temel bölümleri için adım adım yardım.",
+    "adminOnly": "Yalnızca yöneticiler"
+  },
+  "topics": {
+    "jobsAndApplications": "İlanlar ve başvurular",
+    "careersPage": "Kariyer sayfası",
+    "teamAndEmails": "Ekip ve e-postalar",
+    "aiAndBilling": "Yapay zekâ puanlaması ve faturalandırma",
+    "aiAssistants": "Yapay zekâ asistanları"
+  },
+  "guides": {
+    "createJob": {
+      "title": "İlan oluşturma ve yayınlama",
+      "summary": "Pozisyonu tanımlayın, taslak olarak kaydedin ve yayınlayın.",
+      "steps": {
+        "start": {
+          "title": "Yeni bir ilan başlatın",
+          "body": "<jobs>İlanlar</jobs> sayfasını açın ve <ui>İlan oluştur</ui> düğmesine tıklayın."
+        },
+        "describe": {
+          "title": "Pozisyonu tanımlayın",
+          "body": "<ui>Ayrıntılar</ui> sekmesinde bir <ui>Pozisyon adı</ui> ve bir <ui>Açıklama</ui> ekleyin. Departman, konum, çalışma modeli ve istihdam türü isteğe bağlıdır. Eklediğiniz departmanlar ve konumlar sonraki ilanlarda yeniden önerilir."
+        },
+        "formAndStages": {
+          "title": "Formu ve aşamaları kontrol edin",
+          "body": "<ui>Başvuru formu</ui> ve <ui>Aşamalar</ui> sekmeleri kullanıma hazır bir yapıyla başlar. Bunları şimdi veya daha sonra istediğiniz zaman düzenleyebilirsiniz."
+        },
+        "saveOrPublish": {
+          "title": "Kaydedin veya yayınlayın",
+          "body": "<ui>Taslağı kaydet</ui>, ilanı yalnızca ekibinizin görebileceği şekilde saklar. <ui>Yayınla</ui>, ilanı kariyer sayfanıza ekler."
+        }
+      }
+    },
+    "applicationForm": {
+      "title": "Başvuru formunu oluşturma",
+      "summary": "Adayların başvururken neleri dolduracağını seçin.",
+      "steps": {
+        "open": {
+          "title": "Formu açın",
+          "body": "Bir ilanın <ui>Başvuru formu</ui> sekmesini açın."
+        },
+        "essentials": {
+          "title": "Temel alanlarla başlayın",
+          "body": "Her form <ui>Ad soyad</ui>, <ui>E-posta</ui> ve <ui>Özgeçmiş (CV)</ui> alanlarını içerir. Bu alanların yerini değiştirebilirsiniz, ancak onları kaldıramazsınız."
+        },
+        "addQuestions": {
+          "title": "Soru ekleyin",
+          "body": "<ui>Ekle</ui> düğmesine tıklayın ve <ui>Kısa yanıt</ui>, <ui>Tek seçim</ui> veya <ui>Doğrusal ölçek</ui> gibi bir soru türü seçin. Adaylara daha fazla bilgi vermek için <ui>Başlık</ui> veya <ui>Metin</ui> ekleyin."
+        },
+        "setUp": {
+          "title": "Her birini ayarlayın",
+          "body": "Düzenlemek için bir soruya tıklayın. Adayların yanıtlaması gerekiyorsa <ui>Zorunlu</ui> seçeneğini açın. Sırayı değiştirmek için soruları sürükleyin veya sorunun menüsünü kullanın. <ui>Eksik</ui> olarak işaretlenen soruların yayınlamadan önce tamamlanması gerekir."
+        },
+        "save": {
+          "title": "Değişikliklerinizi kaydedin",
+          "body": "Mevcut bir ilanda <ui>Değişiklikleri kaydet</ui> düğmesine tıklayın. Değişiklikleriniz yalnızca yeni başvurular için geçerli olur. Mevcut başvurular, yanıtladıkları soruları korur."
+        }
+      }
+    },
+    "stages": {
+      "title": "İşe alım aşamalarını ayarlama",
+      "summary": "Her başvurunun geçtiği adımları belirleyin.",
+      "steps": {
+        "open": {
+          "title": "Aşamaları açın",
+          "body": "Bir ilanın <ui>Aşamalar</ui> sekmesini açın. Yeni ilanlar <ui>Inbox</ui>, <ui>Interviewing</ui>, <ui>Accepted</ui> ve <ui>Rejected</ui> aşamalarıyla başlar."
+        },
+        "inbox": {
+          "title": "Gelen kutusunu tanıyın",
+          "body": "Yeni başvurular ilk aşamaya, yani gelen kutusuna düşer. Bu aşamayı yeniden adlandırabilirsiniz, ancak her zaman ilk sırada kalır ve silinemez."
+        },
+        "addRenameReorder": {
+          "title": "Ekleyin, yeniden adlandırın ve sıralayın",
+          "body": "Aşama eklemek için <ui>Aşama ekle</ui> düğmesine tıklayın veya bir aşamanın menüsünden <ui>Yeniden adlandır</ui> seçeneğini seçin. Aşamaları işe alım sıranıza göre sürükleyin."
+        },
+        "delete": {
+          "title": "Bir aşamayı silin",
+          "body": "Bir aşamanın menüsünden <ui>Sil</ui> seçeneğini seçin. Aşamada başvuru varsa, başvuruların hangi aşamaya taşınacağını seçersiniz."
+        }
+      }
+    },
+    "reviewApplications": {
+      "title": "Başvuruları inceleme",
+      "summary": "Başvuruları bulun, okuyun ve aşamalarınız arasında taşıyın.",
+      "steps": {
+        "openJob": {
+          "title": "Bir ilanı açın",
+          "body": "<jobs>İlanlar</jobs> sayfasından bir ilan açın. İlanın <ui>Başvurular</ui> sekmesinde her aşama için, o aşamadaki başvuru sayısını gösteren bir düğme bulunur."
+        },
+        "find": {
+          "title": "İnceleyeceğiniz kişileri bulun",
+          "body": "Ada veya e-postaya göre arayın ve <ui>En iyi eşleşme</ui>, <ui>Önce en yeni</ui> veya <ui>Önce en eski</ui> seçeneğiyle sıralayın. En iyi eşleşme, yapay zekâ özellikleri açıkken kullanılabilir."
+        },
+        "openApplication": {
+          "title": "Bir başvuruyu açın",
+          "body": "Başvuruyu açmak için bir ada tıklayın. Adayın özgeçmişini yeni sekmede açmak için <ui>Özgeçmişi görüntüle</ui> düğmesine tıklayın. Önceki veya sonraki başvuruya geçmek için <ui>←</ui> veya <ui>→</ui> tuşuna basın."
+        },
+        "move": {
+          "title": "Başvuruyu bir aşamaya taşıyın",
+          "body": "Başvurudaki <ui>Aşama</ui> menüsünden veya bir satırın menüsündeki <ui>Şuraya taşı</ui> bölümünden bir aşama seçin. Bir başvuruyu yanlışlıkla taşırsanız, görünen mesajdaki <ui>Geri al</ui> düğmesine tıklayın."
+        }
+      }
+    },
+    "comments": {
+      "title": "Yorum yapma ve ekip arkadaşlarından bahsetme",
+      "summary": "Adayları ekibinizle tartışın ve gelişmelerden haberdar olun.",
+      "steps": {
+        "write": {
+          "title": "Yorum yazın",
+          "body": "Bir başvuruyu açın, yorum kutusuna yazın ve <ui>Yorum yap</ui> düğmesine tıklayın ya da <ui>{{shortcut}}</ui> tuşlarına basın. Yorumları yalnızca ekibiniz görür.",
+          "shortcut": "Ctrl+Enter",
+          "shortcutMac": "⌘+Enter"
+        },
+        "mention": {
+          "title": "Birinden bahsedin",
+          "body": "Bir ekip arkadaşınızı haberdar etmek için <ui>@</ui> yazın ve kişiyi seçin."
+        },
+        "replies": {
+          "title": "Yanıtları takip edin",
+          "body": "Biri sizden bahsettiğinde veya yorum yaptığınız bir başvuruya yorum yaptığında bildirim alırsınız. Bunları sayfanın üst kısmındaki zil simgesinde veya <notifications>Bildirimler</notifications> sayfasında bulabilirsiniz."
+        },
+        "editOrDelete": {
+          "title": "Düzenleyin veya silin",
+          "body": "Kendi yorumlarınızı yorumun menüsündeki <ui>Düzenle</ui> veya <ui>Sil</ui> seçeneğiyle değiştirebilir ya da silebilirsiniz. Yöneticiler herkesin yorumunu silebilir."
+        }
+      }
+    },
+    "manageJob": {
+      "title": "İlanı kapatma, arşivleme veya çoğaltma",
+      "summary": "Başvuru almayı durdurun, düzen sağlayın veya bir ilanı yeniden kullanın.",
+      "steps": {
+        "closeOrReopen": {
+          "title": "Kapatın veya yeniden açın",
+          "body": "Yayınlanmış bir ilanda üstteki durum menüsünü kullanın: <ui>Kapalı</ui> başvuru almayı durdurur, <ui>Açık</ui> ise yeniden başlatır."
+        },
+        "duplicate": {
+          "title": "Çoğaltın",
+          "body": "Aynı ayrıntılar, form ve aşamalarla bir taslak başlatmak için ilanın <ui>Diğer işlemler</ui> menüsünden <ui>Çoğalt</ui> seçeneğini seçin."
+        },
+        "archive": {
+          "title": "Arşivleyin",
+          "body": "Bir ilanı kenara koymak için <ui>Diğer işlemler</ui> menüsünden <ui>Arşivle</ui> seçeneğini seçin. Arşivlenmiş ilanlar salt okunurdur. Bir ilanı geri getirmek için <ui>Geri yükle</ui> düğmesine tıklayın."
+        },
+        "delete": {
+          "title": "Silin",
+          "body": "Bir ilanı başvurularıyla birlikte kalıcı olarak kaldırmak için <ui>Diğer işlemler</ui> menüsünden <ui>Sil</ui> seçeneğini seçin. Başvuruları saklamak istiyorsanız bunun yerine ilanı arşivleyin."
+        }
+      }
+    },
+    "exportApplications": {
+      "title": "Başvuruları dışa aktarma",
+      "summary": "Bir ilanın başvurularını ve özgeçmişlerini indirin.",
+      "steps": {
+        "start": {
+          "title": "Dışa aktarmayı başlatın",
+          "body": "Başvurusu olan bir ilanda <ui>Diğer işlemler</ui> menüsünü açın ve <ui>Başvuruları dışa aktar</ui> seçeneğini seçin."
+        },
+        "openZip": {
+          "title": "ZIP dosyasını açın",
+          "body": "<ui>{{file}}</ui>, her başvuru için bir satır içeren bir elektronik tablodur. <ui>{{folder}}</ui> klasöründe, adayların adlarıyla adlandırılmış tüm özgeçmişler bulunur."
+        }
+      }
+    },
+    "customizeCareersPage": {
+      "title": "Kariyer sayfanızı özelleştirme",
+      "summary": "Renginizi seçin veya sayfanın kodunu düzenleyin.",
+      "steps": {
+        "color": {
+          "title": "Bir renk seçin",
+          "body": "Kariyer sayfası bölümündeki <design>Tasarım</design> sekmesini açın, bir <ui>Ana renk</ui> seçin ve <ui>Rengi kaydet</ui> düğmesine tıklayın. Bu renk düğmeler ve vurgular için kullanılır."
+        },
+        "code": {
+          "title": "Kodu düzenleyin",
+          "body": "Sayfanın şablonlarını ve stillerini değiştirmek için <ui>Kodu düzenle</ui> düğmesine tıklayın. <ui>Referans</ui> panelinde, şablonlarda kullanabileceğiniz her şey listelenir."
+        },
+        "preview": {
+          "title": "Çalışırken önizleyin",
+          "body": "Önizleme siz yazdıkça güncellenir. Her sayfayı kontrol etmek için <ui>Sayfaya git</ui> menüsünü kullanın ve masaüstü ile mobil boyutları arasında geçiş yapın."
+        },
+        "save": {
+          "title": "Kaydedin",
+          "body": "<ui>Kaydet</ui> düğmesine tıklayın. Baştan başlamak için <ui>Diğer işlemler</ui> menüsünden <ui>Varsayılan koda sıfırla</ui> seçeneğini seçin."
+        }
+      }
+    },
+    "editCodeLocally": {
+      "title": "Kodu bilgisayarınızda düzenleme",
+      "summary": "Kendi düzenleyicinizde, canlı önizlemeyle çalışın.",
+      "steps": {
+        "download": {
+          "title": "Kodu indirin",
+          "body": "<design>Tasarım</design> sekmesinde <ui>ZIP indir</ui> düğmesine tıklayın ve ZIP dosyasını bir klasöre çıkarın."
+        },
+        "preview": {
+          "title": "Önizleyin",
+          "body": "Node.js {{version}} veya üzeri bir sürümle, klasörde <code>{{command}}</code> komutunu çalıştırın ve <code>{{url}}</code> adresini açın. Sayfanız örnek ilanlarla gösterilir. Her değişiklikten sonra sayfayı yeniden yükleyin."
+        },
+        "check": {
+          "title": "Sorunları kontrol edin",
+          "body": "Kaydederken bulunacak sorunların aynısını bulmak için <code>{{command}}</code> komutunu çalıştırın."
+        },
+        "upload": {
+          "title": "Yükleyin",
+          "body": "Dosyaları ZIP olarak sıkıştırın, <ui>ZIP yükle</ui> düğmesine tıklayın, önizlemeyi kontrol edin ve <ui>Kaydet</ui> düğmesine tıklayın."
+        }
+      }
+    },
+    "changeAddress": {
+      "title": "Kariyer sayfası adresinizi değiştirme",
+      "summary": "Sayfanızı yeni bir Emploist adresine taşıyın.",
+      "steps": {
+        "open": {
+          "title": "Adres ayarını açın",
+          "body": "Kariyer sayfası bölümündeki <domain>Alan adı</domain> sekmesini açın ve <ui>Değiştir</ui> düğmesine tıklayın."
+        },
+        "choose": {
+          "title": "Yeni bir adres seçin",
+          "body": "İstediğiniz adresi yazın. Siz yazarken adresin kullanılabilir olup olmadığını kontrol ederiz."
+        },
+        "confirm": {
+          "title": "Değişikliği onaylayın",
+          "body": "<ui>Adresi değiştir</ui> düğmesine tıklayın. Eski adresiniz, paylaştığınız ilan bağlantıları dahil hemen çalışmayı durdurur ve ardından bu adresi başka bir şirket kullanabilir."
+        }
+      }
+    },
+    "customDomain": {
+      "title": "Kendi alan adınızı bağlama",
+      "summary": "Kariyer sayfanızı web sitenizdeki bir adreste gösterin.",
+      "steps": {
+        "add": {
+          "title": "Alan adınızı ekleyin",
+          "body": "<domain>Alan adı</domain> sekmesinde web sitenizin careers.acme.com gibi bir alt alan adını girin ve <ui>Alan adı ekle</ui> düğmesine tıklayın. acme.com gibi ana alan adları bağlanamaz."
+        },
+        "records": {
+          "title": "İki DNS kaydı ekleyin",
+          "body": "Alan adınızı yönettiğiniz yerde, kopyalama düğmelerini kullanarak gösterilen <ui>CNAME</ui> ve <ui>TXT</ui> kayıtlarını ekleyin. Cloudflare kullanıyorsanız CNAME kaydını DNS only olarak ayarlayın."
+        },
+        "wait": {
+          "title": "Kontrolü bekleyin",
+          "body": "Değişiklikler genellikle birkaç dakika içinde görünür, ancak 48 saate kadar sürebilir. Durum <ui>Bağlandı</ui> olduğunda kariyer sayfanız alan adınızda yayında olur."
+        }
+      }
+    },
+    "inviteTeam": {
+      "title": "Ekibinizi davet etme",
+      "summary": "Ekip arkadaşlarınızı e-postayla ekleyin ve rollerini seçin.",
+      "steps": {
+        "send": {
+          "title": "Davet gönderin",
+          "body": "Ayarlar sayfasındaki <members>Üyeler</members> sekmesini açın, <ui>Üye davet et</ui> düğmesine tıklayın, kişinin e-posta adresini girin ve <ui>Davet gönder</ui> düğmesine tıklayın."
+        },
+        "role": {
+          "title": "Bir rol seçin",
+          "body": "<ui>Üyeler</ui> ilanlar ve başvurular üzerinde çalışır. <ui>Yöneticiler</ui> ayrıca ekibi, şirket ayarlarını, kariyer sayfasını ve faturalandırmayı yönetebilir."
+        },
+        "join": {
+          "title": "Davet edilen kişi katılır",
+          "body_one": "Kişiye, katılması için {{count, number}} gün geçerli bir bağlantı içeren bir e-posta gönderilir.",
+          "body_other": "Kişiye, katılması için {{count, number}} gün geçerli bir bağlantı içeren bir e-posta gönderilir."
+        },
+        "followUp": {
+          "title": "Takip edin",
+          "body": "Yanıt bekleyen davetler <ui>Bekleyen davetler</ui> altında listelenir. Bir davetin menüsünden <ui>Daveti yeniden gönder</ui> veya <ui>Daveti iptal et</ui> seçeneğini kullanın."
+        }
+      }
+    },
+    "manageMembers": {
+      "title": "Rolleri ve üyeleri yönetme",
+      "summary": "Rolleri değiştirin, kişileri çıkarın veya bir şirketten ayrılın.",
+      "steps": {
+        "changeRole": {
+          "title": "Bir rolü değiştirin",
+          "body": "Ayarlar sayfasındaki <members>Üyeler</members> sekmesinde bir kişinin menüsünü açın ve <ui>Yönetici yap</ui> veya <ui>Üye yap</ui> seçeneğini seçin. Rolleri yalnızca yöneticiler değiştirebilir."
+        },
+        "remove": {
+          "title": "Birini çıkarın",
+          "body": "Kişinin menüsünden <ui>Şirketten çıkar</ui> seçeneğini seçin. Kişi erişimini hemen kaybeder. Kişileri yalnızca yöneticiler çıkarabilir."
+        },
+        "leave": {
+          "title": "Şirketten ayrılın",
+          "body": "Kendi menünüzden <ui>Şirketten ayrıl</ui> seçeneğini seçin. Tek yönetici sizseniz önce başka birini yönetici yapın."
+        }
+      }
+    },
+    "deleteCompanyOrAccount": {
+      "title": "Şirketinizi veya hesabınızı silme",
+      "summary": "Şirketinizi veya yalnızca kendi hesabınızı kalıcı olarak kaldırın.",
+      "steps": {
+        "open": {
+          "title": "Tehlikeli bölgeyi açın",
+          "body": "Ayarlar sayfasındaki <danger>Tehlikeli bölge</danger> sekmesini açın."
+        },
+        "deleteCompany": {
+          "title": "Şirketi silin",
+          "body": "Yöneticiler <ui>Şirketi sil</ui> düğmesine tıklayabilir. İlanlar, başvurular ve kariyer sayfanız dahil şirketteki her şey silinir ve planınız iade yapılmadan hemen iptal edilir."
+        },
+        "deleteAccount": {
+          "title": "Veya hesabınızı silin",
+          "body": "<ui>Hesabı sil</ui> düğmesine tıklayın. Tek yönetici sizseniz önce başka birini yönetici yapın. Şirketteki tek kişi sizseniz şirket de silinir."
+        },
+        "confirm": {
+          "title": "Onaylayın",
+          "body": "Şirketin adını veya e-posta adresinizi yazın ve silme düğmesine tıklayın. Bu işlem geri alınamaz."
+        }
+      }
+    },
+    "stageEmails": {
+      "title": "Her aşamada adaylara e-posta gönderme",
+      "summary": "Adaylara başvurduklarında veya bir sonraki aşamaya geçtiklerinde haber verin.",
+      "steps": {
+        "open": {
+          "title": "Bir aşamanın e-postasını açın",
+          "body": "Bir ilanın <ui>Aşamalar</ui> sekmesinde, bir aşamanın yanındaki <ui>E-postayı düzenle</ui> düğmesine tıklayın."
+        },
+        "customize": {
+          "title": "Kendinize göre düzenleyin",
+          "body": "Her aşama gönderilmeye hazır bir e-postayla gelir. <ui>Konu</ui> ve <ui>Mesaj</ui> alanlarını düzenleyin. Adayın adı gibi ayrıntıları <ui>Değişken ekle</ui> ile veya <code>{{character}}</code> yazarak ekleyin."
+        },
+        "preview": {
+          "title": "Önizleyin ve açın",
+          "body": "Örnek bir adayla gösterilen <ui>Önizleme</ui> bölümünü kontrol edin. Ardından <ui>Bu e-postayı gönder</ui> seçeneğini açın ve <ui>Kaydet</ui> düğmesine tıklayın."
+        },
+        "timing": {
+          "title": "Ne zaman gönderildiğini bilin",
+          "body_one": "Gelen kutusunun e-postası, biri başvurur başvurmaz gönderilir. Diğer aşamalar bir taşımadan sonra {{count, number}} dakika bekler. Böylece taşımayı geri alırsanız veya başvuruyu başka bir aşamaya taşırsanız e-posta iptal edilir.",
+          "body_other": "Gelen kutusunun e-postası, biri başvurur başvurmaz gönderilir. Diğer aşamalar bir taşımadan sonra {{count, number}} dakika bekler. Böylece taşımayı geri alırsanız veya başvuruyu başka bir aşamaya taşırsanız e-posta iptal edilir."
+        },
+        "pause": {
+          "title": "Tüm e-postaları duraklatın",
+          "body": "Yöneticiler, tüm aşamaların e-postalarını durdurmak için Ayarlar sayfasındaki <general>Genel</general> sekmesinde <ui>Adaylara e-posta gönder</ui> ayarını kapatabilir."
+        }
+      }
+    },
+    "repliesLayout": {
+      "title": "Yanıtları ve e-posta şablonunu ayarlama",
+      "summary": "Yanıtların nereye gideceğini ve e-postaların nasıl görüneceğini seçin.",
+      "steps": {
+        "replyTo": {
+          "title": "Yanıt adresi ekleyin",
+          "body": "<emails>E-postalar</emails> sayfasında ekibinizin kontrol ettiği bir <ui>Yanıt adresi</ui> girin ve <ui>Adresi kaydet</ui> düğmesine tıklayın. Bu adres olmadan adaylardan gelen yanıtlar size ulaşmaz."
+        },
+        "layout": {
+          "title": "Şablonu düzenleyin",
+          "body": "Her e-posta, logonuz ve ana renginizle şablonunuzda gönderilir. Şablonun HTML'sini değiştirmek için <ui>Kodu düzenle</ui> düğmesine tıklayın ve her aşamanın mesajının geleceği yerde <code>{{placeholder}}</code> ifadesini koruyun."
+        },
+        "save": {
+          "title": "Kaydedin",
+          "body": "<ui>Kaydet</ui> düğmesine tıklayın. Baştan başlamak için <ui>Diğer işlemler</ui> menüsünden <ui>Varsayılan şablona sıfırla</ui> seçeneğini seçin."
+        }
+      }
+    },
+    "matchScores": {
+      "title": "Eşleşme puanlarını anlama",
+      "summary": "Yapay zekânın başvuruları ilanlarına göre nasıl puanladığı.",
+      "steps": {
+        "read": {
+          "title": "Puanı okuyun",
+          "body": "Her başvuru, ilanının ayrıntılarına göre %0 ile %100 arasında bir eşleşme puanı alır."
+        },
+        "aspects": {
+          "title": "Puanın ardındakileri görün",
+          "body": "Bir başvurunun <ui>Beceriler</ui>, <ui>Deneyim</ui>, <ui>Kıdem uyumu</ui> ve <ui>Yeterlilikler</ui> açısından nasıl puan aldığını görmek için başvuruyu açın. Yeterlilikler yalnızca ilan diploma, sertifika veya mesleki belge istediğinde hesaba katılır."
+        },
+        "useAsGuide": {
+          "title": "Yol gösterici olarak kullanın",
+          "body": "Eşleşmeler, önce kimi inceleyeceğinize karar vermenize yardımcı olur. Bunları kendi değerlendirmenizin yerine değil, yanında kullanın."
+        },
+        "noScore": {
+          "title": "Puan olmadığında",
+          "body": "<ui>Puanlanıyor</ui>, puanın hazırlandığı anlamına gelir. <ui>Kredi gerekli</ui>, yapay zekâ kredinizin kalmadığı anlamına gelir. <ui>Puanlanmadı</ui> ise başvurunun puanlanamadığı anlamına gelir, örneğin özgeçmiş taranmış bir görüntü olduğunda. Puanlama başarısız olduysa başvurudaki <ui>Yeniden dene</ui> düğmesine tıklayın."
+        },
+        "rankAgain": {
+          "title": "Düzenlemelerden sonra yeniden puanlayın",
+          "body": "Bir ilanın pozisyon adını, departmanını, istihdam türünü veya açıklamasını değiştirdiğinizde, başvuruları yeni ayrıntılara göre puanlamak için <ui>Kaydet ve yeniden puanla</ui> seçeneğini seçin."
+        }
+      }
+    },
+    "aiSwitch": {
+      "title": "Yapay zekâ puanlamasını kapatma veya açma",
+      "summary": "Başvurularınızın yapay zekâ ile puanlanıp puanlanmayacağını seçin.",
+      "steps": {
+        "find": {
+          "title": "Ayarı bulun",
+          "body": "Ayarlar sayfasındaki <general>Genel</general> sekmesinde <ui>Başvuruları yapay zekâ ile puanla</ui> ayarını kapatın veya açın. Bu ayar tüm şirketiniz için geçerlidir."
+        },
+        "whileOff": {
+          "title": "Kapalıyken",
+          "body": "Yapay zekâya hiçbir şey gönderilmez, eşleşme puanları gizlenir ve yeni başvurular puanlanmaz. Ayarı yeniden açtığınızda önceki puanlar geri gelir."
+        },
+        "turnOn": {
+          "title": "Yeniden açın",
+          "body": "Bu sırada başvuru geldiyse, bu başvuruları her biri için bir kredi kullanarak puanlamayı veya puanlamadan bırakmayı seçersiniz."
+        },
+        "tellApplicants": {
+          "title": "Adayları bilgilendirin",
+          "body": "Yapay zekâ puanlaması açıkken varsayılan kariyer sayfası, adaylara başvuruların incelenmesinde yapay zekânın yardımcı olduğunu söyler. Kendi kodunuzu kullanıyorsanız bunu kendiniz ekleyin."
+        }
+      }
+    },
+    "planCredits": {
+      "title": "Planınızı ve kredilerinizi yönetme",
+      "summary": "Denemeniz, aboneliğiniz ve yapay zekâ kredileriniz.",
+      "credits_one": "{{count, number}} kredi",
+      "credits_other": "{{count, number}} kredi",
+      "steps": {
+        "startTrial": {
+          "title": "Ücretsiz denemenizi başlatın",
+          "body_one": "<billing>Faturalandırma</billing> sayfasında <ui>Aylık</ui> veya <ui>Yıllık</ui> seçeneğini seçin, ardından <ui>Ücretsiz denemeyi başlat</ui> düğmesine tıklayın. Deneme {{count, number}} gün sürer ve {{credits}} içerir.",
+          "body_other": "<billing>Faturalandırma</billing> sayfasında <ui>Aylık</ui> veya <ui>Yıllık</ui> seçeneğini seçin, ardından <ui>Ücretsiz denemeyi başlat</ui> düğmesine tıklayın. Deneme {{count, number}} gün sürer ve {{credits}} içerir."
+        },
+        "plan": {
+          "title": "Planınız",
+          "body": "Aylık plan ayda {{monthlyPrice}} tutarındadır ve her ay {{monthlyCredits}} içerir. Yıllık plan yılda {{yearlyPrice}} tutarındadır ve {{yearlyCredits}} tek seferde verilir. Kullanılmayan krediler sonraki döneme aktarılmaz. Kartınızı güncellemek, faturaları görüntülemek veya planı iptal etmek için <ui>Aboneliği yönet</ui> düğmesine tıklayın."
+        },
+        "switchToYearly": {
+          "title": "Yıllık plana geçin",
+          "body": "<billing>Faturalandırma</billing> sayfasında planınız için <ui>Yıllık</ui> seçeneğini seçin, ardından <ui>Yıllık plana geç</ui> düğmesine tıklayın. Şimdi {{price}} ödersiniz, mevcut ayınızın kullanılmayan günleri bu tutardan düşülür. Ücretsiz denemedeyseniz bunun yerine deneme bittiğinde ödeme yaparsınız."
+        },
+        "buyCredits": {
+          "title": "Daha fazla kredi satın alın",
+          "body": "Yapay zekâ ile puanlanan her başvuru bir kredi kullanır. Daha fazlası için <ui>Kredi satın al</ui> bölümünden bir paket satın alın. Ek kredilerin süresi dolmaz ve planınızın kredilerinden sonra kullanılır."
+        },
+        "runOut": {
+          "title": "Krediniz biterse",
+          "body": "Yeni başvurular <ui>Kredi gerekli</ui> durumunda bekler. Yeniden krediniz olduğunda bu başvuruları <jobs>İlanlar</jobs> veya <billing>Faturalandırma</billing> sayfasındaki uyarıdan puanlayın ya da puanlamadan bırakın."
+        },
+        "endTrial": {
+          "title": "Denemenizi erken bitirin",
+          "body": "Denemenizin kredileri biterse <jobs>İlanlar</jobs> veya <billing>Faturalandırma</billing> sayfasındaki uyarıda <ui>Denemeyi bitir</ui> düğmesine tıklayın. Planınız, kredileriyle birlikte bugün başlar."
+        },
+        "planStops": {
+          "title": "Planınız durursa",
+          "body": "Geçerli bir plan olmadan Emploist salt okunur olur ve kariyer sayfanız başvuru almayı durdurur. Ekibiniz yine her şeyi görebilir ve başvuruları dışa aktarabilir, yöneticiler de yeniden abone olabilir."
+        }
+      }
+    },
+    "connectAssistant": {
+      "title": "Yapay zekâ asistanı bağlama",
+      "summary": "İlanlarınızı ve başvurularınızı Claude, ChatGPT ve diğer asistanlardan yönetin.",
+      "steps": {
+        "choose": {
+          "title": "Asistanınızı seçin",
+          "body": "<mcp>MCP</mcp> sayfasında, <ui>Asistanınızı bağlayın</ui> bölümünden asistanınızı seçin."
+        },
+        "follow": {
+          "title": "Adımlarını izleyin",
+          "body": "Her asistanın kendi adımları vardır; yapıştırılacak adres veya kopyalanacak komut tam ihtiyaç duyduğunuz yerdedir."
+        },
+        "allow": {
+          "title": "Oturum açın ve izin verin",
+          "body": "Asistanınız istediğinde Emploist'te oturum açın ve <ui>İzin ver</ui>'e tıklayın. Asistanınız sizin adınıza, sizin rolünüzle çalışır."
+        },
+        "disconnect": {
+          "title": "Bağlantısını kesin",
+          "body": "Bir asistanı durdurmak için <mcp>MCP</mcp> sayfasındaki <ui>Bağlı asistanlar</ui> bölümünde yanındaki <ui>Bağlantıyı kes</ui>'e tıklayın."
+        }
+      }
+    },
+    "mcpSwitch": {
+      "title": "MCP'yi kapatma veya açma",
+      "summary": "Ekibinizin Emploist'i yapay zekâ asistanlarından kullanıp kullanamayacağını seçin.",
+      "steps": {
+        "find": {
+          "title": "Anahtarı bulun",
+          "body": "Ayarlar sayfasındaki <general>Genel</general> sekmesinde <ui>Ekibinizin yapay zekâ asistanları bağlamasına izin verin</ui> ayarını kapatın veya açın. Bu ayar tüm şirketiniz için geçerlidir."
+        },
+        "whileOff": {
+          "title": "Kapalıyken",
+          "body": "Asistanlar Emploist'i kullanamaz ve kimse yeni bir asistan bağlayamaz. Bağlantılar korunur, bu yüzden MCP'yi yeniden açtığınızda tekrar çalışırlar."
+        }
+      }
+    }
+  }
+}

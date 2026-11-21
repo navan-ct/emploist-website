@@ -48,11 +48,13 @@ const en = {
     features: "Features",
     careersPage: "Careers page",
     aiAssistants: "AI assistants",
+    mcp: "MCP",
     /** The last item in the Features menu, after the feature sections. */
     moreFeatures: "More features",
     pricing: "Pricing",
     faq: "FAQ",
     blog: "Blog",
+    docs: "Docs",
     signIn: "Sign in",
     startFreeTrial: "Start free trial",
     menu: "Menu",
@@ -65,13 +67,14 @@ const en = {
 
   footer: {
     tagline:
-      "Applicant tracking with a careers page and AI ranking, for teams that want to hire well without the busywork.",
+      "An intelligent applicant tracking software with a careers page and AI ranking. Made for teams that want to hire well without the busywork.",
     product: "Product",
     resources: "Resources",
     account: "Account",
     legal: "Legal",
     rssFeed: "RSS feed",
     support: "Support",
+    llmsTxt: "llms.txt",
     terms: "Terms of Service",
     privacy: "Privacy Policy",
     copyright: (year: number) => `© ${year} Emploist. All rights reserved.`,
@@ -85,8 +88,9 @@ const en = {
 
   hero: {
     eyebrow: "Applicant tracking, ranked by AI",
-    title: "See your best applicants first.",
+    title: "See your best applications without manual filters and complex ATS",
     lead: "Emploist gives you a careers page, a simple hiring pipeline, and AI that ranks every application against your job description. Your team spends less time sorting and more time with the people who fit.",
+    cta: "Rank your applicants",
     seeHowItWorks: "See how it works",
     note: (p: PlanFacts) => `${p.trialDays} days free, then ${f.usd(p.priceUsd)} a month. No per-seat fees.`,
     screenshotAlt:
@@ -149,7 +153,7 @@ const en = {
     title: "A careers page that's ready on day one.",
     lead: "Every company gets a fast, polished careers page with its logo and color. New jobs show up the moment you publish them, and applications land straight in the job's inbox.",
     screenshotAlt:
-      "Northwind Labs' careers page: a header with the company's logo, a short introduction, and open roles grouped by department with filters for department and location.",
+      "Fieldnote Labs' careers page: a header with the company's logo, a short introduction, and open roles grouped by department with filters for department and location.",
     mobileScreenshotAlt:
       "A job page on a phone: Senior Product Designer in Berlin, hybrid and full-time, with an Apply for this job button and the job description.",
     facts: [
@@ -224,7 +228,7 @@ const en = {
     editorScreenshotAlt:
       "The email for the Interviewing stage in Emploist. The subject and message use variables for the applicant's first name, the job title, and the company name.",
     previewScreenshotAlt:
-      "The finished email, as an applicant named Sam receives it: Northwind Labs at the top, a personal invitation to interview for the Senior Product Designer role, and a link to open roles.",
+      "The finished email, as an applicant named Sam receives it: Fieldnote Labs at the top, a personal invitation to interview for the Senior Product Designer role, and a link to open roles.",
   },
 
   aiAssistants: {
@@ -264,6 +268,108 @@ const en = {
       placeholder: "Ask about your jobs and applicants",
     },
     caption: "Each person connects their own assistant in a few steps.",
+  },
+
+  /** The /mcp/ landing page. */
+  mcp: {
+    description:
+      "Connect Claude, ChatGPT, and other AI assistants to Emploist with MCP. Ask about applicants, move stages, and create jobs from chat, with your own permissions.",
+    eyebrow: "MCP",
+    heading: "Hire from the chat you already use.",
+    lead: "MCP connects Emploist to Claude, ChatGPT, and other assistants. You ask in plain words. The assistant does the work in Emploist, as you.",
+    whatTitle: "What is MCP?",
+    whatLead:
+      "MCP is short for Model Context Protocol. It is an open way for an AI assistant to use another app safely.",
+    whatPoints: [
+      {
+        title: "A connector, not a new product.",
+        text: "Emploist still holds your jobs and applicants. MCP is how your assistant reaches them.",
+      },
+      {
+        title: "One server address.",
+        text: "Emploist's hosted MCP server is at mcp.emploist.com. You paste that into Claude, ChatGPT, or another client that supports MCP.",
+      },
+      {
+        title: "Included in your plan.",
+        text: "Anyone on your team can connect their own assistant. Ranking an application from chat uses the same AI credit as ranking it in Emploist.",
+      },
+    ],
+    howTitle: "How it works",
+    howSteps: [
+      {
+        title: "You connect once.",
+        text: "Open MCP in Emploist, pick your assistant, and follow its steps. Sign in with Emploist when asked. No API keys to copy.",
+      },
+      {
+        title: "You ask in the chat.",
+        text: "Mention Emploist, then ask who fits a role, move someone to the next stage, leave a comment, or draft a job.",
+      },
+      {
+        title: "Emploist does the work.",
+        text: "The assistant calls Emploist tools under your login. Write actions ask for confirmation before they stick.",
+      },
+    ],
+    canDoTitle: "What you can ask",
+    canDo: [
+      "Which applicants for Senior Product Designer are the best matches?",
+      "Move Priya to Phone screen and tell me when the stage email goes out.",
+      "Summarize the new applications from today.",
+      "Draft a Customer Support job for Berlin and show me the form before we publish.",
+      "Leave a comment on Sara's application for Priya.",
+    ],
+    connectTitle: "Connect an assistant",
+    connectLead: "Emploist's MCP page has tabs for each client. The server URL is the same everywhere:",
+    serverUrl: "https://mcp.emploist.com",
+    connectClients: [
+      {
+        name: "Claude",
+        text: "In Claude, open Customize → Connectors, add a custom connector, paste the URL, and sign in to Emploist.",
+      },
+      {
+        name: "ChatGPT",
+        text: "In ChatGPT on the web, open Plugins, add a custom MCP server, paste the URL, create the plugin, then mention it with @.",
+      },
+      {
+        name: "Other clients",
+        text: "Cursor, VS Code, Claude Code, and other MCP clients use the same URL. Emploist's MCP page lists the steps for each.",
+      },
+    ],
+    controlTitle: "You stay in control",
+    controlPoints: [
+      {
+        title: "Your role, nothing more.",
+        text: "The assistant can only do what you can already do in Emploist. Billing, team invites, and deleting the company stay out of reach.",
+      },
+      {
+        title: "Approvals on writes.",
+        text: "Moving an applicant or creating a job asks for confirmation first. Decline anything that looks wrong.",
+      },
+      {
+        title: "Disconnect anytime.",
+        text: "On the MCP page, disconnect an assistant and it stops. Admins can also turn MCP off for the whole company.",
+      },
+    ],
+    worksWith: "Works with",
+    guidesTitle: "Guides",
+    guidesLead: "Step-by-step setup and examples.",
+    guideClaude: "How to manage hiring from Claude with MCP",
+    guideChatgpt: "Top ChatGPT plugins for HR managers",
+    guideDocs: "Connect an AI assistant",
+    cta: "Connect your AI assistant",
+    copySetup: "Copy MCP setup",
+    copiedSetup: "Copied",
+    /** Pasted into an AI chat. Keep facts (URL, OAuth) intact across locales. */
+    setupCopy: (u: { mcpDocs: string; serverUrl: string }) =>
+      `Emploist is applicant tracking software. This file tells an AI assistant how to connect to Emploist's MCP server and what it can do after connecting.
+
+Connect Emploist's MCP server so you can manage hiring from this chat.
+
+MCP Docs: ${u.mcpDocs}
+Server URL: ${u.serverUrl}
+Authentication: OAuth (sign in with Emploist when prompted)
+
+After connecting, help with jobs and applicants in Emploist: list and rank applications, move people between stages, leave comments, and create or publish jobs. Work only with my Emploist permissions. Confirm before any write action.
+`,
   },
 
   details: {
@@ -419,7 +525,7 @@ const en = {
   },
 
   callToAction: {
-    title: "Meet your best applicants this week.",
+    title: "Meet your best applicants without the gruntwork.",
     text: (p: PlanFacts) =>
       `Try Emploist free for ${p.trialDays} days. Setup takes a few minutes, and your careers page is ready as soon as you are.`,
     talkToUs: "Talk to us",
@@ -432,6 +538,17 @@ const en = {
     text: "It may have moved, or the link might have a typo. Let's get you back on track.",
     home: "Go to the home page",
     blog: "Read the blog",
+  },
+
+  docs: {
+    title: "Emploist documentation",
+    lead: "Follow these official docs to get things done in Emploist.",
+    copyMarkdown: "Copy markdown",
+    copied: "Copied",
+    discussWith: "Discuss with",
+    /** Prefill for AI chat links. */
+    discussPrompt: (title: string, url: string) =>
+      `Help me with this Emploist guide: "${title}". Read ${url} and answer my questions about it.`,
   },
 
   blog: {
@@ -458,6 +575,7 @@ const en = {
     ctaText: (p: PlanFacts) =>
       `Try Emploist free for ${p.trialDays} days, then ${f.usd(p.priceUsd)} a month for your whole team.`,
     defaultAuthor: "The Emploist team",
+    writtenBy: (name: string) => `Written by ${name}`,
   },
 
   /** The directories that list Emploist (/listed-on/), linked from the footer. */

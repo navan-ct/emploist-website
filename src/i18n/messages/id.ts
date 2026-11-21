@@ -26,11 +26,13 @@ const id: Messages = {
     features: "Fitur",
     careersPage: "Halaman karier",
     aiAssistants: "Asisten AI",
+    mcp: "MCP",
     /** The last item in the Features menu, after the feature sections. */
     moreFeatures: "Fitur lainnya",
     pricing: "Harga",
     faq: "FAQ",
     blog: "Blog",
+    docs: "Docs",
     signIn: "Masuk",
     startFreeTrial: "Mulai uji coba gratis",
     menu: "Menu",
@@ -50,6 +52,7 @@ const id: Messages = {
     legal: "Legal",
     rssFeed: "Feed RSS",
     support: "Bantuan",
+    llmsTxt: "llms.txt",
     terms: "Ketentuan Layanan",
     privacy: "Kebijakan Privasi",
     copyright: (year) => `© ${year} Emploist. Hak cipta dilindungi undang-undang.`,
@@ -63,8 +66,9 @@ const id: Messages = {
 
   hero: {
     eyebrow: "Aplikasi rekrutmen dengan penilaian AI",
-    title: "Lihat pelamar terbaik Anda lebih dulu.",
+    title: "Lihat lamaran terbaik Anda tanpa filter manual dan ATS yang rumit",
     lead: "Emploist memberi Anda halaman karier, alur rekrutmen yang sederhana, dan AI yang menilai setiap lamaran berdasarkan deskripsi lowongan Anda. Tim Anda tak perlu lama memilah, dan punya lebih banyak waktu untuk orang-orang yang cocok.",
+    cta: "Peringkatkan pelamar Anda",
     seeHowItWorks: "Lihat cara kerjanya",
     note: (p) => `${p.trialDays} hari gratis, lalu ${f.usd(p.priceUsd)} per bulan. Tanpa biaya per pengguna.`,
     screenshotAlt:
@@ -127,7 +131,7 @@ const id: Messages = {
     title: "Halaman karier yang siap sejak hari pertama.",
     lead: "Setiap perusahaan mendapat halaman karier yang cepat dan apik, lengkap dengan logo dan warnanya. Lowongan baru muncul begitu Anda memublikasikannya, dan lamaran langsung tiba di kotak masuk lowongan tersebut.",
     screenshotAlt:
-      "Halaman karier Northwind Labs: header dengan logo perusahaan, perkenalan singkat, dan lowongan yang dibuka, dikelompokkan per departemen, dengan filter departemen dan lokasi.",
+      "Halaman karier Fieldnote Labs: header dengan logo perusahaan, perkenalan singkat, dan lowongan yang dibuka, dikelompokkan per departemen, dengan filter departemen dan lokasi.",
     mobileScreenshotAlt:
       "Halaman lowongan di ponsel: Senior Product Designer di Berlin, hibrida dan penuh waktu, dengan tombol “Apply for this job” dan deskripsi lowongan.",
     facts: [
@@ -202,7 +206,7 @@ const id: Messages = {
     editorScreenshotAlt:
       "Email untuk tahap “Interviewing” di Emploist. Subjek dan pesannya menggunakan variabel untuk nama depan pelamar, judul lowongan, dan nama perusahaan.",
     previewScreenshotAlt:
-      "Hasil akhir emailnya, seperti yang diterima pelamar bernama Sam: Northwind Labs di bagian atas, undangan wawancara yang personal untuk posisi Senior Product Designer, dan tautan ke lowongan yang dibuka.",
+      "Hasil akhir emailnya, seperti yang diterima pelamar bernama Sam: Fieldnote Labs di bagian atas, undangan wawancara yang personal untuk posisi Senior Product Designer, dan tautan ke lowongan yang dibuka.",
   },
 
   aiAssistants: {
@@ -242,6 +246,107 @@ const id: Messages = {
       placeholder: "Tanyakan tentang lowongan dan pelamar Anda",
     },
     caption: "Setiap orang menghubungkan asistennya sendiri dalam beberapa langkah.",
+  },
+
+  /** The /mcp/ landing page. */
+  mcp: {
+    description:
+      "Hubungkan Claude, ChatGPT, dan asisten AI lain ke Emploist dengan MCP. Tanyakan tentang pelamar, pindahkan tahapan, dan buat lowongan dari chat, dengan izin Anda sendiri.",
+    eyebrow: "MCP",
+    heading: "Rekrut dari chat yang sudah Anda pakai.",
+    lead: "MCP menghubungkan Emploist ke Claude, ChatGPT, dan asisten lain. Anda bertanya dengan kata-kata biasa. Asisten mengerjakan di Emploist, sebagai Anda.",
+    whatTitle: "Apa itu MCP?",
+    whatLead:
+      "MCP adalah singkatan dari Model Context Protocol. Ini cara terbuka agar asisten AI bisa memakai aplikasi lain dengan aman.",
+    whatPoints: [
+      {
+        title: "Konektor, bukan produk baru.",
+        text: "Lowongan dan pelamar tetap ada di Emploist. MCP adalah cara asisten Anda menjangkaunya.",
+      },
+      {
+        title: "Satu alamat server.",
+        text: "Server MCP Emploist yang di-host ada di mcp.emploist.com. Tempelkan alamat itu ke Claude, ChatGPT, atau klien lain yang mendukung MCP.",
+      },
+      {
+        title: "Sudah termasuk dalam paket Anda.",
+        text: "Siapa pun di tim Anda dapat menghubungkan asistennya sendiri. Menilai lamaran dari chat memakai kredit AI yang sama seperti menilai di Emploist.",
+      },
+    ],
+    howTitle: "Cara kerjanya",
+    howSteps: [
+      {
+        title: "Anda menghubungkan sekali.",
+        text: "Buka MCP di Emploist, pilih asisten Anda, lalu ikuti langkahnya. Masuk dengan Emploist saat diminta. Tidak ada kunci API yang perlu disalin.",
+      },
+      {
+        title: "Anda bertanya di chat.",
+        text: "Sebut Emploist, lalu tanyakan siapa yang cocok untuk suatu posisi, pindahkan seseorang ke tahap berikutnya, beri komentar, atau buat draf lowongan.",
+      },
+      {
+        title: "Emploist yang mengerjakan.",
+        text: "Asisten memanggil alat Emploist dengan login Anda. Tindakan tulis meminta konfirmasi sebelum disimpan.",
+      },
+    ],
+    canDoTitle: "Yang bisa Anda tanyakan",
+    canDo: [
+      "Pelamar mana untuk Senior Product Designer yang paling cocok?",
+      "Pindahkan Priya ke tahap Phone screen dan beri tahu saya kapan email tahap itu terkirim.",
+      "Ringkas lamaran baru dari hari ini.",
+      "Buat draf lowongan Customer Support untuk Berlin dan tunjukkan formulirnya sebelum kami publikasikan.",
+      "Tinggalkan komentar di lamaran Sara untuk Priya.",
+    ],
+    connectTitle: "Hubungkan asisten",
+    connectLead: "Halaman MCP Emploist punya tab untuk setiap klien. URL servernya sama di mana pun:",
+    serverUrl: "https://mcp.emploist.com",
+    connectClients: [
+      {
+        name: "Claude",
+        text: "Di Claude, buka Customize → Connectors, tambahkan konektor kustom, tempel URL-nya, lalu masuk ke Emploist.",
+      },
+      {
+        name: "ChatGPT",
+        text: "Di ChatGPT di web, buka Plugins, tambahkan server MCP kustom, tempel URL-nya, buat pluginnya, lalu sebut dengan @.",
+      },
+      {
+        name: "Klien lain",
+        text: "Cursor, VS Code, Claude Code, dan klien MCP lain memakai URL yang sama. Halaman MCP Emploist mencantumkan langkah untuk masing-masing.",
+      },
+    ],
+    controlTitle: "Kendali tetap di tangan Anda",
+    controlPoints: [
+      {
+        title: "Peran Anda, tidak lebih.",
+        text: "Asisten hanya bisa melakukan apa yang sudah bisa Anda lakukan di Emploist. Penagihan, undangan tim, dan penghapusan perusahaan tetap di luar jangkauan.",
+      },
+      {
+        title: "Konfirmasi untuk penulisan.",
+        text: "Memindahkan pelamar atau membuat lowongan meminta konfirmasi dulu. Tolak apa pun yang terlihat salah.",
+      },
+      {
+        title: "Putuskan kapan saja.",
+        text: "Di halaman MCP, putuskan koneksi asisten dan asisten langsung berhenti. Admin juga bisa mematikan MCP untuk seluruh perusahaan.",
+      },
+    ],
+    worksWith: "Kompatibel dengan",
+    guidesTitle: "Panduan",
+    guidesLead: "Pengaturan langkah demi langkah dan contoh.",
+    guideClaude: "Cara mengelola rekrutmen dari Claude dengan MCP",
+    guideChatgpt: "Plugin ChatGPT terbaik untuk manajer HR",
+    guideDocs: "Hubungkan asisten AI",
+    cta: "Hubungkan asisten AI Anda",
+    copySetup: "Salin pengaturan MCP",
+    copiedSetup: "Disalin",
+    setupCopy: (u: { mcpDocs: string; serverUrl: string }) =>
+      `Emploist adalah perangkat lunak pelacakan pelamar. File ini memberi tahu asisten AI cara menghubungkan ke server MCP Emploist dan apa yang bisa dilakukannya setelah terhubung.
+
+Hubungkan server MCP Emploist agar Anda bisa mengelola rekrutmen dari chat ini.
+
+MCP Docs: ${u.mcpDocs}
+Server URL: ${u.serverUrl}
+Authentication: OAuth (masuk dengan Emploist saat diminta)
+
+Setelah terhubung, bantu untuk lowongan dan pelamar di Emploist: daftar dan nilai lamaran, pindahkan orang antartahap, tinggalkan komentar, serta buat atau publikasikan lowongan. Bekerja hanya dengan izin Emploist saya. Konfirmasi sebelum tindakan tulis apa pun.
+`,
   },
 
   details: {
@@ -412,6 +517,16 @@ const id: Messages = {
     blog: "Baca blog",
   },
 
+  docs: {
+    title: "Dokumentasi Emploist",
+    lead: "Ikuti docs resmi ini untuk menyelesaikan pekerjaan di Emploist.",
+    copyMarkdown: "Salin markdown",
+    copied: "Disalin",
+    discussWith: "Diskusikan dengan",
+    discussPrompt: (title, url) =>
+      `Bantu saya dengan panduan Emploist ini: "${title}". Baca ${url} dan jawab pertanyaan saya.`,
+  },
+
   blog: {
     title: "Blog",
     description:
@@ -436,6 +551,7 @@ const id: Messages = {
     ctaText: (p) =>
       `Coba Emploist gratis selama ${p.trialDays} hari, lalu ${f.usd(p.priceUsd)} per bulan untuk seluruh tim Anda.`,
     defaultAuthor: "Tim Emploist",
+    writtenBy: (name) => `Ditulis oleh ${name}`,
   },
 
   listedOn: {

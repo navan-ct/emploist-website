@@ -1,0 +1,485 @@
+{
+  "title": "Support",
+  "description": "Wir helfen Ihnen gerne. Schreiben Sie uns eine E-Mail oder folgen Sie einer Anleitung, um Aufgaben in Emploist zu erledigen.",
+  "contact": {
+    "title": "Schreiben Sie uns",
+    "description": "Fragen, Feedback oder funktioniert etwas nicht? Wir antworten in der Regel innerhalb von 24 Stunden.",
+    "copied": "E-Mail-Adresse kopiert",
+    "copy": "E-Mail-Adresse kopieren"
+  },
+  "guideList": {
+    "title": "Anleitungen",
+    "description": "Schritt-für-Schritt-Hilfe zu den wichtigsten Bereichen von Emploist.",
+    "adminOnly": "Nur für Admins"
+  },
+  "topics": {
+    "jobsAndApplications": "Stellen und Bewerbungen",
+    "careersPage": "Karriereseite",
+    "teamAndEmails": "Team und E-Mails",
+    "aiAndBilling": "KI-Bewertung und Abrechnung",
+    "aiAssistants": "KI-Assistenten"
+  },
+  "guides": {
+    "createJob": {
+      "title": "Stelle erstellen und veröffentlichen",
+      "summary": "Beschreiben Sie die Stelle, speichern Sie einen Entwurf und veröffentlichen Sie sie.",
+      "steps": {
+        "start": {
+          "title": "Neue Stelle anlegen",
+          "body": "Öffnen Sie <jobs>Stellen</jobs> und klicken Sie auf <ui>Stelle erstellen</ui>."
+        },
+        "describe": {
+          "title": "Stelle beschreiben",
+          "body": "Geben Sie im Tab <ui>Details</ui> einen <ui>Stellentitel</ui> und eine <ui>Beschreibung</ui> ein. Abteilung, Standort, Arbeitsmodell und Beschäftigungsart sind optional. Abteilungen und Standorte, die Sie hinzufügen, werden bei späteren Stellen wieder vorgeschlagen."
+        },
+        "formAndStages": {
+          "title": "Formular und Phasen prüfen",
+          "body": "Die Tabs <ui>Bewerbungsformular</ui> und <ui>Phasen</ui> sind bereits einsatzbereit eingerichtet. Sie können sie jetzt oder jederzeit später anpassen."
+        },
+        "saveOrPublish": {
+          "title": "Speichern oder veröffentlichen",
+          "body": "Mit <ui>Entwurf speichern</ui> bleibt die Stelle nur für Ihr Team sichtbar. Mit <ui>Veröffentlichen</ui> erscheint sie auf Ihrer Karriereseite."
+        }
+      }
+    },
+    "applicationForm": {
+      "title": "Bewerbungsformular erstellen",
+      "summary": "Legen Sie fest, was Bewerbende bei ihrer Bewerbung ausfüllen.",
+      "steps": {
+        "open": {
+          "title": "Formular öffnen",
+          "body": "Öffnen Sie bei einer Stelle den Tab <ui>Bewerbungsformular</ui>."
+        },
+        "essentials": {
+          "title": "Mit dem Wichtigsten beginnen",
+          "body": "Jedes Formular fragt nach <ui>Vollständiger Name</ui>, <ui>E-Mail</ui> und <ui>Lebenslauf</ui>. Sie können diese Felder verschieben, aber nicht entfernen."
+        },
+        "addQuestions": {
+          "title": "Fragen hinzufügen",
+          "body": "Klicken Sie auf <ui>Hinzufügen</ui> und wählen Sie einen Fragetyp, z. B. <ui>Kurze Antwort</ui>, <ui>Einfachauswahl</ui> oder <ui>Lineare Skala</ui>. Mit einer <ui>Überschrift</ui> oder einem <ui>Text</ui> geben Sie Bewerbenden mehr Kontext."
+        },
+        "setUp": {
+          "title": "Jede Frage einrichten",
+          "body": "Klicken Sie auf eine Frage, um sie zu bearbeiten, und aktivieren Sie <ui>Erforderlich</ui>, wenn Bewerbende sie beantworten müssen. Ziehen Sie Fragen oder nutzen Sie ihr Menü, um die Reihenfolge zu ändern. Als <ui>Unvollständig</ui> markierte Fragen müssen Sie fertigstellen, bevor Sie die Stelle veröffentlichen."
+        },
+        "save": {
+          "title": "Änderungen speichern",
+          "body": "Klicken Sie bei einer bestehenden Stelle auf <ui>Änderungen speichern</ui>. Ihre Änderungen gelten nur für neue Bewerbungen. Bereits eingegangene behalten die Fragen, die damals beantwortet wurden."
+        }
+      }
+    },
+    "stages": {
+      "title": "Recruiting-Phasen einrichten",
+      "summary": "Gestalten Sie die Schritte, die jede Bewerbung durchläuft.",
+      "steps": {
+        "open": {
+          "title": "Phasen öffnen",
+          "body": "Öffnen Sie bei einer Stelle den Tab <ui>Phasen</ui>. Neue Stellen beginnen mit <ui>Inbox</ui>, <ui>Interviewing</ui>, <ui>Accepted</ui> und <ui>Rejected</ui>."
+        },
+        "inbox": {
+          "title": "Die Inbox kennenlernen",
+          "body": "Neue Bewerbungen landen in der ersten Phase, der Inbox. Sie können sie umbenennen, aber sie bleibt immer die erste und kann nicht gelöscht werden."
+        },
+        "addRenameReorder": {
+          "title": "Hinzufügen, umbenennen und sortieren",
+          "body": "Klicken Sie auf <ui>Phase hinzufügen</ui>, um eine neue anzulegen, oder wählen Sie im Menü einer Phase <ui>Umbenennen</ui>. Ziehen Sie die Phasen in die Reihenfolge Ihres Auswahlprozesses."
+        },
+        "delete": {
+          "title": "Phase löschen",
+          "body": "Wählen Sie im Menü einer Phase <ui>Löschen</ui>. Enthält sie Bewerbungen, wählen Sie aus, in welche Phase diese verschoben werden."
+        }
+      }
+    },
+    "reviewApplications": {
+      "title": "Bewerbungen sichten",
+      "summary": "Finden und lesen Sie Bewerbungen und verschieben Sie sie durch Ihre Phasen.",
+      "steps": {
+        "openJob": {
+          "title": "Stelle öffnen",
+          "body": "Öffnen Sie eine Stelle unter <jobs>Stellen</jobs>. Im Tab <ui>Bewerbungen</ui> gibt es für jede Phase eine Schaltfläche, die zeigt, wie viele Bewerbungen sie enthält."
+        },
+        "find": {
+          "title": "Die richtigen Bewerbungen finden",
+          "body": "Suchen Sie nach Name oder E-Mail-Adresse und wählen Sie als Sortierung <ui>Beste Matches zuerst</ui>, <ui>Neueste zuerst</ui> oder <ui>Älteste zuerst</ui>. „Beste Matches zuerst“ ist verfügbar, solange die KI-Funktionen aktiviert sind."
+        },
+        "openApplication": {
+          "title": "Bewerbung öffnen",
+          "body": "Klicken Sie auf einen Namen, um die Bewerbung zu öffnen. Klicken Sie auf <ui>Lebenslauf ansehen</ui>, um den Lebenslauf in einem neuen Tab zu öffnen. Mit <ui>←</ui> oder <ui>→</ui> wechseln Sie zur vorherigen oder nächsten Bewerbung."
+        },
+        "move": {
+          "title": "In eine Phase verschieben",
+          "body": "Wählen Sie eine Phase im Menü <ui>Phase</ui> der Bewerbung oder unter <ui>Verschieben nach</ui> im Menü einer Zeile. Wenn Sie eine Bewerbung versehentlich verschieben, klicken Sie in der eingeblendeten Meldung auf <ui>Rückgängig</ui>."
+        }
+      }
+    },
+    "comments": {
+      "title": "Kommentieren und Teammitglieder erwähnen",
+      "summary": "Besprechen Sie Bewerbende mit Ihrem Team und bleiben Sie auf dem Laufenden.",
+      "steps": {
+        "write": {
+          "title": "Kommentar schreiben",
+          "body": "Öffnen Sie eine Bewerbung, schreiben Sie in das Kommentarfeld und klicken Sie auf <ui>Kommentieren</ui> oder drücken Sie <ui>{{shortcut}}</ui>. Kommentare sieht nur Ihr Team.",
+          "shortcut": "Strg+Enter",
+          "shortcutMac": "⌘+Enter"
+        },
+        "mention": {
+          "title": "Jemanden erwähnen",
+          "body": "Geben Sie <ui>@</ui> ein und wählen Sie ein Teammitglied aus, um es zu benachrichtigen."
+        },
+        "replies": {
+          "title": "Antworten im Blick behalten",
+          "body": "Sie werden benachrichtigt, wenn jemand Sie erwähnt oder eine Bewerbung kommentiert, die Sie kommentiert haben. Sie finden diese Benachrichtigungen über das Glockensymbol oben auf der Seite oder unter <notifications>Benachrichtigungen</notifications>."
+        },
+        "editOrDelete": {
+          "title": "Bearbeiten oder löschen",
+          "body": "Wählen Sie im Menü eines Ihrer Kommentare <ui>Bearbeiten</ui> oder <ui>Löschen</ui>. Admins können außerdem die Kommentare aller anderen löschen."
+        }
+      }
+    },
+    "manageJob": {
+      "title": "Stelle schließen, archivieren oder duplizieren",
+      "summary": "Beenden Sie die Annahme von Bewerbungen, räumen Sie auf oder verwenden Sie eine Stelle wieder.",
+      "steps": {
+        "closeOrReopen": {
+          "title": "Schließen oder wieder öffnen",
+          "body": "Nutzen Sie bei einer veröffentlichten Stelle das Statusmenü oben: <ui>Geschlossen</ui> beendet die Annahme von Bewerbungen, <ui>Offen</ui> nimmt sie wieder auf."
+        },
+        "duplicate": {
+          "title": "Duplizieren",
+          "body": "Wählen Sie im Menü <ui>Weitere Aktionen</ui> einer Stelle die Option <ui>Duplizieren</ui>, um einen Entwurf mit denselben Details, demselben Formular und denselben Phasen zu erstellen."
+        },
+        "archive": {
+          "title": "Archivieren",
+          "body": "Wählen Sie unter <ui>Weitere Aktionen</ui> die Option <ui>Archivieren</ui>, um eine Stelle wegzuräumen. Archivierte Stellen sind schreibgeschützt. Klicken Sie auf <ui>Wiederherstellen</ui>, um eine Stelle zurückzuholen."
+        },
+        "delete": {
+          "title": "Löschen",
+          "body": "Wählen Sie unter <ui>Weitere Aktionen</ui> die Option <ui>Löschen</ui>, um eine Stelle samt ihren Bewerbungen endgültig zu entfernen. Wenn Sie die Bewerbungen behalten möchten, archivieren Sie die Stelle stattdessen."
+        }
+      }
+    },
+    "exportApplications": {
+      "title": "Bewerbungen exportieren",
+      "summary": "Laden Sie die Bewerbungen und Lebensläufe einer Stelle herunter.",
+      "steps": {
+        "start": {
+          "title": "Export starten",
+          "body": "Öffnen Sie bei einer Stelle mit Bewerbungen <ui>Weitere Aktionen</ui> und wählen Sie <ui>Bewerbungen exportieren</ui>."
+        },
+        "openZip": {
+          "title": "ZIP-Datei öffnen",
+          "body": "<ui>{{file}}</ui> ist eine Tabelle mit einer Zeile pro Bewerbung. Der Ordner <ui>{{folder}}</ui> enthält alle Lebensläufe, jeweils nach der bewerbenden Person benannt."
+        }
+      }
+    },
+    "customizeCareersPage": {
+      "title": "Karriereseite gestalten",
+      "summary": "Wählen Sie Ihre Farbe oder bearbeiten Sie den Code der Seite.",
+      "steps": {
+        "color": {
+          "title": "Farbe wählen",
+          "body": "Öffnen Sie unter „Karriereseite“ den Tab <design>Design</design>, wählen Sie eine <ui>Primärfarbe</ui> und klicken Sie auf <ui>Farbe speichern</ui>. Die Farbe wird für Schaltflächen und Hervorhebungen verwendet."
+        },
+        "code": {
+          "title": "Code bearbeiten",
+          "body": "Klicken Sie auf <ui>Code bearbeiten</ui>, um die Templates und Styles der Seite zu ändern. Unter <ui>Referenz</ui> finden Sie alles, was Sie darin verwenden können."
+        },
+        "preview": {
+          "title": "Vorschau beim Bearbeiten",
+          "body": "Die Vorschau aktualisiert sich während der Eingabe. Prüfen Sie mit <ui>Seite wählen</ui> jede Seite und wechseln Sie zwischen Desktop- und Mobilgröße."
+        },
+        "save": {
+          "title": "Speichern",
+          "body": "Klicken Sie auf <ui>Speichern</ui>. Um von vorn zu beginnen, wählen Sie unter <ui>Weitere Aktionen</ui> die Option <ui>Auf Standardcode zurücksetzen</ui>."
+        }
+      }
+    },
+    "editCodeLocally": {
+      "title": "Code auf Ihrem Computer bearbeiten",
+      "summary": "Arbeiten Sie in Ihrem eigenen Editor, mit Live-Vorschau.",
+      "steps": {
+        "download": {
+          "title": "Code herunterladen",
+          "body": "Klicken Sie im Tab <design>Design</design> auf <ui>ZIP herunterladen</ui> und entpacken Sie die Datei."
+        },
+        "preview": {
+          "title": "Vorschau anzeigen",
+          "body": "Führen Sie mit Node.js {{version}} oder neuer im Ordner <code>{{command}}</code> aus und öffnen Sie <code>{{url}}</code>. Dort sehen Sie Ihre Seite mit Beispielstellen. Laden Sie sie nach jeder Änderung neu."
+        },
+        "check": {
+          "title": "Auf Probleme prüfen",
+          "body": "Führen Sie <code>{{command}}</code> aus, um dieselben Probleme zu finden, die beim Speichern gemeldet würden."
+        },
+        "upload": {
+          "title": "Hochladen",
+          "body": "Packen Sie die Dateien in eine ZIP-Datei, klicken Sie auf <ui>ZIP hochladen</ui>, prüfen Sie die Vorschau und klicken Sie auf <ui>Speichern</ui>."
+        }
+      }
+    },
+    "changeAddress": {
+      "title": "Adresse der Karriereseite ändern",
+      "summary": "Verlegen Sie Ihre Seite auf eine neue Emploist-Adresse.",
+      "steps": {
+        "open": {
+          "title": "Adresse öffnen",
+          "body": "Öffnen Sie unter „Karriereseite“ den Tab <domain>Domain</domain> und klicken Sie auf <ui>Ändern</ui>."
+        },
+        "choose": {
+          "title": "Neue Adresse wählen",
+          "body": "Geben Sie die gewünschte Adresse ein. Wir prüfen während der Eingabe, ob sie verfügbar ist."
+        },
+        "confirm": {
+          "title": "Änderung bestätigen",
+          "body": "Klicken Sie auf <ui>Adresse ändern</ui>. Ihre alte Adresse funktioniert sofort nicht mehr, auch nicht in Links zu Stellen, die Sie geteilt haben, und ein anderes Unternehmen könnte sie dann verwenden."
+        }
+      }
+    },
+    "customDomain": {
+      "title": "Eigene Domain verbinden",
+      "summary": "Zeigen Sie Ihre Karriereseite unter einer Adresse Ihrer Website an.",
+      "steps": {
+        "add": {
+          "title": "Domain hinzufügen",
+          "body": "Geben Sie im Tab <domain>Domain</domain> eine Subdomain Ihrer Website ein, z. B. careers.acme.com, und klicken Sie auf <ui>Domain hinzufügen</ui>. Hauptdomains wie acme.com können nicht verbunden werden."
+        },
+        "records": {
+          "title": "Zwei DNS-Einträge hinzufügen",
+          "body": "Fügen Sie dort, wo Sie Ihre Domain verwalten, die angezeigten Einträge <ui>CNAME</ui> und <ui>TXT</ui> hinzu. Nutzen Sie dafür die Kopier-Schaltflächen. Stellen Sie bei Cloudflare den Proxystatus des CNAME-Eintrags auf „Nur DNS“ (DNS only)."
+        },
+        "wait": {
+          "title": "Auf die Prüfung warten",
+          "body": "Änderungen sind meist innerhalb weniger Minuten sichtbar, können aber bis zu 48 Stunden dauern. Sobald <ui>Verbunden</ui> angezeigt wird, ist Ihre Karriereseite unter Ihrer Domain erreichbar."
+        }
+      }
+    },
+    "inviteTeam": {
+      "title": "Team einladen",
+      "summary": "Fügen Sie Teammitglieder per E-Mail hinzu und wählen Sie ihre Rollen.",
+      "steps": {
+        "send": {
+          "title": "Einladung senden",
+          "body": "Öffnen Sie in den Einstellungen den Tab <members>Mitglieder</members>, klicken Sie auf <ui>Mitglied einladen</ui>, geben Sie die E-Mail-Adresse ein und klicken Sie auf <ui>Einladung senden</ui>."
+        },
+        "role": {
+          "title": "Rolle wählen",
+          "body": "<ui>Mitglieder</ui> arbeiten mit Stellen und Bewerbungen. <ui>Admins</ui> können außerdem das Team, die Unternehmenseinstellungen, die Karriereseite und die Abrechnung verwalten."
+        },
+        "join": {
+          "title": "Die Person tritt bei",
+          "body_one": "Die Person erhält eine E-Mail mit einem Link zum Beitreten, der {{count, number}} Tag gültig ist.",
+          "body_other": "Die Person erhält eine E-Mail mit einem Link zum Beitreten, der {{count, number}} Tage gültig ist."
+        },
+        "followUp": {
+          "title": "Nachfassen",
+          "body": "Einladungen, auf die noch keine Antwort kam, stehen unter <ui>Ausstehende Einladungen</ui>. Wählen Sie im Menü einer Einladung <ui>Einladung erneut senden</ui> oder <ui>Einladung zurückziehen</ui>."
+        }
+      }
+    },
+    "manageMembers": {
+      "title": "Rollen und Mitglieder verwalten",
+      "summary": "Ändern Sie Rollen, entfernen Sie Personen oder verlassen Sie ein Unternehmen.",
+      "steps": {
+        "changeRole": {
+          "title": "Rolle ändern",
+          "body": "Öffnen Sie in den Einstellungen im Tab <members>Mitglieder</members> das Menü einer Person und wählen Sie <ui>Zum Admin machen</ui> oder <ui>Zum Mitglied machen</ui>. Nur Admins können Rollen ändern."
+        },
+        "remove": {
+          "title": "Person entfernen",
+          "body": "Wählen Sie im Menü der Person <ui>Aus Unternehmen entfernen</ui>. Die Person verliert sofort den Zugriff. Nur Admins können Personen entfernen."
+        },
+        "leave": {
+          "title": "Unternehmen verlassen",
+          "body": "Wählen Sie in Ihrem eigenen Menü <ui>Unternehmen verlassen</ui>. Wenn außer Ihnen niemand die Admin-Rolle hat, machen Sie zuerst eine andere Person zum Admin."
+        }
+      }
+    },
+    "deleteCompanyOrAccount": {
+      "title": "Unternehmen oder Konto löschen",
+      "summary": "Entfernen Sie Ihr Unternehmen endgültig oder nur Ihr eigenes Konto.",
+      "steps": {
+        "open": {
+          "title": "Gefahrenzone öffnen",
+          "body": "Öffnen Sie in den Einstellungen den Tab <danger>Gefahrenzone</danger>."
+        },
+        "deleteCompany": {
+          "title": "Unternehmen löschen",
+          "body": "Admins können auf <ui>Unternehmen löschen</ui> klicken. Dabei wird alles gelöscht, einschließlich Stellen, Bewerbungen und Ihrer Karriereseite, und Ihr Tarif wird sofort ohne Erstattung gekündigt."
+        },
+        "deleteAccount": {
+          "title": "Oder Ihr Konto löschen",
+          "body": "Klicken Sie auf <ui>Konto löschen</ui>. Wenn außer Ihnen niemand die Admin-Rolle hat, machen Sie zuerst eine andere Person zum Admin. Wenn Sie die einzige Person im Unternehmen sind, wird es ebenfalls gelöscht."
+        },
+        "confirm": {
+          "title": "Bestätigen",
+          "body": "Geben Sie den Namen des Unternehmens oder Ihre E-Mail-Adresse ein und klicken Sie auf die Schaltfläche zum Löschen. Das kann nicht rückgängig gemacht werden."
+        }
+      }
+    },
+    "stageEmails": {
+      "title": "Bewerbende in jeder Phase per E-Mail informieren",
+      "summary": "Informieren Sie Bewerbende, wenn sie sich bewerben oder in die nächste Phase kommen.",
+      "steps": {
+        "open": {
+          "title": "E-Mail einer Phase öffnen",
+          "body": "Klicken Sie im Tab <ui>Phasen</ui> einer Stelle neben einer Phase auf <ui>E-Mail bearbeiten</ui>."
+        },
+        "customize": {
+          "title": "Persönlich gestalten",
+          "body": "Jede Phase enthält bereits eine fertige E-Mail. Bearbeiten Sie <ui>Betreff</ui> und <ui>Nachricht</ui> und fügen Sie Details wie den Vornamen der bewerbenden Person über <ui>Variable einfügen</ui> oder durch Eingabe von <code>{{character}}</code> hinzu."
+        },
+        "preview": {
+          "title": "Vorschau prüfen und aktivieren",
+          "body": "Prüfen Sie die <ui>Vorschau</ui>, die fiktive Bewerbungsdaten verwendet. Aktivieren Sie dann <ui>Diese E-Mail senden</ui> und klicken Sie auf <ui>Speichern</ui>."
+        },
+        "timing": {
+          "title": "Wann E-Mails versendet werden",
+          "body_one": "Die E-Mail der Inbox wird verschickt, sobald sich jemand bewirbt. Bei anderen Phasen wartet die E-Mail nach einer Verschiebung {{count, number}} Minute. Wird die Verschiebung in dieser Zeit rückgängig gemacht oder die Bewerbung weiterverschoben, entfällt die E-Mail.",
+          "body_other": "Die E-Mail der Inbox wird verschickt, sobald sich jemand bewirbt. Bei anderen Phasen wartet die E-Mail nach einer Verschiebung {{count, number}} Minuten. Wird die Verschiebung in dieser Zeit rückgängig gemacht oder die Bewerbung weiterverschoben, entfällt die E-Mail."
+        },
+        "pause": {
+          "title": "Alle E-Mails pausieren",
+          "body": "Admins können in den Einstellungen im Tab <general>Allgemein</general> die Option <ui>E-Mails an Bewerbende senden</ui> deaktivieren, um die E-Mails aller Phasen zu stoppen."
+        }
+      }
+    },
+    "repliesLayout": {
+      "title": "Antworten und E-Mail-Layout einrichten",
+      "summary": "Legen Sie fest, wohin Antworten gehen und wie E-Mails aussehen.",
+      "steps": {
+        "replyTo": {
+          "title": "Antwortadresse hinzufügen",
+          "body": "Geben Sie unter <emails>E-Mails</emails> eine <ui>Antwortadresse</ui> ein, die Ihr Team regelmäßig prüft, und klicken Sie auf <ui>Adresse speichern</ui>. Ohne Antwortadresse kommen Antworten von Bewerbenden nicht bei Ihnen an."
+        },
+        "layout": {
+          "title": "Layout bearbeiten",
+          "body": "Jede E-Mail wird in Ihrem Layout versendet, mit Ihrem Logo und Ihrer Primärfarbe. Klicken Sie auf <ui>Code bearbeiten</ui>, um das HTML zu ändern, und behalten Sie <code>{{placeholder}}</code> dort, wo die Nachricht der jeweiligen Phase stehen soll."
+        },
+        "save": {
+          "title": "Speichern",
+          "body": "Klicken Sie auf <ui>Speichern</ui>. Um von vorn zu beginnen, wählen Sie unter <ui>Weitere Aktionen</ui> die Option <ui>Auf Standardlayout zurücksetzen</ui>."
+        }
+      }
+    },
+    "matchScores": {
+      "title": "Match-Scores verstehen",
+      "summary": "So bewertet die KI Bewerbungen anhand ihrer Stelle.",
+      "steps": {
+        "read": {
+          "title": "Den Score lesen",
+          "body": "Jede Bewerbung erhält anhand der Details ihrer Stelle einen Match-Score von 0 bis 100 %."
+        },
+        "aspects": {
+          "title": "Was dahintersteckt",
+          "body": "Öffnen Sie eine Bewerbung, um zu sehen, wie sie bei <ui>Fähigkeiten</ui>, <ui>Erfahrung</ui>, <ui>Passende Seniorität</ui> und <ui>Qualifikationen</ui> abschneidet. Qualifikationen zählen nur, wenn die Stelle Abschlüsse, Zertifikate oder Lizenzen verlangt."
+        },
+        "useAsGuide": {
+          "title": "Als Orientierung nutzen",
+          "body": "Match-Scores helfen Ihnen zu entscheiden, wen Sie zuerst sichten. Nutzen Sie sie ergänzend zu Ihrer eigenen Einschätzung, nicht als Ersatz dafür."
+        },
+        "noScore": {
+          "title": "Wenn es keinen Score gibt",
+          "body": "<ui>Wird bewertet</ui> bedeutet, dass die Bewertung läuft, und <ui>Credits fehlen</ui>, dass Ihre KI-Credits aufgebraucht sind. <ui>Nicht bewertet</ui> bedeutet, dass die Bewerbung nicht bewertet werden konnte, z. B. weil der Lebenslauf ein eingescanntes Bild ist. Ist die Bewertung fehlgeschlagen, klicken Sie in der Bewerbung auf <ui>Erneut versuchen</ui>."
+        },
+        "rankAgain": {
+          "title": "Nach Änderungen neu bewerten",
+          "body": "Wenn Sie Titel, Abteilung, Beschäftigungsart oder Beschreibung einer Stelle ändern, wählen Sie <ui>Speichern und neu bewerten</ui>, um ihre Bewerbungen anhand der neuen Details zu bewerten."
+        }
+      }
+    },
+    "aiSwitch": {
+      "title": "KI-Bewertung aktivieren oder deaktivieren",
+      "summary": "Legen Sie fest, ob Ihre Bewerbungen mit KI bewertet werden.",
+      "steps": {
+        "find": {
+          "title": "Den Schalter finden",
+          "body": "Deaktivieren oder aktivieren Sie in den Einstellungen im Tab <general>Allgemein</general> die Option <ui>Bewerbungen mit KI bewerten</ui>. Die Einstellung gilt für Ihr gesamtes Unternehmen."
+        },
+        "whileOff": {
+          "title": "Solange sie deaktiviert ist",
+          "body": "Es wird nichts an die KI gesendet, Match-Scores werden ausgeblendet und neue Bewerbungen werden nicht bewertet. Frühere Scores sind wieder da, sobald Sie die Option erneut aktivieren."
+        },
+        "turnOn": {
+          "title": "Wieder aktivieren",
+          "body": "Wenn in der Zwischenzeit Bewerbungen eingegangen sind, entscheiden Sie, ob Sie sie bewerten (je ein Credit) oder unbewertet lassen."
+        },
+        "tellApplicants": {
+          "title": "Bewerbende informieren",
+          "body": "Solange die KI-Bewertung aktiviert ist, weist die Standard-Karriereseite Bewerbende darauf hin, dass KI bei der Sichtung von Bewerbungen hilft. Wenn Sie eigenen Code verwenden, fügen Sie diesen Hinweis selbst hinzu."
+        }
+      }
+    },
+    "planCredits": {
+      "title": "Tarif und Credits verwalten",
+      "summary": "Ihr Testzeitraum, Ihr Abo und Ihre KI-Credits.",
+      "credits_one": "{{count, number}} Credit",
+      "credits_other": "{{count, number}} Credits",
+      "steps": {
+        "startTrial": {
+          "title": "Kostenlosen Testzeitraum starten",
+          "body_one": "Wählen Sie auf der Seite <billing>Abrechnung</billing> die Option <ui>Monatlich</ui> oder <ui>Jährlich</ui> und klicken Sie dann auf <ui>Kostenlos testen</ui>. Der Testzeitraum dauert {{count, number}} Tag und enthält {{credits}}.",
+          "body_other": "Wählen Sie auf der Seite <billing>Abrechnung</billing> die Option <ui>Monatlich</ui> oder <ui>Jährlich</ui> und klicken Sie dann auf <ui>Kostenlos testen</ui>. Der Testzeitraum dauert {{count, number}} Tage und enthält {{credits}}."
+        },
+        "plan": {
+          "title": "Ihr Tarif",
+          "body": "Der monatliche Tarif kostet {{monthlyPrice}} pro Monat und enthält {{monthlyCredits}} pro Monat. Der jährliche Tarif kostet {{yearlyPrice}} pro Jahr und enthält {{yearlyCredits}} im Voraus. Nicht verbrauchte Credits werden nicht in den nächsten Zeitraum übertragen. Klicken Sie auf <ui>Abo verwalten</ui>, um Ihre Karte zu aktualisieren, Rechnungen einzusehen oder zu kündigen."
+        },
+        "switchToYearly": {
+          "title": "Auf jährlich umstellen",
+          "body": "Wählen Sie auf der Seite <billing>Abrechnung</billing> bei Ihrem Tarif <ui>Jährlich</ui> und klicken Sie dann auf <ui>Auf jährlich umstellen</ui>. Sie zahlen sofort {{price}}, abzüglich der ungenutzten Tage Ihres aktuellen Monats. Im kostenlosen Testzeitraum zahlen Sie stattdessen erst, wenn er endet."
+        },
+        "buyCredits": {
+          "title": "Weitere Credits kaufen",
+          "body": "Jede von KI bewertete Bewerbung verbraucht einen Credit. Wenn Sie mehr brauchen, kaufen Sie ein Paket unter <ui>Credits kaufen</ui>. Zusatz-Credits verfallen nie und werden nach den Credits Ihres Tarifs verbraucht."
+        },
+        "runOut": {
+          "title": "Wenn Ihre Credits aufgebraucht sind",
+          "body": "Neue Bewerbungen warten mit dem Status <ui>Credits fehlen</ui>. Sobald Sie wieder Credits haben, bewerten Sie sie über den Hinweis unter <jobs>Stellen</jobs> oder <billing>Abrechnung</billing> oder lassen Sie sie unbewertet."
+        },
+        "endTrial": {
+          "title": "Testzeitraum vorzeitig beenden",
+          "body": "Wenn die Credits Ihres Testzeitraums aufgebraucht sind, klicken Sie im Hinweis unter <jobs>Stellen</jobs> oder <billing>Abrechnung</billing> auf <ui>Testzeitraum beenden</ui>. Ihr Tarif beginnt dann sofort, und Sie erhalten seine Credits."
+        },
+        "planStops": {
+          "title": "Wenn Ihr Tarif endet",
+          "body": "Ohne aktiven Tarif ist Emploist schreibgeschützt, und Ihre Karriereseite nimmt keine Bewerbungen mehr an. Ihr Team kann weiterhin alles ansehen und Bewerbungen exportieren, und Admins können erneut ein Abo abschließen."
+        }
+      }
+    },
+    "connectAssistant": {
+      "title": "KI-Assistenten verbinden",
+      "summary": "Verwalten Sie Ihre Stellen und Bewerbungen über Claude, ChatGPT und andere Assistenten.",
+      "steps": {
+        "choose": {
+          "title": "Assistenten wählen",
+          "body": "Wählen Sie auf der Seite <mcp>MCP</mcp> unter <ui>Ihren Assistenten verbinden</ui> Ihren Assistenten."
+        },
+        "follow": {
+          "title": "Den Schritten folgen",
+          "body": "Jeder Assistent hat eigene Schritte, mit der Adresse zum Einfügen oder dem Befehl zum Kopieren genau dort, wo Sie sie brauchen."
+        },
+        "allow": {
+          "title": "Anmelden und erlauben",
+          "body": "Melden Sie sich bei Emploist an, wenn Ihr Assistent danach fragt, und klicken Sie auf <ui>Erlauben</ui>. Ihr Assistent handelt als Sie und mit Ihrer Rolle."
+        },
+        "disconnect": {
+          "title": "Verbindung trennen",
+          "body": "Um einen Assistenten zu stoppen, klicken Sie auf der Seite <mcp>MCP</mcp> unter <ui>Verbundene Assistenten</ui> neben ihm auf <ui>Trennen</ui>."
+        }
+      }
+    },
+    "mcpSwitch": {
+      "title": "MCP deaktivieren oder aktivieren",
+      "summary": "Legen Sie fest, ob Ihr Team Emploist über KI-Assistenten nutzen kann.",
+      "steps": {
+        "find": {
+          "title": "Den Schalter finden",
+          "body": "Deaktivieren oder aktivieren Sie in den Einstellungen im Tab <general>Allgemein</general> die Option <ui>Ihrem Team erlauben, KI-Assistenten zu verbinden</ui>. Die Einstellung gilt für Ihr gesamtes Unternehmen."
+        },
+        "whileOff": {
+          "title": "Solange MCP deaktiviert ist",
+          "body": "Assistenten können Emploist nicht nutzen, und niemand kann einen neuen verbinden. Die Verbindungen bleiben erhalten und funktionieren wieder, sobald Sie MCP aktivieren."
+        }
+      }
+    }
+  }
+}

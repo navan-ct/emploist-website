@@ -27,11 +27,13 @@ const ja: Messages = {
     features: "機能",
     careersPage: "採用ページ",
     aiAssistants: "AIアシスタント",
+    mcp: "MCP",
     /** The last item in the Features menu, after the feature sections. */
     moreFeatures: "その他の機能",
     pricing: "料金",
     faq: "よくある質問",
     blog: "ブログ",
+    docs: "ドキュメント",
     signIn: "ログイン",
     startFreeTrial: "無料トライアル",
     menu: "メニュー",
@@ -51,6 +53,7 @@ const ja: Messages = {
     legal: "法的情報",
     rssFeed: "RSSフィード",
     support: "サポート",
+    llmsTxt: "llms.txt",
     terms: "利用規約",
     privacy: "プライバシーポリシー",
     copyright: (year) => `© ${year} Emploist. All rights reserved.`,
@@ -64,8 +67,9 @@ const ja: Messages = {
 
   hero: {
     eyebrow: "AIで応募者を評価する採用管理",
-    title: "最適な応募者を、真っ先に。",
+    title: "手動フィルターや複雑なATSなしで、最適な応募をすぐ把握",
     lead: "Emploistなら、採用ページ、シンプルな選考フロー、そして求人内容に照らしてすべての応募を評価するAIがそろいます。チームは応募の仕分けにかける時間を減らし、自社に合う人と向き合う時間を増やせます。",
+    cta: "応募者をランク付け",
     seeHowItWorks: "使い方を見る",
     note: (p) =>
       `${p.trialDays}日間は無料、その後は月額${f.usd(p.priceUsd)}です。ユーザー単位の料金はかかりません。`,
@@ -129,7 +133,7 @@ const ja: Messages = {
     title: "初日から使える採用ページ。",
     lead: "どの会社にも、ロゴとカラーを反映した、表示が速く洗練された採用ページが用意されます。新しい求人は公開した瞬間に掲載され、応募はその求人のインボックスに直接届きます。",
     screenshotAlt:
-      "Northwind Labsの採用ページ。会社のロゴ入りのヘッダー、短い紹介文、部署ごとにまとめられた募集中の求人と、部署・勤務地のフィルターが表示されています。",
+      "Fieldnote Labsの採用ページ。会社のロゴ入りのヘッダー、短い紹介文、部署ごとにまとめられた募集中の求人と、部署・勤務地のフィルターが表示されています。",
     mobileScreenshotAlt:
       "スマートフォンで表示した求人ページ。Berlin勤務、ハイブリッド・フルタイムのSenior Product Designerの求人で、「Apply for this job」ボタンと職務内容が表示されています。",
     facts: [
@@ -204,7 +208,7 @@ const ja: Messages = {
     editorScreenshotAlt:
       "Emploistの「Interviewing」選考ステップのメール。件名と本文に、応募者のファーストネーム、職種名、会社名の変数が使われています。",
     previewScreenshotAlt:
-      "Samという応募者が受け取る、完成したメール。上部にNorthwind Labs、Senior Product Designerの面接への個別の案内、募集中の求人へのリンクが表示されています。",
+      "Samという応募者が受け取る、完成したメール。上部にFieldnote Labs、Senior Product Designerの面接への個別の案内、募集中の求人へのリンクが表示されています。",
   },
 
   aiAssistants: {
@@ -244,6 +248,107 @@ const ja: Messages = {
       placeholder: "求人や応募者について質問してください",
     },
     caption: "各メンバーが、自分のアシスタントを数ステップで接続できます。",
+  },
+
+  /** The /mcp/ landing page. */
+  mcp: {
+    description:
+      "MCPでClaude、ChatGPT、そのほかのAIアシスタントをEmploistに接続。チャットから応募者への質問、選考ステップの移動、求人の作成を、あなた自身の権限のまま行えます。",
+    eyebrow: "MCP",
+    heading: "いつものチャットから、採用を進める。",
+    lead: "MCPはEmploistをClaude、ChatGPT、そのほかのアシスタントにつなぎます。ふつうの言葉で頼めば、アシスタントがあなたの権限でEmploist上の作業を進めます。",
+    whatTitle: "MCPとは？",
+    whatLead:
+      "MCPはModel Context Protocolの略です。AIアシスタントが、別のアプリを安全に使えるようにするオープンな仕組みです。",
+    whatPoints: [
+      {
+        title: "コネクタであり、新しい製品ではありません。",
+        text: "求人や応募者のデータは、これまでどおりEmploistにあります。MCPは、アシスタントがそれらに届くための道です。",
+      },
+      {
+        title: "サーバーアドレスはひとつ。",
+        text: "EmploistがホストするMCPサーバーは mcp.emploist.com です。Claude、ChatGPT、またはMCP対応のほかのクライアントに、このアドレスを貼り付けます。",
+      },
+      {
+        title: "プランに含まれています。",
+        text: "チームの誰でも、自分のアシスタントを接続できます。チャットから応募を評価する場合も、Emploist上と同じくAIクレジットを1つ使います。",
+      },
+    ],
+    howTitle: "使い方",
+    howSteps: [
+      {
+        title: "一度つなぐだけ。",
+        text: "EmploistでMCPを開き、アシスタントを選んで手順に従います。求められたらEmploistにログインします。コピーするAPIキーはありません。",
+      },
+      {
+        title: "チャットで頼む。",
+        text: "Emploistに言及したうえで、誰がその職に合うか、次の選考ステップへの移動、コメント、求人の下書きなどを依頼します。",
+      },
+      {
+        title: "Emploistが実行する。",
+        text: "アシスタントは、あなたのログインでEmploistのツールを呼び出します。書き込み操作は、確定前に確認を求めます。",
+      },
+    ],
+    canDoTitle: "こんなことを頼めます",
+    canDo: [
+      "Senior Product Designerの求人で、最もマッチしている応募者は誰ですか？",
+      "Priyaを「Phone screen」に移動して、ステップのメールがいつ送られるか教えてください。",
+      "今日の新着応募を要約してください。",
+      "Berlin向けのカスタマーサポートの求人を下書きして、公開前にフォームを見せてください。",
+      "Saraの応募に、Priya向けのコメントを残してください。",
+    ],
+    connectTitle: "アシスタントを接続",
+    connectLead: "EmploistのMCPページには、クライアントごとのタブがあります。サーバーURLはどこでも同じです。",
+    serverUrl: "https://mcp.emploist.com",
+    connectClients: [
+      {
+        name: "Claude",
+        text: "ClaudeでCustomize → Connectorsを開き、カスタムコネクタを追加してURLを貼り付け、Emploistにログインします。",
+      },
+      {
+        name: "ChatGPT",
+        text: "ウェブ版のChatGPTでPluginsを開き、カスタムMCPサーバーを追加してURLを貼り付け、プラグインを作成したあと、@でメンションします。",
+      },
+      {
+        name: "その他のクライアント",
+        text: "Cursor、VS Code、Claude Code、そのほかのMCPクライアントも同じURLを使います。EmploistのMCPページに、それぞれの手順が載っています。",
+      },
+    ],
+    controlTitle: "主導権はあなたに",
+    controlPoints: [
+      {
+        title: "あなたの役割まで。それ以上は不可。",
+        text: "アシスタントができるのは、Emploistであなたがすでにできることだけです。お支払い、チームの招待、会社の削除には届きません。",
+      },
+      {
+        title: "書き込みは確認付き。",
+        text: "応募者の移動や求人の作成では、先に確認を求めます。おかしいと思ったら拒否できます。",
+      },
+      {
+        title: "いつでも切断。",
+        text: "MCPページでアシスタントの接続を解除すると、すぐに停止します。管理者は会社全体でMCPをオフにすることもできます。",
+      },
+    ],
+    worksWith: "対応",
+    guidesTitle: "ガイド",
+    guidesLead: "手順と具体例です。",
+    guideClaude: "ClaudeとMCPで採用を管理する方法",
+    guideChatgpt: "人事マネージャー向けChatGPTプラグイン",
+    guideDocs: "AIアシスタントを接続する",
+    cta: "AIアシスタントを接続",
+    copySetup: "MCP設定をコピー",
+    copiedSetup: "コピーしました",
+    setupCopy: (u: { mcpDocs: string; serverUrl: string }) =>
+      `Emploistは採用管理システムです。このファイルは、AIアシスタントがEmploistのMCPサーバーに接続する方法と、接続後にできることを伝えます。
+
+このチャットから採用を管理できるよう、EmploistのMCPサーバーに接続してください。
+
+MCP Docs: ${u.mcpDocs}
+Server URL: ${u.serverUrl}
+Authentication: OAuth（求められたらEmploistでログイン）
+
+接続後は、Emploistの求人と応募者をサポートしてください。応募の一覧と評価、選考ステップ間での移動、コメントの投稿、求人の作成や公開ができます。私のEmploistの権限の範囲でのみ作業してください。書き込み操作の前には必ず確認してください。
+`,
   },
 
   details: {
@@ -415,6 +520,16 @@ const ja: Messages = {
     blog: "ブログを読む",
   },
 
+  docs: {
+    title: "Emploist ドキュメント",
+    lead: "公式ドキュメントに沿って、Emploist での作業を進めましょう。",
+    copyMarkdown: "Markdown をコピー",
+    copied: "コピーしました",
+    discussWith: "相談先",
+    discussPrompt: (title, url) =>
+      `この Emploist ガイドについて教えてください:「${title}」。${url} を読んで質問に答えてください。`,
+  },
+
   blog: {
     title: "ブログ",
     description:
@@ -439,6 +554,7 @@ const ja: Messages = {
     ctaText: (p) =>
       `Emploistを${p.trialDays}日間無料でお試しください。その後はチーム全員で月額${f.usd(p.priceUsd)}です。`,
     defaultAuthor: "Emploistチーム",
+    writtenBy: (name) => `${name} が執筆`,
   },
 
   listedOn: {

@@ -1,0 +1,153 @@
+---
+title: "Plugin ChatGPT terbaik untuk manajer HR"
+description: "Plugin ChatGPT yang bisa ditambahkan sendiri oleh manajer HR di 2026, mulai dari MCP Emploist untuk rekrutmen, lalu Notion, Slack, Zapier, dan lainnya."
+pubDate: 2026-11-21
+author: "Mighil Puthukkudy"
+image: ../images/top-chatgpt-plugins-for-hr-managers/cover.jpg
+imageAlt: "ChatGPT terbuka di laptop, dengan pemandangan kota yang buram di belakangnya."
+tags: ["Asisten AI", "Panduan", "ChatGPT"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import emploistMcpPage from "../images/manage-hiring-from-claude/emploist-mcp-page.png";
+
+Manajer HR sekarang bisa menjalankan rekrutmen dari ChatGPT. Bukan dengan menempel resume ke chat kosong, tapi dengan memasang plugin yang berbicara ke tools yang sudah Anda pakai.
+
+Di ChatGPT, **plugin** adalah app yang terhubung lewat [MCP](https://modelcontextprotocol.io/). Anda menempel URL server, masuk, lalu menyebut plugin dengan `@` di chat. Data kandidat tetap di ATS Anda. Model bertanya dulu sebelum memindahkan siapa pun.
+
+Daftar ini hanya berisi plugin yang bisa Anda tambahkan sendiri, tanpa menunggu tiket vendor. Emploist di urutan pertama karena ini ATS yang Anda hubungkan dalam beberapa menit, lalu benar-benar dipakai untuk merekrut.
+
+## Apa itu plugin ChatGPT di 2026?
+
+GPT Store lama dan Classic Plugins sedang digantikan. Custom MCP server adalah yang didokumentasikan OpenAI untuk kerja nyata, dan ChatGPT menampilkannya sebagai plugin.
+
+Pergeseran itu penting bagi HR. Custom GPT dengan PDF yang diunggah cepat basi dan sulit diaudit. Plugin masuk sebagai Anda, hanya melihat yang diizinkan peran Anda, dan mengonfirmasi aksi tulis sebelum disimpan.
+
+Sebelum memasang apa pun, cek tiga hal:
+
+1. Bisakah Anda menambahkannya sendiri?
+2. Apakah ia bekerja pada data rekrutmen live, bukan CSV yang ditempel?
+3. Apakah ia tetap di dalam izin yang sudah Anda miliki?
+
+## 1. Emploist
+
+Pakai Emploist saat Anda ingin ChatGPT merangking pelamar, memindahkan tahap, menyusun lowongan, dan meninggalkan komentar di pipeline nyata Anda.
+
+Emploist adalah applicant tracking dengan [halaman karier](/id/#careers-page), tahap rekrutmen, dan [peringkat AI](/id/#ai-ranking) terhadap setiap lowongan. Server MCP yang di-host ada di `https://mcp.emploist.com`. Server yang sama bekerja dengan Claude dan asisten lain.
+
+Anda menambahkannya sendiri. Buka **MCP** di Emploist, pilih tab **ChatGPT**, lalu di ChatGPT buka **Plugins**, tambahkan custom MCP server, dan tempel URL itu. Masuk dengan Emploist saat diminta. Tanpa API key. Tanpa panggilan sales.
+
+Asisten bekerja sebagai Anda. Ia mendapat peran Emploist Anda, tidak lebih. Putuskan kapan saja dari halaman MCP.
+
+Satu paket perusahaan mencakup seluruh tim. Ada uji coba gratis sebelum Anda membayar. Merangking lamaran dari ChatGPT memakai kredit AI yang sama seperti merangkangnya di dalam Emploist.
+
+<Figure
+  src={emploistMcpPage}
+  url="app.emploist.com/mcp"
+  alt="Halaman MCP Emploist dengan tab untuk Claude, ChatGPT, dan asisten lain, menampilkan alamat server MCP https://mcp.emploist.com dan daftar asisten yang terhubung."
+  caption="Halaman MCP Emploist punya langkah ChatGPT dan alamat yang ditempel ke ChatGPT Plugins."
+/>
+
+### Tambahkan Emploist di ChatGPT
+
+1. Di Emploist, buka **MCP** dan pilih tab **ChatGPT**.
+2. Di ChatGPT di web, buka **Plugins**, klik **+**, dan pilih **Add custom MCP server**.
+3. Beri nama Emploist. Set URL server ke:
+
+```
+https://mcp.emploist.com
+```
+
+4. Pilih OAuth, terima peringatan untuk server yang Anda percaya, lalu buat plugin.
+5. Instal, mulai chat, ketik `@`, dan pilih Emploist.
+
+Aksi tulis meminta konfirmasi secara default. Baca payload sebelum Anda menyetujui pemindahan tahap atau lowongan baru.
+
+### Prompt yang berhasil
+
+- "Dengan Emploist, pelamar mana untuk Senior Product Designer yang paling cocok, dan kenapa?"
+- "Pindahkan Priya Shah ke Interviewing dan tulis komentar bahwa portofolionya menonjol."
+- "Susun lowongan Product Marketing Manager untuk Berlin, hybrid, dan tunjukkan pertanyaan form sebelum kami publish."
+
+Untuk panduan MCP yang lebih panjang (UI Claude, server Emploist yang sama), baca [Cara mengelola rekrutmen dari Claude dengan MCP](/id/blog/how-to-manage-hiring-from-claude-with-mcp/).
+
+## 2. Notion
+
+Pakai Notion saat handbook, kit wawancara, dan checklist onboarding hidup di sana.
+
+ChatGPT bisa menulis berdasarkan halaman yang sudah dipercaya workspace Anda, jadi jawaban mengikuti kebijakan live, bukan PDF tahun lalu. Tambahkan dari pengaturan plugin atau apps ChatGPT saat Notion tersedia di paket Anda, lalu masuk dengan Notion.
+
+Jauhkan halaman kompensasi dari ruang yang bisa dibaca bot, atau ketatkan sharing Notion dulu.
+
+Pakai Notion untuk cara Anda merekrut. Pakai Emploist untuk siapa yang Anda rekrut.
+
+## 3. Slack
+
+Pakai Slack saat jejak keputusan ada di channel lebih daripada di ATS.
+
+ChatGPT bisa mengejar Anda di channel untuk sebuah peran, menyusun update untuk pewawancara, atau menemukan thread tempat seseorang mengangkat kekhawatiran. Anggap itu sebagai koordinasi, bukan riwayat tahap resmi.
+
+Hubungkan dengan akun Slack Anda. Batasi ke workspace dan channel yang sudah bisa Anda lihat. Utamakan prompt yang banyak baca sampai Anda percaya tools tulis apa pun.
+
+## 4. Zapier
+
+Pakai Zapier saat dua tools HR belum berbagi MCP resmi.
+
+[Zapier MCP](https://zapier.com/) mengekspos ribuan aksi app lewat satu konektor. Tim HR memakainya untuk hold kalender, log spreadsheet, dan jembatan form-ke-tempat-lain.
+
+Jaga PII kandidat ketat: least privilege, nama Zap yang jelas, tanpa secrets di prompt. Zapier adalah lem. Ia bukan ATS Anda.
+
+## 5. Breezy HR
+
+Pakai MCP Breezy jika perusahaan Anda sudah menjalankan rekrutmen di Breezy.
+
+Server resmi Breezy membiarkan ChatGPT bekerja pada kandidat dan posisi di bawah izin Breezy Anda. ChatGPT biasanya butuh paket Business untuk jalur ini.
+
+Jika Anda memilih stack untuk rekrutmen ChatGPT-first dan belum di Breezy, mulai dengan Emploist. Anda mendapat halaman karier dan skor kecocokan yang bisa dibaca di produk yang sama yang Anda hubungkan.
+
+## 6. Greenhouse
+
+Pakai Greenhouse MCP saat Anda sudah di Core, Plus, atau Pro dan IT bisa menyambungkannya.
+
+Ia mencakup catatan, pemindahan tahap, scorecard, penjadwalan, dan lainnya, dengan cakupan Site Admin. Tata kelola itu cocok untuk enterprise. Itu juga alasan peringkatnya di bawah Emploist untuk "saya ingin ini jalan sore ini." Harapkan setup admin dan change control.
+
+Jika Anda di Greenhouse, minta IT mengaktifkan MCP. Jika Anda merekrut sebagai tim kecil tanpa antrean itu, Emploist adalah jalur yang lebih pendek.
+
+## 7. Gusto atau HiBob
+
+Pakai ini setelah offer, saat pertanyaannya soal headcount, tanggal mulai, atau PTO.
+
+Platform payroll dan HCM mengekspos server MCP untuk people ops. Mereka tidak menggantikan ATS selama recruiting. Hubungkan hanya dengan akun yang sudah punya izin HRIS yang tepat.
+
+## Perbandingan cepat
+
+| Plugin | Self-serve untuk HR? | Aksi rekrutmen | Penggunaan terbaik |
+| --- | --- | --- | --- |
+| **Emploist** | Ya. Tempel URL MCP dan masuk. | Lowongan, pelamar, tahap, komentar, ranking | Rekrutmen harian di ChatGPT |
+| **Notion** | Ya, dengan akses workspace | Dokumen dan draf | Kebijakan dan kit wawancara |
+| **Slack** | Ya, dengan akses workspace | Sebagian besar koordinasi | Catch-up dan update stakeholder |
+| **Zapier** | Ya | Otomasi lintas app | Lem antar tools |
+| **Breezy HR** | Ya jika Anda memakai Breezy (ChatGPT Business untuk ChatGPT) | Baca dan tulis ATS | Tetap di dalam Breezy |
+| **Greenhouse** | Butuh Site Admin | ATS dalam, terkendali | Shop Greenhouse enterprise |
+| **Gusto / HiBob** | Bergantung paket dan peran | Konteks karyawan dan payroll | People ops setelah hire |
+
+## Tambahkan custom MCP plugin di ChatGPT
+
+1. Pakai **ChatGPT on the web**. Custom MCP plugin didokumentasikan di sana dulu.
+2. Buka **Plugins** → **Add custom MCP server**.
+3. Tempel URL vendor. Untuk Emploist: `https://mcp.emploist.com`.
+4. Utamakan **OAuth** agar Anda tidak menempel API key ke chat.
+5. Buat plugin, instal, lalu sebut dengan `@` di percakapan baru.
+6. Untuk tools tulis, baca konfirmasi sebelum Anda setujui.
+
+Aturan workspace tetap berlaku. Admin Business, Enterprise, dan Edu bisa membatasi apps dan aksi tulis. Jika tombol hilang, cek dulu developer mode dan izin plugin dengan admin ChatGPT Anda, bukan vendor ATS.
+
+## Yang perlu dilewati
+
+- Custom GPT khusus resume dengan PDF yang diunggah. Mereka cepat basi, sulit diaudit, dan diganti oleh plugin.
+- Apa pun yang meminta Anda menempel API key ATS ke model. Pakai server MCP OAuth saja.
+- Tools yang tidak menunjukkan cara kerjanya. Utamakan breakdown kecocokan atau scorecard yang bisa Anda bela di debrief.
+
+## Langkah berikutnya
+
+[Mulai uji coba gratis](https://app.emploist.com/sign-in), buka **MCP** → **ChatGPT**, dan tambahkan `https://mcp.emploist.com` sebagai plugin. Tanyakan siapa pelamar terbaik Anda, lalu majukan yang tepat dari chat yang sama.

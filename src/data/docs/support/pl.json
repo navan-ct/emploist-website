@@ -1,0 +1,493 @@
+{
+  "title": "Pomoc",
+  "description": "Chętnie pomożemy. Napisz do nas lub skorzystaj z przewodnika, aby załatwić sprawy w Emploist.",
+  "contact": {
+    "title": "Napisz do nas",
+    "description": "Masz pytania, uwagi albo coś nie działa? Zwykle odpowiadamy w ciągu 24 godzin.",
+    "copied": "Skopiowano adres e-mail",
+    "copy": "Kopiuj adres e-mail"
+  },
+  "guideList": {
+    "title": "Przewodniki",
+    "description": "Pomoc krok po kroku w najważniejszych obszarach Emploist.",
+    "adminOnly": "Tylko dla administratorów"
+  },
+  "topics": {
+    "jobsAndApplications": "Oferty pracy i aplikacje",
+    "careersPage": "Strona kariery",
+    "teamAndEmails": "Zespół i e-maile",
+    "aiAndBilling": "Ocena AI i płatności",
+    "aiAssistants": "Asystenci AI"
+  },
+  "guides": {
+    "createJob": {
+      "title": "Utwórz i opublikuj ofertę",
+      "summary": "Opisz stanowisko, zapisz szkic i opublikuj ofertę.",
+      "steps": {
+        "start": {
+          "title": "Rozpocznij tworzenie oferty",
+          "body": "Otwórz stronę <jobs>Oferty pracy</jobs> i kliknij <ui>Utwórz ofertę</ui>."
+        },
+        "describe": {
+          "title": "Opisz stanowisko",
+          "body": "Na karcie <ui>Szczegóły</ui> wypełnij pola <ui>Nazwa stanowiska</ui> i <ui>Opis</ui>. Dział, lokalizacja, tryb pracy i rodzaj zatrudnienia są opcjonalne. Dodane działy i lokalizacje będą proponowane przy kolejnych ofertach."
+        },
+        "formAndStages": {
+          "title": "Sprawdź formularz i etapy",
+          "body": "Karty <ui>Formularz aplikacyjny</ui> i <ui>Etapy</ui> od razu zawierają gotową konfigurację. Możesz ją dostosować teraz lub w dowolnym momencie później."
+        },
+        "saveOrPublish": {
+          "title": "Zapisz lub opublikuj",
+          "body": "<ui>Zapisz szkic</ui> pozostawia ofertę widoczną tylko dla Twojego zespołu. <ui>Opublikuj</ui> umieszcza ją na Twojej stronie kariery."
+        }
+      }
+    },
+    "applicationForm": {
+      "title": "Zbuduj formularz aplikacyjny",
+      "summary": "Wybierz, co kandydaci wypełniają podczas aplikowania.",
+      "steps": {
+        "open": {
+          "title": "Otwórz formularz",
+          "body": "Otwórz kartę <ui>Formularz aplikacyjny</ui> wybranej oferty."
+        },
+        "essentials": {
+          "title": "Zacznij od podstaw",
+          "body": "Każdy formularz zawiera pola <ui>Imię i nazwisko</ui>, <ui>E-mail</ui> i <ui>CV</ui>. Możesz je przenosić, ale nie możesz ich usunąć."
+        },
+        "addQuestions": {
+          "title": "Dodaj pytania",
+          "body": "Kliknij <ui>Dodaj</ui> i wybierz typ pytania, np. <ui>Krótka odpowiedź</ui>, <ui>Jednokrotny wybór</ui> lub <ui>Skala liniowa</ui>. Dodaj <ui>Nagłówek</ui> lub <ui>Tekst</ui>, aby dać kandydatom więcej kontekstu."
+        },
+        "setUp": {
+          "title": "Skonfiguruj każde pytanie",
+          "body": "Kliknij pytanie, aby je edytować, i włącz <ui>Wymagane</ui>, jeśli kandydaci muszą na nie odpowiedzieć. Aby zmienić kolejność, przeciągnij pytania lub użyj ich menu. Pytania oznaczone jako <ui>Niekompletne</ui> trzeba dokończyć przed publikacją."
+        },
+        "save": {
+          "title": "Zapisz zmiany",
+          "body": "W istniejącej ofercie kliknij <ui>Zapisz zmiany</ui>. Zmiany dotyczą tylko nowych aplikacji. Wcześniejsze aplikacje zachowują pytania, na które odpowiedzieli kandydaci."
+        }
+      }
+    },
+    "stages": {
+      "title": "Skonfiguruj etapy rekrutacji",
+      "summary": "Określ kroki, przez które przechodzi każda aplikacja.",
+      "steps": {
+        "open": {
+          "title": "Otwórz etapy",
+          "body": "Otwórz kartę <ui>Etapy</ui> wybranej oferty. Nowe oferty mają domyślnie etapy <ui>Inbox</ui>, <ui>Interviewing</ui>, <ui>Accepted</ui> i <ui>Rejected</ui>."
+        },
+        "inbox": {
+          "title": "Poznaj pierwszy etap",
+          "body": "Nowe aplikacje trafiają do pierwszego etapu (domyślnie „Inbox”). Możesz zmienić jego nazwę, ale zawsze pozostaje pierwszy i nie można go usunąć."
+        },
+        "addRenameReorder": {
+          "title": "Dodawaj etapy, zmieniaj ich nazwy i kolejność",
+          "body": "Kliknij <ui>Dodaj etap</ui>, aby dodać nowy, lub wybierz <ui>Zmień nazwę</ui> z menu etapu. Przeciągnij etapy, aby ułożyć je w kolejności, w jakiej prowadzisz rekrutację."
+        },
+        "delete": {
+          "title": "Usuń etap",
+          "body": "Wybierz <ui>Usuń</ui> z menu etapu. Jeśli etap zawiera aplikacje, wybierzesz, do którego etapu mają zostać przeniesione."
+        }
+      }
+    },
+    "reviewApplications": {
+      "title": "Przeglądaj aplikacje",
+      "summary": "Wyszukuj, czytaj i przenoś aplikacje między etapami.",
+      "steps": {
+        "openJob": {
+          "title": "Otwórz ofertę",
+          "body": "Otwórz ofertę na stronie <jobs>Oferty pracy</jobs>. Na jej karcie <ui>Aplikacje</ui> widać wszystkie etapy wraz z liczbą aplikacji na każdym z nich."
+        },
+        "find": {
+          "title": "Znajdź osoby do przejrzenia",
+          "body": "Wyszukuj po imieniu, nazwisku lub e-mailu i sortuj według opcji <ui>Najlepsze dopasowanie</ui>, <ui>Od najnowszych</ui> lub <ui>Od najstarszych</ui>. Sortowanie według najlepszego dopasowania jest dostępne, gdy funkcje AI są włączone."
+        },
+        "openApplication": {
+          "title": "Otwórz aplikację",
+          "body": "Kliknij imię i nazwisko, aby otworzyć aplikację. Kliknij <ui>Zobacz CV</ui>, aby otworzyć CV w nowej karcie. Naciśnij <ui>←</ui> lub <ui>→</ui>, aby przejść do poprzedniej lub następnej aplikacji."
+        },
+        "move": {
+          "title": "Przenieś aplikację do etapu",
+          "body": "Wybierz etap z menu <ui>Etap</ui> w aplikacji lub z opcji <ui>Przenieś do</ui> w menu wiersza. Jeśli przeniesiesz aplikację przez pomyłkę, kliknij <ui>Cofnij</ui> w wyświetlonym komunikacie."
+        }
+      }
+    },
+    "comments": {
+      "title": "Komentuj i oznaczaj członków zespołu",
+      "summary": "Omawiaj kandydatów z zespołem i bądź na bieżąco.",
+      "steps": {
+        "write": {
+          "title": "Napisz komentarz",
+          "body": "Otwórz aplikację, wpisz komentarz w polu i kliknij <ui>Skomentuj</ui> lub naciśnij <ui>{{shortcut}}</ui>. Komentarze widzi tylko Twój zespół.",
+          "shortcut": "Ctrl+Enter",
+          "shortcutMac": "⌘+Enter"
+        },
+        "mention": {
+          "title": "Oznacz kogoś",
+          "body": "Wpisz <ui>@</ui> i wybierz członka zespołu, aby ta osoba otrzymała powiadomienie."
+        },
+        "replies": {
+          "title": "Śledź odpowiedzi",
+          "body": "Otrzymasz powiadomienie, gdy ktoś Cię oznaczy lub skomentuje aplikację, pod którą masz już komentarz. Znajdziesz je pod ikoną dzwonka u góry strony lub na stronie <notifications>Powiadomienia</notifications>."
+        },
+        "editOrDelete": {
+          "title": "Edytuj lub usuń",
+          "body": "W menu własnego komentarza wybierz <ui>Edytuj</ui> lub <ui>Usuń</ui>. Administratorzy mogą też usuwać komentarze innych osób."
+        }
+      }
+    },
+    "manageJob": {
+      "title": "Zamknij, zarchiwizuj lub zduplikuj ofertę",
+      "summary": "Wstrzymaj przyjmowanie aplikacji, uporządkuj listę lub wykorzystaj ofertę ponownie.",
+      "steps": {
+        "closeOrReopen": {
+          "title": "Zamknij lub otwórz ponownie",
+          "body": "W opublikowanej ofercie użyj menu statusu u góry: <ui>Zamknięta</ui> wstrzymuje przyjmowanie aplikacji, a <ui>Otwarta</ui> je wznawia."
+        },
+        "duplicate": {
+          "title": "Duplikuj",
+          "body": "Wybierz <ui>Duplikuj</ui> z menu <ui>Więcej opcji</ui> oferty, aby utworzyć szkic z tymi samymi szczegółami, formularzem i etapami."
+        },
+        "archive": {
+          "title": "Archiwizuj",
+          "body": "Wybierz <ui>Archiwizuj</ui> z menu <ui>Więcej opcji</ui>, aby przenieść ofertę do archiwum. Zarchiwizowane oferty są tylko do odczytu. Kliknij <ui>Przywróć</ui>, aby przywrócić ofertę."
+        },
+        "delete": {
+          "title": "Usuń",
+          "body": "Wybierz <ui>Usuń</ui> z menu <ui>Więcej opcji</ui>, aby trwale usunąć ofertę wraz z jej aplikacjami. Jeśli chcesz je zachować, zarchiwizuj ofertę."
+        }
+      }
+    },
+    "exportApplications": {
+      "title": "Eksportuj aplikacje",
+      "summary": "Pobierz aplikacje i CV z oferty.",
+      "steps": {
+        "start": {
+          "title": "Rozpocznij eksport",
+          "body": "W ofercie z aplikacjami otwórz <ui>Więcej opcji</ui> i wybierz <ui>Eksportuj aplikacje</ui>."
+        },
+        "openZip": {
+          "title": "Otwórz plik ZIP",
+          "body": "<ui>{{file}}</ui> to arkusz kalkulacyjny z wierszem dla każdej aplikacji. Folder <ui>{{folder}}</ui> zawiera wszystkie CV, a nazwa każdego pliku to imię i nazwisko kandydata."
+        }
+      }
+    },
+    "customizeCareersPage": {
+      "title": "Dostosuj stronę kariery",
+      "summary": "Wybierz kolor lub edytuj kod strony.",
+      "steps": {
+        "color": {
+          "title": "Wybierz kolor",
+          "body": "Otwórz kartę <design>Wygląd</design> w sekcji Strona kariery, wybierz <ui>Kolor główny</ui> i kliknij <ui>Zapisz kolor</ui>. Kolor jest używany do przycisków i wyróżnień."
+        },
+        "code": {
+          "title": "Edytuj kod",
+          "body": "Kliknij <ui>Edytuj kod</ui>, aby zmienić szablony i style strony. Panel <ui>Dokumentacja</ui> zawiera wszystko, czego możesz w nich użyć."
+        },
+        "preview": {
+          "title": "Sprawdzaj podgląd na bieżąco",
+          "body": "Podgląd aktualizuje się podczas pisania. Użyj opcji <ui>Przejdź do strony</ui>, aby sprawdzić każdą stronę, i przełączaj się między widokiem komputera i telefonu."
+        },
+        "save": {
+          "title": "Zapisz",
+          "body": "Kliknij <ui>Zapisz</ui>. Aby zacząć od nowa, wybierz <ui>Przywróć kod domyślny</ui> z menu <ui>Więcej opcji</ui>."
+        }
+      }
+    },
+    "editCodeLocally": {
+      "title": "Edytuj kod na swoim komputerze",
+      "summary": "Pracuj we własnym edytorze z podglądem na żywo.",
+      "steps": {
+        "download": {
+          "title": "Pobierz kod",
+          "body": "Na karcie <design>Wygląd</design> kliknij <ui>Pobierz ZIP</ui> i rozpakuj plik."
+        },
+        "preview": {
+          "title": "Wyświetl podgląd",
+          "body": "Mając Node.js w wersji {{version}} lub nowszej, uruchom <code>{{command}}</code> w tym folderze i otwórz <code>{{url}}</code>. Zobaczysz swoją stronę z przykładowymi ofertami. Odśwież ją po każdej zmianie."
+        },
+        "check": {
+          "title": "Sprawdź problemy",
+          "body": "Uruchom <code>{{command}}</code>, aby znaleźć te same problemy, które zostałyby wykryte przy zapisywaniu."
+        },
+        "upload": {
+          "title": "Prześlij kod",
+          "body": "Spakuj pliki do ZIP, kliknij <ui>Prześlij ZIP</ui>, sprawdź podgląd i kliknij <ui>Zapisz</ui>."
+        }
+      }
+    },
+    "changeAddress": {
+      "title": "Zmień adres strony kariery",
+      "summary": "Przenieś stronę pod nowy adres w Emploist.",
+      "steps": {
+        "open": {
+          "title": "Otwórz ustawienia adresu",
+          "body": "Otwórz kartę <domain>Domena</domain> w sekcji Strona kariery i kliknij <ui>Zmień</ui>."
+        },
+        "choose": {
+          "title": "Wybierz nowy adres",
+          "body": "Wpisz wybrany adres. Podczas pisania sprawdzimy, czy jest dostępny."
+        },
+        "confirm": {
+          "title": "Potwierdź zmianę",
+          "body": "Kliknij <ui>Zmień adres</ui>. Stary adres od razu przestanie działać, podobnie jak udostępnione linki do ofert, a inna firma będzie mogła go wtedy użyć."
+        }
+      }
+    },
+    "customDomain": {
+      "title": "Połącz własną domenę",
+      "summary": "Wyświetlaj stronę kariery pod adresem w swojej witrynie.",
+      "steps": {
+        "add": {
+          "title": "Dodaj domenę",
+          "body": "Na karcie <domain>Domena</domain> wpisz subdomenę swojej witryny, np. careers.acme.com, i kliknij <ui>Dodaj domenę</ui>. Nie można połączyć domen głównych, takich jak acme.com."
+        },
+        "records": {
+          "title": "Dodaj dwa rekordy DNS",
+          "body": "Tam, gdzie zarządzasz domeną, dodaj wyświetlone rekordy <ui>CNAME</ui> i <ui>TXT</ui>, korzystając z przycisków kopiowania. W Cloudflare ustaw rekord CNAME na DNS only."
+        },
+        "wait": {
+          "title": "Poczekaj na weryfikację",
+          "body": "Zmiany są zwykle widoczne w ciągu kilku minut, ale mogą potrwać do 48 godzin. Gdy pojawi się status <ui>Połączona</ui>, Twoja strona kariery będzie działać pod Twoją domeną."
+        }
+      }
+    },
+    "inviteTeam": {
+      "title": "Zaproś zespół",
+      "summary": "Dodawaj członków zespołu przez e-mail i wybieraj ich role.",
+      "steps": {
+        "send": {
+          "title": "Wyślij zaproszenie",
+          "body": "Otwórz kartę <members>Członkowie</members> w Ustawieniach, kliknij <ui>Zaproś członka</ui>, wpisz adres e-mail i kliknij <ui>Wyślij zaproszenie</ui>."
+        },
+        "role": {
+          "title": "Wybierz rolę",
+          "body": "<ui>Członkowie</ui> zajmują się ofertami i aplikacjami. <ui>Administratorzy</ui> mogą też zarządzać zespołem, ustawieniami firmy, stroną kariery i płatnościami."
+        },
+        "join": {
+          "title": "Zaproszona osoba dołącza",
+          "body_one": "Ta osoba otrzyma e-mail z linkiem do dołączenia, ważnym przez {{count, number}} dzień.",
+          "body_few": "Ta osoba otrzyma e-mail z linkiem do dołączenia, ważnym przez {{count, number}} dni.",
+          "body_many": "Ta osoba otrzyma e-mail z linkiem do dołączenia, ważnym przez {{count, number}} dni.",
+          "body_other": "Ta osoba otrzyma e-mail z linkiem do dołączenia, ważnym przez {{count, number}} dnia."
+        },
+        "followUp": {
+          "title": "Sprawdzaj status",
+          "body": "Zaproszenia czekające na odpowiedź są widoczne w sekcji <ui>Oczekujące zaproszenia</ui>. W menu zaproszenia wybierz <ui>Wyślij zaproszenie ponownie</ui> lub <ui>Anuluj zaproszenie</ui>."
+        }
+      }
+    },
+    "manageMembers": {
+      "title": "Zarządzaj rolami i członkami",
+      "summary": "Zmieniaj role, usuwaj osoby lub opuść firmę.",
+      "steps": {
+        "changeRole": {
+          "title": "Zmień rolę",
+          "body": "Na karcie <members>Członkowie</members> w Ustawieniach otwórz menu wybranej osoby i wybierz <ui>Nadaj rolę administratora</ui> lub <ui>Nadaj rolę członka</ui>. Tylko administratorzy mogą zmieniać role."
+        },
+        "remove": {
+          "title": "Usuń osobę",
+          "body": "Wybierz <ui>Usuń z firmy</ui> z menu danej osoby. Od razu straci ona dostęp. Tylko administratorzy mogą usuwać osoby."
+        },
+        "leave": {
+          "title": "Opuść firmę",
+          "body": "Wybierz <ui>Opuść firmę</ui> z własnego menu. Jeśli tylko Ty masz rolę administratora, najpierw nadaj ją komuś innemu."
+        }
+      }
+    },
+    "deleteCompanyOrAccount": {
+      "title": "Usuń firmę lub konto",
+      "summary": "Trwale usuń firmę albo tylko swoje konto.",
+      "steps": {
+        "open": {
+          "title": "Otwórz Strefę zagrożenia",
+          "body": "Otwórz kartę <danger>Strefa zagrożenia</danger> w Ustawieniach."
+        },
+        "deleteCompany": {
+          "title": "Usuń firmę",
+          "body": "Administratorzy mogą kliknąć <ui>Usuń firmę</ui>. Usunięte zostanie wszystko, w tym oferty pracy, aplikacje i Twoja strona kariery, a plan zostanie od razu anulowany bez zwrotu środków."
+        },
+        "deleteAccount": {
+          "title": "Albo usuń swoje konto",
+          "body": "Kliknij <ui>Usuń konto</ui>. Jeśli tylko Ty masz rolę administratora, najpierw nadaj ją komuś innemu. Jeśli w firmie nie ma nikogo poza Tobą, ona również zostanie usunięta."
+        },
+        "confirm": {
+          "title": "Potwierdź",
+          "body": "Wpisz nazwę firmy lub swój adres e-mail i kliknij przycisk usuwania. Tej operacji nie można cofnąć."
+        }
+      }
+    },
+    "stageEmails": {
+      "title": "Wysyłaj e-maile do kandydatów na każdym etapie",
+      "summary": "Informuj kandydatów, gdy aplikują lub przechodzą dalej.",
+      "steps": {
+        "open": {
+          "title": "Otwórz e-mail etapu",
+          "body": "Na karcie <ui>Etapy</ui> oferty kliknij <ui>Edytuj e-mail</ui> przy wybranym etapie."
+        },
+        "customize": {
+          "title": "Dostosuj e-mail",
+          "body": "Każdy etap ma gotowy e-mail. Edytuj pola <ui>Temat</ui> i <ui>Wiadomość</ui>, a szczegóły, takie jak imię kandydata, dodawaj przyciskiem <ui>Dodaj zmienną</ui> lub wpisując <code>{{character}}</code>."
+        },
+        "preview": {
+          "title": "Sprawdź podgląd i włącz e-mail",
+          "body": "Sprawdź <ui>Podgląd</ui>, w którym używany jest przykładowy kandydat. Następnie włącz <ui>Wysyłaj ten e-mail</ui> i kliknij <ui>Zapisz</ui>."
+        },
+        "timing": {
+          "title": "Kiedy e-mail jest wysyłany",
+          "body_one": "E-mail pierwszego etapu jest wysyłany od razu po złożeniu aplikacji. Na pozostałych etapach e-mail wychodzi {{count, number}} minutę po przeniesieniu, więc cofnięcie przeniesienia lub przeniesienie aplikacji dalej anuluje wysyłkę.",
+          "body_few": "E-mail pierwszego etapu jest wysyłany od razu po złożeniu aplikacji. Na pozostałych etapach e-mail wychodzi {{count, number}} minuty po przeniesieniu, więc cofnięcie przeniesienia lub przeniesienie aplikacji dalej anuluje wysyłkę.",
+          "body_many": "E-mail pierwszego etapu jest wysyłany od razu po złożeniu aplikacji. Na pozostałych etapach e-mail wychodzi {{count, number}} minut po przeniesieniu, więc cofnięcie przeniesienia lub przeniesienie aplikacji dalej anuluje wysyłkę.",
+          "body_other": "E-mail pierwszego etapu jest wysyłany od razu po złożeniu aplikacji. Na pozostałych etapach e-mail wychodzi {{count, number}} minuty po przeniesieniu, więc cofnięcie przeniesienia lub przeniesienie aplikacji dalej anuluje wysyłkę."
+        },
+        "pause": {
+          "title": "Wstrzymaj wszystkie e-maile",
+          "body": "Administratorzy mogą wyłączyć opcję <ui>Wysyłaj e-maile do kandydatów</ui> na karcie <general>Ogólne</general> w Ustawieniach, aby wstrzymać e-maile ze wszystkich etapów."
+        }
+      }
+    },
+    "repliesLayout": {
+      "title": "Skonfiguruj odpowiedzi i szablon e-maili",
+      "summary": "Wybierz, dokąd trafiają odpowiedzi i jak wyglądają e-maile.",
+      "steps": {
+        "replyTo": {
+          "title": "Dodaj adres do odpowiedzi",
+          "body": "Na stronie <emails>E-maile</emails> wpisz w polu <ui>Adres do odpowiedzi</ui> adres sprawdzany przez Twój zespół i kliknij <ui>Zapisz adres</ui>. Bez niego odpowiedzi od kandydatów do Ciebie nie dotrą."
+        },
+        "layout": {
+          "title": "Edytuj szablon",
+          "body": "Każdy e-mail jest wysyłany w Twoim szablonie, z Twoim logo i kolorem głównym. Kliknij <ui>Edytuj kod</ui>, aby zmienić jego HTML, i pozostaw <code>{{placeholder}}</code> tam, gdzie ma się znaleźć wiadomość etapu."
+        },
+        "save": {
+          "title": "Zapisz",
+          "body": "Kliknij <ui>Zapisz</ui>. Aby zacząć od nowa, wybierz <ui>Przywróć szablon domyślny</ui> z menu <ui>Więcej opcji</ui>."
+        }
+      }
+    },
+    "matchScores": {
+      "title": "Zrozum wyniki dopasowania",
+      "summary": "Jak AI ocenia aplikacje pod kątem ofert.",
+      "steps": {
+        "read": {
+          "title": "Odczytaj wynik",
+          "body": "Każda aplikacja otrzymuje wynik dopasowania od 0 do 100% na podstawie szczegółów oferty."
+        },
+        "aspects": {
+          "title": "Zobacz, z czego wynika",
+          "body": "Otwórz aplikację, aby zobaczyć jej ocenę w kategoriach <ui>Umiejętności</ui>, <ui>Doświadczenie</ui>, <ui>Dopasowanie poziomu</ui> i <ui>Kwalifikacje</ui>. Kwalifikacje są uwzględniane tylko wtedy, gdy oferta wymaga dyplomów, certyfikatów lub uprawnień."
+        },
+        "useAsGuide": {
+          "title": "Traktuj wynik jako wskazówkę",
+          "body": "Dopasowania pomagają zdecydować, kogo przejrzeć najpierw. Korzystaj z nich obok własnej oceny, a nie zamiast niej."
+        },
+        "noScore": {
+          "title": "Gdy nie ma wyniku",
+          "body": "<ui>Ocenianie</ui> oznacza, że wynik jest w drodze, a <ui>Brak kredytów</ui> – że skończyły się kredyty AI. <ui>Bez oceny</ui> oznacza, że nie udało się ocenić aplikacji, np. gdy CV jest zeskanowanym obrazem. Jeśli ocena się nie powiodła, kliknij <ui>Spróbuj ponownie</ui> w aplikacji."
+        },
+        "rankAgain": {
+          "title": "Oceń ponownie po zmianach",
+          "body": "Gdy zmienisz nazwę stanowiska, dział, rodzaj zatrudnienia lub opis oferty, wybierz <ui>Zapisz i oceń ponownie</ui>, aby ocenić jej aplikacje na podstawie nowych szczegółów."
+        }
+      }
+    },
+    "aiSwitch": {
+      "title": "Wyłącz lub włącz ocenę AI",
+      "summary": "Zdecyduj, czy Twoje aplikacje mają być oceniane przez AI.",
+      "steps": {
+        "find": {
+          "title": "Znajdź przełącznik",
+          "body": "Na karcie <general>Ogólne</general> w Ustawieniach wyłącz lub włącz opcję <ui>Oceniaj aplikacje za pomocą AI</ui>. Ustawienie dotyczy całej firmy."
+        },
+        "whileOff": {
+          "title": "Gdy ocena jest wyłączona",
+          "body": "Nic nie jest wysyłane do AI, wyniki dopasowania są ukryte, a nowe aplikacje nie są oceniane. Wcześniejsze wyniki wrócą po ponownym włączeniu."
+        },
+        "turnOn": {
+          "title": "Włącz ją ponownie",
+          "body": "Jeśli w międzyczasie wpłynęły aplikacje, zdecydujesz, czy je ocenić (każda zużywa jeden kredyt), czy pozostawić bez oceny."
+        },
+        "tellApplicants": {
+          "title": "Poinformuj kandydatów",
+          "body": "Gdy ocena AI jest włączona, domyślna strona kariery informuje kandydatów, że AI pomaga w przeglądaniu aplikacji. Jeśli używasz własnego kodu, dodaj tę informację samodzielnie."
+        }
+      }
+    },
+    "planCredits": {
+      "title": "Zarządzaj planem i kredytami",
+      "summary": "Okres próbny, subskrypcja i kredyty AI.",
+      "credits_one": "{{count, number}} kredyt",
+      "credits_few": "{{count, number}} kredyty",
+      "credits_many": "{{count, number}} kredytów",
+      "credits_other": "{{count, number}} kredytu",
+      "steps": {
+        "startTrial": {
+          "title": "Rozpocznij bezpłatny okres próbny",
+          "body_one": "Na stronie <billing>Płatności</billing> wybierz <ui>Miesięcznie</ui> lub <ui>Rocznie</ui>, a następnie kliknij <ui>Rozpocznij bezpłatny okres próbny</ui>. Okres próbny trwa {{count, number}} dzień i obejmuje {{credits}}.",
+          "body_few": "Na stronie <billing>Płatności</billing> wybierz <ui>Miesięcznie</ui> lub <ui>Rocznie</ui>, a następnie kliknij <ui>Rozpocznij bezpłatny okres próbny</ui>. Okres próbny trwa {{count, number}} dni i obejmuje {{credits}}.",
+          "body_many": "Na stronie <billing>Płatności</billing> wybierz <ui>Miesięcznie</ui> lub <ui>Rocznie</ui>, a następnie kliknij <ui>Rozpocznij bezpłatny okres próbny</ui>. Okres próbny trwa {{count, number}} dni i obejmuje {{credits}}.",
+          "body_other": "Na stronie <billing>Płatności</billing> wybierz <ui>Miesięcznie</ui> lub <ui>Rocznie</ui>, a następnie kliknij <ui>Rozpocznij bezpłatny okres próbny</ui>. Okres próbny trwa {{count, number}} dnia i obejmuje {{credits}}."
+        },
+        "plan": {
+          "title": "Twój plan",
+          "body": "Plan miesięczny kosztuje {{monthlyPrice}} miesięcznie i obejmuje {{monthlyCredits}} co miesiąc. Plan roczny kosztuje {{yearlyPrice}} rocznie i obejmuje {{yearlyCredits}} z góry. Niewykorzystane kredyty nie przechodzą na kolejny okres. Kliknij <ui>Zarządzaj subskrypcją</ui>, aby zaktualizować kartę, przejrzeć faktury lub anulować plan."
+        },
+        "switchToYearly": {
+          "title": "Przełącz na plan roczny",
+          "body": "Na stronie <billing>Płatności</billing> wybierz <ui>Rocznie</ui> w swoim planie, a następnie kliknij <ui>Przełącz na plan roczny</ui>. Zapłacisz teraz {{price}}, po odliczeniu niewykorzystanych dni bieżącego miesiąca. Jeśli korzystasz z bezpłatnego okresu próbnego, zapłacisz dopiero po jego zakończeniu."
+        },
+        "buyCredits": {
+          "title": "Kup więcej kredytów",
+          "body": "Każda aplikacja oceniona przez AI zużywa jeden kredyt. Aby mieć więcej, kup pakiet w sekcji <ui>Kup kredyty</ui>. Kredyty dodatkowe nigdy nie wygasają i są wykorzystywane po kredytach z planu."
+        },
+        "runOut": {
+          "title": "Gdy skończą się kredyty",
+          "body": "Nowe aplikacje czekają ze statusem <ui>Brak kredytów</ui>. Gdy znów będziesz mieć kredyty, oceń je z poziomu komunikatu na stronie <jobs>Oferty pracy</jobs> lub <billing>Płatności</billing> albo pozostaw je bez oceny."
+        },
+        "endTrial": {
+          "title": "Zakończ okres próbny wcześniej",
+          "body": "Jeśli skończą się kredyty z okresu próbnego, kliknij <ui>Zakończ okres próbny</ui> w komunikacie na stronie <jobs>Oferty pracy</jobs> lub <billing>Płatności</billing>. Plan zacznie się od dziś, a Ty otrzymasz jego kredyty."
+        },
+        "planStops": {
+          "title": "Gdy plan przestanie działać",
+          "body": "Bez aktywnego planu Emploist działa w trybie tylko do odczytu, a Twoja strona kariery przestaje przyjmować aplikacje. Zespół nadal widzi wszystko i może eksportować aplikacje, a administratorzy mogą ponownie wykupić subskrypcję."
+        }
+      }
+    },
+    "connectAssistant": {
+      "title": "Połącz asystenta AI",
+      "summary": "Zarządzaj ofertami pracy i aplikacjami w Claude, ChatGPT i innych asystentach.",
+      "steps": {
+        "choose": {
+          "title": "Wybierz asystenta",
+          "body": "Na stronie <mcp>MCP</mcp> wybierz swojego asystenta w sekcji <ui>Połącz asystenta</ui>."
+        },
+        "follow": {
+          "title": "Wykonaj jego kroki",
+          "body": "Każdy asystent ma własne kroki, a adres do wklejenia lub polecenie do skopiowania znajdziesz dokładnie tam, gdzie są potrzebne."
+        },
+        "allow": {
+          "title": "Zaloguj się i zezwól",
+          "body": "Gdy asystent o to poprosi, zaloguj się do Emploist i kliknij <ui>Zezwól</ui>. Asystent działa jako Ty, z Twoją rolą."
+        },
+        "disconnect": {
+          "title": "Odłącz go",
+          "body": "Aby zatrzymać asystenta, kliknij <ui>Odłącz</ui> obok niego w sekcji <ui>Połączeni asystenci</ui> na stronie <mcp>MCP</mcp>."
+        }
+      }
+    },
+    "mcpSwitch": {
+      "title": "Wyłącz lub włącz MCP",
+      "summary": "Zdecyduj, czy zespół może korzystać z Emploist w asystentach AI.",
+      "steps": {
+        "find": {
+          "title": "Znajdź przełącznik",
+          "body": "Na karcie <general>Ogólne</general> w Ustawieniach wyłącz lub włącz opcję <ui>Pozwól zespołowi łączyć asystentów AI</ui>. Ustawienie dotyczy całej firmy."
+        },
+        "whileOff": {
+          "title": "Gdy jest wyłączone",
+          "body": "Asystenci nie mogą korzystać z Emploist i nikt nie może połączyć nowego. Połączenia zostają zachowane, więc znów zadziałają, gdy ponownie włączysz MCP."
+        }
+      }
+    }
+  }
+}

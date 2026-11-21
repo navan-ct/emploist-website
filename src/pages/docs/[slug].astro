@@ -1,0 +1,12 @@
+---
+import DocsGuidePage from "../../components/pages/DocsGuidePage.astro";
+import { GUIDES } from "../../lib/docs";
+
+export function getStaticPaths() {
+  return GUIDES.map((guide) => ({ params: { slug: guide.slug } }));
+}
+
+const { slug } = Astro.params;
+---
+
+<DocsGuidePage slug={slug!} />

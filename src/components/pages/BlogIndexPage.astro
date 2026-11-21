@@ -6,7 +6,7 @@ import { getLocale, getMessages, linkTo } from "../../i18n";
 import { formatDate } from "../../i18n/format";
 import { DEFAULT_LOCALE, localizePath } from "../../i18n/locales";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getPosts, getTranslations, postUrl, readingMinutes } from "../../lib/blog";
+import { getPosts, getTranslations, postSlug, postUrl, readingMinutes } from "../../lib/blog";
 import { APP, SITE } from "../../lib/site";
 import Band from "../Band.astro";
 import Button from "../Button.astro";
@@ -17,12 +17,13 @@ const locale = getLocale(Astro);
 const t = getMessages(locale);
 const translations = (await getTranslations()).get(locale);
 const posts = (await getPosts()).map((post) => {
-  const translation = translations?.get(post.id);
+  const slug = postSlug(post.id);
+  const translation = translations?.get(slug);
   const entry = translation ?? post;
   return {
-    id: post.id,
+    id: slug,
     data: entry.data,
-    url: postUrl(post.id, translation ? locale : DEFAULT_LOCALE),
+    url: postUrl(slug, translation ? locale : DEFAULT_LOCALE),
     minutes: readingMinutes(entry, translation ? locale : DEFAULT_LOCALE),
     inEnglish: locale !== DEFAULT_LOCALE && !translation,
   };
@@ -72,7 +73,7 @@ const jsonLd = [
                 <article class="group relative row-span-3 grid grid-rows-subgrid">
                   <div class="p-4 sm:p-5">
                     {post.data.image ? (
-                      <div class="overflow-hidden border border-line bg-subtle">
+                      <div class="blog-cover overflow-hidden border border-line bg-subtle">
                         <Image
                           src={post.data.image}
                           alt={post.data.imageAlt ?? ""}
@@ -100,6 +101,10 @@ const jsonLd = [
                     <p class="leading-relaxed">{post.data.description}</p>
                   </div>
                   <div class="flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-line bg-subtle px-5 py-4 text-sm text-ink sm:px-6">
+                    <span>
+                      {post.data.author === "The Emploist team" ? t.blog.defaultAuthor : post.data.author}
+                    </span>
+                    <span class="text-line-strong" aria-hidden="true">|</span>
                     <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate, locale)}</time>
                     <span class="text-line-strong" aria-hidden="true">|</span>
                     <span>{t.blog.minutesToRead(post.minutes)}</span>
