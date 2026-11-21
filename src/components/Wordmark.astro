@@ -1,21 +1,78 @@
 ---
 // The mark (a ranked list of bars on an indigo tile) and the name. Same
 // shapes as the app's `components/wordmark.tsx` and public/favicon.svg.
+// The bars are round-capped strokes, each drawn as a dash of its length on a
+// line as long as the top bar, so a bar can grow into the one above it.
 interface Props {
+  /** Moves the list up one place when the link around the mark is hovered. */
+  animated?: boolean;
   class?: string;
 }
 
-const { class: className } = Astro.props;
+const { animated = false, class: className } = Astro.props;
 ---
 
 <span class:list={["inline-flex items-center gap-2.5 text-[1.3125rem] font-medium tracking-[-0.045em] text-ink", className]}>
-  <svg viewBox="0 0 64 64" aria-hidden="true" class="size-7 shrink-0">
+  <svg viewBox="0 0 64 64" aria-hidden="true" class:list={["size-7 shrink-0", animated && "wordmark-animated"]}>
     <rect width="64" height="64" rx="16" fill="#4f46e5"></rect>
-    <g fill="#fff">
-      <rect x="15" y="17" width="34" height="8" rx="4"></rect>
-      <rect x="15" y="28" width="24" height="8" rx="4" opacity="0.7"></rect>
-      <rect x="15" y="39" width="14" height="8" rx="4" opacity="0.42"></rect>
+    <g fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round">
+      <path d="M19 21H45" stroke-dasharray="26 64" style="--to-len: 26; --to-opacity: 0"></path>
+      <path d="M19 32H45" stroke-dasharray="16 64" opacity="0.7" style="--to-len: 26; --to-opacity: 1"></path>
+      <path d="M19 43H45" stroke-dasharray="6 64" opacity="0.42" style="--to-len: 16; --to-opacity: 0.7"></path>
+      {animated && <path d="M19 54H45" stroke-dasharray="0 64" opacity="0" style="--to-len: 6; --to-opacity: 0.42" />}
     </g>
   </svg>
   <span>Emploist</span>
 </span>
+
+<style>
+  /* The list moves up one place: the top bar slides out, each bar below takes
+     the place, length and brightness of the one above it, and a new bar grows
+     in at the bottom. It ends looking just as it started. */
+  .wordmark-animated.is-advancing path {
+    animation: wordmark-advance 0.6s cubic-bezier(0.6, 0, 0.2, 1) var(--delay, 0s) both;
+  }
+
+  .wordmark-animated path:nth-child(2) {
+    --delay: 40ms;
+  }
+
+  .wordmark-animated path:nth-child(3) {
+    --delay: 80ms;
+  }
+
+  .wordmark-animated path:nth-child(4) {
+    --delay: 120ms;
+  }
+
+  @keyframes wordmark-advance {
+    to {
+      transform: translateY(-11px);
+      stroke-dasharray: calc(var(--to-len) * 1px) 64px;
+      opacity: var(--to-opacity);
+    }
+  }
+</style>
+
+<script>
+  // Plays once per hover (or keyboard focus) and always finishes, even if the
+  // pointer leaves, so the mark never snaps back halfway.
+  const motion = matchMedia("(hover: hover) and (prefers-reduced-motion: no-preference)");
+
+  for (const mark of document.querySelectorAll<SVGSVGElement>(".wordmark-animated")) {
+    const link = mark.closest("a");
+    const play = () => {
+      if (motion.matches) mark.classList.add("is-advancing");
+    };
+    link?.addEventListener("pointerenter", (event) => {
+      if (event.pointerType !== "touch") play();
+    });
+    link?.addEventListener("focus", () => {
+      if (link.matches(":focus-visible")) play();
+    });
+    // The last bar starts last, so it ends last.
+    mark.querySelector("path:last-child")?.addEventListener("animationend", () => {
+      mark.classList.remove("is-advancing");
+    });
+  }
+</script>
