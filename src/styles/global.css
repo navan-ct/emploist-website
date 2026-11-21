@@ -757,6 +757,9 @@
 .roll {
   --lh: 1.4em;
   display: inline-block;
+  /* As tall as each letter's box with its margins (1.25em), so the letters,
+     which sit at the top of the line, are centered in it rather than high. */
+  line-height: 1.25;
   white-space: nowrap;
 }
 

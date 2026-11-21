@@ -403,7 +403,7 @@ const en = {
       {
         question: "Can we use Emploist from Claude or ChatGPT?",
         answer:
-          "Yes. Anyone on your team can connect Claude, ChatGPT, Claude Code, Cursor, VS Code, or another assistant that supports MCP, and manage jobs and applications by chatting. It's included in your plan. Ranking an application from an assistant uses one AI credit, just like in Emploist.",
+          "Yes. Anyone on your team can connect Claude, ChatGPT, Grok, Gemini, Copilot, or another assistant that supports MCP, and manage jobs and applications by chatting. It's included in your plan. Ranking an application from an assistant uses one AI credit, just like in Emploist.",
       },
       {
         question: "What can an AI assistant do in Emploist?",

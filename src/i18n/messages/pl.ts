@@ -388,7 +388,7 @@ const pl: Messages = {
       {
         question: "Czy możemy korzystać z Emploist w Claude lub ChatGPT?",
         answer:
-          "Tak. Każda osoba z Twojego zespołu może połączyć Claude, ChatGPT, Claude Code, Cursor, VS Code lub innego asystenta obsługującego MCP i zarządzać ofertami oraz aplikacjami na czacie. Jest to wliczone w Twój plan. Ocena aplikacji z poziomu asystenta zużywa jeden kredyt AI, tak samo jak w Emploist.",
+          "Tak. Każda osoba z Twojego zespołu może połączyć Claude, ChatGPT, Grok, Gemini, Copilot lub innego asystenta obsługującego MCP i zarządzać ofertami oraz aplikacjami na czacie. Jest to wliczone w Twój plan. Ocena aplikacji z poziomu asystenta zużywa jeden kredyt AI, tak samo jak w Emploist.",
       },
       {
         question: "Co asystent AI może robić w Emploist?",

@@ -393,7 +393,7 @@ const de: Messages = {
       {
         question: "Können wir Emploist über Claude oder ChatGPT nutzen?",
         answer:
-          "Ja. Alle in Ihrem Team können Claude, ChatGPT, Claude Code, Cursor, VS Code oder einen anderen Assistenten verbinden, der MCP unterstützt, und Stellen und Bewerbungen im Chat verwalten. Das ist in Ihrem Tarif enthalten. Wenn Sie eine Bewerbung über einen Assistenten bewerten lassen, verbraucht das einen KI-Credit, genau wie in Emploist.",
+          "Ja. Alle in Ihrem Team können Claude, ChatGPT, Grok, Gemini, Copilot oder einen anderen Assistenten verbinden, der MCP unterstützt, und Stellen und Bewerbungen im Chat verwalten. Das ist in Ihrem Tarif enthalten. Wenn Sie eine Bewerbung über einen Assistenten bewerten lassen, verbraucht das einen KI-Credit, genau wie in Emploist.",
       },
       {
         question: "Was kann ein KI-Assistent in Emploist tun?",

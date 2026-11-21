@@ -384,7 +384,7 @@ const tr: Messages = {
       {
         question: "Emploist'i Claude veya ChatGPT üzerinden kullanabilir miyiz?",
         answer:
-          "Evet. Ekibinizdeki herkes Claude, ChatGPT, Claude Code, Cursor, VS Code veya MCP destekleyen başka bir asistanı bağlayabilir ve ilanları ve başvuruları sohbet ederek yönetebilir. Bu, planınıza dahildir. Bir asistan üzerinden başvuru puanlamak, tıpkı Emploist'te olduğu gibi bir yapay zekâ kredisi kullanır.",
+          "Evet. Ekibinizdeki herkes Claude, ChatGPT, Grok, Gemini, Copilot veya MCP destekleyen başka bir asistanı bağlayabilir ve ilanları ve başvuruları sohbet ederek yönetebilir. Bu, planınıza dahildir. Bir asistan üzerinden başvuru puanlamak, tıpkı Emploist'te olduğu gibi bir yapay zekâ kredisi kullanır.",
       },
       {
         question: "Bir yapay zekâ asistanı Emploist'te neler yapabilir?",

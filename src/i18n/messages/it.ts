@@ -397,7 +397,7 @@ const it: Messages = {
       {
         question: "Possiamo usare Emploist da Claude o ChatGPT?",
         answer:
-          "Sì. Chiunque nel tuo team può connettere Claude, ChatGPT, Claude Code, Cursor, VS Code o un altro assistente compatibile con MCP e gestire posizioni e candidature in chat. È incluso nel tuo piano. Ogni candidatura valutata da un assistente usa un credito IA, proprio come in Emploist.",
+          "Sì. Chiunque nel tuo team può connettere Claude, ChatGPT, Grok, Gemini, Copilot o un altro assistente compatibile con MCP e gestire posizioni e candidature in chat. È incluso nel tuo piano. Ogni candidatura valutata da un assistente usa un credito IA, proprio come in Emploist.",
       },
       {
         question: "Cosa può fare un assistente IA in Emploist?",

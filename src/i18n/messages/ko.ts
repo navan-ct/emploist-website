@@ -373,7 +373,7 @@ const ko: Messages = {
       {
         question: "Claude나 ChatGPT에서 Emploist를 사용할 수 있나요?",
         answer:
-          "네. 팀원 누구나 Claude, ChatGPT, Claude Code, Cursor, VS Code 또는 MCP를 지원하는 다른 어시스턴트를 연결해, 채팅으로 채용 공고와 지원서를 관리할 수 있어요. 요금제에 포함되어 있어요. 어시스턴트에서 지원서를 평가해도 Emploist에서와 똑같이 AI 크레딧 1개를 사용해요.",
+          "네. 팀원 누구나 Claude, ChatGPT, Grok, Gemini, Copilot 또는 MCP를 지원하는 다른 어시스턴트를 연결해, 채팅으로 채용 공고와 지원서를 관리할 수 있어요. 요금제에 포함되어 있어요. 어시스턴트에서 지원서를 평가해도 Emploist에서와 똑같이 AI 크레딧 1개를 사용해요.",
       },
       {
         question: "AI 어시스턴트는 Emploist에서 무엇을 할 수 있나요?",

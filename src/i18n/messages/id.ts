@@ -381,7 +381,7 @@ const id: Messages = {
       {
         question: "Bisakah kami menggunakan Emploist dari Claude atau ChatGPT?",
         answer:
-          "Bisa. Siapa pun di tim Anda dapat menghubungkan Claude, ChatGPT, Claude Code, Cursor, VS Code, atau asisten lain yang mendukung MCP, lalu mengelola lowongan dan lamaran lewat chat. Fitur ini sudah termasuk dalam paket Anda. Menilai lamaran dari asisten menggunakan satu kredit AI, sama seperti di Emploist.",
+          "Bisa. Siapa pun di tim Anda dapat menghubungkan Claude, ChatGPT, Grok, Gemini, Copilot, atau asisten lain yang mendukung MCP, lalu mengelola lowongan dan lamaran lewat chat. Fitur ini sudah termasuk dalam paket Anda. Menilai lamaran dari asisten menggunakan satu kredit AI, sama seperti di Emploist.",
       },
       {
         question: "Apa saja yang dapat dilakukan asisten AI di Emploist?",

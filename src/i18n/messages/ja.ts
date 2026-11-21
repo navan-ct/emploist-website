@@ -384,7 +384,7 @@ const ja: Messages = {
       {
         question: "ClaudeやChatGPTからEmploistを使えますか？",
         answer:
-          "はい。チームの誰もが、Claude、ChatGPT、Claude Code、Cursor、VS Code、またはMCPに対応したその他のアシスタントを接続して、チャットで求人や応募を管理できます。この機能はプランに含まれています。アシスタントから応募を評価する場合も、Emploist上と同じくAIクレジットを1つ使用します。",
+          "はい。チームの誰もが、Claude、ChatGPT、Grok、Gemini、Copilot、またはMCPに対応したその他のアシスタントを接続して、チャットで求人や応募を管理できます。この機能はプランに含まれています。アシスタントから応募を評価する場合も、Emploist上と同じくAIクレジットを1つ使用します。",
       },
       {
         question: "AIアシスタントはEmploistで何ができますか？",
