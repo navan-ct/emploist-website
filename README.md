@@ -213,7 +213,8 @@ locally with its sample data. When the app's interface changes, take them again:
    It signs in as `alex@example.com` and asks for the sign-in code, which the
    app prints in its server log. The session is saved in `.auth/` (ignored by
    Git) so later runs skip this until it expires. To take only some shots, list
-   them: `ONLY=match,comments node scripts/screenshots.mjs`.
+   them: `ONLY=match,comments node scripts/screenshots.mjs`. `ONLY=covers`
+   only redraws the two blog posts' covers from their saved shots.
 
 Each shot is taken at 2x in the app's light theme, except `careers-code`, which
 is taken in the dark theme for the dark "Design in code" section. The site
@@ -231,7 +232,7 @@ and the reply was padded like the MCP post's (below).
 
 The "How to manage hiring from Claude with MCP" post's Emploist screenshots
 and cover come from the script too (`ONLY=mcp-post`). Start the app with
-Emploist's real MCP address, so its MCP page shows it:
+Emploist's real MCP address, so its AI assistants page shows it:
 
 ```bash
 RATE_LIMIT_MAX=5000 MCP_URL=https://mcp.emploist.com npm run dev
@@ -243,7 +244,11 @@ claude.ai screenshots (`claude-*.png`) were taken on claude.ai, connected to
 the app's sample data through a temporary public tunnel, then trimmed to
 their content with 48 pixels (24 at 1x) of their own background around it, so
 the post's rounded frames don't cut into them. The cover uses
-`claude-hiring-stats.png`, so keep it when retaking the shots.
+`claude-hiring-stats.png`, so keep it when retaking the shots. Claude's
+answers in them describe the sample data just as `npm run db:seed` makes it
+(Diego Varga's and Sara Nair's answers and comments, for example), so keep
+the seed's applicants as they are, or the post and its Emploist shots will
+disagree.
 
 ## Keeping facts in sync
 

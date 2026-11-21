@@ -10,7 +10,7 @@
     {
       "name": "emploist-app",
       "runtimeExecutable": "env",
-      "runtimeArgs": ["RATE_LIMIT_MAX=5000", "npm", "--prefix", "../emploist", "run", "dev"],
+      "runtimeArgs": ["RATE_LIMIT_MAX=5000", "MCP_URL=https://mcp.emploist.com", "npm", "--prefix", "../emploist", "run", "dev"],
       "port": 3000
     }
   ]

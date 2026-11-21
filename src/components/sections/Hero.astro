@@ -48,16 +48,17 @@ const t = messages.hero;
   }
 
   /* On phones the whole window is too small to read, so zoom in on the
-     ranked list and leave the sidebar out of view. */
+     ranked list, from its left edge to the match chips, and leave the
+     sidebar out of view. */
   @media (width < 40rem) {
     .hero-stage {
       height: 26rem;
     }
 
     :global(.hero-shot img) {
-      width: 175%;
+      width: 162%;
       max-width: none;
-      margin-left: -41%;
+      margin-left: -36%;
     }
   }
 </style>

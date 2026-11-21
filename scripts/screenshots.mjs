@@ -16,8 +16,9 @@
 //   JOB_TITLE      the job to show    (default Senior Product Designer)
 //   ONLY           names of shots to take, comma-separated (default all);
 //                  "post" and "mcp-post" take the blog posts' shots (see
-//                  postShots and mcpPostShots);
-//                  "docs" takes per-guide docs shots (see docsShots) for /docs/
+//                  postShots and mcpPostShots); "docs" takes per-guide
+//                  docs shots (see docsShots) for /docs/; and "covers" only
+//                  redraws the posts' covers from their saved shots
 //   MCP_URL        the app's MCP_URL, for "mcp-post"
 //                                     (default https://mcp.emploist.com)
 
@@ -119,7 +120,11 @@ async function settle(page) {
   await page.waitForTimeout(600);
 }
 
-/** A rectangle around the boxes of the given locators, with padding. */
+/**
+ * A rectangle around the boxes of the given locators, with padding. A
+ * padding of -1 keeps the boxes' own borders out, so the website's frame
+ * stands in for them instead of doubling them.
+ */
 async function around(page, locators, padding = 0) {
   const boxes = [];
   for (const locator of locators) {
@@ -150,6 +155,14 @@ async function openFirstApplication(page, jobId) {
   await settle(page);
 }
 
+/** A question's row in the application form builder, by its title. */
+function formRow(page, title) {
+  return page
+    .getByText(title, { exact: true })
+    .first()
+    .locator("xpath=ancestor::div[contains(@class,'relative') and contains(@class,'border')][1]");
+}
+
 /** Opens the Interviewing stage's email panel and waits for its preview. */
 async function openStageEmail(page) {
   const row = page.getByRole("listitem").filter({ has: page.getByText("Interviewing", { exact: true }) });
@@ -166,7 +179,9 @@ const shots = (jobId) => [
   {
     name: "applications",
     url: `${APP_URL}/jobs/${jobId}`,
-    viewport: { width: 1440, height: 1040 },
+    // Narrow enough that the page fills the window, without wide margins
+    // around its column.
+    viewport: { width: 1280, height: 920 },
   },
   {
     name: "match",
@@ -192,40 +207,40 @@ const shots = (jobId) => [
       await settle(page);
     },
     clip: (page) =>
-      // The heading's name ends with the comment count ("Comments 3").
-      around(page, [page.getByRole("heading", { name: /^Comments\b/ }).locator("xpath=..")]),
+      // The Comments column, from its gray title bar ("Comments 3") down,
+      // without the line on its left.
+      around(page, [page.getByRole("heading", { name: /^Comments\b/ }).locator("xpath=..")], -1),
   },
   {
     name: "form",
-    viewport: { width: 1280, height: 1400 },
+    // Narrow, so the questions are close to their badges and the shot's
+    // text isn't too small on the website, but wide enough for the longest
+    // question to fit.
+    viewport: { width: 720, height: 1400 },
     url: `${APP_URL}/jobs/${jobId}/form`,
     // The questions after "Which tools do you use most?" would peek in at
     // the bottom, so they're hidden.
     prepare: (page) =>
-      page.getByText("Which tools do you use most?").first().evaluate((title) => {
-        let card = title.closest("div.rounded-xl").nextElementSibling;
-        for (; card; card = card.nextElementSibling) card.style.visibility = "hidden";
+      formRow(page, "Which tools do you use most?").evaluate((row) => {
+        for (let next = row.nextElementSibling; next; next = next.nextElementSibling) next.style.visibility = "hidden";
       }),
-    // The same room on every side: the boxes are the questions' cards (not
-    // the rounded buttons inside them).
     clip: (page) =>
-      around(page, [
-        page.getByText("Full name", { exact: true }).first().locator("xpath=ancestor::div[contains(@class,'rounded-xl')][1]"),
-        page.getByText("Which tools do you use most?").first().locator("xpath=ancestor::div[contains(@class,'rounded-xl')][1]"),
-      ], 20),
+      around(page, [formRow(page, "Full name"), formRow(page, "Which tools do you use most?")], 20),
   },
   {
     name: "stage-email",
     url: `${APP_URL}/jobs/${jobId}/stages`,
     viewport: { width: 1440, height: 1500 },
     prepare: openStageEmail,
+    // The panel from its title bar down to the message's hint, without the
+    // line on its left.
     clip: async (page) => {
       const dialog = page.getByRole("dialog");
       const clip = await around(page, [
         dialog.locator(":scope > *").first(),
         dialog.getByText("Type { to quickly add a variable."),
       ]);
-      return { ...clip, height: clip.height + 24 };
+      return { ...clip, x: clip.x + 1, width: clip.width - 1, height: clip.height + 24 };
     },
   },
   {
@@ -233,7 +248,8 @@ const shots = (jobId) => [
     url: `${APP_URL}/jobs/${jobId}/stages`,
     viewport: { width: 1440, height: 1500 },
     prepare: openStageEmail,
-    clip: (page) => around(page, [page.locator("iframe[title='Preview of the email']").locator("xpath=../..")]),
+    // Inside the preview's border.
+    clip: (page) => around(page, [page.locator("iframe[title='Preview of the email']").locator("xpath=../..")], -1),
   },
   {
     name: "careers-code",
@@ -363,11 +379,11 @@ async function drawCover() {
   }
   .window {
     position: absolute; left: 64px; top: 72px; width: 820px;
-    border-radius: 14px; overflow: hidden; border: 1px solid #e4e4e7; background: #fff;
+    overflow: hidden; border: 1px solid #d9d9d9; background: #fff;
     box-shadow: 0 2px 4px rgb(0 0 0 / 0.04), 0 30px 60px -16px rgb(40 30 120 / 0.28);
   }
-  .bar { display: flex; gap: 6px; align-items: center; height: 30px; padding: 0 12px; background: #fafafa; border-bottom: 1px solid #e4e4e7; }
-  .bar span { width: 9px; height: 9px; border-radius: 50%; background: #d4d4d8; }
+  .bar { display: flex; gap: 6px; align-items: center; height: 30px; padding: 0 12px; background: #f5f5f5; border-bottom: 1px solid #d9d9d9; }
+  .bar span { width: 8px; height: 8px; background: #c4c4c4; }
   .window img { display: block; width: 100%; }
   .phone {
     position: absolute; right: 72px; top: 44px; width: 270px; height: 560px;
@@ -576,11 +592,11 @@ async function drawMcpCover() {
   }
   .window {
     position: absolute; left: 56px; top: 56px; width: 720px; height: 620px;
-    border-radius: 14px; overflow: hidden; border: 1px solid #e4e4e7; background: #fff;
+    overflow: hidden; border: 1px solid #d9d9d9; background: #fff;
     box-shadow: 0 2px 4px rgb(0 0 0 / 0.04), 0 30px 60px -16px rgb(40 30 120 / 0.28);
   }
-  .bar { display: flex; gap: 6px; align-items: center; height: 30px; padding: 0 12px; background: #fafafa; border-bottom: 1px solid #e4e4e7; }
-  .bar span { width: 9px; height: 9px; border-radius: 50%; background: #d4d4d8; }
+  .bar { display: flex; gap: 6px; align-items: center; height: 30px; padding: 0 12px; background: #f5f5f5; border-bottom: 1px solid #d9d9d9; }
+  .bar span { width: 8px; height: 8px; background: #c4c4c4; }
   .window img { display: block; width: 100%; }
   .chat {
     position: absolute; right: 56px; top: 126px; width: 520px;
@@ -660,7 +676,12 @@ async function mcpPostShots(storageState, jobId) {
   await page.goto(`${APP_URL}/mcp`);
   await page.getByText("claude.ai").waitFor();
   await settle(page);
-  await shot("emploist-mcp-page", { fullPage: true });
+  // The whole page in one window, rather than a full-page shot, so the
+  // sidebar (as tall as the window) runs all the way down beside it.
+  const height = await page.evaluate(() => document.documentElement.scrollHeight);
+  await page.setViewportSize({ width: DESKTOP.width, height });
+  await settle(page);
+  await shot("emploist-mcp-page");
 
   // The comment Claude left, as the team sees it in Emploist.
   const { stages } = await api(page, "GET", `/api/jobs/${jobId}`);
@@ -692,26 +713,32 @@ async function mcpPostShots(storageState, jobId) {
   // MCP in Settings, where admins can turn assistants off for everyone.
   await page.setViewportSize(DESKTOP);
   await page.goto(`${APP_URL}/settings/general`);
-  const mcpRow = page.getByRole("heading", { name: "MCP", exact: true }).locator("xpath=..");
-  await mcpRow.scrollIntoViewIfNeeded();
-  await settle(page);
-  // Inside the card's borders. The post's frame hides its rounded corners.
-  const row = await around(page, [mcpRow]);
-  await shot("emploist-settings-mcp", {
-    clip: { x: row.x + 1, y: row.y + 1, width: row.width - 2, height: row.height - 6 },
-  });
+  await shot("emploist-settings-mcp", { clip: await settingsGroup(page, "MCP") });
 
   await context.close();
   await drawMcpCover();
 }
 
-/** Clip around a settings switch row by its visible label. */
-async function clipSwitchRow(page, label) {
-  const row = page.getByText(label, { exact: true }).locator("xpath=ancestor::*[self::div or self::label][1]");
-  const target = (await row.count()) ? row.first() : page.getByText(label).first();
-  await target.scrollIntoViewIfNeeded();
+/**
+ * One group of Settings → General, by its title ("MCP"): the gray title
+ * cell and its settings, switch included. Inside the card's borders and
+ * under the line between groups, so the website's frame stands in for them.
+ */
+async function settingsGroup(page, title) {
+  const group = page.getByRole("heading", { name: title, exact: true }).locator("xpath=..");
+  await group.scrollIntoViewIfNeeded();
   await settle(page);
-  return around(page, [target], 16);
+  const box = await around(page, [group]);
+  const line = await group.evaluate((element) => Number.parseFloat(getComputedStyle(element).borderTopWidth) || 0);
+  return { ...box, y: box.y + line, height: box.height - line };
+}
+
+/** The open dialog, inside its border (a confirmation is an alertdialog). */
+async function openDialog(page) {
+  const dialog = page.getByRole("dialog").or(page.getByRole("alertdialog")).first();
+  await dialog.waitFor();
+  await settle(page);
+  return around(page, [dialog], -1);
 }
 
 /**
@@ -803,11 +830,7 @@ const docsShots = (jobId) => [
         await settle(page);
       }
     },
-    clip: async (page) => {
-      const dialog = page.getByRole("dialog");
-      if (await dialog.count()) return around(page, [dialog], 16);
-      return undefined;
-    },
+    clip: openDialog,
   },
   {
     name: "docs-invite",
@@ -821,11 +844,7 @@ const docsShots = (jobId) => [
         await settle(page);
       }
     },
-    clip: async (page) => {
-      const dialog = page.getByRole("dialog");
-      if (await dialog.count()) return around(page, [dialog], 16);
-      return undefined;
-    },
+    clip: openDialog,
   },
   {
     name: "docs-members",
@@ -845,15 +864,11 @@ const docsShots = (jobId) => [
       const del = page.getByRole("button", { name: /Delete company/i });
       if (await del.count()) {
         await del.first().click();
-        await page.getByRole("dialog").waitFor({ timeout: 3000 }).catch(() => {});
+        await page.getByRole("alertdialog").waitFor({ timeout: 3000 }).catch(() => {});
         await settle(page);
       }
     },
-    clip: async (page) => {
-      const dialog = page.getByRole("dialog");
-      if (await dialog.count()) return around(page, [dialog], 16);
-      return undefined;
-    },
+    clip: openDialog,
   },
   {
     name: "docs-emails",
@@ -869,23 +884,13 @@ const docsShots = (jobId) => [
     name: "docs-ai-switch",
     url: `${APP_URL}/settings/general`,
     viewport: { width: 1280, height: 900 },
-    prepare: async (page) => {
-      const label = page.getByText(/Rank applications with AI/i).first();
-      if (await label.count()) await label.scrollIntoViewIfNeeded();
-      await settle(page);
-    },
-    clip: (page) => clipSwitchRow(page, "Rank applications with AI"),
+    clip: (page) => settingsGroup(page, "AI features"),
   },
   {
     name: "docs-email-applicants",
     url: `${APP_URL}/settings/general`,
     viewport: { width: 1280, height: 900 },
-    prepare: async (page) => {
-      const label = page.getByText(/Email applicants/i).first();
-      if (await label.count()) await label.scrollIntoViewIfNeeded();
-      await settle(page);
-    },
-    clip: (page) => clipSwitchRow(page, "Email applicants"),
+    clip: (page) => settingsGroup(page, "Emails"),
   },
   {
     name: "docs-billing",
@@ -914,6 +919,17 @@ async function captureShot(shot, storageState) {
     await page.screenshot({ path: file.pathname, clip, animations: "disabled" });
     console.log(`Saved ${shot.name}-${colorScheme}.png`);
     await context.close();
+  }
+}
+
+// "covers" redraws both posts' covers from the shots already saved, with no
+// need for the app.
+if (ONLY?.includes("covers")) {
+  await drawCover();
+  await drawMcpCover();
+  if (ONLY.every((name) => name === "covers")) {
+    await browser.close();
+    process.exit();
   }
 }
 
