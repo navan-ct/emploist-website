@@ -10,7 +10,8 @@ const AUTHORS: Record<string, AuthorProfile> = {
   "Navaneeth CT": {
     name: "Navaneeth CT",
     position: "Founder",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    /** HTML. */
+    bio: `<a href="https://navaneethct.com/">Navaneeth</a> is the engineer behind Emploist. Expect hands-on posts about how it works, from careers page code to managing hiring from Claude. Say hello on <a href="https://www.linkedin.com/in/navaneeth-ct">LinkedIn</a>.`,
   },
   "Mighil Puthukkudy": {
     name: "Mighil Puthukkudy",
