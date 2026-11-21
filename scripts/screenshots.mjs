@@ -11,12 +11,13 @@
 // Settings (environment variables):
 //   APP_URL        the app            (default http://localhost:3000)
 //   CAREERS_URL    the sample company's careers page
-//                                     (default http://northwind.localhost:3000)
+//                                     (default http://fieldnote.localhost:3000)
 //   SIGN_IN_EMAIL  who to sign in as  (default alex@example.com)
 //   JOB_TITLE      the job to show    (default Senior Product Designer)
 //   ONLY           names of shots to take, comma-separated (default all);
 //                  "post" and "mcp-post" take the blog posts' shots (see
-//                  postShots and mcpPostShots)
+//                  postShots and mcpPostShots);
+//                  "docs" takes per-guide docs shots (see docsShots) for /docs/
 //   MCP_URL        the app's MCP_URL, for "mcp-post"
 //                                     (default https://mcp.emploist.com)
 
@@ -33,7 +34,7 @@ import { chromium } from "playwright-core";
 import sharp from "sharp";
 
 const APP_URL = process.env.APP_URL ?? "http://localhost:3000";
-const CAREERS_URL = process.env.CAREERS_URL ?? "http://northwind.localhost:3000";
+const CAREERS_URL = process.env.CAREERS_URL ?? "http://fieldnote.localhost:3000";
 const EMAIL = process.env.SIGN_IN_EMAIL ?? "alex@example.com";
 const JOB_TITLE = process.env.JOB_TITLE ?? "Senior Product Designer";
 const ONLY = process.env.ONLY?.split(",").map((name) => name.trim());
@@ -260,7 +261,7 @@ const shots = (jobId) => [
 ];
 
 // The blog post "How to customize your careers page with code or AI"
-// (src/content/blog/customize-careers-page.mdx), taken with `ONLY=post`. These
+// (src/content/blog/2026-10-22-how-to-customize-your-careers-page-with-code-or-ai.mdx), taken with `ONLY=post`. These
 // shots follow the post's steps in one page, so they change the sample
 // company's careers page code as they go: first the editor's example edits,
 // then the redesign Claude made on claude.ai (kept in
@@ -425,7 +426,7 @@ async function postShots(storageState) {
     await waitForPreview(page);
     await shot("editor");
 
-    // The headline: "Join Northwind Labs" → "Build what's next at Northwind Labs".
+    // The headline: "Join Fieldnote Labs" → "Build what's next at Fieldnote Labs".
     await page.getByRole("tab", { name: "jobs.liquid" }).click();
     await clickLine(page, "hero-title");
     await press(page, "End");
@@ -534,7 +535,7 @@ async function postShots(storageState) {
 }
 
 // The blog post "How to manage hiring from Claude with MCP"
-// (src/content/blog/manage-hiring-from-claude.mdx), taken with
+// (src/content/blog/2026-11-12-how-to-manage-hiring-from-claude-with-mcp.mdx), taken with
 // `ONLY=mcp-post`. These are Emploist's side of connecting Claude: the page
 // that asks to allow it, the MCP page with Claude connected, MCP in Settings,
 // and the comment Claude left in the post's chat. Start the app with
@@ -704,12 +705,196 @@ async function mcpPostShots(storageState, jobId) {
   await drawMcpCover();
 }
 
-const storageState = await signIn();
-const jobId = await findJobId(storageState);
-await mkdir(OUT_DIR, { recursive: true });
+/** Clip around a settings switch row by its visible label. */
+async function clipSwitchRow(page, label) {
+  const row = page.getByText(label, { exact: true }).locator("xpath=ancestor::*[self::div or self::label][1]");
+  const target = (await row.count()) ? row.first() : page.getByText(label).first();
+  await target.scrollIntoViewIfNeeded();
+  await settle(page);
+  return around(page, [target], 16);
+}
 
-for (const shot of shots(jobId)) {
-  if (ONLY && !ONLY.includes(shot.name)) continue;
+/**
+ * Docs guide shots — one capture per screen the marketing /docs/ pages show.
+ * Named docs-* so they don't overwrite lander shots. Run with ONLY=docs.
+ */
+const docsShots = (jobId) => [
+  {
+    name: "docs-jobs",
+    url: `${APP_URL}/jobs`,
+    viewport: { width: 1440, height: 900 },
+  },
+  {
+    name: "docs-job-details",
+    url: `${APP_URL}/jobs/${jobId}/details`,
+    viewport: { width: 1440, height: 1000 },
+  },
+  {
+    name: "docs-job-form",
+    url: `${APP_URL}/jobs/${jobId}/form`,
+    viewport: { width: 1440, height: 1100 },
+  },
+  {
+    name: "docs-job-stages",
+    url: `${APP_URL}/jobs/${jobId}/stages`,
+    viewport: { width: 1440, height: 1000 },
+  },
+  {
+    name: "docs-job-more",
+    url: `${APP_URL}/jobs/${jobId}`,
+    viewport: { width: 1440, height: 900 },
+    prepare: async (page) => {
+      // Job header "…" / More actions next to the Open status control
+      const more = page.getByRole("button", { name: /^More/ }).first();
+      if (await more.count()) await more.click();
+      else await page.locator("button[aria-haspopup='menu']").first().click();
+      await settle(page);
+    },
+  },
+  {
+    name: "docs-export",
+    url: `${APP_URL}/jobs/${jobId}`,
+    viewport: { width: 1440, height: 900 },
+    prepare: async (page) => {
+      const more = page.getByRole("button", { name: /^More/ }).first();
+      if (await more.count()) await more.click();
+      else await page.locator("button[aria-haspopup='menu']").first().click();
+      await page.getByRole("menuitem", { name: /Export applications/i }).waitFor({ timeout: 3000 }).catch(() => {});
+      await settle(page);
+    },
+  },
+  {
+    name: "docs-application",
+    viewport: { width: 1280, height: 1000 },
+    prepare: (page) => openFirstApplication(page, jobId),
+  },
+  {
+    name: "docs-application-unranked",
+    url: `${APP_URL}/jobs/${jobId}`,
+    viewport: { width: 1440, height: 900 },
+    prepare: async (page) => {
+      // Prefer a row that shows Ranking / Needs credits / Not ranked if present
+      const status = page.getByText(/Needs credits|Not ranked|Ranking/i).first();
+      if (await status.count()) {
+        await status.scrollIntoViewIfNeeded();
+        await settle(page);
+      }
+    },
+  },
+  {
+    name: "docs-notifications",
+    url: `${APP_URL}/notifications`,
+    viewport: { width: 1280, height: 900 },
+  },
+  {
+    name: "docs-careers-domain",
+    url: `${APP_URL}/careers-page/domain`,
+    viewport: { width: 1280, height: 1000 },
+  },
+  {
+    name: "docs-careers-change",
+    url: `${APP_URL}/careers-page/domain`,
+    viewport: { width: 1280, height: 900 },
+    prepare: async (page) => {
+      const change = page.getByRole("button", { name: /^Change\b/ });
+      if (await change.count()) {
+        await change.first().click();
+        await page.getByRole("dialog").waitFor({ timeout: 3000 }).catch(() => {});
+        await settle(page);
+      }
+    },
+    clip: async (page) => {
+      const dialog = page.getByRole("dialog");
+      if (await dialog.count()) return around(page, [dialog], 16);
+      return undefined;
+    },
+  },
+  {
+    name: "docs-invite",
+    url: `${APP_URL}/settings/members`,
+    viewport: { width: 1280, height: 900 },
+    prepare: async (page) => {
+      const invite = page.getByRole("button", { name: /Invite member|^Invite\b/ });
+      if (await invite.count()) {
+        await invite.first().click();
+        await page.getByRole("dialog").waitFor();
+        await settle(page);
+      }
+    },
+    clip: async (page) => {
+      const dialog = page.getByRole("dialog");
+      if (await dialog.count()) return around(page, [dialog], 16);
+      return undefined;
+    },
+  },
+  {
+    name: "docs-members",
+    url: `${APP_URL}/settings/members`,
+    viewport: { width: 1280, height: 900 },
+  },
+  {
+    name: "docs-danger-zone",
+    url: `${APP_URL}/settings/danger-zone`,
+    viewport: { width: 1280, height: 900 },
+  },
+  {
+    name: "docs-danger-confirm",
+    url: `${APP_URL}/settings/danger-zone`,
+    viewport: { width: 1280, height: 900 },
+    prepare: async (page) => {
+      const del = page.getByRole("button", { name: /Delete company/i });
+      if (await del.count()) {
+        await del.first().click();
+        await page.getByRole("dialog").waitFor({ timeout: 3000 }).catch(() => {});
+        await settle(page);
+      }
+    },
+    clip: async (page) => {
+      const dialog = page.getByRole("dialog");
+      if (await dialog.count()) return around(page, [dialog], 16);
+      return undefined;
+    },
+  },
+  {
+    name: "docs-emails",
+    url: `${APP_URL}/emails`,
+    viewport: { width: 1280, height: 900 },
+  },
+  {
+    name: "docs-email-layout",
+    url: `${APP_URL}/emails/layout`,
+    viewport: { width: 1440, height: 1000 },
+  },
+  {
+    name: "docs-ai-switch",
+    url: `${APP_URL}/settings/general`,
+    viewport: { width: 1280, height: 900 },
+    prepare: async (page) => {
+      const label = page.getByText(/Rank applications with AI/i).first();
+      if (await label.count()) await label.scrollIntoViewIfNeeded();
+      await settle(page);
+    },
+    clip: (page) => clipSwitchRow(page, "Rank applications with AI"),
+  },
+  {
+    name: "docs-email-applicants",
+    url: `${APP_URL}/settings/general`,
+    viewport: { width: 1280, height: 900 },
+    prepare: async (page) => {
+      const label = page.getByText(/Email applicants/i).first();
+      if (await label.count()) await label.scrollIntoViewIfNeeded();
+      await settle(page);
+    },
+    clip: (page) => clipSwitchRow(page, "Email applicants"),
+  },
+  {
+    name: "docs-billing",
+    url: `${APP_URL}/billing`,
+    viewport: { width: 1280, height: 1000 },
+  },
+];
+
+async function captureShot(shot, storageState) {
   for (const colorScheme of shot.themes ?? ["light"]) {
     const context = await browser.newContext({
       storageState,
@@ -732,7 +917,30 @@ for (const shot of shots(jobId)) {
   }
 }
 
-if (!ONLY || ONLY.includes("post")) await postShots(storageState);
-if (!ONLY || ONLY.includes("mcp-post")) await mcpPostShots(storageState, jobId);
+const storageState = await signIn();
+const jobId = await findJobId(storageState);
+await mkdir(OUT_DIR, { recursive: true });
+
+const onlyDocs = Boolean(ONLY?.includes("docs") || ONLY?.some((name) => name.startsWith("docs-")));
+const onlyDocsExclusive = ONLY?.length === 1 && ONLY[0] === "docs";
+const skipLander = onlyDocsExclusive || (ONLY && ONLY.every((name) => name.startsWith("docs-")));
+const skipPost = onlyDocsExclusive || (ONLY && !ONLY.includes("post") && !ONLY.includes("mcp-post"));
+
+if (!skipLander) {
+  for (const shot of shots(jobId)) {
+    if (ONLY && !ONLY.includes(shot.name)) continue;
+    await captureShot(shot, storageState);
+  }
+}
+
+if (!ONLY || onlyDocs) {
+  for (const shot of docsShots(jobId)) {
+    if (ONLY && !ONLY.includes("docs") && !ONLY.includes(shot.name)) continue;
+    await captureShot(shot, storageState);
+  }
+}
+
+if ((!ONLY && !skipPost) || ONLY?.includes("post")) await postShots(storageState);
+if ((!ONLY && !skipPost) || ONLY?.includes("mcp-post")) await mcpPostShots(storageState, jobId);
 
 await browser.close();

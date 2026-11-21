@@ -1,0 +1,489 @@
+{
+  "title": "Assistance",
+  "description": "Nous sommes là pour vous aider. Écrivez-nous, ou suivez un guide pour faire ce dont vous avez besoin dans Emploist.",
+  "contact": {
+    "title": "Écrivez-nous",
+    "description": "Une question, une suggestion ou quelque chose qui ne fonctionne pas ? Nous répondons généralement sous 24 heures.",
+    "copied": "Adresse e-mail copiée",
+    "copy": "Copier l’adresse e-mail"
+  },
+  "guideList": {
+    "title": "Guides",
+    "description": "Une aide pas à pas pour les principales fonctionnalités d’Emploist.",
+    "adminOnly": "Réservé aux administrateurs"
+  },
+  "topics": {
+    "jobsAndApplications": "Offres et candidatures",
+    "careersPage": "Page carrière",
+    "teamAndEmails": "Équipe et e-mails",
+    "aiAndBilling": "Évaluation par IA et facturation",
+    "aiAssistants": "Assistants IA"
+  },
+  "guides": {
+    "createJob": {
+      "title": "Créer et publier une offre",
+      "summary": "Décrivez le poste, enregistrez un brouillon, puis publiez l’offre.",
+      "steps": {
+        "start": {
+          "title": "Commencer une nouvelle offre",
+          "body": "Ouvrez <jobs>Offres</jobs> et cliquez sur <ui>Créer une offre</ui>."
+        },
+        "describe": {
+          "title": "Décrire le poste",
+          "body": "Dans l’onglet <ui>Détails</ui>, renseignez les champs <ui>Intitulé du poste</ui> et <ui>Description</ui>. Le département, le lieu, le mode de travail et le type d’emploi sont facultatifs. Les départements et les lieux que vous ajoutez vous sont proposés de nouveau pour les offres suivantes."
+        },
+        "formAndStages": {
+          "title": "Vérifier le formulaire et les étapes",
+          "body": "Les onglets <ui>Formulaire de candidature</ui> et <ui>Étapes</ui> sont déjà configurés et prêts à l’emploi. Vous pouvez les ajuster maintenant ou à tout moment par la suite."
+        },
+        "saveOrPublish": {
+          "title": "Enregistrer ou publier",
+          "body": "<ui>Enregistrer le brouillon</ui> garde l’offre visible uniquement par votre équipe. <ui>Publier</ui> la met en ligne sur votre page carrière."
+        }
+      }
+    },
+    "applicationForm": {
+      "title": "Créer le formulaire de candidature",
+      "summary": "Choisissez ce que les candidats remplissent lorsqu’ils postulent.",
+      "steps": {
+        "open": {
+          "title": "Ouvrir le formulaire",
+          "body": "Ouvrez l’onglet <ui>Formulaire de candidature</ui> d’une offre."
+        },
+        "essentials": {
+          "title": "Commencer par l’essentiel",
+          "body": "Tous les formulaires comportent les champs <ui>Nom complet</ui>, <ui>E-mail</ui> et <ui>CV</ui>. Vous pouvez les déplacer, mais pas les supprimer."
+        },
+        "addQuestions": {
+          "title": "Ajouter des questions",
+          "body": "Cliquez sur <ui>Ajouter</ui> et choisissez un type de question, comme <ui>Réponse courte</ui>, <ui>Choix unique</ui> ou <ui>Échelle linéaire</ui>. Ajoutez un <ui>Titre</ui> ou un <ui>Texte</ui> pour donner plus de contexte aux candidats."
+        },
+        "setUp": {
+          "title": "Configurer chaque question",
+          "body": "Cliquez sur une question pour la modifier, et activez <ui>Obligatoire</ui> si les candidats doivent y répondre. Faites glisser les questions, ou utilisez leur menu, pour changer leur ordre. Les questions marquées <ui>Incomplet</ui> doivent être terminées avant la publication."
+        },
+        "save": {
+          "title": "Enregistrer vos modifications",
+          "body": "Sur une offre existante, cliquez sur <ui>Enregistrer les modifications</ui>. Vos modifications ne s’appliquent qu’aux nouvelles candidatures. Les candidatures déjà reçues conservent les questions auxquelles les candidats ont répondu."
+        }
+      }
+    },
+    "stages": {
+      "title": "Configurer les étapes de recrutement",
+      "summary": "Définissez les étapes par lesquelles passe chaque candidature.",
+      "steps": {
+        "open": {
+          "title": "Ouvrir les étapes",
+          "body": "Ouvrez l’onglet <ui>Étapes</ui> d’une offre. Les nouvelles offres commencent avec les étapes <ui>Inbox</ui>, <ui>Interviewing</ui>, <ui>Accepted</ui> et <ui>Rejected</ui>."
+        },
+        "inbox": {
+          "title": "Découvrir la boîte de réception",
+          "body": "Les nouvelles candidatures arrivent dans la première étape, la boîte de réception (Inbox). Vous pouvez la renommer, mais elle reste toujours en première position et ne peut pas être supprimée."
+        },
+        "addRenameReorder": {
+          "title": "Ajouter, renommer et réorganiser",
+          "body": "Cliquez sur <ui>Ajouter une étape</ui> pour en ajouter une, ou choisissez <ui>Renommer</ui> dans le menu d’une étape. Faites glisser les étapes pour les placer dans l’ordre de votre processus de recrutement."
+        },
+        "delete": {
+          "title": "Supprimer une étape",
+          "body": "Choisissez <ui>Supprimer</ui> dans le menu d’une étape. Si elle contient des candidatures, vous choisirez vers quelle étape les déplacer."
+        }
+      }
+    },
+    "reviewApplications": {
+      "title": "Examiner les candidatures",
+      "summary": "Trouvez, lisez et faites avancer les candidatures dans vos étapes.",
+      "steps": {
+        "openJob": {
+          "title": "Ouvrir une offre",
+          "body": "Ouvrez une offre depuis <jobs>Offres</jobs>. Son onglet <ui>Candidatures</ui> affiche une pastille par étape, avec le nombre de candidatures qu’elle contient."
+        },
+        "find": {
+          "title": "Trouver qui examiner",
+          "body": "Recherchez par nom ou e-mail, et triez par <ui>Meilleure compatibilité</ui>, <ui>Plus récentes d’abord</ui> ou <ui>Plus anciennes d’abord</ui>. Le tri par meilleure compatibilité est disponible tant que les fonctionnalités IA sont activées."
+        },
+        "openApplication": {
+          "title": "Ouvrir une candidature",
+          "body": "Cliquez sur un nom pour ouvrir la candidature. Cliquez sur <ui>Voir le CV</ui> pour ouvrir le CV dans un nouvel onglet. Appuyez sur <ui>←</ui> ou <ui>→</ui> pour passer à la candidature précédente ou suivante."
+        },
+        "move": {
+          "title": "La déplacer vers une étape",
+          "body": "Choisissez une étape dans le menu <ui>Étape</ui> de la candidature, ou via <ui>Déplacer vers</ui> dans le menu d’une ligne. Si vous déplacez une candidature par erreur, cliquez sur <ui>Annuler</ui> dans le message qui s’affiche."
+        }
+      }
+    },
+    "comments": {
+      "title": "Commenter et mentionner des collègues",
+      "summary": "Échangez sur les candidats avec votre équipe et suivez les discussions.",
+      "steps": {
+        "write": {
+          "title": "Écrire un commentaire",
+          "body": "Ouvrez une candidature, écrivez dans le champ de commentaire et cliquez sur <ui>Commenter</ui>, ou appuyez sur <ui>{{shortcut}}</ui>. Seule votre équipe voit les commentaires.",
+          "shortcut": "Ctrl+Entrée",
+          "shortcutMac": "⌘+Entrée"
+        },
+        "mention": {
+          "title": "Mentionner quelqu’un",
+          "body": "Tapez <ui>@</ui> et choisissez un collègue pour le prévenir."
+        },
+        "replies": {
+          "title": "Suivre les réponses",
+          "body": "Vous recevez une notification lorsque quelqu’un vous mentionne ou commente une candidature que vous avez commentée. Retrouvez-les sous la cloche en haut de la page, ou dans <notifications>Notifications</notifications>."
+        },
+        "editOrDelete": {
+          "title": "Modifier ou supprimer",
+          "body": "Dans le menu d’un de vos commentaires, choisissez <ui>Modifier</ui> ou <ui>Supprimer</ui>. Les administrateurs peuvent aussi supprimer les commentaires de tout le monde."
+        }
+      }
+    },
+    "manageJob": {
+      "title": "Clôturer, archiver ou dupliquer une offre",
+      "summary": "Arrêtez de recevoir des candidatures, faites du tri ou réutilisez une offre.",
+      "steps": {
+        "closeOrReopen": {
+          "title": "Clôturer ou rouvrir",
+          "body": "Sur une offre publiée, utilisez le menu de statut en haut de la page : <ui>Clôturée</ui> arrête la réception des candidatures, et <ui>Ouverte</ui> la relance."
+        },
+        "duplicate": {
+          "title": "Dupliquer",
+          "body": "Choisissez <ui>Dupliquer</ui> dans le menu <ui>Plus d’actions</ui> d’une offre pour créer un brouillon avec les mêmes informations, le même formulaire et les mêmes étapes."
+        },
+        "archive": {
+          "title": "Archiver",
+          "body": "Choisissez <ui>Archiver</ui> dans <ui>Plus d’actions</ui> pour ranger une offre. Les offres archivées sont en lecture seule. Cliquez sur <ui>Restaurer</ui> pour en récupérer une."
+        },
+        "delete": {
+          "title": "Supprimer",
+          "body": "Choisissez <ui>Supprimer</ui> dans <ui>Plus d’actions</ui> pour supprimer définitivement une offre, ainsi que ses candidatures. Si vous souhaitez les conserver, archivez plutôt l’offre."
+        }
+      }
+    },
+    "exportApplications": {
+      "title": "Exporter les candidatures",
+      "summary": "Téléchargez les candidatures et les CV d’une offre.",
+      "steps": {
+        "start": {
+          "title": "Lancer l’export",
+          "body": "Sur une offre qui a des candidatures, ouvrez <ui>Plus d’actions</ui> et choisissez <ui>Exporter les candidatures</ui>."
+        },
+        "openZip": {
+          "title": "Ouvrir le fichier ZIP",
+          "body": "<ui>{{file}}</ui> est un tableur avec une ligne par candidature. Le dossier <ui>{{folder}}</ui> contient tous les CV, nommés d’après chaque candidat."
+        }
+      }
+    },
+    "customizeCareersPage": {
+      "title": "Personnaliser votre page carrière",
+      "summary": "Choisissez votre couleur ou modifiez le code de la page.",
+      "steps": {
+        "color": {
+          "title": "Choisir une couleur",
+          "body": "Ouvrez l’onglet <design>Design</design> de la page carrière, choisissez une <ui>Couleur principale</ui> et cliquez sur <ui>Enregistrer la couleur</ui>. Elle est utilisée pour les boutons et les éléments mis en avant."
+        },
+        "code": {
+          "title": "Modifier le code",
+          "body": "Cliquez sur <ui>Modifier le code</ui> pour changer les modèles et les styles de la page. <ui>Référence</ui> liste tout ce que vous pouvez y utiliser."
+        },
+        "preview": {
+          "title": "Prévisualiser au fur et à mesure",
+          "body": "L’aperçu se met à jour pendant que vous tapez. Utilisez <ui>Aller à la page</ui> pour vérifier chaque page, et basculez entre les tailles ordinateur et mobile."
+        },
+        "save": {
+          "title": "Enregistrer",
+          "body": "Cliquez sur <ui>Enregistrer</ui>. Pour repartir de zéro, choisissez <ui>Rétablir le code par défaut</ui> dans <ui>Plus d’actions</ui>."
+        }
+      }
+    },
+    "editCodeLocally": {
+      "title": "Modifier le code sur votre ordinateur",
+      "summary": "Travaillez dans votre propre éditeur, avec un aperçu en direct.",
+      "steps": {
+        "download": {
+          "title": "Télécharger le code",
+          "body": "Dans l’onglet <design>Design</design>, cliquez sur <ui>Télécharger le ZIP</ui> et décompressez-le."
+        },
+        "preview": {
+          "title": "Le prévisualiser",
+          "body": "Avec Node.js {{version}} ou une version ultérieure, exécutez <code>{{command}}</code> dans le dossier et ouvrez <code>{{url}}</code>. Votre page s’affiche avec des offres d’exemple. Rechargez-la après chaque modification."
+        },
+        "check": {
+          "title": "Rechercher les problèmes",
+          "body": "Exécutez <code>{{command}}</code> pour détecter les mêmes problèmes que lors de l’enregistrement."
+        },
+        "upload": {
+          "title": "L’importer",
+          "body": "Compressez les fichiers au format ZIP, cliquez sur <ui>Importer un ZIP</ui>, vérifiez l’aperçu et cliquez sur <ui>Enregistrer</ui>."
+        }
+      }
+    },
+    "changeAddress": {
+      "title": "Modifier l’adresse de votre page carrière",
+      "summary": "Déplacez votre page vers une nouvelle adresse Emploist.",
+      "steps": {
+        "open": {
+          "title": "Ouvrir l’adresse",
+          "body": "Ouvrez l’onglet <domain>Domaine</domain> de la page carrière et cliquez sur <ui>Modifier</ui>."
+        },
+        "choose": {
+          "title": "En choisir une nouvelle",
+          "body": "Saisissez l’adresse souhaitée. Nous vérifions sa disponibilité pendant que vous tapez."
+        },
+        "confirm": {
+          "title": "Confirmer la modification",
+          "body": "Cliquez sur <ui>Modifier l’adresse</ui>. Votre ancienne adresse cesse immédiatement de fonctionner, y compris les liens vers les offres que vous avez partagés, et une autre entreprise pourra ensuite l’utiliser."
+        }
+      }
+    },
+    "customDomain": {
+      "title": "Connecter votre propre domaine",
+      "summary": "Affichez votre page carrière à une adresse de votre site web.",
+      "steps": {
+        "add": {
+          "title": "Ajouter votre domaine",
+          "body": "Dans l’onglet <domain>Domaine</domain>, saisissez un sous-domaine de votre site web, comme careers.acme.com, et cliquez sur <ui>Ajouter le domaine</ui>. Les domaines principaux, comme acme.com, ne peuvent pas être connectés."
+        },
+        "records": {
+          "title": "Ajouter deux enregistrements DNS",
+          "body": "Là où vous gérez votre domaine, ajoutez les enregistrements <ui>CNAME</ui> et <ui>TXT</ui> affichés, à l’aide des boutons de copie. Sur Cloudflare, réglez l’enregistrement CNAME sur DNS only."
+        },
+        "wait": {
+          "title": "Attendre la vérification",
+          "body": "Les modifications apparaissent généralement en quelques minutes, mais peuvent prendre jusqu’à 48 heures. Dès que l’état <ui>Connecté</ui> s’affiche, votre page carrière est accessible sur votre domaine."
+        }
+      }
+    },
+    "inviteTeam": {
+      "title": "Inviter votre équipe",
+      "summary": "Ajoutez des collègues par e-mail et choisissez leur rôle.",
+      "steps": {
+        "send": {
+          "title": "Envoyer une invitation",
+          "body": "Ouvrez l’onglet <members>Membres</members> dans Paramètres, cliquez sur <ui>Inviter un membre</ui>, saisissez l’adresse e-mail de la personne et cliquez sur <ui>Envoyer l’invitation</ui>."
+        },
+        "role": {
+          "title": "Choisir un rôle",
+          "body": "Les <ui>Membres</ui> travaillent sur les offres et les candidatures. Les <ui>Administrateurs</ui> peuvent aussi gérer l’équipe, les paramètres de l’entreprise, la page carrière et la facturation."
+        },
+        "join": {
+          "title": "Votre collègue vous rejoint",
+          "body_one": "Votre collègue recevra un e-mail avec un lien pour vous rejoindre, valable {{count, number}} jour.",
+          "body_many": "Votre collègue recevra un e-mail avec un lien pour vous rejoindre, valable {{count, number}} de jours.",
+          "body_other": "Votre collègue recevra un e-mail avec un lien pour vous rejoindre, valable {{count, number}} jours."
+        },
+        "followUp": {
+          "title": "Assurer le suivi",
+          "body": "Les invitations sans réponse sont listées sous <ui>Invitations en attente</ui>. Dans le menu d’une invitation, choisissez <ui>Renvoyer l’invitation</ui> ou <ui>Annuler l’invitation</ui>."
+        }
+      }
+    },
+    "manageMembers": {
+      "title": "Gérer les rôles et les membres",
+      "summary": "Modifiez les rôles, retirez des personnes ou quittez une entreprise.",
+      "steps": {
+        "changeRole": {
+          "title": "Modifier un rôle",
+          "body": "Dans l’onglet <members>Membres</members> des paramètres, ouvrez le menu d’une personne et choisissez <ui>Définir comme administrateur</ui> ou <ui>Définir comme membre</ui>. Seuls les administrateurs peuvent modifier les rôles."
+        },
+        "remove": {
+          "title": "Retirer quelqu’un",
+          "body": "Choisissez <ui>Retirer de l’entreprise</ui> dans le menu de la personne. Elle perd immédiatement l’accès. Seuls les administrateurs peuvent retirer des personnes."
+        },
+        "leave": {
+          "title": "Quitter l’entreprise",
+          "body": "Choisissez <ui>Quitter l’entreprise</ui> dans votre propre menu. Si vous êtes le seul administrateur, définissez d’abord quelqu’un d’autre comme administrateur."
+        }
+      }
+    },
+    "deleteCompanyOrAccount": {
+      "title": "Supprimer votre entreprise ou votre compte",
+      "summary": "Supprimez définitivement votre entreprise, ou uniquement votre propre compte.",
+      "steps": {
+        "open": {
+          "title": "Ouvrir la zone de danger",
+          "body": "Ouvrez l’onglet <danger>Zone de danger</danger> dans Paramètres."
+        },
+        "deleteCompany": {
+          "title": "Supprimer l’entreprise",
+          "body": "Les administrateurs peuvent cliquer sur <ui>Supprimer l’entreprise</ui>. Tout son contenu est supprimé, y compris les offres, les candidatures et votre page carrière, et votre forfait est immédiatement résilié, sans remboursement."
+        },
+        "deleteAccount": {
+          "title": "Ou supprimer votre compte",
+          "body": "Cliquez sur <ui>Supprimer le compte</ui>. Si vous êtes le seul administrateur, définissez d’abord quelqu’un d’autre comme administrateur. Si vous êtes la seule personne de l’entreprise, celle-ci est également supprimée."
+        },
+        "confirm": {
+          "title": "Confirmer",
+          "body": "Saisissez le nom de l’entreprise ou votre adresse e-mail, puis cliquez sur le bouton de suppression. Cette action est irréversible."
+        }
+      }
+    },
+    "stageEmails": {
+      "title": "Envoyer des e-mails aux candidats à chaque étape",
+      "summary": "Informez les candidats lorsqu’ils postulent ou passent à l’étape suivante.",
+      "steps": {
+        "open": {
+          "title": "Ouvrir l’e-mail d’une étape",
+          "body": "Dans l’onglet <ui>Étapes</ui> d’une offre, cliquez sur <ui>Modifier l’e-mail</ui> à côté d’une étape."
+        },
+        "customize": {
+          "title": "Le personnaliser",
+          "body": "Chaque étape est fournie avec un e-mail prêt à l’emploi. Modifiez son <ui>Objet</ui> et son <ui>Message</ui>, et ajoutez des informations comme le prénom du candidat avec <ui>Ajouter une variable</ui>, ou en tapant <code>{{character}}</code>."
+        },
+        "preview": {
+          "title": "Prévisualiser et activer",
+          "body": "Vérifiez l’<ui>Aperçu</ui>, qui utilise un candidat fictif. Activez ensuite <ui>Envoyer cet e-mail</ui> et cliquez sur <ui>Enregistrer</ui>."
+        },
+        "timing": {
+          "title": "Savoir quand il est envoyé",
+          "body_one": "L’e-mail de la boîte de réception part dès qu’une personne postule. Les autres étapes attendent {{count, number}} minute après un déplacement : annuler le déplacement, ou déplacer de nouveau la candidature, annule donc l’e-mail.",
+          "body_many": "L’e-mail de la boîte de réception part dès qu’une personne postule. Les autres étapes attendent {{count, number}} de minutes après un déplacement : annuler le déplacement, ou déplacer de nouveau la candidature, annule donc l’e-mail.",
+          "body_other": "L’e-mail de la boîte de réception part dès qu’une personne postule. Les autres étapes attendent {{count, number}} minutes après un déplacement : annuler le déplacement, ou déplacer de nouveau la candidature, annule donc l’e-mail."
+        },
+        "pause": {
+          "title": "Suspendre tous les e-mails",
+          "body": "Les administrateurs peuvent désactiver <ui>Envoyer des e-mails aux candidats</ui> dans l’onglet <general>Général</general> des paramètres pour arrêter les e-mails de toutes les étapes."
+        }
+      }
+    },
+    "repliesLayout": {
+      "title": "Configurer les réponses et la mise en page des e-mails",
+      "summary": "Choisissez où arrivent les réponses et l’apparence des e-mails.",
+      "steps": {
+        "replyTo": {
+          "title": "Ajouter une adresse de réponse",
+          "body": "Dans <emails>E-mails</emails>, saisissez une <ui>Adresse de réponse</ui> que votre équipe consulte, puis cliquez sur <ui>Enregistrer l’adresse</ui>. Sans elle, les réponses des candidats ne vous parviendront pas."
+        },
+        "layout": {
+          "title": "Modifier la mise en page",
+          "body": "Tous les e-mails sont envoyés dans votre mise en page, avec votre logo et votre couleur principale. Cliquez sur <ui>Modifier le code</ui> pour changer son HTML, et conservez <code>{{placeholder}}</code> là où doit figurer le message de chaque étape."
+        },
+        "save": {
+          "title": "Enregistrer",
+          "body": "Cliquez sur <ui>Enregistrer</ui>. Pour repartir de zéro, choisissez <ui>Rétablir la mise en page par défaut</ui> dans <ui>Plus d’actions</ui>."
+        }
+      }
+    },
+    "matchScores": {
+      "title": "Comprendre les scores de compatibilité",
+      "summary": "Comment l’IA évalue les candidatures au regard de leur offre.",
+      "steps": {
+        "read": {
+          "title": "Lire le score",
+          "body": "Chaque candidature reçoit un score de compatibilité de 0 à 100 % au regard des informations de son offre."
+        },
+        "aspects": {
+          "title": "Comprendre ce qui l’explique",
+          "body": "Ouvrez une candidature pour voir ses scores en <ui>Compétences</ui>, <ui>Expérience</ui>, <ui>Séniorité</ui> et <ui>Qualifications</ui>. Les qualifications ne comptent que si l’offre demande des diplômes, des certifications ou des habilitations."
+        },
+        "useAsGuide": {
+          "title": "S’en servir comme repère",
+          "body": "Les scores vous aident à décider qui examiner en priorité. Utilisez-les en complément de votre propre examen, pas à sa place."
+        },
+        "noScore": {
+          "title": "En l’absence de score",
+          "body": "<ui>En évaluation</ui> signifie que l’évaluation est en cours, et <ui>Crédits requis</ui> que vous n’avez plus de crédits IA. <ui>Non évaluée</ui> signifie que la candidature n’a pas pu être évaluée, par exemple lorsque le CV est une image numérisée. Si l’évaluation a échoué, cliquez sur <ui>Réessayer</ui> dans la candidature."
+        },
+        "rankAgain": {
+          "title": "Réévaluer après des modifications",
+          "body": "Lorsque vous modifiez l’intitulé, le département, le type d’emploi ou la description d’une offre, choisissez <ui>Enregistrer et réévaluer</ui> pour réévaluer ses candidatures selon les nouvelles informations."
+        }
+      }
+    },
+    "aiSwitch": {
+      "title": "Activer ou désactiver l’évaluation par IA",
+      "summary": "Choisissez si vos candidatures sont évaluées par l’IA.",
+      "steps": {
+        "find": {
+          "title": "Trouver le réglage",
+          "body": "Dans l’onglet <general>Général</general> des paramètres, activez ou désactivez <ui>Évaluer les candidatures avec l’IA</ui>. Ce réglage s’applique à toute votre entreprise."
+        },
+        "whileOff": {
+          "title": "Pendant la désactivation",
+          "body": "Rien n’est envoyé à l’IA, les scores de compatibilité sont masqués et les nouvelles candidatures ne sont pas évaluées. Les scores précédents réapparaissent lorsque vous réactivez le réglage."
+        },
+        "turnOn": {
+          "title": "Le réactiver",
+          "body": "Si des candidatures sont arrivées entre-temps, vous choisirez de les évaluer, à raison d’un crédit chacune, ou de ne pas les évaluer."
+        },
+        "tellApplicants": {
+          "title": "Informer les candidats",
+          "body": "Tant que l’évaluation par IA est activée, la page carrière par défaut indique aux candidats que l’IA aide à examiner les candidatures. Si vous utilisez votre propre code, ajoutez cette mention vous-même."
+        }
+      }
+    },
+    "planCredits": {
+      "title": "Gérer votre forfait et vos crédits",
+      "summary": "Votre essai, votre abonnement et vos crédits IA.",
+      "credits_one": "{{count, number}} crédit",
+      "credits_many": "{{count, number}} de crédits",
+      "credits_other": "{{count, number}} crédits",
+      "steps": {
+        "startTrial": {
+          "title": "Démarrer votre essai gratuit",
+          "body_one": "Dans <billing>Facturation</billing>, choisissez <ui>Mensuel</ui> ou <ui>Annuel</ui>, puis cliquez sur <ui>Démarrer l’essai gratuit</ui>. Il dure {{count, number}} jour et inclut {{credits}}.",
+          "body_many": "Dans <billing>Facturation</billing>, choisissez <ui>Mensuel</ui> ou <ui>Annuel</ui>, puis cliquez sur <ui>Démarrer l’essai gratuit</ui>. Il dure {{count, number}} de jours et inclut {{credits}}.",
+          "body_other": "Dans <billing>Facturation</billing>, choisissez <ui>Mensuel</ui> ou <ui>Annuel</ui>, puis cliquez sur <ui>Démarrer l’essai gratuit</ui>. Il dure {{count, number}} jours et inclut {{credits}}."
+        },
+        "plan": {
+          "title": "Votre forfait",
+          "body": "Le forfait mensuel coûte {{monthlyPrice}} par mois, avec {{monthlyCredits}} chaque mois. Le forfait annuel coûte {{yearlyPrice}} par an, avec {{yearlyCredits}} versés en une fois. Les crédits inutilisés ne sont pas reportés. Cliquez sur <ui>Gérer l’abonnement</ui> pour mettre à jour votre carte, consulter vos factures ou résilier votre forfait."
+        },
+        "switchToYearly": {
+          "title": "Passer en annuel",
+          "body": "Dans <billing>Facturation</billing>, choisissez <ui>Annuel</ui> pour votre forfait, puis cliquez sur <ui>Passer en annuel</ui>. Vous payez {{price}} immédiatement, déduction faite des jours non utilisés de votre mois en cours. Si vous êtes en période d’essai gratuit, vous ne payez qu’à la fin de celle-ci."
+        },
+        "buyCredits": {
+          "title": "Acheter plus de crédits",
+          "body": "Chaque candidature évaluée par l’IA utilise un crédit. Pour en avoir plus, achetez un pack sous <ui>Acheter des crédits</ui>. Les crédits supplémentaires n’expirent jamais et sont utilisés après ceux de votre forfait."
+        },
+        "runOut": {
+          "title": "Si vous n’avez plus de crédits",
+          "body": "Les nouvelles candidatures restent en attente avec l’état <ui>Crédits requis</ui>. Dès que vous avez de nouveau des crédits, évaluez-les depuis l’avis affiché dans <jobs>Offres</jobs> ou <billing>Facturation</billing>, ou laissez-les sans évaluation."
+        },
+        "endTrial": {
+          "title": "Terminer votre essai plus tôt",
+          "body": "Si les crédits de votre essai sont épuisés, cliquez sur <ui>Terminer l’essai</ui> dans l’avis affiché dans <jobs>Offres</jobs> ou <billing>Facturation</billing>. Votre forfait démarre aujourd’hui, avec ses crédits."
+        },
+        "planStops": {
+          "title": "Si votre forfait s’arrête",
+          "body": "Sans forfait actif, Emploist est en lecture seule et votre page carrière n’accepte plus de candidatures. Votre équipe peut toujours tout consulter et exporter les candidatures, et les administrateurs peuvent se réabonner."
+        }
+      }
+    },
+    "connectAssistant": {
+      "title": "Connecter un assistant IA",
+      "summary": "Gérez vos offres et candidatures depuis Claude, ChatGPT et d’autres assistants.",
+      "steps": {
+        "choose": {
+          "title": "Choisir votre assistant",
+          "body": "Sur la page <mcp>MCP</mcp>, choisissez votre assistant sous <ui>Connecter votre assistant</ui>."
+        },
+        "follow": {
+          "title": "Suivre ses étapes",
+          "body": "Chaque assistant a ses propres étapes, avec l’adresse à coller ou la commande à copier là où vous en avez besoin."
+        },
+        "allow": {
+          "title": "Se connecter et autoriser",
+          "body": "Connectez-vous à Emploist lorsque votre assistant le demande, puis cliquez sur <ui>Autoriser</ui>. Votre assistant agit en votre nom, avec votre rôle."
+        },
+        "disconnect": {
+          "title": "Le déconnecter",
+          "body": "Pour arrêter un assistant, cliquez sur <ui>Déconnecter</ui> à côté de lui sous <ui>Assistants connectés</ui>, sur la page <mcp>MCP</mcp>."
+        }
+      }
+    },
+    "mcpSwitch": {
+      "title": "Activer ou désactiver le MCP",
+      "summary": "Choisissez si votre équipe peut utiliser Emploist depuis des assistants IA.",
+      "steps": {
+        "find": {
+          "title": "Trouver le bouton",
+          "body": "Dans l’onglet <general>Général</general> des paramètres, activez ou désactivez <ui>Permettre à votre équipe de connecter des assistants IA</ui>. Ce réglage s’applique à toute votre entreprise."
+        },
+        "whileOff": {
+          "title": "Tant qu’il est désactivé",
+          "body": "Les assistants ne peuvent pas utiliser Emploist et personne ne peut en connecter un nouveau. Les connexions sont conservées : ils fonctionneront de nouveau quand vous réactiverez le MCP."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+---
+title: "人事マネージャー向けChatGPTプラグインおすすめ"
+description: "2026年に人事が自分で追加できるChatGPTプラグイン。採用向けのEmploist MCPから始め、Notion、Slack、Zapierなども紹介します。"
+pubDate: 2026-11-21
+author: "Mighil Puthukkudy"
+image: ../images/top-chatgpt-plugins-for-hr-managers/cover.jpg
+imageAlt: "ノートPCで開いたChatGPT。背後にはぼかした都市の景色。"
+tags: ["AIアシスタント", "ガイド", "ChatGPT"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import emploistMcpPage from "../images/manage-hiring-from-claude/emploist-mcp-page.png";
+
+人事マネージャーは、いまChatGPTから採用を進められます。履歴書を空のチャットに貼り付けるやり方ではありません。すでに使っているツールとつながるプラグインを入れるだけです。
+
+ChatGPTでの**プラグイン**とは、[MCP](https://modelcontextprotocol.io/)経由で接続したアプリのことです。サーバーのURLを貼り付け、サインインし、チャットで`@`を使ってプラグインを指定します。候補者データはATSに残ります。モデルが誰かを動かす前に、確認を求めます。
+
+このリストは、ベンダーのチケット待ちなしで自分で追加できるプラグインに絞っています。Emploistを最初に挙げているのは、数分で接続でき、その場から実際に採用を進められるATSだからです。
+
+## 2026年のChatGPTプラグインとは？
+
+旧GPT StoreとClassic Pluginsは終わりつつあります。実務向けにOpenAIが案内しているのはカスタムMCPサーバーで、ChatGPTはそれをプラグインとして表示します。
+
+この変化は人事にとって重要です。PDFをアップロードしたCustom GPTは古くなりやすく、監査もしにくい。プラグインはあなたとしてサインインし、ロールで許可された範囲だけを見て、書き込みの前に確認します。
+
+何かを入れる前に、次の3点を確認してください。
+
+1. 自分で追加できるか？
+2. 貼り付けたCSVではなく、ライブの採用データに作用するか？
+3. 既存の権限の内側に収まるか？
+
+## 1. Emploist
+
+応募者のランキング、ステージ移動、求人の下書き、実パイプラインへのコメントをChatGPTに任せたいときにEmploistを使います。
+
+Emploistは、[採用ページ](/ja/#careers-page)、採用ステージ、求人ごとの[AIランキング](/ja/#ai-ranking)を備えた応募者管理です。ホストされたMCPサーバーは`https://mcp.emploist.com`にあります。同じサーバーはClaudeやほかのアシスタントでも使えます。
+
+自分で追加できます。Emploistで**MCP**を開き、**ChatGPT**タブを選びます。次にChatGPTで**Plugins**を開き、カスタムMCPサーバーを追加してそのURLを貼り付けます。求められたらEmploistでサインインします。APIキーは不要です。営業への連絡も不要です。
+
+アシスタントはあなたとして動きます。取得するのはEmploistのロールだけです。いつでもMCPページから切断できます。
+
+会社プラン1つでチーム全体をカバーします。有料の前に無料トライアルがあります。ChatGPTから応募をランキングしても、Emploist内でランキングするのと同じAIクレジットを使います。
+
+<Figure
+  src={emploistMcpPage}
+  url="app.emploist.com/mcp"
+  alt="EmploistのMCPページ。Claude、ChatGPT、その他のアシスタント用タブがあり、MCPサーバーアドレスhttps://mcp.emploist.comと接続済みアシスタントの一覧が表示されている。"
+  caption="EmploistのMCPページには、ChatGPT向けの手順と、ChatGPT Pluginsに貼り付けるアドレスがあります。"
+/>
+
+### ChatGPTにEmploistを追加する
+
+1. Emploistで**MCP**を開き、**ChatGPT**タブを選びます。
+2. WebのChatGPTで**Plugins**を開き、**+**をクリックして**Add custom MCP server**を選びます。
+3. 名前をEmploistにします。サーバーURLは次のとおりです。
+
+```
+https://mcp.emploist.com
+```
+
+4. OAuthを選び、信頼するサーバー向けの警告を受け入れてプラグインを作成します。
+5. インストールし、チャットを始めて`@`を入力し、Emploistを選びます。
+
+書き込みアクションは、デフォルトで確認を求めます。ステージ移動や新しい求人を承認する前に、内容を読んでください。
+
+### うまくいくプロンプト
+
+- "Using Emploist, which applicants for Senior Product Designer are the best matches, and why?"
+- "Move Priya Shah to Interviewing and leave a comment that her portfolio stood out."
+- "Draft a Product Marketing Manager job for Berlin, hybrid, and show me the form questions before we publish."
+
+より長いMCPの手順（ClaudeのUI、同じEmploistサーバー）は、[MCPでClaudeから採用を管理する方法](/ja/blog/how-to-manage-hiring-from-claude-with-mcp/)を読んでください。
+
+## 2. Notion
+
+ハンドブック、面接キット、オンボーディングのチェックリストがNotionにあるときに使います。
+
+ChatGPTは、ワークスペースがすでに信頼しているページを根拠に下書きできるので、去年のPDFではなく、いまのポリシーに合った答えになります。プランでNotionが使えるときは、ChatGPTのプラグインまたはアプリ設定から追加し、Notionでサインインします。
+
+報酬ページはボットが読めるスペースから外すか、先にNotionの共有設定を締めます。
+
+どう採用するかにはNotionを。誰を採用しているかにはEmploistを。
+
+## 3. Slack
+
+決定の経緯がATSよりチャンネルに多いときにSlackを使います。
+
+ChatGPTは、ロール用チャンネルのキャッチアップ、面接官向けアップデートの下書き、懸念が出たスレッドの検索に使えます。それは公式のステージ履歴ではなく、調整のための使い方です。
+
+Slackアカウントで接続します。すでに見られるワークスペースとチャンネルに限定してください。書き込みツールを信頼するまでは、読み取り中心のプロンプトがおすすめです。
+
+## 4. Zapier
+
+2つの人事ツールにまだ公式MCPがないときにZapierを使います。
+
+[Zapier MCP](https://zapier.com/)は、1つのコネクタ経由で何千ものアプリアクションを公開します。人事チームは、カレンダーの仮押さえ、スプレッドシートのログ、フォームからほかへのつなぎに使います。
+
+候補者の個人情報は短く管理します。最小権限、わかりやすいZap名、プロンプトに秘密を入れないこと。Zapierはつなぎ役です。ATSではありません。
+
+## 5. Breezy HR
+
+すでにBreezyで採用を回しているなら、BreezyのMCPを使います。
+
+Breezyの公式サーバーは、Breezyの権限の下で候補者とポジションをChatGPTに扱わせます。この経路では、ChatGPTは通常Businessプランが必要です。
+
+ChatGPT起点の採用スタックを選ぶ段階で、まだBreezyを使っていないなら、代わりにEmploistから始めてください。接続する製品のなかに、採用ページと読みやすいマッチスコアがそろいます。
+
+## 6. Greenhouse
+
+すでにCore、Plus、またはProを使っていて、ITが配線できるならGreenhouse MCPを使います。
+
+メモ、ステージ移動、スコアカード、スケジュールなど、Site Adminの範囲で扱えます。そのガバナンスはエンタープライズ向きです。「今日の午後に動かしたい」用途では、Emploistより下に置いている理由でもあります。管理者の設定と変更管理を想定してください。
+
+Greenhouseを使っているなら、ITにMCPの有効化を依頼してください。その待ち行列のない小さなチームで採用しているなら、Emploistのほうが短い道です。
+
+## 7. GustoまたはHiBob
+
+オファーのあとに、ヘッドカウント、入社日、有給の話になったらこれらを使います。
+
+給与とHCMのプラットフォームは、ピープルオプス向けにMCPサーバーを公開しています。採用中のATSの代わりにはなりません。すでに適切なHRIS権限があるアカウントだけで接続してください。
+
+## かんたん比較
+
+| プラグイン | 人事がセルフサーブできる？ | 採用アクション | いちばん向いている用途 |
+| --- | --- | --- | --- |
+| **Emploist** | はい。MCPのURLを貼ってサインイン。 | 求人、応募者、ステージ、コメント、ランキング | ChatGPTでの日々の採用 |
+| **Notion** | はい（ワークスペース権限あり） | ドキュメントと下書き | ポリシーと面接キット |
+| **Slack** | はい（ワークスペース権限あり） | 主に調整 | キャッチアップと関係者への更新 |
+| **Zapier** | はい | アプリ横断の自動化 | ツール同士のつなぎ |
+| **Breezy HR** | Breezy利用時は可（ChatGPTはBusiness） | ATSの読み書き | Breezyの内側で完結 |
+| **Greenhouse** | Site Adminが必要 | 深いATS、ガバナンスあり | エンタープライズのGreenhouse |
+| **Gusto / HiBob** | プランとロール次第 | 従業員と給与の文脈 | 採用後のピープルオプス |
+
+## ChatGPTにカスタムMCPプラグインを追加する
+
+1. **WebのChatGPT**を使います。カスタムMCPプラグインはまずそこで案内されています。
+2. **Plugins** → **Add custom MCP server**を開きます。
+3. ベンダーのURLを貼り付けます。Emploistなら`https://mcp.emploist.com`です。
+4. チャットにAPIキーを貼らないよう、**OAuth**を優先します。
+5. プラグインを作成してインストールし、新しい会話で`@`で指定します。
+6. 書き込みツールでは、承認する前に確認内容を読んでください。
+
+ワークスペースのルールは引き続き適用されます。Business、Enterprise、Eduの管理者は、アプリと書き込みアクションを制限できます。ボタンが見当たらないときは、まずATSベンダーではなく、ChatGPTの管理者にデベロッパーモードとプラグイン権限を確認してください。
+
+## 避けるもの
+
+- PDFをアップロードした履歴書専用のCustom GPT。古くなりやすく、監査しにくく、プラグインへ置き換えられつつあります。
+- ATSのAPIキーをモデルに貼らせるもの。代わりにOAuthのMCPサーバーを使ってください。
+- 根拠を見せないツール。デブリーフで説明できるマッチの内訳やスコアカードを優先してください。
+
+## 次の一歩
+
+[無料トライアルを始める](https://app.emploist.com/sign-in)、**MCP** → **ChatGPT**を開き、`https://mcp.emploist.com`をプラグインとして追加してください。いちばん合う応募者を尋ね、同じチャットから適任者を前に進めましょう。

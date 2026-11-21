@@ -26,11 +26,13 @@ const ko: Messages = {
     features: "기능",
     careersPage: "채용 페이지",
     aiAssistants: "AI 어시스턴트",
+    mcp: "MCP",
     /** The last item in the Features menu, after the feature sections. */
     moreFeatures: "그 밖의 기능",
     pricing: "요금제",
     faq: "FAQ",
     blog: "블로그",
+    docs: "문서",
     signIn: "로그인",
     startFreeTrial: "무료 체험 시작",
     menu: "메뉴",
@@ -49,6 +51,7 @@ const ko: Messages = {
     legal: "약관 및 정책",
     rssFeed: "RSS 피드",
     support: "고객 지원",
+    llmsTxt: "llms.txt",
     terms: "서비스 이용약관",
     privacy: "개인정보 처리방침",
     copyright: (year) => `© ${year} Emploist. All rights reserved.`,
@@ -61,8 +64,9 @@ const ko: Messages = {
 
   hero: {
     eyebrow: "AI가 순위를 매겨 주는 채용 관리",
-    title: "가장 잘 맞는 지원자부터 만나 보세요.",
+    title: "복잡한 ATS와 수동 필터 없이, 가장 잘 맞는 지원서를 바로 확인하세요",
     lead: "Emploist는 채용 페이지와 간편한 채용 파이프라인, 그리고 직무 설명을 기준으로 모든 지원서를 평가하는 AI를 제공해요. 지원서를 분류하는 시간은 줄이고, 잘 맞는 사람에게 더 많은 시간을 쓸 수 있어요.",
+    cta: "지원자 순위 매기기",
     seeHowItWorks: "작동 방식 보기",
     note: (p) => `${p.trialDays}일 무료 체험 후 월 ${f.usd(p.priceUsd)}. 사용자당 요금은 없어요.`,
     screenshotAlt:
@@ -125,7 +129,7 @@ const ko: Messages = {
     title: "첫날부터 바로 쓰는 채용 페이지.",
     lead: "모든 회사에 로고와 대표 색상이 적용된 빠르고 세련된 채용 페이지가 제공돼요. 새 채용 공고는 게시하는 즉시 페이지에 나타나고, 지원서는 해당 채용 공고의 받은편지함으로 바로 들어와요.",
     screenshotAlt:
-      "Northwind Labs의 채용 페이지. 회사 로고가 있는 헤더와 짧은 소개, 그리고 부서별로 묶인 채용 중인 포지션 목록과 부서 및 근무지 필터가 보여요.",
+      "Fieldnote Labs의 채용 페이지. 회사 로고가 있는 헤더와 짧은 소개, 그리고 부서별로 묶인 채용 중인 포지션 목록과 부서 및 근무지 필터가 보여요.",
     mobileScreenshotAlt:
       "휴대폰에서 본 채용 공고 페이지. Berlin 근무, 하이브리드, 정규직인 Senior Product Designer 공고로, “Apply for this job” 버튼과 직무 설명이 있어요.",
     facts: [
@@ -200,7 +204,7 @@ const ko: Messages = {
     editorScreenshotAlt:
       "Emploist의 ‘Interviewing’ 단계 이메일. 제목과 본문에 지원자 이름, 직무명, 회사명 변수가 쓰여 있어요.",
     previewScreenshotAlt:
-      "Sam이라는 지원자가 받은 완성된 이메일. 맨 위에 Northwind Labs가 있고, Senior Product Designer 포지션 면접에 초대하는 개인화된 메시지와 채용 중인 포지션 링크가 있어요.",
+      "Sam이라는 지원자가 받은 완성된 이메일. 맨 위에 Fieldnote Labs가 있고, Senior Product Designer 포지션 면접에 초대하는 개인화된 메시지와 채용 중인 포지션 링크가 있어요.",
   },
 
   aiAssistants: {
@@ -237,6 +241,107 @@ const ko: Messages = {
       placeholder: "채용 공고와 지원자에 대해 물어보세요",
     },
     caption: "팀원 각자가 몇 단계만 거치면 자신의 어시스턴트를 연결할 수 있어요.",
+  },
+
+  /** The /mcp/ landing page. */
+  mcp: {
+    description:
+      "MCP로 Claude, ChatGPT, 그 밖의 AI 어시스턴트를 Emploist에 연결하세요. 채팅에서 지원자에게 질문하고, 단계를 옮기고, 채용 공고를 만들 수 있어요. 권한은 내 계정 그대로예요.",
+    eyebrow: "MCP",
+    heading: "이미 쓰는 채팅에서 채용하세요.",
+    lead: "MCP는 Emploist를 Claude, ChatGPT, 그 밖의 어시스턴트와 연결해요. 평범한 말로 물어보면, 어시스턴트가 내 권한으로 Emploist에서 작업을 처리해요.",
+    whatTitle: "MCP란?",
+    whatLead:
+      "MCP는 Model Context Protocol의 줄임말이에요. AI 어시스턴트가 다른 앱을 안전하게 쓸 수 있게 하는 열린 방식이에요.",
+    whatPoints: [
+      {
+        title: "새 제품이 아니라 연결 고리예요.",
+        text: "채용 공고와 지원자는 여전히 Emploist에 있어요. MCP는 어시스턴트가 그곳에 닿는 길이에요.",
+      },
+      {
+        title: "서버 주소는 하나.",
+        text: "Emploist가 호스팅하는 MCP 서버는 mcp.emploist.com이에요. Claude, ChatGPT, 또는 MCP를 지원하는 다른 클라이언트에 그 주소를 붙여넣으면 돼요.",
+      },
+      {
+        title: "요금제에 포함돼요.",
+        text: "팀원 누구나 자신의 어시스턴트를 연결할 수 있어요. 채팅에서 지원서를 평가해도 Emploist에서와 똑같이 AI 크레딧 1개를 사용해요.",
+      },
+    ],
+    howTitle: "작동 방식",
+    howSteps: [
+      {
+        title: "한 번만 연결하세요.",
+        text: "Emploist에서 MCP를 열고, 어시스턴트를 고른 뒤 안내를 따르세요. 요청받으면 Emploist로 로그인하면 돼요. 복사할 API 키는 없어요.",
+      },
+      {
+        title: "채팅에서 물어보세요.",
+        text: "Emploist를 언급한 뒤, 누가 포지션에 맞는지, 다음 단계로 옮기기, 댓글 남기기, 채용 공고 초안 작성을 요청하세요.",
+      },
+      {
+        title: "Emploist가 실행해요.",
+        text: "어시스턴트는 내 로그인으로 Emploist 도구를 호출해요. 쓰기 작업은 적용되기 전에 확인을 받아요.",
+      },
+    ],
+    canDoTitle: "이런 걸 물어볼 수 있어요",
+    canDo: [
+      "Senior Product Designer 공고에 가장 잘 맞는 지원자는 누구예요?",
+      "Priya를 Phone screen 단계로 옮기고, 단계 이메일이 언제 발송되는지 알려 주세요.",
+      "오늘 새로 들어온 지원서를 요약해 주세요.",
+      "Berlin용 고객 지원 채용 공고 초안을 만들고, 게시하기 전에 양식을 보여 주세요.",
+      "Sara의 지원서에 Priya를 위한 댓글을 남겨 주세요.",
+    ],
+    connectTitle: "어시스턴트 연결",
+    connectLead: "Emploist의 MCP 페이지에는 클라이언트별 탭이 있어요. 서버 URL은 어디서나 같아요.",
+    serverUrl: "https://mcp.emploist.com",
+    connectClients: [
+      {
+        name: "Claude",
+        text: "Claude에서 Customize → Connectors를 열고, 커스텀 커넥터를 추가한 뒤 URL을 붙여넣고 Emploist에 로그인하세요.",
+      },
+      {
+        name: "ChatGPT",
+        text: "웹의 ChatGPT에서 Plugins를 열고, 커스텀 MCP 서버를 추가한 뒤 URL을 붙여넣고 플러그인을 만든 다음, @로 멘션하세요.",
+      },
+      {
+        name: "다른 클라이언트",
+        text: "Cursor, VS Code, Claude Code, 그 밖의 MCP 클라이언트도 같은 URL을 사용해요. Emploist의 MCP 페이지에 각 단계가 안내되어 있어요.",
+      },
+    ],
+    controlTitle: "통제권은 그대로",
+    controlPoints: [
+      {
+        title: "내 역할까지만.",
+        text: "어시스턴트는 Emploist에서 내가 이미 할 수 있는 일만 할 수 있어요. 결제, 팀 초대, 회사 삭제는 손댈 수 없어요.",
+      },
+      {
+        title: "쓰기는 승인 후.",
+        text: "지원자를 옮기거나 채용 공고를 만들 때는 먼저 확인을 받아요. 이상해 보이면 거절하면 돼요.",
+      },
+      {
+        title: "언제든 연결 해제.",
+        text: "MCP 페이지에서 어시스턴트 연결을 해제하면 바로 멈춰요. 관리자는 회사 전체에서 MCP를 끌 수도 있어요.",
+      },
+    ],
+    worksWith: "함께 사용",
+    guidesTitle: "가이드",
+    guidesLead: "단계별 설정과 예시예요.",
+    guideClaude: "Claude와 MCP로 채용 관리하기",
+    guideChatgpt: "HR 매니저를 위한 ChatGPT 플러그인",
+    guideDocs: "AI 어시스턴트 연결하기",
+    cta: "AI 어시스턴트 연결하기",
+    copySetup: "MCP 설정 복사",
+    copiedSetup: "복사됨",
+    setupCopy: (u: { mcpDocs: string; serverUrl: string }) =>
+      `Emploist는 채용 관리 소프트웨어예요. 이 파일은 AI 어시스턴트에게 Emploist MCP 서버에 연결하는 방법과, 연결 후 할 수 있는 일을 알려 줘요.
+
+이 채팅에서 채용을 관리할 수 있도록 Emploist MCP 서버에 연결하세요.
+
+MCP Docs: ${u.mcpDocs}
+Server URL: ${u.serverUrl}
+Authentication: OAuth (요청받으면 Emploist로 로그인)
+
+연결 후 Emploist의 채용 공고와 지원자를 도와 주세요. 지원서 목록과 평가, 단계 간 이동, 댓글, 채용 공고 생성과 게시를 할 수 있어요. 내 Emploist 권한 안에서만 작업하세요. 쓰기 작업 전에는 반드시 확인하세요.
+`,
   },
 
   details: {
@@ -404,6 +509,16 @@ const ko: Messages = {
     blog: "블로그 읽기",
   },
 
+  docs: {
+    title: "Emploist 문서",
+    lead: "공식 문서를 따라 Emploist에서 필요한 작업을 진행하세요.",
+    copyMarkdown: "마크다운 복사",
+    copied: "복사됨",
+    discussWith: "함께 보기",
+    discussPrompt: (title, url) =>
+      `이 Emploist 가이드를 도와주세요: "${title}". ${url}을(를) 읽고 질문에 답해 주세요.`,
+  },
+
   blog: {
     title: "블로그",
     description: "채용, 채용 페이지, 지원자 관리에 관한 가이드와 Emploist 팀의 제품 소식을 전해요.",
@@ -423,6 +538,7 @@ const ko: Messages = {
     ctaText: (p) =>
       `${p.trialDays}일 동안 Emploist를 무료로 사용해 보세요. 이후에는 팀 전체가 월 ${f.usd(p.priceUsd)}에 이용할 수 있어요.`,
     defaultAuthor: "Emploist 팀",
+    writtenBy: (name) => `${name} 작성`,
   },
 
   listedOn: {

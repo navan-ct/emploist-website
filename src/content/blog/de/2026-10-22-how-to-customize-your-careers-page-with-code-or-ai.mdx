@@ -1,0 +1,272 @@
+---
+title: "So passen Sie Ihre Karriereseite mit Code oder KI an"
+description: "Ihre Karriereseite im Look Ihrer Website: Bearbeiten Sie den Code in Emploist mit Live-Vorschau oder überlassen Sie das einem KI-Assistenten wie Claude."
+pubDate: 2026-10-22
+author: "Navaneeth CT"
+image: ../images/customize-careers-page/cover.png
+imageAlt: "Eine neu gestaltete Karriereseite neben dem Code-Editor von Emploist."
+tags: ["Karriereseite", "Anleitungen"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import careersBefore from "../images/customize-careers-page/careers-before.png";
+import careersAfter from "../images/customize-careers-page/careers-after.png";
+import careersAfterMobile from "../images/customize-careers-page/careers-after-mobile.png";
+import claudePrompt from "../images/customize-careers-page/claude-prompt.png";
+import claudeReply from "../images/customize-careers-page/claude-reply.png";
+import designTab from "../images/customize-careers-page/design-tab.png";
+import editor from "../images/customize-careers-page/editor.png";
+import editorFont from "../images/customize-careers-page/editor-font.png";
+import editorHeadline from "../images/customize-careers-page/editor-headline.png";
+import editorMenu from "../images/customize-careers-page/editor-menu.png";
+import editorMobile from "../images/customize-careers-page/editor-mobile.png";
+import editorProblem from "../images/customize-careers-page/editor-problem.png";
+import editorReference from "../images/customize-careers-page/editor-reference.png";
+import editorUpload from "../images/customize-careers-page/editor-upload.png";
+
+Ihre Karriereseite ist oft der erste echte Eindruck, den Bewerbende von Ihrem Unternehmen bekommen. Wenn sie aussieht wie der Rest Ihrer Website, mit denselben Schriftarten, Farben und derselben Tonalität, wirkt sie wie ein Teil Ihrer Marke und nicht wie eine Seite aus einem Recruiting-Tool.
+
+Jedes Unternehmen auf Emploist erhält eine [Karriereseite, die ab dem ersten Tag startklar ist](/de/#careers-page), mit dem eigenen Logo und der eigenen Farbe. Wenn Ihnen das nicht reicht, können Sie das gesamte Erscheinungsbild ändern, indem Sie den Code bearbeiten. Das klingt technisch, aber Sie müssen dafür nicht programmieren können. Diese Anleitung zeigt zwei Wege:
+
+1. [**Code in Emploist bearbeiten.**](#option-1-code-in-emploist-bearbeiten) Ideal für kleine Änderungen, etwa eine neue Überschrift oder Schriftart. Jede Änderung sehen Sie schon beim Tippen in einer Live-Vorschau.
+2. [**Einen KI-Assistenten beauftragen.**](#option-2-einen-ki-assistenten-beauftragen) Ideal für größere Änderungen, etwa einen neuen Abschnitt. Sie laden den Code herunter, beschreiben in einfachen Worten, was Sie möchten, und laden hoch, was der Assistent Ihnen zurückschickt.
+
+Wir zeigen beides am Beispiel von Fieldnote Labs, einem fiktiven Unternehmen. So sieht seine Karriereseite aus, bevor wir loslegen.
+
+<Figure
+  src={careersBefore}
+  url="fieldnote.emploist.com"
+  alt="Die Karriereseite von Fieldnote Labs im Standarddesign: ein Header mit dem Logo, die große Überschrift „Join Fieldnote Labs“ mit einer kurzen Unternehmensbeschreibung und eine Liste offener Stellen mit Filtern für Abteilung und Standort."
+  caption="Die Karriereseite von Fieldnote Labs im Standarddesign von Emploist."
+/>
+
+## Was Sie ändern können
+
+Ihre Karriereseite besteht aus sechs Dateien. Jede davon ist eine kleine Textdatei, die Sie öffnen und bearbeiten können:
+
+| Datei | Was sie steuert |
+| --- | --- |
+| `layout.liquid` | Den Rahmen um jede Seite: Header, Footer und alles, was auf jeder Seite geladen wird, z. B. Schriftarten |
+| `jobs.liquid` | Die Hauptseite mit Ihrer Einleitung und der Liste offener Stellen |
+| `job.liquid` | Die Seite einer einzelnen Stelle |
+| `apply.liquid` | Das Bewerbungsformular |
+| `applied.liquid` | Die Dankeseite, die Bewerbende nach dem Absenden sehen |
+| `styles.css` | Das gesamte Aussehen: Farben, Schriftarten, Größen und Abstände |
+
+Die Dateien verwenden drei einfache Sprachen. **HTML** legt fest, was auf der Seite steht, etwa Überschriften und Schaltflächen. **CSS** legt fest, wie es aussieht. **Liquid** fügt Platzhalter hinzu, z. B. `{{ company.name }}`, die Emploist durch den Namen Ihres Unternehmens, Ihre Stellen und andere Details ersetzt, wenn Bewerbende die Seite öffnen.
+
+Beim Ausprobieren können Sie Ihre Karriereseite nicht kaputt machen:
+
+- Für Bewerbende ändert sich nichts, bis Sie auf **Speichern** klicken.
+- Emploist prüft Ihren Code vor dem Speichern und sagt Ihnen, was Sie korrigieren müssen, falls etwas nicht stimmt.
+- Sie können jederzeit zum Standarddesign zurückkehren.
+
+Melden Sie sich zunächst als Admin an und öffnen Sie in der Seitenleiste **Karriereseite**. Im Tab **Design** finden Sie die Farbe Ihrer Seite und ihren Code. Wenn Sie nur Ihre Markenfarbe brauchen, wählen Sie sie unter **Primärfarbe** aus, und schon sind Sie fertig. Ganz ohne Code.
+
+<Figure
+  src={designTab}
+  alt="Der Tab „Design“ der Karriereseiten-Einstellungen in Emploist: eine Farbauswahl „Primary color“ und ein Bereich „Code“ mit den Schaltflächen „Edit code“, „Download ZIP“ und „Upload ZIP“."
+  caption="Karriereseite → Design. Im Bereich „Code“ finden Sie alles, was diese Anleitung verwendet."
+/>
+
+## Option 1: Code in Emploist bearbeiten
+
+### Editor öffnen
+
+Klicken Sie auf **Code bearbeiten**. Links sehen Sie den Code Ihrer Seite, mit einem Tab für jede Datei und einem kurzen Hinweis, wofür die Datei da ist. Rechts sehen Sie eine Live-Vorschau Ihrer Karriereseite mit Beispielstellen.
+
+<Figure
+  src={editor}
+  alt="Der Code-Editor von Emploist: links die Datei-Tabs und der Code von layout.liquid, rechts eine Live-Vorschau der Karriereseite."
+  caption="Der Code-Editor. Die Vorschau rechts aktualisiert sich, während Sie tippen."
+/>
+
+Über der Vorschau wechseln Sie mit **Seite wählen** zwischen allen Seiten, die Bewerbende sehen können: der Stellenliste, einer Stelle, dem Bewerbungsformular, der Dankeseite, einer geschlossenen Stelle und „Seite nicht gefunden“. Auch ein Klick auf den Tab einer Datei zeigt die Seite, die sie steuert.
+
+### Überschrift ändern
+
+Klicken Sie auf den Tab `jobs.liquid`. In Zeile 3 steht die große Überschrift oben auf der Seite:
+
+```liquid
+<h1 class="hero-title">Join {{ company.name }}</h1>
+```
+
+Ändern Sie das Wort „Join“ in „Build what's next at“. Lassen Sie `{{ company.name }}` unverändert: Dort setzt Emploist den Namen Ihres Unternehmens ein. Kurz nachdem Sie aufhören zu tippen, zeigt die Vorschau die neue Überschrift.
+
+<Figure
+  src={editorHeadline}
+  alt="Die Datei jobs.liquid im Editor mit der geänderten Überschrift „Build what's next at {{ company.name }}“ und die Vorschau mit „Build what's next at Fieldnote Labs“."
+  caption="Bearbeiten Sie den Text zwischen den Tags, und die Vorschau zieht mit."
+/>
+
+### Eigene Schriftart verwenden
+
+Für eine neue Schriftart sind zwei kleine Änderungen nötig. Wir verwenden Fraunces, eine kostenlose Schriftart von [Google Fonts](https://fonts.google.com).
+
+1. **Schriftart laden.** Öffnen Sie die Schriftart auf Google Fonts, klicken Sie auf **Get font** und dann auf **Get embed code**, und kopieren Sie die `<link>`-Zeile, die `fonts.googleapis.com/css2` enthält. Fügen Sie sie in `layout.liquid` in einer neuen Zeile direkt über der Zeile ein, die `stylesheet_url` enthält:
+
+   ```html
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&display=swap">
+   ```
+
+2. **Schriftart verwenden.** Suchen Sie in `styles.css` weit oben die Zeile, die mit `--font:` beginnt, und setzen Sie den Namen der Schriftart in Anführungszeichen an den Anfang der Liste, gefolgt von einem Komma:
+
+   ```css
+   --font: "Fraunces", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+   ```
+
+   Die anderen Schriftarten in der Liste dienen als Ersatz, falls ein Browser Ihre nicht laden kann.
+
+<Figure
+  src={editorFont}
+  alt="Die Datei styles.css im Editor mit Fraunces in der Zeile --font und die Vorschau, die die Karriereseite in der Schriftart Fraunces zeigt."
+  caption="Fraunces wird jetzt überall auf der Seite verwendet."
+/>
+
+### Auf dem Smartphone prüfen
+
+Viele Bewerbende öffnen Ihre Karriereseite auf dem Smartphone. Klicken Sie auf das Smartphone-Symbol über der Vorschau, um die Seite in Smartphone-Größe zu sehen.
+
+<Figure
+  src={editorMobile}
+  alt="Die Vorschau des Editors in Smartphone-Größe: die Karriereseite mit der neuen Überschrift und Schriftart in einer schmalen Spalte."
+  caption="Mit dem Smartphone-Symbol sehen Sie die Vorschau in Smartphone-Größe."
+/>
+
+### Fehler beheben, bevor sie live gehen
+
+Wenn eine Änderung etwas kaputt macht, meldet Emploist das sofort. Der Tab der Datei erhält eine rote Markierung, die Vorschau zeigt statt der Seite, was schiefgelaufen ist, und eine Liste unter dem Code nennt das Problem und die Zeile. Klicken Sie auf ein Problem, um direkt dorthin zu springen. Meist ist es ein Tippfehler oder ein fehlendes schließendes Tag, und wenn Sie Ihre letzte Änderung rückgängig machen (<kbd>Cmd</kbd>+<kbd>Z</kbd> auf dem Mac, <kbd>Strg</kbd>+<kbd>Z</kbd> unter Windows), ist das Problem in der Regel behoben.
+
+<Figure
+  src={editorProblem}
+  alt="Der Editor mit einem Problem: Der Tab jobs.liquid hat eine rote Markierung, Zeile 4 ist unterstrichen, die Vorschau meldet, dass die Seite nicht angezeigt werden konnte, und eine Liste unter dem Code zeigt 1 Problem, das vor dem Speichern behoben werden muss: jobs.liquid, Zeile 4, Tag nicht geschlossen."
+  caption="Wer versehentlich ein {% endif %} löscht, lässt das zugehörige {% if %} offen, und Emploist zeigt auf die genaue Zeile."
+/>
+
+Solange es Probleme gibt, können Sie nicht speichern. So sehen Bewerbende nie eine fehlerhafte Seite.
+
+### Nachschlagen, was Sie verwenden können
+
+Klicken Sie oben im Editor auf **Referenz**, um alle verfügbaren Platzhalter zu sehen, etwa den Standort einer Stelle oder die Beschreibung Ihres Unternehmens, jeweils mit einem Hinweis, was sie anzeigen.
+
+<Figure
+  src={editorReference}
+  alt="Das Referenz-Panel, über dem Editor geöffnet, mit Platzhaltern wie company.name und company.description und dem, was sie jeweils anzeigen."
+  caption="Die Referenz listet alles auf, was die Templates anzeigen können."
+/>
+
+### Änderungen speichern
+
+Wenn Ihnen die Vorschau gefällt, klicken Sie auf **Speichern**. Ihre Karriereseite wird für Bewerbende sofort aktualisiert.
+
+Sie haben es sich anders überlegt? Im Menü **Weitere Aktionen** (die drei Punkte neben **Verwerfen**) finden Sie **Auf Standardcode zurücksetzen**, womit Sie das Standarddesign von Emploist wiederherstellen. Wie bei jeder Änderung passiert auf Ihrer Karriereseite nichts, bis Sie speichern.
+
+<Figure
+  src={editorMenu}
+  frame="plain"
+  narrow
+  alt="Das Menü „More actions“ im Editor mit „Download ZIP“, „Upload ZIP“ und „Reset to default code“."
+  caption="Weitere Aktionen: den Code als ZIP herunter- oder hochladen oder von vorn beginnen."
+/>
+
+## Option 2: Einen KI-Assistenten beauftragen
+
+Für größere Änderungen, etwa einen neuen Abschnitt oder ein anderes Layout, ist es oft einfacher, zu beschreiben, was Sie möchten, und den Code von einem KI-Assistenten schreiben zu lassen. Wir verwenden [Claude](https://claude.ai), aber jeder Assistent, der Dateien lesen und zurückschicken kann, funktioniert ganz ähnlich.
+
+### Code herunterladen
+
+Klicken Sie im Tab **Design** auf **ZIP herunterladen**. Sie erhalten eine Datei namens `careers-page.zip` mit:
+
+- **Ihren sechs Dateien**, mit allen Änderungen, die Sie gespeichert haben.
+- **Einer Anleitung, `README.md`**, die die Regeln für Karriereseiten und alle verfügbaren Platzhalter erklärt. Sie hilft einem KI-Assistenten, den Code auf Anhieb richtig zu schreiben.
+- **Einem Vorschau-Kit** (`preview.mjs` und `company.json`), mit dem Sie die Seite auf Ihrem Computer ansehen können. Es ist optional, mehr dazu [am Ende](#vorschau-auf-ihrem-computer-optional).
+
+Sie müssen die Datei nicht entpacken: Claude kann die ZIP-Datei direkt lesen.
+
+### Änderungen anfordern
+
+Öffnen Sie [claude.ai](https://claude.ai), starten Sie einen neuen Chat und hängen Sie `careers-page.zip` über die Schaltfläche **+** an. Beschreiben Sie dann in einfachen Worten, was Sie möchten, so wie Sie es einer Designerin oder einem Designer erklären würden. So lautete unsere Anfrage:
+
+> Hier ist der Code unserer Karriereseite auf Emploist. Bitte gestalte die Stellenübersicht wärmer und einladender: eine größere Einleitung mit einem Button zu den offenen Stellen und einen Abschnitt „Why join us“ mit ein paar Benefits (Remote-Arbeit, Weiterbildungsbudget, 30 Urlaubstage, Team-Offsites). Halte dich an README.md und schick mir eine ZIP-Datei zurück, die ich hochladen kann.
+
+<Figure
+  src={claudePrompt}
+  frame="plain"
+  narrow
+  alt="Ein neuer Chat auf claude.ai mit angehängter careers-page.zip und der Bitte um eine wärmere Stellenübersicht mit größerer Einleitung und einem Abschnitt „Why join us“."
+  caption="Hängen Sie die ZIP-Datei an und beschreiben Sie, was Sie möchten."
+/>
+
+Wenn Sie darum bitten, `README.md` zu befolgen und eine ZIP-Datei zurückzuschicken, sparen Sie sich ein paar Runden Hin und Her.
+
+### Aktualisierten Code erhalten
+
+Claude brauchte etwa vier Minuten, um die Anleitung und den Code zu lesen, die Änderungen vorzunehmen und anschließend die eigene Arbeit zu prüfen: Mit dem Vorschau-Kit sah sich Claude die Seite in Desktop- und Smartphone-Größe an und führte dieselbe Prüfung aus, die Emploist vor dem Speichern durchführt. Danach kam eine neue `careers-page.zip` zurück, mit einer Zusammenfassung der Änderungen:
+
+- **Eine größere, wärmere Einleitung** mit einer neuen Überschrift, einem einladenden Satz und einer Schaltfläche **„See open roles“** (Offene Stellen ansehen), die zur Liste springt.
+- **Ein Abschnitt „Why join us“** mit vier Karten: Remote-Arbeit, Weiterbildungsbudget, 30 Urlaubstage und Team-Offsites.
+- **Kleine Verbesserungen bei den offenen Stellen**, etwa eine kurze Einleitung über der Liste.
+
+<Figure
+  src={claudeReply}
+  frame="plain"
+  narrow
+  alt="Claudes Antwort auf claude.ai: careers-page.zip ist bereit zum Hochladen, eine Liste der Änderungen in jobs.liquid und styles.css, ein Hinweis, dass die neue Überschrift fester Text ist, und die ZIP-Datei mit einer Download-Schaltfläche."
+  caption="Claude erklärt die Änderungen und schickt eine ZIP-Datei zum Herunterladen zurück."
+/>
+
+Lesen Sie die Zusammenfassung, bevor Sie hochladen. In unserem Fall wies Claude darauf hin, unsere neue Überschrift durch eine eigene ersetzt zu haben („Come build what's next with us“), und nannte die Zeile, in der wir sie ändern können. Die Benefits hielt Claude außerdem allgemein und erfand keine Details wie die Höhe des Weiterbildungsbudgets, sodass wir unsere eigenen ergänzen konnten.
+
+Wenn das Ergebnis noch nicht ganz passt, führen Sie das Gespräch einfach fort: „Mach den Button grün“, „Füge einen Benefit zur Krankenversicherung hinzu“ oder „Kürze die Einleitung“. Bitten Sie zum Schluss um die aktualisierte ZIP-Datei.
+
+### In Emploist hochladen
+
+Klicken Sie wieder im Tab **Design** auf **ZIP hochladen** und wählen Sie die ZIP-Datei von Claude aus. Emploist öffnet den Editor mit dem neuen Code, speichert ihn aber noch nicht. So können Sie alles prüfen, bevor sich für Bewerbende etwas ändert.
+
+<Figure
+  src={editorUpload}
+  alt="Der Editor direkt nach dem Hochladen der ZIP-Datei: Der Status lautet „Unsaved changes“, eine Meldung besagt, dass die Dateien aus careers-page.zip geladen wurden und man die Vorschau prüfen und dann speichern soll, und die Vorschau zeigt die neu gestaltete Einleitung mit einer Schaltfläche „See open roles“."
+  caption="Der hochgeladene Code öffnet sich im Editor, bereit zur Prüfung."
+/>
+
+Prüfen Sie mit **Seite wählen** und dem Smartphone-Symbol jede Seite. Wenn etwas nicht stimmt, korrigieren Sie es im Editor oder fragen Sie Claude erneut. Wenn alles gut aussieht, klicken Sie auf **Speichern**.
+
+## Das Ergebnis
+
+So sieht die Karriereseite von Fieldnote Labs nach beiden Änderungen aus: mit der Schriftart Fraunces aus dem Editor und dem Redesign von Claude. Vergleichen Sie sie mit dem Standarddesign am Anfang dieser Anleitung.
+
+<Figure
+  src={careersAfter}
+  url="fieldnote.emploist.com"
+  alt="Die neu gestaltete Karriereseite von Fieldnote Labs in der Schriftart Fraunces: das Label „Careers at Fieldnote Labs“, die Überschrift „Come build what's next with us“, die Unternehmensbeschreibung, ein einladender Satz, eine Schaltfläche „See open roles“ mit der Anzahl offener Stellen und ein Abschnitt „Why join us“ mit vier Karten: „Remote-friendly“, „Learning budget“, „30 days off“ und „Team offsites“."
+  caption="Die fertige Karriereseite. Die offenen Stellen folgen weiter unten."
+/>
+
+Und auf dem Smartphone:
+
+<Figure
+  src={careersAfterMobile}
+  frame="plain"
+  narrow
+  alt="Die neu gestaltete Karriereseite auf einem Smartphone: die Überschrift, die Unternehmensbeschreibung und eine Schaltfläche „See open roles“ in voller Breite, darunter beginnt der Abschnitt „Why join us“."
+  caption="Dieselbe Seite auf dem Smartphone."
+/>
+
+## Vorschau auf Ihrem Computer (optional)
+
+Wenn Sie Änderungen vor dem Hochladen auf Ihrem Computer ausprobieren möchten, zeigt das Vorschau-Kit aus der ZIP-Datei Ihre Karriereseite mit Beispielstellen, genau wie die Vorschau in Emploist. Dafür brauchen Sie [Node.js](https://nodejs.org) 22 oder neuer.
+
+1. Entpacken Sie `careers-page.zip`.
+2. Öffnen Sie im entpackten Ordner ein Terminal und führen Sie `node preview.mjs` aus.
+3. Öffnen Sie `http://localhost:4321` in Ihrem Browser, und laden Sie die Seite nach jeder Änderung neu.
+
+Um Ihren Code so auf Probleme zu prüfen, wie Emploist es vor dem Speichern tut, führen Sie `node preview.mjs check` aus. Wenn Sie einen KI-Assistenten nutzen, der mit Dateien auf Ihrem Computer arbeitet, etwa Claude Code, können Sie ihn bitten, diese Befehle für Sie auszuführen.
+
+## Gut zu wissen
+
+- **Nur Admins können den Code bearbeiten.** Andere Teammitglieder können den Tab „Design“ sehen, aber nicht ändern.
+- **JavaScript wird auf Karriereseiten nicht ausgeführt.** Das schützt Ihre Seite und Ihre Bewerbenden. Alles in dieser Anleitung funktioniert ohne JavaScript.
+- **Bilder, Schriftarten und Stylesheets können von anderen Websites geladen werden**, sofern ihre Adressen mit `https://` beginnen. So funktioniert auch Google Fonts.
+- **Bewerbungsformulare funktionieren weiter**, egal wie Sie das Design ändern. Bewerbungen landen also weiterhin in der Inbox der jeweiligen Stelle.
+
+Sie möchten Ihre eigene Karriereseite sehen? [Starten Sie Ihren kostenlosen Testzeitraum](https://app.emploist.com/sign-in), und sie ist bereit, sobald Sie Ihr Unternehmen eingerichtet haben. Dann gestalten Sie sie ganz nach Ihren Vorstellungen.

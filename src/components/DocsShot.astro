@@ -1,0 +1,118 @@
+---
+// Real app/dashboard shot for a docs guide step (or cover). Tries `lander`,
+// then `fallback`, so docs-* names can be listed before they're captured.
+import type { ImageMetadata } from "astro";
+import type { DocsShot } from "../lib/docs";
+import Screenshot from "./Screenshot.astro";
+import Window from "./Window.astro";
+
+interface Props {
+  shot: DocsShot;
+  alt: string;
+  priority?: boolean;
+}
+
+const { shot, alt, priority = false } = Astro.props;
+const frame = shot.frame ?? "window";
+
+const landerFiles = import.meta.glob<{ default: ImageMetadata }>("/src/assets/screenshots/*.png", {
+  eager: true,
+});
+const blogFiles = import.meta.glob<{ default: ImageMetadata }>("/src/content/blog/images/**/*.png", {
+  eager: true,
+});
+
+function landerPath(name: string, scheme: "light" | "dark") {
+  return `/src/assets/screenshots/${name}-${scheme}.png`;
+}
+
+let src: ImageMetadata | undefined;
+let landerName: string | undefined;
+let scheme: "light" | "dark" = shot.scheme ?? "light";
+let frameOverride = frame;
+
+if (shot.blog) {
+  src = blogFiles[`/src/content/blog/images/${shot.blog}`]?.default;
+} else {
+  const candidates = [shot.lander, shot.fallback].filter(Boolean) as string[];
+  for (const name of candidates) {
+    const path = landerPath(name, scheme);
+    // careers-code is dark-only on disk
+    const darkPath = landerPath(name, "dark");
+    if (landerFiles[path]) {
+      landerName = name;
+      break;
+    }
+    if (scheme === "light" && landerFiles[darkPath]) {
+      landerName = name;
+      scheme = "dark";
+      break;
+    }
+  }
+  // Cropped lander fallbacks look wrong in a full window chrome
+  if (landerName && landerName === shot.fallback && shot.lander !== shot.fallback && frame === "window") {
+    const cropped = new Set(["form", "match", "comments", "stage-email", "stage-email-preview"]);
+    if (cropped.has(landerName)) frameOverride = "modal";
+  }
+}
+
+const available = Boolean(src || landerName);
+const narrow = frameOverride === "modal" || frameOverride === "plain";
+const sizes = narrow
+  ? "(min-width: 40rem) 36rem, calc(100vw - 3rem)"
+  : "(min-width: 64rem) 56rem, calc(100vw - 2.5rem)";
+---
+
+{
+  available && (
+    <figure
+      class:list={[
+        "docs-shot",
+        frameOverride === "modal" && "docs-shot-modal",
+        frameOverride === "plain" && "docs-shot-plain",
+        frameOverride === "window" && "docs-shot-window",
+      ]}
+    >
+      {frameOverride === "window" ? (
+        <Window url={shot.url}>
+          {src ? (
+            <Screenshot src={src} alt={alt} sizes={sizes} priority={priority} />
+          ) : (
+            <Screenshot name={landerName} scheme={scheme} alt={alt} sizes={sizes} priority={priority} />
+          )}
+        </Window>
+      ) : (
+        <div class="shot">
+          {src ? (
+            <Screenshot src={src} alt={alt} sizes={sizes} priority={priority} />
+          ) : (
+            <Screenshot name={landerName} scheme={scheme} alt={alt} sizes={sizes} priority={priority} />
+          )}
+        </div>
+      )}
+    </figure>
+  )
+}
+
+<style>
+  .docs-shot {
+    margin: 0;
+  }
+
+  .docs-shot-window {
+    width: 100%;
+  }
+
+  .docs-shot-modal,
+  .docs-shot-plain {
+    margin-inline: auto;
+    width: fit-content;
+    max-width: min(100%, 36rem);
+  }
+
+  .docs-shot-modal :global(.shot) {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--ink) 6%, transparent),
+      0 24px 48px -20px rgba(2, 10, 15, 0.28);
+  }
+</style>

@@ -88,8 +88,9 @@ export const DIRECTORIES: Directory[] = [
   {
     name: "Startup Fame",
     url: "https://startupfa.me/s/emploist?utm_source=www.emploist.com",
-    badge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
-    homeBadge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="Emploist - Featured on Startup Fame" width="171" height="54" /></a>`,
+    // Their hosted badge URL is unreliable; serve the light badge from /public.
+    badge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank" rel="noopener noreferrer"><img src="/badges/startup-fame-featured-light.webp" alt="Featured on Startup Fame" width="220" height="35" /></a>`,
+    homeBadge: `<a href="https://startupfa.me/s/emploist?utm_source=www.emploist.com" target="_blank" rel="noopener noreferrer"><img src="/badges/startup-fame-featured-light.webp" alt="Featured on Startup Fame" width="220" height="35" /></a>`,
   },
   {
     name: "DANG!",

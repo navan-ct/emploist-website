@@ -1,0 +1,272 @@
+---
+title: "Cómo personalizar tu página de empleo con código o con IA"
+description: "Haz que tu página de empleo se vea como el resto de tu sitio web. Edita su código en Emploist con vista previa en directo o deja que lo haga una IA como Claude."
+pubDate: 2026-10-22
+author: "Navaneeth CT"
+image: ../images/customize-careers-page/cover.png
+imageAlt: "Una página de empleo rediseñada junto al editor de código de Emploist."
+tags: ["Página de empleo", "Guías"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import careersBefore from "../images/customize-careers-page/careers-before.png";
+import careersAfter from "../images/customize-careers-page/careers-after.png";
+import careersAfterMobile from "../images/customize-careers-page/careers-after-mobile.png";
+import claudePrompt from "../images/customize-careers-page/claude-prompt.png";
+import claudeReply from "../images/customize-careers-page/claude-reply.png";
+import designTab from "../images/customize-careers-page/design-tab.png";
+import editor from "../images/customize-careers-page/editor.png";
+import editorFont from "../images/customize-careers-page/editor-font.png";
+import editorHeadline from "../images/customize-careers-page/editor-headline.png";
+import editorMenu from "../images/customize-careers-page/editor-menu.png";
+import editorMobile from "../images/customize-careers-page/editor-mobile.png";
+import editorProblem from "../images/customize-careers-page/editor-problem.png";
+import editorReference from "../images/customize-careers-page/editor-reference.png";
+import editorUpload from "../images/customize-careers-page/editor-upload.png";
+
+Tu página de empleo suele ser el primer contacto real de un candidato con tu empresa. Cuando se parece al resto de tu sitio web, con las mismas fuentes, los mismos colores y el mismo tono, se percibe como parte de tu marca y no como la página de una herramienta de selección.
+
+Cada empresa en Emploist recibe una [página de empleo lista desde el primer día](/es/#careers-page), con su logo y su color. Si quieres ir más allá, puedes cambiar todo su aspecto editando su código. Suena técnico, pero no hace falta ser desarrollador. Esta guía muestra dos formas de hacerlo:
+
+1. [**Edita el código en Emploist.**](#opción-1-edita-el-código-en-emploist) Ideal para cambios pequeños, como un titular o una fuente nueva. Ves cada cambio en una vista previa en directo mientras escribes.
+2. [**Pídeselo a un asistente de IA.**](#opción-2-pide-los-cambios-a-un-asistente-de-ia) Ideal para cambios más grandes, como una sección nueva. Descargas el código, describes lo que quieres con palabras sencillas y subes lo que te devuelve el asistente.
+
+Para mostrar las dos usaremos Fieldnote Labs, una empresa de ejemplo. Esta es su página de empleo antes de empezar.
+
+<Figure
+  src={careersBefore}
+  url="fieldnote.emploist.com"
+  alt="La página de empleo de Fieldnote Labs con el diseño predeterminado: un encabezado con el logo, un gran titular “Join Fieldnote Labs” con una breve descripción de la empresa y una lista de vacantes abiertas con filtros por departamento y ubicación."
+  caption="La página de empleo de Fieldnote Labs con el diseño predeterminado de Emploist."
+/>
+
+## Qué puedes cambiar
+
+Tu página de empleo se compone de seis archivos. Cada uno es un pequeño archivo de texto que puedes abrir y editar:
+
+| Archivo | Qué controla |
+| --- | --- |
+| `layout.liquid` | El marco de todas las páginas: el encabezado, el pie de página y lo que se carga en cada página, como las fuentes |
+| `jobs.liquid` | La página principal, con tu introducción y la lista de vacantes abiertas |
+| `job.liquid` | La página de una vacante |
+| `apply.liquid` | El formulario de candidatura |
+| `applied.liquid` | La página de agradecimiento que ven los candidatos después de enviar su candidatura |
+| `styles.css` | El aspecto de todo: colores, fuentes, tamaños y espaciado |
+
+Los archivos usan tres lenguajes sencillos. **HTML** indica qué hay en la página, como títulos y botones. **CSS** indica cómo se ve. **Liquid** añade variables, como `{{ company.name }}`, que Emploist sustituye por el nombre de tu empresa, tus vacantes y otros datos cuando un candidato abre la página.
+
+Probar cosas no va a romper tu página de empleo:
+
+- Nada cambia para los candidatos hasta que haces clic en **Guardar**.
+- Emploist revisa tu código antes de guardarlo y te dice qué corregir si algo está mal.
+- Puedes volver al diseño predeterminado en cualquier momento.
+
+Para empezar, inicia sesión como administrador y abre **Página de empleo** en la barra lateral. La pestaña **Diseño** contiene el color de tu página y su código. Si solo necesitas el color de tu marca, elígelo en **Color principal** y listo. Sin tocar código.
+
+<Figure
+  src={designTab}
+  alt="La pestaña “Design” de la configuración de la página de empleo en Emploist: un selector “Primary color” y una sección “Code” con los botones “Edit code”, “Download ZIP” y “Upload ZIP”."
+  caption="Página de empleo → Diseño. La sección Código tiene todo lo que usa esta guía."
+/>
+
+## Opción 1: edita el código en Emploist
+
+### Abre el editor
+
+Haz clic en **Editar código**. El código de tu página aparece a la izquierda, con una pestaña para cada archivo y una breve nota sobre para qué sirve. A la derecha hay una vista previa en directo de tu página de empleo, con vacantes de ejemplo.
+
+<Figure
+  src={editor}
+  alt="El editor de código de Emploist: las pestañas de los archivos y el código de layout.liquid a la izquierda, y una vista previa en directo de la página de empleo a la derecha."
+  caption="El editor de código. La vista previa de la derecha se actualiza mientras escribes."
+/>
+
+Encima de la vista previa, **Ir a la página** te permite cambiar entre todas las páginas que pueden ver los candidatos: la lista de vacantes, una vacante, el formulario de candidatura, la página de agradecimiento, una vacante cerrada y “Página no encontrada”. Al hacer clic en la pestaña de un archivo, también se muestra la página que controla.
+
+### Cambia el titular
+
+Haz clic en la pestaña `jobs.liquid`. La línea 3 contiene el gran titular de la parte superior de la página:
+
+```liquid
+<h1 class="hero-title">Join {{ company.name }}</h1>
+```
+
+Cambia la palabra “Join” por “Build what's next at”. Deja `{{ company.name }}` tal cual: ahí Emploist pone el nombre de tu empresa. Un momento después de que dejes de escribir, la vista previa muestra el nuevo titular.
+
+<Figure
+  src={editorHeadline}
+  alt="El archivo jobs.liquid en el editor con el titular cambiado a “Build what's next at {{ company.name }}”, y la vista previa, que muestra “Build what's next at Fieldnote Labs”."
+  caption="Edita el texto entre las etiquetas y la vista previa lo refleja."
+/>
+
+### Usa tu propia fuente
+
+Cambiar la fuente requiere dos pequeñas ediciones. Usaremos Fraunces, una fuente gratuita de [Google Fonts](https://fonts.google.com).
+
+1. **Carga la fuente.** En Google Fonts, abre la fuente, haz clic en **Get font** y luego en **Get embed code**, y copia la línea `<link>` que contiene `fonts.googleapis.com/css2`. En `layout.liquid`, pégala en una línea nueva justo encima de la que contiene `stylesheet_url`:
+
+   ```html
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&display=swap">
+   ```
+
+2. **Úsala.** En `styles.css`, busca, cerca del inicio, la línea que empieza por `--font:` y pon el nombre de la fuente entre comillas al principio de la lista, seguido de una coma:
+
+   ```css
+   --font: "Fraunces", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+   ```
+
+   Las demás fuentes de la lista son alternativas, por si un navegador no puede cargar la tuya.
+
+<Figure
+  src={editorFont}
+  alt="El archivo styles.css en el editor con Fraunces añadida a la línea --font, y la vista previa, que muestra la página de empleo con la fuente Fraunces."
+  caption="Ahora Fraunces se usa en toda la página."
+/>
+
+### Revisa la página en un teléfono
+
+Muchos candidatos abrirán tu página de empleo desde el teléfono. Haz clic en el icono del teléfono, encima de la vista previa, para ver la página en tamaño móvil.
+
+<Figure
+  src={editorMobile}
+  alt="La vista previa del editor en tamaño móvil, con la página de empleo, el nuevo titular y la nueva fuente en una columna estrecha."
+  caption="El icono del teléfono muestra la vista previa en tamaño móvil."
+/>
+
+### Corrige los errores antes de guardar
+
+Si un cambio rompe algo, Emploist te avisa al instante. La pestaña del archivo se marca en rojo, la vista previa muestra el error en lugar de la página y una lista debajo del código indica cuál es el problema y en qué línea está. Haz clic en un problema para ir directamente a él. La mayoría de las veces se trata de un error tipográfico o de una etiqueta de cierre que falta, y deshacer tu último cambio (<kbd>Cmd</kbd>+<kbd>Z</kbd> en Mac, <kbd>Ctrl</kbd>+<kbd>Z</kbd> en Windows) suele solucionarlo.
+
+<Figure
+  src={editorProblem}
+  alt="El editor con un problema: la pestaña jobs.liquid tiene una marca roja, la línea 4 está subrayada, la vista previa indica que no se pudo mostrar la página y una lista debajo del código dice que hay 1 problema que corregir antes de guardar: jobs.liquid, línea 4, etiqueta sin cerrar."
+  caption="Si borras un {% endif %} por error, su {% if %} queda abierto, y Emploist señala la línea exacta."
+/>
+
+No puedes guardar mientras haya problemas, así que los candidatos nunca ven una página rota.
+
+### Consulta lo que puedes usar
+
+Haz clic en **Referencia**, en la parte superior del editor, para ver todas las variables que puedes usar, como la ubicación de una vacante o la descripción de tu empresa, con una nota sobre lo que muestra cada una.
+
+<Figure
+  src={editorReference}
+  alt="El panel “Reference” abierto sobre el editor, con una lista de variables como company.name y company.description y lo que muestra cada una."
+  caption="En Referencia encontrarás todo lo que pueden mostrar las plantillas."
+/>
+
+### Guarda los cambios
+
+Cuando la vista previa te convenza, haz clic en **Guardar**. Tu página de empleo se actualiza para los candidatos al momento.
+
+¿Cambias de opinión? El menú **Más acciones** (los tres puntos junto a **Descartar**) incluye **Restablecer código predeterminado**, que recupera el diseño predeterminado de Emploist. Como con cualquier cambio, no pasa nada en tu página de empleo hasta que guardas.
+
+<Figure
+  src={editorMenu}
+  frame="plain"
+  narrow
+  alt="El menú “More actions” del editor, con “Download ZIP”, “Upload ZIP” y “Reset to default code”."
+  caption="Más acciones: descarga o sube el código como ZIP, o empieza de cero."
+/>
+
+## Opción 2: pide los cambios a un asistente de IA
+
+Para cambios más grandes, como una sección nueva o una distribución diferente, suele ser más fácil describir lo que quieres y dejar que un asistente de IA escriba el código. Usaremos [Claude](https://claude.ai), pero cualquier asistente que pueda leer archivos y devolverlos funciona de forma muy parecida.
+
+### Descarga tu código
+
+En la pestaña **Diseño**, haz clic en **Descargar ZIP**. Obtendrás un archivo llamado `careers-page.zip` con:
+
+- **Tus seis archivos**, con los cambios que hayas guardado.
+- **Una guía, `README.md`**, que explica las reglas de las páginas de empleo y todas las variables que puedes usar. Esto es lo que ayuda a un asistente de IA a escribir bien el código a la primera.
+- **Un kit de vista previa** (`preview.mjs` y `company.json`) para ver la página en tu dispositivo. Es opcional, y lo explicamos [al final](#vista-previa-en-tu-dispositivo-opcional).
+
+No hace falta descomprimirlo: Claude puede leer el ZIP tal cual.
+
+### Pide los cambios
+
+Abre [claude.ai](https://claude.ai), inicia un chat nuevo y adjunta `careers-page.zip` con el botón **+**. Después, describe lo que quieres con palabras sencillas, como se lo explicarías a un diseñador. Esto es lo que le pedimos:
+
+> Aquí tienes el código de nuestra página de empleo en Emploist. Por favor, haz que la página de vacantes sea más cálida y acogedora: una introducción más grande con un botón que lleve a las vacantes abiertas, y una sección “Why join us” con algunos beneficios (trabajo remoto, presupuesto para formación, 30 días libres, encuentros de equipo). Sigue README.md y devuélveme un ZIP que pueda subir.
+
+<Figure
+  src={claudePrompt}
+  frame="plain"
+  narrow
+  alt="Un chat nuevo en claude.ai con careers-page.zip adjunto y la petición de una página de vacantes más cálida, con una introducción más grande y una sección “Why join us”."
+  caption="Adjunta el ZIP y describe lo que quieres."
+/>
+
+Pedirle que siga `README.md` y que te devuelva un ZIP te ahorra varias idas y vueltas.
+
+### Recibe el código actualizado
+
+Claude tardó unos cuatro minutos. Leyó la guía y el código, hizo los cambios y luego revisó su propio trabajo: previsualizó la página en tamaño escritorio y móvil con el kit de vista previa, y ejecutó la misma comprobación que hace Emploist antes de guardar. Después devolvió un nuevo `careers-page.zip`, con un resumen de lo que había cambiado:
+
+- **Una introducción más grande y cálida**, con un nuevo titular, una frase de bienvenida y un botón **See open roles** (“Ver vacantes abiertas”) que baja hasta la lista.
+- **Una sección “Why join us”** (“Por qué unirte a nosotros”) con cuatro tarjetas: trabajo remoto, presupuesto para formación, 30 días libres y encuentros de equipo.
+- **Pequeños retoques en las vacantes abiertas**, como una breve introducción encima de la lista.
+
+<Figure
+  src={claudeReply}
+  frame="plain"
+  narrow
+  alt="La respuesta de Claude en claude.ai: careers-page.zip está listo para subir, una lista de lo que cambió en jobs.liquid y styles.css, una nota de que el nuevo titular es texto fijo, y el ZIP con un botón “Download”."
+  caption="Claude explica lo que cambió y devuelve un ZIP para descargar."
+/>
+
+Lee el resumen antes de subir nada. En este caso, Claude nos indicó que había sustituido nuestro nuevo titular por uno suyo, “Come build what's next with us”, y nos dijo qué línea editar para cambiarlo. También mantuvo los beneficios en términos generales, sin inventarse detalles como la cuantía del presupuesto para formación, para que pudiéramos añadir los nuestros.
+
+Si el resultado no te convence del todo, sigue la conversación: “pon el botón en verde”, “añade un beneficio sobre el seguro médico” o “acorta la introducción”. Cuando termines, pide el ZIP actualizado.
+
+### Súbelo a Emploist
+
+De vuelta en la pestaña **Diseño**, haz clic en **Subir ZIP** y elige el ZIP de Claude. Emploist abre el editor con el código nuevo cargado, pero todavía sin guardar, para que puedas revisarlo antes de que cambie nada para los candidatos.
+
+<Figure
+  src={editorUpload}
+  alt="El editor justo después de subir el ZIP: el estado indica “Unsaved changes”, un mensaje dice que los archivos se cargaron desde careers-page.zip y que hay que revisar la vista previa y guardar, y la vista previa muestra la introducción rediseñada con un botón “See open roles”."
+  caption="El código subido se abre en el editor, listo para revisarlo."
+/>
+
+Usa **Ir a la página** y el icono del teléfono para revisar todas las páginas. Si algo no está bien, corrígelo en el editor o vuelve a pedírselo a Claude. Cuando todo se vea bien, haz clic en **Guardar**.
+
+## El resultado
+
+Esta es la página de empleo de Fieldnote Labs después de los dos cambios: la fuente Fraunces del editor y el rediseño de Claude. Compárala con el diseño predeterminado del principio de esta guía.
+
+<Figure
+  src={careersAfter}
+  url="fieldnote.emploist.com"
+  alt="La página de empleo rediseñada de Fieldnote Labs con la fuente Fraunces: una etiqueta “Careers at Fieldnote Labs”, el titular “Come build what's next with us”, la descripción de la empresa, una frase de bienvenida, un botón “See open roles” con el número de vacantes abiertas y una sección “Why join us” con cuatro tarjetas: “Remote-friendly”, “Learning budget”, “30 days off” y “Team offsites”."
+  caption="La página de empleo terminada, con las vacantes abiertas más abajo."
+/>
+
+Y en un teléfono:
+
+<Figure
+  src={careersAfterMobile}
+  frame="plain"
+  narrow
+  alt="La página de empleo rediseñada en un teléfono: el titular, la descripción de la empresa y un botón “See open roles” a todo lo ancho, con la sección “Why join us”, que empieza debajo."
+  caption="La misma página en un teléfono."
+/>
+
+## Vista previa en tu dispositivo (opcional)
+
+Si quieres probar cambios en tu dispositivo antes de subirlos, el kit de vista previa del ZIP muestra tu página de empleo con vacantes de ejemplo, igual que la vista previa de Emploist. Necesita [Node.js](https://nodejs.org) 22 o posterior.
+
+1. Descomprime `careers-page.zip`.
+2. Abre una terminal en la carpeta descomprimida y ejecuta `node preview.mjs`.
+3. Abre `http://localhost:4321` en tu navegador y vuelve a cargar la página después de cada cambio.
+
+Para buscar problemas en tu código igual que hace Emploist antes de guardar, ejecuta `node preview.mjs check`. Si usas un asistente de IA que trabaja con archivos en tu dispositivo, como Claude Code, puedes pedirle que ejecute estos comandos por ti.
+
+## Ten en cuenta
+
+- **Solo los administradores pueden editar el código.** Los demás miembros del equipo pueden ver la pestaña Diseño, pero no cambiarla.
+- **JavaScript no se ejecuta en las páginas de empleo.** Así tu página y tus candidatos están protegidos. Todo lo que explica esta guía funciona sin él.
+- **Las imágenes, las fuentes y las hojas de estilo pueden cargarse desde otros sitios web**, siempre que sus direcciones empiecen por `https://`. Así es como funciona Google Fonts.
+- **Los formularios de candidatura siguen funcionando** cambies como cambies el diseño, así que las candidaturas siguen llegando a la bandeja de entrada de cada vacante.
+
+¿Quieres ver tu propia página de empleo? [Empieza tu prueba gratuita](https://app.emploist.com/sign-in) y estará lista en cuanto configures tu empresa. Después, hazla tuya.

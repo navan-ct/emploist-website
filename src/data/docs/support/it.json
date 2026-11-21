@@ -1,0 +1,489 @@
+{
+  "title": "Assistenza",
+  "description": "Siamo qui per aiutarti. Scrivici un'email o segui una guida per fare ciò che ti serve in Emploist.",
+  "contact": {
+    "title": "Scrivici",
+    "description": "Domande, feedback o qualcosa che non funziona? Di solito rispondiamo entro 24 ore.",
+    "copied": "Indirizzo email copiato",
+    "copy": "Copia indirizzo email"
+  },
+  "guideList": {
+    "title": "Guide",
+    "description": "Aiuto passo passo per le parti principali di Emploist.",
+    "adminOnly": "Solo amministratori"
+  },
+  "topics": {
+    "jobsAndApplications": "Posizioni e candidature",
+    "careersPage": "Pagina carriere",
+    "teamAndEmails": "Team ed email",
+    "aiAndBilling": "Valutazione IA e fatturazione",
+    "aiAssistants": "Assistenti IA"
+  },
+  "guides": {
+    "createJob": {
+      "title": "Crea e pubblica una posizione",
+      "summary": "Descrivi il ruolo, salva una bozza e pubblicala.",
+      "steps": {
+        "start": {
+          "title": "Inizia una nuova posizione",
+          "body": "Apri <jobs>Posizioni</jobs> e fai clic su <ui>Crea posizione</ui>."
+        },
+        "describe": {
+          "title": "Descrivi il ruolo",
+          "body": "Nella scheda <ui>Dettagli</ui>, aggiungi un <ui>Titolo della posizione</ui> e una <ui>Descrizione</ui>. Reparto, sede, modalità di lavoro e tipo di impiego sono facoltativi. I reparti e le sedi che aggiungi vengono riproposti nelle posizioni successive."
+        },
+        "formAndStages": {
+          "title": "Controlla modulo e fasi",
+          "body": "Le schede <ui>Modulo di candidatura</ui> e <ui>Fasi</ui> partono con una configurazione pronta all'uso. Puoi modificarle subito o in qualsiasi momento."
+        },
+        "saveOrPublish": {
+          "title": "Salva o pubblica",
+          "body": "<ui>Salva bozza</ui> rende la posizione visibile solo al tuo team. <ui>Pubblica</ui> la mette sulla tua pagina carriere."
+        }
+      }
+    },
+    "applicationForm": {
+      "title": "Crea il modulo di candidatura",
+      "summary": "Scegli cosa compilano i candidati quando si candidano.",
+      "steps": {
+        "open": {
+          "title": "Apri il modulo",
+          "body": "Apri la scheda <ui>Modulo di candidatura</ui> di una posizione."
+        },
+        "essentials": {
+          "title": "Parti dagli elementi essenziali",
+          "body": "Ogni modulo chiede <ui>Nome e cognome</ui>, <ui>Email</ui> e <ui>CV</ui>. Puoi spostarli, ma non rimuoverli."
+        },
+        "addQuestions": {
+          "title": "Aggiungi domande",
+          "body": "Fai clic su <ui>Aggiungi</ui> e scegli un tipo di domanda, ad esempio <ui>Risposta breve</ui>, <ui>Scelta singola</ui> o <ui>Scala lineare</ui>. Aggiungi un <ui>Titolo</ui> o un <ui>Testo</ui> per dare più contesto ai candidati."
+        },
+        "setUp": {
+          "title": "Configura ogni domanda",
+          "body": "Fai clic su una domanda per modificarla e attiva <ui>Obbligatorio</ui> se i candidati devono rispondere. Trascina le domande, o usa il loro menu, per cambiarne l'ordine. Le domande con l'etichetta <ui>Incompleto</ui> vanno completate prima di pubblicare."
+        },
+        "save": {
+          "title": "Salva le modifiche",
+          "body": "In una posizione esistente, fai clic su <ui>Salva modifiche</ui>. Le modifiche valgono solo per le nuove candidature. Quelle già ricevute mantengono le domande a cui hanno risposto."
+        }
+      }
+    },
+    "stages": {
+      "title": "Imposta le fasi di selezione",
+      "summary": "Definisci i passaggi che ogni candidatura attraversa.",
+      "steps": {
+        "open": {
+          "title": "Apri le fasi",
+          "body": "Apri la scheda <ui>Fasi</ui> di una posizione. Le nuove posizioni partono con <ui>Inbox</ui>, <ui>Interviewing</ui>, <ui>Accepted</ui> e <ui>Rejected</ui>."
+        },
+        "inbox": {
+          "title": "Conosci la prima fase",
+          "body": "Le nuove candidature arrivano nella prima fase, Inbox. Puoi rinominarla, ma resta sempre la prima e non può essere eliminata."
+        },
+        "addRenameReorder": {
+          "title": "Aggiungi, rinomina e riordina",
+          "body": "Fai clic su <ui>Aggiungi fase</ui> per aggiungerne una, oppure scegli <ui>Rinomina</ui> dal menu di una fase. Trascina le fasi nell'ordine in cui segui la selezione."
+        },
+        "delete": {
+          "title": "Elimina una fase",
+          "body": "Scegli <ui>Elimina</ui> dal menu di una fase. Se contiene candidature, sceglierai in quale fase spostarle."
+        }
+      }
+    },
+    "reviewApplications": {
+      "title": "Esamina le candidature",
+      "summary": "Trova, leggi e sposta le candidature tra le fasi.",
+      "steps": {
+        "openJob": {
+          "title": "Apri una posizione",
+          "body": "Apri una posizione da <jobs>Posizioni</jobs>. La sua scheda <ui>Candidature</ui> ha un'etichetta per ogni fase, con il numero di candidature che contiene."
+        },
+        "find": {
+          "title": "Trova chi esaminare",
+          "body": "Cerca per nome o email e ordina per <ui>Maggiore affinità</ui>, <ui>Più recenti</ui> o <ui>Meno recenti</ui>. L'ordinamento per maggiore affinità è disponibile quando le funzionalità IA sono attive."
+        },
+        "openApplication": {
+          "title": "Apri una candidatura",
+          "body": "Fai clic su un nome per aprire la candidatura. Fai clic su <ui>Visualizza CV</ui> per aprire il CV in una nuova scheda. Premi <ui>←</ui> o <ui>→</ui> per passare alla candidatura precedente o successiva."
+        },
+        "move": {
+          "title": "Spostala in una fase",
+          "body": "Scegli una fase dal menu <ui>Fase</ui> nella candidatura, oppure da <ui>Sposta in</ui> nel menu di una riga. Se sposti una candidatura per errore, fai clic su <ui>Annulla</ui> nel messaggio che compare."
+        }
+      }
+    },
+    "comments": {
+      "title": "Commenta e menziona i colleghi",
+      "summary": "Parla dei candidati con il tuo team e non perderti nulla.",
+      "steps": {
+        "write": {
+          "title": "Scrivi un commento",
+          "body": "Apri una candidatura, scrivi nella casella dei commenti e fai clic su <ui>Commenta</ui>, oppure premi <ui>{{shortcut}}</ui>. I commenti sono visibili solo al tuo team.",
+          "shortcut": "Ctrl+Invio",
+          "shortcutMac": "⌘+Invio"
+        },
+        "mention": {
+          "title": "Menziona qualcuno",
+          "body": "Digita <ui>@</ui> e scegli la persona del team da avvisare."
+        },
+        "replies": {
+          "title": "Segui le risposte",
+          "body": "Ricevi una notifica quando qualcuno ti menziona o commenta una candidatura che hai commentato. Le trovi sotto la campanella in alto nella pagina oppure in <notifications>Notifiche</notifications>."
+        },
+        "editOrDelete": {
+          "title": "Modifica o elimina",
+          "body": "Dal menu di un tuo commento, scegli <ui>Modifica</ui> o <ui>Elimina</ui>. Gli amministratori possono eliminare anche i commenti degli altri."
+        }
+      }
+    },
+    "manageJob": {
+      "title": "Chiudi, archivia o duplica una posizione",
+      "summary": "Smetti di ricevere candidature, fai ordine o riutilizza una posizione.",
+      "steps": {
+        "closeOrReopen": {
+          "title": "Chiudi o riapri",
+          "body": "In una posizione pubblicata, usa il menu dello stato in alto: <ui>Chiusa</ui> smette di accettare candidature e <ui>Aperta</ui> ricomincia ad accettarle."
+        },
+        "duplicate": {
+          "title": "Duplica",
+          "body": "Scegli <ui>Duplica</ui> dal menu <ui>Altre azioni</ui> di una posizione per creare una bozza con gli stessi dettagli, modulo e fasi."
+        },
+        "archive": {
+          "title": "Archivia",
+          "body": "Scegli <ui>Archivia</ui> da <ui>Altre azioni</ui> per mettere da parte una posizione. Le posizioni archiviate sono in sola lettura. Fai clic su <ui>Ripristina</ui> per recuperarne una."
+        },
+        "delete": {
+          "title": "Elimina",
+          "body": "Scegli <ui>Elimina</ui> da <ui>Altre azioni</ui> per rimuovere definitivamente una posizione, insieme alle sue candidature. Se vuoi conservarle, archivia la posizione."
+        }
+      }
+    },
+    "exportApplications": {
+      "title": "Esporta le candidature",
+      "summary": "Scarica le candidature e i CV di una posizione.",
+      "steps": {
+        "start": {
+          "title": "Avvia l'esportazione",
+          "body": "In una posizione con candidature, apri <ui>Altre azioni</ui> e scegli <ui>Esporta candidature</ui>."
+        },
+        "openZip": {
+          "title": "Apri il file ZIP",
+          "body": "<ui>{{file}}</ui> è un foglio di calcolo con una riga per ogni candidatura. La cartella <ui>{{folder}}</ui> contiene tutti i CV, ognuno con il nome del candidato."
+        }
+      }
+    },
+    "customizeCareersPage": {
+      "title": "Personalizza la tua pagina carriere",
+      "summary": "Scegli il colore o modifica il codice della pagina.",
+      "steps": {
+        "color": {
+          "title": "Scegli un colore",
+          "body": "Apri la scheda <design>Design</design> in Pagina carriere, scegli un <ui>Colore principale</ui> e fai clic su <ui>Salva colore</ui>. Viene usato per pulsanti ed elementi in evidenza."
+        },
+        "code": {
+          "title": "Modifica il codice",
+          "body": "Fai clic su <ui>Modifica codice</ui> per cambiare i template e gli stili della pagina. <ui>Riferimento</ui> elenca tutto ciò che puoi usare."
+        },
+        "preview": {
+          "title": "Controlla l'anteprima mentre lavori",
+          "body": "L'anteprima si aggiorna mentre scrivi. Usa <ui>Vai alla pagina</ui> per controllare ogni pagina e passa dalla visualizzazione desktop a quella mobile."
+        },
+        "save": {
+          "title": "Salva",
+          "body": "Fai clic su <ui>Salva</ui>. Per ricominciare da capo, scegli <ui>Ripristina codice predefinito</ui> da <ui>Altre azioni</ui>."
+        }
+      }
+    },
+    "editCodeLocally": {
+      "title": "Modifica il codice sul tuo computer",
+      "summary": "Lavora nel tuo editor, con un'anteprima dal vivo.",
+      "steps": {
+        "download": {
+          "title": "Scarica il codice",
+          "body": "Nella scheda <design>Design</design>, fai clic su <ui>Scarica ZIP</ui> ed estrai i file."
+        },
+        "preview": {
+          "title": "Visualizza l'anteprima",
+          "body": "Con Node.js {{version}} o versioni successive, esegui <code>{{command}}</code> nella cartella e apri <code>{{url}}</code>. Vedrai la tua pagina con posizioni di esempio. Ricaricala dopo ogni modifica."
+        },
+        "check": {
+          "title": "Cerca i problemi",
+          "body": "Esegui <code>{{command}}</code> per trovare gli stessi problemi che verrebbero segnalati al salvataggio."
+        },
+        "upload": {
+          "title": "Carica il codice",
+          "body": "Comprimi i file in uno ZIP, fai clic su <ui>Carica ZIP</ui>, controlla l'anteprima e fai clic su <ui>Salva</ui>."
+        }
+      }
+    },
+    "changeAddress": {
+      "title": "Cambia l'indirizzo della tua pagina carriere",
+      "summary": "Sposta la tua pagina su un nuovo indirizzo Emploist.",
+      "steps": {
+        "open": {
+          "title": "Apri l'indirizzo",
+          "body": "Apri la scheda <domain>Dominio</domain> in Pagina carriere e fai clic su <ui>Cambia</ui>."
+        },
+        "choose": {
+          "title": "Scegline uno nuovo",
+          "body": "Digita l'indirizzo che preferisci. Mentre scrivi, verifichiamo che sia disponibile."
+        },
+        "confirm": {
+          "title": "Conferma la modifica",
+          "body": "Fai clic su <ui>Cambia indirizzo</ui>. Il vecchio indirizzo smette subito di funzionare, così come i link alle posizioni che hai condiviso, e un'altra azienda potrebbe poi usarlo."
+        }
+      }
+    },
+    "customDomain": {
+      "title": "Collega il tuo dominio",
+      "summary": "Mostra la tua pagina carriere a un indirizzo del tuo sito web.",
+      "steps": {
+        "add": {
+          "title": "Aggiungi il tuo dominio",
+          "body": "Nella scheda <domain>Dominio</domain>, inserisci un sottodominio del tuo sito web, come careers.acme.com, e fai clic su <ui>Aggiungi dominio</ui>. I domini principali, come acme.com, non possono essere collegati."
+        },
+        "records": {
+          "title": "Aggiungi due record DNS",
+          "body": "Nel servizio in cui gestisci il dominio, aggiungi i record <ui>CNAME</ui> e <ui>TXT</ui> indicati, usando i pulsanti per copiarli. Su Cloudflare, imposta il record CNAME su DNS only."
+        },
+        "wait": {
+          "title": "Attendi la verifica",
+          "body": "Di solito le modifiche diventano visibili in pochi minuti, ma possono servire fino a 48 ore. Quando compare <ui>Collegato</ui>, la tua pagina carriere è raggiungibile sul tuo dominio."
+        }
+      }
+    },
+    "inviteTeam": {
+      "title": "Invita il tuo team",
+      "summary": "Aggiungi colleghi tramite email e scegli il loro ruolo.",
+      "steps": {
+        "send": {
+          "title": "Invia un invito",
+          "body": "Apri la scheda <members>Membri</members> in Impostazioni, fai clic su <ui>Invita membro</ui>, inserisci l'indirizzo email e fai clic su <ui>Invia invito</ui>."
+        },
+        "role": {
+          "title": "Scegli un ruolo",
+          "body": "I <ui>Membri</ui> lavorano su posizioni e candidature. Gli <ui>Amministratori</ui> possono anche gestire il team, le impostazioni dell'azienda, la pagina carriere e la fatturazione."
+        },
+        "join": {
+          "title": "Si uniscono al team",
+          "body_one": "Riceveranno un'email con un link per unirsi, valido per {{count, number}} giorno.",
+          "body_many": "Riceveranno un'email con un link per unirsi, valido per {{count, number}} di giorni.",
+          "body_other": "Riceveranno un'email con un link per unirsi, valido per {{count, number}} giorni."
+        },
+        "followUp": {
+          "title": "Tieni traccia degli inviti",
+          "body": "Gli inviti in attesa di risposta sono elencati in <ui>Inviti in sospeso</ui>. Dal menu di un invito, scegli <ui>Reinvia invito</ui> o <ui>Annulla invito</ui>."
+        }
+      }
+    },
+    "manageMembers": {
+      "title": "Gestisci ruoli e membri",
+      "summary": "Cambia i ruoli, rimuovi persone o lascia un'azienda.",
+      "steps": {
+        "changeRole": {
+          "title": "Cambia un ruolo",
+          "body": "Nella scheda <members>Membri</members> in Impostazioni, apri il menu di una persona e scegli <ui>Rendi amministratore</ui> o <ui>Rendi membro</ui>. Solo gli amministratori possono cambiare i ruoli."
+        },
+        "remove": {
+          "title": "Rimuovi qualcuno",
+          "body": "Scegli <ui>Rimuovi dall'azienda</ui> dal menu della persona. Perderà subito l'accesso. Solo gli amministratori possono rimuovere persone."
+        },
+        "leave": {
+          "title": "Lascia l'azienda",
+          "body": "Scegli <ui>Lascia l'azienda</ui> dal tuo menu. Se non ci sono altri amministratori oltre a te, prima rendi amministratore un'altra persona."
+        }
+      }
+    },
+    "deleteCompanyOrAccount": {
+      "title": "Elimina l'azienda o il tuo account",
+      "summary": "Rimuovi definitivamente la tua azienda o solo il tuo account.",
+      "steps": {
+        "open": {
+          "title": "Apri la Zona pericolosa",
+          "body": "Apri la scheda <danger>Zona pericolosa</danger> in Impostazioni."
+        },
+        "deleteCompany": {
+          "title": "Elimina l'azienda",
+          "body": "Gli amministratori possono fare clic su <ui>Elimina azienda</ui>. Vengono eliminati tutti i suoi contenuti, tra cui posizioni, candidature e pagina carriere, e il piano viene disdetto subito senza rimborso."
+        },
+        "deleteAccount": {
+          "title": "Oppure elimina il tuo account",
+          "body": "Fai clic su <ui>Elimina account</ui>. Se non ci sono altri amministratori oltre a te, prima rendi amministratore un'altra persona. Se sei l'unica persona nell'azienda, verrà eliminata anche l'azienda."
+        },
+        "confirm": {
+          "title": "Conferma",
+          "body": "Digita il nome dell'azienda o la tua email e fai clic sul pulsante di eliminazione. L'operazione non può essere annullata."
+        }
+      }
+    },
+    "stageEmails": {
+      "title": "Invia email ai candidati in ogni fase",
+      "summary": "Fai sapere ai candidati quando si candidano o avanzano di fase.",
+      "steps": {
+        "open": {
+          "title": "Apri l'email di una fase",
+          "body": "Nella scheda <ui>Fasi</ui> di una posizione, fai clic su <ui>Modifica email</ui> accanto a una fase."
+        },
+        "customize": {
+          "title": "Personalizzala",
+          "body": "Ogni fase include un'email già pronta. Modifica <ui>Oggetto</ui> e <ui>Messaggio</ui> e aggiungi dettagli come il nome del candidato con <ui>Aggiungi variabile</ui> o digitando <code>{{character}}</code>."
+        },
+        "preview": {
+          "title": "Controlla l'anteprima e attivala",
+          "body": "Controlla l'<ui>Anteprima</ui>, che usa un candidato di esempio. Poi attiva <ui>Invia questa email</ui> e fai clic su <ui>Salva</ui>."
+        },
+        "timing": {
+          "title": "Quando viene inviata",
+          "body_one": "L'email della prima fase parte non appena qualcuno si candida. Le altre fasi attendono {{count, number}} minuto dopo uno spostamento, così se lo annulli o sposti di nuovo la candidatura, l'email non viene inviata.",
+          "body_many": "L'email della prima fase parte non appena qualcuno si candida. Le altre fasi attendono {{count, number}} di minuti dopo uno spostamento, così se lo annulli o sposti di nuovo la candidatura, l'email non viene inviata.",
+          "body_other": "L'email della prima fase parte non appena qualcuno si candida. Le altre fasi attendono {{count, number}} minuti dopo uno spostamento, così se lo annulli o sposti di nuovo la candidatura, l'email non viene inviata."
+        },
+        "pause": {
+          "title": "Sospendi tutte le email",
+          "body": "Gli amministratori possono disattivare <ui>Invia email ai candidati</ui> nella scheda <general>Generali</general> in Impostazioni per bloccare le email di tutte le fasi."
+        }
+      }
+    },
+    "repliesLayout": {
+      "title": "Imposta le risposte e il layout delle email",
+      "summary": "Scegli dove arrivano le risposte e l'aspetto delle email.",
+      "steps": {
+        "replyTo": {
+          "title": "Aggiungi un indirizzo di risposta",
+          "body": "In <emails>Email</emails>, inserisci un <ui>Indirizzo di risposta</ui> che il tuo team controlla e fai clic su <ui>Salva indirizzo</ui>. Senza un indirizzo, le risposte dei candidati non ti raggiungeranno."
+        },
+        "layout": {
+          "title": "Modifica il layout",
+          "body": "Ogni email viene inviata con il tuo layout, con il tuo logo e il tuo colore principale. Fai clic su <ui>Modifica codice</ui> per cambiarne l'HTML e mantieni <code>{{placeholder}}</code> dove va il messaggio di ogni fase."
+        },
+        "save": {
+          "title": "Salva",
+          "body": "Fai clic su <ui>Salva</ui>. Per ricominciare da capo, scegli <ui>Ripristina layout predefinito</ui> da <ui>Altre azioni</ui>."
+        }
+      }
+    },
+    "matchScores": {
+      "title": "Come funzionano i punteggi di affinità",
+      "summary": "Come l'IA valuta le candidature rispetto alla loro posizione.",
+      "steps": {
+        "read": {
+          "title": "Leggi il punteggio",
+          "body": "Ogni candidatura riceve un punteggio di affinità dallo 0 al 100% in base ai dettagli della sua posizione."
+        },
+        "aspects": {
+          "title": "Scopri cosa c'è dietro",
+          "body": "Apri una candidatura per vedere il punteggio per <ui>Competenze</ui>, <ui>Esperienza</ui>, <ui>Seniority</ui> e <ui>Qualifiche</ui>. Le qualifiche contano solo quando la posizione richiede titoli di studio, certificazioni o abilitazioni."
+        },
+        "useAsGuide": {
+          "title": "Usalo come indicazione",
+          "body": "I punteggi di affinità ti aiutano a decidere chi esaminare prima. Usali insieme al tuo giudizio, non al suo posto."
+        },
+        "noScore": {
+          "title": "Quando non c'è un punteggio",
+          "body": "<ui>Valutazione</ui> significa che il punteggio è in arrivo, mentre <ui>Servono crediti</ui> significa che hai esaurito i crediti IA. <ui>Non valutata</ui> significa che non è stato possibile valutarla, ad esempio quando il CV è un'immagine scansionata. Se la valutazione non è riuscita, fai clic su <ui>Riprova</ui> nella candidatura."
+        },
+        "rankAgain": {
+          "title": "Rivaluta dopo le modifiche",
+          "body": "Quando modifichi titolo, reparto, tipo di impiego o descrizione di una posizione, scegli <ui>Salva e rivaluta</ui> per valutare le sue candidature in base ai nuovi dettagli."
+        }
+      }
+    },
+    "aiSwitch": {
+      "title": "Disattiva o attiva la valutazione IA",
+      "summary": "Scegli se le tue candidature vengono valutate con l'IA.",
+      "steps": {
+        "find": {
+          "title": "Trova l'interruttore",
+          "body": "Nella scheda <general>Generali</general> in Impostazioni, attiva o disattiva <ui>Valuta le candidature con l'IA</ui>. L'impostazione vale per tutta l'azienda."
+        },
+        "whileOff": {
+          "title": "Mentre è disattivata",
+          "body": "Nulla viene inviato all'IA, i punteggi di affinità sono nascosti e le nuove candidature non vengono valutate. I punteggi precedenti ricompaiono quando la riattivi."
+        },
+        "turnOn": {
+          "title": "Riattivala",
+          "body": "Se nel frattempo sono arrivate candidature, sceglierai se valutarle, usando un credito ciascuna, o lasciarle senza valutazione."
+        },
+        "tellApplicants": {
+          "title": "Informa i candidati",
+          "body": "Quando la valutazione IA è attiva, la pagina carriere predefinita informa i candidati che l'IA aiuta a esaminare le candidature. Se usi un codice personalizzato, aggiungi tu questa informazione."
+        }
+      }
+    },
+    "planCredits": {
+      "title": "Gestisci piano e crediti",
+      "summary": "La tua prova, il tuo abbonamento e i crediti IA.",
+      "credits_one": "{{count, number}} credito",
+      "credits_many": "{{count, number}} di crediti",
+      "credits_other": "{{count, number}} crediti",
+      "steps": {
+        "startTrial": {
+          "title": "Inizia la prova gratuita",
+          "body_one": "In <billing>Fatturazione</billing>, scegli <ui>Mensile</ui> o <ui>Annuale</ui>, poi fai clic su <ui>Inizia la prova gratuita</ui>. Dura {{count, number}} giorno e include {{credits}}.",
+          "body_many": "In <billing>Fatturazione</billing>, scegli <ui>Mensile</ui> o <ui>Annuale</ui>, poi fai clic su <ui>Inizia la prova gratuita</ui>. Dura {{count, number}} di giorni e include {{credits}}.",
+          "body_other": "In <billing>Fatturazione</billing>, scegli <ui>Mensile</ui> o <ui>Annuale</ui>, poi fai clic su <ui>Inizia la prova gratuita</ui>. Dura {{count, number}} giorni e include {{credits}}."
+        },
+        "plan": {
+          "title": "Il tuo piano",
+          "body": "Il piano mensile costa {{monthlyPrice}} al mese, con {{monthlyCredits}} ogni mese. Il piano annuale costa {{yearlyPrice}} all'anno, con {{yearlyCredits}} subito disponibili. I crediti non usati non vengono riportati. Fai clic su <ui>Gestisci abbonamento</ui> per aggiornare la carta, consultare le fatture o disdire."
+        },
+        "switchToYearly": {
+          "title": "Passa al piano annuale",
+          "body": "In <billing>Fatturazione</billing>, scegli <ui>Annuale</ui> nel tuo piano, poi fai clic su <ui>Passa al piano annuale</ui>. Paghi subito {{price}}, meno i giorni non utilizzati del mese in corso. Se sei in prova gratuita, pagherai invece alla fine della prova."
+        },
+        "buyCredits": {
+          "title": "Acquista altri crediti",
+          "body": "Ogni candidatura valutata dall'IA usa un credito. Per averne di più, acquista un pacchetto in <ui>Acquista crediti</ui>. I crediti aggiuntivi non scadono mai e vengono usati dopo quelli del piano."
+        },
+        "runOut": {
+          "title": "Se esaurisci i crediti",
+          "body": "Le nuove candidature restano in attesa con lo stato <ui>Servono crediti</ui>. Quando avrai di nuovo crediti, valutale dall'avviso in <jobs>Posizioni</jobs> o in <billing>Fatturazione</billing>, oppure lasciale senza valutazione."
+        },
+        "endTrial": {
+          "title": "Termina la prova in anticipo",
+          "body": "Se esaurisci i crediti della prova, fai clic su <ui>Termina la prova</ui> nell'avviso in <jobs>Posizioni</jobs> o in <billing>Fatturazione</billing>. Il tuo piano inizia oggi, con i suoi crediti."
+        },
+        "planStops": {
+          "title": "Se il piano si interrompe",
+          "body": "Senza un piano attivo, Emploist è in sola lettura e la tua pagina carriere non accetta più candidature. Il tuo team può comunque vedere tutto ed esportare le candidature, e gli amministratori possono attivare di nuovo un abbonamento."
+        }
+      }
+    },
+    "connectAssistant": {
+      "title": "Connetti un assistente IA",
+      "summary": "Gestisci posizioni e candidature da Claude, ChatGPT e altri assistenti.",
+      "steps": {
+        "choose": {
+          "title": "Scegli il tuo assistente",
+          "body": "Nella pagina <mcp>MCP</mcp>, scegli il tuo assistente in <ui>Connetti il tuo assistente</ui>."
+        },
+        "follow": {
+          "title": "Segui i suoi passaggi",
+          "body": "Ogni assistente ha i suoi passaggi, con l'indirizzo da incollare o il comando da copiare proprio dove ti serve."
+        },
+        "allow": {
+          "title": "Accedi e consenti",
+          "body": "Accedi a Emploist quando il tuo assistente lo chiede e fai clic su <ui>Consenti</ui>. Il tuo assistente agisce come te, con il tuo ruolo."
+        },
+        "disconnect": {
+          "title": "Disconnettilo",
+          "body": "Per fermare un assistente, fai clic su <ui>Disconnetti</ui> accanto a esso in <ui>Assistenti connessi</ui>, nella pagina <mcp>MCP</mcp>."
+        }
+      }
+    },
+    "mcpSwitch": {
+      "title": "Disattiva o attiva l'MCP",
+      "summary": "Scegli se il tuo team può usare Emploist dagli assistenti IA.",
+      "steps": {
+        "find": {
+          "title": "Trova l'interruttore",
+          "body": "Nella scheda <general>Generali</general> in Impostazioni, attiva o disattiva <ui>Consenti al tuo team di connettere assistenti IA</ui>. L'impostazione vale per tutta l'azienda."
+        },
+        "whileOff": {
+          "title": "Mentre è disattivato",
+          "body": "Gli assistenti non possono usare Emploist e nessuno può connetterne uno nuovo. Le connessioni vengono mantenute, quindi tornano a funzionare quando riattivi l'MCP."
+        }
+      }
+    }
+  }
+}

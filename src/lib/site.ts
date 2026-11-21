@@ -39,7 +39,9 @@ export const CREDIT_PACKS = [
  * their words in src/i18n/messages.
  */
 export const NAV = [
-  { key: "pricing", href: "/#pricing" },
+  { key: "mcp", href: "/mcp/" },
+  { key: "pricing", href: "/pricing/" },
   { key: "faq", href: "/#faq" },
   { key: "blog", href: "/blog/" },
+  { key: "docs", href: "/docs/" },
 ] as const;

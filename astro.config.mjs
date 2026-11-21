@@ -8,11 +8,28 @@ import { defineConfig, fontProviders } from "astro/config";
 // the others are under /fr/, /de/, and so on.
 const locales = ["en", "fr", "de", "es", "it", "ja", "ko", "pl", "tr", "id"];
 
+/** Old blog slugs → title-based slugs (keep old URLs working). */
+const blogSlugRedirects = {
+  "manage-hiring-from-claude": "how-to-manage-hiring-from-claude-with-mcp",
+  "customize-careers-page": "how-to-customize-your-careers-page-with-code-or-ai",
+};
+
+/** `/blog/old/` and `/fr/blog/old/` → new title slugs, for every language. */
+const redirects = Object.fromEntries(
+  Object.entries(blogSlugRedirects).flatMap(([from, to]) =>
+    locales.map((locale) => {
+      const prefix = locale === "en" ? "" : `/${locale}`;
+      return [`${prefix}/blog/${from}/`, `${prefix}/blog/${to}/`];
+    }),
+  ),
+);
+
 export default defineConfig({
   site: "https://www.emploist.com",
   // Pages build to folders (blog/index.html), which every static host serves
   // at /blog/, so links and canonical URLs end with a slash.
   trailingSlash: "always",
+  redirects,
   build: {
     // The CSS is small, so inline it and save a render-blocking request.
     inlineStylesheets: "always",

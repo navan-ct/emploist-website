@@ -28,7 +28,19 @@ const translations: Partial<Record<Locale, string>> =
 const switcherLinks = Object.fromEntries(
   LOCALES.map((option) => [
     option,
-    translations[option] ?? localizePath(path.startsWith("/blog/") ? "/blog/" : "/", option),
+    translations[option] ??
+      localizePath(
+        path.startsWith("/docs/")
+          ? "/docs/"
+          : path.startsWith("/blog/")
+            ? "/blog/"
+            : path.startsWith("/pricing/") || path === "/pricing"
+              ? "/pricing/"
+              : path.startsWith("/mcp/") || path === "/mcp"
+                ? "/mcp/"
+                : "/",
+        option,
+      ),
   ]),
 ) as Record<Locale, string>;
 

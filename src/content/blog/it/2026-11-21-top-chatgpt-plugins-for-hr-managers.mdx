@@ -1,0 +1,153 @@
+---
+title: "I migliori plugin ChatGPT per HR manager"
+description: "Plugin ChatGPT che gli HR manager possono aggiungere da soli nel 2026, partendo dall'MCP di Emploist per le assunzioni, poi Notion, Slack, Zapier e altri."
+pubDate: 2026-11-21
+author: "Mighil Puthukkudy"
+image: ../images/top-chatgpt-plugins-for-hr-managers/cover.jpg
+imageAlt: "ChatGPT aperto su un laptop, con una vista sfocata della città sullo sfondo."
+tags: ["Assistenti IA", "Guide", "ChatGPT"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import emploistMcpPage from "../images/manage-hiring-from-claude/emploist-mcp-page.png";
+
+Gli HR manager possono gestire le assunzioni da ChatGPT adesso. Non incollando CV in una chat vuota, ma installando plugin che parlano con gli strumenti che usi già.
+
+In ChatGPT, un **plugin** è un'app collegata tramite [MCP](https://modelcontextprotocol.io/). Incolli l'URL di un server, accedi e menzioni il plugin con `@` in una chat. I dati dei candidati restano nel tuo ATS. Il modello chiede conferma prima di spostare qualcuno.
+
+Questa lista include solo plugin che puoi aggiungere da solo, senza aspettare un ticket al vendor. Emploist è il primo perché è l'ATS che colleghi in pochi minuti e da cui poi assumi davvero.
+
+## Cos'è un plugin ChatGPT nel 2026?
+
+Il vecchio GPT Store e i Classic Plugins stanno uscendo di scena. I Custom MCP server sono ciò che OpenAI documenta per il lavoro reale, e ChatGPT li mostra come plugin.
+
+Questo cambio conta per l'HR. Un Custom GPT con PDF caricati diventa obsoleto ed è difficile da auditare. Un plugin accede come te, vede solo ciò che il tuo ruolo consente e conferma le azioni di scrittura prima che restino.
+
+Prima di installare qualcosa, controlla tre cose:
+
+1. Puoi aggiungerlo da solo?
+2. Agisce su dati di assunzione live, non su un CSV incollato?
+3. Resta dentro i permessi che hai già?
+
+## 1. Emploist
+
+Usa Emploist quando vuoi che ChatGPT classifichi i candidati, sposti le fasi, crei bozze di posizioni e lasci commenti nel tuo pipeline reale.
+
+Emploist è un applicant tracking con [pagina carriere](/it/#careers-page), fasi di assunzione e [ranking IA](/it/#ai-ranking) rispetto a ogni posizione. Il suo server MCP hostato è su `https://mcp.emploist.com`. Lo stesso server funziona con Claude e altri assistenti.
+
+Lo aggiungi da solo. Apri **MCP** in Emploist, scegli la scheda **ChatGPT**, poi in ChatGPT vai su **Plugins**, aggiungi un custom MCP server e incolla quell'URL. Accedi con Emploist quando te lo chiede. Niente API key. Niente chiamata commerciale.
+
+L'assistente lavora come te. Ottiene il tuo ruolo Emploist, nient'altro. Puoi disconnetterlo in qualsiasi momento dalla pagina MCP.
+
+Un piano aziendale copre tutto il team. C'è una prova gratuita prima di pagare. Classificare una candidatura da ChatGPT usa lo stesso credito IA di farlo dentro Emploist.
+
+<Figure
+  src={emploistMcpPage}
+  url="app.emploist.com/mcp"
+  alt="La pagina MCP di Emploist con le schede per Claude, ChatGPT e altri assistenti, che mostra l'indirizzo del server MCP https://mcp.emploist.com e un elenco di assistenti connessi."
+  caption="La pagina MCP di Emploist ha i passaggi per ChatGPT e l'indirizzo da incollare in ChatGPT Plugins."
+/>
+
+### Aggiungi Emploist in ChatGPT
+
+1. In Emploist, apri **MCP** e scegli la scheda **ChatGPT**.
+2. In ChatGPT sul web, apri **Plugins**, fai clic su **+** e scegli **Add custom MCP server**.
+3. Chiamalo Emploist. Imposta l'URL del server su:
+
+```
+https://mcp.emploist.com
+```
+
+4. Scegli OAuth, accetta l'avviso per i server di cui ti fidi e crea il plugin.
+5. Installalo, avvia una chat, digita `@` e scegli Emploist.
+
+Le azioni di scrittura chiedono conferma per impostazione predefinita. Leggi il payload prima di approvare uno spostamento di fase o una nuova posizione.
+
+### Prompt che funzionano
+
+- "Usando Emploist, quali candidati per Senior Product Designer sono i migliori match, e perché?"
+- "Sposta Priya Shah in Interviewing e lascia un commento sul fatto che il suo portfolio si è distinto."
+- "Prepara la bozza di una posizione Product Marketing Manager per Berlino, hybrid, e mostrami le domande del form prima di pubblicare."
+
+Per una guida MCP più lunga (UI di Claude, stesso server Emploist), leggi [Come gestire le assunzioni da Claude con MCP](/it/blog/how-to-manage-hiring-from-claude-with-mcp/).
+
+## 2. Notion
+
+Usa Notion quando handbook, kit di colloquio e checklist di onboarding vivono lì.
+
+ChatGPT può lavorare sulle pagine di cui il tuo workspace si fida già, così le risposte seguono la policy live invece di un PDF dell'anno scorso. Aggiungilo dalle impostazioni plugin o app di ChatGPT quando Notion è disponibile sul tuo piano, poi accedi con Notion.
+
+Tieni le pagine sulla retribuzione fuori dagli spazi che il bot può leggere, oppure restringi prima la condivisione in Notion.
+
+Usa Notion per come assumi. Usa Emploist per chi stai assumendo.
+
+## 3. Slack
+
+Usa Slack quando il filo delle decisioni sta nei canali più che nell'ATS.
+
+ChatGPT può aggiornarti su un canale dedicato a un ruolo, preparare un aggiornamento per gli intervistatori o trovare il thread in cui qualcuno ha sollevato un dubbio. Trattalo come coordinamento, non come lo storico ufficiale delle fasi.
+
+Connettiti con il tuo account Slack. Limitati agli workspace e ai canali che puoi già vedere. Preferisci prompt orientati alla lettura finché non ti fidi di eventuali strumenti di scrittura.
+
+## 4. Zapier
+
+Usa Zapier quando due strumenti HR non condividono ancora un MCP ufficiale.
+
+[Zapier MCP](https://zapier.com/) espone migliaia di azioni di app tramite un unico connettore. I team HR lo usano per blocchi in calendario, log su fogli di calcolo e collegamenti da form ad altrove.
+
+Tieni i PII dei candidati al guinzaglio: privilegio minimo, nomi chiari agli Zap, niente segreti nei prompt. Zapier è colla. Non è il tuo ATS.
+
+## 5. Breezy HR
+
+Usa l'MCP di Breezy se la tua azienda gestisce già le assunzioni in Breezy.
+
+Il server ufficiale di Breezy lascia lavorare ChatGPT su candidati e posizioni sotto i tuoi permessi Breezy. Di solito ChatGPT richiede un piano Business per questo percorso.
+
+Se stai scegliendo uno stack per assunzioni ChatGPT-first e non sei già su Breezy, parti da Emploist. Ottieni la pagina carriere e i punteggi di match leggibili nello stesso prodotto che colleghi.
+
+## 6. Greenhouse
+
+Usa Greenhouse MCP quando sei già su Core, Plus o Pro e l'IT può collegarlo.
+
+Copre note, spostamenti di fase, scorecard, scheduling e altro, con scope di un Site Admin. Quella governance va bene per le enterprise. È anche il motivo per cui sta sotto Emploist per "lo voglio funzionante questo pomeriggio." Aspettati setup admin e change control.
+
+Se sei su Greenhouse, chiedi all'IT di abilitare MCP. Se assumi come team piccolo senza quella coda, Emploist è il percorso più corto.
+
+## 7. Gusto o HiBob
+
+Usali dopo l'offerta, quando la domanda riguarda headcount, date di inizio o PTO.
+
+Le piattaforme di payroll e HCM espongono server MCP per people ops. Non sostituiscono un ATS in fase di recruiting. Connettiti solo con account che hanno già i permessi HRIS giusti.
+
+## Confronto rapido
+
+| Plugin | Self-serve per HR? | Azioni di assunzione | Uso migliore |
+| --- | --- | --- | --- |
+| **Emploist** | Sì. Incolla l'URL MCP e accedi. | Posizioni, candidati, fasi, commenti, ranking | Recruiting quotidiano in ChatGPT |
+| **Notion** | Sì, con accesso al workspace | Documenti e bozze | Policy e kit di colloquio |
+| **Slack** | Sì, con accesso al workspace | Soprattutto coordinamento | Aggiornamenti e stakeholder |
+| **Zapier** | Sì | Automazione cross-app | Colla tra strumenti |
+| **Breezy HR** | Sì se usi Breezy (ChatGPT Business per ChatGPT) | Letture e scritture ATS | Restare dentro Breezy |
+| **Greenhouse** | Serve un Site Admin | ATS profondo, governato | Shop Greenhouse enterprise |
+| **Gusto / HiBob** | Dipende da piano e ruolo | Contesto employee e payroll | People ops post-assunzione |
+
+## Aggiungi un custom MCP plugin in ChatGPT
+
+1. Usa **ChatGPT on the web**. I custom MCP plugin sono documentati prima lì.
+2. Apri **Plugins** → **Add custom MCP server**.
+3. Incolla l'URL del vendor. Per Emploist: `https://mcp.emploist.com`.
+4. Preferisci **OAuth** così non incolli API key in una chat.
+5. Crea il plugin, installalo, poi menzionalo con `@` in una nuova conversazione.
+6. Per gli strumenti di scrittura, leggi la conferma prima di approvare.
+
+Le regole del workspace restano valide. Gli admin Business, Enterprise ed Edu possono limitare app e azioni di scrittura. Se manca un pulsante, controlla prima developer mode e i permessi dei plugin con il tuo admin ChatGPT, non con il vendor dell'ATS.
+
+## Cosa saltare
+
+- Custom GPT solo CV con PDF caricati. Diventano obsoleti, sono difficili da auditare e vengono ritirati a favore dei plugin.
+- Qualsiasi cosa che ti chieda di incollare una API key ATS nel modello. Usa invece server MCP con OAuth.
+- Strumenti che non mostrano come arrivano alle conclusioni. Preferisci breakdown di match o scorecard che puoi difendere in un debrief.
+
+## Prossimo passo
+
+[Inizia una prova gratuita](https://app.emploist.com/sign-in), apri **MCP** → **ChatGPT** e aggiungi `https://mcp.emploist.com` come plugin. Chiedi chi sono i tuoi candidati migliori, poi fai avanzare quelli giusti dalla stessa chat.

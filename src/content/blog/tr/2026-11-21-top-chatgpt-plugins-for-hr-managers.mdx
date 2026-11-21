@@ -1,0 +1,153 @@
+---
+title: "İK yöneticileri için en iyi ChatGPT eklentileri"
+description: "2026'da İK'nın kendi ekleyebileceği ChatGPT eklentileri: işe alım için Emploist MCP ile başlayın, ardından Notion, Slack, Zapier ve daha fazlası."
+pubDate: 2026-11-21
+author: "Mighil Puthukkudy"
+image: ../images/top-chatgpt-plugins-for-hr-managers/cover.jpg
+imageAlt: "Dizüstü bilgisayarda açık ChatGPT, arkasında bulanık bir şehir manzarası."
+tags: ["Yapay zekâ asistanları", "Kılavuzlar", "ChatGPT"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import emploistMcpPage from "../images/manage-hiring-from-claude/emploist-mcp-page.png";
+
+İK yöneticileri artık işe alımı ChatGPT'den yürütebilir. Özgeçmişleri boş bir sohbete yapıştırarak değil, zaten kullandığınız araçlarla konuşan eklentileri kurarak.
+
+ChatGPT'de bir **eklenti**, [MCP](https://modelcontextprotocol.io/) üzerinden bağlı bir uygulamadır. Bir sunucu URL'si yapıştırır, oturum açar ve sohbette `@` ile eklentiyi anarsınız. Aday verisi ATS'inizde kalır. Model, birini taşımadan önce onay ister.
+
+Bu liste, satıcı bileti beklemeden kendi ekleyebileceğiniz eklentilerle sınırlı. Emploist'i öne koyuyoruz çünkü birkaç dakikada bağlayıp gerçekten işe alım yapabileceğiniz ATS odur.
+
+## 2026'da ChatGPT eklentisi nedir?
+
+Eski GPT Store ve Classic Plugins yavaş yavaş kalkıyor. OpenAI'nin gerçek iş için belgelediği şey özel MCP sunucuları ve ChatGPT bunları eklenti olarak gösteriyor.
+
+Bu kayma İK için önemli. PDF yüklenmiş bir Custom GPT bayatlar ve denetlenmesi zordur. Bir eklenti sizin adınıza oturum açar, yalnızca rolünüzün izin verdiğini görür ve yazma işlemlerini kalıcı hale getirmeden önce onaylar.
+
+Bir şey kurmadan önce üç noktayı kontrol edin:
+
+1. Kendi başınıza ekleyebiliyor musunuz?
+2. Yapıştırılmış bir CSV değil, canlı işe alım verisi üzerinde mi çalışıyor?
+3. Mevcut izinlerinizin içinde mi kalıyor?
+
+## 1. Emploist
+
+ChatGPT'nin adayları sıralamasını, aşamaları taşımasını, ilan taslağı yazmasını ve gerçek boru hattınıza yorum bırakmasını istediğinizde Emploist'i kullanın.
+
+Emploist; [kariyer sayfası](/tr/#careers-page), işe alım aşamaları ve her ilana göre [yapay zekâ sıralaması](/tr/#ai-ranking) olan bir aday takip sistemidir. Barındırılan MCP sunucusu `https://mcp.emploist.com` adresindedir. Aynı sunucu Claude ve diğer asistanlarla da çalışır.
+
+Kendiniz eklersiniz. Emploist'te **MCP**'yi açın, **ChatGPT** sekmesini seçin, sonra ChatGPT'de **Plugins**'e gidin, özel bir MCP sunucusu ekleyin ve o URL'yi yapıştırın. İstendiğinde Emploist ile oturum açın. API anahtarı yok. Satış görüşmesi yok.
+
+Asistan sizin adınıza çalışır. Yalnızca Emploist rolünüzü alır. İstediğiniz zaman MCP sayfasından bağlantıyı kesebilirsiniz.
+
+Tek bir şirket planı tüm ekibi kapsar. Ödemeden önce ücretsiz deneme vardır. ChatGPT'den bir başvuruyu sıralamak, Emploist içinde sıralamakla aynı yapay zekâ kredisini kullanır.
+
+<Figure
+  src={emploistMcpPage}
+  url="app.emploist.com/mcp"
+  alt="Emploist'in MCP sayfası: Claude, ChatGPT ve diğer asistanlar için sekmeler; MCP sunucu adresi https://mcp.emploist.com ve bağlı asistanların listesi görünüyor."
+  caption="Emploist'in MCP sayfasında ChatGPT adımları ve ChatGPT Plugins'e yapıştırılacak adres vardır."
+/>
+
+### ChatGPT'ye Emploist ekleyin
+
+1. Emploist'te **MCP**'yi açın ve **ChatGPT** sekmesini seçin.
+2. Web'deki ChatGPT'de **Plugins**'i açın, **+**'ya tıklayın ve **Add custom MCP server**'ı seçin.
+3. Adını Emploist koyun. Sunucu URL'sini şuna ayarlayın:
+
+```
+https://mcp.emploist.com
+```
+
+4. OAuth'u seçin, güvendiğiniz sunucular için uyarıyı kabul edin ve eklentiyi oluşturun.
+5. Kurun, bir sohbet başlatın, `@` yazın ve Emploist'i seçin.
+
+Yazma işlemleri varsayılan olarak onay ister. Bir aşama taşımasını veya yeni bir ilanı onaylamadan önce içeriği okuyun.
+
+### İşe yarayan istemler
+
+- "Using Emploist, which applicants for Senior Product Designer are the best matches, and why?"
+- "Move Priya Shah to Interviewing and leave a comment that her portfolio stood out."
+- "Draft a Product Marketing Manager job for Berlin, hybrid, and show me the form questions before we publish."
+
+Daha uzun bir MCP rehberi için (Claude arayüzü, aynı Emploist sunucusu) [MCP ile işe alımı Claude'dan yönetin](/tr/blog/how-to-manage-hiring-from-claude-with-mcp/) yazısını okuyun.
+
+## 2. Notion
+
+El kitabı, mülakat setleri ve işe alıştırma kontrol listeleri Notion'da yaşıyorsa Notion'u kullanın.
+
+ChatGPT, çalışma alanınızın zaten güvendiği sayfalara dayanarak taslak yazabilir; böylece cevaplar geçen yılın PDF'ine değil, güncel politikaya uyar. Notion planınızda varsa ChatGPT'nin eklenti veya uygulama ayarlarından ekleyin, sonra Notion ile oturum açın.
+
+Ücret sayfalarını botun okuyabileceği alanların dışında tutun veya önce Notion paylaşımını sıkılaştırın.
+
+Nasıl işe aldığınız için Notion. Kimi işe aldığınız için Emploist.
+
+## 3. Slack
+
+Karar izi ATS'ten çok kanallardaysa Slack'i kullanın.
+
+ChatGPT bir rol kanalını size yetiştirebilir, mülakatçılar için bir güncelleme taslağı yazabilir veya birinin endişe yükselttiği iletiyi bulabilir. Bunu resmi aşama geçmişi değil, koordinasyon olarak görün.
+
+Slack hesabınızla bağlanın. Yalnızca zaten görebileceğiniz çalışma alanları ve kanallarla sınırlayın. Yazma araçlarına güvenene kadar okuma ağırlıklı istemleri tercih edin.
+
+## 4. Zapier
+
+İki İK aracı henüz resmi bir MCP paylaşmıyorsa Zapier'i kullanın.
+
+[Zapier MCP](https://zapier.com/) binlerce uygulama eylemini tek bir bağlayıcı üzerinden sunar. İK ekipleri bunu takvim rezervleri, elektronik tablo kayıtları ve formdan başka yere giden kenarlar için kullanır.
+
+Aday kişisel verisini kısa tutun: en az yetki, net Zap adları, istemlere sır koymayın. Zapier tutkal. ATS'iniz değil.
+
+## 5. Breezy HR
+
+Şirketiniz zaten Breezy'de işe alım yürütüyorsa Breezy'nin MCP'sini kullanın.
+
+Breezy'nin resmi sunucusu, ChatGPT'nin adaylar ve pozisyonlar üzerinde Breezy izinleriniz altında çalışmasına izin verir. Bu yol için ChatGPT'de genelde Business plan gerekir.
+
+ChatGPT öncelikli bir yığın seçiyorsanız ve henüz Breezy'de değilseniz, bunun yerine Emploist ile başlayın. Bağladığınız aynı üründe kariyer sayfası ve okunabilir eşleşme puanları gelir.
+
+## 6. Greenhouse
+
+Zaten Core, Plus veya Pro'daysanız ve BT bağlayabiliyorsa Greenhouse MCP'yi kullanın.
+
+Notlar, aşama taşımaları, puan kartları, planlama ve daha fazlasını Site Admin kapsamıyla kapsar. Bu yönetim işletmelere uyar. "Bu öğleden sonra çalışsın" diyenler için Emploist'in altında sıralamamızın nedeni de budur. Yönetici kurulumu ve değişiklik kontrolü bekleyin.
+
+Greenhouse'taysanız BT'den MCP'yi açmasını isteyin. O kuyruk olmadan küçük bir ekiple işe alıyorsanız Emploist daha kısa yoldur.
+
+## 7. Gusto veya HiBob
+
+Tekliften sonra soru kadro, işe başlama tarihi veya izin olduğunda bunları kullanın.
+
+Bordro ve HCM platformları, people ops için MCP sunucuları açar. İşe alım sırasında bir ATS'nin yerini tutmazlar. Yalnızca zaten doğru HRIS izinlerine sahip hesaplarla bağlanın.
+
+## Hızlı karşılaştırma
+
+| Eklenti | İK kendi kurabilir mi? | İşe alım eylemleri | En iyi kullanım |
+| --- | --- | --- | --- |
+| **Emploist** | Evet. MCP URL'sini yapıştırıp oturum açın. | İlanlar, adaylar, aşamalar, yorumlar, sıralama | ChatGPT'de günlük işe alım |
+| **Notion** | Evet, çalışma alanı erişimiyle | Belgeler ve taslaklar | Politikalar ve mülakat setleri |
+| **Slack** | Evet, çalışma alanı erişimiyle | Çoğunlukla koordinasyon | Yetişme ve paydaş güncellemeleri |
+| **Zapier** | Evet | Uygulamalar arası otomasyon | Araçlar arası tutkal |
+| **Breezy HR** | Breezy kullanıyorsanız evet (ChatGPT için Business) | ATS okuma ve yazma | Breezy içinde kalmak |
+| **Greenhouse** | Site Admin gerekir | Derin ATS, yönetimli | Kurumsal Greenhouse ekipleri |
+| **Gusto / HiBob** | Plan ve role bağlı | Çalışan ve bordro bağlamı | İşe alım sonrası people ops |
+
+## ChatGPT'de özel bir MCP eklentisi ekleyin
+
+1. **Web'deki ChatGPT**'yi kullanın. Özel MCP eklentileri önce orada belgelenir.
+2. **Plugins** → **Add custom MCP server**'ı açın.
+3. Satıcı URL'sini yapıştırın. Emploist için: `https://mcp.emploist.com`.
+4. Sohbete API anahtarı yapıştırmamak için **OAuth**'u tercih edin.
+5. Eklentiyi oluşturun, kurun, sonra yeni bir konuşmada `@` ile anın.
+6. Yazma araçlarında onaylamadan önce doğrulamayı okuyun.
+
+Çalışma alanı kuralları geçerli kalır. Business, Enterprise ve Edu yöneticileri uygulamaları ve yazma eylemlerini sınırlayabilir. Bir düğme yoksa önce ATS satıcısına değil, ChatGPT yöneticinize geliştirici modu ve eklenti izinlerini sorun.
+
+## Atlanması gerekenler
+
+- Yalnızca özgeçmiş için PDF yüklenmiş Custom GPT'ler. Bayatlarlar, denetlenmeleri zordur ve eklentiler lehine emekliye ayrılıyorlar.
+- ATS API anahtarını modele yapıştırmanızı isteyen her şey. Bunun yerine OAuth MCP sunucuları kullanın.
+- İşini göstermeyen araçlar. Brifingde savunabileceğiniz eşleşme dökümlerini veya puan kartlarını tercih edin.
+
+## Sonraki adım
+
+[Ücretsiz denemeyi başlatın](https://app.emploist.com/sign-in), **MCP** → **ChatGPT**'yi açın ve `https://mcp.emploist.com`'i eklenti olarak ekleyin. En iyi adaylarınızı sorun, sonra doğru olanları aynı sohbetten ilerletin.

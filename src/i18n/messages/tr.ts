@@ -31,11 +31,13 @@ const tr: Messages = {
     features: "Özellikler",
     careersPage: "Kariyer sayfası",
     aiAssistants: "Yapay zekâ asistanları",
+    mcp: "MCP",
     /** The last item in the Features menu, after the feature sections. */
     moreFeatures: "Diğer özellikler",
     pricing: "Fiyatlar",
     faq: "SSS",
     blog: "Blog",
+    docs: "Belgeler",
     signIn: "Giriş yap",
     startFreeTrial: "Ücretsiz deneyin",
     menu: "Menü",
@@ -55,6 +57,7 @@ const tr: Messages = {
     legal: "Yasal",
     rssFeed: "RSS beslemesi",
     support: "Destek",
+    llmsTxt: "llms.txt",
     terms: "Hizmet Şartları",
     privacy: "Gizlilik Politikası",
     copyright: (year) => `© ${year} Emploist. Tüm hakları saklıdır.`,
@@ -68,8 +71,9 @@ const tr: Messages = {
 
   hero: {
     eyebrow: "Yapay zekâ puanlamalı aday takibi",
-    title: "En iyi adaylarınızı önce görün.",
+    title: "En iyi başvuruları, manuel filtreler ve karmaşık ATS olmadan görün",
     lead: "Emploist size bir kariyer sayfası, sade bir işe alım süreci ve her başvuruyu ilan açıklamanıza göre puanlayan bir yapay zekâ sunar. Ekibiniz başvuruları ayıklamaya daha az, pozisyona uygun kişilerle ilgilenmeye daha çok zaman ayırır.",
+    cta: "Adaylarınızı sıralayın",
     seeHowItWorks: "Nasıl çalıştığını görün",
     note: (p) => `${p.trialDays} gün ücretsiz, ardından ayda ${f.usd(p.priceUsd)}. Kullanıcı başına ücret yok.`,
     screenshotAlt: `Emploist'te Senior Product Designer ilanına gelen başvurular, en iyi eşleşmeye göre sıralanmış: ${f.percent(91)}, ${f.percent(88)}, ${f.percent(86)} ve diğerleri; her adayın adı, e-postası ve yorum sayısıyla birlikte.`,
@@ -130,7 +134,7 @@ const tr: Messages = {
     title: "İlk günden hazır bir kariyer sayfası.",
     lead: "Her şirket, kendi logosu ve rengiyle hızlı ve şık bir kariyer sayfasına sahip olur. Yeni ilanlar yayınladığınız anda görünür, başvurular da doğrudan ilanın gelen kutusuna düşer.",
     screenshotAlt:
-      "Northwind Labs kariyer sayfası: şirketin logosunu içeren bir üst bilgi, kısa bir tanıtım ve departman ile konum filtreleriyle, departmana göre gruplanmış açık pozisyonlar.",
+      "Fieldnote Labs kariyer sayfası: şirketin logosunu içeren bir üst bilgi, kısa bir tanıtım ve departman ile konum filtreleriyle, departmana göre gruplanmış açık pozisyonlar.",
     mobileScreenshotAlt:
       "Telefonda bir ilan sayfası: Berlin'de hibrit ve tam zamanlı Senior Product Designer pozisyonu, “Apply for this job” düğmesi ve ilan açıklaması.",
     facts: [
@@ -205,7 +209,7 @@ const tr: Messages = {
     editorScreenshotAlt:
       "Emploist'te “Interviewing” aşamasının e-postası. Konu ve mesajda adayın adı, pozisyon adı ve şirket adı için değişkenler kullanılıyor.",
     previewScreenshotAlt:
-      "Sam adlı bir adaya ulaştığı hâliyle tamamlanmış e-posta: en üstte Northwind Labs, Senior Product Designer pozisyonu için kişisel bir mülakat daveti ve açık pozisyonlara giden bir bağlantı.",
+      "Sam adlı bir adaya ulaştığı hâliyle tamamlanmış e-posta: en üstte Fieldnote Labs, Senior Product Designer pozisyonu için kişisel bir mülakat daveti ve açık pozisyonlara giden bir bağlantı.",
   },
 
   aiAssistants: {
@@ -245,6 +249,108 @@ const tr: Messages = {
       placeholder: "İlanlarınızı ve adaylarınızı sorun",
     },
     caption: "Herkes kendi asistanını birkaç adımda bağlar.",
+  },
+
+  /** The /mcp/ landing page. */
+  mcp: {
+    description:
+      "Claude, ChatGPT ve diğer yapay zekâ asistanlarını MCP ile Emploist'e bağlayın. Adaylar hakkında sorun, aşamalar arasında taşıyın ve sohbetten ilan oluşturun; hepsi kendi yetkilerinizle.",
+    eyebrow: "MCP",
+    heading: "Zaten kullandığınız sohbetten işe alın.",
+    lead: "MCP, Emploist'i Claude, ChatGPT ve diğer asistanlara bağlar. Siz kendi kelimelerinizle sorarsınız. Asistan Emploist'te sizin adınıza işi yapar.",
+    whatTitle: "MCP nedir?",
+    whatLead:
+      "MCP, Model Context Protocol'ün kısaltmasıdır. Yapay zekâ asistanının başka bir uygulamayı güvenle kullanması için açık bir yoldur.",
+    whatPoints: [
+      {
+        title: "Bir bağlayıcı, yeni bir ürün değil.",
+        text: "İlanlarınız ve adaylarınız hâlâ Emploist'te durur. MCP, asistanınızın onlara ulaşma yoludur.",
+      },
+      {
+        title: "Tek bir sunucu adresi.",
+        text: "Emploist'in barındırılan MCP sunucusu mcp.emploist.com adresindedir. Bunu Claude, ChatGPT veya MCP destekleyen başka bir istemciye yapıştırırsınız.",
+      },
+      {
+        title: "Planınıza dahil.",
+        text: "Ekibinizdeki herkes kendi asistanını bağlayabilir. Sohbetten bir başvuruyu puanlamak, Emploist'te puanlamakla aynı yapay zekâ kredisini kullanır.",
+      },
+    ],
+    howTitle: "Nasıl çalışır",
+    howSteps: [
+      {
+        title: "Bir kez bağlanırsınız.",
+        text: "Emploist'te MCP'yi açın, asistanınızı seçin ve adımlarını izleyin. İstendiğinde Emploist ile oturum açın. Kopyalanacak API anahtarı yok.",
+      },
+      {
+        title: "Sohbette sorarsınız.",
+        text: "Emploist'ten bahsedin; ardından kimin bir role uyduğunu sorun, birini sonraki aşamaya taşıyın, yorum bırakın veya bir ilan taslağı hazırlayın.",
+      },
+      {
+        title: "Emploist işi yapar.",
+        text: "Asistan, Emploist araçlarını sizin oturumunuz altında çağırır. Yazma işlemleri kalıcı olmadan önce onay ister.",
+      },
+    ],
+    canDoTitle: "Neler sorabilirsiniz",
+    canDo: [
+      "Senior Product Designer ilanına en uygun adaylar kimler?",
+      "Priya'yı Phone screen aşamasına taşı ve aşama e-postası gittiğinde haber ver.",
+      "Bugünkü yeni başvuruları özetle.",
+      "Berlin için bir Customer Support ilanı taslağı hazırla ve yayınlamadan önce formu göster.",
+      "Sara'nın başvurusuna Priya için bir yorum bırak.",
+    ],
+    connectTitle: "Bir asistan bağlayın",
+    connectLead: "Emploist'in MCP sayfasında her istemci için sekmeler vardır. Sunucu URL'si her yerde aynıdır:",
+    serverUrl: "https://mcp.emploist.com",
+    connectClients: [
+      {
+        name: "Claude",
+        text: "Claude'da Customize → Connectors'ı açın, özel bir bağlayıcı ekleyin, URL'yi yapıştırın ve Emploist'te oturum açın.",
+      },
+      {
+        name: "ChatGPT",
+        text: "Web'de ChatGPT'de Plugins'i açın, özel bir MCP sunucusu ekleyin, URL'yi yapıştırın, eklentiyi oluşturun, ardından @ ile bahsedin.",
+      },
+      {
+        name: "Diğer istemciler",
+        text: "Cursor, VS Code, Claude Code ve diğer MCP istemcileri aynı URL'yi kullanır. Emploist'in MCP sayfası her biri için adımları listeler.",
+      },
+    ],
+    controlTitle: "Kontrol sizde kalır",
+    controlPoints: [
+      {
+        title: "Sizin rolünüz, fazlası değil.",
+        text: "Asistan yalnızca Emploist'te zaten yapabildiklerinizi yapabilir. Faturalandırma, ekip davetleri ve şirketi silme erişimin dışındadır.",
+      },
+      {
+        title: "Yazmalarda onay.",
+        text: "Bir adayı taşımak veya ilan oluşturmak önce onay ister. Yanlış görünen her şeyi reddedin.",
+      },
+      {
+        title: "İstediğiniz zaman bağlantıyı kesin.",
+        text: "MCP sayfasında bir asistanın bağlantısını kesin, durur. Yöneticiler MCP'yi tüm şirket için de kapatabilir.",
+      },
+    ],
+    worksWith: "Şunlarla çalışır",
+    guidesTitle: "Kılavuzlar",
+    guidesLead: "Adım adım kurulum ve örnekler.",
+    guideClaude: "Claude ile MCP üzerinden işe alımı yönetmek",
+    guideChatgpt: "İK yöneticileri için en iyi ChatGPT eklentileri",
+    guideDocs: "Bir yapay zekâ asistanı bağlayın",
+    cta: "Yapay zekâ asistanınızı bağlayın",
+    copySetup: "MCP kurulumunu kopyala",
+    copiedSetup: "Kopyalandı",
+    /** Pasted into an AI chat. Keep facts (URL, OAuth) intact across locales. */
+    setupCopy: (u: { mcpDocs: string; serverUrl: string }) =>
+      `Emploist bir aday takip yazılımıdır. Bu dosya, bir yapay zekâ asistanına Emploist'in MCP sunucusuna nasıl bağlanacağını ve bağlandıktan sonra neler yapabileceğini anlatır.
+
+Bu sohbetten işe alımı yönetebilmek için Emploist'in MCP sunucusunu bağlayın.
+
+MCP Docs: ${u.mcpDocs}
+Server URL: ${u.serverUrl}
+Authentication: OAuth (istenince Emploist ile oturum açın)
+
+Bağlandıktan sonra Emploist'te ilanlar ve adaylarla ilgili yardımcı olun: başvuruları listeleyin ve puanlayın, kişileri aşamalar arasında taşıyın, yorum bırakın, ilan oluşturun veya yayınlayın. Yalnızca benim Emploist yetkilerimle çalışın. Her yazma işleminden önce onay isteyin.
+`,
   },
 
   details: {
@@ -415,6 +521,16 @@ const tr: Messages = {
     blog: "Blogu okuyun",
   },
 
+  docs: {
+    title: "Emploist belgeleri",
+    lead: "Emploist’te işleri ilerletmek için bu resmi belgelere bakın.",
+    copyMarkdown: "Markdown’ı kopyala",
+    copied: "Kopyalandı",
+    discussWith: "Şununla konuş",
+    discussPrompt: (title, url) =>
+      `Bu Emploist rehberinde bana yardım et: "${title}". ${url} adresini oku ve sorularımı yanıtla.`,
+  },
+
   blog: {
     title: "Blog",
     description:
@@ -439,6 +555,7 @@ const tr: Messages = {
     ctaText: (p) =>
       `Emploist'i ${p.trialDays} gün ücretsiz deneyin, ardından tüm ekibiniz için ayda ${f.usd(p.priceUsd)}.`,
     defaultAuthor: "Emploist ekibi",
+    writtenBy: (name) => `Yazan: ${name}`,
   },
 
   listedOn: {

@@ -1,0 +1,485 @@
+{
+  "title": "Support",
+  "description": "We're here to help. Email us, or follow a guide to get things done in Emploist.",
+  "contact": {
+    "title": "Email us",
+    "description": "Questions, feedback, or something not working? We usually reply within 24 hours.",
+    "copied": "Email address copied",
+    "copy": "Copy email address"
+  },
+  "guideList": {
+    "title": "Guides",
+    "description": "Step-by-step help with the main parts of Emploist.",
+    "adminOnly": "Admins only"
+  },
+  "topics": {
+    "jobsAndApplications": "Jobs and applications",
+    "careersPage": "Careers page",
+    "teamAndEmails": "Team and emails",
+    "aiAndBilling": "AI ranking and billing",
+    "aiAssistants": "AI assistants"
+  },
+  "guides": {
+    "createJob": {
+      "title": "Create and publish a job",
+      "summary": "Describe the role, save a draft, and publish it.",
+      "steps": {
+        "start": {
+          "title": "Start a new job",
+          "body": "Open <jobs>Jobs</jobs> and click <ui>Create job</ui>."
+        },
+        "describe": {
+          "title": "Describe the role",
+          "body": "On the <ui>Details</ui> tab, add a <ui>Job title</ui> and a <ui>Description</ui>. The department, location, work mode, and employment type are optional. Departments and locations you add are offered again on later jobs."
+        },
+        "formAndStages": {
+          "title": "Check the form and stages",
+          "body": "The <ui>Application form</ui> and <ui>Stages</ui> tabs start with a ready-to-use setup. You can adjust them now or at any time later."
+        },
+        "saveOrPublish": {
+          "title": "Save or publish",
+          "body": "<ui>Save draft</ui> keeps the job private to your team. <ui>Publish</ui> puts it on your careers page."
+        }
+      }
+    },
+    "applicationForm": {
+      "title": "Build the application form",
+      "summary": "Choose what applicants fill in when they apply.",
+      "steps": {
+        "open": {
+          "title": "Open the form",
+          "body": "Open the <ui>Application form</ui> tab of a job."
+        },
+        "essentials": {
+          "title": "Start with the essentials",
+          "body": "Every form asks for a <ui>Full name</ui>, an <ui>Email</ui>, and a <ui>Resume or CV</ui>. You can move them, but not remove them."
+        },
+        "addQuestions": {
+          "title": "Add questions",
+          "body": "Click <ui>Add</ui> and choose a question type, such as <ui>Short answer</ui>, <ui>Single choice</ui>, or <ui>Linear scale</ui>. Add a <ui>Heading</ui> or <ui>Text</ui> to give applicants more context."
+        },
+        "setUp": {
+          "title": "Set each one up",
+          "body": "Click a question to edit it, and turn on <ui>Required</ui> if applicants must answer it. Drag questions, or use their menu, to change the order. Questions marked <ui>Incomplete</ui> need finishing before you publish."
+        },
+        "save": {
+          "title": "Save your changes",
+          "body": "On an existing job, click <ui>Save changes</ui>. Your changes only apply to new applications. Ones you already have keep the questions they answered."
+        }
+      }
+    },
+    "stages": {
+      "title": "Set up hiring stages",
+      "summary": "Shape the steps every application moves through.",
+      "steps": {
+        "open": {
+          "title": "Open the stages",
+          "body": "Open a job's <ui>Stages</ui> tab. New jobs start with <ui>Inbox</ui>, <ui>Interviewing</ui>, <ui>Accepted</ui>, and <ui>Rejected</ui>."
+        },
+        "inbox": {
+          "title": "Get to know the inbox",
+          "body": "New applications arrive in the first stage, the inbox. You can rename it, but it always stays first and can't be deleted."
+        },
+        "addRenameReorder": {
+          "title": "Add, rename, and reorder",
+          "body": "Click <ui>Add stage</ui> to add one, or choose <ui>Rename</ui> from a stage's menu. Drag stages into the order you hire in."
+        },
+        "delete": {
+          "title": "Delete a stage",
+          "body": "Choose <ui>Delete</ui> from a stage's menu. If it has applications, you'll choose which stage they move to."
+        }
+      }
+    },
+    "reviewApplications": {
+      "title": "Review applications",
+      "summary": "Find, read, and move applications through your stages.",
+      "steps": {
+        "openJob": {
+          "title": "Open a job",
+          "body": "Open a job from <jobs>Jobs</jobs>. Its <ui>Applications</ui> tab has a pill for each stage, showing how many applications are in it."
+        },
+        "find": {
+          "title": "Find who to review",
+          "body": "Search by name or email, and sort by <ui>Best match</ui>, <ui>Newest first</ui>, or <ui>Oldest first</ui>. Best match is available while AI features are on."
+        },
+        "openApplication": {
+          "title": "Open an application",
+          "body": "Click a name to open the application. Click <ui>View resume</ui> to open their resume in a new tab. Press <ui>←</ui> or <ui>→</ui> to go to the previous or next application."
+        },
+        "move": {
+          "title": "Move it to a stage",
+          "body": "Choose a stage from the <ui>Stage</ui> menu in the application, or from <ui>Move to</ui> in a row's menu. If you move one by mistake, click <ui>Undo</ui> in the message that appears."
+        }
+      }
+    },
+    "comments": {
+      "title": "Comment and mention teammates",
+      "summary": "Discuss applicants with your team, and stay in the loop.",
+      "steps": {
+        "write": {
+          "title": "Write a comment",
+          "body": "Open an application, write in the comment box, and click <ui>Comment</ui>, or press <ui>{{shortcut}}</ui>. Only your team sees comments.",
+          "shortcut": "Ctrl+Enter",
+          "shortcutMac": "⌘+Enter"
+        },
+        "mention": {
+          "title": "Mention someone",
+          "body": "Type <ui>@</ui> and choose a teammate to let them know."
+        },
+        "replies": {
+          "title": "Keep up with replies",
+          "body": "You're notified when someone mentions you, or comments on an application you've commented on. Find these under the bell at the top of the page, or in <notifications>Notifications</notifications>."
+        },
+        "editOrDelete": {
+          "title": "Edit or delete",
+          "body": "Use a comment's menu to <ui>Edit</ui> or <ui>Delete</ui> your own comments. Admins can also delete anyone's comments."
+        }
+      }
+    },
+    "manageJob": {
+      "title": "Close, archive, or duplicate a job",
+      "summary": "Stop taking applications, tidy up, or reuse a job.",
+      "steps": {
+        "closeOrReopen": {
+          "title": "Close or reopen",
+          "body": "On a published job, use the status menu at the top: <ui>Closed</ui> stops taking applications, and <ui>Open</ui> starts again."
+        },
+        "duplicate": {
+          "title": "Duplicate",
+          "body": "Choose <ui>Duplicate</ui> from a job's <ui>More actions</ui> menu to start a draft with the same details, form, and stages."
+        },
+        "archive": {
+          "title": "Archive",
+          "body": "Choose <ui>Archive</ui> from <ui>More actions</ui> to put a job away. Archived jobs are read-only. Click <ui>Restore</ui> to bring one back."
+        },
+        "delete": {
+          "title": "Delete",
+          "body": "Choose <ui>Delete</ui> from <ui>More actions</ui> to remove a job for good, along with its applications. If you'd like to keep them, archive the job instead."
+        }
+      }
+    },
+    "exportApplications": {
+      "title": "Export applications",
+      "summary": "Download a job's applications and resumes.",
+      "steps": {
+        "start": {
+          "title": "Start the export",
+          "body": "On a job with applications, open <ui>More actions</ui> and choose <ui>Export applications</ui>."
+        },
+        "openZip": {
+          "title": "Open the ZIP file",
+          "body": "<ui>{{file}}</ui> is a spreadsheet with a row for each application. The <ui>{{folder}}</ui> folder has every resume, named after the applicant."
+        }
+      }
+    },
+    "customizeCareersPage": {
+      "title": "Customize your careers page",
+      "summary": "Choose your color, or edit the page's code.",
+      "steps": {
+        "color": {
+          "title": "Pick a color",
+          "body": "Open the <design>Design</design> tab in Careers page, choose a <ui>Primary color</ui>, and click <ui>Save color</ui>. It's used for buttons and highlights."
+        },
+        "code": {
+          "title": "Edit the code",
+          "body": "Click <ui>Edit code</ui> to change the page's templates and styles. <ui>Reference</ui> lists everything you can use in them."
+        },
+        "preview": {
+          "title": "Preview as you go",
+          "body": "The preview updates as you type. Use <ui>Go to page</ui> to check each page, and switch between desktop and mobile sizes."
+        },
+        "save": {
+          "title": "Save",
+          "body": "Click <ui>Save</ui>. To start over, choose <ui>Reset to default code</ui> from <ui>More actions</ui>."
+        }
+      }
+    },
+    "editCodeLocally": {
+      "title": "Edit the code on your computer",
+      "summary": "Work in your own editor, with a live preview.",
+      "steps": {
+        "download": {
+          "title": "Download the code",
+          "body": "On the <design>Design</design> tab, click <ui>Download ZIP</ui> and unzip it."
+        },
+        "preview": {
+          "title": "Preview it",
+          "body": "With Node.js {{version}} or later, run <code>{{command}}</code> in the folder and open <code>{{url}}</code>. It shows your page with sample jobs. Reload it after each change."
+        },
+        "check": {
+          "title": "Check for problems",
+          "body": "Run <code>{{command}}</code> to find the same problems that saving would."
+        },
+        "upload": {
+          "title": "Upload it",
+          "body": "Zip the files, click <ui>Upload ZIP</ui>, check the preview, and click <ui>Save</ui>."
+        }
+      }
+    },
+    "changeAddress": {
+      "title": "Change your careers page address",
+      "summary": "Move your page to a new Emploist address.",
+      "steps": {
+        "open": {
+          "title": "Open the address",
+          "body": "Open the <domain>Domain</domain> tab in Careers page, and click <ui>Change</ui>."
+        },
+        "choose": {
+          "title": "Choose a new one",
+          "body": "Type the address you'd like. We'll check that it's available as you type."
+        },
+        "confirm": {
+          "title": "Confirm the change",
+          "body": "Click <ui>Change address</ui>. Your old address stops working right away, including links to jobs you've shared, and another company could then use it."
+        }
+      }
+    },
+    "customDomain": {
+      "title": "Connect your own domain",
+      "summary": "Show your careers page at an address on your website.",
+      "steps": {
+        "add": {
+          "title": "Add your domain",
+          "body": "On the <domain>Domain</domain> tab, enter a subdomain of your website, like careers.acme.com, and click <ui>Add domain</ui>. Main domains, like acme.com, can't be connected."
+        },
+        "records": {
+          "title": "Add two DNS records",
+          "body": "Where you manage your domain, add the <ui>CNAME</ui> and <ui>TXT</ui> records shown, using the copy buttons. On Cloudflare, set the CNAME record to DNS only."
+        },
+        "wait": {
+          "title": "Wait for the check",
+          "body": "Changes usually show up within minutes, but can take up to 48 hours. Once it says <ui>Connected</ui>, your careers page is at your domain."
+        }
+      }
+    },
+    "inviteTeam": {
+      "title": "Invite your team",
+      "summary": "Add teammates by email, and choose their roles.",
+      "steps": {
+        "send": {
+          "title": "Send an invitation",
+          "body": "Open the <members>Members</members> tab in Settings, click <ui>Invite member</ui>, enter their email address, and click <ui>Send invitation</ui>."
+        },
+        "role": {
+          "title": "Choose a role",
+          "body": "<ui>Members</ui> work on jobs and applications. <ui>Admins</ui> can also manage the team, company settings, careers page, and billing."
+        },
+        "join": {
+          "title": "They join",
+          "body_one": "They'll get an email with a link to join, which works for {{count, number}} day.",
+          "body_other": "They'll get an email with a link to join, which works for {{count, number}} days."
+        },
+        "followUp": {
+          "title": "Follow up",
+          "body": "Invitations waiting for an answer are listed under <ui>Pending invitations</ui>. Use an invitation's menu to <ui>Resend invitation</ui> or <ui>Cancel invitation</ui>."
+        }
+      }
+    },
+    "manageMembers": {
+      "title": "Manage roles and members",
+      "summary": "Change roles, remove people, or leave a company.",
+      "steps": {
+        "changeRole": {
+          "title": "Change a role",
+          "body": "On the <members>Members</members> tab in Settings, open someone's menu and choose <ui>Make admin</ui> or <ui>Make member</ui>. Only admins can change roles."
+        },
+        "remove": {
+          "title": "Remove someone",
+          "body": "Choose <ui>Remove from company</ui> from their menu. They lose access right away. Only admins can remove people."
+        },
+        "leave": {
+          "title": "Leave the company",
+          "body": "Choose <ui>Leave company</ui> from your own menu. If you're the only admin, make someone else an admin first."
+        }
+      }
+    },
+    "deleteCompanyOrAccount": {
+      "title": "Delete your company or account",
+      "summary": "Permanently remove your company, or only your own account.",
+      "steps": {
+        "open": {
+          "title": "Open the Danger zone",
+          "body": "Open the <danger>Danger zone</danger> tab in Settings."
+        },
+        "deleteCompany": {
+          "title": "Delete the company",
+          "body": "Admins can click <ui>Delete company</ui>. Everything in it is deleted, including jobs, applications, and your careers page, and your plan is canceled right away with no refund."
+        },
+        "deleteAccount": {
+          "title": "Or delete your account",
+          "body": "Click <ui>Delete account</ui>. If you're the only admin, make someone else an admin first. If you're the only person in the company, it's deleted too."
+        },
+        "confirm": {
+          "title": "Confirm",
+          "body": "Type the company's name or your email, and click the delete button. This can't be undone."
+        }
+      }
+    },
+    "stageEmails": {
+      "title": "Email applicants at each stage",
+      "summary": "Let applicants know when they apply or move ahead.",
+      "steps": {
+        "open": {
+          "title": "Open a stage's email",
+          "body": "On a job's <ui>Stages</ui> tab, click <ui>Edit email</ui> next to a stage."
+        },
+        "customize": {
+          "title": "Make it yours",
+          "body": "Each stage comes with an email ready to go. Edit its <ui>Subject</ui> and <ui>Message</ui>, and add details like the applicant's first name with <ui>Add variable</ui>, or by typing <code>{{character}}</code>."
+        },
+        "preview": {
+          "title": "Preview and turn it on",
+          "body": "Check the <ui>Preview</ui>, which uses a sample applicant. Then turn on <ui>Send this email</ui> and click <ui>Save</ui>."
+        },
+        "timing": {
+          "title": "Know when it's sent",
+          "body_one": "The inbox's email goes out as soon as someone applies. Other stages wait {{count, number}} minute after a move, so undoing it, or moving the application on, cancels the email.",
+          "body_other": "The inbox's email goes out as soon as someone applies. Other stages wait {{count, number}} minutes after a move, so undoing it, or moving the application on, cancels the email."
+        },
+        "pause": {
+          "title": "Pause every email",
+          "body": "Admins can turn off <ui>Email applicants</ui> on the <general>General</general> tab in Settings to stop emails from every stage."
+        }
+      }
+    },
+    "repliesLayout": {
+      "title": "Set up replies and the email layout",
+      "summary": "Choose where replies go and how emails look.",
+      "steps": {
+        "replyTo": {
+          "title": "Add a reply-to address",
+          "body": "In <emails>Emails</emails>, enter a <ui>Reply-to address</ui> your team checks, and click <ui>Save address</ui>. Without one, replies from applicants won't reach you."
+        },
+        "layout": {
+          "title": "Edit the layout",
+          "body": "Every email is sent in your layout, with your logo and primary color. Click <ui>Edit code</ui> to change its HTML, and keep <code>{{placeholder}}</code> where each stage's message goes."
+        },
+        "save": {
+          "title": "Save",
+          "body": "Click <ui>Save</ui>. To start over, choose <ui>Reset to default layout</ui> from <ui>More actions</ui>."
+        }
+      }
+    },
+    "matchScores": {
+      "title": "Understand match scores",
+      "summary": "How AI ranks applications against their job.",
+      "steps": {
+        "read": {
+          "title": "Read the score",
+          "body": "Each application gets a match from 0 to 100% against its job's details."
+        },
+        "aspects": {
+          "title": "See what's behind it",
+          "body": "Open an application to see how it scores on <ui>Skills</ui>, <ui>Experience</ui>, <ui>Seniority fit</ui>, and <ui>Qualifications</ui>. Qualifications only count when the job asks for degrees, certifications, or licenses."
+        },
+        "useAsGuide": {
+          "title": "Use it as a guide",
+          "body": "Matches help you decide who to review first. Use them alongside your own review, not instead of it."
+        },
+        "noScore": {
+          "title": "When there's no score",
+          "body": "<ui>Ranking</ui> means it's on its way, and <ui>Needs credits</ui> means you're out of AI credits. <ui>Not ranked</ui> means it couldn't be ranked, for example when a resume is a scanned image. If ranking failed, click <ui>Try again</ui> in the application."
+        },
+        "rankAgain": {
+          "title": "Rank again after edits",
+          "body": "When you change a job's title, department, employment type, or description, choose <ui>Save and rank again</ui> to rank its applications against the new details."
+        }
+      }
+    },
+    "aiSwitch": {
+      "title": "Turn AI ranking off or on",
+      "summary": "Choose whether your applications are ranked with AI.",
+      "steps": {
+        "find": {
+          "title": "Find the switch",
+          "body": "On the <general>General</general> tab in Settings, turn <ui>Rank applications with AI</ui> off or on. It applies to your whole company."
+        },
+        "whileOff": {
+          "title": "While it's off",
+          "body": "Nothing is sent to AI, match scores are hidden, and new applications aren't ranked. Earlier scores come back when you turn it on again."
+        },
+        "turnOn": {
+          "title": "Turn it back on",
+          "body": "If applications came in meanwhile, you'll choose whether to rank them, using a credit each, or to leave them unranked."
+        },
+        "tellApplicants": {
+          "title": "Let applicants know",
+          "body": "While AI ranking is on, the default careers page tells applicants that AI helps review applications. If you use your own code, add this yourself."
+        }
+      }
+    },
+    "planCredits": {
+      "title": "Manage your plan and credits",
+      "summary": "Your trial, your subscription, and AI credits.",
+      "credits_one": "{{count, number}} credit",
+      "credits_other": "{{count, number}} credits",
+      "steps": {
+        "startTrial": {
+          "title": "Start your free trial",
+          "body_one": "In <billing>Billing</billing>, choose <ui>Monthly</ui> or <ui>Yearly</ui>, then click <ui>Start free trial</ui>. It lasts {{count, number}} day and comes with {{credits}}.",
+          "body_other": "In <billing>Billing</billing>, choose <ui>Monthly</ui> or <ui>Yearly</ui>, then click <ui>Start free trial</ui>. It lasts {{count, number}} days and comes with {{credits}}."
+        },
+        "plan": {
+          "title": "Your plan",
+          "body": "Monthly is {{monthlyPrice}} a month, with {{monthlyCredits}} each month. Yearly is {{yearlyPrice}} a year, with {{yearlyCredits}} up front. Unused credits don't carry over. Click <ui>Manage subscription</ui> to update your card, see invoices, or cancel."
+        },
+        "switchToYearly": {
+          "title": "Switch to yearly",
+          "body": "In <billing>Billing</billing>, choose <ui>Yearly</ui> on your plan, then click <ui>Switch to yearly</ui>. You pay {{price}} now, minus the unused days of your current month. If you're on the free trial, you pay when it ends instead."
+        },
+        "buyCredits": {
+          "title": "Buy more credits",
+          "body": "Each application ranked by AI uses one credit. For more, buy a pack under <ui>Buy credits</ui>. Top-up credits never expire, and they're used after your plan's credits."
+        },
+        "runOut": {
+          "title": "If you run out",
+          "body": "New applications wait as <ui>Needs credits</ui>. Once you have credits again, rank them from the notice in <jobs>Jobs</jobs> or <billing>Billing</billing>, or leave them unranked."
+        },
+        "endTrial": {
+          "title": "End your trial early",
+          "body": "If your trial's credits run out, click <ui>End trial</ui> in the notice in <jobs>Jobs</jobs> or <billing>Billing</billing>. Your plan starts today, with its credits."
+        },
+        "planStops": {
+          "title": "If your plan stops",
+          "body": "Without a working plan, Emploist is read-only and your careers page stops taking applications. Your team can still see everything and export applications, and admins can subscribe again."
+        }
+      }
+    },
+    "connectAssistant": {
+      "title": "Connect an AI assistant",
+      "summary": "Manage your jobs and applications from Claude, ChatGPT, and other assistants.",
+      "steps": {
+        "choose": {
+          "title": "Choose your assistant",
+          "body": "On the <mcp>MCP</mcp> page, choose your assistant under <ui>Connect your assistant</ui>."
+        },
+        "follow": {
+          "title": "Follow its steps",
+          "body": "Each assistant has its own steps, with the address to paste or the command to copy right where you need it."
+        },
+        "allow": {
+          "title": "Sign in and allow",
+          "body": "Sign in to Emploist when your assistant asks, and click <ui>Allow</ui>. Your assistant works as you, with your role."
+        },
+        "disconnect": {
+          "title": "Disconnect it",
+          "body": "To stop an assistant, click <ui>Disconnect</ui> next to it under <ui>Connected assistants</ui> on the <mcp>MCP</mcp> page."
+        }
+      }
+    },
+    "mcpSwitch": {
+      "title": "Turn MCP off or on",
+      "summary": "Choose whether your team can use Emploist from AI assistants.",
+      "steps": {
+        "find": {
+          "title": "Find the switch",
+          "body": "On the <general>General</general> tab in Settings, turn <ui>Let your team connect AI assistants</ui> off or on. It applies to your whole company."
+        },
+        "whileOff": {
+          "title": "While it's off",
+          "body": "Assistants can't use Emploist, and no one can connect a new one. Connections are kept, so they work again when you turn MCP back on."
+        }
+      }
+    }
+  }
+}

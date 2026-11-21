@@ -505,6 +505,23 @@
       text-decoration-color: currentColor;
     }
   }
+
+  /* Blog covers: brand indigo cast over the photo or screenshot. */
+  .blog-cover {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .blog-cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: var(--brand);
+    mix-blend-mode: color;
+    opacity: 0.72;
+  }
 }
 
 /* The two rails, hatched, a gutter in from each side of the window. They sit

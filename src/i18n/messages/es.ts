@@ -36,11 +36,13 @@ const es: Messages = {
     features: "Funciones",
     careersPage: "Página de empleo",
     aiAssistants: "Asistentes de IA",
+    mcp: "MCP",
     /** The last item in the Features menu, after the feature sections. */
     moreFeatures: "Más funciones",
     pricing: "Precios",
     faq: "FAQ",
     blog: "Blog",
+    docs: "Docs",
     signIn: "Iniciar sesión",
     startFreeTrial: "Prueba gratis",
     menu: "Menú",
@@ -60,6 +62,7 @@ const es: Messages = {
     legal: "Legal",
     rssFeed: "Feed RSS",
     support: "Ayuda",
+    llmsTxt: "llms.txt",
     terms: "Términos del servicio",
     privacy: "Política de privacidad",
     copyright: (year) => `© ${year} Emploist. Todos los derechos reservados.`,
@@ -73,8 +76,9 @@ const es: Messages = {
 
   hero: {
     eyebrow: "Seguimiento de candidatos con evaluación por IA",
-    title: "Tus mejores candidatos, primero.",
+    title: "Ve tus mejores candidaturas sin filtros manuales ni un ATS complejo",
     lead: "Emploist te ofrece una página de empleo, un proceso de selección sencillo y una IA que evalúa cada candidatura según la descripción del puesto. Tu equipo dedica menos tiempo a filtrar y más a las personas que encajan.",
+    cta: "Clasifica a tus candidatos",
     seeHowItWorks: "Ver cómo funciona",
     note: (p) => `${dayCount(p.trialDays)} gratis y luego ${f.usd(p.priceUsd)} al mes. Sin cargos por usuario.`,
     screenshotAlt:
@@ -136,7 +140,7 @@ const es: Messages = {
     title: "Una página de empleo lista desde el primer día.",
     lead: "Cada empresa recibe una página de empleo rápida y cuidada, con su logo y su color. Las nuevas vacantes aparecen en cuanto las publicas, y las candidaturas llegan directamente a la bandeja de entrada de cada vacante.",
     screenshotAlt:
-      "La página de empleo de Northwind Labs: un encabezado con el logo de la empresa, una breve introducción y las vacantes abiertas agrupadas por departamento, con filtros por departamento y ubicación.",
+      "La página de empleo de Fieldnote Labs: un encabezado con el logo de la empresa, una breve introducción y las vacantes abiertas agrupadas por departamento, con filtros por departamento y ubicación.",
     mobileScreenshotAlt:
       "La página de una vacante en un teléfono: Senior Product Designer en Berlin, híbrida y a tiempo completo, con un botón “Apply for this job” y la descripción del puesto.",
     facts: [
@@ -211,7 +215,7 @@ const es: Messages = {
     editorScreenshotAlt:
       "El correo de la etapa “Interviewing” en Emploist. El asunto y el mensaje usan variables para el nombre del candidato, el título del puesto y el nombre de la empresa.",
     previewScreenshotAlt:
-      "El correo final, tal como lo recibe un candidato llamado Sam: Northwind Labs en la parte superior, una invitación personal a una entrevista para el puesto de Senior Product Designer y un enlace a las vacantes abiertas.",
+      "El correo final, tal como lo recibe un candidato llamado Sam: Fieldnote Labs en la parte superior, una invitación personal a una entrevista para el puesto de Senior Product Designer y un enlace a las vacantes abiertas.",
   },
 
   aiAssistants: {
@@ -251,6 +255,107 @@ const es: Messages = {
       placeholder: "Pregunta por tus vacantes y candidatos",
     },
     caption: "Cada persona conecta su propio asistente en unos pocos pasos.",
+  },
+
+  /** The /mcp/ landing page. */
+  mcp: {
+    description:
+      "Conecta Claude, ChatGPT y otros asistentes de IA a Emploist con MCP. Pregunta por candidatos, mueve etapas y crea vacantes desde el chat, con tus propios permisos.",
+    eyebrow: "MCP",
+    heading: "Contrata desde el chat que ya usas.",
+    lead: "MCP conecta Emploist con Claude, ChatGPT y otros asistentes. Preguntas en palabras claras. El asistente hace el trabajo en Emploist, como tú.",
+    whatTitle: "¿Qué es MCP?",
+    whatLead:
+      "MCP son las siglas de Model Context Protocol. Es una forma abierta de que un asistente de IA use otra app con seguridad.",
+    whatPoints: [
+      {
+        title: "Un conector, no un producto nuevo.",
+        text: "Emploist sigue guardando tus vacantes y candidatos. MCP es cómo tu asistente llega a ellos.",
+      },
+      {
+        title: "Una sola dirección de servidor.",
+        text: "El servidor MCP alojado de Emploist está en mcp.emploist.com. Pégalo en Claude, ChatGPT u otro cliente compatible con MCP.",
+      },
+      {
+        title: "Incluido en tu plan.",
+        text: "Cualquiera de tu equipo puede conectar su propio asistente. Evaluar una candidatura desde el chat usa el mismo crédito de IA que evaluarla en Emploist.",
+      },
+    ],
+    howTitle: "Cómo funciona",
+    howSteps: [
+      {
+        title: "Conectas una vez.",
+        text: "Abre MCP en Emploist, elige tu asistente y sigue sus pasos. Inicia sesión con Emploist cuando te lo pida. Sin claves API que copiar.",
+      },
+      {
+        title: "Preguntas en el chat.",
+        text: "Menciona Emploist y pide quién encaja en un puesto, mueve a alguien a la siguiente etapa, deja un comentario o redacta una vacante.",
+      },
+      {
+        title: "Emploist hace el trabajo.",
+        text: "El asistente llama a las herramientas de Emploist con tu sesión. Las acciones de escritura piden confirmación antes de guardarse.",
+      },
+    ],
+    canDoTitle: "Qué puedes pedir",
+    canDo: [
+      "¿Qué candidatos a Senior Product Designer encajan mejor?",
+      "Mueve a Priya a Phone screen y dime cuándo sale el correo de esa etapa.",
+      "Resume las candidaturas nuevas de hoy.",
+      "Redacta una vacante de Atención al cliente para Berlin y enséñame el formulario antes de publicar.",
+      "Deja un comentario en la candidatura de Sara para Priya.",
+    ],
+    connectTitle: "Conectar un asistente",
+    connectLead: "La página MCP de Emploist tiene pestañas para cada cliente. La URL del servidor es la misma en todas partes:",
+    serverUrl: "https://mcp.emploist.com",
+    connectClients: [
+      {
+        name: "Claude",
+        text: "En Claude, abre Customize → Connectors, añade un conector personalizado, pega la URL e inicia sesión en Emploist.",
+      },
+      {
+        name: "ChatGPT",
+        text: "En ChatGPT en la web, abre Plugins, añade un servidor MCP personalizado, pega la URL, crea el plugin y menciónalo con @.",
+      },
+      {
+        name: "Otros clientes",
+        text: "Cursor, VS Code, Claude Code y otros clientes MCP usan la misma URL. La página MCP de Emploist detalla los pasos de cada uno.",
+      },
+    ],
+    controlTitle: "Mantienes el control",
+    controlPoints: [
+      {
+        title: "Tu rol, nada más.",
+        text: "El asistente solo puede hacer lo que tú ya puedes en Emploist. La facturación, las invitaciones al equipo y eliminar la empresa quedan fuera de su alcance.",
+      },
+      {
+        title: "Confirmación al escribir.",
+        text: "Mover a un candidato o crear una vacante pide confirmación primero. Rechaza cualquier cosa que no cuadre.",
+      },
+      {
+        title: "Desconecta cuando quieras.",
+        text: "En la página MCP, desconecta un asistente y deja de funcionar. Los admins también pueden desactivar MCP para toda la empresa.",
+      },
+    ],
+    worksWith: "Funciona con",
+    guidesTitle: "Guías",
+    guidesLead: "Configuración paso a paso y ejemplos.",
+    guideClaude: "Cómo gestionar la selección desde Claude con MCP",
+    guideChatgpt: "Los mejores plugins de ChatGPT para responsables de RR. HH.",
+    guideDocs: "Conectar un asistente de IA",
+    cta: "Conecta tu asistente de IA",
+    copySetup: "Copiar config MCP",
+    copiedSetup: "Copiado",
+    setupCopy: (u: { mcpDocs: string; serverUrl: string }) =>
+      `Emploist es software de seguimiento de candidaturas. Este archivo indica a un asistente de IA cómo conectarse al servidor MCP de Emploist y qué puede hacer después de conectarse.
+
+Conecta el servidor MCP de Emploist para gestionar la selección desde este chat.
+
+Docs MCP: ${u.mcpDocs}
+URL del servidor: ${u.serverUrl}
+Autenticación: OAuth (inicia sesión con Emploist cuando se te pida)
+
+Después de conectar, ayuda con vacantes y candidatos en Emploist: lista y evalúa candidaturas, mueve personas entre etapas, deja comentarios y crea o publica vacantes. Trabaja solo con mis permisos de Emploist. Confirma antes de cualquier acción de escritura.
+`,
   },
 
   details: {
@@ -421,6 +526,16 @@ const es: Messages = {
     blog: "Leer el blog",
   },
 
+  docs: {
+    title: "Documentación de Emploist",
+    lead: "Sigue estos docs oficiales para avanzar en Emploist.",
+    copyMarkdown: "Copiar markdown",
+    copied: "Copiado",
+    discussWith: "Comentar con",
+    discussPrompt: (title, url) =>
+      `Ayúdame con esta guía de Emploist: «${title}». Lee ${url} y responde a mis preguntas.`,
+  },
+
   blog: {
     title: "Blog",
     description:
@@ -445,6 +560,7 @@ const es: Messages = {
     ctaText: (p) =>
       `Prueba Emploist gratis durante ${dayCount(p.trialDays)} y, después, paga ${f.usd(p.priceUsd)} al mes por todo tu equipo.`,
     defaultAuthor: "El equipo de Emploist",
+    writtenBy: (name) => `Escrito por ${name}`,
   },
 
   listedOn: {

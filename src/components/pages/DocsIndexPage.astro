@@ -1,0 +1,66 @@
+---
+import Band from "../Band.astro";
+import SectionHeader from "../SectionHeader.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getLocale, getMessages } from "../../i18n";
+import { LOCALES, localizePath } from "../../i18n/locales";
+import { docsUrl, getSupportDocs, guidesByTopic } from "../../lib/docs";
+import { SITE } from "../../lib/site";
+
+const locale = getLocale(Astro);
+const t = getMessages(locale);
+const docs = getSupportDocs(locale);
+const topics = guidesByTopic(locale);
+const title = `${t.docs.title} | ${SITE.name}`;
+const alternates = Object.fromEntries(LOCALES.map((lang) => [lang, docsUrl(undefined, lang)]));
+---
+
+<BaseLayout title={title} description={t.docs.lead} alternates={alternates}>
+  <Band />
+  <section aria-labelledby="docs-title" class="section-y">
+    <SectionHeader as="h1" id="docs-title" eyebrow={t.nav.docs} title={t.docs.title} lead={t.docs.lead} />
+
+    <div class="container-page mt-14 space-y-12 sm:mt-16">
+      {
+        topics.map((topic) => (
+          <section aria-labelledby={`topic-${topic.id}`} class="rule-t">
+            <h2 id={`topic-${topic.id}`} class="text-label px-5 pt-8 text-ink sm:px-8">
+              {topic.title}
+            </h2>
+            <ul class="mt-4 divide-y divide-line border-y border-line">
+              {topic.guides.map((guide) => (
+                <li>
+                  <a
+                    href={localizePath(`/docs/${guide.meta.slug}/`, locale)}
+                    class="group flex flex-col gap-1 px-5 py-5 transition-colors hover:bg-subtle sm:flex-row sm:items-baseline sm:justify-between sm:gap-8 sm:px-8"
+                  >
+                    <span class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                      <span class="text-[1.0625rem] font-medium tracking-[-0.02em] text-ink group-hover:text-brand-ink">
+                        {guide.title}
+                      </span>
+                      {guide.meta.adminOnly && (
+                        <span class="tag text-faint">{docs.guideList.adminOnly}</span>
+                      )}
+                    </span>
+                    <span class="max-w-md text-sm text-body sm:text-right">{guide.summary}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+
+      <aside class="rule-t px-5 py-10 sm:px-8">
+        <h2 class="text-subheading text-ink">{docs.contact.title}</h2>
+        <p class="text-lead mt-3 max-w-xl">{docs.contact.description}</p>
+        <a
+          href={`mailto:${SITE.supportEmail}`}
+          class="mt-5 inline-flex text-[1.0625rem] font-medium tracking-[-0.02em] text-brand-ink underline-offset-4 hover:underline"
+        >
+          {SITE.supportEmail}
+        </a>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

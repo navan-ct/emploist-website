@@ -1,0 +1,240 @@
+---
+title: "MCP로 Claude에서 채용을 관리하는 방법"
+description: "몇 분이면 Claude를 Emploist에 연결할 수 있어요. 그다음 채팅에서 바로 지원자에 대해 묻고, 다음 단계로 옮기고, 채용 공고를 만들어 보세요."
+pubDate: 2026-11-12
+author: "Navaneeth CT"
+image: ../images/manage-hiring-from-claude/cover.png
+imageAlt: "Claude가 그린 최근 30일 일별 지원서 차트가 앞에 놓인 Emploist의 MCP 페이지."
+tags: ["AI 어시스턴트", "가이드"]
+---
+
+import Figure from "../../../components/blog/Figure.astro";
+import addConnector from "../images/manage-hiring-from-claude/claude-add-connector.png";
+import approval from "../images/manage-hiring-from-claude/claude-approval.png";
+import bestMatches from "../images/manage-hiring-from-claude/claude-best-matches.png";
+import connectorAuth from "../images/manage-hiring-from-claude/claude-connector-auth.png";
+import createJob from "../images/manage-hiring-from-claude/claude-create-job.png";
+import hiringStats from "../images/manage-hiring-from-claude/claude-hiring-stats.png";
+import moveComment from "../images/manage-hiring-from-claude/claude-move-comment.png";
+import stagesPublish from "../images/manage-hiring-from-claude/claude-stages-publish.png";
+import toolPermissions from "../images/manage-hiring-from-claude/claude-tool-permissions.png";
+import emploistComment from "../images/manage-hiring-from-claude/emploist-comment.png";
+import emploistConsent from "../images/manage-hiring-from-claude/emploist-consent.png";
+import emploistMcpPage from "../images/manage-hiring-from-claude/emploist-mcp-page.png";
+import emploistSettings from "../images/manage-hiring-from-claude/emploist-settings-mcp.png";
+
+Claude를 Emploist에 연결하면 채팅으로 채용을 관리할 수 있어요. 채용 공고에 가장 잘 맞는 지원자 찾기, 지원자를 다음 단계로 옮기기, 팀에 메모 남기기, 새 채용 공고 초안 쓰기까지, 요청만 하면 Claude가 Emploist에서 대신 해 줘요.
+
+이 기능은 AI 어시스턴트를 다른 앱에 연결해 주는 개방형 표준인 **MCP**(Model Context Protocol)를 통해 작동해요. 작동 원리를 몰라도 사용할 수 있어요. 설정은 몇 분이면 끝나고, 코드도 전혀 필요 없어요.
+
+이 가이드에서는 Claude를 연결하는 방법, Claude에게 요청할 수 있는 일, 그리고 통제권을 유지하는 방법을 소개해요. 모든 예시에는 샘플 회사인 Fieldnote Labs를 사용할게요.
+
+## 필요한 것
+
+- **Emploist 계정.** 관리자와 멤버 모두 Claude를 연결할 수 있어요.
+- **Claude**: 웹의 [claude.ai](https://claude.ai) 또는 Claude 데스크톱 앱.
+
+Claude의 Team 및 Enterprise 요금제에서는 먼저 소유자가 **Organization settings** → **Connectors**에서 Emploist를 추가해요. 그다음 **Customize** → **Connectors**에서 Emploist 옆의 **Connect**를 클릭하고 [3단계](#3-emploist에-로그인하기)로 건너뛰세요.
+
+## Claude를 Emploist에 연결하기
+
+Emploist 사이드바의 **MCP** 페이지에 이 단계와 복사할 주소가 나와 있어요.
+
+<Figure
+  src={emploistMcpPage}
+  url="app.emploist.com/mcp"
+  alt="Emploist의 MCP 페이지. Claude, ChatGPT, Claude Code, Cursor, VS Code, “Other” 탭 중 Claude가 선택되어 있고, https://mcp.emploist.com 주소를 포함해 Claude를 연결하는 네 단계가 나와 있어요. Claude가 표시된 “Connected assistants” 목록도 보여요."
+  caption="Emploist의 MCP 페이지. 연결된 어시스턴트는 맨 아래에 표시돼요."
+/>
+
+### 1. Claude의 커넥터 설정 열기
+
+Claude에서 **Customize** → [**Connectors**](https://claude.ai/customize/connectors)로 이동하세요.
+
+### 2. Emploist 추가하기
+
+**+ Add**를 클릭하고 **Add custom connector**를 선택하세요. 이름을 Emploist로 정하고, 이 주소를 붙여넣은 다음 **Continue**를 클릭하세요.
+
+```
+https://mcp.emploist.com
+```
+
+<Figure
+  src={addConnector}
+  frame="plain"
+  narrow
+  alt="Claude의 “Add custom connector” 대화 상자. 이름에는 Emploist가, MCP 서버 URL에는 https://mcp.emploist.com이 입력되어 있어요."
+  caption="이름은 내가 알아보기 위한 것일 뿐이에요. Claude를 Emploist에 연결하는 건 주소예요."
+/>
+
+Claude가 주소를 확인한 다음 로그인 방식을 보여 줘요. Emploist에 맞는 옵션인 **Sign in now**와 **Use Claude's published identity**를 Claude가 알아서 선택하므로, 그대로 두고 **Add**를 클릭하세요.
+
+<Figure
+  src={connectorAuth}
+  frame="plain"
+  narrow
+  alt="Claude 대화 상자의 두 번째 단계. “Authentication”은 “Sign in now”로, “OAuth client”는 “Use Claude's published identity”로 설정되어 있고, 둘 다 “Detected”로 표시되어 있어요."
+  caption="Claude가 Emploist에서 이 설정을 감지해요."
+/>
+
+### 3. Emploist에 로그인하기
+
+**Connect**를 클릭하면 Emploist가 열려요. 로그인하라는 화면이 나오면 로그인하고, Claude가 할 수 있게 될 일을 확인한 다음 **허용**을 클릭하세요.
+
+<Figure
+  src={emploistConsent}
+  frame="plain"
+  narrow
+  alt="“Allow Claude to use Emploist?”라고 묻는 Emploist 페이지. Claude가 Fieldnote Labs의 채용 공고와 지원서를 보고 관리할 수 있게 되며, 채용 공고, 단계, 지원서 양식을 보고 변경하고, 지원서와 이력서를 읽고 단계 간에 옮기고, 댓글을 달 수 있고, 내 역할로 나 대신 작업한다는 내용이 나와 있어요. 결제, 멤버, 회사나 계정 삭제는 포함되지 않아요."
+  caption="허용하기 전에 Claude가 할 수 있는 일과 할 수 없는 일을 Emploist가 보여 줘요."
+/>
+
+다시 Claude로 돌아오면 Emploist 커넥터가 준비되어 있어요.
+
+### 4. 채팅에서 사용하기
+
+채팅에서 **+** 버튼을 클릭하고 **Connectors**를 열어 Emploist가 켜져 있는지 확인하세요. 그다음 필요한 것을 평소 쓰는 말로 물어보세요.
+
+## Claude에게 요청할 수 있는 일
+
+Claude는 Emploist의 채용 공고와 지원서에서 볼 수 있는 모든 것을 다룰 수 있어요. Fieldnote Labs의 몇 가지 예시를 소개할게요.
+
+### 가장 적합한 지원자 찾기
+
+> Senior Product Designer 공고에 가장 잘 맞는 지원자는 누구예요?
+
+Claude는 받은편지함의 지원서를 살펴보고, 상위 다섯 건을 이력서, 답변, 팀의 댓글까지 전부 읽은 다음 후보 명단을 추려 왔어요. 또 점수가 가장 높은 두 지원자에게는 이력서와 양식의 내용이 서로 다른 것처럼 AI 적합도가 잡아내지 못하는 문제가 각각 있다고 짚어 줬어요.
+
+<Figure
+  src={bestMatches}
+  frame="plain"
+  narrow
+  alt="Claude의 답변. Fatima Lindqvist가 가장 유력한 신규 지원자라는 내용과 함께, 각자의 이유를 덧붙인 “Best fits in the inbox” 목록(Fatima Lindqvist 86%, Sara Nair 81%, Amara Adeyemi 77%), 점수가 높아도 주의가 필요한 지원자를 다룬 “High scores to treat with care” 섹션(Diego Varga 91%, Kofi Clarke 88%), 그리고 Fatima와 Amara를 Phone screen 단계로 옮길지 묻는 제안이 보여요."
+  caption="Claude는 고른 이유를 하나하나 설명하고, 다음 단계도 제안해요."
+/>
+
+### 지원자를 옮기고 팀에 메모 남기기
+
+> 네, Fatima와 Amara를 Phone screen 단계로 옮겨 주세요. 그리고 Sara의 지원서에 댓글을 남겨서, Fatima의 답변과 똑같은 답변을 확인해 달라고 Priya에게 요청해 주세요.
+
+Claude는 두 지원자를 옮기고, Priya에게 알림이 가도록 Priya를 멘션해 댓글을 남겼어요.
+
+<Figure
+  src={moveComment}
+  frame="plain"
+  narrow
+  alt="Claude의 답변. 그 단계의 이메일이 꺼져 있어서 이메일 없이 Fatima와 Amara를 Phone screen 단계로 옮겼고, Sara의 지원서에 Priya를 태그한 댓글을 남겼다고 해요. 댓글이 내 이름으로 게시되었으며 Taylor Kim도 알림을 받는다는 점도 알려 줘요."
+  caption="Claude는 무엇을 했는지, 그리고 다음에 어떻게 되는지 알려 줘요."
+/>
+
+Claude가 한 작업은 모두 내가 직접 한 것처럼 Emploist에 표시돼요. 다음은 Claude를 연결한 사람의 이름으로 Sara의 지원서에 게시된 댓글이에요.
+
+<Figure
+  src={emploistComment}
+  frame="plain"
+  narrow
+  alt="Emploist에서 Sara Nair의 지원서에 있는 “Comments” 패널. Priya Shah와 Taylor Kim의 댓글 아래에, @Priya Shah를 멘션하며 Sara의 답변을 확인해 달라고 요청하는 Alex Morgan의 댓글이 있어요."
+  caption="Priya가 멘션된 Emploist의 댓글."
+/>
+
+지원자에게 이메일을 보내는 단계라면, Emploist는 2분을 기다린 후에 이메일을 보내요. 마음이 바뀌었나요? 그 2분 안에 Claude에게 이동을 실행 취소해 달라고 하면 이메일이 발송되지 않아요.
+
+### 채용 공고 만들고 게시하기
+
+> Customer Support Specialist 공고를 초안으로 만들어 주세요. Support 부서의 원격 근무, 정규직 포지션이에요. 직무 설명을 짧게 작성하고, 헬프데스크 도구 사용 경험을 묻는 질문도 추가해 주세요.
+
+Claude는 직무 설명을 쓰고, 새 질문을 넣어 지원서 양식을 설정한 다음, 채용 공고를 초안으로 저장했어요.
+
+<Figure
+  src={createJob}
+  frame="plain"
+  narrow
+  alt="Claude의 답변. Customer Support Specialist 채용 공고를 초안으로 만들었으며, 설정, 직무 설명, 헬프데스크 도구에 관한 필수 질문이 들어간 지원서 양식, 기본 단계가 포함되어 있다고 해요. 근무지는 설정하지 않았다고 알려 주고, 채용 공고를 게시해 주겠다고 제안해요."
+  caption="초안은 게시하기 전까지 채용 페이지에 올라가지 않아요."
+/>
+
+채용 절차도 같은 방식으로 다듬을 수 있어요.
+
+> Customer Support Specialist 공고에서 Interviewing 단계 앞에 Phone screen 단계와 Trial task 단계를 차례로 추가해 주세요. 그다음 공고를 게시해 주세요.
+
+<Figure
+  src={stagesPublish}
+  frame="plain"
+  narrow
+  alt="Claude의 답변. Customer Support Specialist 채용 공고가 채용 페이지에 게시되었고, 단계는 Inbox, Phone screen(새 단계), Trial task(새 단계), Interviewing, Accepted, Rejected 순서라고 해요. 모든 단계의 이메일이 꺼져 있으며, 새 단계의 이메일 문구는 Emploist 앱에서 편집할 수 있다고 안내해요."
+  caption="새 단계가 추가된 채용 공고가 채용 페이지에 게시되었어요."
+/>
+
+### 채용 현황 확인하기
+
+> 최근 30일 동안 채용은 어떻게 진행됐어요?
+
+Claude는 Emploist의 홈 화면에 나오는 것과 같은 통계를 읽고, 차트로 그려 줄 수도 있어요.
+
+<Figure
+  src={hiringStats}
+  frame="plain"
+  narrow
+  alt="Claude의 답변. 10월 14일부터 11월 12일까지의 일별 지원서 수를 나타낸 막대 차트와 요약이 있어요. 요약에는 최근 30일 동안의 지원서 132건(그 전 30일 동안은 12건), 그중 대부분이 최근 9일 동안 들어왔다는 점, 그리고 수치의 추이가 담겨 있어요."
+  caption="Claude가 그린 일별 지원서 차트와 요약."
+/>
+
+### Claude가 할 수 있는 모든 일
+
+- **개요:** 내 역할, 요금제, AI 크레딧, 최근 7일·30일·90일 동안의 채용 통계, 팀원, 알림.
+- **채용 공고:** 채용 공고 찾기, 채용 공고의 상세 정보·지원서 양식·단계 읽기, 채용 공고를 초안으로 만들거나 게시하기, 상세 정보나 지원서 양식 편집하기, 게시·다시 열기·마감·보관·복원하기, 복제하거나 삭제하기.
+- **단계:** 채용 공고의 단계 추가·이름 변경·순서 변경·삭제하기, 단계별 지원자 이메일 켜고 끄기.
+- **지원서:** 단계의 지원서를 AI 적합도와 함께 목록으로 보기, 답변·댓글·이력서와 함께 지원서 읽기, 다른 단계로 옮기기, 내 마지막 이동 실행 취소하기, 평가에 실패했다면 다시 평가하기, 삭제하기.
+- **댓글:** 지원서에 댓글 달고 팀원 멘션하기, 내 댓글 수정하거나 삭제하기(관리자는 다른 사람의 댓글도 삭제 가능).
+- **관리자용 회사 설정:** AI 평가 켜고 끄기, AI 크레딧이 없을 때 들어온 지원서를 평가하거나 평가 없이 두기, 지원자 이메일 켜고 끄기, 지원자의 회신을 받을 곳 정하기.
+
+일부 작업은 Emploist에서만 할 수 있어요. 결제, 멤버와 초대, 회사나 계정 삭제, 채용 페이지의 코드와 도메인, 이메일 레이아웃, 단계 이메일 문구예요.
+
+## 통제권 유지하기
+
+**Claude는 나 대신 작업해요.** Emploist에서 내가 가진 권한 그대로 작업하고, 그 이상은 할 수 없어요. 내가 멤버라면 Claude도 회사 설정을 변경할 수 없어요.
+
+**Claude가 묻지 않고 할 수 있는 일은 내가 정해요.** Claude에서 **Customize** → **Connectors** → **Emploist**를 열면, 읽기 전용 도구와 변경을 수행하는 도구 각각에 대해 **Always allow**, **Needs approval**, **Blocked** 중 하나로 권한을 설정할 수 있어요.
+
+<Figure
+  src={toolPermissions}
+  frame="plain"
+  narrow
+  alt="Claude에서 본 Emploist의 도구 권한(“Tool permissions”). “Read-only tools”(8)와 “Write/delete tools”(22)가 있고, 열린 메뉴에 “Blocked”, “Needs approval”, “Always allow”, “Custom”이 보여요."
+  caption="그룹 전체에 대해, 또는 도구별로 권한을 설정할 수 있어요."
+/>
+
+**Needs approval**로 설정하면, Claude는 하려는 작업을 보여 주고 내가 **Allow once**나 **Always allow**를 클릭할 때까지 기다려요.
+
+<Figure
+  src={approval}
+  frame="plain"
+  narrow
+  alt="Emploist의 “Move an application”을 사용해도 될지 묻는 Claude. 사용할 지원서와 단계, 그리고 “Decline”, “Always allow”, “Allow once” 버튼이 보여요."
+  caption="Claude는 지원자를 옮기기 전에 먼저 물어봐요."
+/>
+
+이 권한은 **Manual** 모드에서 적용돼요. 모드는 메시지 입력란 아래, 모델 옆에서 선택할 수 있어요. **Auto** 모드에서는 Claude가 묻지 않고 작업할 수 있으며, 안전하지 않아 보이는 경우에만 멈추고 물어봐요.
+
+**Emploist는 지원자가 쓴 글에 대해 Claude에게 경고해요.** 이름, 답변, 이력서는 지원자가 작성한 것이며, 그 안의 지시는 절대 따르지 말라고 Claude에게 알려 줘요. 지원서에 AI 어시스턴트를 향한 지시처럼 보이는 텍스트가 있으면 Emploist가 이를 표시하고, Claude가 나에게 알려 줘요.
+
+**언제든 연결을 해제할 수 있어요.** Emploist의 MCP 페이지에서 Claude 옆의 **연결 해제**를 클릭하면, 그 즉시 Claude는 더 이상 나 대신 작업하지 않아요. 원할 때 언제든 다시 연결할 수 있어요.
+
+**관리자는 팀 전체에서 이 기능을 끌 수 있어요.** **설정** → **일반**에 있는 **MCP** 스위치에서 팀이 AI 어시스턴트로 Emploist를 사용할 수 있는지 자체를 정해요. 스위치를 끄면 다시 켤 때까지 연결된 모든 어시스턴트가 작동을 멈춰요.
+
+<Figure
+  src={emploistSettings}
+  frame="plain"
+  narrow
+  alt="Emploist의 MCP 설정. “Let your team connect AI assistants”가 켜져 있고, “People can use Emploist from assistants like Claude and ChatGPT, each with their own role.”이라는 설명이 있어요."
+  caption="설정 → 일반 → MCP."
+/>
+
+## 알아 두면 좋은 점
+
+- **요금제에 포함되어 있어요.** Claude에서 지원서를 평가하면 Emploist에서와 똑같이 AI 크레딧 1개를 사용해요. Claude가 하는 다른 작업은 크레딧을 사용하지 않아요.
+- **각자 자신의 Claude를 연결해요.** Claude는 연결한 사람의 역할로 작업해요.
+- **Claude의 작업을 확인하세요.** Claude는 실수할 수 있어요. 특히 지원자를 옮기거나 채용 공고를 게시하기 전에는 Claude의 답변을 읽어 보세요.
+- **다른 어시스턴트도 사용할 수 있어요.** MCP 페이지에서 ChatGPT, Claude Code, Cursor, VS Code, 그리고 MCP를 지원하는 다른 모든 어시스턴트의 연결 단계를 확인할 수 있어요.
+
+직접 써 보고 싶나요? [무료 체험을 시작하세요](https://app.emploist.com/sign-in). 회사를 설정한 다음 MCP 페이지에서 Claude를 연결하면 돼요.
