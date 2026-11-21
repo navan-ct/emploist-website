@@ -24,7 +24,7 @@ const nav = NAV.map((item) => ({ label: t.nav[item.key], href: localizePath(item
 <header class="rule-b sticky top-0 z-40 bg-page/90 backdrop-blur-md backdrop-saturate-150">
   <div class="container-page flex h-(--header-height) items-center gap-2 pr-2 pl-3 sm:gap-4 sm:px-6 lg:px-8">
     <a href={localizePath("/", locale)} class="-m-1 shrink-0 p-1" aria-label={t.site.home}>
-      <Wordmark class="max-sm:text-[1.125rem] max-sm:[&_svg]:size-6 max-[22rem]:[&>span]:sr-only" />
+      <Wordmark animated class="max-sm:text-[1.125rem] max-sm:[&_svg]:size-6 max-[22rem]:[&>span]:sr-only" />
     </a>
 
     <nav aria-label={t.nav.main} class="mx-auto hidden lg:block">
